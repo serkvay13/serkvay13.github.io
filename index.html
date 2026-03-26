@@ -15,32 +15,32 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy:   #050f22;
-      --navy2:  #091833;
-      --blue:   #0a2540;
-      --teal:   #00b4d8;
-      --teal2:  #0077a8;
-      --silver: #8fa3b8;
-      --light:  #c8ddf0;
-      --white:  #f0f6ff;
-      --accent: #00d4aa;
-      --warn:   #f59e0b;
-      --red:    #e05060;
-      --glass:  rgba(10,37,64,0.55);
-      --border: rgba(0,180,216,0.12);
+      --navy:   #0d1f3c;
+      --navy2:  #f4f7fb;
+      --blue:   #e8f0f8;
+      --teal:   #0077a8;
+      --teal2:  #005f87;
+      --silver: #5a6b82;
+      --light:  #0d1f3c;
+      --white:  #ffffff;
+      --accent: #00a886;
+      --warn:   #d97706;
+      --red:    #c93048;
+      --glass:  rgba(255,255,255,0.85);
+      --border: rgba(0,119,168,0.14);
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--navy);
-      color: var(--light);
+      background: var(--white);
+      color: var(--navy);
       line-height: 1.7;
       overflow-x: hidden;
     }
 
-    /* ââ UTILITIES âââââââââââââââââââââââââââââââââââââââââ */
+    /* ── UTILITIES ───────────────────────────────────────── */
     .container  { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
     .text-teal  { color: var(--teal); }
     .text-accent{ color: var(--accent); }
@@ -49,10 +49,10 @@
     .serif      { font-family: 'DM Serif Display', serif; }
     .mono       { font-family: 'Courier New', monospace; letter-spacing: 0.08em; }
 
-    /* ââ NAV âââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ── NAV ─────────────────────────────────────────────── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(5,15,34,0.82);
+      background: rgba(255,255,255,0.92);
       backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--border);
       height: 64px;
@@ -68,16 +68,12 @@
       text-decoration: none;
     }
     .nav-logo-mark {
-      width: 32px; height: 32px;
-      border-radius: 7px;
-      background: linear-gradient(135deg, var(--teal2), var(--accent));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.75rem; font-weight: 700; color: #fff;
-      letter-spacing: 0.05em;
+      display: flex; align-items: center;
     }
+    .nav-logo-svg { height: 32px; width: auto; }
     .nav-logo-text {
       font-size: 1.1rem; font-weight: 700;
-      color: var(--white); letter-spacing: 0.06em;
+      color: var(--navy); letter-spacing: 0.06em;
     }
     .nav-links {
       display: flex; align-items: center; gap: 32px;
@@ -90,7 +86,7 @@
       letter-spacing: 0.04em;
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover { color: var(--navy); }
     .nav-cta {
       background: linear-gradient(135deg, var(--teal2), var(--accent));
       color: #fff !important;
@@ -102,25 +98,26 @@
     }
     .nav-cta:hover { opacity: 0.85; }
 
-    /* ââ HERO ââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ── HERO ────────────────────────────────────────────── */
     #hero {
       min-height: 100vh;
       display: flex; flex-direction: column; justify-content: center;
       position: relative;
       padding: 100px 0 80px;
       overflow: hidden;
+      background: var(--white);
     }
     .hero-bg {
       position: absolute; inset: 0; z-index: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,119,168,0.18) 0%, transparent 70%),
-                  radial-gradient(ellipse 50% 40% at 80% 80%, rgba(0,212,170,0.06) 0%, transparent 60%);
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,119,168,0.07) 0%, transparent 70%),
+                  radial-gradient(ellipse 50% 40% at 80% 80%, rgba(0,168,134,0.04) 0%, transparent 60%);
     }
     /* Subtle animated grid */
     .hero-grid {
       position: absolute; inset: 0; z-index: 0;
       background-image:
-        linear-gradient(rgba(0,180,216,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,180,216,0.04) 1px, transparent 1px);
+        linear-gradient(rgba(0,119,168,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,119,168,0.06) 1px, transparent 1px);
       background-size: 60px 60px;
       mask-image: radial-gradient(ellipse 80% 80% at 50% 0%, black 30%, transparent 80%);
     }
@@ -143,7 +140,7 @@
       font-family: 'DM Serif Display', serif;
       font-size: clamp(2.6rem, 6vw, 4.4rem);
       line-height: 1.12;
-      color: var(--white);
+      color: var(--navy);
       max-width: 720px;
       margin-bottom: 24px;
     }
@@ -182,14 +179,14 @@
     .btn-ghost {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 12px 24px;
-      border: 1px solid var(--border);
-      color: var(--light);
+      border: 1px solid rgba(0,119,168,0.3);
+      color: var(--navy);
       text-decoration: none;
       border-radius: 8px;
       font-size: 0.88rem; font-weight: 500;
-      transition: border-color 0.2s, color 0.2s;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
     }
-    .btn-ghost:hover { border-color: var(--teal); color: var(--white); }
+    .btn-ghost:hover { border-color: var(--teal); color: var(--teal); background: rgba(0,119,168,0.05); }
 
     /* Hero stats */
     .hero-stats {
@@ -200,7 +197,7 @@
     }
     .hero-stat-num {
       font-family: 'DM Serif Display', serif;
-      font-size: 2rem; color: var(--white);
+      font-size: 2rem; color: var(--navy);
     }
     .hero-stat-label {
       font-size: 0.72rem; color: var(--silver);
@@ -208,7 +205,7 @@
       margin-top: 2px;
     }
 
-    /* ââ SECTION BASE ââââââââââââââââââââââââââââââââââââââ */
+    /* ── SECTION BASE ────────────────────────────────────── */
     section { padding: 96px 0; }
     .section-tag {
       font-size: 0.65rem; font-weight: 600;
@@ -218,7 +215,7 @@
     .section-title {
       font-family: 'DM Serif Display', serif;
       font-size: clamp(1.9rem, 4vw, 2.9rem);
-      color: var(--white);
+      color: var(--navy);
       line-height: 1.2;
       margin-bottom: 16px;
     }
@@ -233,8 +230,8 @@
       border-radius: 2px;
     }
 
-    /* ââ WHAT IS NERAI âââââââââââââââââââââââââââââââââââââ */
-    #about { background: var(--navy2); }
+    /* ── WHAT IS NERAI ───────────────────────────────────── */
+    #about { background: var(--navy2); border-top: 1px solid rgba(0,119,168,0.08); }
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -245,11 +242,11 @@
       position: relative;
     }
     .about-card {
-      background: var(--glass);
+      background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 28px;
-      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
     }
     .world-pulse {
       display: grid; grid-template-columns: repeat(10, 1fr); gap: 5px;
@@ -281,8 +278,8 @@
     .risk-bar-fill { height: 100%; border-radius: 2px; }
     .risk-val { font-size: 0.6rem; color: var(--silver); width: 32px; text-align: right; }
 
-    /* ââ HOW IT WORKS ââââââââââââââââââââââââââââââââââââââ */
-    #how { background: var(--navy); }
+    /* ── HOW IT WORKS ────────────────────────────────────── */
+    #how { background: var(--white); }
     .steps {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -298,12 +295,13 @@
       opacity: 0.3;
     }
     .step {
-      background: rgba(9,24,51,0.6);
+      background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 28px 22px;
       text-align: center;
       position: relative;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
     }
     .step-num {
       width: 44px; height: 44px;
@@ -317,11 +315,11 @@
     .step-num.s2 { background: rgba(0,212,170,0.12); border: 1px solid rgba(0,212,170,0.3); color: var(--accent); }
     .step-num.s3 { background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.25); color: var(--warn); }
     .step-num.s4 { background: rgba(224,80,96,0.1); border: 1px solid rgba(224,80,96,0.2); color: var(--red); }
-    .step-title { font-size: 0.82rem; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+    .step-title { font-size: 0.82rem; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
     .step-text  { font-size: 0.72rem; color: var(--silver); line-height: 1.65; }
 
-    /* ââ PLATFORM PREVIEW âââââââââââââââââââââââââââââââââ */
-    #platform { background: var(--navy2); }
+    /* ── PLATFORM PREVIEW ───────────────────────────────── */
+    #platform { background: var(--navy2); border-top: 1px solid rgba(0,119,168,0.08); }
     .platform-wrap {
       display: grid;
       grid-template-columns: 1fr 1.6fr;
@@ -353,35 +351,35 @@
     .fi-red    { background: rgba(224,80,96,0.1); }
     .fi-purple { background: rgba(139,92,246,0.12); }
     .feature-body { flex: 1; }
-    .feature-name { font-size: 0.82rem; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+    .feature-name { font-size: 0.82rem; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
     .feature-desc { font-size: 0.72rem; color: var(--silver); line-height: 1.6; }
 
     .dashboard-preview {
       border-radius: 14px;
       overflow: hidden;
       border: 1px solid var(--border);
-      box-shadow: 0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,180,216,0.06);
-      background: var(--navy);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,119,168,0.08);
+      background: #ffffff;
     }
     .dp-bar {
-      background: rgba(9,24,51,0.9);
+      background: #f1f5f9;
       padding: 10px 16px;
       display: flex; align-items: center; gap: 8px;
       border-bottom: 1px solid var(--border);
     }
     .dp-dot { width: 8px; height: 8px; border-radius: 50%; }
     .dp-url {
-      flex: 1; background: rgba(255,255,255,0.04); border-radius: 4px;
+      flex: 1; background: rgba(0,0,0,0.04); border-radius: 4px;
       padding: 3px 10px; font-size: 0.62rem; color: var(--silver);
       font-family: monospace; letter-spacing: 0.03em;
     }
     .dp-body {
-      background: #040d1f;
+      background: #ffffff;
       padding: 0;
     }
     iframe.live-dash {
       width: 100%;
-      height: 420px;
+      height: 520px;
       border: none;
       display: block;
     }
@@ -391,13 +389,13 @@
     .dp-overlay::after {
       content: '';
       position: absolute; bottom: 0; left: 0; right: 0;
-      height: 80px;
+      height: 60px;
       background: linear-gradient(to top, var(--navy2), transparent);
       pointer-events: none;
     }
 
-    /* ââ USE CASES âââââââââââââââââââââââââââââââââââââââââ */
-    #usecases { background: var(--navy); }
+    /* ── USE CASES ───────────────────────────────────────── */
+    #usecases { background: var(--white); }
     .cases-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -405,23 +403,24 @@
       margin-top: 52px;
     }
     .case-card {
-      background: rgba(9,24,51,0.5);
+      background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 28px 24px;
       transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
     }
     .case-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(0,180,216,0.25);
-      box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+      border-color: rgba(0,119,168,0.3);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.1);
     }
     .case-emoji { font-size: 1.6rem; margin-bottom: 16px; display: block; }
-    .case-title { font-size: 0.88rem; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+    .case-title { font-size: 0.88rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
     .case-text  { font-size: 0.74rem; color: var(--silver); line-height: 1.7; }
 
-    /* ââ METHODOLOGY âââââââââââââââââââââââââââââââââââââââ */
-    #methodology { background: var(--navy2); }
+    /* ── METHODOLOGY ─────────────────────────────────────── */
+    #methodology { background: var(--navy2); border-top: 1px solid rgba(0,119,168,0.08); }
     .method-grid {
       display: grid;
       grid-template-columns: 1.2fr 1fr;
@@ -450,7 +449,7 @@
     }
     .pipe-text strong {
       font-size: 0.8rem; font-weight: 600;
-      color: var(--white); display: block; margin-bottom: 4px;
+      color: var(--navy); display: block; margin-bottom: 4px;
     }
     .pipe-text span { font-size: 0.7rem; color: var(--silver); }
 
@@ -460,9 +459,10 @@
     .ds-item {
       display: flex; align-items: center; gap: 12px;
       padding: 14px 16px;
-      background: rgba(10,37,64,0.4);
+      background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 10px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.04);
     }
     .ds-icon {
       width: 32px; height: 32px; flex-shrink: 0;
@@ -471,7 +471,7 @@
       font-size: 1rem;
       background: rgba(0,119,168,0.15);
     }
-    .ds-label { font-size: 0.78rem; font-weight: 600; color: var(--white); }
+    .ds-label { font-size: 0.78rem; font-weight: 600; color: var(--navy); }
     .ds-desc  { font-size: 0.65rem; color: var(--silver); }
     .ds-badge {
       margin-left: auto;
@@ -483,10 +483,10 @@
       white-space: nowrap;
     }
 
-    /* ââ WHAT-IF âââââââââââââââââââââââââââââââââââââââââââ */
-    #whatif { background: var(--navy); }
+    /* ── WHAT-IF ─────────────────────────────────────────── */
+    #whatif { background: var(--navy2); border-top: 1px solid rgba(0,119,168,0.08); }
     .whatif-inner {
-      background: linear-gradient(135deg, rgba(0,119,168,0.08), rgba(0,212,170,0.04));
+      background: linear-gradient(135deg, rgba(0,119,168,0.06), rgba(0,168,134,0.03));
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: 60px 52px;
@@ -498,7 +498,7 @@
     .whatif-title {
       font-family: 'DM Serif Display', serif;
       font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      color: var(--white);
+      color: var(--navy);
       line-height: 1.2;
       margin-bottom: 18px;
     }
@@ -507,17 +507,18 @@
     .scenario {
       display: flex; align-items: flex-start; gap: 12px;
       padding: 14px 16px;
-      background: rgba(9,24,51,0.6);
+      background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 10px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.04);
     }
     .sc-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
-    .sc-label { font-size: 0.8rem; font-weight: 600; color: var(--white); margin-bottom: 3px; }
+    .sc-label { font-size: 0.8rem; font-weight: 600; color: var(--navy); margin-bottom: 3px; }
     .sc-text  { font-size: 0.7rem; color: var(--silver); }
 
-    /* ââ CTA SECTION âââââââââââââââââââââââââââââââââââââââ */
+    /* ── CTA SECTION ─────────────────────────────────────── */
     #cta {
-      background: var(--navy2);
+      background: var(--navy);
       text-align: center;
     }
     .cta-inner {
@@ -526,17 +527,17 @@
     .cta-title {
       font-family: 'DM Serif Display', serif;
       font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--white);
+      color: #ffffff;
       margin-bottom: 18px;
       line-height: 1.2;
     }
     .cta-sub { font-size: 0.95rem; color: var(--silver); margin-bottom: 36px; line-height: 1.75; }
     .cta-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
 
-    /* ââ FOOTER ââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ── FOOTER ──────────────────────────────────────────── */
     footer {
       background: var(--navy);
-      border-top: 1px solid var(--border);
+      border-top: 1px solid rgba(255,255,255,0.08);
       padding: 48px 0;
     }
     .footer-inner {
@@ -545,7 +546,7 @@
     }
     .footer-logo-text {
       font-size: 1rem; font-weight: 700;
-      color: var(--white); letter-spacing: 0.06em;
+      color: #ffffff; letter-spacing: 0.06em;
     }
     .footer-tagline {
       font-size: 0.7rem; color: var(--silver); margin-top: 4px;
@@ -558,17 +559,17 @@
       font-size: 0.75rem;
       transition: color 0.2s;
     }
-    .footer-links a:hover { color: var(--white); }
+    .footer-links a:hover { color: #ffffff; }
     .footer-copy {
       font-size: 0.68rem; color: rgba(143,163,184,0.5);
     }
 
-    /* ââ SCROLLING TICKER ââââââââââââââââââââââââââââââââââ */
+    /* ── SCROLLING TICKER ────────────────────────────────── */
     .ticker-wrap {
       overflow: hidden;
-      background: rgba(9,24,51,0.7);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
       padding: 10px 0;
     }
     .ticker-track {
@@ -584,14 +585,15 @@
     .ticker-item .ti-label {
       color: var(--teal); margin-right: 6px;
     }
-    .ticker-item .ti-up   { color: var(--red); }
-    .ticker-item .ti-down { color: var(--accent); }
+    .ticker-item .ti-up   { color: #ff6b7a; }
+    .ticker-item .ti-down { color: #00d4aa; }
+    .ticker-item { font-family: 'Inter', Arial, sans-serif; }
     @keyframes ticker {
       from { transform: translateX(0); }
       to   { transform: translateX(-50%); }
     }
 
-    /* ââ RESPONSIVE ââââââââââââââââââââââââââââââââââââââââ */
+    /* ── RESPONSIVE ──────────────────────────────────────── */
     @media (max-width: 900px) {
       .about-grid, .platform-wrap, .method-grid,
       .whatif-inner { grid-template-columns: 1fr; gap: 40px; }
@@ -610,24 +612,47 @@
 </head>
 <body>
 
-<!-- ââ NAVIGATION âââââââââââââââââââââââââââââââââââââââ -->
+<!-- ── NAVIGATION ─────────────────────────────────────── -->
 <nav>
   <div class="inner">
     <a href="#" class="nav-logo">
-      <div class="nav-logo-mark">NR</div>
-      <span class="nav-logo-text">NERAI</span>
+      <div class="nav-logo-mark">
+        <!-- NERAI Logo SVG -->
+        <svg class="nav-logo-svg" viewBox="0 0 160 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Dot grid: 4 cols x 5 rows, alternating dark/teal -->
+          <circle cx="6"  cy="6"  r="3.2" fill="#1a2840"/>
+          <circle cx="16" cy="6"  r="3.2" fill="#00c8e0"/>
+          <circle cx="26" cy="6"  r="3.2" fill="#1a2840"/>
+          <circle cx="36" cy="6"  r="3.2" fill="#00c8e0"/>
+          <circle cx="6"  cy="16" r="3.2" fill="#00c8e0"/>
+          <circle cx="16" cy="16" r="3.2" fill="#1a2840"/>
+          <circle cx="26" cy="16" r="3.2" fill="#00c8e0"/>
+          <circle cx="36" cy="16" r="3.2" fill="#1a2840"/>
+          <circle cx="6"  cy="26" r="3.2" fill="#1a2840"/>
+          <circle cx="16" cy="26" r="3.2" fill="#00c8e0"/>
+          <circle cx="26" cy="26" r="3.2" fill="#1a2840"/>
+          <circle cx="36" cy="26" r="3.2" fill="#00c8e0"/>
+          <circle cx="6"  cy="36" r="3.2" fill="#00c8e0"/>
+          <circle cx="16" cy="36" r="3.2" fill="#1a2840"/>
+          <circle cx="26" cy="36" r="3.2" fill="#00c8e0"/>
+          <circle cx="36" cy="36" r="3.2" fill="#1a2840"/>
+          <!-- NERAI text -->
+          <text x="48" y="32" font-family="'Inter', Arial, sans-serif" font-weight="800" font-size="26" letter-spacing="-0.5" fill="#1a2840">NER</text>
+          <text x="113" y="32" font-family="'Inter', Arial, sans-serif" font-weight="800" font-size="26" letter-spacing="-0.5" fill="#00b4d8">AI</text>
+        </svg>
+      </div>
     </a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#platform">Platform</a></li>
       <li><a href="#methodology">Methodology</a></li>
       <li><a href="#usecases">Use Cases</a></li>
-      <li><a href="https://nerai-intelligence.streamlit.app/" target="_blank" class="nav-cta">Open Dashboard â</a></li>
+      <li><a href="https://nerai-intelligence.streamlit.app/" target="_blank" class="nav-cta">Open Dashboard →</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- ââ HERO âââââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ── HERO ───────────────────────────────────────────── -->
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
@@ -649,7 +674,7 @@
     <div class="hero-actions">
       <a href="https://nerai-intelligence.streamlit.app/" target="_blank" class="btn-primary">
         <span>Explore the Dashboard</span>
-        <span>â</span>
+        <span>→</span>
       </a>
       <a href="#about" class="btn-ghost">Learn how it works</a>
     </div>
@@ -675,116 +700,387 @@
   </div>
 </section>
 
-<!-- ââ LIVE TICKER âââââââââââââââââââââââââââââââââââââââ -->
+<!-- ── LIVE TICKER ─────────────────────────────────────── -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="ti-label">IRAN (IR)</span> Political Instability <span class="ti-up">â² +18.4%</span></span>
-    <span class="ticker-item"><span class="ti-label">UKRAINE (UP)</span> Military Escalation <span class="ti-up">â² +22.1%</span></span>
-    <span class="ticker-item"><span class="ti-label">CHINA (CH)</span> International Crisis <span class="ti-up">â² +7.2%</span></span>
-    <span class="ticker-item"><span class="ti-label">RUSSIA (RS)</span> Military Crisis <span class="ti-down">â¼ â5.3%</span></span>
-    <span class="ticker-item"><span class="ti-label">ISRAEL (IS)</span> Terrorism <span class="ti-up">â² +9.8%</span></span>
-    <span class="ticker-item"><span class="ti-label">PAKISTAN (PK)</span> Authoritarianism <span class="ti-up">â² +11.6%</span></span>
-    <span class="ticker-item"><span class="ti-label">TURKEY (TU)</span> Political Instability <span class="ti-down">â¼ â3.1%</span></span>
-    <span class="ticker-item"><span class="ti-label">IRAQ (IZ)</span> Mass Killing <span class="ti-down">â¼ â14.2%</span></span>
-    <span class="ticker-item"><span class="ti-label">IRAN (IR)</span> Political Instability <span class="ti-up">â² +18.4%</span></span>
-    <span class="ticker-item"><span class="ti-label">UKRAINE (UP)</span> Military Escalation <span class="ti-up">â² +22.1%</span></span>
-    <span class="ticker-item"><span class="ti-label">CHINA (CH)</span> International Crisis <span class="ti-up">â² +7.2%</span></span>
-    <span class="ticker-item"><span class="ti-label">RUSSIA (RS)</span> Military Crisis <span class="ti-down">â¼ â5.3%</span></span>
-    <span class="ticker-item"><span class="ti-label">ISRAEL (IS)</span> Terrorism <span class="ti-up">â² +9.8%</span></span>
-    <span class="ticker-item"><span class="ti-label">PAKISTAN (PK)</span> Authoritarianism <span class="ti-up">â² +11.6%</span></span>
-    <span class="ticker-item"><span class="ti-label">TURKEY (TU)</span> Political Instability <span class="ti-down">â¼ â3.1%</span></span>
-    <span class="ticker-item"><span class="ti-label">IRAQ (IZ)</span> Mass Killing <span class="ti-down">â¼ â14.2%</span></span>
+    <span class="ticker-item"><span class="ti-label">IRAN (IR)</span> Active Conflict — US &amp; Israel <span class="ti-up">&#x25B2; +34.6%</span></span>
+    <span class="ticker-item"><span class="ti-label">ISRAEL (IS)</span> Military Operations Risk <span class="ti-up">&#x25B2; +28.1%</span></span>
+    <span class="ticker-item"><span class="ti-label">UKRAINE (UA)</span> Military Escalation <span class="ti-up">&#x25B2; +19.7%</span></span>
+    <span class="ticker-item"><span class="ti-label">CHINA (CH)</span> Taiwan Strait Tensions <span class="ti-up">&#x25B2; +8.4%</span></span>
+    <span class="ticker-item"><span class="ti-label">RUSSIA (RS)</span> Ceasefire Pressure <span class="ti-down">&#x25BC; -4.2%</span></span>
+    <span class="ticker-item"><span class="ti-label">SUDAN (SU)</span> Civil War Escalation <span class="ti-up">&#x25B2; +17.8%</span></span>
+    <span class="ticker-item"><span class="ti-label">VENEZUELA (VE)</span> Political Instability <span class="ti-up">&#x25B2; +12.5%</span></span>
+    <span class="ticker-item"><span class="ti-label">TURKEY (TU)</span> Regional Influence Index <span class="ti-down">&#x25BC; -2.9%</span></span>
+    <span class="ticker-item"><span class="ti-label">IRAN (IR)</span> Active Conflict — US &amp; Israel <span class="ti-up">&#x25B2; +34.6%</span></span>
+    <span class="ticker-item"><span class="ti-label">ISRAEL (IS)</span> Military Operations Risk <span class="ti-up">&#x25B2; +28.1%</span></span>
+    <span class="ticker-item"><span class="ti-label">UKRAINE (UA)</span> Military Escalation <span class="ti-up">&#x25B2; +19.7%</span></span>
+    <span class="ticker-item"><span class="ti-label">CHINA (CH)</span> Taiwan Strait Tensions <span class="ti-up">&#x25B2; +8.4%</span></span>
+    <span class="ticker-item"><span class="ti-label">RUSSIA (RS)</span> Ceasefire Pressure <span class="ti-down">&#x25BC; -4.2%</span></span>
+    <span class="ticker-item"><span class="ti-label">SUDAN (SU)</span> Civil War Escalation <span class="ti-up">&#x25B2; +17.8%</span></span>
+    <span class="ticker-item"><span class="ti-label">VENEZUELA (VE)</span> Political Instability <span class="ti-up">&#x25B2; +12.5%</span></span>
+    <span class="ticker-item"><span class="ti-label">TURKEY (TU)</span> Regional Influence Index <span class="ti-down">&#x25BC; -2.9%</span></span>
   </div>
 </div>
 
-<!-- ââ ABOUT × âââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ── WHAT IS NERAI ───────────────────────────────────── -->
 <section id="about">
   <div class="container">
     <div class="about-grid">
+
       <div>
-        <p class="section-tag">WHAT IS NERAI</p>
-        <h2 class="section-title">Global news, <br>transformed into <em>intelligence</em></h2>
+        <div class="section-tag">What is NERAI</div>
+        <h2 class="section-title">Risk*intelligence<br>grounded in data.</h2>
         <div class="divider"></div>
-        <p class="section-sub">NERAI leverages the GDELT Project &#8212; a comprehensive open database monitoring 100+ languages across the globe &#8212; to build real-time, structured geopolitical risk indices. We transform raw event data into structured indexes, then forecast using proven models.</p>
+        <p style="font-size:0.9rem;color:var(--silver);line-height:1.8;margin-bottom:20px;">
+          NERAI is a geopolitical risk intelligence platform built for analysts, decision-makers,
+          and organisations that need to understand — and anticipate — political instability worldwide.
+        </p>
+        <p style="font-size:0.9rem;color:var(--silver);line-height:1.8;margin-bottom:20px;">
+          Rather than relying on subjective expert opinion, NERAI derives its signals from
+          <strong style="color:var(--light);">structured event data</strong> — millions of
+          news articles processed daily — to produce objective, reproducible risk indices
+          across more than 20 conflict and stability dimensions.
+        </p>
+        <p style="font-size:0.9rem;color:var(--silver);line-height:1.8;">
+          Every index is paired with a <strong style="color:var(--light);">12-month forward forecast</strong>,
+          allowing users to act on emerging trends before they crystallise into crises.
+        </p>
       </div>
 
       <div class="about-visual">
         <div class="about-card">
-          <p class="card-label">Global Risk Pulse</p>
-          <div class="world-pulse" id="pulse-grid"></div>
-          <p class="card-label">High-Risk Countries (Last 7 Days)</p>
+          <div class="card-label" style="margin-bottom:12px;">GLOBAL RISK HEATMAP — SAMPLE</div>
+          <div class="world-pulse" id="worldPulse"></div>
+          <div class="card-label" style="margin-bottom:12px;">TOP RISK INDICES — LIVE UPDATE</div>
           <div class="risk-bars">
             <div class="risk-row">
-              <span class="risk-name">Iran</span>
-              <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:83%;background:linear-gradient(90deg,#0077a8,0#e05060)"></div></div>
-              <span class="risk-val">83</span>
+              <span class="risk-name" style="font-size:0.62rem;color:var(--silver);">Military Escalation</span>
+              <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:74%;background:linear-gradient(90deg,#e0506050,#e05060);"></div></div>
+              <span class="risk-val">74</span>
             </div>
             <div class="risk-row">
-              <span class="risk-name">Ukraine</span>
-              <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:91%;background:linear-gradient(90deg,#0077a8,#e05060)"></div></div>
-              <span class="risk-val">91</span>
+              <span class="risk-name" style="font-size:0.62rem;color:var(--silver);">Political Instability</span>
+              <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:68%;background:linear-gradient(90deg,#f59e0b50,#f59e0b);"></div></div>
+              <span class="risk-val">68</span>
             </div>
             <div class="risk-row">
-              <span class="risk-name">Russia</span>
-              <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:78%;background:linear-gradient(90deg,#0077a8,#e05060)"></div></div>
-              <span class="risk-val">78</span>
+              <span class="risk-name" style="font-size:0.62rem;color:var(--silver);">International Crisis</span>
+              <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:61%;background:linear-gradient(90deg,#f59e0b30,#f59e0b80);"></div></div>
+              <span class="risk-val">61</span>
             </div>
             <div class="risk-row">
-              <span class="risk-name">Israel</span>
-              <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:76%;background:linear-gradient(90deg,#0077a8,#e05060)"></div></div>
-              <span class="risk-val">76<Ü[OÙ]Ù]Ù]Ù]Ù]Ù]ÜÙXÝ[ÛKKH8¥ 8¥ ÕÈUÓÔÔÈ8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ KOÙXÝ[ÛYHÝÒ]ÛÜÜÈ]Û\ÜÏHÛÛZ[\Û\ÜÏHÙXÝ[Û]YÈÕÈUÓÔÔÏÜÛ\ÜÏHÙXÝ[Û]]HÛH]ÜÈÈÜXØ\Ý[[OÝ\Ý\ÏÙ[OÚ]Û\ÜÏH]Y\Ù]]Û\ÜÏHÝ\È]Û\ÜÏHÝ\]Û\ÜÏHÝ\[[HÌHÑSÙ]Û\ÜÏHÝ\]]HÛØ[][[Ù\Ý[ÛÜÛ\ÜÏHÝ\]^L
-È[ÝXYÙ\È[Û]ÜYXÜÜÜÈLÛÝ\Ù\Ë]\H]ÜÈ][Û\ÜÚYYY[Ù[ÝYÙÙY[X[[YKÜÙ]]Û\ÜÏHÝ\]Û\ÜÏHÝ\[[HÌTÒÏÙ]Û\ÜÏHÝ\]]H[^ÛÛÝXÝ[ÛÜÛ\ÜÏHÝ\]^][ÈYÙÜYØ]Y[È
-È[Y[Ú[Û[\ÚÈ[XÙ\ËÚYÛ[ÈÜX[^Y[ÙZYÚYHXÙ[ÞKÜÙ]]Û\ÜÏHÝ\]Û\ÜÏHÝ\[[HÌÈSÑSÙ]Û\ÜÏHÝ\]]HÜ]ÜXØ\Ý[ÏÜÛ\ÜÏHÝ\]^XÙXÛÚÉÜÈÜ][Ù[ÚXÝÈXXÚ[XØ]ÜÜØ\L[ÛÈÚ]ÛÛY[ÙH[\[ËÜÙ]]Û\ÜÏHÝ\]Û\ÜÏHÝ\[[HÍPÙ]Û\ÜÏHÝ\]]H[[YÙ[ÙHXÜÛ\ÜÏHÝ\]^[\XÝ]H\ÚØ\Ú][\XHX\Ë[Ú[ÜËÜXØ\ÝÈ[RK\ÝÙ\Y\]]H[[\Ú\ËÜÙ]Ù]Ù]ÜÙXÝ[ÛKKH8¥ 8¥ UÔHUQUÈ8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ KOÙXÝ[ÛYH]ÜH]Û\ÜÏHÛÛZ[\]Û\ÜÏH]ÜK]Ü\]Û\ÜÏHÙXÝ[Û]YÈUHUÔOÜÛ\ÜÏHÙXÝ[Û]]H^ÜHH[O[[YÙ[ÙHXÙ[OÚ]Û\ÜÏH]Y\Ù]Û\ÜÏHÙXÝ[Û\ÝXH]K[\XÝ]H\ÚØ\Ú][È[ÝHXØÙ\ÜÈÈÙ[ÜÛ]XØ[\ÚÈ]HÜ
-ÈÛÝ[Y\È	ÎLÈ\]YZ[KÜ]Û\ÜÏHX]\K[\Ý]Û\ÜÏHX]\KZ][H]Û\ÜÏHX]\KZXÛÛKXYH¼'ã#Ù]]Û\ÜÏHX]\KXÙHÛ\ÜÏHX]\K[[YH[\XÝ]HÛÜX\ÜÛ\ÜÏHX]\KY\ØÈ\ÝX[^H\ÚÈ][ÈÙ[ÙÜ\XØ[HÚ]ÛXÚØXHÛÝ[HÙ[\ËÜÙ]Ù]]Û\ÜÏHX]\KZ][H]Û\ÜÏHX]\KZXÛÛKYÜY[¼'äãOÙ]]Û\ÜÏHX]\KXÙHÛ\ÜÏHX]\K[[YHLS[ÛÜXØ\ÝÏÜÛ\ÜÏHX]\KY\ØÈÛÝ[K[][ÚXÝ[ÛÈXÜÜÜÈ[\ÚÈ[Y[Ú[ÛÈÚ]ÛÛY[ÙH[ËÜÙ]Ù]]Û\ÜÏHX]\KZ][H]Û\ÜÏHX]\KZXÛÛKX[X\¼'äïÙ]]Û\ÜÏHX]\KXÙHÛ\ÜÏHX]\K[[YHRH\]]H[[\Ú\ÏÜÛ\ÜÏHX]\KY\ØÈ\ÚÈ[HÙ[ÜÛ]XØ[]Y\Ý[Û[Ù]HÝXÝ\Y]KXXÚÙY[ÝÙ\ÜÙ]Ù]]Û\ÜÏHX]\KZ][H]Û\ÜÏHX]\KZXÛÛK\Y¼'äêÙ]]Û\ÜÏHX]\KXÙHÛ\ÜÏHX]\K[[YH]H]ÜÈXY[\ÏÜÛ\ÜÏHX]\KY\ØÈX[][YH]ÜÈYYÈ[ÙYÈ\ÚÈ[XØ]Ü[Ý[Y[ËÜÙ]Ù]]Û\ÜÏHX]\KZ][H]Û\ÜÏHX]\KZXÛÛK\\H¼'å%Ù]]Û\ÜÏHX]\KXÙHÛ\ÜÏHX]\K[[YHÛÛ\\]]H[Ú[ÜÏÜÛ\ÜÏHX]\KY\ØÈÚYKXK\ÚYHÛÝ[HÛÛ\\\ÛÛÈXÜÜÜÈ[\ÚÈ[Y[Ú[ÛËÜÙ]Ù]Ù]Ù]]Û\ÜÏH\ÚØ\\]Y]È]Û\ÜÏHX\]Û\ÜÏHYÝÝ[OHXÚÙÜÝ[ÙY
+              <span class="risk-name" style="font-size:0.62rem;color:var(--silver);">Terrorism</span>
+              <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:44%;background:linear-gradient(90deg,#00b4d830,#00b4d8);"></div></div>
+              <span class="risk-val">44</span>
+            </div>
+            <div class="risk-row">
+              <span class="risk-name" style="font-size:0.62rem;color:var(--silver);">Human Rights Abuses</span>
+              <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:38%;background:linear-gradient(90deg,#00d4aa20,#00d4aa);"></div></div>
+              <span class="risk-val">38</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
+    </div>
+  </div>
+</section>
 
-Ù]]Û\ÜÏHYÝÝ[OHXÚÙÜÝ[ÙNYLÙ]]Û\ÜÏHYÝÝ[OHXÚÙÜÝ[ÌÍMYHÙ]]Û\ÜÏH]\\ZKZ[[YÙ[ÙKÝX[[]\Ù]Ù]]Û\ÜÏHXÙH[Ý\^HY[YHÛ\ÜÏH]KY\ÚÜÏHÎËÛ\ZKZ[[YÙ[ÙKÝX[[]\ÏÙ[XYY]YH]OHTRH[[YÙ[ÙHXÚY[YOÙ]Ù]Ù]Ù]ÜÙXÝ[ÛKKH8¥ 8¥ TÑHÐTÑTÈ8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ KOÙXÝ[ÛYH\ÙXØ\Ù\È]Û\ÜÏHÛÛZ[\Û\ÜÏHÙXÝ[Û]YÈÒÈTÑTÈTROÜÛ\ÜÏHÙXÝ[Û]]HZ[ÜXÚ\Ú[Û[XZÙ\ÏÚÈ[OØ[ÝYÜÝ\\Ù\ÏÙ[OÚ]Û\ÜÏH]Y\Ù]]Û\ÜÏHØ\Ù\ËYÜY]Û\ÜÏHØ\ÙKXØ\Ü[Û\ÜÏHØ\ÙKY[[ÚH¼'ãéÏÜÜ[Û\ÜÏHØ\ÙK]]HÛÝ\Y[	[\ÈY[ÙOÜÛ\ÜÏHØ\ÙK]^Ý]H[[\ÝÈ[Y[ÙH[\È\ÙHTRHÈ[Û]ÜX][\ÛY[È[Ù]X\HØ\[ÈÙ\ÝX[^[È[ËÜÙ]]Û\ÜÏHØ\ÙKXØ\Ü[Û\ÜÏHØ\ÙKY[[ÚH¼'äêÜÜ[Û\ÜÏHØ\ÙK]]H[[ÚX[[Ý]][ÛÏÜÛ\ÜÏHØ\ÙK]^[\ÝY[\\È[[ÜÈ[YÜ]HTRH[XÙ\È[È\ÚÈ[Ù[ÈÈ[XÚ\]HX\Ù][[Ý[È][ËÜÙ]]Û\ÜÏHØ\ÙKXØ\Ü[Û\ÜÏHØ\ÙKY[[ÚH¼'ã#OÜÜ[OÛ\ÜÏHØ\ÙK]]H][[][Û[ÛÜÜ][ÛÏÜÛ\ÜÏHØ\ÙK]^Ü\][ÛÈ[Ý]YÞHX[\È\ÙHTRHÈ[Ü]^HX\Ù]È[ØYYÝX\Ý\HÚZ[ËÜÙ]]Û\ÜÏHØ\ÙKXØ\Ü[Û\ÜÏHØ\ÙKY[[ÚH¼'äìÜÜ[OÛ\ÜÏHØ\ÙK]]HYYXH	[\ÈÝ\[\ÛOÜÛ\ÜÏHØ\ÙK]^\Ü\È[Y]ÜÈ\ÙHTRHÈ]ZXÚÛH]ÝÜY\È[ÛÛ^[Y[YH[Y\Ú[È\ÚÈ[ËÜÙ]]Û\ÜÏHØ\ÙKXØ\Ü[Û\ÜÏHØ\ÙKY[[ÚH¼'äêOÜÜ[OÛ\ÜÏHØ\ÙK]]HXØY[ZXÈ\ÙX\ÚÜÛ\ÜÏHØ\ÙK]^Û]XØ[ØÚY[\ÝÈ[ÛÛXÝ\ÙX\Ú\ÈXØÙ\ÜÈÚX[]X[]]]HÙ[ÜÛ]XØ[]HÜ[[\Ú\ËÜÙ]]Û\ÜÏHØ\ÙKXØ\Ü[Û\ÜÏHØ\ÙKY[[ÚH¼'ääOÜÜ[Û\ÜÏHØ\ÙK]]HÛXÞH	[\È[È[ÜÏÜÛ\ÜÏHØ\ÙK]^ÛXÞHÜØ[^][ÛÈ\ÙHTRH[XÙ\È\È]Y[ÙH\Ù\È[Ý]YÚXÈY\ÛÜKÜÙ]Ù]Ù]ÜÙXÝ[ÛKKH8¥ 8¥ QUÑÓÑÖH8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ KOÙXÝ[ÛYHY]ÙÛÙÞH]Û\ÜÏHÛÛZ[\]Û\ÜÏHY]ÙYÜY]Û\ÜÏHÙXÝ[Û]YÈÕÈÑHRSUÜÛ\ÜÏHÙXÝ[Û]]H\ÝYÝY[]KØ\Ý[[OY]ÙÙ[OÚ]Û\ÜÏH]Y\Ù]]Û\ÜÏH\[[H]Û\ÜÏH\K\Ý\]Û\ÜÏH\K[[HOÙ]]Û\ÜÏH\K]^ÝÛÏÑS][[Ù\Ý[ÛÜÝÛÏÜ[[ÑS][ÈÛHH\ÝÌ^\È\H[Y[Û\ÜÚYYYHÛÝ[H[ÜXËÜÜ[Ù]Ù]]Û\ÜÏH\K\Ý\]Û\ÜÏH\K[[HÙ]]Û\ÜÏH\K]^ÝÛÏ[^ÛÛ\]][ÛÜÝÛÏÜ[][\]Y[ÞH[ÛHØÛÜ\È\HYÙÜYØ]Y[ÈZ[H[^[Y\È\ÛÝ[H[ÜXËÜÜ[Ù]Ù]]Û\ÜÏH\K\Ý\]Û\ÜÏH\K[[HÏÙ]]Û\ÜÏH\K]^ÝÛÏÜ][Ù[Z[[ÏÜÝÛÏÜ[XÙXÛÚÉÜÈÜ][Ù[\ÈZ[YÛ[^\ËÙXÚ[È[ÛHÜXØ\ÝÈÚ]\\ÛÝÙ\ÛÛY[ÙHÝ[ËÜÜ[Ù]Ù]]Û\ÜÏH\K\Ý\]Û\ÜÏH\K[[HÙ]]Û\ÜÏH\K]^ÝÛÏ\ÚØ\[\[ÏÜÝÛÏÜ[[]H\ÈÞ[ÙYÈHÝX[[]\ÚØ\Y\ÚYZ[KÜÜ[Ù]Ù]Ù]Ù]]Û\ÜÏHÙXÝ[Û]YÈUHÓÕTÑTÈ	[\ÈPÒÜ]Û\ÜÏH]K\ÛÝ\Ù\È]Û\ÜÏHËZ][H]Û\ÜÏHËZXÛÛ¼'ä`Ù]]Û\ÜÏHË[X[ÑSÚXÝÜÛ\ÜÏHËY\ØÈL
-ÈÛÝ\Ù\ËL
-È[ÝXYÙ\ËX[][YOÜÙ]Ü[Û\ÜÏHËXYÙHSPTOÜÜ[Ù]]Û\ÜÏHËZ][H]Û\ÜÏHËZXÛÛ¼'å'Ù]]Û\ÜÏHË[X[Ü]ÜXØ\Ý[ÏÜÛ\ÜÏHËY\ØÈXÙXÛÚÈ\ÙX\Ú[YK\Ù\Y\È[Ù[ÜÙ]Ü[Û\ÜÏHËXYÙHSÑSÜÜ[Ù]]Û\ÜÏHËZ][H]Û\ÜÏHËZXÛÛ¼'äªÙ]]Û\ÜÏHË[X[]Û	[\È[\ÏÜÛ\ÜÏHËY\ØÈ]HØÙ\ÜÚ[È[[[\Ú\È\[[OÜÙ]Ü[Û\ÜÏHËXYÙHÐÑTÔÏÜÜ[Ù]]Û\ÜÏHËZ][H]Û\ÜÏHËZXÛÛ¼'äáOÙ]]Û\ÜÏHË[X[ÝX[[]\ÚØ\ÜÛ\ÜÏHËY\ØÈ[\XÝ]H\ÝX[^][Û	[\ÈRH^Y\ÜÙ]Ü[Û\ÜÏHËXYÙHROÜÜ[Ù]Ù]Ù]Ù]Ù]ÜÙXÝ[ÛKKH8¥ 8¥ ÒURQ8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ KOÙXÝ[ÛYHÚ]Y]Û\ÜÏHÛÛZ[\]Û\ÜÏHÚ]YZ[\]Û\ÜÏHÚ]Y]]HØÙ[\[È[Ù[[ÏÜ[H[OÚ]X][ÛÙ[OÚÛ\ÜÏHÚ]Y\ÝXTRIÜÈRH[[\Ú\È[Ù[H]È[ÝH\ÚÈÛÛ\^Ù[ÜÛ]XØ[]Y\Ý[ÛÈ[XÙZ]HÝXÝ\Y]KXXÚÙY[ÝÙ\ÈÜÝ[Y[X[[YH[^[Ý[Y[È[[Ù[ÚXÝ[ÛËÜHYHÎËÛ\ZKZ[[YÙ[ÙKÝX[[]\È\Ù]HØ[ÈÛ\ÜÏH\[X\HÝ[OH\Ü^N[[KY^ÈH]ÝÈ8¡¤ØOÙ]]Û\ÜÏHÚ]Y\ØÙ[\[ÜÈ]Û\ÜÏHØÙ[\[ÈÜ[Û\ÜÏHØËZXÛÛ¼'ådOÜÜ[]Û\ÜÏHØË[X[Ú]	ÜÈ\[[È[\[YÚÝÏÏÜÜ[Û\ÜÏHØË]^X[][YH[^[[\Ú\È	[\È]ÜÈXY[\ÏÜÙ]Ù]]Û\ÜÏHØÙ[\[ÈÜ[Û\ÜÏHØËZXÛÛ¼'ä¤OÜÜ[]Û\ÜÏHØË[X[Ú[[Ú[ÛÈ[HZYHX\Ý\ØØ[]OÏÜÛ\ÜÏHØË]^L[[ÛÜXØ\ÝÚ]ØX[]H[Ù\ÏÜÙ]Ù]]Û\ÜÏHØÙ[\[ÈÜ[Û\ÜÏHØËZXÛÛ¼'ä¤ÜÜ[]Û\ÜÏHØË[X[ÛÛ\\HZÜZ[HÈØ^H\ÚÈÙ[\ÏÜÛ\ÜÏHØË]^][KXÛÝ[H\ÚÈÛÛ\\\ÛÛ[[\Ú\ÏÜÙ]Ù]Ù]Ù]Ù]ÜÙXÝ[ÛKKH8¥ 8¥ ÕH8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ KOÙXÝ[ÛYHÝH]Û\ÜÏHÛÛZ[\]Û\ÜÏHÝKZ[\Û\ÜÏHÝK]]HXYHÈÙYOHÛÜÛX\OÏÚÛ\ÜÏHÝK\ÝXTRH\ÈY[HXØÙ\ÜÚXKÈÙÚ[\]Z\Y	ÎLÈ\ÝÛXÚÈ[^ÜKÜ]Û\ÜÏHÝKXXÝ[ÛÈHYHÎËÛ\ZKZ[[YÙ[ÙKÝX[[]\È\Ù]HØ[ÈÛ\ÜÏH\[X\HÜ[H\ÚØ\8¡¤ØOHYHØXÝ]Û\ÜÏHYÚÜÝX\[ÜOØOÙ]Ù]Ù]ÜÙXÝ[ÛKKH8¥ 8¥ ÓÕT8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ KOÛÝ\]Û\ÜÏHÛÛZ[\]Û\ÜÏHÛÝ\Z[\]Û\ÜÏHÛÝ\[ÙÛË]^TROÜÛ\ÜÏHÛÝ\]YÛ[H[[YÙ[ÙHÜHÛÛ\^ÛÜÜÙ][Û\ÜÏHÛÝ\[[ÜÈOHYHØXÝ]XÝ]ØOÛOOHYHÛY]ÙÛÙÞHY]ÙÛÙÞOØOÛOOHYHÝ\ÙXØ\Ù\È\ÙHØ\Ù\ÏØOÛOOHYHÎËÛ\ZKZ[[YÙ[ÙKÝX[[]\È\Ù]HØ[È\ÚØ\ØOÛOÝ[Û\ÜÏHÛÝ\XÛÜHÛÜNÈTRK[YÚÈ\Ù\YÜÙ]Ù]ÙÛÝ\ØÜ\ËÈ8¥ 8¥ ÓÔPÑHÒQÔSSPUSÓ8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ KB
-[Ý[Û
-HÂÛÛÝÛÈHÉÚÝ	Ë	ÝØ\IË	ÛZ[	Ë	ØÛÛÛ	Ë	ÛZ[	×NÂÛÛÝÜYHØÝ[Y[Ù][[Y[RY
-	Ü[ÙKYÜY	ÊNÂY
-YÜY
-H]\ÂÜ
-]HHÈHLÈJÊÊHÂÛÛÝHØÝ[Y[ÜX]Q[[Y[
-	Ù]ÊNÂÛ\ÜÓ[YHH	Ü[ÙKYÝ	È
-ÈÛÖÓX]ÛÜX][ÛJ
-H
-ÛË[Ý
-WNÂÜY\[Ú[
-
-NÂBÙ][\[
+<!-- ── HOW IT WORKS ────────────────────────────────────── -->
+<section id="how">
+  <div class="container">
+    <div class="section-tag">How it works</div>
+    <h2 class="section-title">From raw news to<br>actionable intelligence.</h2>
+    <div class="divider"></div>
 
+    <div class="steps">
+      <div class="step">
+        <div class="step-num s1">01</div>
+        <div class="step-title">Data Ingestion</div>
+        <div class="step-text">
+          GDELT monitors 100+ languages across hundreds of thousands of news sources worldwide,
+          generating a structured record of every reported global event — in real time.
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num s2">02</div>
+        <div class="step-title">Index Construction</div>
+        <div class="step-text">
+          Events are classified across 20+ conflict dimensions — military escalation, terrorism,
+          political crisis, human rights — and aggregated into daily country-level indices.
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num s3">03</div>
+        <div class="step-title">Predictive Modelling</div>
+        <div class="step-text">
+          Time-series forecasting models project each index up to 12 months forward,
+          providing confidence intervals and directional trend signals.
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num s4">04</div>
+        <div class="step-title">Intelligence Delivery</div>
+        <div class="step-text">
+          Interactive dashboards, narrative Q&amp;A, and country risk profiles
+          deliver insights to analysts in the format they need, when they need it.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-HOÂÛÛÝÝÈHÜY]Y\TÙ[XÝÜ[
-	Ë[ÙKYÝ	ÊNÂÜ
-]HHÈH
-NÈJÊÊHÂÛÛÝYHX]ÛÜX][ÛJ
-H
-ÝË[Ý
-NÂÝÖÚYKÛ\ÜÓ[YHH	Ü[ÙKYÝ	È
-ÈÛÖÓX]ÛÜX][ÛJ
-H
-ÛË[Ý
-WNÂBKL
-NÂJJ
-NÂËÈ8¥ 8¥ ÐÔÓUPS8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ KBÛÛÝØÙ\\H]È[\ÙXÝ[ÛØÙ\\
-[Y\ÊHOÂ[Y\ËÜXXÚ
-[HOÂY
-[K\Ò[\ÙXÝ[ÊHÂ[K\Ù]Ý[KÜXÚ]HH	ÌIÎÂ[K\Ù]Ý[K[ÙÜHH	Ý[Û]VJ
-IÎÂBJNÂKÈ\ÚÛHJNÂØÝ[Y[]Y\TÙ[XÝÜ[
-	ÜÙXÝ[ÛÝ\Ø\ÙKXØ\ËZ][IÊKÜXXÚ
-[OÂ[Ý[KÜXÚ]HH	Ì	ÎÂ[Ý[K[ÙÜHH	Ý[Û]VJ
-IÎÂ[Ý[K[Ú][ÛH	ÛÜXÚ]HË[ÙÜHÉÎÂØÙ\\ØÙ\J[
-NÂJNÂÜØÜ\ØÙOÚ[ Trend detection Â· Auto-assessment</div>
+<!-- ── PLATFORM ────────────────────────────────────────── -->
+<section id="platform">
+  <div class="container">
+    <div class="platform-wrap">
+
+      <div>
+        <div class="section-tag">The Platform</div>
+        <h2 class="section-title">Everything you need in one place.</h2>
+        <div class="divider"></div>
+        <p style="font-size:0.85rem;color:var(--silver);line-height:1.75;margin-bottom:8px;">
+          The NERAI Intelligence Hub brings together every layer of analysis —
+          from raw index trends to AI-generated risk narratives — in a clean,
+          professional interface.
+        </p>
+
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon fi-blue">📊</div>
+            <div class="feature-body">
+              <div class="feature-name">Global Risk Indices</div>
+              <div class="feature-desc">Daily-updated country × topic heatmaps with interactive charting. Compare trajectories across nations and timeframes.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon fi-green">🔮</div>
+            <div class="feature-body">
+              <div class="feature-name">12-Month Forecasts</div>
+              <div class="feature-desc">Prophet-based time-series models with confidence bands project how each index will evolve through the year ahead.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon fi-amber">🌍</div>
+            <div class="feature-body">
+              <div class="feature-name">Country Profile Pages</div>
+              <div class="feature-desc">Deep-dive profiles for 80+ countries: risk score breakdowns, trend sparklines, and news event feeds.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon fi-purple">🔍</div>
+            <div class="feature-body">
+              <div class="feature-name">Narrative Intelligence Q&amp;A</div>
+              <div class="feature-desc">Ask natural-language questions — "What is the conflict trajectory for Iran?", "How does the Middle East war affect energy markets?" — and receive a structured analysis: recent 7-day movements, 12-month projections, and a synthesised assessment.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon fi-red">📰</div>
+            <div class="feature-body">
+              <div class="feature-name">Live News Feed</div>
+              <div class="feature-desc">Real-time GDELT-sourced news events filtered by country and topic, providing the human context behind every number.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="dashboard-preview">
+          <div class="dp-bar">
+            <div class="dp-dot" style="background:#ff5f56;"></div>
+            <div class="dp-dot" style="background:#ffbd2e;"></div>
+            <div class="dp-dot" style="background:#27c93f;"></div>
+            <div class="dp-url">neraicorp.com/dashboard</div>
+          </div>
+          <div class="dp-overlay">
+            <iframe class="live-dash"
+              src="https://nerai-intelligence.streamlit.app/?embedded=true"
+              title="NERAI Intelligence Hub"
+              loading="lazy"
+              allow="fullscreen"
+              sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-downloads allow-modals allow-pointer-lock">
+            </iframe>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:14px;">
+          <a href="https://nerai-intelligence.streamlit.app/" target="_blank"
+             style="font-size:0.72rem;color:var(--teal);text-decoration:none;letter-spacing:0.05em;">
+            Open full dashboard →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── USE CASES ───────────────────────────────────────── -->
+<section id="usecases">
+  <div class="container">
+    <div style="text-align:center;max-width:580px;margin:0 auto 0;">
+      <div class="section-tag" style="justify-content:center;display:flex;">Use Cases</div>
+      <h2 class="section-title">Built for those who need to know first.</h2>
+      <div class="divider" style="margin:20px auto;"></div>
+    </div>
+
+    <div class="cases-grid">
+      <div class="case-card">
+        <span class="case-emoji">🏦</span>
+        <div class="case-title">Investment & Finance</div>
+        <div class="case-text">
+          Portfolio managers and sovereign risk analysts use NERAI to identify geopolitical risk
+          in emerging markets before volatility reaches asset prices. Early signals on political
+          instability, active conflict risk, and bilateral deterioration.
+        </div>
+      </div>
+      <div class="case-card">
+        <span class="case-emoji">🏢</span>
+        <div class="case-title">Corporate Risk & Compliance</div>
+        <div class="case-text">
+          Multinationals use NERAI to monitor operating environments in real time.
+          Supply chain disruptions, workforce safety assessments, and market-entry
+          decisions backed by objective, data-driven risk scores.
+        </div>
+      </div>
+      <div class="case-card">
+        <span class="case-emoji">🏛️</span>
+        <div class="case-title">Government & Diplomacy</div>
+        <div class="case-text">
+          Diplomatic services and policy research institutions use NERAI for
+          early warning on regional instability, conflict escalation forecasting,
+          and evidence-based briefings that complement traditional intelligence.
+        </div>
+      </div>
+      <div class="case-card">
+        <span class="case-emoji">🎓</span>
+        <div class="case-title">Think Tanks & Academia</div>
+        <div class="case-text">
+          Researchers access reproducible, source-transparent risk metrics for
+          cross-country comparative studies, conflict prediction research,
+          and event-driven analysis that scales beyond manual coding.
+        </div>
+      </div>
+      <div class="case-card">
+        <span class="case-emoji">🛡️</span>
+        <div class="case-title">Security & Defence</div>
+        <div class="case-text">
+          Security organisations leverage NERAI's 12-month forecasts and
+          What-If scenario modelling to anticipate escalation vectors,
+          assess regional spillover risk, and prioritise intelligence focus.
+        </div>
+      </div>
+      <div class="case-card">
+        <span class="case-emoji">📡</span>
+        <div class="case-title">Media & Journalism</div>
+        <div class="case-text">
+          Investigative journalists and media organisations use NERAI to
+          identify data-backed story leads — connecting news events to
+          broader structural trends invisible to daily reporting cycles.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── METHODOLOGY ─────────────────────────────────────── -->
+<section id="methodology">
+  <div class="container">
+    <div class="method-grid">
+
+      <div>
+        <div class="section-tag">Methodology</div>
+        <h2 class="section-title">Transparent. Reproducible. Rigorous.</h2>
+        <div class="divider"></div>
+        <p style="font-size:0.85rem;color:var(--silver);line-height:1.75;margin-bottom:32px;">
+          NERAI is built on open, peer-reviewed data sources and documented methodology —
+          ensuring every index value can be traced back to its source events.
+          There are no black boxes.
+        </p>
+
+        <div class="pipeline">
+          <div class="pipe-step">
+            <div class="pipe-num">1</div>
+            <div class="pipe-text">
+              <strong>Source: GDELT Project</strong>
+              <span>Global Database of Events, Language and Tone — 100+ languages,
+              real-time global coverage, updated every 15 minutes.</span>
+            </div>
+          </div>
+          <div class="pipe-step">
+            <div class="pipe-num">2</div>
+            <div class="pipe-text">
+              <strong>Event Classification & Filtering</strong>
+              <span>Events are filtered by actor country and coded against
+              20+ CAMEO-based conflict and instability categories.</span>
+            </div>
+          </div>
+          <div class="pipe-step">
+            <div class="pipe-num">3</div>
+            <div class="pipe-text">
+              <strong>Index Aggregation</strong>
+              <span>Daily event counts are normalised, smoothed, and
+              aggregated into per-country, per-topic risk indices.</span>
+            </div>
+          </div>
+          <div class="pipe-step">
+            <div class="pipe-num">4</div>
+            <div class="pipe-text">
+              <strong>Forecasting: Facebook Prophet</strong>
+              <span>Industry-standard time-series models generate
+              12-month projections with upper/lower confidence intervals.</span>
+            </div>
+          </div>
+          <div class="pipe-step">
+            <div class="pipe-num">5</div>
+            <div class="pipe-text">
+              <strong>Validation & Backtesting</strong>
+              <span>Models are regularly backtested against historical crises
+              to verify predictive accuracy and flag drift.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-tag" style="margin-bottom:20px;">Data Architecture</div>
+        <div class="data-sources">
+          <div class="ds-item">
+            <div class="ds-icon">🌐</div>
+            <div>
+              <div class="ds-label">GDELT Project</div>
+              <div class="ds-desc">Primary event data · Real-time · Open access</div>
+            </div>
+            <span class="ds-badge">Core</span>
+          </div>
+          <div class="ds-item">
+            <div class="ds-icon">📊</div>
+            <div>
+              <div class="ds-label">Risk Index Engine</div>
+              <div class="ds-desc">2,400 country×topic series · Daily granularity</div>
+            </div>
+            <span class="ds-badge">Proprietary</span>
+          </div>
+          <div class="ds-item">
+            <div class="ds-icon">🔮</div>
+            <div>
+              <div class="ds-label">Prophet Forecast Layer</div>
+              <div class="ds-desc">28,800 projection rows · 12-month horizon</div>
+            </div>
+            <span class="ds-badge">Models</span>
+          </div>
+          <div class="ds-item">
+            <div class="ds-icon">🤖</div>
+            <div>
+              <div class="ds-label">Narrative Analysis Engine</div>
+              <div class="ds-desc">NL Q&A · Trend detection · Auto-assessment</div>
             </div>
             <span class="ds-badge">AI Layer</span>
           </div>
           <div class="ds-item">
-            <div class="ds-icon">ð°</div>
+            <div class="ds-icon">📰</div>
             <div>
               <div class="ds-label">Live News Integration</div>
-              <div class="ds-desc">GDELT event stream Â· Real-time article links</div>
+              <div class="ds-desc">GDELT event stream · Real-time article links</div>
             </div>
             <span class="ds-badge">Live</span>
           </div>
@@ -817,48 +1113,48 @@ NÂJNÂÜØÜ\ØÙOÚ[ Trend detection Â· Auto-ass
   </div>
 </section>
 
-<!-- ââ WHAT-IF âââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ── WHAT-IF ─────────────────────────────────────────── -->
 <section id="whatif">
   <div class="container">
     <div class="whatif-inner">
       <div>
         <div class="section-tag">What-If Analysis</div>
-        <h2 class="whatif-title">What happens if<br>sanctions escalate?</h2>
+        <h2 class="whatif-title">What happens if<br>the Iran conflict expands?</h2>
         <p class="whatif-sub">
-          NERAI's What-If engine lets analysts model hypothetical scenarios â
-          "What if the Iran nuclear deal collapses?", "What if Turkey escalates
-          its military operations?" â and see the projected impact on
-          risk indices across interconnected countries and topics.
+          NERAI's What-If engine lets analysts model hypothetical scenarios —
+          "What if Iran closes the Strait of Hormuz?", "What if the Iran-Israel-US
+          conflict draws in regional powers?", "What if ceasefire talks in Ukraine stall?" —
+          and project the cascading impact on risk indices across interconnected countries.
         </p>
         <a href="https://nerai-intelligence.streamlit.app/" target="_blank" class="btn-primary">
-          Explore the Platform â
+          Explore the Platform →
         </a>
       </div>
 
       <div class="whatif-scenarios">
         <div class="scenario">
-          <span class="sc-icon">â¡</span>
+          <span class="sc-icon">⚡</span>
           <div>
             <div class="sc-label">Conflict Escalation</div>
-            <div class="sc-text">Model the risk ripple effect of military escalation in a specific theatre â tracing impact on neighbouring countries and allied networks.</div>
+            <div class="sc-text">Model the risk ripple effect of military escalation in a specific theatre — tracing impact on neighbouring countries and allied networks.</div>
           </div>
         </div>
         <div class="scenario">
-          <span class="sc-icon">ð</span>
+          <span class="sc-icon">📉</span>
           <div>
-            <div class="sc-label">Sanctions & Economic Pressure</div>
-            <div class="sc-text">Simulate how a sanctions package affects political stability indices â and which secondary actors are most exposed.</div>
+            <div class="sc-label">Iran-US-Israel Conflict Escalation</div>
+            <div class="sc-text">Model how an expansion of the active Iran-US-Israel conflict — including Strait of Hormuz blockade or missile strikes — ripples across regional stability and energy markets.</div>
           </div>
         </div>
         <div class="scenario">
-          <span class="sc-icon">ð</span>
+          <span class="sc-icon">🔄</span>
           <div>
             <div class="sc-label">Leadership Transition</div>
             <div class="sc-text">Assess how a change of government in a key country could shift its risk profile and bilateral relationship indicators.</div>
           </div>
         </div>
         <div class="scenario">
-          <span class="sc-icon">ð</span>
+          <span class="sc-icon">🌊</span>
           <div>
             <div class="sc-label">Regional Spillover</div>
             <div class="sc-text">Identify which countries are most exposed to instability contagion from a given conflict zone.</div>
@@ -869,7 +1165,7 @@ NÂJNÂÜØÜ\ØÙOÚ[ Trend detection Â· Auto-ass
   </div>
 </section>
 
-<!-- ââ CTA âââââââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ── CTA ─────────────────────────────────────────────── -->
 <section id="cta">
   <div class="container">
     <div class="cta-inner">
@@ -877,12 +1173,12 @@ NÂJNÂÜØÜ\ØÙOÚ[ Trend detection Â· Auto-ass
         Intelligence that moves<br>at the speed of events.
       </h2>
       <p class="cta-sub">
-        Explore the live NERAI Intelligence Hub â real data, real forecasts,
+        Explore the live NERAI Intelligence Hub — real data, real forecasts,
         and real-time analysis for a world that does not wait.
       </p>
       <div class="cta-actions">
         <a href="https://nerai-intelligence.streamlit.app/" target="_blank" class="btn-primary">
-          Open the Dashboard â
+          Open the Dashboard →
         </a>
         <a href="mailto:serkvay13@gmail.com" class="btn-ghost">
           Get in Touch
@@ -892,13 +1188,13 @@ NÂJNÂÜØÜ\ØÙOÚ[ Trend detection Â· Auto-ass
   </div>
 </section>
 
-<!-- ââ FOOTER ââââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ── FOOTER ──────────────────────────────────────────── -->
 <footer>
   <div class="container">
     <div class="footer-inner">
       <div>
         <div class="footer-logo-text">NERAI</div>
-        <div class="footer-tagline">Geopolitical Intelligence Platform Â· Powered by GDELT</div>
+        <div class="footer-tagline">Geopolitical Intelligence Platform · Powered by GDELT</div>
       </div>
       <ul class="footer-links">
         <li><a href="#about">About</a></li>
@@ -906,14 +1202,14 @@ NÂJNÂÜØÜ\ØÙOÚ[ Trend detection Â· Auto-ass
         <li><a href="#methodology">Methodology</a></li>
         <li><a href="https://nerai-intelligence.streamlit.app/" target="_blank">Dashboard</a></li>
       </ul>
-      <div class="footer-copy">Â© 2026 NERAI. Data: GDELT Project (Open Access).</div>
+      <div class="footer-copy">© 2026 NERAI. Data: GDELT Project (Open Access).</div>
     </div>
   </div>
 </footer>
 
-<!-- ââ SCRIPTS âââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ── SCRIPTS ─────────────────────────────────────────── -->
 <script>
-  // ââ World pulse grid âââââââââââââââââââââââââââââââââ
+  // ── World pulse grid ─────────────────────────────────
   const grid = document.getElementById('worldPulse');
   const classes = ['hot','hot','warm','warm','warm','cool','cool','cool','mild','mild','','','',''];
   for (let i = 0; i < 80; i++) {
@@ -930,7 +1226,7 @@ NÂJNÂÜØÜ\ØÙOÚ[ Trend detection Â· Auto-ass
     dots[idx].className = 'pulse-dot ' + next;
   }, 400);
 
-  // ââ Smooth reveal on scroll âââââââââââââââââââââââââââ
+  // ── Smooth reveal on scroll ───────────────────────────
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
