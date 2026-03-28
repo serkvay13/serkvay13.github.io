@@ -486,6 +486,120 @@
       white-space: nowrap;
     }
 
+    /* ── AI ANALYST ──────────────────────────────────────── */
+    #ai-analyst {
+      background: var(--white);
+      border-top: 1px solid rgba(0,119,168,0.08);
+    }
+    .analyst-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .analyst-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent);
+      background: rgba(0,168,134,0.08);
+      border: 1px solid rgba(0,168,134,0.22);
+      border-radius: 20px; padding: 4px 12px; margin-bottom: 18px;
+    }
+    .analyst-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+      color: var(--navy); line-height: 1.2; margin-bottom: 18px;
+    }
+    .analyst-title em {
+      font-style: italic;
+      background: linear-gradient(90deg, var(--teal), var(--accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .analyst-desc {
+      font-size: 0.92rem; color: var(--silver); line-height: 1.8;
+      margin-bottom: 28px;
+    }
+    .analyst-flow {
+      display: flex; flex-direction: column; gap: 0;
+      margin-bottom: 32px;
+    }
+    .af-step {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(0,119,168,0.07);
+      position: relative;
+    }
+    .af-step:last-child { border-bottom: none; }
+    .af-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal2), var(--accent));
+      color: #fff; font-size: 0.65rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .af-label { font-size: 0.8rem; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
+    .af-sub   { font-size: 0.7rem; color: var(--silver); line-height: 1.6; }
+    .analyst-right { position: sticky; top: 88px; }
+    .analyst-terminal {
+      background: #0d1117;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(0,119,168,0.18);
+      box-shadow: 0 20px 60px rgba(13,31,60,0.15);
+    }
+    .at-bar {
+      background: #161b22;
+      padding: 10px 16px;
+      display: flex; align-items: center; gap: 7px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .at-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .at-label {
+      font-size: 0.6rem; color: rgba(255,255,255,0.3);
+      font-family: monospace; letter-spacing: 0.05em; margin-left: 4px;
+    }
+    .at-body { padding: 20px 22px; }
+    .at-query {
+      background: rgba(0,119,168,0.12);
+      border: 1px solid rgba(0,119,168,0.25);
+      border-radius: 8px; padding: 10px 14px;
+      font-size: 0.78rem; color: #a8d8ea; font-style: italic;
+      margin-bottom: 16px; line-height: 1.5;
+    }
+    .at-query::before {
+      content: '↳ '; color: rgba(0,212,170,0.6); font-style: normal;
+    }
+    .at-response {
+      font-size: 0.72rem; color: #c9d1d9; line-height: 1.85;
+    }
+    .at-response p { margin: 0 0 10px; }
+    .at-response p:last-child { margin-bottom: 0; }
+    .at-response strong { color: #e6edf3; }
+    .at-response .hl-up   { color: #f85149; font-weight: 600; }
+    .at-response .hl-down { color: #3fb950; font-weight: 600; }
+    .at-response .hl-data { color: #79c0ff; }
+    .at-footer {
+      padding: 10px 22px 14px;
+      font-size: 0.55rem; color: rgba(255,255,255,0.2);
+      font-family: monospace; letter-spacing: 0.07em;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .analyst-queries {
+      display: flex; flex-direction: column; gap: 8px; margin-top: 28px;
+    }
+    .aq-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 14px;
+      background: #f4f7fb;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.75rem; color: var(--silver);
+      cursor: default;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .aq-item:hover { border-color: rgba(0,119,168,0.3); background: #eaf1f8; color: var(--navy); }
+    .aq-icon { font-size: 0.9rem; flex-shrink: 0; }
+
     /* ── WHAT-IF ─────────────────────────────────────────── */
     #whatif { background: var(--navy2); border-top: 1px solid rgba(0,119,168,0.08); }
     .whatif-inner {
@@ -769,6 +883,7 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#platform">Platform</a></li>
+      <li><a href="#ai-analyst">AI Analyst</a></li>
       <li><a href="#methodology">Methodology</a></li>
       <li><a href="#usecases">Use Cases</a></li>
       <li><a href="https://nerai-intelligence.streamlit.app/" target="_blank" class="nav-cta">Open Dashboard →</a></li>
@@ -785,14 +900,14 @@
     <div class="hero-tag">Geopolitical Intelligence Platform</div>
 
     <h1 class="hero-title">
-      See the world's risks<br>
-      before they <em>become</em> crises.
+      Empowering decision-makers<br>
+      through <em>AI-native</em> geopolitical intelligence.
     </h1>
 
     <p class="hero-sub">
-      NERAI monitors millions of global news events in real time,
-      converts them into structured risk indices, and projects
-      country-level instability up to 12 months into the future.
+      NERAI fuses millions of global event signals with AI-driven analysis
+      to deliver decision-grade risk intelligence — quantified, forecast,
+      and explained in plain language.
     </p>
 
     <div class="hero-actions">
@@ -1295,6 +1410,88 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- ── AI ANALYST ─────────────────────────────────────── -->
+<section id="ai-analyst">
+  <div class="container">
+
+    <div class="analyst-grid">
+      <!-- Left: explanation -->
+      <div>
+        <div class="analyst-badge">✦ AI-Powered Intelligence</div>
+        <h2 class="analyst-title">Ask any question.<br>Get <em>expert-grade</em> analysis.</h2>
+        <p class="analyst-desc">
+          NERAI's AI Analyst combines live risk indices, 12-month forecasts,
+          and real-time GDELT news into a single coherent answer — written at
+          the level of a senior international relations analyst.
+          No dashboards to navigate, no data to interpret manually.
+          Just ask, and receive a precise, data-grounded assessment.
+        </p>
+
+        <div class="analyst-flow">
+          <div class="af-step">
+            <div class="af-num">1</div>
+            <div>
+              <div class="af-label">You ask a question in plain language</div>
+              <div class="af-sub">Any question about countries, risk topics, conflicts, or geopolitical trends — no syntax required.</div>
+            </div>
+          </div>
+          <div class="af-step">
+            <div class="af-num">2</div>
+            <div>
+              <div class="af-label">The system assembles all relevant data</div>
+              <div class="af-sub">7-day index movements, 12-month model forecasts, global risk movers, and the latest GDELT headlines — automatically gathered for the entities in your question.</div>
+            </div>
+          </div>
+          <div class="af-step">
+            <div class="af-num">3</div>
+            <div>
+              <div class="af-label">Claude claude-sonnet-4-6 synthesises the analysis</div>
+              <div class="af-sub">Anthropic's most capable model interprets the data as a senior geopolitical analyst would — establishing cause-effect links, referencing specific events, and projecting forward.</div>
+            </div>
+          </div>
+          <div class="af-step">
+            <div class="af-num">4</div>
+            <div>
+              <div class="af-label">You receive a decision-grade assessment</div>
+              <div class="af-sub">A structured 4–6 paragraph analysis with precise figures, trend context, and a forward-looking strategic outlook — in under 10 seconds.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="analyst-queries">
+          <div class="aq-item"><span class="aq-icon">🌍</span>"What is the current risk trajectory for Russia and China?"</div>
+          <div class="aq-item"><span class="aq-icon">⚡</span>"Which countries face the highest coup risk in the next 6 months?"</div>
+          <div class="aq-item"><span class="aq-icon">📊</span>"Why did Iran's political instability index spike this week?"</div>
+          <div class="aq-item"><span class="aq-icon">🔮</span>"What does the 12-month forecast say about stability in Southeast Asia?"</div>
+        </div>
+      </div>
+
+      <!-- Right: terminal mockup -->
+      <div class="analyst-right">
+        <div class="analyst-terminal">
+          <div class="at-bar">
+            <div class="at-dot" style="background:#ff5f56;"></div>
+            <div class="at-dot" style="background:#ffbd2e;"></div>
+            <div class="at-dot" style="background:#27c93f;"></div>
+            <div class="at-label">NERAI ANALYST · CLAUDE claude-sonnet-4-6</div>
+          </div>
+          <div class="at-body">
+            <div class="at-query">What is the risk outlook for Iran and the US right now?</div>
+            <div class="at-response">
+              <p>Iran's <strong>Military Escalation</strong> index registered a <span class="hl-up">+22.4% week-on-week surge</span> through March 26, driven by a sharp increase in GDELT-tracked confrontational events involving the IRGC and regional proxies in Iraq and Yemen. The <span class="hl-data">International Crisis index rose 17.1%</span> in parallel, the sharpest 7-day movement recorded in the past four months.</p>
+              <p>Concurrent GDELT headlines from Reuters and Al-Monitor point to renewed US carrier group deployments in the Strait of Hormuz and expanded Treasury sanctions on Iranian petrochemical networks as the primary drivers. The <strong>US Bilateral Deterioration</strong> index — which tracks adversarial event frequency between Washington and Tehran — rose <span class="hl-up">+18.9%</span>, confirming the data-to-news causal link.</p>
+              <p>The 12-month Prophet model projects Iran's <strong>Military Crisis index to rise a further +31%</strong> by February 2026, contingent on current trajectory. The US forward outlook is more contained: <span class="hl-down">Political Instability indices are forecast to ease –8.4%</span> as electoral uncertainty dissipates, though sanctions-related Economic Pressure metrics are expected to climb +14%.</p>
+              <p><strong>Strategic outlook:</strong> The Iran–US dyad is entering its most structurally volatile phase since 2020. Analysts should watch the Strait of Hormuz shipping disruption index and Saudi bilateral indicators as leading edge signals of escalatory spillover.</p>
+            </div>
+          </div>
+          <div class="at-footer">SOURCE: GDELT PROJECT · NERAI INDICES · PROPHET FORECAST · DATA TO 26 MAR 2026</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
