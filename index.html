@@ -1016,14 +1016,75 @@
             <div class="dp-dot" style="background:#27c93f;"></div>
             <div class="dp-url">neraicorp.com/dashboard</div>
           </div>
-          <div class="dp-overlay">
-            <iframe class="live-dash"
-              src="https://nerai-intelligence.streamlit.app/?embedded=true"
-              title="NERAI Intelligence Hub"
-              loading="lazy"
-              allow="fullscreen"
-              sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-downloads allow-modals allow-pointer-lock">
-            </iframe>
+          <div class="dp-overlay" style="display:flex;background:#0d0f1a;position:relative;overflow:hidden;">
+            <!-- Dashboard Mockup -->
+            <div style="display:flex;width:100%;height:100%;font-family:'Inter', sans-serif;">
+              <!-- Sidebar -->
+              <div style="width:25%;background:#0a0d17;padding:24px 16px;border-right:1px solid rgba(0,212,255,0.1);display:flex;flex-direction:column;">
+                <div style="font-size:18px;font-weight:700;color:#00d4ff;margin-bottom:32px;letter-spacing:0.05em;">NERAI</div>
+                <nav style="flex:1;display:flex;flex-direction:column;gap:12px;">
+                  <a href="#" onclick="return false;" style="color:#8892b0;text-decoration:none;padding:10px 12px;border-radius:6px;font-size:14px;transition:all 0.2s;background:rgba(0,212,255,0.1);">HOME</a>
+                  <a href="#" onclick="return false;" style="color:#8892b0;text-decoration:none;padding:10px 12px;border-radius:6px;font-size:14px;transition:all 0.2s;">INDICES</a>
+                  <a href="#" onclick="return false;" style="color:#8892b0;text-decoration:none;padding:10px 12px;border-radius:6px;font-size:14px;transition:all 0.2s;">COUNTRY PROFILE</a>
+                  <a href="#" onclick="return false;" style="color:#8892b0;text-decoration:none;padding:10px 12px;border-radius:6px;font-size:14px;transition:all 0.2s;">NEWS</a>
+                  <a href="#" onclick="return false;" style="color:#8892b0;text-decoration:none;padding:10px 12px;border-radius:6px;font-size:14px;transition:all 0.2s;">PREDICTIONS</a>
+                  <a href="#" onclick="return false;" style="color:#8892b0;text-decoration:none;padding:10px 12px;border-radius:6px;font-size:14px;transition:all 0.2s;">INSIGHTS</a>
+                </nav>
+              </div>
+
+              <!-- Main Content -->
+              <div style="flex:1;padding:32px;display:flex;flex-direction:column;">
+                <!-- Header -->
+                <div style="margin-bottom:32px;">
+                  <h1 style="color:#ffffff;font-size:28px;margin:0 0 8px 0;font-weight:700;">NERAI Intelligence Hub</h1>
+                  <p style="color:#8892b0;font-size:14px;margin:0;">Real-time geopolitical risk intelligence</p>
+                </div>
+
+                <!-- Stats Grid -->
+                <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px;">
+                  <div style="background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.2);border-radius:8px;padding:16px;">
+                    <div style="color:#8892b0;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Countries Tracked</div>
+                    <div style="color:#00d4ff;font-size:24px;font-weight:700;">60</div>
+                  </div>
+                  <div style="background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.2);border-radius:8px;padding:16px;">
+                    <div style="color:#8892b0;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Risk Topics</div>
+                    <div style="color:#00d4ff;font-size:24px;font-weight:700;">40</div>
+                  </div>
+                  <div style="background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.2);border-radius:8px;padding:16px;">
+                    <div style="color:#8892b0;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Data Points</div>
+                    <div style="color:#00d4ff;font-size:24px;font-weight:700;">2400+</div>
+                  </div>
+                  <div style="background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.2);border-radius:8px;padding:16px;">
+                    <div style="color:#8892b0;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Update Frequency</div>
+                    <div style="color:#00d4ff;font-size:24px;font-weight:700;">Daily</div>
+                  </div>
+                </div>
+
+                <!-- Country Risk Cards -->
+                <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+                  <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(0,212,255,0.15);border-radius:8px;padding:16px;text-align:center;">
+                    <div style="color:#ffffff;font-size:16px;font-weight:600;margin-bottom:12px;">United States</div>
+                    <div style="background:linear-gradient(135deg, #00d4ff, #0099cc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:32px;font-weight:700;">4.2</div>
+                    <div style="color:#8892b0;font-size:12px;margin-top:8px;">Risk Score</div>
+                  </div>
+                  <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,107,107,0.3);border-radius:8px;padding:16px;text-align:center;">
+                    <div style="color:#ffffff;font-size:16px;font-weight:600;margin-bottom:12px;">Russia</div>
+                    <div style="background:linear-gradient(135deg, #ff6b6b, #ff4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:32px;font-weight:700;">8.1</div>
+                    <div style="color:#8892b0;font-size:12px;margin-top:8px;">Risk Score</div>
+                  </div>
+                  <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,193,7,0.3);border-radius:8px;padding:16px;text-align:center;">
+                    <div style="color:#ffffff;font-size:16px;font-weight:600;margin-bottom:12px;">China</div>
+                    <div style="background:linear-gradient(135deg, #ffc107, #ff9800);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:32px;font-weight:700;">6.8</div>
+                    <div style="color:#8892b0;font-size:12px;margin-top:8px;">Risk Score</div>
+                  </div>
+                  <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,152,0,0.3);border-radius:8px;padding:16px;text-align:center;">
+                    <div style="color:#ffffff;font-size:16px;font-weight:600;margin-bottom:12px;">Turkey</div>
+                    <div style="background:linear-gradient(135deg, #ff9800, #ff6b6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:32px;font-weight:700;">7.3</div>
+                    <div style="color:#8892b0;font-size:12px;margin-top:8px;">Risk Score</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div style="text-align:center;margin-top:14px;">
@@ -1305,11 +1366,10 @@
         <div class="pricing-price">€19<span>/mo</span></div>
         <div class="pricing-trial">✦ 7-day free trial</div>
         <ul class="pricing-features">
-          <li>80+ country risk indices</li>
-          <li>Daily index updates</li>
-          <li>What-If scenario analysis</li>
-          <li>12-month forecast horizon</li>
-          <li>Web dashboard access</li>
+          <li>API access</li>
+          <li>CSV data export</li>
+          <li>Early access to new features</li>
+          <li>Priority support</li>
         </ul>
         <a href="#" class="btn-paddle btn-paddle-outline"
            onclick="Paddle.Checkout.open({ items: [{ priceId: 'pri_01kmnfqvszkm6bm3xndybke92q', quantity: 1 }], settings: { successUrl: 'https://neraicorp.com/welcome.html' } }); return false;">
@@ -1325,10 +1385,11 @@
         <div class="pricing-trial">✦ 7-day free trial</div>
         <ul class="pricing-features">
           <li>Everything in Solo</li>
-          <li>API access</li>
-          <li>CSV data export</li>
-          <li>Early access to new features</li>
-          <li>Priority support</li>
+          <li>80+ country risk indices</li>
+          <li>Daily index updates</li>
+          <li>What-If scenario analysis</li>
+          <li>12-month forecast horizon</li>
+          <li>Web dashboard access</li>
         </ul>
         <a href="#" class="btn-paddle btn-paddle-primary"
            onclick="Paddle.Checkout.open({ items: [{ priceId: 'pri_01kmnfvtkysdtbc6ddvqx0fffw', quantity: 1 }], settings: { successUrl: 'https://neraicorp.com/welcome.html' } }); return false;">
