@@ -1,63 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to NERAI — Access Details</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0a0e1a; color: #e2e8f0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; }
-    .container { max-width: 600px; width: 100%; text-align: center; }
-    .logo { font-size: 1.1rem; font-weight: 700; letter-spacing: 0.3em; color: #64b5f6; text-transform: uppercase; margin-bottom: 2.5rem; opacity: 0.9; }
-    .checkmark { width: 72px; height: 72px; background: linear-gradient(135deg, #1a3a5c, #0d2540); border: 2px solid #2196f3; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-size: 2rem; box-shadow: 0 0 30px rgba(33,150,243,0.3); }
-    h1 { font-size: 1.8rem; font-weight: 700; color: #ffffff; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
-    .subtitle { color: #94a3b8; font-size: 1rem; margin-bottom: 2.5rem; line-height: 1.6; }
-    .access-card { background: linear-gradient(135deg, #0f1e35, #0a1628); border: 1px solid #2196f3; border-radius: 16px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 0 40px rgba(33,150,243,0.15); }
-    .access-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #64b5f6; margin-bottom: 0.75rem; }
-    .access-code { font-family: 'Courier New', monospace; font-size: 2rem; font-weight: 700; color: #ffffff; letter-spacing: 0.15em; background: rgba(33,150,243,0.1); border: 1px solid rgba(33,150,243,0.3); border-radius: 10px; padding: 1rem 1.5rem; margin-bottom: 0.75rem; cursor: pointer; transition: background 0.2s; }
-    .access-code:hover { background: rgba(33,150,243,0.18); }
-    .copy-hint { font-size: 0.78rem; color: #64748b; }
-    .copy-hint.copied { color: #4ade80; }
-    .dashboard-btn { display: inline-block; background: linear-gradient(135deg, #1565c0, #1976d2); color: #ffffff; text-decoration: none; padding: 0.9rem 2.5rem; border-radius: 10px; font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; transition: all 0.2s; margin-bottom: 2rem; box-shadow: 0 4px 20px rgba(21,101,192,0.4); }
-    .dashboard-btn:hover { background: linear-gradient(135deg, #1976d2, #1e88e5); transform: translateY(-1px); }
-    .steps { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; text-align: left; }
-    .steps-title { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #64b5f6; margin-bottom: 1rem; }
-    .step { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem; font-size: 0.9rem; color: #cbd5e1; line-height: 1.5; }
-    .step:last-child { margin-bottom: 0; }
-    .step-num { background: rgba(33,150,243,0.2); color: #64b5f6; border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-    .footer-note { font-size: 0.8rem; color: #475569; line-height: 1.6; }
-    .footer-note a { color: #64b5f6; text-decoration: none; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Welcome to NERAI &mdash; Access Details</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+     background:linear-gradient(135deg,#0d1f3c 0%,#0a1628 100%);
+     min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.card{background:rgba(255,255,255,0.04);border:1px solid rgba(0,119,168,0.25);
+      border-radius:20px;padding:48px 40px;max-width:480px;width:100%;text-align:center;
+      backdrop-filter:blur(10px)}
+.logo{font-size:12px;letter-spacing:3px;color:#0077a8;text-transform:uppercase;
+      font-weight:700;margin-bottom:32px}
+.check{width:64px;height:64px;background:rgba(0,119,168,0.15);
+       border:2px solid #0077a8;border-radius:50%;display:flex;align-items:center;
+       justify-content:center;margin:0 auto 24px;font-size:28px}
+.plan-badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:11px;
+            font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
+.plan-solo{background:rgba(0,119,168,0.2);color:#66aacc;border:1px solid rgba(0,119,168,0.4)}
+.plan-pro {background:rgba(0,212,170,0.15);color:#7ed8c0;border:1px solid rgba(0,212,170,0.4)}
+h1{font-size:26px;font-weight:700;color:#ffffff;margin-bottom:8px}
+.sub{font-size:14px;color:#7a9ab8;margin-bottom:32px;line-height:1.6}
+.code-box{background:rgba(0,0,0,0.3);border:1px solid rgba(0,119,168,0.3);
+          border-radius:12px;padding:20px;margin-bottom:8px;cursor:pointer;
+          transition:border-color .2s}
+.code-box:hover{border-color:#0077a8}
+.code-label{font-size:11px;letter-spacing:2px;color:#4a7a9a;text-transform:uppercase;
+            margin-bottom:10px}
+.code-value{font-size:22px;font-weight:800;color:#ffffff;letter-spacing:3px;
+            font-family:'Courier New',monospace}
+.copy-hint{font-size:11px;color:#3a5a7a;margin-bottom:24px}
+.btn-dash{display:block;background:#0077a8;color:white;text-decoration:none;
+          padding:16px 24px;border-radius:12px;font-weight:700;font-size:15px;
+          margin-bottom:12px;transition:background .2s}
+.btn-dash:hover{background:#005f87}
+.features{background:rgba(0,0,0,0.2);border-radius:12px;padding:20px;
+           margin-top:24px;text-align:left}
+.features h3{font-size:11px;letter-spacing:2px;color:#4a7a9a;text-transform:uppercase;
+             margin-bottom:12px}
+.features li{color:#7a9ab8;font-size:13px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.05);
+             list-style:none;display:flex;gap:8px}
+.features li:last-child{border:none}
+.features li::before{content:'&#10003;';color:#0077a8}
+.copied{color:#7ed8c0;font-size:12px;margin-top:4px;display:none}
+</style>
 </head>
 <body>
-  <div class="container">
-    <div class="logo">NERAI Intelligence</div>
-    <div class="checkmark">&#10003;</div>
-    <h1>Payment Confirmed</h1>
-    <p class="subtitle">Your subscription is active. Use the code below to access the NERAI Intelligence Dashboard.</p>
-    <div class="access-card">
-      <div class="access-label">Your Access Code</div>
-      <div class="access-code" id="codeBox" onclick="copyCode()">NERAI-2026</div>
-      <div class="copy-hint" id="copyHint">Click the code to copy</div>
-    </div>
-    <a href="https://nerai-intelligence.streamlit.app" class="dashboard-btn" target="_blank">Open NERAI Dashboard &rarr;</a>
-    <div class="steps">
-      <div class="steps-title">How to access</div>
-      <div class="step"><div class="step-num">1</div><span>Click "Open NERAI Dashboard" above</span></div>
-      <div class="step"><div class="step-num">2</div><span>Enter your access code <strong>NERAI-2026</strong> in the field</span></div>
-      <div class="step"><div class="step-num">3</div><span>Click Enter &mdash; you're in. The code works on any device.</span></div>
-    </div>
-    <p class="footer-note">Save this page or screenshot your code.<br/>Questions? <a href="mailto:serkvay13@gmail.com">serkvay13@gmail.com</a></p>
+<div class="card">
+  <div class="logo">&#9635; NERAI Intelligence</div>
+  <div class="check">&#10003;</div>
+
+  <div id="planBadge"></div>
+  <h1>Payment Confirmed</h1>
+  <p class="sub" id="subText">Your subscription is active. Use the code below to access the NERAI Intelligence Dashboard.</p>
+
+  <div class="code-box" onclick="copyCode()">
+    <div class="code-label">Your Access Code</div>
+    <div class="code-value" id="codeValue">NERAI-PRO-26</div>
   </div>
-  <script>
-    function copyCode() {
-      navigator.clipboard.writeText('NERAI-2026').then(function() {
-        var hint = document.getElementById('copyHint');
-        hint.textContent = 'Copied!';
-        hint.classList.add('copied');
-        setTimeout(function() { hint.textContent = 'Click the code to copy'; hint.classList.remove('copied'); }, 2000);
-      });
-    }
-  </script>
+  <div class="copy-hint">Click the code to copy &nbsp;&bull;&nbsp; Keep this safe</div>
+  <div class="copied" id="copiedMsg">&#10003; Copied to clipboard!</div>
+
+  <a href="https://nerai-intelligence.streamlit.app" class="btn-dash">Open NERAI Dashboard &rarr;</a>
+
+  <div class="features">
+    <h3 id="featTitle">Your Plan Includes</h3>
+    <ul id="featList"></ul>
+  </div>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const plan = (params.get('plan') || 'pro').toLowerCase();
+
+const plans = {
+  solo: {
+    code: 'NERAI-SOLO-26',
+    badge: '<span class="plan-badge plan-solo">Solo Plan</span>',
+    features: [
+      'Web dashboard &mdash; 80+ countries',
+      'All 20+ risk dimensions',
+      'Daily index updates',
+      'What-If scenario analysis',
+      '3-month history',
+      'Early access to new features'
+    ]
+  },
+  pro: {
+    code: 'NERAI-PRO-26',
+    badge: '<span class="plan-badge plan-pro">Pro Plan</span>',
+    features: [
+      'Everything in Solo',
+      '12-month full history',
+      'Unlimited What-If scenarios',
+      'CSV data export',
+      'API access',
+      'Country-specific risk alerts',
+      'Priority support'
+    ]
+  }
+};
+
+const p = plans[plan] || plans.pro;
+document.getElementById('planBadge').innerHTML = p.badge;
+document.getElementById('codeValue').textContent = p.code;
+document.getElementById('featList').innerHTML = p.features.map(f => '<li>' + f + '</li>').join('');
+
+function copyCode() {
+  const code = document.getElementById('codeValue').textContent;
+  navigator.clipboard.writeText(code).then(() => {
+    const msg = document.getElementById('copiedMsg');
+    msg.style.display = 'block';
+    setTimeout(() => { msg.style.display = 'none'; }, 2000);
+  });
+}
+</script>
 </body>
 </html>
