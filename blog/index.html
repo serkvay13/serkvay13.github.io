@@ -60,6 +60,7 @@
     .filter-btn { font-size: 0.78rem; font-weight: 500; padding: 6px 16px; border-radius: 20px; border: 1px solid var(--border);
                   background: var(--white); color: var(--silver); cursor: pointer; transition: all .2s; }
     .filter-btn:hover, .filter-btn.active { background: var(--teal); color: var(--white); border-color: var(--teal); }
+    .filter-btn.filter-alert:hover, .filter-btn.filter-alert.active { background: var(--red); border-color: var(--red); }
 
     /* ── POSTS GRID ── */
     .posts-section { padding: 16px 0 96px; }
@@ -150,6 +151,7 @@
     <div class="filters">
       <button class="filter-btn active" onclick="filterPosts('all')">All Reports</button>
       <button class="filter-btn" onclick="filterPosts('weekly')">Weekly Pulse</button>
+      <button class="filter-btn filter-alert" onclick="filterPosts('risk alert')">⚠ Risk Alerts</button>
       <button class="filter-btn" onclick="filterPosts('deep')">Deep Dives</button>
       <button class="filter-btn" onclick="filterPosts('forecast')">Forecasts</button>
     </div>
@@ -191,16 +193,22 @@
       grid.innerHTML = '<div class="empty"><h3>No reports in this category.</h3></div>';
       return;
     }
-    grid.innerHTML = posts.map(p => `
-      <a href="/blog/${p.slug}/" class="post-card">
-        <div class="card-tag">${p.category || 'Weekly Pulse'}</div>
+    grid.innerHTML = posts.map(p => {
+      const isAlert = (p.category || '').toLowerCase().includes('risk alert');
+      const borderStyle = isAlert ? 'border-color: rgba(201,48,72,0.3);' : '';
+      const tagStyle = isAlert ? 'color: var(--red);' : '';
+      const tagLine = isAlert ? 'background: linear-gradient(90deg, var(--red), #ea580c);' : '';
+      return `
+      <a href="/blog/${p.slug}/" class="post-card" style="${borderStyle}">
+        <div class="card-tag" style="${tagStyle}">${p.category || 'Weekly Pulse'}</div>
         <div class="card-title">${p.title}</div>
         <div class="card-excerpt">${p.excerpt}</div>
         <div class="card-footer">
           <span class="card-date">${p.date}</span>
-          <span class="card-arrow">Read report →</span>
+          <span class="card-arrow" style="${isAlert ? 'color:var(--red);' : ''}">Read report →</span>
         </div>
-      </a>`).join('');
+      </a>`;
+    }).join('');
   }
 
   function filterPosts(cat) {
