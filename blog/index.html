@@ -177,7 +177,7 @@
 
   async function loadPosts() {
     try {
-      const res = await fetch('/blog/posts.json');
+      const res = await fetch('/blog/posts.json?v=' + Date.now());
       allPosts = await res.json();
       document.getElementById('post-count').textContent = allPosts.length;
       renderPosts(allPosts);
@@ -225,5 +225,3 @@
 
   loadPosts();
 </script>
-</body>
-</html>
