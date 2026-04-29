@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>NERAI Risk Intelligence — Argentina-UK Falkland Islands Analysis</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f0f4f8;
+    color: #0d1f3c;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+  }
+  .infographic {
+    width: 860px;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 80px rgba(0,0,0,0.15);
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, #0d1f3c 0%, #1a3358 60%, #0a4a6e 100%);
+    padding: 36px 48px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    background: rgba(0,180,216,0.08);
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 200px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(0,180,216,0.05);
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+  .nerai-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo-dots {
+    display: grid;
+    grid-template-columns: repeat(3,10px);
+    gap: 3px;
+  }
+  .dot { width:10px; height:10px; border-radius: 50%; }
+  .d1{background:#1a2840;} .d2{background:#00c8e0;} .d3{background:#1a2840;}
+  .d4{background:#00c8e0;} .d5{background:#1a2840;} .d6{background:#00c8e0;}
+  .d7{background:#1a2840;} .d8{background:#00c8e0;} .d9{background:#1a2840;}
+  .logo-text { color:#fff; font-weight:800; font-size:22px; letter-spacing:-0.5px; }
+  .logo-text span { color:#00c8e0; }
+  .header-badge {
+    background: rgba(201,48,72,0.25);
+    border: 1px solid rgba(201,48,72,0.5);
+    color: #ff7089;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+  .header-title {
+    color: #fff;
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.1rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    max-width: 560px;
+  }
+  .header-subtitle {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin-bottom: 24px;
+  }
+  .header-flags {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .flag-pill {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .header-meta {
+    display: flex;
+    gap: 32px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .meta-item .val { color: #00c8e0; font-size: 1.3rem; font-weight: 700; font-family: 'Courier New', monospace; }
+  .meta-item .lbl { color: rgba(255,255,255,0.5); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 2px; }
+
+  /* ── EXEC SUMMARY ── */
+  .exec-summary {
+    background: linear-gradient(135deg, #fff8f0, #fff3f5);
+    border-left: 5px solid #c93048;
+    padding: 24px 48px;
+    border-bottom: 1px solid #ffe0e5;
+  }
+  .exec-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #c93048;
+    margin-bottom: 8px;
+  }
+  .exec-text {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #2d3748;
+    max-width: 720px;
+  }
+  .exec-text strong { color: #0d1f3c; }
+
+  /* ── SECTION WRAPPER ── */
+  .section { padding: 32px 48px; }
+  .section + .section { border-top: 1px solid #e8edf5; }
+  .section-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #0077a8;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label::after { content:''; flex:1; height:1px; background: linear-gradient(90deg, rgba(0,119,168,0.3), transparent); }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    color: #0d1f3c;
+    margin-bottom: 20px;
+  }
+
+  /* ── COUNTRY COMPARISON ── */
+  .country-grid {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    gap: 0;
+    align-items: start;
+  }
+  .country-card {
+    background: #f8faff;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #e2eaf5;
+  }
+  .country-name {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .country-flag {
+    width: 24px; height: 16px; border-radius: 3px;
+    display: inline-block;
+  }
+  .arg-flag { background: linear-gradient(180deg, #74acdf 0%, #74acdf 33%, #fff 33%, #fff 66%, #74acdf 66%); }
+  .uk-flag {
+    background: #012169;
+    position: relative;
+    overflow: hidden;
+  }
+  .index-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+  }
+  .index-name {
+    font-size: 0.72rem;
+    color: #5a6b82;
+    flex: 1;
+    font-weight: 500;
+  }
+  .index-val-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .index-val {
+    font-family: 'Courier New', monospace;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #0d1f3c;
+  }
+  .index-change {
+    font-size: 0.62rem;
+    font-weight: 600;
+    margin-top: 1px;
+  }
+  .up { color: #c93048; }
+  .down { color: #00a886; }
+  .index-bar-wrap {
+    flex: 0 0 80px;
+    height: 6px;
+    background: #e2eaf5;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .index-bar { height: 100%; border-radius: 3px; }
+  .bar-high { background: linear-gradient(90deg, #c93048, #ea580c); }
+  .bar-med  { background: linear-gradient(90deg, #ea580c, #f59e0b); }
+  .bar-low  { background: linear-gradient(90deg, #0077a8, #00a886); }
+
+  .vs-divider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+    gap: 6px;
+  }
+  .vs-text {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #c93048;
+    font-style: italic;
+  }
+  .vs-line { width:1px; height: 40px; background: #e2eaf5; }
+
+  /* ── INDEX CHART (SVG) ── */
+  .chart-section { background: #f8faff; border-radius: 12px; padding: 24px; margin-top: 0; }
+  .chart-title { font-size: 0.75rem; font-weight: 600; color: #0d1f3c; margin-bottom: 16px; }
+
+  /* ── SCENARIO BOXES ── */
+  .scenarios-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+  .scenario-box {
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .s1 { background: linear-gradient(135deg, #e8f5f0, #d4efea); border: 1px solid #b2dfdb; }
+  .s2 { background: linear-gradient(135deg, #fff8e1, #ffecc0); border: 1px solid #ffe082; }
+  .s3 { background: linear-gradient(135deg, #fde8ec, #f9c8d0); border: 1px solid #f48fb1; }
+  .scenario-prob {
+    font-family: 'Courier New', monospace;
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .s1 .scenario-prob { color: #00695c; }
+  .s2 .scenario-prob { color: #e65100; }
+  .s3 .scenario-prob { color: #c93048; }
+  .scenario-name {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+  }
+  .s1 .scenario-name { color: #00695c; }
+  .s2 .scenario-name { color: #e65100; }
+  .s3 .scenario-name { color: #c93048; }
+  .scenario-desc {
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: #374151;
+  }
+  .scenario-icon {
+    position: absolute;
+    top: 14px; right: 14px;
+    font-size: 1.4rem;
+    opacity: 0.5;
+  }
+
+  /* ── FORECAST SECTION ── */
+  .forecast-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .forecast-card {
+    background: #f8faff;
+    border-radius: 12px;
+    padding: 18px;
+    border: 1px solid #e2eaf5;
+  }
+  .forecast-country {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #5a6b82;
+    margin-bottom: 12px;
+  }
+  .forecast-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 8px;
+  }
+  .fc-name { font-size: 0.7rem; color: #5a6b82; flex: 1; }
+  .fc-vals { text-align: right; }
+  .fc-avg { font-family: 'Courier New', monospace; font-size: 0.75rem; font-weight: 600; color: #0077a8; }
+  .fc-max { font-family: 'Courier New', monospace; font-size: 0.65rem; color: #c93048; }
+  .fc-trend { font-size: 0.65rem; font-weight: 600; }
+  .fc-up { color: #c93048; }
+  .fc-dn { color: #00a886; }
+
+  /* ── TIMELINE ── */
+  .timeline-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e2eaf5;
+  }
+  .tl-cell {
+    padding: 20px 18px;
+    text-align: center;
+    border-right: 1px solid #e2eaf5;
+  }
+  .tl-cell:last-child { border-right: none; }
+  .tl-period { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #5a6b82; margin-bottom: 8px; }
+  .tl-prob-big {
+    font-family: 'Courier New', monospace;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .tl-label { font-size: 0.68rem; color: #5a6b82; }
+  .risk-low { color: #00a886; background: #f0faf7; }
+  .risk-med { color: #ea580c; background: #fff8f0; }
+  .risk-high { color: #c93048; background: #fff5f7; }
+
+  /* ── SIGNALS ── */
+  .signals-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .signal-card {
+    border-radius: 10px;
+    padding: 16px;
+    border-left: 4px solid;
+    background: #f8faff;
+  }
+  .sig-red-bd { border-color: #c93048; }
+  .sig-orange-bd { border-color: #ea580c; }
+  .sig-teal-bd { border-color: #0077a8; }
+  .sig-green-bd { border-color: #00a886; }
+  .signal-title { font-size: 0.72rem; font-weight: 700; color: #0d1f3c; margin-bottom: 5px; }
+  .signal-text { font-size: 0.72rem; color: #5a6b82; line-height: 1.5; }
+  .signal-val { font-family: 'Courier New', monospace; font-size: 0.78rem; font-weight: 700; }
+
+  /* ── QUOTE ── */
+  .quote-section {
+    background: linear-gradient(135deg, #0d1f3c, #0a3a5e);
+    padding: 28px 48px;
+    text-align: center;
+  }
+  .quote-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    color: #fff;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+  }
+  .quote-text span { color: #00c8e0; }
+  .quote-sub { color: rgba(255,255,255,0.4); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: #0d1f3c;
+    padding: 20px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-left { color: rgba(255,255,255,0.4); font-size: 0.68rem; line-height: 1.6; }
+  .footer-right { color: rgba(255,255,255,0.5); font-size: 0.68rem; text-align: right; }
+  .footer-right a { color: #00c8e0; text-decoration: none; }
+
+  /* ── SVG CHART STYLES ── */
+  .bar-chart-container { overflow: visible; }
+  text.chart-label { font-family: 'Inter', sans-serif; }
+</style>
+</head>
+<body>
+<div class="infographic">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div class="nerai-logo">
+        <div class="logo-dots">
+          <div class="dot d1"></div><div class="dot d2"></div><div class="dot d3"></div>
+          <div class="dot d4"></div><div class="dot d5"></div><div class="dot d6"></div>
+          <div class="dot d7"></div><div class="dot d8"></div><div class="dot d9"></div>
+        </div>
+        <div class="logo-text">NER<span>AI</span></div>
+      </div>
+      <div class="header-badge">⚠ Intelligence Report · April 2026</div>
+    </div>
+    <div class="header-title">Will Argentina Escalate Tensions with the UK over the Falkland Islands?</div>
+    <div class="header-subtitle">NERAI Quantitative Analysis · Data: GDELT · ACLED · World Bank · IMF · Satellite Feeds</div>
+    <div class="header-flags">
+      <div class="flag-pill">🇦🇷 Argentina</div>
+      <div class="flag-pill">🇬🇧 United Kingdom</div>
+      <div class="flag-pill">🏝 Falkland Islands / Islas Malvinas</div>
+    </div>
+    <div class="header-meta">
+      <div class="meta-item"><div class="val">0.0747</div><div class="lbl">ARG Military Escalation</div></div>
+      <div class="meta-item"><div class="val">+87.6%</div><div class="lbl">vs. 90-Day Baseline</div></div>
+      <div class="meta-item"><div class="val">0.051</div><div class="lbl">UK Military Clash</div></div>
+      <div class="meta-item"><div class="val">+49.4%</div><div class="lbl">UK vs. 30-Day Avg</div></div>
+    </div>
+  </div>
+
+  <!-- EXEC SUMMARY -->
+  <div class="exec-summary">
+    <div class="exec-label">Executive Summary</div>
+    <div class="exec-text">
+      A measurable but currently <strong>limited risk of escalation</strong> exists in the 30–90 day window. Argentina's International Crisis index has risen <strong>59.5%</strong> above its 90-day baseline while Military Escalation is up <strong>87.6%</strong>. The UK simultaneously shows rising Military Clash (<strong>+49.4%</strong> vs. 30-day avg, 7-day peak: 0.1021). An actual military clash within 30 days is assessed at <strong>15–20%</strong> probability, rising to <strong>35–45%</strong> over 90 days. The most likely outcome (<strong>55–65%</strong> probability) remains diplomatic posturing with military accompaniment.
+    </div>
+  </div>
+
+  <!-- COUNTRY COMPARISON -->
+  <div class="section">
+    <div class="section-label">Index Analysis</div>
+    <div class="section-title">Argentina vs. UK — Current Risk Index Readings</div>
+    <div class="country-grid">
+      <!-- ARGENTINA -->
+      <div class="country-card">
+        <div class="country-name" style="color:#2563eb;">🇦🇷 Argentina</div>
+        <div class="index-row">
+          <span class="index-name">Intl. Crisis</span>
+          <div class="index-bar-wrap"><div class="index-bar bar-med" style="width:35%"></div></div>
+          <div class="index-val-wrap">
+            <span class="index-val">0.0058</span>
+            <span class="index-change up">↑59.5% (90d)</span>
+          </div>
+        </div>
+        <div class="index-row">
+          <span class="index-name">Military Escalation</span>
+          <div class="index-bar-wrap"><div class="index-bar bar-high" style="width:55%"></div></div>
+          <div class="index-val-wrap">
+            <span class="index-val">0.0747</span>
+            <span class="index-change up">↑87.6% (90d)</span>
+          </div>
+        </div>
+        <div class="index-row">
+          <span class="index-name">Military Clash</span>
+          <div class="index-bar-wrap"><div class="index-bar bar-med" style="width:25%"></div></div>
+          <div class="index-val-wrap">
+            <span class="index-val">0.0135</span>
+            <span class="index-change up">7d peak: 0.3201</span>
+          </div>
+        </div>
+        <div class="index-row">
+          <span class="index-name">Military Crisis</span>
+          <div class="index-bar-wrap"><div class="index-bar bar-low" style="width:15%"></div></div>
+          <div class="index-val-wrap">
+            <span class="index-val">0.0034</span>
+            <span class="index-change down">↓28.2% (30d)</span>
+          </div>
+        </div>
+        <div class="index-row">
+          <span class="index-name">Intl. Threats</span>
+          <div class="index-bar-wrap"><div class="index-bar bar-low" style="width:5%"></div></div>
+          <div class="index-val-wrap">
+            <span class="index-val">0.0002</span>
+            <span class="index-change down">↓72.4% (7d)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- VS DIVIDER -->
+      <div class="vs-divider">
+        <div class="vs-line"></div>
+        <div class="vs-text">VS</div>
+        <div class="vs-line"></div>
+      </div>
+
+      <!-- UK -->
+      <div class="country-card">
+        <div class="country-name" style="color:#dc2626;">🇬🇧 United Kingdom</div>
+        <div class="index-row">
+          <span class="index-name">Intl. Crisis</span>
+          <div class="index-bar-wrap"><div class="index-bar bar-low" style="width:10%"></div></div>
+          <div class="index-val-wrap">
+            <span class="index-val">0.0006</span>
+            <span class="index-change up">↑87.5% (90d)</span>
+          </div>
+        </div>
+        <div class="index-row">
+          <span class="index-name">Military Escalation</span>
+          <div class="index-bar-wrap"><div class="index-bar bar-high" style="width:45%"></div></div>
+          <div class="index-val-wrap">
+            <span class="index-val">0.0618</span>
+            <span class="index-change up">↑22.1% (30d)</span>
+          </div>
+        </div>
+        <div class="index-row">
+          <span class="index-name">Military Clash</span>
+          <div class="index-bar-wrap"><div class="index-bar bar-high" style="width:60%"></div></div>
+          <div class="index-val-wrap">
+            <span class="index-val">0.0510</span>
+            <span class="index-change up">↑49.4% (30d)</span>
+          </div>
+        </div>
+        <div class="index-row">
+          <span class="index-name">Military Crisis</span>
+          <div class="index-bar-wrap"><div class="index-bar bar-med" style="width:22%"></div></div>
+          <div class="index-val-wrap">
+            <span class="index-val">0.0040</span>
+            <span class="index-change up">↑66.7% (90d)</span>
+          </div>
+        </div>
+        <div class="index-row">
+          <span class="index-name">Military De-escal.</span>
+          <div class="index-bar-wrap"><div class="index-bar bar-low" style="width:8%"></div></div>
+          <div class="index-val-wrap">
+            <span class="index-val">0.0015</span>
+            <span class="index-change down">—</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BAR CHART -->
+    <div style="margin-top:24px;">
+      <div class="chart-title">Comparative Military Index Levels (Current Readings)</div>
+      <svg width="764" height="170" viewBox="0 0 764 170" xmlns="http://www.w3.org/2000/svg" class="bar-chart-container">
+        <defs>
+          <linearGradient id="argGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#2563eb"/>
+            <stop offset="100%" stop-color="#60a5fa"/>
+          </linearGradient>
+          <linearGradient id="ukGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#c93048"/>
+            <stop offset="100%" stop-color="#f87171"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Y-axis labels -->
+        <text x="0" y="20" font-family="Inter" font-size="9" fill="#9ca3af">0.10</text>
+        <text x="0" y="65" font-family="Inter" font-size="9" fill="#9ca3af">0.05</text>
+        <text x="0" y="110" font-family="Inter" font-size="9" fill="#9ca3af">0.00</text>
+
+        <!-- Grid lines -->
+        <line x1="30" y1="10" x2="764" y2="10" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="30" y1="57" x2="764" y2="57" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="30" y1="104" x2="764" y2="104" stroke="#e2eaf5" stroke-width="1"/>
+
+        <!-- Group 1: Intl Crisis -->
+        <text x="90" y="130" font-family="Inter" font-size="9" fill="#6b7280" text-anchor="middle">Intl. Crisis</text>
+        <!-- ARG 0.0058 → scale: 0.10 = 94px, so 0.0058 = 5.45px -->
+        <rect x="58" y="98.5" width="22" height="5.5" rx="2" fill="url(#argGrad)"/>
+        <!-- UK 0.0006 → 0.56px -->
+        <rect x="82" y="103.4" width="22" height="0.6" rx="1" fill="url(#ukGrad)"/>
+
+        <!-- Group 2: Military Escalation -->
+        <text x="214" y="130" font-family="Inter" font-size="9" fill="#6b7280" text-anchor="middle">Military Escalation</text>
+        <!-- ARG 0.0747 → 70.2px -->
+        <rect x="182" y="33.8" width="22" height="70.2" rx="2" fill="url(#argGrad)"/>
+        <!-- UK 0.0618 → 58.1px -->
+        <rect x="206" y="45.9" width="22" height="58.1" rx="2" fill="url(#ukGrad)"/>
+
+        <!-- Group 3: Military Clash -->
+        <text x="338" y="130" font-family="Inter" font-size="9" fill="#6b7280" text-anchor="middle">Military Clash</text>
+        <!-- ARG 0.0135 → 12.7px -->
+        <rect x="306" y="91.3" width="22" height="12.7" rx="2" fill="url(#argGrad)"/>
+        <!-- UK 0.0510 → 47.9px -->
+        <rect x="330" y="56.1" width="22" height="47.9" rx="2" fill="url(#ukGrad)"/>
+
+        <!-- Group 4: Military Crisis -->
+        <text x="462" y="130" font-family="Inter" font-size="9" fill="#6b7280" text-anchor="middle">Military Crisis</text>
+        <!-- ARG 0.0034 → 3.2px -->
+        <rect x="430" y="100.8" width="22" height="3.2" rx="2" fill="url(#argGrad)"/>
+        <!-- UK 0.0040 → 3.76px -->
+        <rect x="454" y="100.2" width="22" height="3.8" rx="2" fill="url(#ukGrad)"/>
+
+        <!-- Group 5: 7-day Peaks -->
+        <text x="600" y="130" font-family="Inter" font-size="9" fill="#6b7280" text-anchor="middle">7-Day Clash Peaks</text>
+        <!-- ARG peak 0.3201 → would be 301px, cap at full height ~ show proportionally scaled -->
+        <rect x="568" y="10" width="22" height="94" rx="2" fill="url(#argGrad)" opacity="0.5"/>
+        <text x="579" y="8" font-family="Inter" font-size="7.5" fill="#2563eb" text-anchor="middle">0.3201</text>
+        <!-- UK peak 0.1021 → 96px... scale to fit: 0.3201=94px so 0.1021=30px -->
+        <rect x="592" y="74" width="22" height="30" rx="2" fill="url(#ukGrad)" opacity="0.5"/>
+        <text x="603" y="72" font-family="Inter" font-size="7.5" fill="#c93048" text-anchor="middle">0.1021</text>
+
+        <!-- Legend -->
+        <rect x="30" y="150" width="10" height="10" rx="2" fill="url(#argGrad)"/>
+        <text x="44" y="159" font-family="Inter" font-size="9" fill="#374151">Argentina</text>
+        <rect x="110" y="150" width="10" height="10" rx="2" fill="url(#ukGrad)"/>
+        <text x="124" y="159" font-family="Inter" font-size="9" fill="#374151">United Kingdom</text>
+        <rect x="210" y="150" width="10" height="10" rx="2" fill="#9ca3af" opacity="0.4"/>
+        <text x="224" y="159" font-family="Inter" font-size="9" fill="#9ca3af">7-Day Peak (scaled to 0.10 max)</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- SCENARIOS -->
+  <div class="section">
+    <div class="section-label">Strategic Assessment</div>
+    <div class="section-title">Three-Scenario Probability Framework</div>
+    <div class="scenarios-grid">
+      <div class="scenario-box s1">
+        <div class="scenario-icon">🤝</div>
+        <div class="scenario-prob">55–65%</div>
+        <div class="scenario-name">Scenario I · Diplomatic Posturing</div>
+        <div class="scenario-desc">Rising rhetoric, military exercises, and naval signalling without actual combat. Argentina's Military Escalation trend expected to fall 1.3%. Diplomatic channels remain functional. Resolution via bilateral negotiation or political pressure exhaustion.</div>
+      </div>
+      <div class="scenario-box s2">
+        <div class="scenario-icon">⚓</div>
+        <div class="scenario-prob">25–35%</div>
+        <div class="scenario-name">Scenario II · Localized Incident</div>
+        <div class="scenario-desc">A contained naval incident or incursion (reflected in ARG 7d Military Clash peak of 0.3201). UK responds with sustained military positioning (Clash forecast: +69.8%). Second incident within 30 days: 15–25% probability.</div>
+      </div>
+      <div class="scenario-box s3">
+        <div class="scenario-icon">⚔️</div>
+        <div class="scenario-prob">10–15%</div>
+        <div class="scenario-name">Scenario III · Full Military Escalation</div>
+        <div class="scenario-desc">Deliberate decision to pursue military action. Reduced by ARG Intl. Threats at 0.0002 (↓72.4%), UK de-escalation forecast capacity, and global attention on Iran/Middle East reducing major power intervention likelihood.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORECAST -->
+  <div class="section" style="background:#f8faff; border-top: 1px solid #e2eaf5;">
+    <div class="section-label">NERAI Prophet Model Projections</div>
+    <div class="section-title">12-Month Forward Forecast</div>
+    <div class="forecast-grid">
+      <div class="forecast-card">
+        <div class="forecast-country">🇦🇷 Argentina — Forecast Indices</div>
+        <div class="forecast-row">
+          <span class="fc-name">Military Clash</span>
+          <span class="fc-trend fc-dn">↓40.8%</span>
+          <div class="fc-vals">
+            <div class="fc-avg">avg: 0.0721</div>
+            <div class="fc-max">max: 0.2772</div>
+          </div>
+        </div>
+        <div class="forecast-row">
+          <span class="fc-name">Military Escalation</span>
+          <span class="fc-trend fc-dn">↓1.3%</span>
+          <div class="fc-vals">
+            <div class="fc-avg">avg: 0.0867</div>
+            <div class="fc-max">max: 0.3196</div>
+          </div>
+        </div>
+        <div class="forecast-row">
+          <span class="fc-name">Intl. Crisis</span>
+          <span class="fc-trend fc-up">↑19.3%</span>
+          <div class="fc-vals">
+            <div class="fc-avg">avg: 0.0024</div>
+            <div class="fc-max">max: 0.0159</div>
+          </div>
+        </div>
+        <div class="forecast-row">
+          <span class="fc-name">Military Crisis</span>
+          <span class="fc-trend fc-up">↑9.1%</span>
+          <div class="fc-vals">
+            <div class="fc-avg">avg: 0.0037</div>
+            <div class="fc-max">—</div>
+          </div>
+        </div>
+      </div>
+      <div class="forecast-card">
+        <div class="forecast-country">🇬🇧 United Kingdom — Forecast Indices</div>
+        <div class="forecast-row">
+          <span class="fc-name">Military Clash</span>
+          <span class="fc-trend fc-up">↑69.8%</span>
+          <div class="fc-vals">
+            <div class="fc-avg">avg: 0.0636</div>
+            <div class="fc-max">max: 0.1627</div>
+          </div>
+        </div>
+        <div class="forecast-row">
+          <span class="fc-name">Military Escalation</span>
+          <span class="fc-trend fc-up">↑67.8%</span>
+          <div class="fc-vals">
+            <div class="fc-avg">avg: 0.0869</div>
+            <div class="fc-max">max: 0.1951</div>
+          </div>
+        </div>
+        <div class="forecast-row">
+          <span class="fc-name">Intl. Crisis</span>
+          <span class="fc-trend fc-dn">↓16.9%</span>
+          <div class="fc-vals">
+            <div class="fc-avg">avg: 0.0010</div>
+            <div class="fc-max">—</div>
+          </div>
+        </div>
+        <div class="forecast-row">
+          <span class="fc-name">Military De-escalation</span>
+          <span class="fc-trend fc-dn">↓98.3%</span>
+          <div class="fc-vals">
+            <div class="fc-avg">avg: 0.0096</div>
+            <div class="fc-max">max: 0.0968</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIVERGENCE NOTE -->
+    <div style="margin-top:16px; background: rgba(201,48,72,0.06); border-radius:10px; padding:14px 18px; border-left:3px solid #c93048;">
+      <span style="font-size:0.72rem; font-weight:700; color:#c93048;">⚡ Key Divergence:</span>
+      <span style="font-size:0.72rem; color:#374151; margin-left:6px;">UK diplomatic indices declining while military operational indicators rise sharply (+67.8% Military Escalation, +69.8% Clash). This decoupling — high-intensity military activity without crisis-level diplomacy — is the defining structural risk of this dispute.</span>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="section">
+    <div class="section-label">Probability Timeline</div>
+    <div class="section-title">Military Clash Probability by Horizon</div>
+    <div class="timeline-strip">
+      <div class="tl-cell risk-low">
+        <div class="tl-period">30-Day Window</div>
+        <div class="tl-prob-big">15–20%</div>
+        <div class="tl-label">Probability of clash with casualties</div>
+      </div>
+      <div class="tl-cell risk-med">
+        <div class="tl-period">60-Day Window</div>
+        <div class="tl-prob-big">40–50%</div>
+        <div class="tl-label">Significant naval or air incident (no sustained combat)</div>
+      </div>
+      <div class="tl-cell risk-high">
+        <div class="tl-period">90-Day Window</div>
+        <div class="tl-prob-big">35–45%</div>
+        <div class="tl-label">Full military clash if current trajectories continue</div>
+      </div>
+    </div>
+    <div style="margin-top:12px; text-align:center;">
+      <span style="font-size:0.7rem; color:#9ca3af;">Diplomatic resolution via third-party mediation or bilateral negotiation: <strong style="color:#00a886;">45–55%</strong> probability over 90 days</span>
+    </div>
+  </div>
+
+  <!-- SIGNALS TO WATCH -->
+  <div class="section">
+    <div class="section-label">Intelligence Watch Points</div>
+    <div class="section-title">Four Signals That Will Determine the Outcome</div>
+    <div class="signals-grid">
+      <div class="signal-card sig-red-bd">
+        <div class="signal-title">⚠ Argentina Military Escalation Trend</div>
+        <div class="signal-text">Currently at <span class="signal-val" style="color:#0077a8;">0.0747</span> — up 87.6% from 90-day baseline. Forecast trend: ↓1.3%. If this trend reverses and index climbs above 0.15, Scenario II probability escalates materially.</div>
+      </div>
+      <div class="signal-card sig-orange-bd">
+        <div class="signal-title">⚓ UK Military Clash Trajectory</div>
+        <div class="signal-text">At <span class="signal-val" style="color:#0077a8;">0.051</span> and forecast to rise +69.8%. 7-day peak of 0.1021 indicates active naval operations. Second peak above 0.15 within 30 days signals direct engagement.</div>
+      </div>
+      <div class="signal-card sig-teal-bd">
+        <div class="signal-title">📡 Diplomatic Re-engagement Signals</div>
+        <div class="signal-text">Argentina's International Threats index at <span class="signal-val" style="color:#00a886;">0.0002</span> (↓72.4%) — key de-escalation indicator. Argentina does not assess UK as existential threat, preserving negotiation capacity. Watch for bilateral diplomatic contact.</div>
+      </div>
+      <div class="signal-card sig-green-bd">
+        <div class="signal-title">🌍 Global Attention Distribution</div>
+        <div class="signal-text">Current global focus on Iran, Middle East, and China dynamics reduces major power intervention likelihood in South Atlantic. Creates permissive conditions for lower-profile escalation without international counterbalancing.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUOTE -->
+  <div class="quote-section">
+    <div class="quote-text">"<span>DATA</span> IS THE <span>NEW</span> CURRENCY OF GEOPOLITICAL INTELLIGENCE"</div>
+    <div class="quote-sub">NERAI Strategic Insights Hub · neraicorp.com · nerai-intelligence.streamlit.app</div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <div>© 2026 NERAI Strategic Insights Hub</div>
+      <div>Data Sources: GDELT Project · ACLED · World Bank · IMF · Satellite Feeds</div>
+      <div>Index window: April 2026 · Scores normalized 0.00–1.00 · HIGH &gt;0.40 · CRITICAL &gt;0.60</div>
+    </div>
+    <div class="footer-right">
+      <div><a href="https://neraicorp.com">neraicorp.com</a></div>
+      <div><a href="https://nerai-intelligence.streamlit.app">nerai-intelligence.streamlit.app</a></div>
+      <div style="margin-top:4px; color:rgba(255,255,255,0.3);">NERAI Risk Pulse · April 2026</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
