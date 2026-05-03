@@ -1,21 +1,30 @@
 [
   {
+    "slug": "2026-05-03-20260503-weekly-blog",
+    "title": "20260503_weekly_blog",
+    "excerpt": "Geopolitical fragmentation across West Africa's Sahel region has reached critical thresholds this week, with NERAI's Instability Index registering 0.78—the highest recorded level s...",
+    "date": "May 03, 2026",
+    "category": "Weekly Pulse",
+    "published": "2026-05-03"
+  },
+  {
     "slug": "2026-05-01-uae-opec-exit-gulf-realignment-nerai-intelligence",
     "title": "UAE Exits OPEC: Gulf Realignment, Iran Risk, and the $118 Oil Shock",
-    "excerpt": "NERAI quantitative analysis of UAE's OPEC departure. Saudi coup risk +149.2% forecast trend, Iran military escalation at 0.1983 (+102.6% vs 90-day baseline), oil at $118/bbl. 25\u201335% probability of SA\u2013UAE bilateral crisis; primary risk is Iranian regional destabilization.",
+    "excerpt": "NERAI quantitative analysis of UAE's OPEC departure. Saudi coup risk +149.2% forecast trend, Iran military escalation at 0.1983 (+102.6% vs 90-day baseline), oil at $118/bbl. 25–35% probability of SA–UAE bilateral crisis; primary risk is Iranian regional destabilization.",
     "date": "May 1, 2026",
     "category": "Deep Dive"
   },
   {
     "slug": "2026-04-29-nerai-intelligence-report-will-argentina-escalate-tensions-w",
-    "title": "NERAI Intelligence Report \u2014 Will Argentina Escalate Tensions with the UK over the Falkland Islands?",
-    "excerpt": "NERAI quantitative analysis reveals rising military pressure: Argentina Military Escalation up 87.6% from 90-day baseline, UK Military Clash up 49.4%. Three-scenario probability framework with 30\u201390 day forecasts and NERAI Prophet Model projections.",
+    "title": "NERAI Intelligence Report — Will Argentina Escalate Tensions with the UK over the Falkland Islands?",
+    "excerpt": "Deep Dive | April 29, 2026 | NERAI Strategic Insights Hub...",
     "date": "April 29, 2026",
-    "category": "Deep Dive"
+    "category": "Deep Dive",
+    "published": "2026-04-29"
   },
   {
     "slug": "2026-04-26-nerai-risk-pulse-week-17-iran-crosses-red-lines-g7-unity-fra",
-    "title": "NERAI Risk Pulse \u2014 Week 17: Iran Crosses Red Lines, G7 Unity Fractures, Pakistan on the Edge (April 2026)",
+    "title": "NERAI Risk Pulse — Week 17: Iran Crosses Red Lines, G7 Unity Fractures, Pakistan on the Edge (April 2026)",
     "excerpt": "Executive Summary: NERAI's composite risk index registered its sharpest single-week deterioration since October 2023, driven by simultaneous escalation across three independent fla...",
     "date": "April 26, 2026",
     "category": "Weekly Pulse",
@@ -23,7 +32,7 @@
   },
   {
     "slug": "2026-04-20-nerai-risk-pulse-week-17-switzerland-joins-the-crisis-column",
-    "title": "NERAI Risk Pulse \u2014 Week 17: Switzerland Joins the Crisis Column, G7 Political Risk at Post-2020 Highs (April 20, 2026)",
+    "title": "NERAI Risk Pulse — Week 17: Switzerland Joins the Crisis Column, G7 Political Risk at Post-2020 Highs (April 20, 2026)",
     "excerpt": "Weekly Intelligence Brief | April 20, 2026 | NERAI Strategic Insights Hub...",
     "date": "April 20, 2026",
     "category": "Weekly Pulse",
@@ -31,7 +40,7 @@
   },
   {
     "slug": "2026-04-19-nerai-risk-alert-nigeria-military-escalation-hits-0784-iswap",
-    "title": "NERAI Risk Alert \u2014 Nigeria: Military Escalation Hits 0.784, ISWAP Kills Brigadier General (April 19, 2026)",
+    "title": "NERAI Risk Alert — Nigeria: Military Escalation Hits 0.784, ISWAP Kills Brigadier General (April 19, 2026)",
     "excerpt": "RISK ALERT | April 19, 2026 | NERAI Strategic Insights Hub...",
     "date": "April 19, 2026",
     "category": "Risk Alert",
@@ -39,7 +48,7 @@
   },
   {
     "slug": "2026-04-12-nerai-risk-alert-gaza-military-indices-at-099-near-maximum-i",
-    "title": "NERAI Risk Alert \u2014 Gaza: Military Indices at 0.99 \u2014 Near-Maximum Intensity Confirmed (April 12, 2026)",
+    "title": "NERAI Risk Alert — Gaza: Military Indices at 0.99 — Near-Maximum Intensity Confirmed (April 12, 2026)",
     "excerpt": "RISK ALERT | April 12, 2026 | NERAI Strategic Insights Hub...",
     "date": "April 12, 2026",
     "category": "Risk Alert",
@@ -47,7 +56,7 @@
   },
   {
     "slug": "2026-04-12-nerai-risk-pulse-week-15-gaza-hits-near-maximum-ghana-surges",
-    "title": "NERAI Risk Pulse \u2014 Week 15: Gaza Hits Near-Maximum, Ghana Surges 1,700%, Ukraine Re-enters Watch List (April 2026)",
+    "title": "NERAI Risk Pulse — Week 15: Gaza Hits Near-Maximum, Ghana Surges 1,700%, Ukraine Re-enters Watch List (April 2026)",
     "excerpt": "Date: April 12, 2026 | Data Source: NERAI Strategic Insights Hub | Coverage: 60 countries, 40 risk dimensions...",
     "date": "April 12, 2026",
     "category": "Weekly Pulse",
@@ -55,7 +64,7 @@
   },
   {
     "slug": "2026-04-06-nerai-risk-alert-uae-military-indices-surge-1100-in-seven-da",
-    "title": "NERAI Risk Alert \u2014 UAE: Military Indices Surge 1,100%+ in Seven Days (April 6, 2026)",
+    "title": "NERAI Risk Alert — UAE: Military Indices Surge 1,100%+ in Seven Days (April 6, 2026)",
     "excerpt": "RISK ALERT | April 6, 2026 | NERAI Strategic Insights Hub...",
     "date": "April 06, 2026",
     "category": "Risk Alert",
@@ -63,7 +72,7 @@
   },
   {
     "slug": "2026-04-06-nerai-risk-pulse-week-14-uae-military-indices-surge-1100-as-",
-    "title": "NERAI Risk Pulse \u2014 Week 14: UAE Military Indices Surge 1,100%+ as Middle East Tensions Escalate (April 2026)",
+    "title": "NERAI Risk Pulse — Week 14: UAE Military Indices Surge 1,100%+ as Middle East Tensions Escalate (April 2026)",
     "excerpt": "Date: April 6, 2026 | Data Source: NERAI Strategic Insights Hub | Coverage: 60 countries, 40 risk dimensions...",
     "date": "April 06, 2026",
     "category": "Weekly Pulse",
@@ -79,7 +88,7 @@
   },
   {
     "slug": "2026-04-13-nerai-risk-pulse-week-16-nigeria-crosses-critical-iraq-surge",
-    "title": "NERAI Risk Pulse \u2014 Week 16: Nigeria Crosses Critical, Iraq Surges, Armenia & Tunisia Emerge",
+    "title": "NERAI Risk Pulse — Week 16: Nigeria Crosses Critical, Iraq Surges, Armenia & Tunisia Emerge",
     "excerpt": "Date: April 13, 2026 | Data Source: NERAI Strategic Insights Hub | Coverage: 60 countries, 40 risk dimensions...",
     "date": "April 13, 2026",
     "category": "Weekly Pulse",
