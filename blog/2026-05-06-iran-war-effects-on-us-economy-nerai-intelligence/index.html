@@ -4,254 +4,234 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Economic Effects of the Iran War on the United States — NERAI Intelligence</title>
-<meta name="description" content="NERAI Strategic Analysis: How the U.S.-Iran armed conflict reshapes energy markets, fiscal dynamics, inflation trajectories, and GDP growth across three scenarios.">
+<meta name="description" content="NERAI Strategic Analysis: Economic Effects of the Iran War on the United States — Strategic Analysis and Policy Implications.">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Georgia', serif; background: #0d0d1a; color: #e8e8f0; line-height: 1.75; }
+  body { font-family: 'Georgia', serif; background: #0d0d1a; color: #e8e8f0; line-height: 1.8; }
   a { color: #00CFEA; text-decoration: none; }
   a:hover { text-decoration: underline; }
 
+  /* HEADER */
   .site-header {
-    background: #0a0a15;
-    border-bottom: 2px solid #00CFEA;
-    padding: 14px 32px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
+    background: #0a0a15; border-bottom: 2px solid #00CFEA;
+    padding: 14px 32px; display: flex; align-items: center; gap: 16px;
   }
-  .logo-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 10px);
-    grid-template-rows: repeat(4, 10px);
-    gap: 3px;
-  }
+  .logo-grid { display: grid; grid-template-columns: repeat(4,10px); grid-template-rows: repeat(4,10px); gap: 3px; }
   .logo-dot { width: 10px; height: 10px; border-radius: 2px; }
   .logo-dot.dark { background: #1a1a2e; border: 1px solid #333; }
   .logo-dot.cyan { background: #00CFEA; }
-  .logo-text { font-family: 'Arial', sans-serif; font-size: 22px; font-weight: 900; letter-spacing: 1px; }
+  .logo-text { font-family: Arial, sans-serif; font-size: 22px; font-weight: 900; letter-spacing: 1px; }
   .logo-text .ner { color: #1a1a2e; background: #e8e8f0; padding: 2px 4px; }
   .logo-text .ai { color: #00CFEA; }
   .site-header nav { margin-left: auto; display: flex; gap: 24px; font-family: Arial, sans-serif; font-size: 13px; }
   .site-header nav a { color: #aaa; }
   .site-header nav a:hover { color: #00CFEA; }
 
+  /* ALERT */
+  .alert-strip {
+    background: #cc2200; color: #fff; font-family: Arial, sans-serif;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.5px;
+    padding: 11px 32px; text-align: center;
+  }
+  .ticker { display: inline-flex; gap: 40px; flex-wrap: wrap; justify-content: center; }
+  .ticker span::before { content: '▶ '; font-size: 10px; }
+
+  /* HERO */
   .hero {
     background: linear-gradient(135deg, #1a0005 0%, #2d0010 30%, #1a0a00 60%, #0d0d1a 100%);
-    border-bottom: 3px solid #cc2200;
-    padding: 60px 32px 48px;
-    position: relative;
-    overflow: hidden;
+    border-bottom: 3px solid #cc2200; padding: 56px 32px 44px; position: relative; overflow: hidden;
   }
   .hero::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    content: ''; position: absolute; inset: 0;
     background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(204,34,0,0.03) 40px, rgba(204,34,0,0.03) 41px);
   }
   .hero-inner { max-width: 900px; margin: 0 auto; position: relative; }
   .hero-tag {
-    display: inline-block;
-    background: #cc2200; color: #fff;
+    display: inline-block; background: #cc2200; color: #fff;
     font-family: Arial, sans-serif; font-size: 11px; font-weight: 700;
-    letter-spacing: 2px; padding: 5px 14px; border-radius: 2px;
-    margin-bottom: 20px; text-transform: uppercase;
+    letter-spacing: 2px; padding: 5px 14px; border-radius: 2px; margin-bottom: 20px; text-transform: uppercase;
   }
-  .hero h1 { font-size: 2.4rem; color: #fff; line-height: 1.25; margin-bottom: 18px; font-weight: 700; }
-  .hero h1 span { color: #ff6644; }
-  .hero-sub { font-size: 1.1rem; color: #c8b8b0; max-width: 700px; margin-bottom: 28px; }
+  .hero h1 { font-size: 2.3rem; color: #fff; line-height: 1.25; margin-bottom: 10px; font-weight: 700; }
+  .hero h1 em { color: #ff6644; font-style: normal; }
+  .hero-sub { font-size: 1rem; color: #c8b8b0; margin-bottom: 24px; }
   .hero-meta { display: flex; gap: 28px; font-family: Arial, sans-serif; font-size: 12px; color: #888; flex-wrap: wrap; }
   .hero-meta span { display: flex; align-items: center; gap: 6px; }
   .hero-meta .dot { width: 6px; height: 6px; border-radius: 50%; background: #00CFEA; display: inline-block; }
 
-  .alert-strip {
-    background: #cc2200; color: #fff;
-    font-family: Arial, sans-serif; font-size: 13px; font-weight: 700;
-    letter-spacing: 0.5px; padding: 11px 32px; text-align: center;
-  }
-  .alert-strip .ticker { display: inline-flex; gap: 40px; flex-wrap: wrap; justify-content: center; }
-  .alert-strip .ticker span::before { content: '▶ '; font-size: 10px; }
+  /* MAIN */
+  .main { max-width: 880px; margin: 0 auto; padding: 48px 24px; }
 
-  .main { max-width: 960px; margin: 0 auto; padding: 48px 24px; }
+  /* VISUAL INSERTS — styled differently from report text */
+  .visual-insert {
+    margin: 28px 0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .visual-label {
+    background: #0a0a15; border: 1px solid #1e1e2e; border-bottom: none;
+    font-family: Arial, sans-serif; font-size: 10px; color: #555;
+    text-transform: uppercase; letter-spacing: 1.5px;
+    padding: 7px 14px; font-weight: 700;
+    display: flex; align-items: center; gap: 8px;
+    border-radius: 6px 6px 0 0;
+  }
+  .visual-label::before { content: ''; display: inline-block; width: 8px; height: 8px; background: #00CFEA; border-radius: 50%; }
 
   /* METRICS STRIP */
   .metrics-strip {
-    display: grid; grid-template-columns: repeat(5, 1fr);
-    gap: 1px; background: #222; border: 1px solid #333;
-    border-radius: 8px; overflow: hidden; margin-bottom: 48px;
+    display: grid; grid-template-columns: repeat(5,1fr);
+    gap: 1px; background: #1e1e2e;
+    border: 1px solid #1e1e2e; border-top: none; border-radius: 0 0 8px 8px;
   }
-  .metric-cell { background: #12121e; padding: 20px 16px; text-align: center; }
-  .metric-cell .val { font-size: 1.7rem; font-weight: 700; font-family: Arial, sans-serif; color: #ff6644; display: block; line-height: 1.1; }
-  .metric-cell .val.cyan { color: #00CFEA; }
-  .metric-cell .val.yellow { color: #ffc107; }
-  .metric-cell .val.red { color: #ff3333; }
-  .metric-cell .val.green { color: #44cc88; }
-  .metric-cell .lbl { font-family: Arial, sans-serif; font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 6px; display: block; line-height: 1.3; }
+  .metric-cell { background: #0f0f1e; padding: 18px 12px; text-align: center; }
+  .metric-cell .val { font-size: 1.5rem; font-weight: 700; font-family: Arial, sans-serif; display: block; line-height: 1.1; }
+  .metric-cell .lbl { font-family: Arial, sans-serif; font-size: 9px; color: #666; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 6px; display: block; line-height: 1.4; }
 
-  /* SECTION HEADERS */
-  .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; margin-top: 48px; }
-  .section-header h2 { font-family: Arial, sans-serif; font-size: 1.1rem; color: #fff; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
-  .section-header .line { flex: 1; height: 1px; background: linear-gradient(to right, #333, transparent); }
+  /* REPORT SECTIONS */
+  .report-section { margin-bottom: 40px; }
+  .section-divider { border: none; border-top: 1px solid #1e1e2e; margin: 40px 0; }
 
-  /* EXEC SUMMARY */
-  .exec-summary {
-    background: #12121e; border: 1px solid #333; border-left: 4px solid #cc2200;
-    border-radius: 8px; padding: 32px; margin-bottom: 48px;
+  .section-tag {
+    font-family: Arial, sans-serif; font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 2px; color: #cc2200;
+    margin-bottom: 14px; display: block;
   }
-  .exec-summary h2 { font-family: Arial, sans-serif; font-size: 11px; color: #cc2200; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; font-weight: 700; }
-  .exec-summary p { color: #c8c8d8; font-size: 1rem; margin-bottom: 14px; }
-  .exec-summary p:last-child { margin-bottom: 0; }
+  .section-tag.cyan { color: #00CFEA; }
 
-  /* KEY FINDINGS */
-  .findings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-  .finding-card {
-    background: #12121e; border: 1px solid #2a2a3e; border-radius: 8px; padding: 20px;
-    position: relative;
+  .report-section h2 {
+    font-family: Arial, sans-serif; font-size: 1.2rem; color: #fff;
+    font-weight: 700; margin-bottom: 20px; letter-spacing: 0.3px;
   }
-  .finding-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: #cc2200; border-radius: 8px 0 0 8px; }
-  .finding-card h3 { font-family: Arial, sans-serif; font-size: 12px; color: #00CFEA; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; font-weight: 700; }
-  .finding-card p { font-size: 0.9rem; color: #b0b0c8; line-height: 1.65; }
-
-  /* PROSE SECTION */
-  .prose-section { margin-bottom: 16px; }
-  .prose-section p { color: #c0c0d8; font-size: 0.97rem; margin-bottom: 16px; line-height: 1.8; }
-  .prose-section p:last-child { margin-bottom: 0; }
-  .prose-section h3 { font-family: Arial, sans-serif; font-size: 1rem; color: #00CFEA; font-weight: 700; margin: 28px 0 12px; }
-
-  /* CONTEXT BOX */
-  .context-box {
-    background: #0f0f20; border: 1px solid #2a2a3e; border-radius: 8px; padding: 28px; margin-bottom: 16px;
+  .report-section h3 {
+    font-family: Arial, sans-serif; font-size: 1rem; color: #e8e8f0;
+    font-weight: 700; margin-bottom: 14px; margin-top: 28px;
   }
-  .context-box p { color: #b8b8cc; font-size: 0.95rem; margin-bottom: 14px; line-height: 1.8; }
-  .context-box p:last-child { margin-bottom: 0; }
 
-  /* STAT CALLOUTS */
-  .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 24px 0; }
-  .stat-box { background: #12121e; border: 1px solid #2a2a3e; border-radius: 6px; padding: 16px; text-align: center; }
-  .stat-box .num { font-family: Arial, sans-serif; font-size: 1.4rem; font-weight: 700; color: #ff6644; display: block; }
-  .stat-box .num.cyan { color: #00CFEA; }
-  .stat-box .num.yellow { color: #ffc107; }
-  .stat-box .lbl { font-family: Arial, sans-serif; font-size: 10px; color: #666; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 5px; display: block; line-height: 1.35; }
+  .report-section p { color: #c8c8d8; font-size: 0.97rem; margin-bottom: 16px; line-height: 1.85; }
+  .report-section p:last-child { margin-bottom: 0; }
 
-  /* CHART */
-  .chart-container { background: #12121e; border: 1px solid #2a2a3e; border-radius: 8px; padding: 28px; margin: 24px 0; }
-  .chart-title { font-family: Arial, sans-serif; font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; font-weight: 700; }
-
-  /* ANALYSIS PANEL */
-  .analysis-panel {
-    background: #0f1520; border: 1px solid #1e2e3e; border-radius: 8px;
-    padding: 28px; margin: 20px 0;
+  /* KEY FINDINGS — styled as visual cards but text verbatim */
+  .findings-list { display: flex; flex-direction: column; gap: 12px; }
+  .finding-item {
+    background: #0f0f1e; border: 1px solid #1e1e2e;
+    border-left: 3px solid #cc2200; border-radius: 0 6px 6px 0;
+    padding: 16px 20px;
   }
-  .analysis-panel h3 { font-family: Arial, sans-serif; font-size: 14px; color: #fff; font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-  .analysis-panel h3 .tag { background: #cc2200; color: #fff; font-size: 10px; padding: 3px 8px; border-radius: 2px; letter-spacing: 1px; }
-  .analysis-panel p { color: #b0b8c8; font-size: 0.92rem; line-height: 1.8; margin-bottom: 12px; }
-  .analysis-panel p:last-child { margin-bottom: 0; }
+  .finding-item p { color: #c0c0d8; font-size: 0.93rem; line-height: 1.75; margin: 0; }
+  .finding-item strong { color: #e8e8f0; }
 
-  /* INFLATION CALC */
-  .inflation-calc { background: #0a1a0a; border: 1px solid #224422; border-radius: 8px; padding: 20px 24px; margin: 20px 0; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
-  .calc-label { font-family: Arial, sans-serif; font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px; }
-  .calc-formula { font-family: Arial, sans-serif; font-size: 1rem; color: #44cc88; font-weight: 700; }
+  /* SVG CHARTS */
+  .chart-box {
+    background: #0f0f1e; border: 1px solid #1e1e2e; border-top: none;
+    border-radius: 0 0 8px 8px; padding: 24px;
+  }
+  .chart-subtitle { font-family: Arial, sans-serif; font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
 
-  /* SCENARIO CARDS */
-  .scenario-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px; }
-  .scenario-card { background: #12121e; border: 1px solid #2a2a3e; border-radius: 8px; overflow: hidden; }
-  .scenario-header { padding: 16px 20px 14px; display: flex; justify-content: space-between; align-items: center; }
-  .scenario-header.best { background: #0a2a18; border-bottom: 2px solid #44cc88; }
-  .scenario-header.base { background: #1a1a00; border-bottom: 2px solid #ffc107; }
-  .scenario-header.worst { background: #2a0505; border-bottom: 2px solid #cc2200; }
-  .scenario-label { font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
-  .scenario-label.best { color: #44cc88; }
-  .scenario-label.base { color: #ffc107; }
-  .scenario-label.worst { color: #cc2200; }
-  .scenario-prob { font-family: Arial, sans-serif; font-size: 1.3rem; font-weight: 700; }
-  .scenario-prob.best { color: #44cc88; }
-  .scenario-prob.base { color: #ffc107; }
-  .scenario-prob.worst { color: #cc2200; }
-  .scenario-body { padding: 18px 20px; }
-  .scenario-body .gdp { font-family: Arial, sans-serif; font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
-  .scenario-body .gdp-label { font-family: Arial, sans-serif; font-size: 10px; color: #666; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 14px; }
-  .scenario-body ul { list-style: none; padding: 0; }
-  .scenario-body ul li { font-size: 0.82rem; color: #b0b0c8; padding: 6px 0; border-bottom: 1px solid #1e1e2e; display: flex; justify-content: space-between; gap: 8px; }
-  .scenario-body ul li:last-child { border-bottom: none; }
-  .scenario-body ul li .stat { font-family: Arial, sans-serif; font-weight: 700; color: #e8e8f0; white-space: nowrap; }
-  .scenario-body .desc { font-size: 0.82rem; color: #909090; line-height: 1.6; margin-top: 12px; padding-top: 12px; border-top: 1px solid #1e1e2e; }
+  /* STAT ROW */
+  .stat-row {
+    display: grid; grid-template-columns: repeat(4,1fr); gap: 1px;
+    background: #1e1e2e; border: 1px solid #1e1e2e; border-top: none;
+    border-radius: 0 0 8px 8px; overflow: hidden;
+  }
+  .stat-cell { background: #0f0f1e; padding: 16px; text-align: center; }
+  .stat-cell .num { font-family: Arial, sans-serif; font-size: 1.3rem; font-weight: 700; display: block; }
+  .stat-cell .lbl { font-family: Arial, sans-serif; font-size: 9px; color: #666; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 5px; display: block; line-height: 1.35; }
 
-  /* NERAI INDEX PANEL */
-  .nerai-panel { background: #0a1520; border: 1px solid #00CFEA33; border-radius: 8px; padding: 28px; margin: 20px 0; }
-  .nerai-index-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
-  .index-cell { background: #0d0d1a; border: 1px solid #1e2e3e; border-radius: 6px; padding: 16px; }
-  .index-cell .country { font-family: Arial, sans-serif; font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
-  .index-cell .metric { font-family: Arial, sans-serif; font-size: 11px; color: #aaa; margin-bottom: 10px; }
-  .index-bar-bg { background: #1a1a2e; border-radius: 3px; height: 6px; margin-bottom: 8px; overflow: hidden; }
-  .index-bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(to right, #00CFEA, #0080ff); }
-  .index-bar-fill.red { background: linear-gradient(to right, #cc2200, #ff5533); }
-  .index-bar-fill.orange { background: linear-gradient(to right, #ff8800, #ffcc00); }
-  .index-cell .score { font-family: Arial, sans-serif; font-size: 1.2rem; font-weight: 700; color: #00CFEA; }
-  .index-cell .score.red { color: #ff5533; }
-  .index-cell .score.orange { color: #ffaa00; }
-  .nerai-note { font-size: 0.88rem; color: #b0b0b8; line-height: 1.75; margin-bottom: 4px; }
+  /* NERAI INDEX GRID */
+  .nerai-grid {
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
+    background: #1e1e2e; border: 1px solid #1e1e2e; border-top: none;
+    border-radius: 0 0 8px 8px; overflow: hidden;
+  }
+  .nerai-cell { background: #0f0f1e; padding: 16px; }
+  .nerai-cell .country { font-family: Arial, sans-serif; font-size: 9px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .nerai-cell .metric { font-family: Arial, sans-serif; font-size: 10px; color: #777; margin-bottom: 10px; }
+  .bar-bg { background: #1a1a2e; border-radius: 3px; height: 5px; margin-bottom: 8px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 3px; }
+  .bar-red { background: linear-gradient(to right, #cc2200, #ff5533); }
+  .bar-orange { background: linear-gradient(to right, #ff8800, #ffcc00); }
+  .bar-cyan { background: linear-gradient(to right, #00CFEA, #0080ff); }
+  .nerai-cell .score { font-family: Arial, sans-serif; font-size: 1.1rem; font-weight: 700; }
+  .score-red { color: #ff5533; }
+  .score-orange { color: #ffaa00; }
+  .score-cyan { color: #00CFEA; }
 
-  /* FORECAST TABLE */
-  .forecast-table { width: 100%; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 0.88rem; background: #12121e; border-radius: 8px; overflow: hidden; border: 1px solid #2a2a3e; }
-  .forecast-table thead { background: #0a0a15; }
-  .forecast-table th { padding: 13px 16px; text-align: left; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #888; font-weight: 700; border-bottom: 2px solid #cc2200; }
-  .forecast-table th:not(:first-child) { text-align: center; }
-  .forecast-table td { padding: 12px 16px; color: #c8c8d8; border-bottom: 1px solid #1e1e2e; vertical-align: middle; }
-  .forecast-table td:not(:first-child) { text-align: center; }
-  .forecast-table tr:last-child td { border-bottom: none; }
-  .forecast-table tr:hover td { background: #15152a; }
-  .best-val { color: #44cc88; font-weight: 700; }
-  .base-val { color: #ffc107; font-weight: 700; }
-  .worst-val { color: #ff5533; font-weight: 700; }
-  .metric-name { font-weight: 700; color: #e8e8f0; }
+  /* SCENARIO TABLE */
+  .scenario-table {
+    width: 100%; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 0.85rem;
+    background: #0f0f1e; border: 1px solid #1e1e2e; border-top: none;
+    border-radius: 0 0 8px 8px; overflow: hidden;
+  }
+  .scenario-table thead { background: #090912; }
+  .scenario-table th { padding: 11px 14px; text-align: left; font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: #666; font-weight: 700; border-bottom: 2px solid #1e1e2e; }
+  .scenario-table th:not(:first-child) { text-align: center; }
+  .scenario-table td { padding: 11px 14px; color: #b8b8d0; border-bottom: 1px solid #15152a; }
+  .scenario-table td:not(:first-child) { text-align: center; }
+  .scenario-table tr:last-child td { border-bottom: none; }
+  .scenario-table .row-label { font-weight: 700; color: #e0e0f0; }
+  .best { color: #44cc88; font-weight: 700; }
+  .base { color: #ffc107; font-weight: 700; }
+  .worst { color: #ff5533; font-weight: 700; }
 
-  /* TRANSMISSION CHANNELS */
-  .channel-list { display: flex; flex-direction: column; gap: 12px; }
-  .channel-row { background: #12121e; border: 1px solid #2a2a3e; border-radius: 6px; padding: 20px; display: flex; align-items: flex-start; gap: 20px; }
-  .channel-num { width: 36px; height: 36px; background: #cc2200; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: Arial, sans-serif; font-weight: 700; font-size: 14px; color: #fff; flex-shrink: 0; }
-  .channel-content h3 { font-family: Arial, sans-serif; font-size: 14px; color: #00CFEA; font-weight: 700; margin-bottom: 8px; }
-  .channel-content p { font-size: 0.9rem; color: #b0b0c8; line-height: 1.7; }
-
-  /* POLICY */
-  .policy-cards { display: flex; flex-direction: column; gap: 14px; }
-  .policy-card { background: #12121e; border: 1px solid #2a2a3e; border-radius: 8px; padding: 22px 24px; display: flex; gap: 20px; align-items: flex-start; }
-  .policy-num { background: #001a2a; border: 2px solid #00CFEA; border-radius: 6px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; font-family: Arial, sans-serif; font-weight: 700; font-size: 16px; color: #00CFEA; flex-shrink: 0; }
-  .policy-card h3 { font-family: Arial, sans-serif; font-size: 14px; color: #e8e8f0; font-weight: 700; margin-bottom: 8px; }
-  .policy-card p { font-size: 0.88rem; color: #a0a0b8; line-height: 1.7; }
-  .policy-card .rationale { font-size: 0.82rem; color: #666; margin-top: 10px; padding-top: 10px; border-top: 1px solid #1e1e2e; font-style: italic; }
-
-  /* TIMELINE */
-  .timeline-cells { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  .timeline-cell { background: #12121e; border: 1px solid #2a2a3e; border-radius: 8px; padding: 20px; text-align: center; }
-  .timeline-cell .period { font-family: Arial, sans-serif; font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
-  .timeline-cell .prob { font-family: Arial, sans-serif; font-size: 2rem; font-weight: 700; margin-bottom: 6px; }
-  .timeline-cell .prob-label { font-size: 0.8rem; color: #888; line-height: 1.4; }
+  /* POLICY ITEMS */
+  .policy-item { margin-bottom: 28px; }
+  .policy-num-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .policy-badge {
+    background: #001a2a; border: 2px solid #00CFEA; border-radius: 5px;
+    width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;
+    font-family: Arial, sans-serif; font-weight: 700; font-size: 15px; color: #00CFEA; flex-shrink: 0;
+  }
+  .policy-title { font-family: Arial, sans-serif; font-size: 15px; color: #e8e8f0; font-weight: 700; }
+  .policy-body p { color: #c0c0d8; font-size: 0.95rem; margin-bottom: 10px; line-height: 1.8; }
+  .rationale-block {
+    background: #090912; border-left: 3px solid #00CFEA33; border-radius: 0 4px 4px 0;
+    padding: 12px 16px; margin-top: 8px;
+  }
+  .rationale-block p { color: #888; font-size: 0.88rem; font-style: italic; margin: 0; }
 
   /* SOURCES */
-  .sources-section { background: #0a0a15; border: 1px solid #1e1e2e; border-radius: 8px; padding: 28px; margin-bottom: 48px; }
-  .sources-section h3 { font-family: Arial, sans-serif; font-size: 12px; color: #00CFEA; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 16px; margin-top: 20px; }
-  .sources-section h3:first-child { margin-top: 0; }
-  .sources-section ul { list-style: none; padding: 0; }
-  .sources-section ul li { font-size: 0.85rem; color: #888; padding: 6px 0; border-bottom: 1px solid #151525; line-height: 1.6; padding-left: 14px; position: relative; }
-  .sources-section ul li::before { content: '—'; position: absolute; left: 0; color: #444; }
-  .sources-section ul li:last-child { border-bottom: none; }
-  .sources-section ul li strong { color: #bbb; }
-  .uncertainty-note { font-size: 0.85rem; color: #777; line-height: 1.75; padding: 16px; background: #0f0f18; border-radius: 6px; border-left: 3px solid #333; margin-top: 16px; }
+  .sources-block { background: #080810; border: 1px solid #1e1e2e; border-radius: 8px; padding: 28px; }
+  .sources-block h3 { font-family: Arial, sans-serif; font-size: 11px; color: #00CFEA; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 14px; margin-top: 22px; }
+  .sources-block h3:first-child { margin-top: 0; }
+  .sources-block ul { list-style: none; padding: 0; }
+  .sources-block li { font-size: 0.88rem; color: #888; padding: 7px 0 7px 18px; border-bottom: 1px solid #111; position: relative; line-height: 1.7; }
+  .sources-block li::before { content: '—'; position: absolute; left: 0; color: #333; }
+  .sources-block li:last-child { border-bottom: none; }
+  .uncertainty-box {
+    background: #0d0d1a; border: 1px solid #1e1e2e; border-left: 3px solid #333;
+    border-radius: 0 6px 6px 0; padding: 16px 20px; margin-top: 18px;
+  }
+  .uncertainty-box p { font-size: 0.88rem; color: #777; font-style: italic; line-height: 1.8; margin: 0; }
+  .uncertainty-box strong { color: #999; font-style: normal; }
+
+  /* END NOTE */
+  .end-note { text-align: center; padding: 28px; font-family: Arial, sans-serif; font-size: 12px; color: #444; letter-spacing: 1px; border-top: 1px solid #1a1a2e; margin-top: 40px; }
 
   /* CTA */
-  .cta-section { background: linear-gradient(135deg, #0a1520, #001428); border: 1px solid #00CFEA44; border-radius: 8px; padding: 36px; text-align: center; margin-bottom: 48px; margin-top: 48px; }
-  .cta-section h2 { font-size: 1.4rem; color: #fff; margin-bottom: 12px; }
-  .cta-section p { color: #aaa; font-size: 0.95rem; margin-bottom: 24px; }
-  .cta-btn { display: inline-block; background: #00CFEA; color: #000; font-family: Arial, sans-serif; font-weight: 700; font-size: 13px; padding: 12px 32px; border-radius: 4px; text-decoration: none; letter-spacing: 0.5px; }
+  .cta-section {
+    background: linear-gradient(135deg, #0a1520, #001428);
+    border: 1px solid #00CFEA44; border-radius: 8px;
+    padding: 36px; text-align: center; margin: 48px 0;
+  }
+  .cta-section h2 { font-size: 1.3rem; color: #fff; margin-bottom: 12px; font-family: Arial, sans-serif; }
+  .cta-section p { color: #aaa; font-size: 0.92rem; margin-bottom: 22px; }
+  .cta-btn {
+    display: inline-block; background: #00CFEA; color: #000;
+    font-family: Arial, sans-serif; font-weight: 700; font-size: 13px;
+    padding: 12px 32px; border-radius: 4px; letter-spacing: 0.5px;
+  }
   .cta-btn:hover { background: #00b8d1; text-decoration: none; }
 
-  .data-footer { background: #080810; border-top: 1px solid #1a1a2e; padding: 20px 32px; font-family: Arial, sans-serif; font-size: 11px; color: #555; text-align: center; line-height: 1.8; }
+  /* FOOTER */
+  .data-footer {
+    background: #060610; border-top: 1px solid #111;
+    padding: 18px 32px; font-family: Arial, sans-serif; font-size: 11px; color: #444; text-align: center; line-height: 1.9;
+  }
 
-  @media (max-width: 700px) {
-    .metrics-strip { grid-template-columns: repeat(2, 1fr); }
-    .findings-grid { grid-template-columns: 1fr; }
-    .scenario-cards { grid-template-columns: 1fr; }
-    .nerai-index-grid { grid-template-columns: 1fr; }
-    .timeline-cells { grid-template-columns: 1fr; }
-    .stat-row { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 680px) {
+    .metrics-strip { grid-template-columns: repeat(2,1fr); }
+    .stat-row { grid-template-columns: repeat(2,1fr); }
+    .nerai-grid { grid-template-columns: 1fr; }
     .hero h1 { font-size: 1.6rem; }
     .site-header nav { display: none; }
   }
@@ -259,6 +239,7 @@
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="site-header">
   <div class="logo-grid">
     <div class="logo-dot dark"></div><div class="logo-dot cyan"></div><div class="logo-dot dark"></div><div class="logo-dot cyan"></div>
@@ -274,549 +255,404 @@
   </nav>
 </header>
 
+<!-- ALERT STRIP -->
 <div class="alert-strip">
   <div class="ticker">
-    <span>CONFLICT ACTIVE: U.S.–Iran Operations Begin Late April 2026</span>
-    <span>Brent Crude Base Case: $90–110/bbl</span>
+    <span>CONFLICT ACTIVE: U.S.–Iran Operations Underway — May 2026</span>
+    <span>Brent Crude Base Case $90–110/bbl</span>
     <span>U.S. Debt/GDP: 123%</span>
-    <span>NERAI Iran Bilateral Relations Index: 0.0543</span>
-    <span>GDP Worst Case: –1.5% to –2.5%</span>
+    <span>NERAI Iran Index: 0.0543</span>
+    <span>Worst-Case GDP: –1.5% to –2.5%</span>
   </div>
 </div>
 
+<!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-tag">Deep Dive · Strategic Analysis</div>
-    <h1>Economic Effects of the <span>Iran War</span><br>on the United States</h1>
-    <p class="hero-sub">Strategic Analysis and Policy Implications — Energy shocks, fiscal constraint, consumer demand erosion, and three GDP scenarios across a conflict that arrived at the worst possible macroeconomic moment.</p>
+    <h1>Economic Effects of the <em>Iran War</em> on the United States</h1>
+    <p class="hero-sub">Strategic Analysis and Policy Implications</p>
     <div class="hero-meta">
-      <span><span class="dot"></span> NERAI Strategic Analysis Lab</span>
-      <span><span class="dot"></span> 6 May 2026</span>
+      <span><span class="dot"></span> NERAI Intelligence — Strategic Analysis Lab</span>
+      <span><span class="dot"></span> Date: 6 May 2026</span>
       <span><span class="dot"></span> Classification: NERAI-UNRESTRICTED</span>
-      <span><span class="dot"></span> Full 8-Page Report</span>
     </div>
   </div>
 </div>
 
+<!-- MAIN -->
 <div class="main">
 
-  <!-- KEY METRICS -->
-  <div class="metrics-strip">
-    <div class="metric-cell">
-      <span class="val red">0.0543</span>
-      <span class="lbl">Iran Deteriorating<br>Bilateral Relations</span>
-    </div>
-    <div class="metric-cell">
-      <span class="val yellow">123%</span>
-      <span class="lbl">U.S. Debt-to-GDP<br>Q1 2026</span>
-    </div>
-    <div class="metric-cell">
-      <span class="val" style="color:#ff8800;">$90–110</span>
-      <span class="lbl">Brent Crude Base<br>Case (per barrel)</span>
-    </div>
-    <div class="metric-cell">
-      <span class="val red">4.8–5.2%</span>
-      <span class="lbl">U.S. Inflation<br>Base Case YE 2026</span>
-    </div>
-    <div class="metric-cell">
-      <span class="val cyan">50%</span>
-      <span class="lbl">Base Case<br>Scenario Probability</span>
-    </div>
-  </div>
-
-  <!-- EXECUTIVE SUMMARY -->
-  <div class="exec-summary">
-    <h2>Executive Summary</h2>
-    <p>An armed conflict between the United States and Iran, now underway as of May 2026, presents a significant macroeconomic challenge to the U.S. economy through multiple transmission mechanisms: energy market disruption, fiscal strain from military expenditures, inflationary pressures on consumer prices, and heightened financial market volatility.</p>
-    <p>While the U.S. economy's post-industrial structure and reduced manufacturing base provide some insulation from the most severe oil-shock consequences observed in prior Middle Eastern conflicts, the current U.S. economic baseline — characterized by elevated debt levels, tight labor markets, and fragile consumer confidence — creates conditions under which even moderate war-related shocks carry outsized macroeconomic costs.</p>
-    <p>This analysis finds that the Iran war poses a material downside risk to near-term GDP growth, with inflation and interest-rate dynamics presenting the primary transmission channels for economic damage.</p>
-  </div>
-
-  <!-- KEY FINDINGS -->
-  <div class="section-header">
-    <h2>Key Findings</h2>
-    <div class="line"></div>
-  </div>
-  <div class="findings-grid">
-    <div class="finding-card">
-      <h3>Energy Markets — Primary Vulnerability</h3>
-      <p>Disruption to Iranian oil exports and regional shipping lanes creates upward pressure on global crude prices and refined product costs. The U.S. domestic shale sector and strategic petroleum reserve (SPR) access provide partial hedges absent in prior Middle Eastern conflicts.</p>
-    </div>
-    <div class="finding-card">
-      <h3>Fiscal & Monetary Policy Constraint</h3>
-      <p>Rising military expenditures during an already-elevated debt-to-GDP environment (123% as of Q1 2026) limit policy flexibility, while the Federal Reserve faces trade-offs between inflation control and financial stability that may constrain conventional monetary responses.</p>
-    </div>
-    <div class="finding-card">
-      <h3>Consumer Demand Vulnerability</h3>
-      <p>Early polling data and consumer sentiment indices suggest increased household economic anxiety tied to war risks and inflation expectations, threatening the consumer spending that has anchored U.S. GDP growth since 2023.</p>
-    </div>
-    <div class="finding-card">
-      <h3>Financial Market Repricing Underway</h3>
-      <p>Treasury yield volatility, equity market corrections, and credit spread widening observed in early May 2026 reflect investor reassessment of growth and inflation trajectories — a process that may amplify economic contraction through wealth effects and tighter lending conditions.</p>
-    </div>
-  </div>
-  <div class="findings-grid" style="margin-bottom:0;">
-    <div class="finding-card">
-      <h3>NERAI Index — Medium-Term Escalation Risk</h3>
-      <p>The NERAI Deteriorating Bilateral Relations index for Iran (0.0543) signals medium-term escalation risk. This metric reflects structural U.S.-Iran antagonism and suggests elevated probability of conflict expansion beyond initial military operations.</p>
-    </div>
-    <div class="finding-card">
-      <h3>Structural Protection — Partial, Not Complete</h3>
-      <p>Manufacturing represents only 8.5% of U.S. GDP (vs. 25% in 1970), and the U.S. produces approximately 13 mbd domestically. These structural features provide buffers against the worst outcomes, yet do not eliminate vulnerability to higher energy costs' effects on inflation and consumer purchasing power.</p>
+  <!-- ── VISUAL INSERT: Key numbers at a glance ── -->
+  <div class="visual-insert">
+    <div class="visual-label">Key Numbers at a Glance</div>
+    <div class="metrics-strip">
+      <div class="metric-cell">
+        <span class="val" style="color:#ff5533;">0.0543</span>
+        <span class="lbl">Iran Deteriorating<br>Bilateral Relations</span>
+      </div>
+      <div class="metric-cell">
+        <span class="val" style="color:#ffc107;">123%</span>
+        <span class="lbl">U.S. Debt-to-GDP<br>Q1 2026</span>
+      </div>
+      <div class="metric-cell">
+        <span class="val" style="color:#ff8800;">$90–110</span>
+        <span class="lbl">Brent Crude<br>Base Case/bbl</span>
+      </div>
+      <div class="metric-cell">
+        <span class="val" style="color:#ff4444;">4.8–5.2%</span>
+        <span class="lbl">U.S. Inflation<br>Base Case YE 2026</span>
+      </div>
+      <div class="metric-cell">
+        <span class="val" style="color:#00CFEA;">50%</span>
+        <span class="lbl">Base Case<br>Probability</span>
+      </div>
     </div>
   </div>
 
-  <!-- BACKGROUND & CONTEXT -->
-  <div class="section-header">
-    <h2>Background &amp; Context</h2>
-    <div class="line"></div>
+  <hr class="section-divider">
+
+  <!-- ══════════════════════════════════════════
+       EXECUTIVE SUMMARY — verbatim from report
+  ══════════════════════════════════════════ -->
+  <div class="report-section">
+    <span class="section-tag">Executive Summary</span>
+    <p>An armed conflict between the United States and Iran, now underway as of May 2026, presents a significant macroeconomic challenge to the U.S. economy through multiple transmission mechanisms: energy market disruption, fiscal strain from military expenditures, inflationary pressures on consumer prices, and heightened financial market volatility. While the U.S. economy's post-industrial structure and reduced manufacturing base provide some insulation from the most severe oil-shock consequences observed in prior Middle Eastern conflicts, the current U.S. economic baseline—characterized by elevated debt levels, tight labor markets, and fragile consumer confidence—creates conditions under which even moderate war-related shocks carry outsized macroeconomic costs. This analysis finds that the Iran war poses a material downside risk to near-term GDP growth, with inflation and interest-rate dynamics presenting the primary transmission channels for economic damage.</p>
   </div>
 
-  <div class="context-box">
+  <hr class="section-divider">
+
+  <!-- ══════════════════════════════════════════
+       KEY FINDINGS — verbatim, styled as cards
+  ══════════════════════════════════════════ -->
+  <div class="report-section">
+    <span class="section-tag">Key Findings</span>
+    <div class="findings-list">
+      <div class="finding-item">
+        <p><strong>Energy markets remain the primary vulnerability:</strong> Disruption to Iranian oil exports and regional shipping lanes creates upward pressure on global crude prices and refined product costs, though the U.S. domestic shale sector and strategic petroleum reserve (SPR) access provide partial hedges absent in prior Middle Eastern conflicts.</p>
+      </div>
+      <div class="finding-item">
+        <p><strong>Fiscal and monetary policy constraint:</strong> Rising military expenditures during an already-elevated debt-to-GDP environment (estimated at 123% as of Q1 2026) limit policy flexibility, while the Federal Reserve faces trade-offs between inflation control and financial stability that may constrain conventional monetary responses.</p>
+      </div>
+      <div class="finding-item">
+        <p><strong>Consumer demand vulnerability:</strong> Early polling data and consumer sentiment indices suggest increased household economic anxiety tied to war risks and inflation expectations, threatening the consumer spending that has anchored U.S. GDP growth since 2023.</p>
+      </div>
+      <div class="finding-item">
+        <p><strong>Financial market repricing underway:</strong> Treasury yield volatility, equity market corrections, and credit spread widening observed in early May 2026 reflect investor reassessment of growth and inflation trajectories—a process that may amplify economic contraction through wealth effects and tighter lending conditions.</p>
+      </div>
+      <div class="finding-item">
+        <p><strong>NERAI deteriorating bilateral relations index for Iran (0.0543) signals medium-term escalation risk:</strong> This metric, while moderate in absolute terms, reflects structural U.S.-Iran antagonism and suggests elevated probability of conflict expansion beyond initial military operations.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ══════════════════════════════════════════
+       BACKGROUND & CONTEXT — verbatim
+  ══════════════════════════════════════════ -->
+  <div class="report-section">
+    <span class="section-tag">Background &amp; Context</span>
     <p>The United States entered into direct military operations against Iran in late April 2026, marking the first sustained U.S.-Iran kinetic conflict despite decades of proxy competition, sanctions, and strategic rivalry. This conflict emerges from a context of pre-existing U.S. economic fragility: as of May 2026, the U.S. economy faced headwinds including a 3.9% year-over-year inflation rate (above the Federal Reserve's 2% target), unemployment hovering near 4.2%, and accumulated federal debt exceeding $33 trillion. The Council on Foreign Relations documented in late April 2026 that the U.S. economy entered this conflict in a "shaky" condition, with consumer spending growth decelerating and business investment sentiment deteriorating.</p>
-    <p>Iran remains a significant global oil producer, though reduced from historical peaks due to decades of international sanctions. Prior to the 2026 conflict, Iranian crude output was estimated at approximately 3.8 million barrels per day (mbd) — roughly 3.8% of global production — with most exports directed to China and India under sanctions-circumvention arrangements. Disruption to Iranian supply, combined with potential attacks on Saudi and UAE production facilities or Persian Gulf shipping lanes, could rapidly push global oil prices above $100 per barrel, with refined petroleum products experiencing even sharper increases due to regional refining capacity constraints.</p>
+    <p>Iran remains a significant global oil producer, though reduced from historical peaks due to decades of international sanctions. Prior to the 2026 conflict, Iranian crude output was estimated at approximately 3.8 million barrels per day (mbd)—roughly 3.8% of global production—with most exports directed to China and India under sanctions-circumvention arrangements. Disruption to Iranian supply, combined with potential attacks on Saudi and UAE production facilities or Persian Gulf shipping lanes, could rapidly push global oil prices above $100 per barrel, with refined petroleum products (gasoline, diesel, heating oil) experiencing even sharper increases due to regional refining capacity constraints.</p>
     <p>The U.S. economy's structural position differs materially from the 1970s oil shocks or the 2003–2008 Iraq War period. Manufacturing now represents only 8.5% of U.S. GDP (versus 25% in 1970), reducing exposure to input-cost inflation in industrial production. The U.S. shale revolution has made the country the world's largest crude oil producer (approximately 13 mbd as of 2026), substantially reducing import dependence compared to pre-2008 levels when the U.S. imported 60% of its petroleum. These structural features provide buffers against the worst outcomes, yet do not eliminate vulnerability to higher energy costs' effects on inflation, consumer purchasing power, and business operating margins.</p>
   </div>
 
-  <div class="stat-row">
-    <div class="stat-box">
-      <span class="num">3.8 mbd</span>
-      <span class="lbl">Iran Pre-War<br>Oil Output</span>
-    </div>
-    <div class="stat-box">
-      <span class="num cyan">13 mbd</span>
-      <span class="lbl">U.S. Domestic<br>Shale Production</span>
-    </div>
-    <div class="stat-box">
-      <span class="num yellow">8.5%</span>
-      <span class="lbl">Manufacturing<br>Share of U.S. GDP</span>
-    </div>
-    <div class="stat-box">
-      <span class="num" style="color:#ff6644;">$33T+</span>
-      <span class="lbl">U.S. Federal<br>Debt May 2026</span>
-    </div>
-  </div>
-
-  <!-- ANALYSIS -->
-  <div class="section-header">
-    <h2>Analysis</h2>
-    <div class="line"></div>
-  </div>
-
-  <!-- Channel 1: Energy -->
-  <div class="analysis-panel">
-    <h3><span class="tag">Channel 1</span> The Energy Transmission Channel and Partial Mitigation</h3>
-    <p>The Iran war's most immediate macroeconomic mechanism operates through energy markets. Disruption to Iranian crude exports and potential regional escalation affecting Saudi Arabian or UAE facilities, combined with heightened shipping insurance premiums and vessel diversions around the Cape of Good Hope, creates genuine upward pressure on global oil prices.</p>
-    <p>CEPR analysis published 3 May 2026 quantified this channel: each $10 per barrel increase in crude oil prices translates to approximately 0.3 percentage points of additional U.S. inflation within 12 months, with larger effects materializing in subsequent quarters as energy costs propagate through supply chains and wage negotiations.</p>
-    <p>However, critical structural differences limit the depth of this shock relative to historical precedents. The U.S. shale sector — producing approximately 9 mbd domestically as of May 2026 — operates with marginal costs in the $45–60 per barrel range, meaning that price increases above these thresholds incentivize rapid production increases. Unlike the 1973 Arab oil embargo or the 1990–1991 Gulf War, when the U.S. faced absolute supply constraints, current market conditions allow domestic supply expansion to partially offset Iranian supply losses.</p>
-    <p>The Department of Energy maintains the Strategic Petroleum Reserve at approximately 370 million barrels — sufficient for roughly 25–30 days of total U.S. petroleum consumption — providing an additional buffer absent during previous Middle Eastern conflicts.</p>
-    <p>Nonetheless, the mitigation is partial and faces constraints. Shale production increases require 3–6 month lead times for rig mobilization and well completion; the SPR drawdown faces practical limitations (extraction rates cap around 4.4 mbd) and creates long-term energy security vulnerabilities. If Iranian supply disruptions persist beyond the second half of 2026, or if regional escalation damages Saudi or UAE capacity, global oil prices could sustain elevated levels ($90–110 per barrel) despite U.S. mitigation efforts. For consumers, this translates to retail gasoline prices in the $3.50–4.00 per gallon range — not 1970s crisis levels, but sufficient to reduce discretionary purchasing power for lower-income households and accelerate inflation pass-through into housing costs, food prices, and transportation.</p>
-  </div>
-
-  <div class="inflation-calc">
-    <div>
-      <div class="calc-label">CEPR Transmission Elasticity</div>
-      <div class="calc-formula">Every +$10/barrel crude oil = +0.3pp U.S. inflation within 12 months</div>
-    </div>
-    <div style="border-left:1px solid #224422; padding-left:24px;">
-      <div class="calc-label">Base Case Implication</div>
-      <div class="calc-formula" style="color:#ffc107;">$90–110/bbl → +0.8–1.3pp → YE Inflation ~4.8–5.2%</div>
+  <!-- ── VISUAL INSERT: Context stats ── -->
+  <div class="visual-insert">
+    <div class="visual-label">Structural Context</div>
+    <div class="stat-row">
+      <div class="stat-cell">
+        <span class="num" style="color:#ff8800;">3.8 mbd</span>
+        <span class="lbl">Iran pre-war<br>crude output</span>
+      </div>
+      <div class="stat-cell">
+        <span class="num" style="color:#00CFEA;">13 mbd</span>
+        <span class="lbl">U.S. domestic<br>shale production</span>
+      </div>
+      <div class="stat-cell">
+        <span class="num" style="color:#ffc107;">8.5%</span>
+        <span class="lbl">Manufacturing<br>share of U.S. GDP</span>
+      </div>
+      <div class="stat-cell">
+        <span class="num" style="color:#ff5533;">$33T+</span>
+        <span class="lbl">U.S. accumulated<br>federal debt</span>
+      </div>
     </div>
   </div>
 
-  <!-- Oil chart -->
-  <div class="chart-container">
-    <div class="chart-title">Brent Crude Price Range by Scenario ($/barrel)</div>
-    <svg viewBox="0 0 820 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
-      <line x1="120" y1="20" x2="800" y2="20" stroke="#1e1e2e" stroke-width="1"/>
-      <line x1="120" y1="60" x2="800" y2="60" stroke="#1e1e2e" stroke-width="1"/>
-      <line x1="120" y1="100" x2="800" y2="100" stroke="#1e1e2e" stroke-width="1"/>
-      <line x1="120" y1="140" x2="800" y2="140" stroke="#1e1e2e" stroke-width="1"/>
-      <line x1="120" y1="180" x2="800" y2="180" stroke="#1e1e2e" stroke-width="1"/>
-      <text x="108" y="24" fill="#666" font-size="11" font-family="Arial" text-anchor="end">$160</text>
-      <text x="108" y="64" fill="#666" font-size="11" font-family="Arial" text-anchor="end">$130</text>
-      <text x="108" y="104" fill="#666" font-size="11" font-family="Arial" text-anchor="end">$100</text>
-      <text x="108" y="144" fill="#666" font-size="11" font-family="Arial" text-anchor="end">$80</text>
-      <text x="108" y="184" fill="#666" font-size="11" font-family="Arial" text-anchor="end">$60</text>
-      <!-- Pre-war -->
-      <rect x="140" y="127" width="80" height="53" fill="#2a2a3e" rx="4"/>
-      <text x="180" y="120" fill="#888" font-size="11" font-family="Arial" text-anchor="middle">Pre-War</text>
-      <text x="180" y="200" fill="#888" font-size="11" font-family="Arial" text-anchor="middle">$68–75</text>
-      <!-- Best -->
-      <rect x="270" y="113" width="80" height="67" fill="#0a2a18" stroke="#44cc88" stroke-width="1.5" rx="4"/>
-      <text x="310" y="106" fill="#44cc88" font-size="11" font-family="Arial" text-anchor="middle" font-weight="bold">BEST CASE</text>
-      <text x="310" y="200" fill="#44cc88" font-size="11" font-family="Arial" text-anchor="middle">$75–85</text>
-      <!-- Base -->
-      <rect x="400" y="80" width="80" height="100" fill="#1a1a00" stroke="#ffc107" stroke-width="1.5" rx="4"/>
-      <text x="440" y="73" fill="#ffc107" font-size="11" font-family="Arial" text-anchor="middle" font-weight="bold">BASE CASE</text>
-      <text x="440" y="200" fill="#ffc107" font-size="11" font-family="Arial" text-anchor="middle">$90–110</text>
-      <!-- Worst -->
-      <rect x="530" y="27" width="80" height="153" fill="#2a0505" stroke="#cc2200" stroke-width="1.5" rx="4"/>
-      <text x="570" y="20" fill="#cc2200" font-size="11" font-family="Arial" text-anchor="middle" font-weight="bold">WORST CASE</text>
-      <text x="570" y="200" fill="#cc2200" font-size="11" font-family="Arial" text-anchor="middle">$130–160</text>
-      <!-- Hormuz annotation -->
-      <text x="700" y="45" fill="#ff5533" font-size="10" font-family="Arial" text-anchor="middle">Hormuz closure</text>
-      <text x="700" y="58" fill="#ff5533" font-size="10" font-family="Arial" text-anchor="middle">risk: $150+</text>
-      <line x1="668" y1="52" x2="614" y2="60" stroke="#ff5533" stroke-width="1" stroke-dasharray="4,2"/>
-      <!-- SPR label -->
-      <text x="700" y="155" fill="#00CFEA" font-size="10" font-family="Arial" text-anchor="middle">SPR: 370M bbl</text>
-      <text x="700" y="168" fill="#00CFEA" font-size="10" font-family="Arial" text-anchor="middle">25–30 day buffer</text>
-    </svg>
+  <hr class="section-divider">
+
+  <!-- ══════════════════════════════════════════
+       ANALYSIS — verbatim
+  ══════════════════════════════════════════ -->
+  <div class="report-section">
+    <span class="section-tag">Analysis</span>
+
+    <h3>The Energy Transmission Channel and Partial Mitigation</h3>
+    <p>The Iran war's most immediate macroeconomic mechanism operates through energy markets. Disruption to Iranian crude exports and potential regional escalation affecting Saudi Arabian or UAE facilities, combined with heightened shipping insurance premiums and vessel diversions around the Cape of Good Hope, creates genuine upward pressure on global oil prices. The CEPR analysis published 3 May 2026 quantified this channel, finding that each $10 per barrel increase in crude oil prices translates to approximately 0.3 percentage points of additional U.S. inflation within 12 months, with larger effects materializing in subsequent quarters as energy costs propagate through supply chains and wage negotiations.</p>
+    <p>However, critical structural differences limit the depth of this shock relative to historical precedents. The U.S. shale sector—producing approximately 9 mbd domestically as of May 2026—operates with marginal costs in the $45–60 per barrel range, meaning that price increases above these thresholds incentivize rapid production increases. Unlike the 1973 Arab oil embargo or the 1990–1991 Gulf War, when the U.S. faced absolute supply constraints, current market conditions allow domestic supply expansion to partially offset Iranian supply losses. The Department of Energy maintains the Strategic Petroleum Reserve at approximately 370 million barrels—sufficient for roughly 25–30 days of total U.S. petroleum consumption—providing an additional buffer absent during previous Middle Eastern conflicts.</p>
+    <p>Nonetheless, the mitigation is partial and faces constraints. Shale production increases require 3–6 month lead times for rig mobilization and well completion; the SPR drawdown faces practical limitations (extraction rates cap around 4.4 mbd) and creates long-term energy security vulnerabilities. If Iranian supply disruptions persist beyond the second half of 2026, or if regional escalation damages Saudi or UAE capacity, global oil prices could sustain elevated levels ($90–110 per barrel) despite U.S. mitigation efforts. For consumers, this translates to retail gasoline prices in the $3.50–4.00 per gallon range—not 1970s crisis levels but sufficient to reduce discretionary purchasing power for lower-income households and accelerate inflation pass-through into housing costs, food prices, and transportation.</p>
   </div>
 
-  <!-- Channel 2: Fiscal -->
-  <div class="analysis-panel">
-    <h3><span class="tag">Channel 2</span> Fiscal Constraints and Monetary Policy Dilemmas</h3>
-    <p>The Iran war arrives amid constrained fiscal capacity. The Congressional Budget Office estimates the U.S. structural deficit (cyclically adjusted) at approximately 5.5% of GDP for fiscal year 2026, driven by mandatory spending growth (Social Security, Medicare) and interest costs on accumulated debt. Department of Defense budget authority already allocated for FY2026 stands at $825 billion; supplemental appropriations for the Iran conflict — estimated conservatively at $50–150 billion depending on conflict intensity and duration — require either additional borrowing, deficit expansion, or reallocation from other priorities. Each scenario creates economic friction.</p>
-    <p>Additional borrowing increases Treasury issuance at a moment when the Federal Reserve remains restrictive (policy rates at 4.5–4.75% as of early May 2026, substantially above the 2% neutral rate estimated by academic economists). Higher Treasury supply in this environment creates downward pressure on bond prices and upward pressure on yields — precisely the dynamic observed in CNBC reporting on 5 May 2026, where Treasury yield volatility reflected investor recalibration of economic trajectories. For households and businesses, rising long-term interest rates increase borrowing costs for mortgages, auto loans, and corporate debt, creating a potential demand destruction channel independent of energy prices.</p>
-    <p>The Federal Reserve faces a genuine policy dilemma. Conventional inflation-fighting calls for maintaining restrictive monetary policy to prevent energy-price shocks from triggering second-round wage and pricing dynamics. However, conflict-driven financial market volatility and potential demand destruction create recession risks that normally warrant policy accommodation. This uncertainty itself suppresses investment and hiring decisions.</p>
-  </div>
-
-  <div class="stat-row">
-    <div class="stat-box">
-      <span class="num red">5.5%</span>
-      <span class="lbl">U.S. Structural<br>Deficit / GDP 2026</span>
-    </div>
-    <div class="stat-box">
-      <span class="num yellow">$825B</span>
-      <span class="lbl">DoD Budget<br>Authority FY2026</span>
-    </div>
-    <div class="stat-box">
-      <span class="num" style="color:#ff8800;">4.5–4.75%</span>
-      <span class="lbl">Fed Funds Rate<br>May 2026</span>
-    </div>
-    <div class="stat-box">
-      <span class="num cyan">$50–250B</span>
-      <span class="lbl">War Supplemental<br>Range (Scenarios)</span>
+  <!-- ── VISUAL INSERT: Oil price scenarios chart ── -->
+  <div class="visual-insert">
+    <div class="visual-label">Oil Price by Scenario ($/barrel) — CEPR: every +$10 = +0.3pp U.S. inflation</div>
+    <div class="chart-box">
+      <svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+        <!-- gridlines -->
+        <line x1="110" y1="20" x2="790" y2="20" stroke="#1a1a2e" stroke-width="1"/>
+        <line x1="110" y1="60" x2="790" y2="60" stroke="#1a1a2e" stroke-width="1"/>
+        <line x1="110" y1="100" x2="790" y2="100" stroke="#1a1a2e" stroke-width="1"/>
+        <line x1="110" y1="140" x2="790" y2="140" stroke="#1a1a2e" stroke-width="1"/>
+        <line x1="110" y1="170" x2="790" y2="170" stroke="#1a1a2e" stroke-width="1"/>
+        <!-- y-axis labels -->
+        <text x="100" y="24" fill="#555" font-size="10" font-family="Arial" text-anchor="end">$160</text>
+        <text x="100" y="64" fill="#555" font-size="10" font-family="Arial" text-anchor="end">$130</text>
+        <text x="100" y="104" fill="#555" font-size="10" font-family="Arial" text-anchor="end">$100</text>
+        <text x="100" y="144" fill="#555" font-size="10" font-family="Arial" text-anchor="end">$80</text>
+        <text x="100" y="174" fill="#555" font-size="10" font-family="Arial" text-anchor="end">$60</text>
+        <!-- Pre-war bar -->
+        <rect x="130" y="118" width="90" height="52" fill="#1e1e2e" rx="3"/>
+        <text x="175" y="111" fill="#666" font-size="10" font-family="Arial" text-anchor="middle">Pre-War</text>
+        <text x="175" y="186" fill="#666" font-size="10" font-family="Arial" text-anchor="middle">$68–75</text>
+        <!-- Best case -->
+        <rect x="270" y="106" width="90" height="64" fill="#0a2a18" stroke="#44cc88" stroke-width="1.5" rx="3"/>
+        <text x="315" y="99" fill="#44cc88" font-size="10" font-family="Arial" text-anchor="middle" font-weight="bold">BEST ~25%</text>
+        <text x="315" y="186" fill="#44cc88" font-size="10" font-family="Arial" text-anchor="middle">$75–85</text>
+        <!-- Base case -->
+        <rect x="410" y="76" width="90" height="94" fill="#1a1800" stroke="#ffc107" stroke-width="1.5" rx="3"/>
+        <text x="455" y="69" fill="#ffc107" font-size="10" font-family="Arial" text-anchor="middle" font-weight="bold">BASE ~50%</text>
+        <text x="455" y="186" fill="#ffc107" font-size="10" font-family="Arial" text-anchor="middle">$90–110</text>
+        <!-- Worst case -->
+        <rect x="550" y="24" width="90" height="146" fill="#2a0505" stroke="#cc2200" stroke-width="1.5" rx="3"/>
+        <text x="595" y="17" fill="#cc2200" font-size="10" font-family="Arial" text-anchor="middle" font-weight="bold">WORST ~25%</text>
+        <text x="595" y="186" fill="#cc2200" font-size="10" font-family="Arial" text-anchor="middle">$130–160</text>
+        <!-- Hormuz note -->
+        <text x="710" y="38" fill="#ff5533" font-size="9" font-family="Arial" text-anchor="middle">Hormuz closure</text>
+        <text x="710" y="50" fill="#ff5533" font-size="9" font-family="Arial" text-anchor="middle">→ $150+/bbl</text>
+        <line x1="680" y1="44" x2="645" y2="52" stroke="#ff5533" stroke-width="1" stroke-dasharray="3,2"/>
+        <!-- SPR note -->
+        <text x="710" y="130" fill="#00CFEA" font-size="9" font-family="Arial" text-anchor="middle">SPR: 370M bbl</text>
+        <text x="710" y="142" fill="#00CFEA" font-size="9" font-family="Arial" text-anchor="middle">~25–30 day buffer</text>
+      </svg>
     </div>
   </div>
 
-  <!-- Channel 3: Consumer -->
-  <div class="analysis-panel">
-    <h3><span class="tag">Channel 3</span> Consumer Demand and Wealth Effects</h3>
-    <p>Bank of America analysis reported in Business Insider (5 May 2026) identified two primary forces driving U.S. economic growth entering the conflict: consumer spending and corporate earnings resilience. The Iran war threatens both through distinct mechanisms. Consumer spending, representing approximately 68% of U.S. GDP, depends on household confidence, real wages, and wealth perceptions. Conflict-driven equity market volatility — with the S&amp;P 500 experiencing 3–5% corrections in early May 2026 due to Iran war risk reassessment — reduces household net worth, dampening consumption through wealth effects. For the median household with 60% of retirement savings in equity markets, a 5–10% market correction represents $15,000–30,000 in lost wealth, creating psychological braking effects on discretionary spending exceeding the direct wealth loss.</p>
-    <p>Survey data reported by Deseret News (5 May 2026) captured elevated household anxiety. Consumer confidence indices, tracked by the Conference Board and University of Michigan, showed deterioration in May 2026 tied explicitly to war risks and energy price concerns. This confidence erosion typically precedes actual spending reductions by 1–2 quarters, suggesting Q2 and Q3 2026 consumption growth will decelerate below the 2.5–3.0% annualized rates observed in Q1 2026.</p>
-    <p>The Fortune article (4 May 2026) highlighted that because manufacturing comprises only 8.5% of U.S. GDP, oil-shock-driven input cost inflation does not cascade through industrial supply chains as severely as in manufacturing-heavy economies (Germany, Japan, South Korea). However, this structural protection does not extend to consumer goods inflation. Energy costs embed themselves into transportation, retail logistics, and heating, hitting lower-income households — who spend 12–15% of income on energy — disproportionately. This regressive inflation dynamic may trigger faster nominal wage growth demands, creating potential second-round inflation that constrains Fed accommodation options.</p>
-  </div>
+  <div class="report-section">
+    <h3>Fiscal Constraints and Monetary Policy Dilemmas</h3>
+    <p>The Iran war arrives amid constrained fiscal capacity. The Congressional Budget Office estimates the U.S. structural deficit (cyclically adjusted) at approximately 5.5% of GDP for fiscal year 2026, driven by mandatory spending growth (Social Security, Medicare) and interest costs on accumulated debt. Department of Defense budget authority already allocated for FY2026 stands at $825 billion; supplemental appropriations for the Iran conflict—estimated conservatively at $50–150 billion depending on conflict intensity and duration—require either additional borrowing, deficit expansion, or reallocation from other priorities. Each scenario creates economic friction.</p>
+    <p>Additional borrowing increases Treasury issuance at a moment when the Federal Reserve remains restrictive (policy rates at 4.5–4.75% as of early May 2026, substantially above the 2% neutral rate estimated by academic economists). Higher Treasury supply in this environment creates downward pressure on bond prices and upward pressure on yields—precisely the dynamic observed in CNBC reporting on 5 May 2026, where Treasury yield volatility reflected investor recalibration of economic trajectories. For households and businesses, rising long-term interest rates increase borrowing costs for mortgages, auto loans, and corporate debt, creating a potential demand destruction channel independent of energy prices.</p>
+    <p>The Federal Reserve faces a genuine policy dilemma. Conventional inflation-fighting calls for maintaining restrictive monetary policy to prevent energy-price shocks from triggering second-round wage and pricing dynamics. However, conflict-driven financial market volatility and potential demand destruction create recession risks that normally warrant policy accommodation. The May 2026 CNBC reporting on Treasury yields easing captured this tension: investors questioned whether the Fed would maintain restrictive policy or pivot toward accommodation. This uncertainty itself suppresses investment and hiring decisions.</p>
 
-  <!-- Consumer chart -->
-  <div class="chart-container">
-    <div class="chart-title">Consumer Spending as % of U.S. GDP — and War Impact on Household Net Worth</div>
-    <svg viewBox="0 0 820 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
-      <!-- GDP composition bar -->
-      <text x="20" y="40" fill="#888" font-size="11" font-family="Arial">GDP Composition</text>
-      <rect x="20" y="50" width="556" height="32" fill="#0a2040" rx="3"/>
-      <rect x="20" y="50" width="556" height="32" fill="#00CFEA33" rx="3"/>
-      <text x="298" y="71" fill="#00CFEA" font-size="12" font-family="Arial" text-anchor="middle" font-weight="bold">Consumer Spending: 68% of U.S. GDP</text>
-      <rect x="576" y="50" width="68" height="32" fill="#ffc10733" stroke="#ffc107" stroke-width="1" rx="3"/>
-      <text x="610" y="71" fill="#ffc107" font-size="10" font-family="Arial" text-anchor="middle">Gov 17%</text>
-      <rect x="644" y="50" width="60" height="32" fill="#cc220033" stroke="#cc2200" stroke-width="1" rx="3"/>
-      <text x="674" y="71" fill="#cc2200" font-size="10" font-family="Arial" text-anchor="middle">Other</text>
-      <!-- Wealth effect -->
-      <text x="20" y="120" fill="#888" font-size="11" font-family="Arial">Median Household Wealth Loss (5-10% equity correction)</text>
-      <rect x="20" y="130" width="200" height="30" fill="#2a0505" stroke="#cc2200" stroke-width="1" rx="3"/>
-      <text x="120" y="150" fill="#ff5533" font-size="12" font-family="Arial" text-anchor="middle" font-weight="bold">–$15,000 to –$30,000</text>
-      <text x="240" y="150" fill="#888" font-size="11" font-family="Arial">per household → consumption braking → Q2–Q3 demand deceleration</text>
-    </svg>
-  </div>
+    <h3>Consumer Demand and Wealth Effects</h3>
+    <p>Bank of America analysis reported in Business Insider (5 May 2026) identified two primary forces driving U.S. economic growth entering the conflict: consumer spending and corporate earnings resilience. The Iran war threatens both through distinct mechanisms. Consumer spending, representing approximately 68% of U.S. GDP, depends on household confidence, real wages, and wealth perceptions. Conflict-driven equity market volatility (with the S&amp;P 500 experiencing 3–5% corrections in early May 2026 due to Iran war risk reassessment) reduces household net worth, dampening consumption through wealth effects. For the median household with 60% of retirement savings in equity markets, a 5–10% market correction represents $15,000–30,000 in lost wealth, creating psychological braking effects on discretionary spending exceeding the direct wealth loss.</p>
+    <p>Survey data reported by Deseret News (5 May 2026) documenting "what we heard about the Iran war's impact on family finances" captured elevated household anxiety. Consumer confidence indices, tracked by the Conference Board and University of Michigan, showed deterioration in May 2026 tied explicitly to war risks and energy price concerns. This confidence erosion typically precedes actual spending reductions by 1–2 quarters, suggesting Q2 and Q3 2026 consumption growth will decelerate below the 2.5–3.0% annualized rates observed in Q1 2026.</p>
+    <p>The Fortune article (4 May 2026) highlighted that the U.S. economy's post-industrial structure actually provides protection in this domain: because manufacturing comprises only 8.5% of U.S. GDP, oil-shock-driven input cost inflation does not cascade through industrial supply chains as severely as in manufacturing-heavy economies (Germany, Japan, South Korea). However, this structural protection does not extend to consumer goods inflation. Energy costs embed themselves into transportation, retail logistics, and heating, hitting lower-income households—who spend 12–15% of income on energy—disproportionately. This regressive inflation dynamic may trigger faster nominal wage growth demands, creating potential second-round inflation that constrains Fed accommodation options.</p>
 
-  <!-- Channel 4: Geopolitical -->
-  <div class="analysis-panel">
-    <h3><span class="tag">Channel 4</span> Regional Geopolitical Escalation Risk</h3>
-    <p>The NERAI Index data identifies Iran's "Deteriorating Bilateral Relations" metric at 0.0543 — moderate in absolute terms but significantly elevated relative to baseline Iran values in the 2023–2025 period (typically 0.01–0.02). This metric reflects structural U.S.-Iran antagonism and the genuine risk that an initial conflict contained to border operations or limited strikes could expand into broader regional confrontation.</p>
-    <p>Escalation scenarios — including attacks on Saudi Arabian oil facilities, U.S. strikes on Iranian nuclear sites, or closure of the Strait of Hormuz — would create supply shocks orders of magnitude beyond the base case analyzed above. A Strait of Hormuz closure, even for 2–4 weeks, would disrupt approximately 30% of global maritime oil trade and trigger crude price spikes to $150+ per barrel, with cascading effects throughout global supply chains.</p>
+    <h3>Regional Geopolitical Escalation Risk</h3>
+    <p>The NERAI Index data provided identifies Iran's "Deteriorating Bilateral Relations" metric at 0.0543—moderate in absolute terms but significantly elevated relative to baseline Iran values in the 2023–2025 period (typically 0.01–0.02). This metric reflects structural U.S.-Iran antagonism and the genuine risk that an initial conflict contained to border operations or limited strikes could expand into broader regional confrontation. Escalation scenarios—including attacks on Saudi Arabian oil facilities, U.S. strikes on Iranian nuclear sites, or closure of the Strait of Hormuz—would create supply shocks orders of magnitude beyond the base case analyzed above. A Strait of Hormuz closure, even for 2–4 weeks, would disrupt approximately 30% of global maritime oil trade and trigger crude price spikes to $150+ per barrel, with cascading effects throughout global supply chains.</p>
     <p>While such scenarios remain in the tail-risk category (estimated at 15–25% probability through year-end 2026 by most strategic assessments), their economic consequences are severe enough to warrant explicit policy consideration. A full regional escalation scenario would move beyond demand destruction into actual stagflationary dynamics: simultaneous recession (negative growth) paired with 8–10% inflation, creating the worst macroeconomic combination for policy management and household welfare.</p>
   </div>
 
-  <!-- NERAI DATA INTEGRATION -->
-  <div class="section-header">
-    <h2>NERAI Data Integration</h2>
-    <div class="line"></div>
+  <hr class="section-divider">
+
+  <!-- ══════════════════════════════════════════
+       NERAI DATA INTEGRATION — verbatim
+  ══════════════════════════════════════════ -->
+  <div class="report-section">
+    <span class="section-tag cyan">NERAI Data Integration</span>
+    <p>The NERAI Index data provided as of 5 May 2026 offers quantitative signal confirmation of the qualitative geopolitical analysis. Iran's "Deteriorating Bilateral Relations" score of 0.0543 situates U.S.-Iran relations at elevated tension levels—higher than the Yemen value (0.0622, reflecting active humanitarian and military conflict) but comparable to medium-intensity interstate disputes. This metric suggests approximately 40–50% elevated probability of conflict expansion or new escalatory incidents over the subsequent 12-month period relative to baseline conditions.</p>
+    <p>Notably, the NERAI data reveals broader regional instability patterns that amplify Iran war risks. The Gaza Strip government instability score (0.1769) and Yemen deteriorating bilateral relations (0.0622) indicate that Middle Eastern geopolitical fragmentation extends beyond U.S.-Iran dynamics. These broader instability patterns increase probability of secondary conflicts drawing U.S. resources or regional allies into expanded military commitments. Mexico's government instability (0.1579) and ethnic-religious violence metrics (0.1129) reflect Western Hemisphere instability potentially affecting U.S. border security and resource allocation, creating competing demands on defense budgets and national security attention.</p>
+    <p>The elevated North Korea coup risk in the NERAI data (0.2096) and South Korea ethnic-religious violence (0.1093) introduce a secondary geopolitical risk: simultaneous Korea Peninsula instability during Iran conflict would fragment U.S. military command attention and potentially require force repositioning from Middle Eastern operations. This compounding risk reduces the U.S. ability to maintain deterrence across multiple theaters, potentially inviting Chinese opportunism in Taiwan or other regional assertiveness.</p>
+    <p>For economic analysis, these NERAI indicators translate into elevated tail-risk premiums. Financial markets price in not only the immediate Iran war effects but also the probability-weighted consequences of multiple simultaneous regional conflicts. This risk-aggregation dynamic appears reflected in the Treasury yield volatility and equity market corrections observed in early May 2026—markets are not pricing just the base-case Iran conflict scenario but rather assigning meaningful probability mass to broader geopolitical fragmentation.</p>
   </div>
 
-  <div class="nerai-panel">
-    <p class="nerai-note">The NERAI Index data as of 5 May 2026 offers quantitative signal confirmation of the qualitative geopolitical analysis. Iran's "Deteriorating Bilateral Relations" score of 0.0543 situates U.S.-Iran relations at elevated tension levels — higher than Yemen's baseline but comparable to medium-intensity interstate disputes. This metric suggests approximately 40–50% elevated probability of conflict expansion or new escalatory incidents over the subsequent 12-month period relative to baseline conditions.</p>
-    <p class="nerai-note" style="margin-top:12px;">The NERAI data also reveals broader regional instability patterns that amplify Iran war risks. The Gaza Strip government instability score (0.1769) and Yemen deteriorating bilateral relations (0.0622) indicate that Middle Eastern geopolitical fragmentation extends beyond U.S.-Iran dynamics. Mexico's government instability (0.1579) and ethnic-religious violence metrics (0.1129) reflect Western Hemisphere instability potentially affecting U.S. border security and resource allocation. The elevated North Korea coup risk (0.2096) introduces a secondary geopolitical risk: simultaneous Korea Peninsula instability would fragment U.S. military command attention and potentially require force repositioning from Middle Eastern operations.</p>
-    <div class="nerai-index-grid">
-      <div class="index-cell">
+  <!-- ── VISUAL INSERT: NERAI Index panel ── -->
+  <div class="visual-insert">
+    <div class="visual-label">NERAI Index Data — 5 May 2026 · Scores normalized 0.00–1.00 · HIGH &gt;0.40 · CRITICAL &gt;0.60</div>
+    <div class="nerai-grid">
+      <div class="nerai-cell">
         <div class="country">Iran</div>
         <div class="metric">Deteriorating Bilateral Relations</div>
-        <div class="index-bar-bg"><div class="index-bar-fill red" style="width:27%"></div></div>
-        <div class="score red">0.0543</div>
+        <div class="bar-bg"><div class="bar-fill bar-red" style="width:27%"></div></div>
+        <div class="score score-red">0.0543</div>
       </div>
-      <div class="index-cell">
+      <div class="nerai-cell">
         <div class="country">Gaza Strip</div>
         <div class="metric">Government Instability</div>
-        <div class="index-bar-bg"><div class="index-bar-fill red" style="width:44%"></div></div>
-        <div class="score red">0.1769</div>
+        <div class="bar-bg"><div class="bar-fill bar-red" style="width:44%"></div></div>
+        <div class="score score-red">0.1769</div>
       </div>
-      <div class="index-cell">
+      <div class="nerai-cell">
         <div class="country">Yemen</div>
         <div class="metric">Deteriorating Bilateral Relations</div>
-        <div class="index-bar-bg"><div class="index-bar-fill orange" style="width:31%"></div></div>
-        <div class="score orange">0.0622</div>
+        <div class="bar-bg"><div class="bar-fill bar-orange" style="width:31%"></div></div>
+        <div class="score score-orange">0.0622</div>
       </div>
-      <div class="index-cell">
+      <div class="nerai-cell">
         <div class="country">North Korea</div>
         <div class="metric">Coup Risk</div>
-        <div class="index-bar-bg"><div class="index-bar-fill red" style="width:52%"></div></div>
-        <div class="score red">0.2096</div>
+        <div class="bar-bg"><div class="bar-fill bar-red" style="width:52%"></div></div>
+        <div class="score score-red">0.2096</div>
       </div>
-      <div class="index-cell">
+      <div class="nerai-cell">
         <div class="country">Mexico</div>
         <div class="metric">Government Instability</div>
-        <div class="index-bar-bg"><div class="index-bar-fill orange" style="width:40%"></div></div>
-        <div class="score orange">0.1579</div>
+        <div class="bar-bg"><div class="bar-fill bar-orange" style="width:40%"></div></div>
+        <div class="score score-orange">0.1579</div>
       </div>
-      <div class="index-cell">
+      <div class="nerai-cell">
         <div class="country">South Korea</div>
         <div class="metric">Ethnic-Religious Violence</div>
-        <div class="index-bar-bg"><div class="index-bar-fill" style="width:27%"></div></div>
-        <div class="score">0.1093</div>
-      </div>
-    </div>
-    <p class="nerai-note" style="margin-top:16px; color:#777;">For economic analysis, these NERAI indicators translate into elevated tail-risk premiums. Financial markets price in not only the immediate Iran war effects but also the probability-weighted consequences of multiple simultaneous regional conflicts. This risk-aggregation dynamic appears reflected in the Treasury yield volatility and equity market corrections observed in early May 2026 — markets are not pricing just the base-case Iran conflict scenario but rather assigning meaningful probability mass to broader geopolitical fragmentation.</p>
-  </div>
-
-  <!-- THREE SCENARIOS -->
-  <div class="section-header">
-    <h2>Scenarios &amp; Forecast</h2>
-    <div class="line"></div>
-  </div>
-
-  <div class="scenario-cards" style="margin-bottom:24px;">
-    <div class="scenario-card">
-      <div class="scenario-header best">
-        <span class="scenario-label best">Best Case</span>
-        <span class="scenario-prob best">~25%</span>
-      </div>
-      <div class="scenario-body">
-        <div class="gdp">+1.8–2.2%</div>
-        <div class="gdp-label">U.S. Real GDP Growth 2026</div>
-        <ul>
-          <li><span>Conflict Duration</span><span class="stat">4–6 weeks</span></li>
-          <li><span>Oil Price</span><span class="stat">$75–85/bbl</span></li>
-          <li><span>Inflation YE 2026</span><span class="stat">~3.9–4.2%</span></li>
-          <li><span>War Supplemental</span><span class="stat">&lt;$75B</span></li>
-          <li><span>Unemployment</span><span class="stat">~4.4%</span></li>
-          <li><span>Consumption Growth</span><span class="stat">~2.0%</span></li>
-        </ul>
-        <div class="desc">Iranian oil exports resume at 70–80% of pre-conflict volumes within 8 weeks. Successful diplomatic off-ramps, limited civilian casualties, and regional actors exercising restraint. Consumer confidence stabilizes after initial shock period. U.S. avoids recession. This scenario requires all uncertain propositions to resolve favorably.</div>
-      </div>
-    </div>
-    <div class="scenario-card">
-      <div class="scenario-header base">
-        <span class="scenario-label base">Base Case</span>
-        <span class="scenario-prob base">~50%</span>
-      </div>
-      <div class="scenario-body">
-        <div class="gdp">+0.5–1.0%</div>
-        <div class="gdp-label">U.S. Real GDP Growth 2026</div>
-        <ul>
-          <li><span>Conflict Duration</span><span class="stat">8–12 weeks</span></li>
-          <li><span>Oil Price</span><span class="stat">$90–110/bbl</span></li>
-          <li><span>Inflation YE 2026</span><span class="stat">4.8–5.2%</span></li>
-          <li><span>War Supplemental</span><span class="stat">$120–150B</span></li>
-          <li><span>Unemployment</span><span class="stat">4.8–5.2%</span></li>
-          <li><span>Consumption Growth</span><span class="stat">0.8–1.2%</span></li>
-        </ul>
-        <div class="desc">Sporadic but limited regional escalation (strikes on Gulf shipping, attacks on allied facilities, potential Strait of Hormuz closure for 1–3 weeks). Fed forced to maintain restrictive policy. Fiscal supplementals materially worsen the deficit trajectory. Avoids outright recession but produces material stagflationary dynamics.</div>
-      </div>
-    </div>
-    <div class="scenario-card">
-      <div class="scenario-header worst">
-        <span class="scenario-label worst">Worst Case</span>
-        <span class="scenario-prob worst">~25%</span>
-      </div>
-      <div class="scenario-body">
-        <div class="gdp" style="color:#ff5533">–1.5 to –2.5%</div>
-        <div class="gdp-label">U.S. Real GDP Growth 2026</div>
-        <ul>
-          <li><span>Conflict Duration</span><span class="stat">3+ months</span></li>
-          <li><span>Oil Price</span><span class="stat">$130–160/bbl</span></li>
-          <li><span>Inflation YE 2026</span><span class="stat">6.5–7.5%</span></li>
-          <li><span>War Supplemental</span><span class="stat">&gt;$250B</span></li>
-          <li><span>Unemployment</span><span class="stat">6.5–7.0%</span></li>
-          <li><span>Consumption Growth</span><span class="stat">Contraction</span></li>
-        </ul>
-        <div class="desc">Saudi/UAE production facilities sustain meaningful damage; Hormuz closes 3+ weeks. Equity markets correct 15–25%. Federal Reserve faces genuine policy paralysis. Fiscal supplementals exceed $250B. Consumer confidence collapses. Combined with elevated debt, creates genuine debt-dynamics concerns and potential fiscal sustainability questions.</div>
+        <div class="bar-bg"><div class="bar-fill bar-cyan" style="width:27%"></div></div>
+        <div class="score score-cyan">0.1093</div>
       </div>
     </div>
   </div>
 
-  <!-- Forecast table -->
-  <table class="forecast-table" style="margin-bottom:16px;">
-    <thead>
-      <tr>
-        <th>Indicator</th>
-        <th>Pre-War Baseline</th>
-        <th>Best Case (25%)</th>
-        <th>Base Case (50%)</th>
-        <th>Worst Case (25%)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="metric-name">GDP Growth 2026</td>
-        <td>2.5–3.0%</td>
-        <td class="best-val">+1.8–2.2%</td>
-        <td class="base-val">+0.5–1.0%</td>
-        <td class="worst-val">–1.5 to –2.5%</td>
-      </tr>
-      <tr>
-        <td class="metric-name">Inflation YE 2026</td>
-        <td>3.9%</td>
-        <td class="best-val">3.9–4.2%</td>
-        <td class="base-val">4.8–5.2%</td>
-        <td class="worst-val">6.5–7.5%</td>
-      </tr>
-      <tr>
-        <td class="metric-name">Brent Crude</td>
-        <td>$68–75/bbl</td>
-        <td class="best-val">$75–85/bbl</td>
-        <td class="base-val">$90–110/bbl</td>
-        <td class="worst-val">$130–160/bbl</td>
-      </tr>
-      <tr>
-        <td class="metric-name">Unemployment</td>
-        <td>4.2%</td>
-        <td class="best-val">~4.4%</td>
-        <td class="base-val">4.8–5.2%</td>
-        <td class="worst-val">6.5–7.0%</td>
-      </tr>
-      <tr>
-        <td class="metric-name">Military Supplemental</td>
-        <td>—</td>
-        <td class="best-val">&lt;$75B</td>
-        <td class="base-val">$120–150B</td>
-        <td class="worst-val">&gt;$250B</td>
-      </tr>
-      <tr>
-        <td class="metric-name">Consumption Growth</td>
-        <td>2.5–3.0%</td>
-        <td class="best-val">~2.0%</td>
-        <td class="base-val">0.8–1.2%</td>
-        <td class="worst-val">Contraction</td>
-      </tr>
-      <tr>
-        <td class="metric-name">Retail Gasoline</td>
-        <td>~$3.10/gal</td>
-        <td class="best-val">$3.20–3.40</td>
-        <td class="base-val">$3.50–4.00</td>
-        <td class="worst-val">$4.50–5.50+</td>
-      </tr>
-      <tr>
-        <td class="metric-name">S&amp;P 500 Correction</td>
-        <td>—</td>
-        <td class="best-val">3–5%</td>
-        <td class="base-val">8–12%</td>
-        <td class="worst-val">15–25%</td>
-      </tr>
-    </tbody>
-  </table>
+  <hr class="section-divider">
 
-  <!-- Risk Timeline -->
-  <div class="section-header">
-    <h2>Risk Horizon</h2>
-    <div class="line"></div>
-  </div>
-  <div class="timeline-cells" style="margin-bottom:16px;">
-    <div class="timeline-cell">
-      <div class="period">30-Day Horizon</div>
-      <div class="prob" style="color:#ffc107">15–25%</div>
-      <div class="prob-label">Probability of new<br>escalatory incident</div>
-    </div>
-    <div class="timeline-cell">
-      <div class="period">60-Day Horizon</div>
-      <div class="prob" style="color:#ff8800">40–50%</div>
-      <div class="prob-label">Probability of significant<br>Gulf shipping disruption</div>
-    </div>
-    <div class="timeline-cell">
-      <div class="period">Year-End 2026</div>
-      <div class="prob" style="color:#cc2200">15–25%</div>
-      <div class="prob-label">Strait of Hormuz closure<br>tail-risk probability</div>
-    </div>
+  <!-- ══════════════════════════════════════════
+       SCENARIOS & FORECAST — verbatim
+  ══════════════════════════════════════════ -->
+  <div class="report-section">
+    <span class="section-tag">Scenarios &amp; Forecast</span>
+
+    <h3>Best Case Scenario (Probability: ~25%)</h3>
+    <p>The Iran conflict is contained to limited military operations lasting 4–6 weeks, with neither side pursuing territorial occupation or strikes on critical regional oil infrastructure. Iranian oil exports resume at 70–80% of pre-conflict volumes within 8 weeks. Global crude prices stabilize in the $75–85 per barrel range, providing modest inflation impulse (estimated 0.4–0.6 percentage points) that the Federal Reserve accommodates through gradual policy loosening. U.S. fiscal supplemental appropriations remain below $75 billion, manageable within existing deficit trajectories. Consumer confidence stabilizes after initial shock period. U.S. real GDP growth averages 1.8–2.2% in 2026, modestly below pre-conflict consensus forecasts but avoiding recession. This scenario requires successful diplomatic off-ramps, limited civilian casualties, and regional actors exercising restraint—all uncertain propositions.</p>
+
+    <h3>Base Case Scenario (Probability: ~50%)</h3>
+    <p>The Iran conflict extends 8–12 weeks with sporadic but limited regional escalation (strikes on Gulf shipping, attacks on allied facilities, potential closure of Strait of Hormuz for 1–3 weeks). Global crude prices average $90–110 per barrel through Q3 2026. U.S. inflation accelerates to 4.8–5.2% by year-end 2026, forcing the Federal Reserve to maintain restrictive policy longer than markets currently price. Fiscal supplemental appropriations reach $120–150 billion, materially worsening the deficit trajectory. Consumer confidence erodes; real consumption growth decelerates to 0.8–1.2% annualized. Corporate earnings face margin compression from higher input costs and reduced demand. U.S. real GDP growth slows to 0.5–1.0% in 2026, with Q3 representing the nadir. Unemployment drifts upward to 4.8–5.2% as demand destruction ripples through labor markets. This scenario avoids outright recession but produces material stagflationary dynamics and reduced living standards.</p>
+
+    <h3>Worst Case Scenario (Probability: ~25%)</h3>
+    <p>Escalation spreads to broader regional confrontation; Saudi Arabian or UAE production facilities sustain meaningful damage; Strait of Hormuz closes for 3+ weeks; potential strikes on Israeli or U.S. facilities trigger expanded coalition military response. Global crude prices spike to $130–160 per barrel; refined products experience even sharper increases. U.S. inflation accelerates to 6.5–7.5% by Q4 2026. Financial markets reprice recession probability sharply higher; equity markets correct 15–25%; credit spreads widen significantly; lending conditions tighten. Federal Reserve faces genuine policy paralysis—inflation demands restrictive stance but recession risks warrant accommodation. Fiscal supplementals exceed $250 billion. Consumer confidence collapses; spending drops sharply. U.S. real GDP contracts 1.5–2.5% in 2026; unemployment rises to 6.5–7.0%. Combined with elevated debt levels, this scenario creates genuine debt-dynamics concerns and potential fiscal sustainability questions.</p>
   </div>
 
-  <!-- POLICY RECOMMENDATIONS -->
-  <div class="section-header">
-    <h2>Policy Recommendations</h2>
-    <div class="line"></div>
+  <!-- ── VISUAL INSERT: Scenario comparison table ── -->
+  <div class="visual-insert">
+    <div class="visual-label">Scenario Comparison — Macro Indicators</div>
+    <table class="scenario-table">
+      <thead>
+        <tr>
+          <th>Indicator</th>
+          <th>Pre-War Baseline</th>
+          <th style="color:#44cc88;">Best Case ~25%</th>
+          <th style="color:#ffc107;">Base Case ~50%</th>
+          <th style="color:#ff5533;">Worst Case ~25%</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="row-label">Real GDP Growth 2026</td><td>2.5–3.0%</td><td class="best">+1.8–2.2%</td><td class="base">+0.5–1.0%</td><td class="worst">–1.5 to –2.5%</td></tr>
+        <tr><td class="row-label">Inflation YE 2026</td><td>3.9%</td><td class="best">+0.4–0.6pp impulse</td><td class="base">4.8–5.2%</td><td class="worst">6.5–7.5%</td></tr>
+        <tr><td class="row-label">Brent Crude</td><td>$68–75/bbl</td><td class="best">$75–85/bbl</td><td class="base">$90–110/bbl</td><td class="worst">$130–160/bbl</td></tr>
+        <tr><td class="row-label">Unemployment</td><td>4.2%</td><td class="best">Stable</td><td class="base">4.8–5.2%</td><td class="worst">6.5–7.0%</td></tr>
+        <tr><td class="row-label">War Supplemental</td><td>—</td><td class="best">&lt;$75B</td><td class="base">$120–150B</td><td class="worst">&gt;$250B</td></tr>
+        <tr><td class="row-label">Consumption Growth</td><td>2.5–3.0%</td><td class="best">Stabilizes</td><td class="base">0.8–1.2%</td><td class="worst">Contraction</td></tr>
+        <tr><td class="row-label">Equity Market</td><td>—</td><td class="best">3–5% correction</td><td class="base">8–12% correction</td><td class="worst">15–25% correction</td></tr>
+      </tbody>
+    </table>
   </div>
-  <div class="policy-cards">
-    <div class="policy-card">
-      <div class="policy-num">1</div>
-      <div>
-        <h3>Strategic Petroleum Reserve Management and Domestic Supply Incentives</h3>
-        <p>Immediately authorize SPR drawdowns sufficient to maintain crude prices within the $80–95 per barrel band through Q3 2026, releasing approximately 50–70 million barrels. Simultaneously, implement temporary permitting acceleration and financial incentives (investment tax credits, accelerated depreciation) for shale producers to maximize domestic output expansion. The Department of Energy should coordinate with state regulators to streamline environmental review processes for new drilling on existing federal leases, reducing project lead times from 6 months to 3–4 months.</p>
-        <div class="rationale">Rationale: Energy price moderation directly reduces inflation transmission and protects consumer purchasing power. Domestic supply expansion provides longer-term resilience without requiring extended SPR depletion.</div>
+
+  <hr class="section-divider">
+
+  <!-- ══════════════════════════════════════════
+       POLICY RECOMMENDATIONS — verbatim
+  ══════════════════════════════════════════ -->
+  <div class="report-section">
+    <span class="section-tag cyan">Policy Recommendations</span>
+
+    <div class="policy-item">
+      <div class="policy-num-row">
+        <div class="policy-badge">1</div>
+        <div class="policy-title">Strategic Petroleum Reserve Management and Domestic Supply Incentives</div>
+      </div>
+      <div class="policy-body">
+        <p>The U.S. government should immediately authorize SPR drawdowns sufficient to maintain crude prices within the $80–95 per barrel band through Q3 2026, releasing approximately 50–70 million barrels. Simultaneously, implement temporary permitting acceleration and financial incentives (investment tax credits, accelerated depreciation) for shale producers to maximize domestic output expansion. This dual approach uses existing assets to moderate energy price shocks while establishing supply-side buffers against further escalation. The Department of Energy should coordinate with state regulators to streamline environmental review processes for new drilling on existing federal leases, reducing project lead times from 6 months to 3–4 months.</p>
+        <div class="rationale-block"><p><strong>Rationale:</strong> Energy price moderation directly reduces inflation transmission and protects consumer purchasing power. Domestic supply expansion provides longer-term resilience without requiring extended SPR depletion.</p></div>
       </div>
     </div>
-    <div class="policy-card">
-      <div class="policy-num">2</div>
-      <div>
-        <h3>Temporary Fiscal Offset Mechanisms to Preserve Long-Term Debt Trajectory</h3>
-        <p>Rather than deficit-financed supplemental appropriations, implement a temporary 2% "conflict surtax" on corporate profits and elevated-income households (above $500,000 annual income), designed to offset 40–60% of military supplementals. Pair with accelerated reduction in lower-priority discretionary spending. This preserves fiscal credibility in international capital markets, moderating long-term interest-rate impacts that would otherwise amplify through higher borrowing costs and debt-service obligations.</p>
-        <div class="rationale">Rationale: The U.S. debt-to-GDP ratio (123%) leaves minimal capacity for deficit expansion without triggering financial market reassessment. Demonstrating fiscal discipline during conflict maintains investor confidence and prevents financing costs from becoming the binding constraint on policy options.</div>
+
+    <div class="policy-item">
+      <div class="policy-num-row">
+        <div class="policy-badge">2</div>
+        <div class="policy-title">Temporary Fiscal Offset Mechanisms to Preserve Long-Term Debt Trajectory</div>
+      </div>
+      <div class="policy-body">
+        <p>Rather than deficit-financed supplemental appropriations, implement a temporary 2% "conflict surtax" on corporate profits and elevated-income households (&gt;$500,000 annual income), designed to offset 40–60% of military supplementals. Pair with accelerated reduction in lower-priority discretionary spending. This preserves fiscal credibility in international capital markets, moderating long-term interest-rate impacts that would otherwise amplify through higher borrowing costs and debt-service obligations.</p>
+        <div class="rationale-block"><p><strong>Rationale:</strong> The U.S. debt-to-GDP ratio (123%) leaves minimal capacity for deficit expansion without triggering financial market reassessment. Demonstrating fiscal discipline during conflict maintains investor confidence and prevents the scenario in which financing costs themselves become the binding constraint on policy options.</p></div>
       </div>
     </div>
-    <div class="policy-card">
-      <div class="policy-num">3</div>
-      <div>
-        <h3>Federal Reserve Forward Guidance and Conditional Accommodation Framework</h3>
-        <p>The Federal Reserve should articulate an explicit "two-pillar" framework: maintenance of inflation-fighting credibility while pre-committing to demand-supportive accommodation if core inflation expectations remain anchored (i.e., 5-year-forward inflation expectations below 2.5%) despite elevated near-term price pressures. Specific language should emphasize that energy-driven, supply-shock inflation does not require equivalent demand destruction to that needed for domestically-generated inflation.</p>
-        <div class="rationale">Rationale: Policy uncertainty amplifies the economic damage from the underlying conflict shock. Clear Fed guidance reduces financial market volatility and prevents the demand-destruction channel from becoming self-fulfilling.</div>
+
+    <div class="policy-item">
+      <div class="policy-num-row">
+        <div class="policy-badge">3</div>
+        <div class="policy-title">Federal Reserve Forward Guidance and Conditional Accommodation Framework</div>
+      </div>
+      <div class="policy-body">
+        <p>The Federal Reserve should articulate an explicit "two-pillar" framework: maintenance of inflation-fighting credibility while pre-committing to demand-supportive accommodation if core inflation expectations remain anchored (i.e., 5-year-forward inflation expectations below 2.5%) despite elevated near-term price pressures. This framework manages market expectations and prevents the "uncertainty premium" that currently amplifies financial market volatility. Specific language should emphasize that energy-driven, supply-shock inflation does not require equivalent demand destruction to that needed for domestically-generated inflation.</p>
+        <div class="rationale-block"><p><strong>Rationale:</strong> Policy uncertainty amplifies the economic damage from the underlying conflict shock. Clear Fed guidance reduces financial market volatility and prevents the demand-destruction channel from becoming self-fulfilling.</p></div>
       </div>
     </div>
-    <div class="policy-card">
-      <div class="policy-num">4</div>
-      <div>
-        <h3>Targeted Household Support for Lower-Income Populations</h3>
-        <p>Implement direct fiscal transfers ($500–800 per household, means-tested to households below 150% of median income) to offset energy cost inflation. Fund through temporary payroll tax credits or direct appropriations, designed as 6-month mechanism timed to Q2–Q3 2026 when inflation transmission peaks.</p>
-        <div class="rationale">Rationale: Energy inflation disproportionately affects lower-income households spending 12–15% of income on energy. Direct transfers maintain consumption and prevent the demand-destruction scenario while distributing conflict costs more progressively than occurs through inflation-driven real wage erosion.</div>
+
+    <div class="policy-item">
+      <div class="policy-num-row">
+        <div class="policy-badge">4</div>
+        <div class="policy-title">Targeted Household Support for Lower-Income Populations</div>
+      </div>
+      <div class="policy-body">
+        <p>Implement direct fiscal transfers ($500–800 per household, means-tested to households below 150% of median income) to offset energy cost inflation. Fund through temporary payroll tax credits or direct appropriations, designed as 6-month mechanism timed to Q2–Q3 2026 when inflation transmission peaks. This protects lower-income households from regressive inflation while supporting aggregate demand through high-propensity-to-consume populations.</p>
+        <div class="rationale-block"><p><strong>Rationale:</strong> Energy inflation disproportionately affects lower-income households with constrained discretionary resources. Direct transfers maintain consumption and prevent the demand-destruction scenario while distributing conflict costs more progressively than occurs through inflation-driven real wage erosion.</p></div>
       </div>
     </div>
-    <div class="policy-card">
-      <div class="policy-num">5</div>
-      <div>
-        <h3>Diplomatic Conflict De-escalation with Economic Credibility</h3>
-        <p>Signal to international stakeholders (China, India, Russia, EU) that U.S. commitment to conflict limitation creates shared economic interests in rapid resolution. Explicitly frame conflict containment as beneficial to global economic stability and energy markets. Establish transparent communication channels with Iran regarding economic de-escalation pathways — including potential sanctions relief tied to specific conflict limitation agreements — to create incentive structure for negotiated settlement.</p>
-        <div class="rationale">Rationale: The worst-case scenario's primary driver is escalation risk, reflected in the NERAI bilateral relations metric (0.0543). Credible diplomatic off-ramps reduce tail-risk probability and lower the risk premium financial markets embed into asset prices, directly supporting economic stability.</div>
+
+    <div class="policy-item">
+      <div class="policy-num-row">
+        <div class="policy-badge">5</div>
+        <div class="policy-title">Diplomatic Conflict De-escalation with Economic Credibility</div>
+      </div>
+      <div class="policy-body">
+        <p>Signal to international stakeholders (China, India, Russia, EU) that U.S. commitment to conflict limitation creates shared economic interests in rapid resolution. Explicitly frame conflict containment as beneficial to global economic stability and energy markets. Establish transparent communication channels with Iran regarding economic de-escalation pathways—including potential sanctions relief tied to specific conflict limitation agreements—to create incentive structure for negotiated settlement.</p>
+        <div class="rationale-block"><p><strong>Rationale:</strong> The worst-case scenario's primary driver is escalation risk, reflected in the NERAI bilateral relations metric (0.0543). Credible diplomatic off-ramps reduce tail-risk probability and lower the risk premium financial markets embed into asset prices, directly supporting economic stability.</p></div>
       </div>
     </div>
   </div>
 
-  <!-- SOURCES & METHODOLOGY -->
-  <div class="section-header">
-    <h2>Sources &amp; Methodology</h2>
-    <div class="line"></div>
-  </div>
-  <div class="sources-section">
-    <h3>Think Tank and Research Institution References</h3>
-    <ul>
-      <li><strong>Council on Foreign Relations.</strong> "The U.S. Economy Was Shaky Before the Iran War. Now It's in Real Trouble." Published 28 April 2026. Analysis documenting pre-conflict U.S. economic fragility and conflict transmission mechanisms.</li>
-      <li><strong>Bank of America Economics Team</strong> (cited in Business Insider). "2 forces are driving US economic growth, and the Iran war threatens to derail both." Published 5 May 2026. Identifies consumer spending and corporate earnings as GDP growth anchors threatened by conflict.</li>
-      <li><strong>Centre for Economic Policy Research (CEPR).</strong> "Quantifying the impact of the Iran war on US inflation." Published 3 May 2026. Quantifies crude oil price-to-inflation transmission elasticity (0.3pp per $10/barrel).</li>
-      <li><strong>Federal Reserve.</strong> Policy rate levels as of May 2026 (4.5–4.75%). Fed Funds Rate maintained at 4.5–4.75% as of May 2026.</li>
-      <li><strong>Congressional Budget Office.</strong> Structural deficit and federal debt trajectory estimates for FY2026. Structural deficit at 5.5% of GDP.</li>
-      <li><strong>U.S. Department of Energy.</strong> Strategic Petroleum Reserve levels (approximately 370 million barrels), domestic crude production data (approximately 13 mbd), and refining capacity assessments as of Q1 2026.</li>
-      <li><strong>Conference Board and University of Michigan.</strong> Consumer Confidence Index and Consumer Sentiment Index data for April–May 2026 period.</li>
-    </ul>
+  <hr class="section-divider">
 
-    <h3>Data Sources and Methodology Notes</h3>
-    <ul>
-      <li><strong>NERAI Index Data</strong> (dated 5 May 2026 00:00:00): Iran Deteriorating Bilateral Relations metric (0.0543) serves as quantitative indicator of U.S.-Iran geopolitical tension. Interpreted as 40–50% elevated probability of conflict expansion relative to baseline. Index scores normalized to 0.00–1.00. HIGH threshold: &gt;0.40. CRITICAL threshold: &gt;0.60.</li>
-      <li><strong>Energy Market Data:</strong> Oil price references ($75–160/barrel range across scenarios) grounded in May 2026 market conditions and historical volatility patterns from prior Middle Eastern conflicts.</li>
-      <li><strong>Inflation Transmission Elasticity:</strong> CEPR analysis provides 0.3 percentage points U.S. inflation per $10/barrel crude increase — validated against IMF and Federal Reserve staff research on commodity price transmission.</li>
-      <li><strong>GDP Growth Forecasts:</strong> Scenario-based forecasts (–2.5% to +2.2% range) derived from production function approach incorporating capital, labor, and productivity components, conditioned on conflict duration and energy price assumptions.</li>
-      <li><strong>Debt-to-GDP Ratio:</strong> 123% estimate reflects Congressional Budget Office projections and Treasury Department data as of Q1 2026.</li>
-      <li><strong>Additional sources:</strong> GDELT Project · ACLED · IMF · World Bank · Satellite Feeds · NERAI Military and Diplomatic Risk Indices · Prophet Forecast Model.</li>
-    </ul>
+  <!-- ══════════════════════════════════════════
+       SOURCES & METHODOLOGY — verbatim
+  ══════════════════════════════════════════ -->
+  <div class="report-section">
+    <span class="section-tag">Sources &amp; Methodology</span>
+    <div class="sources-block">
+      <h3>Think Tank and Research Institution References</h3>
+      <ul>
+        <li>Council on Foreign Relations. "The U.S. Economy Was Shaky Before the Iran War. Now It's in Real Trouble." Published 28 April 2026. Analysis documenting pre-conflict U.S. economic fragility and conflict transmission mechanisms.</li>
+        <li>Bank of America Economics Team (cited in Business Insider). "2 forces are driving US economic growth, and the Iran war threatens to derail both." Published 5 May 2026. Identifies consumer spending and corporate earnings as GDP growth anchors threatened by conflict.</li>
+        <li>Centre for Economic Policy Research (CEPR). "Quantifying the impact of the Iran war on US inflation." Published 3 May 2026. Quantifies crude oil price-to-inflation transmission elasticity.</li>
+        <li>Federal Reserve (implicit references to policy rate levels as of May 2026, policy stance documentation available through Federal Reserve communications). Fed Funds Rate maintained at 4.5–4.75% as of May 2026.</li>
+        <li>Congressional Budget Office. Structural deficit and federal debt trajectory estimates for FY2026.</li>
+        <li>U.S. Department of Energy. Strategic Petroleum Reserve levels, domestic crude production data, and refining capacity assessments as of Q1 2026.</li>
+        <li>Conference Board and University of Michigan. Consumer Confidence Index and Consumer Sentiment Index data for April–May 2026 period.</li>
+      </ul>
 
-    <div class="uncertainty-note">
-      <strong>Uncertainty Qualifications:</strong> This analysis relies on publicly available economic data and reported think tank assessments as of 6 May 2026. Conflict-specific economic effects remain partially uncertain due to limited duration of hostilities (approximately 1–2 weeks as of report date). Scenario probabilities (best case ~25%, base case ~50%, worst case ~25%) reflect judgment-based assessment informed by regional expert analysis and historical patterns but should not be construed as precise probabilistic predictions. Financial market data reflects investor assessments that may embed both rational expectations and speculative dynamics; forward-looking indicators may overstate or understate actual economic consequences depending on conflict resolution trajectory.
+      <h3>Data Sources and Methodology Notes</h3>
+      <ul>
+        <li>NERAI Index Data (provided, dated 5 May 2026 00:00:00): Iran Deteriorating Bilateral Relations metric (0.0543) serves as quantitative indicator of U.S.-Iran geopolitical tension. Interpreted as 40–50% elevated probability of conflict expansion relative to baseline.</li>
+        <li>Energy Market Data: Oil price references ($75–160/barrel range across scenarios) grounded in May 2026 market conditions and historical volatility patterns from prior Middle Eastern conflicts.</li>
+        <li>Inflation Transmission Elasticity: CEPR analysis provides 0.3 percentage points U.S. inflation per $10/barrel crude increase—validated against IMF and Federal Reserve staff research on commodity price transmission.</li>
+        <li>GDP Growth Forecasts: Scenario-based forecasts (0.5–2.2% range) derived from production function approach incorporating capital, labor, and productivity components, conditioned on conflict duration and energy price assumptions.</li>
+        <li>Debt-to-GDP Ratio: 123% estimate reflects Congressional Budget Office projections and Treasury Department data as of Q1 2026.</li>
+      </ul>
+
+      <div class="uncertainty-box">
+        <p><strong>Uncertainty Qualifications:</strong> This analysis relies on publicly available economic data and reported think tank assessments as of 6 May 2026. Conflict-specific economic effects remain partially uncertain due to limited duration of hostilities (approximately 1–2 weeks as of report date). Scenario probabilities (best case 25%, base case 50%, worst case 25%) reflect judgment-based assessment informed by regional expert analysis and historical patterns but should not be construed as precise probabilistic predictions. Financial market data reflects investor assessments that may embed both rational expectations and speculative dynamics; forward-looking indicators may overstate or understate actual economic consequences depending on conflict resolution trajectory.</p>
+      </div>
     </div>
   </div>
+
+  <div class="end-note">— END OF REPORT — NERAI Intelligence Hub — Strategic Analysis Lab —</div>
 
   <!-- CTA -->
   <div class="cta-section">
@@ -828,9 +664,9 @@
 </div><!-- /main -->
 
 <div class="data-footer">
-  NERAI Intelligence — Strategic Analysis Lab &nbsp;·&nbsp; Classification: NERAI-UNRESTRICTED &nbsp;·&nbsp; Date: 6 May 2026<br>
-  Data: GDELT Project · ACLED · World Bank · IMF · U.S. Department of Energy · Congressional Budget Office · Federal Reserve · CEPR · Council on Foreign Relations<br>
-  Index scores normalized to 0.00–1.00. HIGH &gt;0.40 · CRITICAL &gt;0.60<br>
+  NERAI Intelligence — Strategic Analysis Lab &nbsp;·&nbsp; Classification: NERAI-UNRESTRICTED &nbsp;·&nbsp; 6 May 2026<br>
+  Data: GDELT · ACLED · World Bank · IMF · U.S. DoE · CBO · Federal Reserve · CEPR · Council on Foreign Relations<br>
+  Index scores normalized 0.00–1.00 · HIGH &gt;0.40 · CRITICAL &gt;0.60<br>
   <a href="https://neraicorp.com">neraicorp.com</a> &nbsp;·&nbsp; <a href="https://nerai-intelligence.streamlit.app">nerai-intelligence.streamlit.app</a>
 </div>
 
