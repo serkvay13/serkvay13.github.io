@@ -1,332 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Economic Effects of the Iran War on the United States — NERAI Intelligence</title>
-<meta name="description" content="NERAI Strategic Analysis: Economic Effects of the Iran War on the United States — Strategic Analysis and Policy Implications.">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Georgia', serif; background: #0d0d1a; color: #e8e8f0; line-height: 1.8; }
-  a { color: #00CFEA; text-decoration: none; }
-  a:hover { text-decoration: underline; }
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Economic Effects of the Iran War on the United States — NERAI Intelligence</title>
+  <meta name="description" content="NERAI Strategic Analysis: Economic Effects of the Iran War on the United States — Strategic Analysis and Policy Implications. Three GDP scenarios, five policy recommendations."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0d1f3c; --teal: #0077a8; --teal2: #005f87;
+      --silver: #5a6b82; --white: #ffffff; --accent: #00a886;
+      --red: #c93048; --border: rgba(0,119,168,0.14);
+      --glass: rgba(255,255,255,0.85);
+    }
+    body { font-family: 'Inter', sans-serif; background: #fff; color: var(--navy); line-height: 1.7; }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 28px; }
 
-  /* HEADER */
-  .site-header {
-    background: #0a0a15; border-bottom: 2px solid #00CFEA;
-    padding: 14px 32px; display: flex; align-items: center; gap: 16px;
-  }
-  .logo-grid { display: grid; grid-template-columns: repeat(4,10px); grid-template-rows: repeat(4,10px); gap: 3px; }
-  .logo-dot { width: 10px; height: 10px; border-radius: 2px; }
-  .logo-dot.dark { background: #1a1a2e; border: 1px solid #333; }
-  .logo-dot.cyan { background: #00CFEA; }
-  .logo-text { font-family: Arial, sans-serif; font-size: 22px; font-weight: 900; letter-spacing: 1px; }
-  .logo-text .ner { color: #1a1a2e; background: #e8e8f0; padding: 2px 4px; }
-  .logo-text .ai { color: #00CFEA; }
-  .site-header nav { margin-left: auto; display: flex; gap: 24px; font-family: Arial, sans-serif; font-size: 13px; }
-  .site-header nav a { color: #aaa; }
-  .site-header nav a:hover { color: #00CFEA; }
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 64px;
+          background: var(--glass); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+    nav .inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; height: 100%;
+                 display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-text { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 800; letter-spacing: 0.5px; }
+    .nav-logo-text .ner { color: var(--navy); }
+    .nav-logo-text .ai { color: var(--teal); }
+    .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
+    .nav-links a { font-size: 0.82rem; font-weight: 500; color: var(--silver); text-decoration: none;
+                   padding: 6px 12px; border-radius: 6px; transition: color .2s; }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta { background: linear-gradient(135deg, #005f87, #00a886) !important; color: #fff !important;
+               padding: 8px 18px !important; border-radius: 8px !important; font-weight: 600 !important; }
 
-  /* ALERT */
-  .alert-strip {
-    background: #cc2200; color: #fff; font-family: Arial, sans-serif;
-    font-size: 13px; font-weight: 700; letter-spacing: 0.5px;
-    padding: 11px 32px; text-align: center;
-  }
-  .ticker { display: inline-flex; gap: 40px; flex-wrap: wrap; justify-content: center; }
-  .ticker span::before { content: '▶ '; font-size: 10px; }
+    /* ARTICLE HEADER */
+    .article-header { padding: 104px 0 40px; background: linear-gradient(160deg, #f4f7fb 0%, #fdf0f0 100%);
+                      border-bottom: 1px solid var(--border); }
+    .breadcrumb { font-size: 0.75rem; color: var(--silver); margin-bottom: 20px; }
+    .breadcrumb a { color: var(--teal); text-decoration: none; }
+    .article-tag { display: inline-block; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em;
+                   text-transform: uppercase; color: var(--red); background: rgba(201,48,72,0.08);
+                   border: 1px solid rgba(201,48,72,0.2); padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; }
+    .article-header h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.7rem);
+                         line-height: 1.2; margin-bottom: 16px; }
+    .article-header h1 em { color: var(--red); font-style: normal; }
+    .article-sub { font-size: 1rem; color: var(--silver); margin-bottom: 24px; max-width: 620px; }
+    .article-meta { font-family: 'Courier New', monospace; font-size: 0.75rem; color: var(--silver);
+                    display: flex; gap: 24px; flex-wrap: wrap; }
+    .meta-item { display: flex; align-items: center; gap: 6px; }
+    .meta-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--teal); display: inline-block; }
 
-  /* HERO */
-  .hero {
-    background: linear-gradient(135deg, #1a0005 0%, #2d0010 30%, #1a0a00 60%, #0d0d1a 100%);
-    border-bottom: 3px solid #cc2200; padding: 56px 32px 44px; position: relative; overflow: hidden;
-  }
-  .hero::before {
-    content: ''; position: absolute; inset: 0;
-    background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(204,34,0,0.03) 40px, rgba(204,34,0,0.03) 41px);
-  }
-  .hero-inner { max-width: 900px; margin: 0 auto; position: relative; }
-  .hero-tag {
-    display: inline-block; background: #cc2200; color: #fff;
-    font-family: Arial, sans-serif; font-size: 11px; font-weight: 700;
-    letter-spacing: 2px; padding: 5px 14px; border-radius: 2px; margin-bottom: 20px; text-transform: uppercase;
-  }
-  .hero h1 { font-size: 2.3rem; color: #fff; line-height: 1.25; margin-bottom: 10px; font-weight: 700; }
-  .hero h1 em { color: #ff6644; font-style: normal; }
-  .hero-sub { font-size: 1rem; color: #c8b8b0; margin-bottom: 24px; }
-  .hero-meta { display: flex; gap: 28px; font-family: Arial, sans-serif; font-size: 12px; color: #888; flex-wrap: wrap; }
-  .hero-meta span { display: flex; align-items: center; gap: 6px; }
-  .hero-meta .dot { width: 6px; height: 6px; border-radius: 50%; background: #00CFEA; display: inline-block; }
+    /* ARTICLE BODY */
+    .article-body { padding: 56px 0 80px; }
+    .article-body h2 { font-family: 'DM Serif Display', serif; color: var(--navy);
+                       margin: 44px 0 16px; line-height: 1.3; font-size: 1.5rem; }
+    .article-body h3 { font-size: 1.05rem; font-weight: 600; color: var(--teal); margin: 28px 0 10px; }
+    .article-body p { margin-bottom: 18px; color: #374151; font-size: 0.97rem; line-height: 1.82; }
+    .article-body p:last-child { margin-bottom: 0; }
+    .article-body strong { color: var(--navy); font-weight: 600; }
+    .article-body hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+    .article-body a { color: var(--teal); }
 
-  /* MAIN */
-  .main { max-width: 880px; margin: 0 auto; padding: 48px 24px; }
+    /* SECTION LABEL */
+    .section-label { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 700;
+                     text-transform: uppercase; letter-spacing: 0.15em; color: var(--red);
+                     margin-bottom: 10px; display: block; }
+    .section-label.teal { color: var(--teal); }
 
-  /* VISUAL INSERTS — styled differently from report text */
-  .visual-insert {
-    margin: 28px 0;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  .visual-label {
-    background: #0a0a15; border: 1px solid #1e1e2e; border-bottom: none;
-    font-family: Arial, sans-serif; font-size: 10px; color: #555;
-    text-transform: uppercase; letter-spacing: 1.5px;
-    padding: 7px 14px; font-weight: 700;
-    display: flex; align-items: center; gap: 8px;
-    border-radius: 6px 6px 0 0;
-  }
-  .visual-label::before { content: ''; display: inline-block; width: 8px; height: 8px; background: #00CFEA; border-radius: 50%; }
+    /* KEY FINDINGS — styled cards, verbatim text */
+    .findings-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 4px; }
+    .finding-item { background: #f8fafc; border: 1px solid var(--border);
+                    border-left: 3px solid var(--red); border-radius: 0 8px 8px 0; padding: 14px 18px; }
+    .finding-item p { color: #374151; font-size: 0.93rem; line-height: 1.75; margin: 0; }
+    .finding-item strong { color: var(--navy); }
 
-  /* METRICS STRIP */
-  .metrics-strip {
-    display: grid; grid-template-columns: repeat(5,1fr);
-    gap: 1px; background: #1e1e2e;
-    border: 1px solid #1e1e2e; border-top: none; border-radius: 0 0 8px 8px;
-  }
-  .metric-cell { background: #0f0f1e; padding: 18px 12px; text-align: center; }
-  .metric-cell .val { font-size: 1.5rem; font-weight: 700; font-family: Arial, sans-serif; display: block; line-height: 1.1; }
-  .metric-cell .lbl { font-family: Arial, sans-serif; font-size: 9px; color: #666; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 6px; display: block; line-height: 1.4; }
+    /* VISUAL INSERTS */
+    .visual-insert { margin: 28px 0; }
+    .visual-caption { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 600;
+                      text-transform: uppercase; letter-spacing: 0.12em; color: var(--silver);
+                      background: #f4f7fb; border: 1px solid var(--border);
+                      border-bottom: none; border-radius: 8px 8px 0 0;
+                      padding: 8px 16px; display: flex; align-items: center; gap: 8px; }
+    .visual-caption::before { content: ''; width: 7px; height: 7px; border-radius: 50%;
+                               background: var(--teal); display: inline-block; }
 
-  /* REPORT SECTIONS */
-  .report-section { margin-bottom: 40px; }
-  .section-divider { border: none; border-top: 1px solid #1e1e2e; margin: 40px 0; }
+    /* METRICS STRIP */
+    .metrics-strip { display: grid; grid-template-columns: repeat(5,1fr); gap: 1px;
+                     background: var(--border); border: 1px solid var(--border);
+                     border-top: none; border-radius: 0 0 8px 8px; overflow: hidden; }
+    .metric-cell { background: #fff; padding: 16px 12px; text-align: center; }
+    .metric-cell .val { font-size: 1.35rem; font-weight: 700; font-family: 'Inter', sans-serif;
+                        display: block; line-height: 1.1; }
+    .metric-cell .lbl { font-size: 9px; color: var(--silver); text-transform: uppercase;
+                        letter-spacing: 0.8px; margin-top: 5px; display: block; line-height: 1.4; }
 
-  .section-tag {
-    font-family: Arial, sans-serif; font-size: 10px; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 2px; color: #cc2200;
-    margin-bottom: 14px; display: block;
-  }
-  .section-tag.cyan { color: #00CFEA; }
+    /* STAT ROW */
+    .stat-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px;
+                background: var(--border); border: 1px solid var(--border);
+                border-top: none; border-radius: 0 0 8px 8px; overflow: hidden; }
+    .stat-cell { background: #fff; padding: 16px; text-align: center; }
+    .stat-cell .num { font-family: 'Inter', sans-serif; font-size: 1.25rem; font-weight: 700; display: block; }
+    .stat-cell .lbl { font-size: 9px; color: var(--silver); text-transform: uppercase;
+                      letter-spacing: 0.8px; margin-top: 5px; display: block; line-height: 1.4; }
 
-  .report-section h2 {
-    font-family: Arial, sans-serif; font-size: 1.2rem; color: #fff;
-    font-weight: 700; margin-bottom: 20px; letter-spacing: 0.3px;
-  }
-  .report-section h3 {
-    font-family: Arial, sans-serif; font-size: 1rem; color: #e8e8f0;
-    font-weight: 700; margin-bottom: 14px; margin-top: 28px;
-  }
+    /* CHART BOX */
+    .chart-box { background: #fff; border: 1px solid var(--border); border-top: none;
+                 border-radius: 0 0 8px 8px; padding: 24px; }
 
-  .report-section p { color: #c8c8d8; font-size: 0.97rem; margin-bottom: 16px; line-height: 1.85; }
-  .report-section p:last-child { margin-bottom: 0; }
+    /* SCENARIO TABLE */
+    .scenario-table { width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif;
+                      font-size: 0.84rem; background: #fff; border: 1px solid var(--border);
+                      border-top: none; border-radius: 0 0 8px 8px; overflow: hidden; }
+    .scenario-table thead { background: #f4f7fb; }
+    .scenario-table th { padding: 11px 14px; text-align: left; font-size: 0.7rem; text-transform: uppercase;
+                         letter-spacing: 0.1em; color: var(--silver); font-weight: 600;
+                         border-bottom: 1px solid var(--border); }
+    .scenario-table th:not(:first-child) { text-align: center; }
+    .scenario-table td { padding: 11px 14px; color: #374151; border-bottom: 1px solid #f0f4f8; }
+    .scenario-table td:not(:first-child) { text-align: center; }
+    .scenario-table tr:last-child td { border-bottom: none; }
+    .scenario-table .row-label { font-weight: 600; color: var(--navy); }
+    .best { color: #166534; font-weight: 600; }
+    .base { color: #854d0e; font-weight: 600; }
+    .worst { color: var(--red); font-weight: 600; }
 
-  /* KEY FINDINGS — styled as visual cards but text verbatim */
-  .findings-list { display: flex; flex-direction: column; gap: 12px; }
-  .finding-item {
-    background: #0f0f1e; border: 1px solid #1e1e2e;
-    border-left: 3px solid #cc2200; border-radius: 0 6px 6px 0;
-    padding: 16px 20px;
-  }
-  .finding-item p { color: #c0c0d8; font-size: 0.93rem; line-height: 1.75; margin: 0; }
-  .finding-item strong { color: #e8e8f0; }
+    /* NERAI INDEX GRID */
+    .nerai-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
+                  background: var(--border); border: 1px solid var(--border);
+                  border-top: none; border-radius: 0 0 8px 8px; overflow: hidden; }
+    .nerai-cell { background: #fff; padding: 16px; }
+    .nerai-cell .country { font-size: 0.68rem; font-weight: 700; color: var(--silver);
+                           text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 3px; }
+    .nerai-cell .metric { font-size: 0.76rem; color: #9ca3af; margin-bottom: 10px; }
+    .bar-bg { background: #e5e7eb; border-radius: 3px; height: 5px; margin-bottom: 8px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 3px; }
+    .bar-red { background: linear-gradient(to right, var(--red), #e85570); }
+    .bar-orange { background: linear-gradient(to right, #d97706, #f59e0b); }
+    .bar-teal { background: linear-gradient(to right, var(--teal), var(--accent)); }
+    .nerai-cell .score { font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 700; }
+    .score-red { color: var(--red); }
+    .score-orange { color: #b45309; }
+    .score-teal { color: var(--teal); }
 
-  /* SVG CHARTS */
-  .chart-box {
-    background: #0f0f1e; border: 1px solid #1e1e2e; border-top: none;
-    border-radius: 0 0 8px 8px; padding: 24px;
-  }
-  .chart-subtitle { font-family: Arial, sans-serif; font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+    /* POLICY ITEMS */
+    .policy-item { margin-bottom: 32px; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .policy-header { background: #f4f7fb; padding: 14px 20px; display: flex; align-items: center; gap: 14px;
+                     border-bottom: 1px solid var(--border); }
+    .policy-badge { background: linear-gradient(135deg, var(--teal2), var(--accent));
+                    color: #fff; border-radius: 6px; width: 32px; height: 32px;
+                    display: flex; align-items: center; justify-content: center;
+                    font-family: 'Inter', sans-serif; font-weight: 700; font-size: 14px; flex-shrink: 0; }
+    .policy-title { font-size: 0.93rem; font-weight: 600; color: var(--navy); }
+    .policy-body { padding: 16px 20px; }
+    .policy-body p { color: #374151; font-size: 0.93rem; line-height: 1.8; margin-bottom: 12px; }
+    .policy-body p:last-child { margin-bottom: 0; }
+    .rationale-block { background: #f0faf7; border-left: 3px solid var(--accent); border-radius: 0 4px 4px 0;
+                       padding: 10px 14px; margin-top: 10px; }
+    .rationale-block p { color: var(--silver); font-size: 0.86rem; font-style: italic; margin: 0; line-height: 1.7; }
 
-  /* STAT ROW */
-  .stat-row {
-    display: grid; grid-template-columns: repeat(4,1fr); gap: 1px;
-    background: #1e1e2e; border: 1px solid #1e1e2e; border-top: none;
-    border-radius: 0 0 8px 8px; overflow: hidden;
-  }
-  .stat-cell { background: #0f0f1e; padding: 16px; text-align: center; }
-  .stat-cell .num { font-family: Arial, sans-serif; font-size: 1.3rem; font-weight: 700; display: block; }
-  .stat-cell .lbl { font-family: Arial, sans-serif; font-size: 9px; color: #666; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 5px; display: block; line-height: 1.35; }
+    /* SOURCES */
+    .sources-block { background: #f8fafc; border: 1px solid var(--border); border-radius: 10px; padding: 28px; }
+    .sources-block h3 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em;
+                        color: var(--teal); margin-bottom: 14px; margin-top: 22px; }
+    .sources-block h3:first-child { margin-top: 0; }
+    .sources-block ul { list-style: none; padding: 0; }
+    .sources-block li { font-size: 0.88rem; color: var(--silver); padding: 8px 0 8px 16px;
+                        border-bottom: 1px solid #e5e7eb; position: relative; line-height: 1.7; }
+    .sources-block li::before { content: '—'; position: absolute; left: 0; color: #d1d5db; }
+    .sources-block li:last-child { border-bottom: none; }
+    .uncertainty-box { background: #fff; border: 1px solid #e5e7eb; border-left: 3px solid #d1d5db;
+                       border-radius: 0 6px 6px 0; padding: 16px 20px; margin-top: 18px; }
+    .uncertainty-box p { font-size: 0.86rem; color: var(--silver); font-style: italic; line-height: 1.8; margin: 0; }
 
-  /* NERAI INDEX GRID */
-  .nerai-grid {
-    display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
-    background: #1e1e2e; border: 1px solid #1e1e2e; border-top: none;
-    border-radius: 0 0 8px 8px; overflow: hidden;
-  }
-  .nerai-cell { background: #0f0f1e; padding: 16px; }
-  .nerai-cell .country { font-family: Arial, sans-serif; font-size: 9px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
-  .nerai-cell .metric { font-family: Arial, sans-serif; font-size: 10px; color: #777; margin-bottom: 10px; }
-  .bar-bg { background: #1a1a2e; border-radius: 3px; height: 5px; margin-bottom: 8px; overflow: hidden; }
-  .bar-fill { height: 100%; border-radius: 3px; }
-  .bar-red { background: linear-gradient(to right, #cc2200, #ff5533); }
-  .bar-orange { background: linear-gradient(to right, #ff8800, #ffcc00); }
-  .bar-cyan { background: linear-gradient(to right, #00CFEA, #0080ff); }
-  .nerai-cell .score { font-family: Arial, sans-serif; font-size: 1.1rem; font-weight: 700; }
-  .score-red { color: #ff5533; }
-  .score-orange { color: #ffaa00; }
-  .score-cyan { color: #00CFEA; }
+    /* END NOTE */
+    .end-note { text-align: center; padding: 24px; font-family: 'Courier New', monospace;
+                font-size: 11px; color: #9ca3af; letter-spacing: 1px;
+                border-top: 1px solid var(--border); margin-top: 40px; }
 
-  /* SCENARIO TABLE */
-  .scenario-table {
-    width: 100%; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 0.85rem;
-    background: #0f0f1e; border: 1px solid #1e1e2e; border-top: none;
-    border-radius: 0 0 8px 8px; overflow: hidden;
-  }
-  .scenario-table thead { background: #090912; }
-  .scenario-table th { padding: 11px 14px; text-align: left; font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: #666; font-weight: 700; border-bottom: 2px solid #1e1e2e; }
-  .scenario-table th:not(:first-child) { text-align: center; }
-  .scenario-table td { padding: 11px 14px; color: #b8b8d0; border-bottom: 1px solid #15152a; }
-  .scenario-table td:not(:first-child) { text-align: center; }
-  .scenario-table tr:last-child td { border-bottom: none; }
-  .scenario-table .row-label { font-weight: 700; color: #e0e0f0; }
-  .best { color: #44cc88; font-weight: 700; }
-  .base { color: #ffc107; font-weight: 700; }
-  .worst { color: #ff5533; font-weight: 700; }
+    /* CTA */
+    .article-cta { background: linear-gradient(135deg, #f4f7fb, #e8f4f8); border: 1px solid var(--border);
+                   border-radius: 12px; padding: 36px; margin: 48px 0 0; text-align: center; }
+    .article-cta h3 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; margin-bottom: 10px; color: var(--navy); }
+    .article-cta p { font-size: 0.9rem; color: var(--silver); margin-bottom: 22px; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, #005f87, #00a886);
+               color: #fff; text-decoration: none; padding: 12px 28px; border-radius: 8px;
+               font-weight: 600; font-size: 0.9rem; }
+    .cta-btn:hover { opacity: 0.92; text-decoration: none; }
 
-  /* POLICY ITEMS */
-  .policy-item { margin-bottom: 28px; }
-  .policy-num-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-  .policy-badge {
-    background: #001a2a; border: 2px solid #00CFEA; border-radius: 5px;
-    width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;
-    font-family: Arial, sans-serif; font-weight: 700; font-size: 15px; color: #00CFEA; flex-shrink: 0;
-  }
-  .policy-title { font-family: Arial, sans-serif; font-size: 15px; color: #e8e8f0; font-weight: 700; }
-  .policy-body p { color: #c0c0d8; font-size: 0.95rem; margin-bottom: 10px; line-height: 1.8; }
-  .rationale-block {
-    background: #090912; border-left: 3px solid #00CFEA33; border-radius: 0 4px 4px 0;
-    padding: 12px 16px; margin-top: 8px;
-  }
-  .rationale-block p { color: #888; font-size: 0.88rem; font-style: italic; margin: 0; }
+    /* FOOTER */
+    footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 36px 0; font-size: 0.8rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px;
+                    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
 
-  /* SOURCES */
-  .sources-block { background: #080810; border: 1px solid #1e1e2e; border-radius: 8px; padding: 28px; }
-  .sources-block h3 { font-family: Arial, sans-serif; font-size: 11px; color: #00CFEA; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 14px; margin-top: 22px; }
-  .sources-block h3:first-child { margin-top: 0; }
-  .sources-block ul { list-style: none; padding: 0; }
-  .sources-block li { font-size: 0.88rem; color: #888; padding: 7px 0 7px 18px; border-bottom: 1px solid #111; position: relative; line-height: 1.7; }
-  .sources-block li::before { content: '—'; position: absolute; left: 0; color: #333; }
-  .sources-block li:last-child { border-bottom: none; }
-  .uncertainty-box {
-    background: #0d0d1a; border: 1px solid #1e1e2e; border-left: 3px solid #333;
-    border-radius: 0 6px 6px 0; padding: 16px 20px; margin-top: 18px;
-  }
-  .uncertainty-box p { font-size: 0.88rem; color: #777; font-style: italic; line-height: 1.8; margin: 0; }
-  .uncertainty-box strong { color: #999; font-style: normal; }
-
-  /* END NOTE */
-  .end-note { text-align: center; padding: 28px; font-family: Arial, sans-serif; font-size: 12px; color: #444; letter-spacing: 1px; border-top: 1px solid #1a1a2e; margin-top: 40px; }
-
-  /* CTA */
-  .cta-section {
-    background: linear-gradient(135deg, #0a1520, #001428);
-    border: 1px solid #00CFEA44; border-radius: 8px;
-    padding: 36px; text-align: center; margin: 48px 0;
-  }
-  .cta-section h2 { font-size: 1.3rem; color: #fff; margin-bottom: 12px; font-family: Arial, sans-serif; }
-  .cta-section p { color: #aaa; font-size: 0.92rem; margin-bottom: 22px; }
-  .cta-btn {
-    display: inline-block; background: #00CFEA; color: #000;
-    font-family: Arial, sans-serif; font-weight: 700; font-size: 13px;
-    padding: 12px 32px; border-radius: 4px; letter-spacing: 0.5px;
-  }
-  .cta-btn:hover { background: #00b8d1; text-decoration: none; }
-
-  /* FOOTER */
-  .data-footer {
-    background: #060610; border-top: 1px solid #111;
-    padding: 18px 32px; font-family: Arial, sans-serif; font-size: 11px; color: #444; text-align: center; line-height: 1.9;
-  }
-
-  @media (max-width: 680px) {
-    .metrics-strip { grid-template-columns: repeat(2,1fr); }
-    .stat-row { grid-template-columns: repeat(2,1fr); }
-    .nerai-grid { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 1.6rem; }
-    .site-header nav { display: none; }
-  }
-</style>
+    @media (max-width: 640px) {
+      .nav-links li:not(:last-child) { display: none; }
+      .article-header { padding: 90px 0 32px; }
+      .metrics-strip { grid-template-columns: repeat(2,1fr); }
+      .stat-row { grid-template-columns: repeat(2,1fr); }
+      .nerai-grid { grid-template-columns: 1fr; }
+      .scenario-table { font-size: 0.75rem; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header class="site-header">
-  <div class="logo-grid">
-    <div class="logo-dot dark"></div><div class="logo-dot cyan"></div><div class="logo-dot dark"></div><div class="logo-dot cyan"></div>
-    <div class="logo-dot cyan"></div><div class="logo-dot dark"></div><div class="logo-dot cyan"></div><div class="logo-dot dark"></div>
-    <div class="logo-dot dark"></div><div class="logo-dot cyan"></div><div class="logo-dot dark"></div><div class="logo-dot cyan"></div>
-    <div class="logo-dot cyan"></div><div class="logo-dot dark"></div><div class="logo-dot cyan"></div><div class="logo-dot dark"></div>
+<!-- NAV -->
+<nav>
+  <div class="inner">
+    <a href="/" class="nav-logo">
+      <span class="nav-logo-text"><span class="ner">NER</span><span class="ai">AI</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog" class="active">Insights</a></li>
+      <li><a href="https://nerai-intelligence.streamlit.app" target="_blank" class="nav-cta">Open Dashboard →</a></li>
+    </ul>
   </div>
-  <div class="logo-text"><span class="ner">NER</span><span class="ai">AI</span></div>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/blog">Deep Dives</a>
-    <a href="https://nerai-intelligence.streamlit.app" target="_blank">Live Platform</a>
-  </nav>
+</nav>
+
+<!-- ARTICLE HEADER -->
+<header class="article-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="/blog">← Insights</a> / Deep Dive</div>
+    <div class="article-tag">Deep Dive · Strategic Analysis</div>
+    <h1>Economic Effects of the <em>Iran War</em> on the United States</h1>
+    <p class="article-sub">Strategic Analysis and Policy Implications</p>
+    <div class="article-meta">
+      <span class="meta-item"><span class="meta-dot"></span> NERAI Intelligence — Strategic Analysis Lab</span>
+      <span class="meta-item"><span class="meta-dot"></span> 6 May 2026</span>
+      <span class="meta-item"><span class="meta-dot"></span> Classification: NERAI-UNRESTRICTED</span>
+    </div>
+  </div>
 </header>
 
-<!-- ALERT STRIP -->
-<div class="alert-strip">
-  <div class="ticker">
-    <span>CONFLICT ACTIVE: U.S.–Iran Operations Underway — May 2026</span>
-    <span>Brent Crude Base Case $90–110/bbl</span>
-    <span>U.S. Debt/GDP: 123%</span>
-    <span>NERAI Iran Index: 0.0543</span>
-    <span>Worst-Case GDP: –1.5% to –2.5%</span>
-  </div>
-</div>
+<!-- ARTICLE BODY -->
+<main class="article-body">
+  <div class="container">
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-tag">Deep Dive · Strategic Analysis</div>
-    <h1>Economic Effects of the <em>Iran War</em> on the United States</h1>
-    <p class="hero-sub">Strategic Analysis and Policy Implications</p>
-    <div class="hero-meta">
-      <span><span class="dot"></span> NERAI Intelligence — Strategic Analysis Lab</span>
-      <span><span class="dot"></span> Date: 6 May 2026</span>
-      <span><span class="dot"></span> Classification: NERAI-UNRESTRICTED</span>
-    </div>
-  </div>
-</div>
-
-<!-- MAIN -->
-<div class="main">
-
-  <!-- ── VISUAL INSERT: Key numbers at a glance ── -->
-  <div class="visual-insert">
-    <div class="visual-label">Key Numbers at a Glance</div>
-    <div class="metrics-strip">
-      <div class="metric-cell">
-        <span class="val" style="color:#ff5533;">0.0543</span>
-        <span class="lbl">Iran Deteriorating<br>Bilateral Relations</span>
-      </div>
-      <div class="metric-cell">
-        <span class="val" style="color:#ffc107;">123%</span>
-        <span class="lbl">U.S. Debt-to-GDP<br>Q1 2026</span>
-      </div>
-      <div class="metric-cell">
-        <span class="val" style="color:#ff8800;">$90–110</span>
-        <span class="lbl">Brent Crude<br>Base Case/bbl</span>
-      </div>
-      <div class="metric-cell">
-        <span class="val" style="color:#ff4444;">4.8–5.2%</span>
-        <span class="lbl">U.S. Inflation<br>Base Case YE 2026</span>
-      </div>
-      <div class="metric-cell">
-        <span class="val" style="color:#00CFEA;">50%</span>
-        <span class="lbl">Base Case<br>Probability</span>
+    <!-- ── VISUAL: Key numbers ── -->
+    <div class="visual-insert" style="margin-top:0;">
+      <div class="visual-caption">Key Numbers at a Glance</div>
+      <div class="metrics-strip">
+        <div class="metric-cell">
+          <span class="val" style="color:var(--red);">0.0543</span>
+          <span class="lbl">Iran Deteriorating<br>Bilateral Relations</span>
+        </div>
+        <div class="metric-cell">
+          <span class="val" style="color:#b45309;">123%</span>
+          <span class="lbl">U.S. Debt-to-GDP<br>Q1 2026</span>
+        </div>
+        <div class="metric-cell">
+          <span class="val" style="color:#b45309;">$90–110</span>
+          <span class="lbl">Brent Crude Base<br>Case (per barrel)</span>
+        </div>
+        <div class="metric-cell">
+          <span class="val" style="color:var(--red);">4.8–5.2%</span>
+          <span class="lbl">Inflation Base<br>Case YE 2026</span>
+        </div>
+        <div class="metric-cell">
+          <span class="val" style="color:var(--teal);">50%</span>
+          <span class="lbl">Base Case<br>Probability</span>
+        </div>
       </div>
     </div>
-  </div>
 
-  <hr class="section-divider">
+    <hr/>
 
-  <!-- ══════════════════════════════════════════
-       EXECUTIVE SUMMARY — verbatim from report
-  ══════════════════════════════════════════ -->
-  <div class="report-section">
-    <span class="section-tag">Executive Summary</span>
+    <!-- EXECUTIVE SUMMARY -->
+    <span class="section-label">Executive Summary</span>
     <p>An armed conflict between the United States and Iran, now underway as of May 2026, presents a significant macroeconomic challenge to the U.S. economy through multiple transmission mechanisms: energy market disruption, fiscal strain from military expenditures, inflationary pressures on consumer prices, and heightened financial market volatility. While the U.S. economy's post-industrial structure and reduced manufacturing base provide some insulation from the most severe oil-shock consequences observed in prior Middle Eastern conflicts, the current U.S. economic baseline—characterized by elevated debt levels, tight labor markets, and fragile consumer confidence—creates conditions under which even moderate war-related shocks carry outsized macroeconomic costs. This analysis finds that the Iran war poses a material downside risk to near-term GDP growth, with inflation and interest-rate dynamics presenting the primary transmission channels for economic damage.</p>
-  </div>
 
-  <hr class="section-divider">
+    <hr/>
 
-  <!-- ══════════════════════════════════════════
-       KEY FINDINGS — verbatim, styled as cards
-  ══════════════════════════════════════════ -->
-  <div class="report-section">
-    <span class="section-tag">Key Findings</span>
+    <!-- KEY FINDINGS -->
+    <span class="section-label">Key Findings</span>
     <div class="findings-list">
       <div class="finding-item">
         <p><strong>Energy markets remain the primary vulnerability:</strong> Disruption to Iranian oil exports and regional shipping lanes creates upward pressure on global crude prices and refined product costs, though the U.S. domestic shale sector and strategic petroleum reserve (SPR) access provide partial hedges absent in prior Middle Eastern conflicts.</p>
@@ -344,102 +295,87 @@
         <p><strong>NERAI deteriorating bilateral relations index for Iran (0.0543) signals medium-term escalation risk:</strong> This metric, while moderate in absolute terms, reflects structural U.S.-Iran antagonism and suggests elevated probability of conflict expansion beyond initial military operations.</p>
       </div>
     </div>
-  </div>
 
-  <hr class="section-divider">
+    <hr/>
 
-  <!-- ══════════════════════════════════════════
-       BACKGROUND & CONTEXT — verbatim
-  ══════════════════════════════════════════ -->
-  <div class="report-section">
-    <span class="section-tag">Background &amp; Context</span>
+    <!-- BACKGROUND & CONTEXT -->
+    <h2>Background &amp; Context</h2>
     <p>The United States entered into direct military operations against Iran in late April 2026, marking the first sustained U.S.-Iran kinetic conflict despite decades of proxy competition, sanctions, and strategic rivalry. This conflict emerges from a context of pre-existing U.S. economic fragility: as of May 2026, the U.S. economy faced headwinds including a 3.9% year-over-year inflation rate (above the Federal Reserve's 2% target), unemployment hovering near 4.2%, and accumulated federal debt exceeding $33 trillion. The Council on Foreign Relations documented in late April 2026 that the U.S. economy entered this conflict in a "shaky" condition, with consumer spending growth decelerating and business investment sentiment deteriorating.</p>
     <p>Iran remains a significant global oil producer, though reduced from historical peaks due to decades of international sanctions. Prior to the 2026 conflict, Iranian crude output was estimated at approximately 3.8 million barrels per day (mbd)—roughly 3.8% of global production—with most exports directed to China and India under sanctions-circumvention arrangements. Disruption to Iranian supply, combined with potential attacks on Saudi and UAE production facilities or Persian Gulf shipping lanes, could rapidly push global oil prices above $100 per barrel, with refined petroleum products (gasoline, diesel, heating oil) experiencing even sharper increases due to regional refining capacity constraints.</p>
     <p>The U.S. economy's structural position differs materially from the 1970s oil shocks or the 2003–2008 Iraq War period. Manufacturing now represents only 8.5% of U.S. GDP (versus 25% in 1970), reducing exposure to input-cost inflation in industrial production. The U.S. shale revolution has made the country the world's largest crude oil producer (approximately 13 mbd as of 2026), substantially reducing import dependence compared to pre-2008 levels when the U.S. imported 60% of its petroleum. These structural features provide buffers against the worst outcomes, yet do not eliminate vulnerability to higher energy costs' effects on inflation, consumer purchasing power, and business operating margins.</p>
-  </div>
 
-  <!-- ── VISUAL INSERT: Context stats ── -->
-  <div class="visual-insert">
-    <div class="visual-label">Structural Context</div>
-    <div class="stat-row">
-      <div class="stat-cell">
-        <span class="num" style="color:#ff8800;">3.8 mbd</span>
-        <span class="lbl">Iran pre-war<br>crude output</span>
-      </div>
-      <div class="stat-cell">
-        <span class="num" style="color:#00CFEA;">13 mbd</span>
-        <span class="lbl">U.S. domestic<br>shale production</span>
-      </div>
-      <div class="stat-cell">
-        <span class="num" style="color:#ffc107;">8.5%</span>
-        <span class="lbl">Manufacturing<br>share of U.S. GDP</span>
-      </div>
-      <div class="stat-cell">
-        <span class="num" style="color:#ff5533;">$33T+</span>
-        <span class="lbl">U.S. accumulated<br>federal debt</span>
+    <!-- ── VISUAL: Context stats ── -->
+    <div class="visual-insert">
+      <div class="visual-caption">Structural Context</div>
+      <div class="stat-row">
+        <div class="stat-cell">
+          <span class="num" style="color:#b45309;">3.8 mbd</span>
+          <span class="lbl">Iran pre-war<br>crude output</span>
+        </div>
+        <div class="stat-cell">
+          <span class="num" style="color:var(--teal);">13 mbd</span>
+          <span class="lbl">U.S. domestic<br>shale production</span>
+        </div>
+        <div class="stat-cell">
+          <span class="num" style="color:#b45309;">8.5%</span>
+          <span class="lbl">Manufacturing<br>share of U.S. GDP</span>
+        </div>
+        <div class="stat-cell">
+          <span class="num" style="color:var(--red);">$33T+</span>
+          <span class="lbl">U.S. accumulated<br>federal debt</span>
+        </div>
       </div>
     </div>
-  </div>
 
-  <hr class="section-divider">
+    <hr/>
 
-  <!-- ══════════════════════════════════════════
-       ANALYSIS — verbatim
-  ══════════════════════════════════════════ -->
-  <div class="report-section">
-    <span class="section-tag">Analysis</span>
+    <!-- ANALYSIS -->
+    <h2>Analysis</h2>
 
     <h3>The Energy Transmission Channel and Partial Mitigation</h3>
     <p>The Iran war's most immediate macroeconomic mechanism operates through energy markets. Disruption to Iranian crude exports and potential regional escalation affecting Saudi Arabian or UAE facilities, combined with heightened shipping insurance premiums and vessel diversions around the Cape of Good Hope, creates genuine upward pressure on global oil prices. The CEPR analysis published 3 May 2026 quantified this channel, finding that each $10 per barrel increase in crude oil prices translates to approximately 0.3 percentage points of additional U.S. inflation within 12 months, with larger effects materializing in subsequent quarters as energy costs propagate through supply chains and wage negotiations.</p>
     <p>However, critical structural differences limit the depth of this shock relative to historical precedents. The U.S. shale sector—producing approximately 9 mbd domestically as of May 2026—operates with marginal costs in the $45–60 per barrel range, meaning that price increases above these thresholds incentivize rapid production increases. Unlike the 1973 Arab oil embargo or the 1990–1991 Gulf War, when the U.S. faced absolute supply constraints, current market conditions allow domestic supply expansion to partially offset Iranian supply losses. The Department of Energy maintains the Strategic Petroleum Reserve at approximately 370 million barrels—sufficient for roughly 25–30 days of total U.S. petroleum consumption—providing an additional buffer absent during previous Middle Eastern conflicts.</p>
     <p>Nonetheless, the mitigation is partial and faces constraints. Shale production increases require 3–6 month lead times for rig mobilization and well completion; the SPR drawdown faces practical limitations (extraction rates cap around 4.4 mbd) and creates long-term energy security vulnerabilities. If Iranian supply disruptions persist beyond the second half of 2026, or if regional escalation damages Saudi or UAE capacity, global oil prices could sustain elevated levels ($90–110 per barrel) despite U.S. mitigation efforts. For consumers, this translates to retail gasoline prices in the $3.50–4.00 per gallon range—not 1970s crisis levels but sufficient to reduce discretionary purchasing power for lower-income households and accelerate inflation pass-through into housing costs, food prices, and transportation.</p>
-  </div>
 
-  <!-- ── VISUAL INSERT: Oil price scenarios chart ── -->
-  <div class="visual-insert">
-    <div class="visual-label">Oil Price by Scenario ($/barrel) — CEPR: every +$10 = +0.3pp U.S. inflation</div>
-    <div class="chart-box">
-      <svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
-        <!-- gridlines -->
-        <line x1="110" y1="20" x2="790" y2="20" stroke="#1a1a2e" stroke-width="1"/>
-        <line x1="110" y1="60" x2="790" y2="60" stroke="#1a1a2e" stroke-width="1"/>
-        <line x1="110" y1="100" x2="790" y2="100" stroke="#1a1a2e" stroke-width="1"/>
-        <line x1="110" y1="140" x2="790" y2="140" stroke="#1a1a2e" stroke-width="1"/>
-        <line x1="110" y1="170" x2="790" y2="170" stroke="#1a1a2e" stroke-width="1"/>
-        <!-- y-axis labels -->
-        <text x="100" y="24" fill="#555" font-size="10" font-family="Arial" text-anchor="end">$160</text>
-        <text x="100" y="64" fill="#555" font-size="10" font-family="Arial" text-anchor="end">$130</text>
-        <text x="100" y="104" fill="#555" font-size="10" font-family="Arial" text-anchor="end">$100</text>
-        <text x="100" y="144" fill="#555" font-size="10" font-family="Arial" text-anchor="end">$80</text>
-        <text x="100" y="174" fill="#555" font-size="10" font-family="Arial" text-anchor="end">$60</text>
-        <!-- Pre-war bar -->
-        <rect x="130" y="118" width="90" height="52" fill="#1e1e2e" rx="3"/>
-        <text x="175" y="111" fill="#666" font-size="10" font-family="Arial" text-anchor="middle">Pre-War</text>
-        <text x="175" y="186" fill="#666" font-size="10" font-family="Arial" text-anchor="middle">$68–75</text>
-        <!-- Best case -->
-        <rect x="270" y="106" width="90" height="64" fill="#0a2a18" stroke="#44cc88" stroke-width="1.5" rx="3"/>
-        <text x="315" y="99" fill="#44cc88" font-size="10" font-family="Arial" text-anchor="middle" font-weight="bold">BEST ~25%</text>
-        <text x="315" y="186" fill="#44cc88" font-size="10" font-family="Arial" text-anchor="middle">$75–85</text>
-        <!-- Base case -->
-        <rect x="410" y="76" width="90" height="94" fill="#1a1800" stroke="#ffc107" stroke-width="1.5" rx="3"/>
-        <text x="455" y="69" fill="#ffc107" font-size="10" font-family="Arial" text-anchor="middle" font-weight="bold">BASE ~50%</text>
-        <text x="455" y="186" fill="#ffc107" font-size="10" font-family="Arial" text-anchor="middle">$90–110</text>
-        <!-- Worst case -->
-        <rect x="550" y="24" width="90" height="146" fill="#2a0505" stroke="#cc2200" stroke-width="1.5" rx="3"/>
-        <text x="595" y="17" fill="#cc2200" font-size="10" font-family="Arial" text-anchor="middle" font-weight="bold">WORST ~25%</text>
-        <text x="595" y="186" fill="#cc2200" font-size="10" font-family="Arial" text-anchor="middle">$130–160</text>
-        <!-- Hormuz note -->
-        <text x="710" y="38" fill="#ff5533" font-size="9" font-family="Arial" text-anchor="middle">Hormuz closure</text>
-        <text x="710" y="50" fill="#ff5533" font-size="9" font-family="Arial" text-anchor="middle">→ $150+/bbl</text>
-        <line x1="680" y1="44" x2="645" y2="52" stroke="#ff5533" stroke-width="1" stroke-dasharray="3,2"/>
-        <!-- SPR note -->
-        <text x="710" y="130" fill="#00CFEA" font-size="9" font-family="Arial" text-anchor="middle">SPR: 370M bbl</text>
-        <text x="710" y="142" fill="#00CFEA" font-size="9" font-family="Arial" text-anchor="middle">~25–30 day buffer</text>
-      </svg>
+    <!-- ── VISUAL: Oil price chart ── -->
+    <div class="visual-insert">
+      <div class="visual-caption">Brent Crude by Scenario ($/barrel) — CEPR: every +$10/bbl = +0.3pp U.S. inflation</div>
+      <div class="chart-box">
+        <svg viewBox="0 0 680 190" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+          <line x1="90" y1="20" x2="660" y2="20" stroke="#e5e7eb" stroke-width="1"/>
+          <line x1="90" y1="55" x2="660" y2="55" stroke="#e5e7eb" stroke-width="1"/>
+          <line x1="90" y1="90" x2="660" y2="90" stroke="#e5e7eb" stroke-width="1"/>
+          <line x1="90" y1="125" x2="660" y2="125" stroke="#e5e7eb" stroke-width="1"/>
+          <line x1="90" y1="155" x2="660" y2="155" stroke="#e5e7eb" stroke-width="1"/>
+          <text x="80" y="23" fill="#9ca3af" font-size="10" font-family="Inter,Arial" text-anchor="end">$160</text>
+          <text x="80" y="58" fill="#9ca3af" font-size="10" font-family="Inter,Arial" text-anchor="end">$130</text>
+          <text x="80" y="93" fill="#9ca3af" font-size="10" font-family="Inter,Arial" text-anchor="end">$100</text>
+          <text x="80" y="128" fill="#9ca3af" font-size="10" font-family="Inter,Arial" text-anchor="end">$80</text>
+          <text x="80" y="158" fill="#9ca3af" font-size="10" font-family="Inter,Arial" text-anchor="end">$60</text>
+          <!-- Pre-war -->
+          <rect x="110" y="113" width="80" height="42" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1" rx="4"/>
+          <text x="150" y="106" fill="#9ca3af" font-size="10" font-family="Inter,Arial" text-anchor="middle">Pre-War</text>
+          <text x="150" y="172" fill="#9ca3af" font-size="10" font-family="Inter,Arial" text-anchor="middle">$68–75</text>
+          <!-- Best -->
+          <rect x="230" y="103" width="80" height="52" fill="#f0fdf4" stroke="#166534" stroke-width="1.5" rx="4"/>
+          <text x="270" y="96" fill="#166534" font-size="10" font-family="Inter,Arial" text-anchor="middle" font-weight="600">BEST ~25%</text>
+          <text x="270" y="172" fill="#166534" font-size="10" font-family="Inter,Arial" text-anchor="middle">$75–85</text>
+          <!-- Base -->
+          <rect x="350" y="76" width="80" height="79" fill="#fffbeb" stroke="#b45309" stroke-width="1.5" rx="4"/>
+          <text x="390" y="69" fill="#b45309" font-size="10" font-family="Inter,Arial" text-anchor="middle" font-weight="600">BASE ~50%</text>
+          <text x="390" y="172" fill="#b45309" font-size="10" font-family="Inter,Arial" text-anchor="middle">$90–110</text>
+          <!-- Worst -->
+          <rect x="470" y="24" width="80" height="131" fill="#fff1f2" stroke="#c93048" stroke-width="1.5" rx="4"/>
+          <text x="510" y="17" fill="#c93048" font-size="10" font-family="Inter,Arial" text-anchor="middle" font-weight="600">WORST ~25%</text>
+          <text x="510" y="172" fill="#c93048" font-size="10" font-family="Inter,Arial" text-anchor="middle">$130–160</text>
+          <!-- Hormuz note -->
+          <text x="610" y="38" fill="#c93048" font-size="9" font-family="Inter,Arial" text-anchor="middle">Hormuz closure</text>
+          <text x="610" y="50" fill="#c93048" font-size="9" font-family="Inter,Arial" text-anchor="middle">→ $150+/bbl</text>
+          <line x1="583" y1="43" x2="554" y2="55" stroke="#c93048" stroke-width="1" stroke-dasharray="3,2"/>
+        </svg>
+      </div>
     </div>
-  </div>
 
-  <div class="report-section">
     <h3>Fiscal Constraints and Monetary Policy Dilemmas</h3>
     <p>The Iran war arrives amid constrained fiscal capacity. The Congressional Budget Office estimates the U.S. structural deficit (cyclically adjusted) at approximately 5.5% of GDP for fiscal year 2026, driven by mandatory spending growth (Social Security, Medicare) and interest costs on accumulated debt. Department of Defense budget authority already allocated for FY2026 stands at $825 billion; supplemental appropriations for the Iran conflict—estimated conservatively at $50–150 billion depending on conflict intensity and duration—require either additional borrowing, deficit expansion, or reallocation from other priorities. Each scenario creates economic friction.</p>
     <p>Additional borrowing increases Treasury issuance at a moment when the Federal Reserve remains restrictive (policy rates at 4.5–4.75% as of early May 2026, substantially above the 2% neutral rate estimated by academic economists). Higher Treasury supply in this environment creates downward pressure on bond prices and upward pressure on yields—precisely the dynamic observed in CNBC reporting on 5 May 2026, where Treasury yield volatility reflected investor recalibration of economic trajectories. For households and businesses, rising long-term interest rates increase borrowing costs for mortgages, auto loans, and corporate debt, creating a potential demand destruction channel independent of energy prices.</p>
@@ -453,71 +389,63 @@
     <h3>Regional Geopolitical Escalation Risk</h3>
     <p>The NERAI Index data provided identifies Iran's "Deteriorating Bilateral Relations" metric at 0.0543—moderate in absolute terms but significantly elevated relative to baseline Iran values in the 2023–2025 period (typically 0.01–0.02). This metric reflects structural U.S.-Iran antagonism and the genuine risk that an initial conflict contained to border operations or limited strikes could expand into broader regional confrontation. Escalation scenarios—including attacks on Saudi Arabian oil facilities, U.S. strikes on Iranian nuclear sites, or closure of the Strait of Hormuz—would create supply shocks orders of magnitude beyond the base case analyzed above. A Strait of Hormuz closure, even for 2–4 weeks, would disrupt approximately 30% of global maritime oil trade and trigger crude price spikes to $150+ per barrel, with cascading effects throughout global supply chains.</p>
     <p>While such scenarios remain in the tail-risk category (estimated at 15–25% probability through year-end 2026 by most strategic assessments), their economic consequences are severe enough to warrant explicit policy consideration. A full regional escalation scenario would move beyond demand destruction into actual stagflationary dynamics: simultaneous recession (negative growth) paired with 8–10% inflation, creating the worst macroeconomic combination for policy management and household welfare.</p>
-  </div>
 
-  <hr class="section-divider">
+    <hr/>
 
-  <!-- ══════════════════════════════════════════
-       NERAI DATA INTEGRATION — verbatim
-  ══════════════════════════════════════════ -->
-  <div class="report-section">
-    <span class="section-tag cyan">NERAI Data Integration</span>
+    <!-- NERAI DATA INTEGRATION -->
+    <h2>NERAI Data Integration</h2>
     <p>The NERAI Index data provided as of 5 May 2026 offers quantitative signal confirmation of the qualitative geopolitical analysis. Iran's "Deteriorating Bilateral Relations" score of 0.0543 situates U.S.-Iran relations at elevated tension levels—higher than the Yemen value (0.0622, reflecting active humanitarian and military conflict) but comparable to medium-intensity interstate disputes. This metric suggests approximately 40–50% elevated probability of conflict expansion or new escalatory incidents over the subsequent 12-month period relative to baseline conditions.</p>
     <p>Notably, the NERAI data reveals broader regional instability patterns that amplify Iran war risks. The Gaza Strip government instability score (0.1769) and Yemen deteriorating bilateral relations (0.0622) indicate that Middle Eastern geopolitical fragmentation extends beyond U.S.-Iran dynamics. These broader instability patterns increase probability of secondary conflicts drawing U.S. resources or regional allies into expanded military commitments. Mexico's government instability (0.1579) and ethnic-religious violence metrics (0.1129) reflect Western Hemisphere instability potentially affecting U.S. border security and resource allocation, creating competing demands on defense budgets and national security attention.</p>
     <p>The elevated North Korea coup risk in the NERAI data (0.2096) and South Korea ethnic-religious violence (0.1093) introduce a secondary geopolitical risk: simultaneous Korea Peninsula instability during Iran conflict would fragment U.S. military command attention and potentially require force repositioning from Middle Eastern operations. This compounding risk reduces the U.S. ability to maintain deterrence across multiple theaters, potentially inviting Chinese opportunism in Taiwan or other regional assertiveness.</p>
     <p>For economic analysis, these NERAI indicators translate into elevated tail-risk premiums. Financial markets price in not only the immediate Iran war effects but also the probability-weighted consequences of multiple simultaneous regional conflicts. This risk-aggregation dynamic appears reflected in the Treasury yield volatility and equity market corrections observed in early May 2026—markets are not pricing just the base-case Iran conflict scenario but rather assigning meaningful probability mass to broader geopolitical fragmentation.</p>
-  </div>
 
-  <!-- ── VISUAL INSERT: NERAI Index panel ── -->
-  <div class="visual-insert">
-    <div class="visual-label">NERAI Index Data — 5 May 2026 · Scores normalized 0.00–1.00 · HIGH &gt;0.40 · CRITICAL &gt;0.60</div>
-    <div class="nerai-grid">
-      <div class="nerai-cell">
-        <div class="country">Iran</div>
-        <div class="metric">Deteriorating Bilateral Relations</div>
-        <div class="bar-bg"><div class="bar-fill bar-red" style="width:27%"></div></div>
-        <div class="score score-red">0.0543</div>
-      </div>
-      <div class="nerai-cell">
-        <div class="country">Gaza Strip</div>
-        <div class="metric">Government Instability</div>
-        <div class="bar-bg"><div class="bar-fill bar-red" style="width:44%"></div></div>
-        <div class="score score-red">0.1769</div>
-      </div>
-      <div class="nerai-cell">
-        <div class="country">Yemen</div>
-        <div class="metric">Deteriorating Bilateral Relations</div>
-        <div class="bar-bg"><div class="bar-fill bar-orange" style="width:31%"></div></div>
-        <div class="score score-orange">0.0622</div>
-      </div>
-      <div class="nerai-cell">
-        <div class="country">North Korea</div>
-        <div class="metric">Coup Risk</div>
-        <div class="bar-bg"><div class="bar-fill bar-red" style="width:52%"></div></div>
-        <div class="score score-red">0.2096</div>
-      </div>
-      <div class="nerai-cell">
-        <div class="country">Mexico</div>
-        <div class="metric">Government Instability</div>
-        <div class="bar-bg"><div class="bar-fill bar-orange" style="width:40%"></div></div>
-        <div class="score score-orange">0.1579</div>
-      </div>
-      <div class="nerai-cell">
-        <div class="country">South Korea</div>
-        <div class="metric">Ethnic-Religious Violence</div>
-        <div class="bar-bg"><div class="bar-fill bar-cyan" style="width:27%"></div></div>
-        <div class="score score-cyan">0.1093</div>
+    <!-- ── VISUAL: NERAI index panel ── -->
+    <div class="visual-insert">
+      <div class="visual-caption">NERAI Index Data — 5 May 2026 · Scores normalized 0.00–1.00 · HIGH &gt;0.40 · CRITICAL &gt;0.60</div>
+      <div class="nerai-grid">
+        <div class="nerai-cell">
+          <div class="country">Iran</div>
+          <div class="metric">Deteriorating Bilateral Relations</div>
+          <div class="bar-bg"><div class="bar-fill bar-red" style="width:27%"></div></div>
+          <div class="score score-red">0.0543</div>
+        </div>
+        <div class="nerai-cell">
+          <div class="country">Gaza Strip</div>
+          <div class="metric">Government Instability</div>
+          <div class="bar-bg"><div class="bar-fill bar-red" style="width:44%"></div></div>
+          <div class="score score-red">0.1769</div>
+        </div>
+        <div class="nerai-cell">
+          <div class="country">Yemen</div>
+          <div class="metric">Deteriorating Bilateral Relations</div>
+          <div class="bar-bg"><div class="bar-fill bar-orange" style="width:31%"></div></div>
+          <div class="score score-orange">0.0622</div>
+        </div>
+        <div class="nerai-cell">
+          <div class="country">North Korea</div>
+          <div class="metric">Coup Risk</div>
+          <div class="bar-bg"><div class="bar-fill bar-red" style="width:52%"></div></div>
+          <div class="score score-red">0.2096</div>
+        </div>
+        <div class="nerai-cell">
+          <div class="country">Mexico</div>
+          <div class="metric">Government Instability</div>
+          <div class="bar-bg"><div class="bar-fill bar-orange" style="width:40%"></div></div>
+          <div class="score score-orange">0.1579</div>
+        </div>
+        <div class="nerai-cell">
+          <div class="country">South Korea</div>
+          <div class="metric">Ethnic-Religious Violence</div>
+          <div class="bar-bg"><div class="bar-fill bar-teal" style="width:27%"></div></div>
+          <div class="score score-teal">0.1093</div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <hr class="section-divider">
+    <hr/>
 
-  <!-- ══════════════════════════════════════════
-       SCENARIOS & FORECAST — verbatim
-  ══════════════════════════════════════════ -->
-  <div class="report-section">
-    <span class="section-tag">Scenarios &amp; Forecast</span>
+    <!-- SCENARIOS & FORECAST -->
+    <h2>Scenarios &amp; Forecast</h2>
 
     <h3>Best Case Scenario (Probability: ~25%)</h3>
     <p>The Iran conflict is contained to limited military operations lasting 4–6 weeks, with neither side pursuing territorial occupation or strikes on critical regional oil infrastructure. Iranian oil exports resume at 70–80% of pre-conflict volumes within 8 weeks. Global crude prices stabilize in the $75–85 per barrel range, providing modest inflation impulse (estimated 0.4–0.6 percentage points) that the Federal Reserve accommodates through gradual policy loosening. U.S. fiscal supplemental appropriations remain below $75 billion, manageable within existing deficit trajectories. Consumer confidence stabilizes after initial shock period. U.S. real GDP growth averages 1.8–2.2% in 2026, modestly below pre-conflict consensus forecasts but avoiding recession. This scenario requires successful diplomatic off-ramps, limited civilian casualties, and regional actors exercising restraint—all uncertain propositions.</p>
@@ -527,43 +455,39 @@
 
     <h3>Worst Case Scenario (Probability: ~25%)</h3>
     <p>Escalation spreads to broader regional confrontation; Saudi Arabian or UAE production facilities sustain meaningful damage; Strait of Hormuz closes for 3+ weeks; potential strikes on Israeli or U.S. facilities trigger expanded coalition military response. Global crude prices spike to $130–160 per barrel; refined products experience even sharper increases. U.S. inflation accelerates to 6.5–7.5% by Q4 2026. Financial markets reprice recession probability sharply higher; equity markets correct 15–25%; credit spreads widen significantly; lending conditions tighten. Federal Reserve faces genuine policy paralysis—inflation demands restrictive stance but recession risks warrant accommodation. Fiscal supplementals exceed $250 billion. Consumer confidence collapses; spending drops sharply. U.S. real GDP contracts 1.5–2.5% in 2026; unemployment rises to 6.5–7.0%. Combined with elevated debt levels, this scenario creates genuine debt-dynamics concerns and potential fiscal sustainability questions.</p>
-  </div>
 
-  <!-- ── VISUAL INSERT: Scenario comparison table ── -->
-  <div class="visual-insert">
-    <div class="visual-label">Scenario Comparison — Macro Indicators</div>
-    <table class="scenario-table">
-      <thead>
-        <tr>
-          <th>Indicator</th>
-          <th>Pre-War Baseline</th>
-          <th style="color:#44cc88;">Best Case ~25%</th>
-          <th style="color:#ffc107;">Base Case ~50%</th>
-          <th style="color:#ff5533;">Worst Case ~25%</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td class="row-label">Real GDP Growth 2026</td><td>2.5–3.0%</td><td class="best">+1.8–2.2%</td><td class="base">+0.5–1.0%</td><td class="worst">–1.5 to –2.5%</td></tr>
-        <tr><td class="row-label">Inflation YE 2026</td><td>3.9%</td><td class="best">+0.4–0.6pp impulse</td><td class="base">4.8–5.2%</td><td class="worst">6.5–7.5%</td></tr>
-        <tr><td class="row-label">Brent Crude</td><td>$68–75/bbl</td><td class="best">$75–85/bbl</td><td class="base">$90–110/bbl</td><td class="worst">$130–160/bbl</td></tr>
-        <tr><td class="row-label">Unemployment</td><td>4.2%</td><td class="best">Stable</td><td class="base">4.8–5.2%</td><td class="worst">6.5–7.0%</td></tr>
-        <tr><td class="row-label">War Supplemental</td><td>—</td><td class="best">&lt;$75B</td><td class="base">$120–150B</td><td class="worst">&gt;$250B</td></tr>
-        <tr><td class="row-label">Consumption Growth</td><td>2.5–3.0%</td><td class="best">Stabilizes</td><td class="base">0.8–1.2%</td><td class="worst">Contraction</td></tr>
-        <tr><td class="row-label">Equity Market</td><td>—</td><td class="best">3–5% correction</td><td class="base">8–12% correction</td><td class="worst">15–25% correction</td></tr>
-      </tbody>
-    </table>
-  </div>
+    <!-- ── VISUAL: Scenario comparison ── -->
+    <div class="visual-insert">
+      <div class="visual-caption">Scenario Comparison — Macro Indicators</div>
+      <table class="scenario-table">
+        <thead>
+          <tr>
+            <th>Indicator</th>
+            <th>Pre-War Baseline</th>
+            <th style="color:#166534;">Best Case ~25%</th>
+            <th style="color:#b45309;">Base Case ~50%</th>
+            <th style="color:#c93048;">Worst Case ~25%</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="row-label">Real GDP Growth 2026</td><td>2.5–3.0%</td><td class="best">+1.8–2.2%</td><td class="base">+0.5–1.0%</td><td class="worst">–1.5 to –2.5%</td></tr>
+          <tr><td class="row-label">Inflation YE 2026</td><td>3.9%</td><td class="best">+0.4–0.6pp impulse</td><td class="base">4.8–5.2%</td><td class="worst">6.5–7.5%</td></tr>
+          <tr><td class="row-label">Brent Crude</td><td>$68–75/bbl</td><td class="best">$75–85/bbl</td><td class="base">$90–110/bbl</td><td class="worst">$130–160/bbl</td></tr>
+          <tr><td class="row-label">Unemployment</td><td>4.2%</td><td class="best">Stable</td><td class="base">4.8–5.2%</td><td class="worst">6.5–7.0%</td></tr>
+          <tr><td class="row-label">War Supplemental</td><td>—</td><td class="best">&lt;$75B</td><td class="base">$120–150B</td><td class="worst">&gt;$250B</td></tr>
+          <tr><td class="row-label">Consumption Growth</td><td>2.5–3.0%</td><td class="best">Stabilizes</td><td class="base">0.8–1.2%</td><td class="worst">Contraction</td></tr>
+          <tr><td class="row-label">Equity Market</td><td>—</td><td class="best">3–5% correction</td><td class="base">8–12% correction</td><td class="worst">15–25% correction</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-  <hr class="section-divider">
+    <hr/>
 
-  <!-- ══════════════════════════════════════════
-       POLICY RECOMMENDATIONS — verbatim
-  ══════════════════════════════════════════ -->
-  <div class="report-section">
-    <span class="section-tag cyan">Policy Recommendations</span>
+    <!-- POLICY RECOMMENDATIONS -->
+    <h2>Policy Recommendations</h2>
 
     <div class="policy-item">
-      <div class="policy-num-row">
+      <div class="policy-header">
         <div class="policy-badge">1</div>
         <div class="policy-title">Strategic Petroleum Reserve Management and Domestic Supply Incentives</div>
       </div>
@@ -574,7 +498,7 @@
     </div>
 
     <div class="policy-item">
-      <div class="policy-num-row">
+      <div class="policy-header">
         <div class="policy-badge">2</div>
         <div class="policy-title">Temporary Fiscal Offset Mechanisms to Preserve Long-Term Debt Trajectory</div>
       </div>
@@ -585,7 +509,7 @@
     </div>
 
     <div class="policy-item">
-      <div class="policy-num-row">
+      <div class="policy-header">
         <div class="policy-badge">3</div>
         <div class="policy-title">Federal Reserve Forward Guidance and Conditional Accommodation Framework</div>
       </div>
@@ -596,7 +520,7 @@
     </div>
 
     <div class="policy-item">
-      <div class="policy-num-row">
+      <div class="policy-header">
         <div class="policy-badge">4</div>
         <div class="policy-title">Targeted Household Support for Lower-Income Populations</div>
       </div>
@@ -607,7 +531,7 @@
     </div>
 
     <div class="policy-item">
-      <div class="policy-num-row">
+      <div class="policy-header">
         <div class="policy-badge">5</div>
         <div class="policy-title">Diplomatic Conflict De-escalation with Economic Credibility</div>
       </div>
@@ -616,15 +540,11 @@
         <div class="rationale-block"><p><strong>Rationale:</strong> The worst-case scenario's primary driver is escalation risk, reflected in the NERAI bilateral relations metric (0.0543). Credible diplomatic off-ramps reduce tail-risk probability and lower the risk premium financial markets embed into asset prices, directly supporting economic stability.</p></div>
       </div>
     </div>
-  </div>
 
-  <hr class="section-divider">
+    <hr/>
 
-  <!-- ══════════════════════════════════════════
-       SOURCES & METHODOLOGY — verbatim
-  ══════════════════════════════════════════ -->
-  <div class="report-section">
-    <span class="section-tag">Sources &amp; Methodology</span>
+    <!-- SOURCES & METHODOLOGY -->
+    <h2>Sources &amp; Methodology</h2>
     <div class="sources-block">
       <h3>Think Tank and Research Institution References</h3>
       <ul>
@@ -636,7 +556,6 @@
         <li>U.S. Department of Energy. Strategic Petroleum Reserve levels, domestic crude production data, and refining capacity assessments as of Q1 2026.</li>
         <li>Conference Board and University of Michigan. Consumer Confidence Index and Consumer Sentiment Index data for April–May 2026 period.</li>
       </ul>
-
       <h3>Data Sources and Methodology Notes</h3>
       <ul>
         <li>NERAI Index Data (provided, dated 5 May 2026 00:00:00): Iran Deteriorating Bilateral Relations metric (0.0543) serves as quantitative indicator of U.S.-Iran geopolitical tension. Interpreted as 40–50% elevated probability of conflict expansion relative to baseline.</li>
@@ -645,30 +564,31 @@
         <li>GDP Growth Forecasts: Scenario-based forecasts (0.5–2.2% range) derived from production function approach incorporating capital, labor, and productivity components, conditioned on conflict duration and energy price assumptions.</li>
         <li>Debt-to-GDP Ratio: 123% estimate reflects Congressional Budget Office projections and Treasury Department data as of Q1 2026.</li>
       </ul>
-
       <div class="uncertainty-box">
         <p><strong>Uncertainty Qualifications:</strong> This analysis relies on publicly available economic data and reported think tank assessments as of 6 May 2026. Conflict-specific economic effects remain partially uncertain due to limited duration of hostilities (approximately 1–2 weeks as of report date). Scenario probabilities (best case 25%, base case 50%, worst case 25%) reflect judgment-based assessment informed by regional expert analysis and historical patterns but should not be construed as precise probabilistic predictions. Financial market data reflects investor assessments that may embed both rational expectations and speculative dynamics; forward-looking indicators may overstate or understate actual economic consequences depending on conflict resolution trajectory.</p>
       </div>
     </div>
+
+    <div class="end-note">— END OF REPORT — NERAI Intelligence Hub — Strategic Analysis Lab —</div>
+
+    <!-- CTA -->
+    <div class="article-cta">
+      <h3>Monitor U.S.–Iran Escalation in Real Time</h3>
+      <p>Access NERAI's live geopolitical risk indices, Prophet forecast models, and early-warning alerts across 190 countries.</p>
+      <a href="https://nerai-intelligence.streamlit.app" class="cta-btn" target="_blank">Open Dashboard →</a>
+    </div>
+
   </div>
+</main>
 
-  <div class="end-note">— END OF REPORT — NERAI Intelligence Hub — Strategic Analysis Lab —</div>
-
-  <!-- CTA -->
-  <div class="cta-section">
-    <h2>Monitor U.S.–Iran Escalation in Real Time</h2>
-    <p>Access NERAI's live geopolitical risk indices, Prophet forecast models, and early-warning alerts across 190 countries on the NERAI Intelligence Platform.</p>
-    <a href="https://nerai-intelligence.streamlit.app" class="cta-btn" target="_blank">Access NERAI Intelligence →</a>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 NERAI Intelligence · <a href="https://neraicorp.com">neraicorp.com</a></span>
+    <span>Data: GDELT · ACLED · IMF · World Bank · CBO · U.S. DoE · Federal Reserve · CEPR · CFR</span>
+    <span><a href="https://nerai-intelligence.streamlit.app">Open Dashboard →</a></span>
   </div>
-
-</div><!-- /main -->
-
-<div class="data-footer">
-  NERAI Intelligence — Strategic Analysis Lab &nbsp;·&nbsp; Classification: NERAI-UNRESTRICTED &nbsp;·&nbsp; 6 May 2026<br>
-  Data: GDELT · ACLED · World Bank · IMF · U.S. DoE · CBO · Federal Reserve · CEPR · Council on Foreign Relations<br>
-  Index scores normalized 0.00–1.00 · HIGH &gt;0.40 · CRITICAL &gt;0.60<br>
-  <a href="https://neraicorp.com">neraicorp.com</a> &nbsp;·&nbsp; <a href="https://nerai-intelligence.streamlit.app">nerai-intelligence.streamlit.app</a>
-</div>
+</footer>
 
 </body>
 </html>
