@@ -165,8 +165,6 @@
    * 2. ABOUT — Data Source Orbit (positioned safely below worldPulse)
    * ══════════════════════════════════════════════════════════ */
   function initAbout() {
-    // Place data-orbit in the LEFT column (below text), completely separate
-    // from the worldPulse heatmap which lives in the RIGHT column.
     const aboutGrid = document.querySelector('#about .about-grid');
     if (!aboutGrid) return;
     const leftCol = aboutGrid.firstElementChild;
@@ -174,7 +172,7 @@
 
     const wrap = document.createElement('div');
     Object.assign(wrap.style, {
-      width:'100%', height:'190px',
+      width:'100%', height:'220px',
       marginTop:'28px',
       pointerEvents:'none',
       display:'flex', justifyContent:'flex-start', alignItems:'center',
@@ -182,59 +180,87 @@
     leftCol.appendChild(wrap);
 
     const cvs = document.createElement('canvas');
-    cvs.width  = 320;
-    cvs.height = 180;
-    Object.assign(cvs.style, { width:'100%', height:'100%' });
+    const DPR = window.devicePixelRatio || 1;
+    const W = 360, H = 210;
+    cvs.width  = W * DPR;
+    cvs.height = H * DPR;
+    Object.assign(cvs.style, { width: W+'px', height: H+'px', maxWidth:'100%' });
     wrap.appendChild(cvs);
     fadeIn(wrap);
 
     const ctx = cvs.getContext('2d');
-    const CX = 160, CY = 90, R = 68;
+    ctx.scale(DPR, DPR);
+
+    const CX = W/2, CY = H/2, R = 80;
 
     const srcs = [
-      {label:'GDELT',       col:T,         angle:-90},
-      {label:'ACLED',       col:A,         angle:-18},
-      {label:'World Bank',  col:'#3b82f6', angle: 54},
-      {label:'IMF',         col:'#8b5cf6', angle:126},
-      {label:'Satellite',   col:'#f59e0b', angle:-162},
+      {label:'GDELT',        col:T,         angle:-90},
+      {label:'News APIs',    col:A,         angle:-18},
+      {label:'Web Intel',    col:'#3b82f6', angle: 54},
+      {label:'Think Tanks',  col:'#8b5cf6', angle:126},
+      {label:'Research',     col:'#f59e0b', angle:-162},
     ].map(s=>({
       ...s,
       angle: s.angle*Math.PI/180,
       get x(){return CX+Math.cos(this.angle)*R},
       get y(){return CY+Math.sin(this.angle)*R},
-      pts: Array.from({length:2},()=>({t:rand(0,1),spd:rand(0.006,0.014)})),
+      pts: Array.from({length:3},()=>({t:rand(0,1),spd:rand(0.005,0.012)})),
       phase: rand(0,TAU),
     }));
 
     let cp=0;
     function draw() {
-      ctx.clearRect(0,0,320,180); cp+=0.022;
+      ctx.clearRect(0,0,W,H); cp+=0.018;
+
+      // Orbit ring
+      ctx.beginPath();
+      ctx.arc(CX,CY,R,0,TAU);
+      ctx.strokeStyle='rgba(0,119,168,0.08)';
+      ctx.lineWidth=1;
+      ctx.stroke();
+
       srcs.forEach(s => {
-        s.phase+=0.018;
+        s.phase+=0.016;
+
+        // Spoke line
         ctx.beginPath(); ctx.moveTo(CX,CY); ctx.lineTo(s.x,s.y);
-        ctx.strokeStyle=`rgba(${hexRgb(s.col)},0.18)`; ctx.lineWidth=1; ctx.stroke();
+        ctx.strokeStyle=`rgba(${hexRgb(s.col)},0.15)`; ctx.lineWidth=1; ctx.stroke();
+
+        // Travelling data particles
         s.pts.forEach(p => {
           p.t-=p.spd; if(p.t<0)p.t=1;
           const px=lerp(CX,s.x,p.t), py=lerp(CY,s.y,p.t);
-          ctx.beginPath(); ctx.arc(px,py,1.8,0,TAU);
-          ctx.fillStyle=`rgba(${hexRgb(s.col)},0.82)`; ctx.fill();
+          ctx.beginPath(); ctx.arc(px,py,2,0,TAU);
+          ctx.fillStyle=`rgba(${hexRgb(s.col)},0.75)`; ctx.fill();
         });
+
+        // Node glow
         const pl=0.88+0.12*Math.sin(s.phase);
-        const g=ctx.createRadialGradient(s.x,s.y,0,s.x,s.y,12);
-        g.addColorStop(0,`rgba(${hexRgb(s.col)},0.2)`); g.addColorStop(1,'transparent');
-        ctx.beginPath(); ctx.arc(s.x,s.y,12,0,TAU); ctx.fillStyle=g; ctx.fill();
-        ctx.beginPath(); ctx.arc(s.x,s.y,5*pl,0,TAU); ctx.fillStyle=s.col; ctx.fill();
-        ctx.font='bold 7.5px Inter,sans-serif'; ctx.fillStyle=s.col; ctx.textAlign='center';
-        const off = s.y<CY-6?-11:11;
+        const g=ctx.createRadialGradient(s.x,s.y,0,s.x,s.y,16);
+        g.addColorStop(0,`rgba(${hexRgb(s.col)},0.18)`); g.addColorStop(1,'transparent');
+        ctx.beginPath(); ctx.arc(s.x,s.y,16,0,TAU); ctx.fillStyle=g; ctx.fill();
+
+        // Node dot
+        ctx.beginPath(); ctx.arc(s.x,s.y,5.5*pl,0,TAU); ctx.fillStyle=s.col; ctx.fill();
+
+        // Label — crisp font
+        ctx.font='bold 9px Inter,system-ui,sans-serif';
+        ctx.fillStyle=s.col;
+        ctx.textAlign='center';
+        const off = s.y < CY-6 ? -14 : 14;
         ctx.fillText(s.label, s.x, s.y+off);
       });
-      const cp2=0.84+0.16*Math.sin(cp);
-      const cg=ctx.createRadialGradient(CX,CY,0,CX,CY,26*cp2);
-      cg.addColorStop(0,TA(0.22*cp2)); cg.addColorStop(1,TA(0));
-      ctx.beginPath(); ctx.arc(CX,CY,26*cp2,0,TAU); ctx.fillStyle=cg; ctx.fill();
-      ctx.beginPath(); ctx.arc(CX,CY,9*cp2,0,TAU); ctx.fillStyle=T; ctx.fill();
-      ctx.font='bold 8px Inter,sans-serif'; ctx.fillStyle=T; ctx.textAlign='center';
-      ctx.fillText('NERAI',CX,CY+20);
+
+      // Centre pulse
+      const cp2=0.82+0.18*Math.sin(cp);
+      const cg=ctx.createRadialGradient(CX,CY,0,CX,CY,30*cp2);
+      cg.addColorStop(0,TA(0.25*cp2)); cg.addColorStop(1,TA(0));
+      ctx.beginPath(); ctx.arc(CX,CY,30*cp2,0,TAU); ctx.fillStyle=cg; ctx.fill();
+      ctx.beginPath(); ctx.arc(CX,CY,10*cp2,0,TAU); ctx.fillStyle=T; ctx.fill();
+      ctx.font='bold 9px Inter,system-ui,sans-serif';
+      ctx.fillStyle=T; ctx.textAlign='center';
+      ctx.fillText('NERAI',CX,CY+22);
+
       requestAnimationFrame(draw);
     }
     onVisible(leftCol, draw, 0.2);
