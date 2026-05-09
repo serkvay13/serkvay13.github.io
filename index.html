@@ -79,15 +79,17 @@
       color: var(--navy); letter-spacing: 0.06em;
     }
     .nav-links {
-      display: flex; align-items: center; gap: 32px;
+      display: flex; align-items: center; gap: 22px;
       list-style: none;
+      flex-wrap: nowrap;
     }
     .nav-links a {
       text-decoration: none;
       color: var(--silver);
-      font-size: 0.82rem; font-weight: 500;
-      letter-spacing: 0.04em;
+      font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 0.03em;
       transition: color 0.2s;
+      white-space: nowrap;
     }
     .nav-links a:hover { color: var(--navy); }
     .nav-cta {
@@ -1087,9 +1089,10 @@
           <circle cx="16" cy="36" r="3.2" fill="#1a2840"/>
           <circle cx="26" cy="36" r="3.2" fill="#00c8e0"/>
           <circle cx="36" cy="36" r="3.2" fill="#1a2840"/>
-          <!-- NERAI text -->
-          <text x="48" y="32" font-family="'Inter', Arial, sans-serif" font-weight="800" font-size="26" letter-spacing="-0.5" fill="#1a2840">NER</text>
-          <text x="113" y="32" font-family="'Inter', Arial, sans-serif" font-weight="800" font-size="26" letter-spacing="-0.5" fill="#00b4d8">AI</text>
+          <!-- NERAI text — single word, no gap -->
+          <text x="48" y="32" font-family="'Inter', Arial, sans-serif" font-weight="800" font-size="26" letter-spacing="-0.5">
+            <tspan fill="#1a2840">NER</tspan><tspan fill="#00b4d8">AI</tspan>
+          </text>
         </svg>
       </div>
     </a>
