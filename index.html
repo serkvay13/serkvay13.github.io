@@ -1101,6 +1101,7 @@
       <li><a href="#methodology">Methodology</a></li>
       <li><a href="#usecases">Use Cases</a></li>
       <li><a href="/blog/">Insights</a></li>
+      <li><a href="#contact">Contact</a></li>
       <li><a href="https://nerai-intelligence.streamlit.app/" target="_blank" class="nav-cta">Open Dashboard →</a></li>
     </ul>
   </div>
@@ -1338,86 +1339,173 @@
         </div>
       </div>
 
-      <div>
-        <div class="dashboard-preview">
-          <div class="dp-bar">
-            <div class="dp-dot" style="background:#ff5f56;"></div>
-            <div class="dp-dot" style="background:#ffbd2e;"></div>
-            <div class="dp-dot" style="background:#27c93f;"></div>
-            <div class="dp-url">neraicorp.com/dashboard</div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+
+        <!-- Dashboard Screenshot 1: Strategic Insights Hub — World Map View -->
+        <div style="background:#0d1117;border-radius:12px;overflow:hidden;
+                    border:1px solid rgba(0,119,168,0.22);
+                    box-shadow:0 12px 40px rgba(13,31,60,0.18);">
+          <!-- Title bar -->
+          <div style="background:#161b22;padding:9px 14px;display:flex;align-items:center;
+                      gap:6px;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <span style="width:7px;height:7px;border-radius:50%;background:#ff5f56;"></span>
+            <span style="width:7px;height:7px;border-radius:50%;background:#ffbd2e;"></span>
+            <span style="width:7px;height:7px;border-radius:50%;background:#27c93f;"></span>
+            <span style="flex:1;text-align:center;font-size:0.6rem;color:rgba(255,255,255,0.3);
+                         font-family:monospace;letter-spacing:0.04em;">
+              NERAI Strategic Insights Hub — Global Risk Map
+            </span>
           </div>
-          <div class="dp-overlay" style="display:flex;background:#0d0f1a;position:relative;overflow:hidden;">
-            <!-- Dashboard Mockup -->
-            <div style="display:flex;width:100%;height:100%;font-family:'Inter', sans-serif;">
-              <!-- Sidebar -->
-              <div style="width:25%;background:#0a0d17;padding:24px 16px;border-right:1px solid rgba(0,212,255,0.1);display:flex;flex-direction:column;">
-                <div style="font-size:18px;font-weight:700;color:#00d4ff;margin-bottom:32px;letter-spacing:0.05em;">NERAI</div>
-                <div style="flex:1;display:flex;flex-direction:column;gap:12px;">
-                  <a href="#" onclick="return false;" style="color:#8892b0;text-decoration:none;padding:10px 12px;border-radius:6px;font-size:14px;transition:all 0.2s;background:rgba(0,212,255,0.1);">HOME</a>
-                  <a href="#" onclick="return false;" style="color:#8892b0;text-decoration:none;padding:10px 12px;border-radius:6px;font-size:14px;transition:all 0.2s;">INDICES</a>
-                  <a href="#" onclick="return false;" style="color:#8892b0;text-decoration:none;padding:10px 12px;border-radius:6px;font-size:14px;transition:all 0.2s;">COUNTRY PROFILE</a>
-                  <a href="#" onclick="return false;" style="color:#8892b0;text-decoration:none;padding:10px 12px;border-radius:6px;font-size:14px;transition:all 0.2s;">NEWS</a>
-                  <a href="#" onclick="return false;" style="color:#8892b0;text-decoration:none;padding:10px 12px;border-radius:6px;font-size:14px;transition:all 0.2s;">PREDICTIONS</a>
-                  <a href="#" onclick="return false;" style="color:#8892b0;text-decoration:none;padding:10px 12px;border-radius:6px;font-size:14px;transition:all 0.2s;">INSIGHTS</a>
+          <!-- World map content -->
+          <div style="padding:14px 16px;background:#0d1117;">
+            <!-- Nav tabs -->
+            <div style="display:flex;gap:4px;margin-bottom:12px;">
+              <span style="background:rgba(0,119,168,0.25);color:#7dd3fc;font-size:0.58rem;
+                           padding:4px 10px;border-radius:4px;letter-spacing:0.06em;font-weight:600;">🌍 GLOBAL MAP</span>
+              <span style="color:#4b5563;font-size:0.58rem;padding:4px 10px;letter-spacing:0.06em;">INDICES</span>
+              <span style="color:#4b5563;font-size:0.58rem;padding:4px 10px;letter-spacing:0.06em;">COUNTRY PROFILE</span>
+              <span style="color:#4b5563;font-size:0.58rem;padding:4px 10px;letter-spacing:0.06em;">INSIGHTS</span>
+              <span style="color:#4b5563;font-size:0.58rem;padding:4px 10px;letter-spacing:0.06em;">WHAT-IF</span>
+            </div>
+            <!-- Map SVG placeholder with country dots -->
+            <div style="background:#0a0d14;border-radius:8px;padding:12px;position:relative;height:160px;overflow:hidden;border:1px solid rgba(255,255,255,0.04);">
+              <!-- Grid lines -->
+              <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" viewBox="0 0 400 160" preserveAspectRatio="none">
+                <line x1="0" y1="53" x2="400" y2="53" stroke="#0077a8" stroke-width="0.5"/>
+                <line x1="0" y1="107" x2="400" y2="107" stroke="#0077a8" stroke-width="0.5"/>
+                <line x1="100" y1="0" x2="100" y2="160" stroke="#0077a8" stroke-width="0.5"/>
+                <line x1="200" y1="0" x2="200" y2="160" stroke="#0077a8" stroke-width="0.5"/>
+                <line x1="300" y1="0" x2="300" y2="160" stroke="#0077a8" stroke-width="0.5"/>
+              </svg>
+              <!-- Country risk markers -->
+              <!-- Europe -->
+              <div style="position:absolute;left:44%;top:22%;width:8px;height:8px;border-radius:50%;background:#f59e0b;box-shadow:0 0 8px #f59e0b88;" title="Ukraine"></div>
+              <div style="position:absolute;left:42%;top:18%;width:6px;height:6px;border-radius:50%;background:#3b82f6;opacity:0.7;" title="Germany"></div>
+              <!-- Middle East -->
+              <div style="position:absolute;left:57%;top:35%;width:10px;height:10px;border-radius:50%;background:#ef4444;box-shadow:0 0 12px #ef444488;" title="Iran"></div>
+              <div style="position:absolute;left:55%;top:32%;width:7px;height:7px;border-radius:50%;background:#f87171;box-shadow:0 0 8px #f8717188;" title="Israel"></div>
+              <div style="position:absolute;left:53%;top:34%;width:6px;height:6px;border-radius:50%;background:#fb923c;opacity:0.8;" title="Iraq"></div>
+              <!-- Russia -->
+              <div style="position:absolute;left:55%;top:16%;width:11px;height:11px;border-radius:50%;background:#f87171;box-shadow:0 0 10px #f8717166;" title="Russia"></div>
+              <!-- China -->
+              <div style="position:absolute;left:72%;top:28%;width:9px;height:9px;border-radius:50%;background:#f59e0b;box-shadow:0 0 8px #f59e0b66;" title="China"></div>
+              <!-- Africa -->
+              <div style="position:absolute;left:48%;top:48%;width:7px;height:7px;border-radius:50%;background:#fb923c;opacity:0.8;" title="Sudan"></div>
+              <div style="position:absolute;left:45%;top:55%;width:6px;height:6px;border-radius:50%;background:#f59e0b;opacity:0.7;" title="DRC"></div>
+              <!-- USA -->
+              <div style="position:absolute;left:18%;top:28%;width:8px;height:8px;border-radius:50%;background:#60a5fa;box-shadow:0 0 8px #60a5fa44;" title="USA"></div>
+              <!-- North Korea -->
+              <div style="position:absolute;left:78%;top:25%;width:7px;height:7px;border-radius:50%;background:#f87171;opacity:0.8;" title="North Korea"></div>
+              <!-- Venezuela -->
+              <div style="position:absolute;left:25%;top:46%;width:6px;height:6px;border-radius:50%;background:#f59e0b;opacity:0.7;" title="Venezuela"></div>
+
+              <!-- Legend -->
+              <div style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.5);
+                           border-radius:6px;padding:6px 8px;display:flex;flex-direction:column;gap:3px;">
+                <div style="display:flex;align-items:center;gap:5px;">
+                  <div style="width:7px;height:7px;border-radius:50%;background:#ef4444;"></div>
+                  <span style="font-size:0.5rem;color:#9ca3af;">HIGH RISK (>70)</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:5px;">
+                  <div style="width:7px;height:7px;border-radius:50%;background:#f59e0b;"></div>
+                  <span style="font-size:0.5rem;color:#9ca3af;">ELEVATED (40–70)</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:5px;">
+                  <div style="width:7px;height:7px;border-radius:50%;background:#3b82f6;"></div>
+                  <span style="font-size:0.5rem;color:#9ca3af;">MODERATE (&lt;40)</span>
                 </div>
               </div>
-
-              <!-- Main Content -->
-              <div style="flex:1;padding:32px;display:flex;flex-direction:column;">
-                <!-- Header -->
-                <div style="margin-bottom:32px;">
-                  <h1 style="color:#ffffff;font-size:28px;margin:0 0 8px 0;font-weight:700;">NERAI Intelligence Hub</h1>
-                  <p style="color:#8892b0;font-size:14px;margin:0;">Real-time geopolitical risk intelligence</p>
-                </div>
-
-                <!-- Stats Grid -->
-                <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px;">
-                  <div style="background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.2);border-radius:8px;padding:16px;">
-                    <div style="color:#8892b0;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Countries Tracked</div>
-                    <div style="color:#00d4ff;font-size:24px;font-weight:700;">60</div>
-                  </div>
-                  <div style="background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.2);border-radius:8px;padding:16px;">
-                    <div style="color:#8892b0;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Risk Topics</div>
-                    <div style="color:#00d4ff;font-size:24px;font-weight:700;">40</div>
-                  </div>
-                  <div style="background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.2);border-radius:8px;padding:16px;">
-                    <div style="color:#8892b0;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Data Points</div>
-                    <div style="color:#00d4ff;font-size:24px;font-weight:700;">2400+</div>
-                  </div>
-                  <div style="background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.2);border-radius:8px;padding:16px;">
-                    <div style="color:#8892b0;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Update Frequency</div>
-                    <div style="color:#00d4ff;font-size:24px;font-weight:700;">Daily</div>
-                  </div>
-                </div>
-
-                <!-- Country Risk Cards -->
-                <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
-                  <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(0,212,255,0.15);border-radius:8px;padding:16px;text-align:center;">
-                    <div style="color:#ffffff;font-size:16px;font-weight:600;margin-bottom:12px;">United States</div>
-                    <div style="background:linear-gradient(135deg, #00d4ff, #0099cc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:32px;font-weight:700;">4.2</div>
-                    <div style="color:#8892b0;font-size:12px;margin-top:8px;">Risk Score</div>
-                  </div>
-                  <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,107,107,0.3);border-radius:8px;padding:16px;text-align:center;">
-                    <div style="color:#ffffff;font-size:16px;font-weight:600;margin-bottom:12px;">Russia</div>
-                    <div style="background:linear-gradient(135deg, #ff6b6b, #ff4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:32px;font-weight:700;">8.1</div>
-                    <div style="color:#8892b0;font-size:12px;margin-top:8px;">Risk Score</div>
-                  </div>
-                  <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,193,7,0.3);border-radius:8px;padding:16px;text-align:center;">
-                    <div style="color:#ffffff;font-size:16px;font-weight:600;margin-bottom:12px;">China</div>
-                    <div style="background:linear-gradient(135deg, #ffc107, #ff9800);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:32px;font-weight:700;">6.8</div>
-                    <div style="color:#8892b0;font-size:12px;margin-top:8px;">Risk Score</div>
-                  </div>
-                  <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,152,0,0.3);border-radius:8px;padding:16px;text-align:center;">
-                    <div style="color:#ffffff;font-size:16px;font-weight:600;margin-bottom:12px;">Turkey</div>
-                    <div style="background:linear-gradient(135deg, #ff9800, #ff6b6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:32px;font-weight:700;">7.3</div>
-                    <div style="color:#8892b0;font-size:12px;margin-top:8px;">Risk Score</div>
-                  </div>
-                </div>
+              <!-- Timestamp -->
+              <div style="position:absolute;top:8px;right:8px;font-size:0.48rem;
+                           color:rgba(255,255,255,0.25);font-family:monospace;">
+                LIVE · 80+ COUNTRIES · GDELT
               </div>
             </div>
           </div>
         </div>
-        <div style="text-align:center;margin-top:14px;">
+
+        <!-- Dashboard Screenshot 2: Risk Heatmap View -->
+        <div style="background:#0d1117;border-radius:12px;overflow:hidden;
+                    border:1px solid rgba(0,168,134,0.18);
+                    box-shadow:0 8px 30px rgba(13,31,60,0.14);">
+          <div style="background:#161b22;padding:9px 14px;display:flex;align-items:center;
+                      gap:6px;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <span style="width:7px;height:7px;border-radius:50%;background:#ff5f56;"></span>
+            <span style="width:7px;height:7px;border-radius:50%;background:#ffbd2e;"></span>
+            <span style="width:7px;height:7px;border-radius:50%;background:#27c93f;"></span>
+            <span style="flex:1;text-align:center;font-size:0.6rem;color:rgba(255,255,255,0.3);
+                         font-family:monospace;letter-spacing:0.04em;">
+              NERAI Strategic Insights Hub — Risk Heatmap
+            </span>
+          </div>
+          <div style="padding:12px 14px;">
+            <!-- Column headers -->
+            <div style="display:grid;grid-template-columns:90px repeat(5,1fr);gap:3px;margin-bottom:4px;">
+              <div></div>
+              <div style="font-size:0.48rem;color:#4b5563;text-align:center;font-weight:600;letter-spacing:0.04em;">MIL.ESC</div>
+              <div style="font-size:0.48rem;color:#4b5563;text-align:center;font-weight:600;letter-spacing:0.04em;">CRISIS</div>
+              <div style="font-size:0.48rem;color:#4b5563;text-align:center;font-weight:600;letter-spacing:0.04em;">INSTAB</div>
+              <div style="font-size:0.48rem;color:#4b5563;text-align:center;font-weight:600;letter-spacing:0.04em;">TERROR</div>
+              <div style="font-size:0.48rem;color:#4b5563;text-align:center;font-weight:600;letter-spacing:0.04em;">ECON.RISK</div>
+            </div>
+            <!-- Heatmap rows -->
+            <div style="display:flex;flex-direction:column;gap:3px;">
+              <!-- Iran -->
+              <div style="display:grid;grid-template-columns:90px repeat(5,1fr);gap:3px;align-items:center;">
+                <div style="font-size:0.55rem;color:#e2e8f0;font-weight:500;">🇮🇷 Iran</div>
+                <div style="background:#7f1d1d;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#fca5a5;font-weight:700;">84</span></div>
+                <div style="background:#7f1d1d;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#fca5a5;font-weight:700;">79</span></div>
+                <div style="background:#92400e;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#fcd34d;font-weight:700;">61</span></div>
+                <div style="background:#92400e;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#fcd34d;font-weight:700;">58</span></div>
+                <div style="background:#92400e;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#fcd34d;font-weight:700;">72</span></div>
+              </div>
+              <!-- Russia -->
+              <div style="display:grid;grid-template-columns:90px repeat(5,1fr);gap:3px;align-items:center;">
+                <div style="font-size:0.55rem;color:#e2e8f0;font-weight:500;">🇷🇺 Russia</div>
+                <div style="background:#7f1d1d;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#fca5a5;font-weight:700;">81</span></div>
+                <div style="background:#92400e;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#fcd34d;font-weight:700;">68</span></div>
+                <div style="background:#7f1d1d;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#fca5a5;font-weight:700;">76</span></div>
+                <div style="background:#92400e;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#fcd34d;font-weight:700;">44</span></div>
+                <div style="background:#92400e;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#fcd34d;font-weight:700;">69</span></div>
+              </div>
+              <!-- China -->
+              <div style="display:grid;grid-template-columns:90px repeat(5,1fr);gap:3px;align-items:center;">
+                <div style="font-size:0.55rem;color:#e2e8f0;font-weight:500;">🇨🇳 China</div>
+                <div style="background:#92400e;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#fcd34d;font-weight:700;">67</span></div>
+                <div style="background:#92400e;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#fcd34d;font-weight:700;">55</span></div>
+                <div style="background:#92400e;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#fcd34d;font-weight:700;">49</span></div>
+                <div style="background:#1e3a5f;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#93c5fd;font-weight:700;">28</span></div>
+                <div style="background:#92400e;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#fcd34d;font-weight:700;">61</span></div>
+              </div>
+              <!-- Israel -->
+              <div style="display:grid;grid-template-columns:90px repeat(5,1fr);gap:3px;align-items:center;">
+                <div style="font-size:0.55rem;color:#e2e8f0;font-weight:500;">🇮🇱 Israel</div>
+                <div style="background:#7f1d1d;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#fca5a5;font-weight:700;">78</span></div>
+                <div style="background:#7f1d1d;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#fca5a5;font-weight:700;">82</span></div>
+                <div style="background:#92400e;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#fcd34d;font-weight:700;">54</span></div>
+                <div style="background:#7f1d1d;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#fca5a5;font-weight:700;">71</span></div>
+                <div style="background:#92400e;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#fcd34d;font-weight:700;">48</span></div>
+              </div>
+              <!-- Turkey -->
+              <div style="display:grid;grid-template-columns:90px repeat(5,1fr);gap:3px;align-items:center;">
+                <div style="font-size:0.55rem;color:#e2e8f0;font-weight:500;">🇹🇷 Turkey</div>
+                <div style="background:#92400e;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#fcd34d;font-weight:700;">58</span></div>
+                <div style="background:#92400e;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#fcd34d;font-weight:700;">51</span></div>
+                <div style="background:#92400e;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#fcd34d;font-weight:700;">62</span></div>
+                <div style="background:#1e3a5f;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#93c5fd;font-weight:700;">35</span></div>
+                <div style="background:#92400e;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;"><span style="font-size:0.45rem;color:#fcd34d;font-weight:700;">55</span></div>
+              </div>
+            </div>
+            <!-- Footer legend -->
+            <div style="margin-top:10px;display:flex;align-items:center;gap:12px;justify-content:flex-end;">
+              <div style="display:flex;align-items:center;gap:4px;"><div style="width:12px;height:8px;background:#7f1d1d;border-radius:2px;"></div><span style="font-size:0.46rem;color:#6b7280;">HIGH (&gt;70)</span></div>
+              <div style="display:flex;align-items:center;gap:4px;"><div style="width:12px;height:8px;background:#92400e;border-radius:2px;"></div><span style="font-size:0.46rem;color:#6b7280;">ELEVATED (40–70)</span></div>
+              <div style="display:flex;align-items:center;gap:4px;"><div style="width:12px;height:8px;background:#1e3a5f;border-radius:2px;"></div><span style="font-size:0.46rem;color:#6b7280;">MODERATE (&lt;40)</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align:center;margin-top:4px;">
           <a href="https://nerai-intelligence.streamlit.app/" target="_blank"
              style="font-size:0.72rem;color:var(--teal);text-decoration:none;letter-spacing:0.05em;">
             Open full dashboard →
@@ -1684,27 +1772,8 @@
         </div>
       </div>
 
-      <!-- Right: terminal mockup -->
-      <div class="analyst-right">
-        <div class="analyst-terminal">
-          <div class="at-bar">
-            <div class="at-dot" style="background:#ff5f56;"></div>
-            <div class="at-dot" style="background:#ffbd2e;"></div>
-            <div class="at-dot" style="background:#27c93f;"></div>
-            <div class="at-label">NERAI ANALYST · CLAUDE claude-sonnet-4-6</div>
-          </div>
-          <div class="at-body">
-            <div class="at-query">What is the risk outlook for Iran and the US right now?</div>
-            <div class="at-response">
-              <p>Iran's <strong>Military Escalation</strong> index registered a <span class="hl-up">+22.4% week-on-week surge</span> through March 26, driven by a sharp increase in GDELT-tracked confrontational events involving the IRGC and regional proxies in Iraq and Yemen. The <span class="hl-data">International Crisis index rose 17.1%</span> in parallel, the sharpest 7-day movement recorded in the past four months.</p>
-              <p>Concurrent GDELT headlines from Reuters and Al-Monitor point to renewed US carrier group deployments in the Strait of Hormuz and expanded Treasury sanctions on Iranian petrochemical networks as the primary drivers. The <strong>US Bilateral Deterioration</strong> index — which tracks adversarial event frequency between Washington and Tehran — rose <span class="hl-up">+18.9%</span>, confirming the data-to-news causal link.</p>
-              <p>The 12-month Prophet model projects Iran's <strong>Military Crisis index to rise a further +31%</strong> by February 2026, contingent on current trajectory. The US forward outlook is more contained: <span class="hl-down">Political Instability indices are forecast to ease –8.4%</span> as electoral uncertainty dissipates, though sanctions-related Economic Pressure metrics are expected to climb +14%.</p>
-              <p><strong>Strategic outlook:</strong> The Iran–US dyad is entering its most structurally volatile phase since 2020. Analysts should watch the Strait of Hormuz shipping disruption index and Saudi bilateral indicators as leading edge signals of escalatory spillover.</p>
-            </div>
-          </div>
-          <div class="at-footer">SOURCE: GDELT PROJECT · NERAI INDICES · PROPHET FORECAST · DATA TO 26 MAR 2026</div>
-        </div>
-      </div>
+      <!-- Right: live AI analyst demo (injected by nerai-animations.js) -->
+      <div class="analyst-right"></div>
     </div>
 
   </div>
@@ -1941,7 +2010,7 @@
           <li>Early access to new features</li>
         </ul>
         <a href="#" class="btn-paddle btn-paddle-outline"
-           onclick="Paddle.Checkout.open({ items: [{ priceId: 'pri_01kmnfqvszkm6bm3xndybke92q', quantity: 1 }], settings: { successUrl: 'https://neraicorp.com/welcome.html?plan=solo' } }); return false;">
+           onclick="try{ Paddle.Checkout.open({ items: [{ priceId: 'pri_01kmnfqvszkm6bm3xndybke92q', quantity: 1 }], settings: { successUrl: 'https://neraicorp.com/welcome.html?plan=solo' } }); } catch(e){ window.location.href='#contact'; } return false;">
           Start Free Trial &rarr;
         </a>
       </div>
@@ -1962,7 +2031,7 @@
           <li>Priority support</li>
         </ul>
         <a href="#" class="btn-paddle btn-paddle-primary"
-           onclick="Paddle.Checkout.open({ items: [{ priceId: 'pri_01kmnfvtkysdtbc6ddvqx0fffw', quantity: 1 }], settings: { successUrl: 'https://neraicorp.com/welcome.html?plan=pro' } }); return false;">
+           onclick="try{ Paddle.Checkout.open({ items: [{ priceId: 'pri_01kmnfvtkysdtbc6ddvqx0fffw', quantity: 1 }], settings: { successUrl: 'https://neraicorp.com/welcome.html?plan=pro' } }); } catch(e){ window.location.href='#contact'; } return false;">
           Start Free Trial &rarr;
         </a>
       </div>
@@ -2013,6 +2082,197 @@
   </div>
 </section>
 
+<!-- ── CONTACT ──────────────────────────────────────────── -->
+<section id="contact" style="background:var(--navy2);border-top:1px solid rgba(0,119,168,0.08);padding:100px 0;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:56px;">
+      <div class="section-tag">Contact Us</div>
+      <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);
+                 color:var(--navy);margin-bottom:14px;line-height:1.2;">
+        Get in touch.
+      </h2>
+      <p style="font-size:0.95rem;color:var(--silver);max-width:480px;margin:0 auto;line-height:1.75;">
+        Questions about the platform, enterprise plans, or a custom integration?
+        We respond to every inquiry within 24 hours.
+      </p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;max-width:900px;margin:0 auto;align-items:start;">
+
+      <!-- Contact Form -->
+      <div>
+        <form id="nerai-contact-form" style="display:flex;flex-direction:column;gap:16px;">
+          <div>
+            <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--navy);
+                          letter-spacing:0.05em;margin-bottom:6px;text-transform:uppercase;">
+              Name *
+            </label>
+            <input type="text" id="nc-name" required placeholder="Your full name"
+              style="width:100%;padding:11px 14px;border:1.5px solid var(--border);
+                     border-radius:8px;font-size:0.88rem;color:var(--navy);
+                     background:#fff;outline:none;font-family:'Inter',sans-serif;
+                     transition:border-color 0.2s;"
+              onfocus="this.style.borderColor='var(--teal)'"
+              onblur="this.style.borderColor='var(--border)'"/>
+          </div>
+          <div>
+            <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--navy);
+                          letter-spacing:0.05em;margin-bottom:6px;text-transform:uppercase;">
+              Email *
+            </label>
+            <input type="email" id="nc-email" required placeholder="you@company.com"
+              style="width:100%;padding:11px 14px;border:1.5px solid var(--border);
+                     border-radius:8px;font-size:0.88rem;color:var(--navy);
+                     background:#fff;outline:none;font-family:'Inter',sans-serif;
+                     transition:border-color 0.2s;"
+              onfocus="this.style.borderColor='var(--teal)'"
+              onblur="this.style.borderColor='var(--border)'"/>
+          </div>
+          <div>
+            <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--navy);
+                          letter-spacing:0.05em;margin-bottom:6px;text-transform:uppercase;">
+              Organisation
+            </label>
+            <input type="text" id="nc-org" placeholder="Company / Institution"
+              style="width:100%;padding:11px 14px;border:1.5px solid var(--border);
+                     border-radius:8px;font-size:0.88rem;color:var(--navy);
+                     background:#fff;outline:none;font-family:'Inter',sans-serif;
+                     transition:border-color 0.2s;"
+              onfocus="this.style.borderColor='var(--teal)'"
+              onblur="this.style.borderColor='var(--border)'"/>
+          </div>
+          <div>
+            <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--navy);
+                          letter-spacing:0.05em;margin-bottom:6px;text-transform:uppercase;">
+              Message *
+            </label>
+            <textarea id="nc-msg" required rows="4" placeholder="How can we help you?"
+              style="width:100%;padding:11px 14px;border:1.5px solid var(--border);
+                     border-radius:8px;font-size:0.88rem;color:var(--navy);
+                     background:#fff;outline:none;font-family:'Inter',sans-serif;
+                     resize:vertical;transition:border-color 0.2s;"
+              onfocus="this.style.borderColor='var(--teal)'"
+              onblur="this.style.borderColor='var(--border)'"></textarea>
+          </div>
+          <button type="submit"
+            style="background:var(--teal);color:#fff;border:none;border-radius:8px;
+                   padding:13px 28px;font-size:0.88rem;font-weight:600;
+                   font-family:'Inter',sans-serif;cursor:pointer;
+                   transition:background 0.2s,transform 0.15s;letter-spacing:0.02em;"
+            onmouseover="this.style.background='var(--teal2)'"
+            onmouseout="this.style.background='var(--teal)'"
+            onmousedown="this.style.transform='translateY(1px)'"
+            onmouseup="this.style.transform='none'">
+            Send Message &rarr;
+          </button>
+          <div id="nc-status" style="display:none;padding:12px 16px;border-radius:8px;
+               font-size:0.82rem;font-weight:500;"></div>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div style="display:flex;flex-direction:column;gap:28px;padding-top:8px;">
+        <div>
+          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.12em;
+                      text-transform:uppercase;color:var(--teal);margin-bottom:8px;">
+            Response time
+          </div>
+          <p style="font-size:0.88rem;color:var(--silver);line-height:1.75;">
+            We aim to respond to all enquiries within 24 hours on business days.
+          </p>
+        </div>
+
+        <div>
+          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.12em;
+                      text-transform:uppercase;color:var(--teal);margin-bottom:14px;">
+            Connect
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <a href="https://www.linkedin.com/company/nerai-io/" target="_blank" rel="noopener"
+               style="display:flex;align-items:center;gap:12px;padding:14px 16px;
+                      background:#fff;border:1.5px solid var(--border);border-radius:10px;
+                      text-decoration:none;color:var(--navy);font-size:0.85rem;font-weight:500;
+                      transition:border-color 0.2s,box-shadow 0.2s;"
+               onmouseover="this.style.borderColor='var(--teal)';this.style.boxShadow='0 4px 14px rgba(0,119,168,0.1)'"
+               onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="24" height="24" rx="4" fill="#0077B5"/>
+                <path d="M8 10H5.5V18H8V10Z" fill="white"/>
+                <circle cx="6.75" cy="7.25" r="1.5" fill="white"/>
+                <path d="M18 13.5C18 11.5 17 10 15 10C13.5 10 12.8 11 12.5 11.5V10H10V18H12.5V14C12.5 13 13 12 14 12C15 12 15.5 12.8 15.5 14V18H18V13.5Z" fill="white"/>
+              </svg>
+              LinkedIn — NERAI
+            </a>
+            <a href="https://x.com/NERAI245820" target="_blank" rel="noopener"
+               style="display:flex;align-items:center;gap:12px;padding:14px 16px;
+                      background:#fff;border:1.5px solid var(--border);border-radius:10px;
+                      text-decoration:none;color:var(--navy);font-size:0.85rem;font-weight:500;
+                      transition:border-color 0.2s,box-shadow 0.2s;"
+               onmouseover="this.style.borderColor='var(--navy)';this.style.boxShadow='0 4px 14px rgba(13,31,60,0.08)'"
+               onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="24" height="24" rx="4" fill="#000"/>
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.735-8.846L2.25 2.25h6.831l4.258 5.625 4.905-5.625Zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="white"/>
+              </svg>
+              X (Twitter) — @NERAI245820
+            </a>
+          </div>
+        </div>
+
+        <div style="padding:18px;background:#fff;border:1.5px solid var(--border);
+                    border-radius:10px;">
+          <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;
+                      text-transform:uppercase;color:var(--accent);margin-bottom:8px;">
+            ★ Enterprise &amp; Partnerships
+          </div>
+          <p style="font-size:0.82rem;color:var(--silver);line-height:1.7;margin:0;">
+            Need custom country coverage, team seats, or API access? Mention it in your message
+            and we'll put together a tailored proposal.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  (function(){
+    var form = document.getElementById('nerai-contact-form');
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var nm  = (document.getElementById('nc-name').value||'').trim();
+      var em  = (document.getElementById('nc-email').value||'').trim();
+      var org = (document.getElementById('nc-org').value||'').trim();
+      var msg = (document.getElementById('nc-msg').value||'').trim();
+      var st  = document.getElementById('nc-status');
+      if (!nm||!em||!msg) {
+        st.style.display='block';
+        st.style.background='rgba(201,48,72,0.08)';
+        st.style.color='#c93048';
+        st.textContent='Please fill in all required fields.';
+        return;
+      }
+      // Assemble destination (encoded, not visible in HTML source)
+      var d = ['ka','gan','@','n','er','ai','c','or','p','.','co','m'].join('');
+      var sub = encodeURIComponent('NERAI Enquiry: ' + nm + (org?' ('+org+')':''));
+      var body = encodeURIComponent(
+        'Name: ' + nm + '\n' +
+        'Email: ' + em + '\n' +
+        (org?'Organisation: '+org+'\n':'') +
+        '\n' + msg
+      );
+      window.location.href = 'mailto:'+d+'?subject='+sub+'&body='+body;
+      st.style.display='block';
+      st.style.background='rgba(0,168,134,0.08)';
+      st.style.color='#00a886';
+      st.textContent='✓ Opening your email client… If nothing happens, email us directly via LinkedIn.';
+      form.reset();
+    });
+  })();
+</script>
+
 <!-- ── FOOTER ──────────────────────────────────────────── -->
 <footer>
   <div class="container">
@@ -2024,6 +2284,7 @@
       <ul class="footer-links">
         <li><a href="#about">About</a></li>
         <li><a href="#platform">Platform</a></li>
+        <li><a href="#contact">Contact</a></li>
         <li><a href="#methodology">Methodology</a></li>
         <li><a href="https://nerai-intelligence.streamlit.app/" target="_blank">Dashboard</a></li>
         <li><a href="privacy.html">Privacy Policy</a></li>
