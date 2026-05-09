@@ -237,7 +237,7 @@
       ctx.fillText('NERAI',CX,CY+20);
       requestAnimationFrame(draw);
     }
-    onVisible(aboutCard, draw, 0.2);
+    onVisible(leftCol, draw, 0.2);
   }
 
   /* ══════════════════════════════════════════════════════════
