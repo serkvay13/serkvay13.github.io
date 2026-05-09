@@ -165,19 +165,21 @@
    * 2. ABOUT — Data Source Orbit (positioned safely below worldPulse)
    * ══════════════════════════════════════════════════════════ */
   function initAbout() {
-    // worldPulse already provides excellent animation in the about section.
-    // We add our data-orbit below the about-card as a supplementary visual.
-    const aboutCard = document.querySelector('#about .about-card');
-    if (!aboutCard) return;
+    // Place data-orbit in the LEFT column (below text), completely separate
+    // from the worldPulse heatmap which lives in the RIGHT column.
+    const aboutGrid = document.querySelector('#about .about-grid');
+    if (!aboutGrid) return;
+    const leftCol = aboutGrid.firstElementChild;
+    if (!leftCol) return;
 
     const wrap = document.createElement('div');
     Object.assign(wrap.style, {
-      width:'100%', height:'200px',
-      marginTop:'20px',
+      width:'100%', height:'190px',
+      marginTop:'28px',
       pointerEvents:'none',
-      display:'flex', justifyContent:'center', alignItems:'center',
+      display:'flex', justifyContent:'flex-start', alignItems:'center',
     });
-    aboutCard.appendChild(wrap);
+    leftCol.appendChild(wrap);
 
     const cvs = document.createElement('canvas');
     cvs.width  = 320;
