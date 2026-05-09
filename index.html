@@ -2220,6 +2220,8 @@
     <p id="trialPlanLabel" style="margin:0 0 24px;color:#0077a8;font-size:0.95rem;font-weight:600;"></p>
 
     <form id="trialForm" onsubmit="submitTrialForm(event)">
+      <input type="hidden" name="access_key" value="d6e962f8-146c-431d-add7-16d03ba7087f">
+      <input type="hidden" name="subject" id="trialSubjectInput" value="NERAI Trial Request">
       <input type="hidden" id="trialPlanInput" name="plan" value="">
       <div style="margin-bottom:16px;">
         <label style="display:block;font-size:0.82rem;font-weight:600;color:#4b5563;margin-bottom:6px;">Full Name</label>
@@ -2258,6 +2260,7 @@
   function openTrialModal(plan, price) {
     document.getElementById('trialPlanLabel').textContent = plan + ' Plan — ' + price + ' · 7-day free trial';
     document.getElementById('trialPlanInput').value = plan;
+    document.getElementById('trialSubjectInput').value = 'NERAI Trial Request — ' + plan + ' Plan';
     document.getElementById('trialForm').style.display = 'block';
     document.getElementById('trialSuccess').style.display = 'none';
     document.getElementById('trialSubmitBtn').textContent = 'Request Trial Access →';
@@ -2280,12 +2283,12 @@
     btn.disabled = true;
     const form = e.target;
     const data = new FormData(form);
-    fetch('https://formspree.io/f/mvzlwlja', {
+    fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       body: data,
       headers: { 'Accept': 'application/json' }
-    }).then(r => {
-      if (r.ok) {
+    }).then(r => r.json()).then(r => {
+      if (r.success) {
         document.getElementById('trialForm').style.display = 'none';
         document.getElementById('trialSuccess').style.display = 'block';
         setTimeout(closeTrialModal, 3000);
