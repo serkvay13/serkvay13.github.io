@@ -1875,8 +1875,8 @@
           <li>Early access to new features</li>
         </ul>
         <a href="#" class="btn-paddle btn-paddle-outline"
-           onclick="try{ Paddle.Checkout.open({ items: [{ priceId: 'pri_01kmnfqvszkm6bm3xndybke92q', quantity: 1 }], settings: { successUrl: 'https://neraicorp.com/welcome.html?plan=solo' } }); } catch(e){ window.location.href='#contact'; } return false;">
-          Start Free Trial &rarr;
+           onclick="openTrialModal('Solo','€19/mo'); return false;">
+          Start 7-Day Trial &rarr;
         </a>
       </div>
 
@@ -1896,8 +1896,8 @@
           <li>Priority support</li>
         </ul>
         <a href="#" class="btn-paddle btn-paddle-primary"
-           onclick="try{ Paddle.Checkout.open({ items: [{ priceId: 'pri_01kmnfvtkysdtbc6ddvqx0fffw', quantity: 1 }], settings: { successUrl: 'https://neraicorp.com/welcome.html?plan=pro' } }); } catch(e){ window.location.href='#contact'; } return false;">
-          Start Free Trial &rarr;
+           onclick="openTrialModal('Pro','€39/mo'); return false;">
+          Start 7-Day Trial &rarr;
         </a>
       </div>
 
@@ -2197,9 +2197,110 @@
   });
 </script>
 
-<!-- ── PADDLE INIT ────────────────────────────────────── -->
+<!-- ── TRIAL MODAL ──────────────────────────────────── -->
+<div id="trialModal" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(13,31,60,0.82); backdrop-filter:blur(6px); align-items:center; justify-content:center;">
+  <div style="background:#fff; border-radius:16px; padding:40px 36px; width:100%; max-width:420px; margin:16px; box-shadow:0 24px 60px rgba(0,0,0,0.22); position:relative;">
+    <button onclick="closeTrialModal()" style="position:absolute;top:16px;right:18px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:#888;line-height:1;">&#x2715;</button>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+      <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
+        <rect width="40" height="40" rx="8" fill="#0d1f3c"/>
+        <circle cx="20" cy="20" r="2.2" fill="#00b4d8"/>
+        <circle cx="10" cy="10" r="2.2" fill="#00b4d8"/>
+        <circle cx="30" cy="10" r="2.2" fill="#00b4d8"/>
+        <circle cx="10" cy="30" r="2.2" fill="#00b4d8"/>
+        <circle cx="30" cy="30" r="2.2" fill="#00b4d8"/>
+        <circle cx="10" cy="20" r="1.6" fill="#0077a8"/>
+        <circle cx="30" cy="20" r="1.6" fill="#0077a8"/>
+        <circle cx="20" cy="10" r="1.6" fill="#0077a8"/>
+        <circle cx="20" cy="30" r="1.6" fill="#0077a8"/>
+      </svg>
+      <span style="font-size:1.1rem;font-weight:700;color:#0d1f3c;letter-spacing:0.03em;">NERAI</span>
+    </div>
+    <h2 style="margin:0 0 4px;font-size:1.4rem;color:#0d1f3c;">Start Your Free Trial</h2>
+    <p id="trialPlanLabel" style="margin:0 0 24px;color:#0077a8;font-size:0.95rem;font-weight:600;"></p>
+
+    <form id="trialForm" onsubmit="submitTrialForm(event)">
+      <input type="hidden" id="trialPlanInput" name="plan" value="">
+      <div style="margin-bottom:16px;">
+        <label style="display:block;font-size:0.82rem;font-weight:600;color:#4b5563;margin-bottom:6px;">Full Name</label>
+        <input type="text" name="name" required placeholder="John Smith"
+          style="width:100%;padding:10px 14px;border:1.5px solid #d1d5db;border-radius:8px;font-size:0.95rem;box-sizing:border-box;outline:none;transition:border 0.2s;"
+          onfocus="this.style.borderColor='#0077a8'" onblur="this.style.borderColor='#d1d5db'">
+      </div>
+      <div style="margin-bottom:16px;">
+        <label style="display:block;font-size:0.82rem;font-weight:600;color:#4b5563;margin-bottom:6px;">Work Email</label>
+        <input type="email" name="email" required placeholder="you@company.com"
+          style="width:100%;padding:10px 14px;border:1.5px solid #d1d5db;border-radius:8px;font-size:0.95rem;box-sizing:border-box;outline:none;transition:border 0.2s;"
+          onfocus="this.style.borderColor='#0077a8'" onblur="this.style.borderColor='#d1d5db'">
+      </div>
+      <div style="margin-bottom:24px;">
+        <label style="display:block;font-size:0.82rem;font-weight:600;color:#4b5563;margin-bottom:6px;">Company / Organization <span style="font-weight:400;color:#9ca3af;">(optional)</span></label>
+        <input type="text" name="company" placeholder="Acme Corp"
+          style="width:100%;padding:10px 14px;border:1.5px solid #d1d5db;border-radius:8px;font-size:0.95rem;box-sizing:border-box;outline:none;transition:border 0.2s;"
+          onfocus="this.style.borderColor='#0077a8'" onblur="this.style.borderColor='#d1d5db'">
+      </div>
+      <button type="submit" id="trialSubmitBtn"
+        style="width:100%;padding:13px;background:#0077a8;color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;transition:background 0.2s;">
+        Request Trial Access &rarr;
+      </button>
+      <p style="margin:12px 0 0;text-align:center;font-size:0.78rem;color:#9ca3af;">7-day trial &bull; No credit card required &bull; Cancel anytime</p>
+    </form>
+
+    <div id="trialSuccess" style="display:none;text-align:center;padding:20px 0;">
+      <div style="font-size:2.5rem;margin-bottom:12px;">✓</div>
+      <h3 style="color:#0d1f3c;margin:0 0 8px;">Request Received!</h3>
+      <p style="color:#4b5563;margin:0;font-size:0.95rem;">We'll send your trial access to your email within 24 hours.</p>
+    </div>
+  </div>
+</div>
+
 <script>
-  Paddle.Initialize({ token: 'live_6a8a95138776f4398dde0722eaf' });
+  function openTrialModal(plan, price) {
+    document.getElementById('trialPlanLabel').textContent = plan + ' Plan — ' + price + ' · 7-day free trial';
+    document.getElementById('trialPlanInput').value = plan;
+    document.getElementById('trialForm').style.display = 'block';
+    document.getElementById('trialSuccess').style.display = 'none';
+    document.getElementById('trialSubmitBtn').textContent = 'Request Trial Access →';
+    document.getElementById('trialSubmitBtn').disabled = false;
+    const modal = document.getElementById('trialModal');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeTrialModal() {
+    document.getElementById('trialModal').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  document.getElementById('trialModal').addEventListener('click', function(e) {
+    if (e.target === this) closeTrialModal();
+  });
+  function submitTrialForm(e) {
+    e.preventDefault();
+    const btn = document.getElementById('trialSubmitBtn');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    const form = e.target;
+    const data = new FormData(form);
+    fetch('https://formspree.io/f/xpzvykpj', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(r => {
+      if (r.ok) {
+        document.getElementById('trialForm').style.display = 'none';
+        document.getElementById('trialSuccess').style.display = 'block';
+        setTimeout(closeTrialModal, 3000);
+      } else {
+        // fallback: mailto
+        const name = data.get('name'), email = data.get('email'), plan = data.get('plan'), company = data.get('company');
+        window.location.href = `mailto:kagan@neraicorp.com?subject=Trial%20Request%20%E2%80%94%20NERAI%20${plan}&body=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0ACompany:%20${encodeURIComponent(company||'N/A')}%0APlan:%20${plan}`;
+        closeTrialModal();
+      }
+    }).catch(() => {
+      const name = data.get('name'), email = data.get('email'), plan = data.get('plan'), company = data.get('company');
+      window.location.href = `mailto:kagan@neraicorp.com?subject=Trial%20Request%20%E2%80%94%20NERAI%20${plan}&body=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0ACompany:%20${encodeURIComponent(company||'N/A')}%0APlan:%20${plan}`;
+      closeTrialModal();
+    });
+  }
 </script>
 
 <!-- ── NERAI ANIMATIONS ──────────────────────────────── -->
