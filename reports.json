@@ -1,0 +1,28 @@
+{
+  "reports": [
+    {
+      "week": "W19",
+      "dateRange": "May 4–9, 2026",
+      "published": "2026-05-10",
+      "type": "pulse",
+      "title": "W19 Risk Pulse: South Asia Enters Record Volatility — India, Pakistan, Kashmir",
+      "summary": "Kashmir Military Escalation hits 86.9/100 — the highest reading in the 389-day dataset. Israel governance crisis at all-time high of 98.2. Egypt signals an emerging flashpoint with a 55× surge.",
+      "url": "/blog/2026-05-10-nerai-risk-pulse-week-19-india-pakistan-iran-israel/",
+      "tags": ["South Asia", "Middle East", "Global"],
+      "alertBadge": "CRITICAL: 86.9",
+      "alertColor": "red"
+    },
+    {
+      "week": "W19",
+      "dateRange": "May 4–9, 2026",
+      "published": "2026-05-10",
+      "type": "alert",
+      "title": "W19 Alert: India-Pakistan Military Standoff — Dataset Record in Kashmir",
+      "summary": "Kashmir breaches 86.9/100 (+35.2 pts WoW), Pakistan at 84.6, India at 70.5. Simultaneous multi-country escalation in South Asia — not seen since index launch.",
+      "url": "/blog/2026-05-10-nerai-risk-alert-w19-india-pakistan-military-standoff/",
+      "tags": ["Kashmir +35.2", "Pakistan +11.4", "India +2.6"],
+      "alertBadge": "RECORD HIGH",
+      "alertColor": "red"
+    }
+  ]
+}
