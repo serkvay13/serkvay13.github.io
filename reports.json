@@ -5,10 +5,14 @@
       "dateRange": "May 4–9, 2026",
       "published": "2026-05-10",
       "type": "pulse",
-      "title": "W19 Risk Pulse: South Asia Enters Record Volatility — India, Pakistan, Kashmir",
+      "title": "NERAI Risk Pulse — Week 19: India-Pakistan Standoff Dominates, Iran Recalibrates, Israel Governance Crisis Deepens",
       "summary": "Kashmir Military Escalation hits 86.9/100 — the highest reading in the 389-day dataset. Israel governance crisis at all-time high of 98.2. Egypt signals an emerging flashpoint with a 55× surge.",
       "url": "/blog/2026-05-10-nerai-risk-pulse-week-19-india-pakistan-iran-israel/",
-      "tags": ["South Asia", "Middle East", "Global"],
+      "tags": [
+        "South Asia",
+        "Middle East",
+        "Global"
+      ],
       "alertBadge": "CRITICAL: 86.9",
       "alertColor": "red"
     },
@@ -17,11 +21,270 @@
       "dateRange": "May 4–9, 2026",
       "published": "2026-05-10",
       "type": "alert",
-      "title": "W19 Alert: India-Pakistan Military Standoff — Dataset Record in Kashmir",
+      "title": "W19 Alert: India-Pakistan Military Standoff — Kashmir Sub-Index Posts Largest Single-Week Spike in Dataset",
       "summary": "Kashmir breaches 86.9/100 (+35.2 pts WoW), Pakistan at 84.6, India at 70.5. Simultaneous multi-country escalation in South Asia — not seen since index launch.",
       "url": "/blog/2026-05-10-nerai-risk-alert-w19-india-pakistan-military-standoff/",
-      "tags": ["Kashmir +35.2", "Pakistan +11.4", "India +2.6"],
+      "tags": [
+        "Kashmir +35.2",
+        "Pakistan +11.4",
+        "India +2.6"
+      ],
       "alertBadge": "RECORD HIGH",
+      "alertColor": "red"
+    },
+    {
+      "week": "W18",
+      "dateRange": "Apr 27–May 3, 2026",
+      "published": "2026-05-06",
+      "type": "analysis",
+      "title": "Economic Effects of the Iran War on the United States: Strategic Analysis and Policy Implications",
+      "summary": "NERAI three-scenario analysis: best case +1.8–2.2% GDP, base case +0.5–1.0%, worst case −1.5 to −2.5%. Iran Bilateral Relations Index at 0.0543 signals 40–50% elevated probability of conflict expansion.",
+      "url": "/blog/2026-05-06-iran-war-effects-on-us-economy-nerai-intelligence/",
+      "tags": [
+        "Iran",
+        "US Economy",
+        "Energy"
+      ],
+      "alertBadge": "Deep Dive",
+      "alertColor": "teal"
+    },
+    {
+      "week": "W18",
+      "dateRange": "Apr 27–May 3, 2026",
+      "published": "2026-05-03",
+      "type": "alert",
+      "title": "W18 Risk Alert: Iran-Israel Escalation Threatens Global Energy",
+      "summary": "Iran's military escalation index stands at 100.0/100 — maximum NERAI rating — representing a +20.7-point surge from Week 17. Iran's government instability score reached 34.4/100.",
+      "url": "/blog/2026-05-03-nerai-risk-alert-w18-iran-israel-escalation-threatens-global/",
+      "tags": [
+        "Iran 100.0",
+        "Israel",
+        "Energy"
+      ],
+      "alertBadge": "MAX: 100.0",
+      "alertColor": "red"
+    },
+    {
+      "week": "W18",
+      "dateRange": "Apr 27–May 3, 2026",
+      "published": "2026-05-03",
+      "type": "pulse",
+      "title": "NERAI Risk Pulse — Week 18: Iran Nuclear Brinkmanship Reshapes Gulf Security",
+      "summary": "Iran's Military Escalation Index reaches 100.0 — the highest severity reading in NERAI's conflict taxonomy — driven by US-Israel coordinated strikes. Gulf energy corridor at critical risk.",
+      "url": "/blog/2026-05-03-nerai-risk-pulse-week-18-iran-nuclear-brinkmanship-reshapes-/",
+      "tags": [
+        "Iran",
+        "Gulf",
+        "Nuclear"
+      ],
+      "alertBadge": "CRITICAL: 100.0",
+      "alertColor": "red"
+    },
+    {
+      "week": "W18",
+      "dateRange": "Apr 27–May 3, 2026",
+      "published": "2026-05-03",
+      "type": "alert",
+      "title": "W18 Risk Alert: Global Risk Signals Show Stabilization Pattern",
+      "summary": "No escalating signals crossed the 0.50 threshold this week, marking a significant deviation from typical volatility patterns. NERAI composite stability confirmed.",
+      "url": "/blog/2026-05-03-nerai-risk-alert-w18-global-risk-signals-show-stabilization-/",
+      "tags": [
+        "Global",
+        "Stabilization"
+      ],
+      "alertBadge": "MONITOR",
+      "alertColor": "teal"
+    },
+    {
+      "week": "W18",
+      "dateRange": "Apr 27–May 3, 2026",
+      "published": "2026-05-03",
+      "type": "pulse",
+      "title": "NERAI Risk Pulse — Week 18: Sahel Instability Accelerates",
+      "summary": "Geopolitical fragmentation across West Africa's Sahel region reaches critical thresholds. NERAI Instability Index at 0.78 — the highest recorded level in the region.",
+      "url": "/blog/2026-05-03-nerai-risk-pulse-week-18-sahel-instability-accelerates-may-2/",
+      "tags": [
+        "Sahel",
+        "West Africa",
+        "Instability"
+      ],
+      "alertBadge": "CRITICAL: 0.78",
+      "alertColor": "red"
+    },
+    {
+      "week": "W18",
+      "dateRange": "Apr 27–May 3, 2026",
+      "published": "2026-05-01",
+      "type": "analysis",
+      "title": "UAE Exits OPEC: Gulf Realignment, Iran Risk, and the $118 Oil Shock",
+      "summary": "Saudi coup risk +149.2% forecast trend. Iran military escalation at 0.1983 (+102.6% vs 90-day baseline). Oil at $118/bbl. 25–35% probability of SA–UAE bilateral crisis.",
+      "url": "/blog/2026-05-01-uae-opec-exit-gulf-realignment-nerai-intelligence/",
+      "tags": [
+        "UAE",
+        "OPEC",
+        "Oil"
+      ],
+      "alertBadge": "Deep Dive",
+      "alertColor": "teal"
+    },
+    {
+      "week": "W17",
+      "dateRange": "Apr 21–26, 2026",
+      "published": "2026-04-29",
+      "type": "analysis",
+      "title": "NERAI Intelligence Report — Will Argentina Escalate Tensions with the UK over the Falkland Islands?",
+      "summary": "Strategic deep-dive on Argentina-UK Falklands risk trajectory. NERAI bilateral tension index analysis with scenario modeling for escalation probability.",
+      "url": "/blog/2026-04-29-nerai-intelligence-report-will-argentina-escalate-tensions-w/",
+      "tags": [
+        "Argentina",
+        "UK",
+        "Falklands"
+      ],
+      "alertBadge": "Deep Dive",
+      "alertColor": "teal"
+    },
+    {
+      "week": "W17",
+      "dateRange": "Apr 21–26, 2026",
+      "published": "2026-04-26",
+      "type": "pulse",
+      "title": "NERAI Risk Pulse — Week 17: Iran Crosses Red Lines, G7 Unity Fractures, Pakistan on the Edge",
+      "summary": "NERAI composite risk index registers its sharpest single-week deterioration since October 2023, driven by simultaneous escalation across three independent flashpoints.",
+      "url": "/blog/2026-04-26-nerai-risk-pulse-week-17-iran-crosses-red-lines-g7-unity-fra/",
+      "tags": [
+        "Iran",
+        "G7",
+        "Pakistan"
+      ],
+      "alertBadge": "HIGH ALERT",
+      "alertColor": "red"
+    },
+    {
+      "week": "W17",
+      "dateRange": "Apr 14–19, 2026",
+      "published": "2026-04-20",
+      "type": "pulse",
+      "title": "NERAI Risk Pulse — Week 17: Switzerland Joins the Crisis Column, G7 Political Risk at Post-2020 Highs",
+      "summary": "Switzerland's unprecedented entry into NERAI's crisis watch list signals G7 political risk at post-2020 highs. Structural shifts in Western political stability accelerating.",
+      "url": "/blog/2026-04-20-nerai-risk-pulse-week-17-switzerland-joins-the-crisis-column/",
+      "tags": [
+        "Switzerland",
+        "G7",
+        "Political Risk"
+      ],
+      "alertBadge": "ELEVATED",
+      "alertColor": "red"
+    },
+    {
+      "week": "W16",
+      "dateRange": "Apr 14–19, 2026",
+      "published": "2026-04-19",
+      "type": "alert",
+      "title": "W16 Risk Alert: Nigeria Military Escalation Hits 0.784 — ISWAP Kills Brigadier General",
+      "summary": "Nigeria's military escalation index reaches 0.784 — the highest in West Africa this quarter. ISWAP eliminates senior military command in coordinated attack on Borno State.",
+      "url": "/blog/2026-04-19-nerai-risk-alert-nigeria-military-escalation-hits-0784-iswap/",
+      "tags": [
+        "Nigeria",
+        "ISWAP",
+        "West Africa"
+      ],
+      "alertBadge": "CRITICAL: 0.784",
+      "alertColor": "red"
+    },
+    {
+      "week": "W16",
+      "dateRange": "Apr 7–13, 2026",
+      "published": "2026-04-14",
+      "type": "analysis",
+      "title": "Nigeria's Military Crisis: NERAI Data and Ground Reality Converge",
+      "summary": "NERAI data registered it first. The ground confirmed it four days later. Deep-dive on how NERAI's Nigeria Military Escalation Index predicted the ISWAP offensive.",
+      "url": "/blog/2026-04-14-nigerias-military-crisis-nerai-data-and-ground-reality-conve/",
+      "tags": [
+        "Nigeria",
+        "Predictive",
+        "ISWAP"
+      ],
+      "alertBadge": "Deep Dive",
+      "alertColor": "teal"
+    },
+    {
+      "week": "W16",
+      "dateRange": "Apr 7–13, 2026",
+      "published": "2026-04-13",
+      "type": "pulse",
+      "title": "NERAI Risk Pulse — Week 16: Nigeria Crosses Critical, Iraq Surges, Armenia & Tunisia Emerge",
+      "summary": "Nigeria crosses critical threshold. Iraq registers a sharp surge. Armenia and Tunisia enter NERAI's emerging watch list for the first time in Q2 2026.",
+      "url": "/blog/2026-04-13-nerai-risk-pulse-week-16-nigeria-crosses-critical-iraq-surges/",
+      "tags": [
+        "Nigeria",
+        "Iraq",
+        "Armenia"
+      ],
+      "alertBadge": "CRITICAL",
+      "alertColor": "red"
+    },
+    {
+      "week": "W15",
+      "dateRange": "Apr 6–12, 2026",
+      "published": "2026-04-12",
+      "type": "alert",
+      "title": "W15 Risk Alert: Gaza Military Indices at 0.99 — Near-Maximum Intensity Confirmed",
+      "summary": "Gaza military escalation index reaches 0.99 — near-maximum intensity in NERAI's dataset. Sustained above-critical readings signal entrenched conflict dynamics.",
+      "url": "/blog/2026-04-12-nerai-risk-alert-gaza-military-indices-at-099-near-maximum-i/",
+      "tags": [
+        "Gaza",
+        "Middle East",
+        "Maximum"
+      ],
+      "alertBadge": "CRITICAL: 0.99",
+      "alertColor": "red"
+    },
+    {
+      "week": "W15",
+      "dateRange": "Apr 6–12, 2026",
+      "published": "2026-04-12",
+      "type": "pulse",
+      "title": "NERAI Risk Pulse — Week 15: Gaza Hits Near-Maximum, Ghana Surges 1,700%, Ukraine Re-enters Watch List",
+      "summary": "Gaza at near-maximum intensity. Ghana records a 1,700% week-on-week surge — one of the sharpest single-week moves in the dataset. Ukraine re-enters NERAI watch list.",
+      "url": "/blog/2026-04-12-nerai-risk-pulse-week-15-gaza-hits-near-maximum-ghana-surges/",
+      "tags": [
+        "Gaza",
+        "Ghana +1700%",
+        "Ukraine"
+      ],
+      "alertBadge": "CRITICAL: 0.99",
+      "alertColor": "red"
+    },
+    {
+      "week": "W14",
+      "dateRange": "Mar 30–Apr 5, 2026",
+      "published": "2026-04-06",
+      "type": "alert",
+      "title": "W14 Risk Alert: UAE Military Indices Surge 1,100%+ in Seven Days",
+      "summary": "UAE military escalation index surges over 1,100% in a single week — the largest short-term percentage move recorded in the NERAI dataset since launch.",
+      "url": "/blog/2026-04-06-nerai-risk-alert-uae-military-indices-surge-1100-in-seven-da/",
+      "tags": [
+        "UAE +1100%",
+        "Gulf",
+        "Military"
+      ],
+      "alertBadge": "+1,100% WoW",
+      "alertColor": "red"
+    },
+    {
+      "week": "W14",
+      "dateRange": "Mar 30–Apr 5, 2026",
+      "published": "2026-04-06",
+      "type": "pulse",
+      "title": "NERAI Risk Pulse — Week 14: UAE Military Indices Surge 1,100%+ as Middle East Tensions Escalate",
+      "summary": "UAE military indices post the largest single-week percentage surge in NERAI's dataset. Middle East tension corridor reaches critical mass across multiple dimensions simultaneously.",
+      "url": "/blog/2026-04-06-nerai-risk-pulse-week-14-uae-military-indices-surge-1100-as-/",
+      "tags": [
+        "UAE",
+        "Middle East",
+        "Military"
+      ],
+      "alertBadge": "CRITICAL SURGE",
       "alertColor": "red"
     }
   ]
