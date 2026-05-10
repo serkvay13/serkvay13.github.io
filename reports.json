@@ -4,6 +4,23 @@
       "week": "W19",
       "dateRange": "May 4–9, 2026",
       "published": "2026-05-10",
+      "type": "analysis",
+      "title": "Sparta 2.0: The European Defence Authority and the Recalibration of Continental Security Architecture",
+      "summary": "NERAI Strategic Analysis deep dive on the EU's most ambitious independent defence initiative. Three-scenario forecast: base case 60% probability of partial implementation by 2031, with €150–200B capability gap assessment and NATO compatibility analysis.",
+      "url": "/blog/2026-05-10-sparta-20-european-defence-authority-nerai-intelligence/",
+      "tags": [
+        "Europe",
+        "Defence",
+        "Deep Dive",
+        "NATO"
+      ],
+      "alertBadge": "DEEP DIVE",
+      "alertColor": "teal"
+    },
+    {
+      "week": "W19",
+      "dateRange": "May 4–9, 2026",
+      "published": "2026-05-10",
       "type": "pulse",
       "title": "NERAI Risk Pulse — Week 19: India-Pakistan Standoff Dominates, Iran Recalibrates, Israel Governance Crisis Deepens",
       "summary": "Kashmir Military Escalation hits 86.9/100 — the highest reading in the 389-day dataset. Israel governance crisis at all-time high of 98.2. Egypt signals an emerging flashpoint with a 55× surge.",
