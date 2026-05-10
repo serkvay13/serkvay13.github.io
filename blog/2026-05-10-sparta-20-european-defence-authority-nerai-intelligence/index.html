@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sparta 2.0: The European Defence Authority — NERAI Intelligence</title>
+  <meta name="description" content="NERAI Strategic Analysis: Sparta 2.0 — The European Defence Authority and the Recalibration of Continental Security Architecture. Three scenarios, five policy recommendations. May 2026."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0d1f3c; --teal: #0077a8; --teal2: #005f87;
+      --silver: #5a6b82; --white: #ffffff; --accent: #00a886;
+      --red: #c93048; --border: rgba(0,119,168,0.14);
+      --glass: rgba(255,255,255,0.85);
+    }
+    body { font-family: 'Inter', sans-serif; background: #fff; color: var(--navy); line-height: 1.7; }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 28px; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 64px;
+          background: var(--glass); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+    nav .inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; height: 100%;
+                 display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-text { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 800; letter-spacing: 0.5px; }
+    .nav-logo-text .ner { color: var(--navy); }
+    .nav-logo-text .ai { color: var(--teal); }
+    .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
+    .nav-links a { font-size: 0.82rem; font-weight: 500; color: var(--silver); text-decoration: none;
+                   padding: 6px 12px; border-radius: 6px; transition: color .2s; }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta { background: linear-gradient(135deg, #005f87, #00a886) !important; color: #fff !important;
+               padding: 8px 18px !important; border-radius: 8px !important; font-weight: 600 !important; }
+
+    /* ARTICLE HEADER */
+    .article-header { padding: 104px 0 40px; background: linear-gradient(160deg, #f4f7fb 0%, #eef4f8 100%);
+                      border-bottom: 1px solid var(--border); }
+    .breadcrumb { font-size: 0.75rem; color: var(--silver); margin-bottom: 20px; }
+    .breadcrumb a { color: var(--teal); text-decoration: none; }
+    .article-tag { display: inline-block; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em;
+                   text-transform: uppercase; color: var(--red); background: rgba(201,48,72,0.08);
+                   border: 1px solid rgba(201,48,72,0.2); border-radius: 4px; padding: 4px 10px; margin-bottom: 18px; }
+    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+         line-height: 1.22; color: var(--navy); margin-bottom: 14px; }
+    h1 em { color: var(--teal); font-style: italic; }
+    .article-sub { font-size: 1.05rem; color: var(--silver); margin-bottom: 22px; font-weight: 400; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 18px; font-size: 0.78rem; color: var(--silver); }
+    .meta-item { display: flex; align-items: center; gap: 8px; }
+    .meta-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
+
+    /* BODY */
+    .article-body { padding: 52px 0 80px; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: 1.55rem; color: var(--navy);
+         margin: 44px 0 14px; padding-top: 8px; }
+    h3 { font-size: 1rem; font-weight: 700; color: var(--teal2); margin: 28px 0 10px; letter-spacing: 0.01em; }
+    p { font-size: 0.955rem; color: #1e3048; line-height: 1.78; margin-bottom: 16px; }
+    hr { border: none; border-top: 1px solid rgba(0,119,168,0.12); margin: 40px 0; }
+    .section-label { display: block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em;
+                     text-transform: uppercase; color: var(--teal); margin-bottom: 12px; margin-top: 36px; }
+
+    /* KEY FINDINGS */
+    .findings-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; }
+    .finding-item { padding: 14px 18px; border-left: 3px solid var(--teal); background: rgba(0,119,168,0.04);
+                    border-radius: 0 6px 6px 0; }
+    .finding-item p { margin: 0; }
+
+    /* VISUAL INSERT */
+    .visual-insert { background: #f8fafc; border: 1px solid var(--border); border-radius: 10px;
+                     padding: 22px; margin: 28px 0; }
+    .visual-caption { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+                      color: var(--silver); margin-bottom: 16px; }
+
+    /* METRICS STRIP */
+    .metrics-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .metric-cell { text-align: center; padding: 14px 8px; background: #fff; border-radius: 8px;
+                   border: 1px solid var(--border); }
+    .metric-cell .val { display: block; font-size: 1.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 6px; }
+    .metric-cell .lbl { font-size: 0.7rem; color: var(--silver); line-height: 1.35; }
+
+    /* PILLARS GRID */
+    .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 10px 0; }
+    .pillar-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 18px 14px; text-align: center; }
+    .pillar-number { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+                     color: var(--teal); margin-bottom: 6px; }
+    .pillar-title { font-size: 0.82rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; line-height: 1.35; }
+    .pillar-desc { font-size: 0.72rem; color: var(--silver); line-height: 1.4; }
+
+    /* STAT ROW */
+    .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .stat-cell { text-align: center; }
+    .stat-cell .num { display: block; font-size: 1.3rem; font-weight: 800; line-height: 1.1; margin-bottom: 4px; }
+    .stat-cell .lbl { font-size: 0.68rem; color: var(--silver); line-height: 1.35; }
+
+    /* NERAI GRID */
+    .nerai-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .nerai-cell { background: #fff; border-radius: 8px; border: 1px solid var(--border); padding: 12px 14px; }
+    .nerai-cell .country { font-size: 0.78rem; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+    .nerai-cell .metric { font-size: 0.68rem; color: var(--silver); margin-bottom: 8px; }
+    .bar-bg { background: #f0f4f8; border-radius: 4px; height: 6px; margin-bottom: 6px; }
+    .bar-fill { height: 6px; border-radius: 4px; }
+    .bar-red { background: var(--red); }
+    .bar-orange { background: #d97706; }
+    .bar-teal { background: var(--teal); }
+    .bar-blue { background: #3b82f6; }
+    .score { font-size: 0.78rem; font-weight: 700; }
+    .score-red { color: var(--red); }
+    .score-orange { color: #d97706; }
+    .score-teal { color: var(--teal); }
+    .score-blue { color: #3b82f6; }
+
+    /* SCENARIO TABLE */
+    .scenario-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+    .scenario-table th, .scenario-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); text-align: left; }
+    .scenario-table th { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+                          color: var(--silver); background: #f4f7fb; }
+    .scenario-table .row-label { font-weight: 600; color: var(--navy); }
+    .scenario-table .best { color: #166534; }
+    .scenario-table .base { color: #b45309; }
+    .scenario-table .worst { color: var(--red); }
+
+    /* CHART BOX */
+    .chart-box { background: #fff; border-radius: 8px; border: 1px solid var(--border); padding: 12px; }
+
+    /* POLICY ITEMS */
+    .policy-item { margin-bottom: 28px; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .policy-header { display: flex; align-items: flex-start; gap: 14px; padding: 16px 18px;
+                     background: #f4f7fb; border-bottom: 1px solid var(--border); }
+    .policy-badge { width: 28px; height: 28px; border-radius: 50%; background: var(--teal); color: #fff;
+                    font-size: 0.78rem; font-weight: 700; display: flex; align-items: center;
+                    justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .policy-title { font-size: 0.9rem; font-weight: 700; color: var(--navy); line-height: 1.4; }
+    .policy-body { padding: 16px 18px; }
+    .policy-body p { margin-bottom: 10px; }
+    .policy-body p:last-child { margin-bottom: 0; }
+    .rationale-block { background: rgba(0,119,168,0.05); border-left: 3px solid var(--teal);
+                       border-radius: 0 6px 6px 0; padding: 12px 14px; margin-top: 10px; }
+    .rationale-block p { margin: 0; font-size: 0.85rem; }
+
+    /* SOURCES */
+    .sources-block { background: #f8fafc; border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+    .sources-block h3 { font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; margin-top: 0; }
+    .sources-block h3:not(:first-child) { margin-top: 20px; }
+    .sources-block ul { padding-left: 18px; margin-bottom: 10px; }
+    .sources-block li { font-size: 0.8rem; color: var(--silver); line-height: 1.5; margin-bottom: 6px; }
+    .uncertainty-box { background: rgba(201,48,72,0.04); border: 1px solid rgba(201,48,72,0.15);
+                       border-radius: 6px; padding: 14px 16px; margin-top: 16px; }
+    .uncertainty-box p { font-size: 0.8rem; margin: 0; color: #5a3040; }
+
+    /* TIMELINE BAR */
+    .timeline-bar { display: flex; gap: 2px; margin-top: 8px; border-radius: 6px; overflow: hidden; height: 28px; }
+    .tl-seg { display: flex; align-items: center; justify-content: center; font-size: 0.65rem;
+              font-weight: 700; color: #fff; letter-spacing: 0.05em; text-transform: uppercase; }
+
+    /* END NOTE & CTA */
+    .end-note { text-align: center; font-size: 0.72rem; color: var(--silver); letter-spacing: 0.1em;
+                text-transform: uppercase; padding: 28px 0; border-top: 1px solid var(--border);
+                border-bottom: 1px solid var(--border); margin: 48px 0 36px; }
+    .article-cta { background: linear-gradient(135deg, #0d1f3c 60%, #005f87 100%); border-radius: 12px;
+                   padding: 36px 32px; text-align: center; color: #fff; margin: 0 0 60px; }
+    .article-cta h3 { font-family: 'DM Serif Display', serif; font-size: 1.35rem; margin-bottom: 10px;
+                      color: #fff; font-weight: 400; }
+    .article-cta p { font-size: 0.88rem; color: rgba(255,255,255,0.72); margin-bottom: 22px; line-height: 1.55; }
+    .cta-btn { display: inline-block; background: var(--accent); color: #fff; padding: 12px 28px;
+               border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none;
+               transition: opacity .2s; }
+    .cta-btn:hover { opacity: 0.88; }
+
+    /* FOOTER */
+    footer { background: var(--navy); color: rgba(255,255,255,0.55); font-size: 0.72rem; padding: 24px 28px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap;
+                    gap: 12px; justify-content: space-between; }
+    footer a { color: rgba(255,255,255,0.55); text-decoration: none; }
+    footer a:hover { color: #fff; }
+
+    @media (max-width: 640px) {
+      .nav-links li:not(:last-child) { display: none; }
+      .article-header { padding: 90px 0 32px; }
+      .metrics-strip { grid-template-columns: repeat(2,1fr); }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .stat-row { grid-template-columns: repeat(2,1fr); }
+      .nerai-grid { grid-template-columns: 1fr; }
+      .scenario-table { font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="inner">
+    <a href="/" class="nav-logo">
+      <span class="nav-logo-text"><span class="ner">NER</span><span class="ai">AI</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog" class="active">Insights</a></li>
+      <li><a href="https://nerai-intelligence.streamlit.app" target="_blank" class="nav-cta">Open Dashboard →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ARTICLE HEADER -->
+<header class="article-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="/blog">← Insights</a> / Deep Dive</div>
+    <div class="article-tag">Deep Dive · Strategic Analysis</div>
+    <h1><em>Sparta 2.0:</em> The European Defence Authority and the Recalibration of Continental Security Architecture</h1>
+    <p class="article-sub">Can Europe build an independent defence capability — and what does NERAI data say about the risks?</p>
+    <div class="article-meta">
+      <span class="meta-item"><span class="meta-dot"></span> NERAI Intelligence — Strategic Analysis Lab</span>
+      <span class="meta-item"><span class="meta-dot"></span> 10 May 2026</span>
+      <span class="meta-item"><span class="meta-dot"></span> Classification: NERAI-UNRESTRICTED</span>
+    </div>
+  </div>
+</header>
+
+<!-- ARTICLE BODY -->
+<main class="article-body">
+  <div class="container">
+
+    <!-- ── VISUAL: Key numbers ── -->
+    <div class="visual-insert" style="margin-top:0;">
+      <div class="visual-caption">Key Numbers at a Glance</div>
+      <div class="metrics-strip">
+        <div class="metric-cell">
+          <span class="val" style="color:var(--teal);">€150–200B</span>
+          <span class="lbl">Investment Needed<br>to Close Capability Gap</span>
+        </div>
+        <div class="metric-cell">
+          <span class="val" style="color:#b45309;">2026–2031</span>
+          <span class="lbl">Implementation<br>Timeline</span>
+        </div>
+        <div class="metric-cell">
+          <span class="val" style="color:var(--teal);">3</span>
+          <span class="lbl">Structural Pillars<br>(Command · Procurement · ISR)</span>
+        </div>
+        <div class="metric-cell">
+          <span class="val" style="color:var(--red);">60%</span>
+          <span class="lbl">Base Case Probability<br>(Partial Capability)</span>
+        </div>
+      </div>
+    </div>
+
+    <hr/>
+
+    <!-- EXECUTIVE SUMMARY -->
+    <span class="section-label">Executive Summary</span>
+    <p>The European Defence Authority — popularly designated "Sparta 2.0" in strategic planning circles — represents the European Union's most ambitious attempt at building an independent defence capability since the failed European Defence Community of 1954. Driven by the sustained Ukraine conflict, the reconfiguration of the NATO-U.S. alliance relationship under the Trump administration, and accelerating threats across the EU's eastern and southern perimeters, the EDA initiative proposes three structural pillars: a supranational operational command layer, consolidated procurement and defence-industrial integration, and a European intelligence fusion architecture. This analysis finds that the initiative addresses genuine structural deficiencies in European security architecture but faces significant headwinds: fragmented national sovereignty constraints, the 2026–2031 implementation timeline collides with near-term risk peaks identified in NERAI data, capability gaps require investment exceeding the collective political will of member states, and NATO compatibility remains structurally unresolved. The base case — partial implementation achieving meaningful but incomplete capability — carries 60% probability; full operational capability within timeline at 25%; strategic failure or reversal at 15%.</p>
+
+    <hr/>
+
+    <!-- KEY FINDINGS -->
+    <span class="section-label">Key Findings</span>
+    <div class="findings-list">
+      <div class="finding-item">
+        <p><strong>Institutional architecture is structurally sound but politically fragile:</strong> The EDA's three-pillar design (operational command, procurement integration, intelligence fusion) addresses the core dysfunction of European defence — 27 member states purchasing 27 incompatible national systems. However, the authority required to implement each pillar exceeds what member states have historically been willing to delegate to EU institutions, making political commitment the primary constraint.</p>
+      </div>
+      <div class="finding-item">
+        <p><strong>Geopolitical drivers create a genuine window of opportunity:</strong> The convergence of the Ukraine conflict (demonstrating NATO's European dependency), Trump-era U.S. strategic retrenchment, and Russian escalation doctrine creates historically rare conditions in which European publics and governments are simultaneously willing to accept defence burden-sharing. NERAI data shows elevated instability indices across Russia, Ukraine, and Eastern Europe — quantifying the threat environment that drives the EDA initiative.</p>
+      </div>
+      <div class="finding-item">
+        <p><strong>Implementation timeline (2026–2031) is aggressive relative to capability gaps:</strong> The €150–200B investment requirement to close capability gaps identified by the European Defence Agency spans multiple budget cycles and requires sustained political consensus across elections in Germany, France, Italy, and Poland — the four anchor states whose commitment is necessary for viability. Historical precedent suggests major EU institutional projects operate on 7–10 year timelines; a 5-year target assumes exceptional political alignment.</p>
+      </div>
+      <div class="finding-item">
+        <p><strong>Strategic feasibility hinges on Franco-German alignment:</strong> France and Germany have historically pursued incompatible defence philosophies (France: sovereignty-first, expeditionary; Germany: alliance-dependent, defensive). The EDA requires both nations to accept constraints on national defence procurement sovereignty, a concession neither has previously made. Post-2025 German defence budget expansion (the €100B Sondervermögen and successor commitments) creates structural financial alignment, but doctrine convergence remains incomplete.</p>
+      </div>
+      <div class="finding-item">
+        <p><strong>NATO compatibility is the strategic fault line:</strong> U.S. officials and NATO planners have signalled that a European operational command layer risks creating duplicative command structures, fragmenting Article 5 commitment credibility, and reducing U.S. willingness to maintain forward deployed forces. The EDA's architects must navigate between genuine European strategic autonomy and preservation of the NATO guarantee — a tension that has no clean institutional resolution.</p>
+      </div>
+    </div>
+
+    <hr/>
+
+    <!-- BACKGROUND & CONTEXT -->
+    <h2>Background &amp; Context</h2>
+    <p>European defence integration has been attempted and failed repeatedly since the Second World War. The 1954 European Defence Community — a supranational army proposal backed by the United States — collapsed when the French National Assembly refused ratification. The 1999 Helsinki Headline Goal established EU Battlegroups; these have never been deployed. The 2007 Lisbon Treaty created the Permanent Structured Cooperation (PESCO) framework; by 2024, PESCO had produced 68 collaborative projects with limited operational impact. Each initiative foundered on the same structural constraint: national governments guard defence sovereignty more jealously than any other policy domain, because defence represents the ultimate expression of state authority and the final guarantor of territorial integrity.</p>
+    <p>The 2022 Russian invasion of Ukraine broke this pattern by demonstrating, at scale and in real time, the consequences of insufficient European conventional military capability. The conflict consumed munitions stocks across NATO-member European arsenals within weeks of its outbreak; it revealed the absence of organic European logistical capacity for high-intensity conventional warfare; and it exposed the degree to which European security had, since 1991, been sub-contracted to American forward presence and nuclear deterrence. The subsequent three years produced the largest increase in European defence spending since the Cold War — but spending increases without architectural integration produce duplicative national capabilities rather than coherent collective power.</p>
+    <p>The Trump administration's second term (commencing January 2025) accelerated this dynamic by introducing genuine uncertainty about U.S. Article 5 commitment credibility. Public statements from the administration suggesting conditional NATO guarantees, combined with requests for European defence spending targets of 5% of GDP (far above the 2% benchmark), created institutional pressure in Brussels to develop genuinely autonomous capability. Sparta 2.0 is the institutional response to this pressure — an attempt to convert defence spending increases into integrated capability before the window of political will closes.</p>
+
+    <!-- ── VISUAL: Three Pillars ── -->
+    <div class="visual-insert">
+      <div class="visual-caption">The Three Pillars of the European Defence Authority</div>
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-number">Pillar I</div>
+          <div class="pillar-title">Operational Command Layer</div>
+          <div class="pillar-desc">Supranational EU Military Headquarters with operational authority over rapid-reaction forces and crisis management missions. Separate from but interoperable with NATO command structure.</div>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-number">Pillar II</div>
+          <div class="pillar-title">Procurement &amp; Industrial Integration</div>
+          <div class="pillar-desc">Consolidated European defence procurement agency replacing national procurement silos. Common platform standards, shared R&amp;D, and joint acquisition for selected capability categories.</div>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-number">Pillar III</div>
+          <div class="pillar-title">Intelligence Fusion Architecture</div>
+          <div class="pillar-desc">European Intelligence Service aggregating national signals, imagery, and human intelligence streams. Designed to reduce member-state dependence on U.S. Five Eyes intelligence sharing.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── VISUAL: Implementation Timeline ── -->
+    <div class="visual-insert">
+      <div class="visual-caption">Implementation Timeline 2026–2031</div>
+      <div class="timeline-bar">
+        <div class="tl-seg" style="flex:2; background:#0077a8;">Phase 1 · 2026–27<br>Institutional Setup</div>
+        <div class="tl-seg" style="flex:2; background:#005f87;">Phase 2 · 2028–29<br>Capability Build</div>
+        <div class="tl-seg" style="flex:2; background:#0d1f3c;">Phase 3 · 2030–31<br>Full Integration</div>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:4px; margin-top:8px;">
+        <div style="font-size:0.68rem; color:var(--silver);">EDA treaty ratification, HQ establishment, interim command protocols, initial procurement framework</div>
+        <div style="font-size:0.68rem; color:var(--silver);">First joint procurement contracts, intelligence fusion pilot, rapid-reaction force declaration (10,000 personnel)</div>
+        <div style="font-size:0.68rem; color:var(--silver);">Full operational capability, intelligence architecture live, consolidated defence industrial base across anchor states</div>
+      </div>
+    </div>
+
+    <hr/>
+
+    <!-- ANALYSIS -->
+    <h2>Analysis</h2>
+
+    <h3>Pillar I: Operational Command — The Sovereignty Problem</h3>
+    <p>The creation of a supranational EU operational command represents the most politically contentious element of Sparta 2.0. Current EU military structures (the EU Military Committee, EU Military Staff) operate in an advisory capacity only; operational command of EU crisis management missions remains with national lead-nation authorities or NATO. Sparta 2.0 proposes a permanent EU Operational Headquarters with genuine command authority over designated forces and missions — a qualitative jump that requires member states to accept that their soldiers can be ordered into harm's way by a supranational authority.</p>
+    <p>This constraint is not primarily legal (treaty modifications can be achieved through enhanced cooperation mechanisms) but political. The October 2023 Polish elections, the June 2024 European Parliament results, and the 2025 German coalition negotiations all produced governments whose domestic constituencies resist EU sovereignty transfers. France — historically the strongest advocate for European strategic autonomy — has paradoxically been among the most resistant to genuine command integration, because French governments across political cycles have been unwilling to dilute French nuclear deterrence doctrine within a multilateral framework.</p>
+    <p>The operational command pillar is therefore likely to emerge in a compromise form: a permanent EU military planning capability with authority limited to non-executive functions (planning, logistics, training, command preparation) until a specific crisis triggers member-state political consensus to activate full command authority. This "sleeping command" model creates latent capability without requiring immediate sovereignty transfer — a politically achievable but operationally limited outcome.</p>
+
+    <h3>Pillar II: Procurement Integration — The Industrial Politics Problem</h3>
+    <p>European defence procurement fragmentation is quantifiably dysfunctional. EU member states collectively operate over 100 types of ground vehicles, 18 types of frigates, and 17 types of fighter aircraft — compared to the United States' standardized platforms. This fragmentation generates 30–40% higher per-unit costs than consolidated procurement, reduces interoperability, fragments maintenance supply chains, and prevents the economies of scale required for competitive R&amp;D investment. The Sparta 2.0 procurement pillar aims to consolidate major platform categories around common European standards, creating genuine monopsonistic buyer power and incentivizing industrial consolidation into pan-European prime contractors.</p>
+    <p>The political economy challenge is formidable. Defence industrial policy is simultaneously economic policy for manufacturing regions and communities across member states. French governments protect Dassault (Rafale), German governments protect Rheinmetall, Italian governments protect Leonardo, Swedish governments protect Saab. Each national champion lobbies governments to resist procurement integration that would force them to compete on European rather than captive national markets. The history of European defence procurement cooperation — from the Eurofighter Typhoon (17 years from contract to operational declaration) to the NH90 helicopter (launched 1985, still not fully integrated across all operators) — suggests that even when political consensus exists, industrial execution timelines substantially exceed planning assumptions.</p>
+    <p>The realistic procurement integration outcome involves a tiered approach: common standards and interoperability requirements for new acquisitions (achievable within 2026–2028 through regulatory mechanism), joint acquisition for selected high-cost, high-volume categories (ammunition, logistics vehicles, communications infrastructure — achievable within 2028–2031), and eventual platform consolidation in one or two major capability categories (likely ground combat vehicles and maritime patrol aircraft) toward the end of the timeline. The fighter aircraft and naval frigate categories — involving the most concentrated industrial politics — are unlikely to achieve meaningful integration within the 2026–2031 window.</p>
+
+    <h3>Pillar III: Intelligence Fusion — The Classification Problem</h3>
+    <p>European intelligence integration faces a structural challenge absent from the procurement and command pillars: intelligence is the most sovereignty-sensitive domain in security policy, and the most important intelligence relationships in Europe run bilaterally through the U.S. Five Eyes framework rather than through EU channels. France (Direction Générale de la Sécurité Extérieure), Germany (Bundesnachrichtendienst), and smaller member states all benefit from intelligence sharing arrangements with the United States that are conditioned on classification discipline — and that classification discipline has historically been compromised by EU-level intelligence sharing, which encompasses member states with significantly less secure counterintelligence environments.</p>
+    <p>The EDA intelligence architecture is therefore likely to develop as a "strategic assessment" layer rather than an operational intelligence fusion center: aggregating open-source intelligence, commercially available satellite imagery, and member-state-shared assessments at the SECRET/EU level, rather than attempting to integrate HUMINT and SIGINT streams that represent the highest-value intelligence categories. This creates a useful but limited capability — something closer to the existing EU Intelligence and Situation Centre (EU INTCEN) with enhanced resources than a genuine peer to U.S. or UK national intelligence agencies.</p>
+    <p>The Russian conflict and cyber threat environment may accelerate progress on this pillar specifically: attribution of Russian cyber operations and hybrid warfare tactics requires aggregated signals intelligence that no individual European member state can generate unilaterally. Shared threat environment creates shared intelligence interest, and the 2026 Russian cyber campaign against Baltic infrastructure and the 2025 GRU interference operations across multiple European election cycles have created genuine political will for intelligence coordination that was absent in prior periods.</p>
+
+    <h3>Geopolitical Drivers: The Window of Opportunity</h3>
+    <p>Sparta 2.0's viability depends on the persistence of the geopolitical conditions that created it. Three drivers are currently aligned: sustained Russian military pressure on European borders (creating threat consensus among member states), U.S. strategic retrenchment (creating urgency around autonomous capability), and post-Ukraine European public support for defence spending (creating political space for the budget commitments required). These three conditions may not persist simultaneously through the 2026–2031 implementation timeline.</p>
+    <p>A Russian-Ukrainian ceasefire — whether negotiated or through exhaustion — would reduce the immediate threat perception that drives German and Eastern European member state willingness to accept integration. A shift in U.S. political direction in the 2028 election could restore conventional NATO assurance, reducing the urgency of autonomous European capability. A European economic recession — which NERAI risk indicators suggest is possible given elevated energy prices and the global instability environment — would compress defence budgets and shift domestic political attention from external security to social welfare. Each of these scenarios reduces the probability of full implementation success.</p>
+
+    <!-- ── VISUAL: Capability Gap Assessment ── -->
+    <div class="visual-insert">
+      <div class="visual-caption">European Capability Gap Assessment — Investment Required by Category</div>
+      <div class="chart-box">
+        <svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+          <!-- Grid lines -->
+          <line x1="160" y1="20" x2="660" y2="20" stroke="#e5e7eb" stroke-width="1"/>
+          <line x1="160" y1="60" x2="660" y2="60" stroke="#e5e7eb" stroke-width="1"/>
+          <line x1="160" y1="100" x2="660" y2="100" stroke="#e5e7eb" stroke-width="1"/>
+          <line x1="160" y1="140" x2="660" y2="140" stroke="#e5e7eb" stroke-width="1"/>
+          <!-- Y-axis labels -->
+          <text x="150" y="23" fill="#9ca3af" font-size="9" font-family="Inter,Arial" text-anchor="end">€60B</text>
+          <text x="150" y="63" fill="#9ca3af" font-size="9" font-family="Inter,Arial" text-anchor="end">€45B</text>
+          <text x="150" y="103" fill="#9ca3af" font-size="9" font-family="Inter,Arial" text-anchor="end">€30B</text>
+          <text x="150" y="143" fill="#9ca3af" font-size="9" font-family="Inter,Arial" text-anchor="end">€15B</text>
+          <!-- Bar: Air Defence -->
+          <rect x="175" y="27" width="70" height="113" fill="#0077a8" rx="3"/>
+          <text x="210" y="165" fill="#5a6b82" font-size="9" font-family="Inter,Arial" text-anchor="middle">Air Defence</text>
+          <text x="210" y="175" fill="#5a6b82" font-size="9" font-family="Inter,Arial" text-anchor="middle">€42–55B</text>
+          <!-- Bar: Munitions -->
+          <rect x="275" y="53" width="70" height="87" fill="#005f87" rx="3"/>
+          <text x="310" y="165" fill="#5a6b82" font-size="9" font-family="Inter,Arial" text-anchor="middle">Munitions</text>
+          <text x="310" y="175" fill="#5a6b82" font-size="9" font-family="Inter,Arial" text-anchor="middle">€32–40B</text>
+          <!-- Bar: ISR -->
+          <rect x="375" y="67" width="70" height="73" fill="#d97706" rx="3"/>
+          <text x="410" y="165" fill="#5a6b82" font-size="9" font-family="Inter,Arial" text-anchor="middle">ISR &amp; Space</text>
+          <text x="410" y="175" fill="#5a6b82" font-size="9" font-family="Inter,Arial" text-anchor="middle">€27–35B</text>
+          <!-- Bar: Cyber -->
+          <rect x="475" y="87" width="70" height="53" fill="#c93048" rx="3"/>
+          <text x="510" y="165" fill="#5a6b82" font-size="9" font-family="Inter,Arial" text-anchor="middle">Cyber</text>
+          <text x="510" y="175" fill="#5a6b82" font-size="9" font-family="Inter,Arial" text-anchor="middle">€20–28B</text>
+          <!-- Bar: Logistics -->
+          <rect x="575" y="107" width="70" height="33" fill="#00a886" rx="3"/>
+          <text x="610" y="165" fill="#5a6b82" font-size="9" font-family="Inter,Arial" text-anchor="middle">Logistics</text>
+          <text x="610" y="175" fill="#5a6b82" font-size="9" font-family="Inter,Arial" text-anchor="middle">€12–18B</text>
+          <!-- Total label -->
+          <text x="420" y="196" fill="#0d1f3c" font-size="10" font-family="Inter,Arial" text-anchor="middle" font-weight="700">Total Gap: €150–200B over 2026–2031</text>
+        </svg>
+      </div>
+    </div>
+
+    <hr/>
+
+    <!-- NERAI DATA INTEGRATION -->
+    <h2>NERAI Data Integration</h2>
+    <p>NERAI index data provides quantitative grounding for the geopolitical threat environment driving the Sparta 2.0 initiative. The data reveals elevated instability indicators across the European threat perimeter — Russia, Ukraine, and the Eastern European near-abroad — as well as emerging risks in the South Caucasus and Western Balkans that add complexity to the EDA's threat prioritization framework.</p>
+    <p>Russia's military escalation and government instability indices remain elevated, reflecting both the sustained Ukraine conflict and internal political dynamics following the 2024–2025 Russian leadership succession pressures. Ukraine's instability indicators show the expected pattern of a nation under sustained military pressure, with government instability and international crisis scores elevated far above historical baselines. Critically, several NATO member states — particularly those with eastern borders abutting Russia or Belarus — show elevated political instability scores, suggesting that domestic political fragmentation within the alliance adds uncertainty to collective defence commitments independent of the EDA institutional question.</p>
+    <p>The NERAI data also highlights threat vectors the EDA initiative does not primarily address. Elevated terrorism and political instability indicators across North Africa and the Sahel — particularly Nigeria, Egypt, and Mali — reflect the Southern European security perimeter's vulnerability to irregular migration, terrorism, and political instability that spills across the Mediterranean. The EDA's Sparta 2.0 architecture is designed for conventional military confrontation with a peer adversary (Russia); it provides limited capability uplift for the hybrid and irregular threat environment on Europe's Southern flank, suggesting a strategic blind spot in the initiative's current design.</p>
+
+    <!-- ── VISUAL: NERAI index panel ── -->
+    <div class="visual-insert">
+      <div class="visual-caption">NERAI Risk Indicators — European Threat Perimeter · Scores /100 · W19 (May 4–9, 2026)</div>
+      <div class="nerai-grid">
+        <div class="nerai-cell">
+          <div class="country">Russia</div>
+          <div class="metric">Military Escalation</div>
+          <div class="bar-bg"><div class="bar-fill bar-red" style="width:78%"></div></div>
+          <div class="score score-red">78.3 / 100</div>
+        </div>
+        <div class="nerai-cell">
+          <div class="country">Ukraine</div>
+          <div class="metric">International Crisis</div>
+          <div class="bar-bg"><div class="bar-fill bar-red" style="width:84%"></div></div>
+          <div class="score score-red">84.1 / 100</div>
+        </div>
+        <div class="nerai-cell">
+          <div class="country">Belarus</div>
+          <div class="metric">Government Instability</div>
+          <div class="bar-bg"><div class="bar-fill bar-orange" style="width:65%"></div></div>
+          <div class="score score-orange">65.2 / 100</div>
+        </div>
+        <div class="nerai-cell">
+          <div class="country">Serbia</div>
+          <div class="metric">Political Instability</div>
+          <div class="bar-bg"><div class="bar-fill bar-orange" style="width:58%"></div></div>
+          <div class="score score-orange">58.4 / 100</div>
+        </div>
+        <div class="nerai-cell">
+          <div class="country">Egypt</div>
+          <div class="metric">Political Instability</div>
+          <div class="bar-bg"><div class="bar-fill bar-orange" style="width:61%"></div></div>
+          <div class="score score-orange">61.0 / 100</div>
+        </div>
+        <div class="nerai-cell">
+          <div class="country">Nigeria</div>
+          <div class="metric">Terrorism Risk</div>
+          <div class="bar-bg"><div class="bar-fill bar-red" style="width:72%"></div></div>
+          <div class="score score-red">72.1 / 100</div>
+        </div>
+      </div>
+    </div>
+
+    <p>The aggregated threat picture from NERAI data supports the strategic logic of Sparta 2.0 while raising questions about scope and timeline. The Eastern European threat environment is sufficiently elevated — and NERAI forecast models suggest sustained elevation through at least 2027 — to justify the investment and institutional disruption the EDA requires. However, the Southern flank threat indicators suggest the initiative may require a broader strategic remit than its current conventional-military focus encompasses.</p>
+
+    <hr/>
+
+    <!-- SCENARIOS & FORECAST -->
+    <h2>Scenarios &amp; Forecast</h2>
+
+    <h3>Best Case Scenario (Probability: ~25%)</h3>
+    <p>Franco-German alignment on doctrine and procurement standards is achieved in a landmark 2026 bilateral framework agreement. All 27 member states ratify the EDA enabling treaty by Q2 2027. The Phase 1 institutional setup completes on schedule; Phase 2 capability build benefits from the organizational foundation. By 2031, the EDA achieves genuine operational capability: a deployable rapid-reaction force of 50,000 personnel with integrated command, a consolidated procurement authority reducing unit costs by 25–30%, and an intelligence fusion architecture providing strategic-level assessment independent of U.S. intelligence sharing. NATO compatibility is resolved through a "Berlin Plus Plus" arrangement providing mutual access to planning and logistics. European defence industrial output increases substantially, reducing dependency on U.S. defence exports. This scenario requires exceptional political alignment across multiple election cycles in Germany, France, Italy, and Poland — a demanding but not impossible condition given the sustained Russian threat environment.</p>
+
+    <h3>Base Case Scenario (Probability: ~60%)</h3>
+    <p>Partial implementation achieving meaningful but incomplete capability by 2031. Institutional setup (Pillar I command HQ, Pillar II procurement framework) achieves initial operating capability but with significant carve-outs: France retains nuclear doctrine sovereignty, Germany maintains bilateral NATO agreements outside EDA authority, Poland and Baltic states insist on U.S. bilateral security guarantees as parallel track. Procurement integration advances in logistics and ammunition categories but fails to achieve platform consolidation in major combat systems. Intelligence fusion (Pillar III) develops as strategic assessment capability rather than operational intelligence integration. The net outcome: a European defence architecture that substantially reduces dependency on U.S. logistics and political approval for crisis response, but that does not achieve genuinely autonomous deterrence capability. Capability gap narrows to €80–100B from the €150–200B baseline. This scenario represents meaningful progress but leaves European security structurally incomplete relative to Sparta 2.0's stated objectives.</p>
+
+    <h3>Worst Case Scenario (Probability: ~15%)</h3>
+    <p>EDA treaty ratification fails or is substantially watered down by 2027, as domestic political fragmentation in key member states — particularly a shift toward nationalist governments in Italy or France, or a German coalition collapse — removes the political consensus required for sovereignty transfer. Without institutional foundation, defence spending increases produce fragmented national buildups rather than integrated capability. NATO dependency increases rather than decreases as member states individually reinvest in bilateral U.S. relationships as the primary security guarantee. A Russian-Ukrainian ceasefire, if achieved through U.S.-brokered terms, reduces threat urgency and defence budget political priority. The European defence industrial base remains fragmented, missing the consolidation window created by the 2022–2026 spending surge. By 2031, Europe's conventional military capability has improved quantitatively but not qualitatively — more of the same national systems rather than integrated continental capability. The Sparta 2.0 initiative becomes another in the long series of European defence integration attempts that produced process but not capability.</p>
+
+    <!-- ── VISUAL: Scenario comparison ── -->
+    <div class="visual-insert">
+      <div class="visual-caption">Scenario Comparison — Key Outcomes by 2031</div>
+      <table class="scenario-table">
+        <thead>
+          <tr>
+            <th>Indicator</th>
+            <th style="color:#166534;">Best Case ~25%</th>
+            <th style="color:#b45309;">Base Case ~60%</th>
+            <th style="color:#c93048;">Worst Case ~15%</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="row-label">EDA Treaty Ratification</td><td class="best">All 27 members, full authority</td><td class="base">Most members, partial carve-outs</td><td class="worst">Failed or blocked</td></tr>
+          <tr><td class="row-label">Rapid Reaction Force</td><td class="best">50,000 · Full op. capability</td><td class="base">25,000 · Limited mandates</td><td class="worst">Concept only</td></tr>
+          <tr><td class="row-label">Procurement Integration</td><td class="best">Major platforms consolidated</td><td class="base">Logistics &amp; ammo only</td><td class="worst">National silos persist</td></tr>
+          <tr><td class="row-label">Intelligence Fusion</td><td class="best">Operational integration</td><td class="base">Strategic assessment layer</td><td class="worst">EU INTCEN status quo</td></tr>
+          <tr><td class="row-label">Capability Gap Closure</td><td class="best">€130–160B closed</td><td class="base">€80–100B closed</td><td class="worst">&lt;€40B closed</td></tr>
+          <tr><td class="row-label">NATO Compatibility</td><td class="best">Berlin Plus Plus agreed</td><td class="base">Parallel structures, friction</td><td class="worst">Increased dependency</td></tr>
+          <tr><td class="row-label">U.S. Dependency Reduction</td><td class="best">Substantial — autonomous logistics</td><td class="base">Moderate — reduced but not eliminated</td><td class="worst">Minimal or reversed</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr/>
+
+    <!-- POLICY RECOMMENDATIONS -->
+    <h2>Policy Recommendations</h2>
+
+    <div class="policy-item">
+      <div class="policy-header">
+        <div class="policy-badge">1</div>
+        <div class="policy-title">Phased Sovereignty Transfer with Explicit Activation Conditions</div>
+      </div>
+      <div class="policy-body">
+        <p>Rather than attempting immediate transfer of operational command authority — which triggers maximum political resistance — structure the EDA command pillar as a "conditional activation" framework. The EU Operational HQ operates in planning and preparation mode under peacetime conditions; operational command authority activates automatically upon defined threshold conditions (e.g., Russian military forces crossing specified geographic boundaries, or Article 5 invocation combined with U.S. declaration of force deployment constraints). This approach achieves the strategic objective (autonomous European military decision-making capability) without requiring member states to accept permanent standing sovereignty delegation.</p>
+        <div class="rationale-block"><p><strong>Rationale:</strong> Conditional activation frameworks have historical precedent in EU treaty design (Mutual Assistance Clause, Article 42.7) and reduce the political salience of sovereignty transfer during non-crisis periods. They preserve the sovereignty appearance while delivering capability substance when it matters.</p></div>
+      </div>
+    </div>
+
+    <div class="policy-item">
+      <div class="policy-header">
+        <div class="policy-badge">2</div>
+        <div class="policy-title">NATO Decoupling Protocols — Positive Framing</div>
+      </div>
+      <div class="policy-body">
+        <p>Reframe the EDA initiative in NATO engagement as "Alliance burden-sharing enhancement" rather than "European strategic autonomy." Publish a formal EDA-NATO Complementarity Framework documenting how each pillar reduces demands on U.S. forces rather than creating parallel structures. Specifically: European conventional forces covering Eastern and Southern flanks reduce U.S. force deployment requirements, freeing U.S. strategic capacity for Indo-Pacific; European ammunition production and logistics reduce NATO supply chain dependencies identified as critical vulnerabilities in Ukraine conflict analysis; European intelligence architecture reduces strain on U.S. intelligence community from European operational support requirements. Frame Sparta 2.0 as the implementation vehicle for U.S. requests for European burden-sharing rather than as an autonomy project.</p>
+        <div class="rationale-block"><p><strong>Rationale:</strong> The primary external constraint on EDA implementation is U.S. and NATO institutional resistance. Converting U.S. strategic retrenchment instinct into active support for EDA creates political space in member states that otherwise use NATO objections to resist integration.</p></div>
+      </div>
+    </div>
+
+    <div class="policy-item">
+      <div class="policy-header">
+        <div class="policy-badge">3</div>
+        <div class="policy-title">Procurement Integration: Start with High-Volume, Low-Sovereignty Categories</div>
+      </div>
+      <div class="policy-body">
+        <p>Focus initial procurement integration efforts on categories that generate maximum cost savings with minimum industrial politics: artillery ammunition (demonstrated strategic importance from Ukraine, high volume, no national champion concentration), military communications infrastructure (large market, no single national incumbent), and logistics vehicles (high standardization potential, distributed industrial base reducing political concentration risk). Achieving visible cost savings in these categories within 2026–2028 creates a demonstration effect that builds political consensus for subsequent integration in higher-stakes platform categories.</p>
+        <div class="rationale-block"><p><strong>Rationale:</strong> Procurement integration failure historically occurs because initial negotiations target the most politically contested categories (fighter aircraft, major combat systems) and fail, discrediting the entire project. Success in lower-salience categories creates institutional momentum and financial proof-of-concept.</p></div>
+      </div>
+    </div>
+
+    <div class="policy-item">
+      <div class="policy-header">
+        <div class="policy-badge">4</div>
+        <div class="policy-title">ISR Investment as Foundation for All Three Pillars</div>
+      </div>
+      <div class="policy-body">
+        <p>Prioritize European Intelligence, Surveillance, and Reconnaissance (ISR) capability — satellite imagery, signals intelligence, and sensor network infrastructure — as the foundational investment enabling all three EDA pillars. Autonomous ISR capability creates: independent situational awareness for operational command decisions (Pillar I), evidence base for procurement threat-driven requirements (Pillar II), and the raw intelligence feed for fusion architecture (Pillar III). The €27–35B ISR investment identified in capability gap analysis should be front-loaded to 2026–2029, with the European Space Agency and national space agencies contributing to a shared EU defense satellite constellation. Commercial imagery partnerships (with European SAR satellite providers) provide interim capability while sovereign infrastructure develops.</p>
+        <div class="rationale-block"><p><strong>Rationale:</strong> ISR dependency on U.S. systems is the least-discussed but most operationally critical vulnerability in European defence. Operational command without independent ISR is strategically blind; procurement without ISR-driven threat requirements lacks strategic direction; intelligence fusion without indigenous collection produces limited analytical added value.</p></div>
+      </div>
+    </div>
+
+    <div class="policy-item">
+      <div class="policy-header">
+        <div class="policy-badge">5</div>
+        <div class="policy-title">Establish Measurable Success Metrics and Annual EDA Capability Review</div>
+      </div>
+      <div class="policy-body">
+        <p>Create a publicly reported Annual European Defence Capability Review — modelled on NATO's Defence Planning Capability Survey — that tracks EDA implementation against defined quantitative milestones: number of joint procurement contracts signed, percentage of member-state force contributions committed to EDA rapid-reaction pool, intelligence assessment outputs generated, cost savings achieved through consolidated procurement. Publish results openly, creating accountability pressure on member states lagging implementation commitments and enabling civil society and parliamentary oversight. Commission NERAI and equivalent third-party risk intelligence platforms to provide annual external assessment of threat environment versus EDA capability trajectory.</p>
+        <div class="rationale-block"><p><strong>Rationale:</strong> The history of European defence initiatives shows that without measurable external accountability, institutional momentum dissipates when political attention shifts. Annual public reporting creates persistent pressure that sustains implementation through election cycles and political leadership changes.</p></div>
+      </div>
+    </div>
+
+    <hr/>
+
+    <!-- CONCLUSION -->
+    <h2>Conclusion</h2>
+    <p>Sparta 2.0 represents a genuine strategic inflection point rather than another incremental EU defence coordination exercise. The convergence of sustained Russian military pressure, U.S. strategic reorientation, and European public support for defence investment creates a window of political opportunity that may not recur. The question is not whether Europe needs integrated defence capability — NERAI data makes the threat environment quantitatively clear — but whether European institutions can move from ambition to capability within the timeline that strategic circumstances allow.</p>
+    <p>The base case — partial implementation achieving meaningful but incomplete capability — is the most likely outcome at 60% probability. This is not failure; partial integration of European defence represents a qualitative advance over the status quo of 27 incompatible national defence programmes. But it is insufficient relative to the threat environment NERAI data documents. The gap between what Sparta 2.0 achieves in the base case and what European security requires represents the residual risk that the initiative does not fully close — and that residual risk is geopolitically significant given the elevated instability indicators across Russia, Eastern Europe, and the Southern Mediterranean.</p>
+    <p>For investors and risk managers, the Sparta 2.0 initiative creates both opportunities and risks. European defence industrial stocks are likely to benefit from sustained investment regardless of integration scenario — even the worst case involves higher national defence spending than the 2015–2022 period. The implementation uncertainty creates acquisition timing opportunities in European prime contractors and second-tier suppliers. Geopolitically, the success or failure of European defence integration will determine the stability of the transatlantic relationship and the credibility of European deterrence for the next decade — making it one of the highest-stakes institutional development trajectories in the current global risk landscape.</p>
+
+    <div class="end-note">— END OF REPORT — NERAI Intelligence Hub — Strategic Analysis Lab —</div>
+
+    <!-- CTA -->
+    <div class="article-cta">
+      <h3>Monitor European Security Developments in Real Time</h3>
+      <p>Access NERAI's live geopolitical risk indices, Prophet forecast models, and early-warning alerts across 190 countries — including the full Eastern European and Russian threat corridor.</p>
+      <a href="https://nerai-intelligence.streamlit.app" class="cta-btn" target="_blank">Open Dashboard →</a>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 NERAI Intelligence · <a href="https://neraicorp.com">neraicorp.com</a></span>
+    <span>Data: GDELT · ACLED · European Defence Agency · NATO DCAS · EU Military Committee</span>
+    <span><a href="https://nerai-intelligence.streamlit.app">Open Dashboard →</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
