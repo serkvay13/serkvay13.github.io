@@ -1103,6 +1103,7 @@
       <li><a href="#causal-engine">Causal Engine</a></li>
       <li><a href="#methodology">Methodology</a></li>
       <li><a href="#usecases">Use Cases</a></li>
+      <li><a href="#reports">Reports</a></li>
       <li><a href="/blog/">Insights</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="https://nerai-intelligence.streamlit.app/" target="_blank" class="nav-cta">Open Dashboard →</a></li>
@@ -1863,6 +1864,174 @@
     </div>
   </div>
 </section>
+
+<!-- ── WEEKLY REPORTS ────────────────────────────────── -->
+<section id="reports" style="background:var(--navy2);border-top:1px solid rgba(0,119,168,0.08);">
+  <div class="container">
+    <div class="section-tag">Weekly Intelligence</div>
+    <h2 class="section-title">Risk Reports</h2>
+    <div class="divider"></div>
+    <p class="section-sub" style="margin-bottom:48px;">Published every week — structured risk bulletins and targeted alerts built directly from NERAI's live index data across 80+ countries.</p>
+
+    <!-- Latest badge -->
+    <div id="reports-latest-label" style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:20px;display:flex;align-items:center;gap:8px;">
+      <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--teal);animation:pulse-dot 2s infinite;"></span>
+      <span id="reports-week-label">Latest</span>
+    </div>
+
+    <!-- Latest report cards (2-col grid) -->
+    <div id="reports-latest" style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:56px;"></div>
+
+    <!-- Archive -->
+    <div style="border-top:1px solid rgba(0,119,168,0.1);padding-top:40px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">
+        <h3 style="font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--navy);">Report Archive</h3>
+        <a href="/blog/" style="font-size:0.78rem;color:var(--teal);font-weight:500;text-decoration:none;">All posts on blog →</a>
+      </div>
+      <div id="reports-archive-wrap">
+        <table id="reports-archive" style="width:100%;border-collapse:collapse;font-size:0.82rem;">
+          <thead>
+            <tr style="border-bottom:1px solid rgba(0,119,168,0.1);">
+              <th style="text-align:left;padding:8px 12px;color:var(--silver);font-weight:500;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;">Week</th>
+              <th style="text-align:left;padding:8px 12px;color:var(--silver);font-weight:500;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;">Date</th>
+              <th style="text-align:left;padding:8px 12px;color:var(--silver);font-weight:500;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;">Type</th>
+              <th style="text-align:left;padding:8px 12px;color:var(--silver);font-weight:500;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;">Report</th>
+              <th style="text-align:right;padding:8px 12px;"></th>
+            </tr>
+          </thead>
+          <tbody id="reports-archive-body">
+            <tr><td colspan="5" style="padding:32px 12px;text-align:center;color:var(--silver);font-size:0.82rem;">Archive entries will appear here as new weekly reports are published.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    @keyframes pulse-dot {
+      0%,100% { opacity:1; transform:scale(1); }
+      50% { opacity:0.5; transform:scale(0.7); }
+    }
+    .report-card {
+      text-decoration:none; display:block;
+      background:#fff;
+      border-radius:12px;
+      padding:28px;
+      transition:box-shadow 0.2s, transform 0.2s;
+      position:relative; overflow:hidden;
+    }
+    .report-card:hover { transform:translateY(-3px); }
+    .report-card-bar {
+      position:absolute;top:0;left:0;right:0;height:3px;
+    }
+    .report-badge {
+      font-size:0.62rem;font-weight:700;letter-spacing:0.1em;
+      text-transform:uppercase;padding:4px 10px;border-radius:20px;
+    }
+    .report-card-title {
+      font-family:'DM Serif Display',serif;
+      font-size:1.1rem; color:var(--navy);
+      line-height:1.35; margin:14px 0 10px;
+    }
+    .report-card-summary {
+      font-size:0.82rem; color:var(--silver);
+      line-height:1.65; margin-bottom:18px;
+    }
+    .report-tags { display:flex;gap:7px;flex-wrap:wrap;margin-bottom:20px; }
+    .report-tag {
+      font-size:0.63rem;padding:3px 9px;border-radius:20px;font-weight:500;
+    }
+    .report-cta { font-size:0.78rem;font-weight:600;display:flex;align-items:center;gap:5px; }
+    .archive-row { border-bottom:1px solid rgba(0,119,168,0.06); transition:background 0.15s; }
+    .archive-row:hover { background:rgba(0,119,168,0.03); }
+    .archive-row td { padding:12px; vertical-align:middle; }
+    .archive-type-pulse { font-size:0.63rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--teal);background:rgba(0,119,168,0.08);padding:3px 9px;border-radius:20px; }
+    .archive-type-alert { font-size:0.63rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--red);background:rgba(201,48,72,0.07);padding:3px 9px;border-radius:20px; }
+    @media(max-width:640px) {
+      #reports-latest { grid-template-columns:1fr; }
+    }
+  </style>
+
+  <script>
+  (function() {
+    fetch('/reports.json')
+      .then(r => r.json())
+      .then(data => {
+        const reports = data.reports;
+        if (!reports || !reports.length) return;
+
+        // Group by week — first week = latest
+        const weeks = [];
+        const weekMap = {};
+        reports.forEach(r => {
+          if (!weekMap[r.week]) { weekMap[r.week] = []; weeks.push(r.week); }
+          weekMap[r.week].push(r);
+        });
+
+        const latestWeek = weeks[0];
+        const latestReports = weekMap[latestWeek];
+        const archiveReports = [];
+        weeks.slice(1).forEach(w => weekMap[w].forEach(r => archiveReports.push(r)));
+
+        // Update label
+        const lbl = latestReports[0];
+        document.getElementById('reports-week-label').textContent =
+          lbl.week + ' · ' + lbl.dateRange;
+
+        // Render latest cards
+        const latestEl = document.getElementById('reports-latest');
+        latestEl.innerHTML = latestReports.map(r => {
+          const isPulse = r.type === 'pulse';
+          const accentColor = isPulse ? 'var(--teal)' : 'var(--red)';
+          const barGrad = isPulse
+            ? 'linear-gradient(90deg,var(--teal),var(--accent))'
+            : 'linear-gradient(90deg,var(--red),#d97706)';
+          const borderColor = isPulse ? 'rgba(0,119,168,0.15)' : 'rgba(201,48,72,0.2)';
+          const badgeBg = isPulse ? 'rgba(0,119,168,0.08)' : 'rgba(201,48,72,0.07)';
+          const typeLabel = isPulse ? 'Weekly Pulse' : '⚠ Risk Alert';
+          const ctaText = isPulse ? 'Read full report →' : 'Read full alert →';
+
+          const tagsHtml = (r.tags || []).map((t, i) => {
+            const bg = i === 0 ? (isPulse ? '#fff1f2' : '#fff1f2') : 'rgba(0,119,168,0.06)';
+            const col = i === 0 ? (isPulse ? 'var(--teal)' : 'var(--red)') : 'var(--teal)';
+            const bc = i === 0 ? (isPulse ? 'rgba(0,119,168,0.2)' : 'rgba(201,48,72,0.2)') : 'rgba(0,119,168,0.15)';
+            return \`<span class="report-tag" style="background:\${bg};color:\${col};border:1px solid \${bc};">\${t}</span>\`;
+          }).join('');
+
+          return \`<a href="\${r.url}" class="report-card" style="border:1px solid \${borderColor};"
+            onmouseover="this.style.boxShadow='0 12px 40px rgba(0,0,0,0.1)'"
+            onmouseout="this.style.boxShadow=''">
+            <div class="report-card-bar" style="background:\${barGrad};"></div>
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+              <span class="report-badge" style="color:\${accentColor};background:\${badgeBg};">\${typeLabel}</span>
+              <span style="font-size:0.62rem;color:var(--silver);">\${r.published}</span>
+            </div>
+            <h3 class="report-card-title">\${r.title}</h3>
+            <p class="report-card-summary">\${r.summary}</p>
+            <div class="report-tags">\${tagsHtml}</div>
+            <div class="report-cta" style="color:\${accentColor};">\${ctaText}</div>
+          </a>\`;
+        }).join('');
+
+        // Render archive
+        const tbody = document.getElementById('reports-archive-body');
+        if (archiveReports.length === 0) return;
+        tbody.innerHTML = archiveReports.map(r => {
+          const isPulse = r.type === 'pulse';
+          return \`<tr class="archive-row">
+            <td style="font-weight:600;color:var(--navy);white-space:nowrap;">\${r.week}</td>
+            <td style="color:var(--silver);white-space:nowrap;">\${r.dateRange}</td>
+            <td><span class="\${isPulse ? 'archive-type-pulse' : 'archive-type-alert'}">\${isPulse ? 'Pulse' : 'Alert'}</span></td>
+            <td style="color:var(--navy);">\${r.title}</td>
+            <td style="text-align:right;"><a href="\${r.url}" style="font-size:0.75rem;color:var(--teal);font-weight:600;text-decoration:none;white-space:nowrap;">Read →</a></td>
+          </tr>\`;
+        }).join('');
+      })
+      .catch(() => {});
+  })();
+  </script>
+</section>
+
 
 <!-- ── PRICING ────────────────────────────────────────── -->
 <section id="pricing">
