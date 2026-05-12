@@ -2,6 +2,23 @@
   "reports": [
     {
       "week": "W19",
+      "dateRange": "May 12, 2026",
+      "published": "2026-05-12",
+      "type": "analysis",
+      "title": "US-China Strategic Realignment at the Precipice: Trump's Beijing Visit Amid Iran Escalation",
+      "summary": "Senior Fellow assessment by Kagan Serhan Ayik. NERAI bilateral Tension Index at 27.4 (97th percentile, 12-month range), Cooperation Index at 54.2. Base case (65%): 90-180 day tariff pause on $50-80B Chinese goods, $20-30B agricultural purchase target — mirroring 2018 Buenos Aires precedent that lasted 88 days. Contrarian thesis: Trump's domestic fragility (Political Instability 55.5 RISING) is a negotiating LIABILITY, not asset; Beijing reads weakness as license to demand early concessions. Tactical pause expires Q4 2026 as both powers' international support collapses 47–50%.",
+      "url": "/blog/2026-05-12-us-china-strategic-realignment-trump-beijing-summit/",
+      "tags": [
+        "US-China",
+        "Trump Summit",
+        "Iran",
+        "Deep Dive"
+      ],
+      "alertBadge": "DEEP DIVE",
+      "alertColor": "teal"
+    },
+    {
+      "week": "W19",
       "dateRange": "May 4–9, 2026",
       "published": "2026-05-10",
       "type": "analysis",
