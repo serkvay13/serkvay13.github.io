@@ -967,6 +967,133 @@
     .btn-paddle-primary { background: var(--teal); color: #fff; }
     .btn-paddle-outline { background: transparent; color: var(--teal); border: 1.5px solid var(--teal); }
 
+    /* ── PARTNERS ────────────────────────────────────────── */
+    #partners {
+      background: var(--navy2);
+      border-top: 1px solid rgba(0,119,168,0.08);
+      padding: 100px 0;
+    }
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+    .partner-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 36px 28px 32px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+    .partner-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--teal);
+      box-shadow: 0 10px 32px rgba(13,31,60,0.08);
+    }
+    .partner-card--featured {
+      border: 2px solid var(--teal);
+      box-shadow: 0 12px 36px rgba(0,119,168,0.12);
+    }
+    .partner-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(0,119,168,0.10), rgba(0,168,134,0.10));
+      color: var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .partner-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--teal);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .partner-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+    .partner-desc {
+      font-size: 0.85rem;
+      color: var(--silver);
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+    .partner-rate {
+      font-size: 0.95rem;
+      color: var(--navy);
+      background: rgba(0,119,168,0.06);
+      border-left: 3px solid var(--teal);
+      padding: 12px 14px;
+      border-radius: 6px;
+      margin-bottom: 18px;
+    }
+    .partner-rate strong { color: var(--teal); font-weight: 700; }
+    .partner-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px;
+      flex-grow: 1;
+    }
+    .partner-features li {
+      position: relative;
+      padding-left: 24px;
+      font-size: 0.82rem;
+      color: var(--navy);
+      line-height: 1.6;
+      margin-bottom: 9px;
+    }
+    .partner-features li::before {
+      content: '\2713';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .partner-why {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 36px;
+    }
+    .partner-why-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem;
+      color: var(--navy);
+      text-align: center;
+      margin-bottom: 32px;
+      font-weight: 400;
+    }
+    .partner-why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+    .partner-why-head {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .partner-why-text {
+      font-size: 0.78rem;
+      color: var(--silver);
+      line-height: 1.65;
+    }
+
     /* ── FOOTER ──────────────────────────────────────────── */
     footer {
       background: var(--navy);
@@ -1044,12 +1171,27 @@
   </style>
 
   <style>
-    @media (max-width: 900px) {
+    @media (max-width: 700px) {
       .pricing-grid { grid-template-columns: 1fr !important; }
+      .pricing-grid--4 { grid-template-columns: 1fr !important; }
+      .partner-grid { grid-template-columns: 1fr !important; }
+      .partner-why-grid { grid-template-columns: 1fr !important; }
     }
-    @media (min-width: 901px) {
+    @media (min-width: 701px) and (max-width: 1099px) {
+      .pricing-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .pricing-grid--4 { grid-template-columns: repeat(2, 1fr) !important; }
+      .partner-grid { grid-template-columns: 1fr !important; }
+      .partner-why-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    }
+    @media (min-width: 1100px) {
       .pricing-grid { grid-template-columns: repeat(3, 1fr) !important; }
+      .pricing-grid--4 { grid-template-columns: repeat(4, 1fr) !important; gap: 18px !important; }
+      .partner-grid { grid-template-columns: repeat(3, 1fr) !important; }
+      .partner-why-grid { grid-template-columns: repeat(4, 1fr) !important; }
     }
+    .pricing-grid--4 .pricing-card { padding: 32px 22px 28px; }
+    .pricing-grid--4 .pricing-features li { font-size: 0.78rem; }
+    .pricing-grid--4 .pricing-price { font-size: 1.85rem; }
     .pricing-card--featured .pricing-badge {
       display: inline-block;
       background: #0077a8;
@@ -1103,6 +1245,7 @@
       <li><a href="#causal-engine">Causal Engine</a></li>
       <li><a href="#methodology">Methodology</a></li>
       <li><a href="#usecases">Use Cases</a></li>
+      <li><a href="#partners">Partners</a></li>
       <li><a href="/blog/">Insights</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="https://nerai-intelligence.streamlit.app/" target="_blank" class="nav-cta">Open Dashboard →</a></li>
@@ -1871,15 +2014,15 @@
   <div class="container">
     <div class="pricing-header">
       <div class="section-tag">Pricing</div>
-      <h2 class="pricing-title">Start free. Upgrade when ready.</h2>
+      <h2 class="pricing-title">From individual analysts to global risk teams.</h2>
       <p class="pricing-sub">7-day free trial on all plans &mdash; no credit card required to start.</p>
     </div>
-    <div class="pricing-grid" style="grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
+    <div class="pricing-grid pricing-grid--4">
 
-      <!-- SOLO -->
+      <!-- INDIVIDUAL -->
       <div class="pricing-card">
-        <div class="pricing-plan">Solo</div>
-        <div class="pricing-price">&euro;19<span>/mo</span></div>
+        <div class="pricing-plan">Individual</div>
+        <div class="pricing-price">&euro;29<span>/mo</span></div>
         <div class="pricing-trial">&#10022; 7-day free trial</div>
         <ul class="pricing-features">
           <li>Web dashboard &mdash; 80+ countries</li>
@@ -1887,22 +2030,21 @@
           <li>Daily index updates</li>
           <li>What-If scenario analysis</li>
           <li>3-month history</li>
-          <li>Early access to new features</li>
+          <li>1 seat</li>
         </ul>
         <a href="#" class="btn-paddle btn-paddle-outline"
-           onclick="openTrialModal('Solo','€19/mo'); return false;">
+           onclick="openTrialModal('Individual','€29/mo'); return false;">
           Start 7-Day Trial &rarr;
         </a>
       </div>
 
-      <!-- PRO (Most Popular) -->
-      <div class="pricing-card pricing-card--featured">
-        <div class="pricing-badge">Most Popular</div>
-        <div class="pricing-plan">Pro</div>
-        <div class="pricing-price">&euro;39<span>/mo</span></div>
+      <!-- PROFESSIONAL -->
+      <div class="pricing-card">
+        <div class="pricing-plan">Professional</div>
+        <div class="pricing-price">&euro;149<span>/mo</span></div>
         <div class="pricing-trial">&#10022; 7-day free trial</div>
         <ul class="pricing-features">
-          <li>Everything in Solo</li>
+          <li>Everything in Individual</li>
           <li>12-month full history</li>
           <li>Unlimited What-If scenarios</li>
           <li>CSV data export</li>
@@ -1910,8 +2052,29 @@
           <li>Country-specific risk alerts</li>
           <li>Priority support</li>
         </ul>
+        <a href="#" class="btn-paddle btn-paddle-outline"
+           onclick="openTrialModal('Professional','€149/mo'); return false;">
+          Start 7-Day Trial &rarr;
+        </a>
+      </div>
+
+      <!-- TEAM (Most Popular) -->
+      <div class="pricing-card pricing-card--featured">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-plan">Team</div>
+        <div class="pricing-price">&euro;599<span>/mo</span></div>
+        <div class="pricing-trial">&#10022; 7-day free trial</div>
+        <ul class="pricing-features">
+          <li>Everything in Professional</li>
+          <li>5 team seats included</li>
+          <li>Multi-user collaboration</li>
+          <li>Advanced alerting &amp; webhooks</li>
+          <li>Custom watchlists per seat</li>
+          <li>Onboarding session included</li>
+          <li>Priority support &amp; SLAs</li>
+        </ul>
         <a href="#" class="btn-paddle btn-paddle-primary"
-           onclick="openTrialModal('Pro','€39/mo'); return false;">
+           onclick="openTrialModal('Team','€599/mo'); return false;">
           Start 7-Day Trial &rarr;
         </a>
       </div>
@@ -1922,12 +2085,13 @@
         <div class="pricing-price" style="font-size:1.5rem; line-height:1.2;">Custom<br><span style="font-size:1rem; font-weight:500;">Pricing</span></div>
         <div class="pricing-trial" style="color:#b8860b;">&#10022; Tailored to your team</div>
         <ul class="pricing-features">
-          <li>Everything in Pro</li>
-          <li>Multiple team seats</li>
-          <li>Custom integrations &amp; API</li>
+          <li>Everything in Team</li>
+          <li>Unlimited seats</li>
+          <li>Custom integrations &amp; SSO</li>
           <li>Dedicated account manager</li>
           <li>SLA &amp; uptime guarantee</li>
           <li>Custom country coverage</li>
+          <li>White-label option available</li>
         </ul>
         <a href="mailto:kagannerai@gmail.com?subject=Enterprise%20Inquiry%20%E2%80%94%20NERAI"
            class="btn-paddle btn-paddle-outline">
@@ -1936,6 +2100,132 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- ── PARTNERS ───────────────────────────────────────── -->
+<section id="partners">
+  <div class="container">
+    <div class="pricing-header">
+      <div class="section-tag">Partner Program</div>
+      <h2 class="pricing-title">Earn up to <span style="color:var(--teal);">50% recurring</span>. Zero upfront.</h2>
+      <p class="pricing-sub">
+        NERAI works with affiliates, channel partners, and independent sales agents who already serve corporate risk,
+        reinsurance, energy, financial services, and SMBs trading with high-risk regions. We provide the product, the
+        research firepower, and a generous commission &mdash; you bring the relationships.
+      </p>
+    </div>
+
+    <div class="partner-grid">
+
+      <!-- AFFILIATES -->
+      <div class="partner-card">
+        <div class="partner-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+        </div>
+        <div class="partner-tag">Affiliate Partners</div>
+        <h3 class="partner-name">Creators, newsletters, podcasters</h3>
+        <p class="partner-desc">
+          Newsletter operators, podcast hosts, and analysts writing about geopolitics, risk, sanctions, supply
+          chain, energy, or macro markets. Drop a tracked link, earn on every subscription.
+        </p>
+        <div class="partner-rate">Up to <strong>40% recurring</strong>, 24-month lifetime</div>
+        <ul class="partner-features">
+          <li>Tracked links &amp; real-time dashboard</li>
+          <li>Co-branded country briefings available</li>
+          <li>Stripe-paid monthly, multi-currency</li>
+        </ul>
+        <a href="#" class="btn-paddle btn-paddle-outline"
+           onclick="openPartnerModal('Affiliate Partner'); return false;">
+          Apply as Affiliate &rarr;
+        </a>
+      </div>
+
+      <!-- CHANNEL PARTNERS -->
+      <div class="partner-card partner-card--featured">
+        <div class="pricing-badge">Highest Earning</div>
+        <div class="partner-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"/>
+            <rect x="14" y="3" width="7" height="7"/>
+            <rect x="14" y="14" width="7" height="7"/>
+            <rect x="3" y="14" width="7" height="7"/>
+          </svg>
+        </div>
+        <div class="partner-tag">Channel Partners</div>
+        <h3 class="partner-name">Brokers, consultancies, advisory firms</h3>
+        <p class="partner-desc">
+          Political risk &amp; trade-credit insurance brokers, compliance &amp; sanctions consultancies,
+          family offices, trade-finance advisors, and boutique risk firms. Add NERAI to your renewal
+          conversations &mdash; or white-label it inside your client portal.
+        </p>
+        <div class="partner-rate">Up to <strong>50% recurring</strong> + white-label option</div>
+        <ul class="partner-features">
+          <li>Co-branded &amp; white-label deliverables</li>
+          <li>Wholesale pricing on Team &amp; Enterprise tiers</li>
+          <li>Dedicated partner success contact</li>
+          <li>Joint go-to-market support</li>
+        </ul>
+        <a href="#" class="btn-paddle btn-paddle-primary"
+           onclick="openPartnerModal('Channel Partner'); return false;">
+          Apply as Channel Partner &rarr;
+        </a>
+      </div>
+
+      <!-- SALES AGENTS -->
+      <div class="partner-card">
+        <div class="partner-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <div class="partner-tag">Independent Sales Agents</div>
+        <h3 class="partner-name">Commission-only B2B closers</h3>
+        <p class="partner-desc">
+          Independent enterprise sellers and fractional sales leaders with networks in corporate strategy,
+          reinsurance, energy, or financial services. Sell a differentiated AI-native intelligence
+          product &mdash; not commodity SaaS.
+        </p>
+        <div class="partner-rate"><strong>Up to 50%</strong> year-1 + <strong>25% recurring</strong></div>
+        <ul class="partner-features">
+          <li>Full demo &amp; sales engineering support</li>
+          <li>Pre-built collateral &amp; case studies</li>
+          <li>Real-time pipeline visibility</li>
+          <li>No upfront cost, no minimums</li>
+        </ul>
+        <a href="#" class="btn-paddle btn-paddle-outline"
+           onclick="openPartnerModal('Independent Sales Agent'); return false;">
+          Apply as Sales Agent &rarr;
+        </a>
+      </div>
+
+    </div>
+
+    <!-- WHY PARTNER WITH NERAI -->
+    <div class="partner-why">
+      <h3 class="partner-why-title">Why partner with NERAI</h3>
+      <div class="partner-why-grid">
+        <div class="partner-why-item">
+          <div class="partner-why-head">Differentiated AI-native product</div>
+          <div class="partner-why-text">Causal Engine and AI Analyst layered on 80+ country coverage &mdash; not another news aggregator.</div>
+        </div>
+        <div class="partner-why-item">
+          <div class="partner-why-head">Recurring lifetime commission</div>
+          <div class="partner-why-text">You earn on every renewal for the life of the account, paid monthly via Stripe.</div>
+        </div>
+        <div class="partner-why-item">
+          <div class="partner-why-head">Zero upfront cost</div>
+          <div class="partner-why-text">No retainer, no platform fee, no minimums. We invest in partners willing to invest their relationships.</div>
+        </div>
+        <div class="partner-why-item">
+          <div class="partner-why-head">Brussels-based, EU/UK ready</div>
+          <div class="partner-why-text">GDPR-compliant, VAT BE 0726.888.207, multi-currency invoicing across US/UK/EU.</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -2164,6 +2454,7 @@
       <ul class="footer-links">
         <li><a href="#about">About</a></li>
         <li><a href="#platform">Platform</a></li>
+        <li><a href="#partners">Partners</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#methodology">Methodology</a></li>
         <li><a href="https://nerai-intelligence.streamlit.app/" target="_blank">Dashboard</a></li>
@@ -2317,6 +2608,146 @@
       const name = data.get('name'), email = data.get('email'), plan = data.get('plan'), company = data.get('company');
       window.location.href = `mailto:kagan@neraicorp.com?subject=Trial%20Request%20%E2%80%94%20NERAI%20${plan}&body=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0ACompany:%20${encodeURIComponent(company||'N/A')}%0APlan:%20${plan}`;
       closeTrialModal();
+    });
+  }
+</script>
+
+
+<!-- ── PARTNER APPLICATION MODAL ────────────────────── -->
+<div id="partnerModal" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(13,31,60,0.82); backdrop-filter:blur(6px); align-items:center; justify-content:center;">
+  <div style="background:#fff; border-radius:16px; padding:40px 36px; width:100%; max-width:480px; margin:16px; box-shadow:0 24px 60px rgba(0,0,0,0.22); position:relative; max-height:92vh; overflow-y:auto;">
+    <button onclick="closePartnerModal()" style="position:absolute;top:16px;right:18px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:#888;line-height:1;">&#x2715;</button>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+      <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
+        <rect width="40" height="40" rx="8" fill="#0d1f3c"/>
+        <circle cx="20" cy="20" r="2.2" fill="#00b4d8"/>
+        <circle cx="10" cy="10" r="2.2" fill="#00b4d8"/>
+        <circle cx="30" cy="10" r="2.2" fill="#00b4d8"/>
+        <circle cx="10" cy="30" r="2.2" fill="#00b4d8"/>
+        <circle cx="30" cy="30" r="2.2" fill="#00b4d8"/>
+        <circle cx="10" cy="20" r="1.6" fill="#0077a8"/>
+        <circle cx="30" cy="20" r="1.6" fill="#0077a8"/>
+        <circle cx="20" cy="10" r="1.6" fill="#0077a8"/>
+        <circle cx="20" cy="30" r="1.6" fill="#0077a8"/>
+      </svg>
+      <span style="font-size:1.1rem;font-weight:700;color:#0d1f3c;letter-spacing:0.03em;">NERAI</span>
+    </div>
+    <h2 style="margin:0 0 4px;font-size:1.4rem;color:#0d1f3c;">Apply to the Partner Program</h2>
+    <p id="partnerTypeLabel" style="margin:0 0 22px;color:#0077a8;font-size:0.95rem;font-weight:600;"></p>
+
+    <form id="partnerForm" onsubmit="submitPartnerForm(event)">
+      <input type="hidden" name="access_key" value="d6e962f8-146c-431d-add7-16d03ba7087f">
+      <input type="hidden" name="subject" id="partnerSubjectInput" value="NERAI Partner Application">
+      <input type="hidden" id="partnerTypeInput" name="partner_type" value="">
+
+      <div style="margin-bottom:14px;">
+        <label style="display:block;font-size:0.82rem;font-weight:600;color:#4b5563;margin-bottom:6px;">Full Name</label>
+        <input type="text" name="name" required placeholder="Your full name"
+          style="width:100%;padding:10px 14px;border:1.5px solid #d1d5db;border-radius:8px;font-size:0.95rem;box-sizing:border-box;outline:none;transition:border 0.2s;"
+          onfocus="this.style.borderColor='#0077a8'" onblur="this.style.borderColor='#d1d5db'">
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <label style="display:block;font-size:0.82rem;font-weight:600;color:#4b5563;margin-bottom:6px;">Work Email</label>
+        <input type="email" name="email" required placeholder="you@company.com"
+          style="width:100%;padding:10px 14px;border:1.5px solid #d1d5db;border-radius:8px;font-size:0.95rem;box-sizing:border-box;outline:none;transition:border 0.2s;"
+          onfocus="this.style.borderColor='#0077a8'" onblur="this.style.borderColor='#d1d5db'">
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <label style="display:block;font-size:0.82rem;font-weight:600;color:#4b5563;margin-bottom:6px;">Company / Audience / Network</label>
+        <input type="text" name="company" required placeholder="Acme Capital / NewsletterName / LinkedIn handle"
+          style="width:100%;padding:10px 14px;border:1.5px solid #d1d5db;border-radius:8px;font-size:0.95rem;box-sizing:border-box;outline:none;transition:border 0.2s;"
+          onfocus="this.style.borderColor='#0077a8'" onblur="this.style.borderColor='#d1d5db'">
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <label style="display:block;font-size:0.82rem;font-weight:600;color:#4b5563;margin-bottom:6px;">Website / LinkedIn URL</label>
+        <input type="url" name="url" placeholder="https://"
+          style="width:100%;padding:10px 14px;border:1.5px solid #d1d5db;border-radius:8px;font-size:0.95rem;box-sizing:border-box;outline:none;transition:border 0.2s;"
+          onfocus="this.style.borderColor='#0077a8'" onblur="this.style.borderColor='#d1d5db'">
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <label style="display:block;font-size:0.82rem;font-weight:600;color:#4b5563;margin-bottom:6px;">Region</label>
+        <select name="region" required
+          style="width:100%;padding:10px 14px;border:1.5px solid #d1d5db;border-radius:8px;font-size:0.95rem;box-sizing:border-box;outline:none;background:#fff;">
+          <option value="">Select region</option>
+          <option>United States</option>
+          <option>Canada</option>
+          <option>United Kingdom</option>
+          <option>European Union</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <label style="display:block;font-size:0.82rem;font-weight:600;color:#4b5563;margin-bottom:6px;">How would you sell or promote NERAI? <span style="font-weight:400;color:#9ca3af;">(brief)</span></label>
+        <textarea name="message" rows="3" placeholder="Tell us about your audience, clients, or sales approach&hellip;"
+          style="width:100%;padding:10px 14px;border:1.5px solid #d1d5db;border-radius:8px;font-size:0.95rem;box-sizing:border-box;outline:none;resize:vertical;font-family:inherit;transition:border 0.2s;"
+          onfocus="this.style.borderColor='#0077a8'" onblur="this.style.borderColor='#d1d5db'"></textarea>
+      </div>
+
+      <button type="submit" id="partnerSubmitBtn"
+        style="width:100%;padding:13px;background:#0077a8;color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;transition:background 0.2s;">
+        Submit Application &rarr;
+      </button>
+      <p style="margin:12px 0 0;text-align:center;font-size:0.78rem;color:#9ca3af;">We respond within 48 hours &bull; No upfront cost &bull; Up to 50% recurring</p>
+    </form>
+
+    <div id="partnerSuccess" style="display:none;text-align:center;padding:20px 0;">
+      <div style="font-size:2.5rem;margin-bottom:12px;color:#00a886;">&#x2713;</div>
+      <h3 style="color:#0d1f3c;margin:0 0 8px;">Application Received!</h3>
+      <p style="color:#4b5563;margin:0;font-size:0.95rem;">We'll review your application and respond within 48 hours.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openPartnerModal(type) {
+    document.getElementById('partnerTypeLabel').textContent = type + ' &mdash; Up to 50% recurring, zero upfront';
+    document.getElementById('partnerTypeInput').value = type;
+    document.getElementById('partnerSubjectInput').value = 'NERAI Partner Application \u2014 ' + type;
+    document.getElementById('partnerForm').style.display = 'block';
+    document.getElementById('partnerSuccess').style.display = 'none';
+    document.getElementById('partnerSubmitBtn').textContent = 'Submit Application \u2192';
+    document.getElementById('partnerSubmitBtn').disabled = false;
+    const modal = document.getElementById('partnerModal');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closePartnerModal() {
+    document.getElementById('partnerModal').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  document.getElementById('partnerModal').addEventListener('click', function(e) {
+    if (e.target === this) closePartnerModal();
+  });
+  function submitPartnerForm(e) {
+    e.preventDefault();
+    const btn = document.getElementById('partnerSubmitBtn');
+    btn.textContent = 'Sending\u2026';
+    btn.disabled = true;
+    const form = e.target;
+    const data = new FormData(form);
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(r => r.json()).then(r => {
+      if (r.success) {
+        document.getElementById('partnerForm').style.display = 'none';
+        document.getElementById('partnerSuccess').style.display = 'block';
+        setTimeout(closePartnerModal, 3500);
+      } else {
+        const name = data.get('name'), email = data.get('email'), pt = data.get('partner_type'), company = data.get('company'), region = data.get('region'), msg = data.get('message'), url = data.get('url');
+        window.location.href = 'mailto:kagan@neraicorp.com?subject=Partner%20Application%20%E2%80%94%20' + encodeURIComponent(pt) + '&body=' + encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nCompany/Audience: ' + company + '\nURL: ' + (url||'') + '\nRegion: ' + region + '\nPartner type: ' + pt + '\n\nApproach:\n' + (msg||''));
+        closePartnerModal();
+      }
+    }).catch(() => {
+      const name = data.get('name'), email = data.get('email'), pt = data.get('partner_type'), company = data.get('company'), region = data.get('region'), msg = data.get('message'), url = data.get('url');
+      window.location.href = 'mailto:kagan@neraicorp.com?subject=Partner%20Application%20%E2%80%94%20' + encodeURIComponent(pt) + '&body=' + encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nCompany/Audience: ' + company + '\nURL: ' + (url||'') + '\nRegion: ' + region + '\nPartner type: ' + pt + '\n\nApproach:\n' + (msg||''));
+      closePartnerModal();
     });
   }
 </script>
