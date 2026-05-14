@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NERAI</title>
-  <meta name="description" content="NERAI is a geopolitical risk intelligence platform that transforms global event data into actionable forecasts. Monitor, analyze, and anticipate political risk across 80+ countries." />
+  <meta name="description" content="NERAI is a geopolitical risk intelligence platform that transforms global event data into actionable forecasts. Monitor, analyze, and anticipate political risk across 60+ priority economies." />
 
   <!-- Paddle -->
   <script src="https://cdn.paddle.com/paddle/v2/paddle.js" defer></script>
@@ -1282,12 +1282,12 @@
 
     <div class="hero-stats">
       <div>
-        <div class="hero-stat-num">80+</div>
-        <div class="hero-stat-label">Countries monitored</div>
+        <div class="hero-stat-num">60+</div>
+        <div class="hero-stat-label">Priority economies</div>
       </div>
       <div>
-        <div class="hero-stat-num">20+</div>
-        <div class="hero-stat-label">Risk dimensions</div>
+        <div class="hero-stat-num">40+</div>
+        <div class="hero-stat-label">CAMEO risk dimensions</div>
       </div>
       <div>
         <div class="hero-stat-num">12M</div>
@@ -1407,7 +1407,7 @@
         <div class="step-num s2">02</div>
         <div class="step-title">Index Construction</div>
         <div class="step-text">
-          Events are classified across 20+ conflict dimensions — military escalation, terrorism,
+          Events are classified across 40+ CAMEO conflict and instability categories — military escalation, terrorism,
           political crisis, human rights — and aggregated into daily country-level indices.
         </div>
       </div>
@@ -1458,14 +1458,14 @@
             <div class="feature-icon fi-green">🔮</div>
             <div class="feature-body">
               <div class="feature-name">12-Month Forecasts</div>
-              <div class="feature-desc">Prophet-based time-series models with confidence bands project how each index will evolve through the year ahead.</div>
+              <div class="feature-desc">Multi-model statistical ensemble (ETS, Theta, Damped Trend, SES with drift, Linear Trend) weighted by expanding-window cross-validation MAPE &mdash; with confidence bands for each 12-month projection.</div>
             </div>
           </div>
           <div class="feature-item">
             <div class="feature-icon fi-amber">🌍</div>
             <div class="feature-body">
               <div class="feature-name">Country Profile Pages</div>
-              <div class="feature-desc">Deep-dive profiles for 80+ countries: risk score breakdowns, trend sparklines, and news event feeds.</div>
+              <div class="feature-desc">Deep-dive profiles for 60+ priority economies: risk score breakdowns, trend sparklines, and news event feeds.</div>
             </div>
           </div>
           <div class="feature-item">
@@ -1635,7 +1635,7 @@
             <div class="pipe-text">
               <strong>Event Classification & Filtering</strong>
               <span>Events are filtered by actor country and coded against
-              20+ CAMEO-based conflict and instability categories.</span>
+              40+ CAMEO-based conflict and instability categories.</span>
             </div>
           </div>
           <div class="pipe-step">
@@ -1649,9 +1649,8 @@
           <div class="pipe-step">
             <div class="pipe-num">4</div>
             <div class="pipe-text">
-              <strong>Forecasting: Facebook Prophet</strong>
-              <span>Industry-standard time-series models generate
-              12-month projections with upper/lower confidence intervals.</span>
+              <strong>Forecasting: Statistical Ensemble</strong>
+              <span>Multi-model forecasting using ETS, Theta, Damped Trend, SES with drift, and Linear Trend &mdash; weighted by expanding-window cross-validation MAPE.</span>
             </div>
           </div>
           <div class="pipe-step">
@@ -1687,8 +1686,8 @@
           <div class="ds-item">
             <div class="ds-icon">🔮</div>
             <div>
-              <div class="ds-label">Prophet Forecast Layer</div>
-              <div class="ds-desc">28,800 projection rows · 12-month horizon</div>
+              <div class="ds-label">Statistical Ensemble</div>
+              <div class="ds-desc">Multi-model · 12-month horizon · MAPE-weighted</div>
             </div>
             <span class="ds-badge">Models</span>
           </div>
@@ -1714,12 +1713,12 @@
           <div class="section-tag" style="margin-bottom:8px;">Coverage</div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
             <div>
-              <div style="font-size:1.4rem;font-weight:700;color:var(--white);font-family:'DM Serif Display',serif;">80+</div>
+              <div style="font-size:1.4rem;font-weight:700;color:var(--white);font-family:'DM Serif Display',serif;">60+</div>
               <div style="font-size:0.65rem;color:var(--silver);letter-spacing:0.06em;">Countries</div>
             </div>
             <div>
-              <div style="font-size:1.4rem;font-weight:700;color:var(--white);font-family:'DM Serif Display',serif;">20+</div>
-              <div style="font-size:0.65rem;color:var(--silver);letter-spacing:0.06em;">Risk Topics</div>
+              <div style="font-size:1.4rem;font-weight:700;color:var(--white);font-family:'DM Serif Display',serif;">40+</div>
+              <div style="font-size:0.65rem;color:var(--silver);letter-spacing:0.06em;">CAMEO Topics</div>
             </div>
             <div>
               <div style="font-size:1.4rem;font-weight:700;color:var(--white);font-family:'DM Serif Display',serif;">Daily</div>
@@ -2014,86 +2013,88 @@
   <div class="container">
     <div class="pricing-header">
       <div class="section-tag">Pricing</div>
-      <h2 class="pricing-title">From individual analysts to global risk teams.</h2>
-      <p class="pricing-sub">7-day free trial on all plans &mdash; no credit card required to start.</p>
+      <h2 class="section-title serif">From dashboard access to bespoke briefings.</h2>
+      <p class="section-subtitle pricing-sub">Researchers and analysts subscribe to the live dashboard. Decision-makers commission Strategic Briefings &mdash; deep, decision-ready PDF reports built on NERAI&rsquo;s causal models and 12-month forecasts.</p>
     </div>
     <div class="pricing-grid pricing-grid--4">
 
-      <!-- INDIVIDUAL -->
+      <!-- RESEARCHER -->
       <div class="pricing-card">
-        <div class="pricing-plan">Individual</div>
+        <div class="pricing-plan">Researcher</div>
         <div class="pricing-price">&euro;29<span>/mo</span></div>
         <div class="pricing-trial">&#10022; 7-day free trial</div>
         <ul class="pricing-features">
-          <li>Web dashboard &mdash; 80+ countries</li>
-          <li>All 20+ risk dimensions</li>
+          <li>Web dashboard &mdash; 60+ priority economies</li>
+          <li>Multi-dimensional CAMEO risk taxonomy</li>
           <li>Daily index updates</li>
           <li>What-If scenario analysis</li>
-          <li>3-month history</li>
+          <li>3-month rolling history</li>
           <li>1 seat</li>
         </ul>
         <a href="#" class="btn-paddle btn-paddle-outline"
-           onclick="openTrialModal('Individual','€29/mo'); return false;">
+           onclick="openTrialModal('Researcher','€29/mo'); return false;">
           Start 7-Day Trial &rarr;
         </a>
       </div>
 
-      <!-- PROFESSIONAL -->
+      <!-- ANALYST -->
       <div class="pricing-card">
-        <div class="pricing-plan">Professional</div>
+        <div class="pricing-plan">Analyst</div>
         <div class="pricing-price">&euro;149<span>/mo</span></div>
         <div class="pricing-trial">&#10022; 7-day free trial</div>
         <ul class="pricing-features">
-          <li>Everything in Individual</li>
-          <li>12-month full history</li>
+          <li>Everything in Researcher</li>
+          <li>13-month full history</li>
+          <li>12-month statistical forecasts (multi-model ensemble)</li>
+          <li>Granger causality network access</li>
           <li>Unlimited What-If scenarios</li>
           <li>CSV data export</li>
-          <li>API access</li>
-          <li>Country-specific risk alerts</li>
+          <li>Country-specific AI narrative briefings</li>
           <li>Priority support</li>
         </ul>
         <a href="#" class="btn-paddle btn-paddle-outline"
-           onclick="openTrialModal('Professional','€149/mo'); return false;">
+           onclick="openTrialModal('Analyst','€149/mo'); return false;">
           Start 7-Day Trial &rarr;
         </a>
       </div>
 
-      <!-- TEAM (Most Popular) -->
+      <!-- STRATEGIC BRIEFING (Featured) -->
       <div class="pricing-card pricing-card--featured">
-        <div class="pricing-badge">Most Popular</div>
-        <div class="pricing-plan">Team</div>
-        <div class="pricing-price">&euro;599<span>/mo</span></div>
-        <div class="pricing-trial">&#10022; 7-day free trial</div>
+        <div class="pricing-badge">Most Requested</div>
+        <div class="pricing-plan">Strategic Briefing</div>
+        <div class="pricing-price">From &euro;2,500<span>/report</span></div>
+        <div class="pricing-trial">&#10022; Delivered in 5-10 business days</div>
         <ul class="pricing-features">
-          <li>Everything in Professional</li>
-          <li>5 team seats included</li>
-          <li>Multi-user collaboration</li>
-          <li>Advanced alerting &amp; webhooks</li>
-          <li>Custom watchlists per seat</li>
-          <li>Onboarding session included</li>
-          <li>Priority support &amp; SLAs</li>
+          <li>Senior-Fellow-grade analytical PDF</li>
+          <li>20-30 pages, executive-ready</li>
+          <li>Country deep-dive or sector exposure focus</li>
+          <li>Causal map &amp; 12-month forecast included</li>
+          <li>Counter-thesis &amp; confidence labelling</li>
+          <li>Sourced and cited (CFR/RAND format)</li>
+          <li>1 revision round included</li>
+          <li>3 months Analyst access bundled</li>
         </ul>
-        <a href="#" class="btn-paddle btn-paddle-primary"
-           onclick="openTrialModal('Team','€599/mo'); return false;">
-          Start 7-Day Trial &rarr;
+        <a href="mailto:kagannerai@gmail.com?subject=Strategic%20Briefing%20Inquiry%20%E2%80%94%20NERAI"
+           class="btn-paddle btn-paddle-primary">
+          Commission a Briefing &rarr;
         </a>
       </div>
 
-      <!-- ENTERPRISE -->
+      <!-- BESPOKE -->
       <div class="pricing-card">
-        <div class="pricing-plan">Enterprise</div>
-        <div class="pricing-price" style="font-size:1.5rem; line-height:1.2;">Custom<br><span style="font-size:1rem; font-weight:500;">Pricing</span></div>
+        <div class="pricing-plan">Bespoke</div>
+        <div class="pricing-price" style="font-size:1.5rem; line-height:1.2;">Custom<br><span style="font-size:1rem; font-weight:500;">Engagement</span></div>
         <div class="pricing-trial" style="color:#b8860b;">&#10022; Tailored to your team</div>
         <ul class="pricing-features">
-          <li>Everything in Team</li>
-          <li>Unlimited seats</li>
-          <li>Custom integrations &amp; SSO</li>
-          <li>Dedicated account manager</li>
-          <li>SLA &amp; uptime guarantee</li>
+          <li>Quarterly retainer briefings</li>
           <li>Custom country coverage</li>
-          <li>White-label option available</li>
+          <li>Sector-specific causal models</li>
+          <li>Dedicated analyst time</li>
+          <li>Data feed licensing available</li>
+          <li>Co-branded research output</li>
+          <li>White-label deliverables on request</li>
         </ul>
-        <a href="mailto:kagannerai@gmail.com?subject=Enterprise%20Inquiry%20%E2%80%94%20NERAI"
+        <a href="mailto:kagannerai@gmail.com?subject=Bespoke%20Engagement%20Inquiry%20%E2%80%94%20NERAI"
            class="btn-paddle btn-paddle-outline">
           Contact Us &rarr;
         </a>
@@ -2209,7 +2210,7 @@
       <div class="partner-why-grid">
         <div class="partner-why-item">
           <div class="partner-why-head">Differentiated AI-native product</div>
-          <div class="partner-why-text">Causal Engine and AI Analyst layered on 80+ country coverage &mdash; not another news aggregator.</div>
+          <div class="partner-why-text">Causal Engine and AI Analyst layered on 60+ priority-economy coverage &mdash; not another news aggregator.</div>
         </div>
         <div class="partner-why-item">
           <div class="partner-why-head">Recurring lifetime commission</div>
