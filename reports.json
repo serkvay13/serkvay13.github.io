@@ -1,6 +1,14 @@
 {
   "reports": [
     {
+      "category": "Deep Dive",
+      "date": "May 14, 2026",
+      "excerpt": "Senior Fellow research brief by Serhan Ayik. EU 95%+ dependent on TSMC/Samsung for sub-7nm logic through 2028. NERAI US-China Tension Index at 25.7 (96th percentile). Three forward scenarios: Slow Bifurcation 68% (base), Taiwan Quarantine 22%, Bifurcation Collapse 10%. Intel Magdeburg PAUSED; TSMC Dresden (ESMC) at 35% nameplate; STMicro-GlobalFoundries Crolles-2 in legacy-node ramp.",
+      "published": "2026-05-14",
+      "slug": "2026-05-14-eu-semiconductor-supply-chain-geopolitical-risk-briefing",
+      "title": "EU Semiconductor Supply Chain — Geopolitical Risk Briefing 2026"
+    },
+    {
       "week": "W19",
       "dateRange": "May 12, 2026",
       "published": "2026-05-12",

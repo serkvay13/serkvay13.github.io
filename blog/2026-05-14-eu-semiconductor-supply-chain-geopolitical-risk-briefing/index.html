@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EU Semiconductor Supply Chain — Geopolitical Risk Briefing 2026 — NERAI Insights</title>
+  <meta name="description" content="Senior Fellow research brief by Serhan Ayik. EU's structural 95%+ dependence on TSMC/Samsung for advanced-node logic, ASML lithography monopoly, Japan specialty-chemicals leverage, and China rare-earth chokepoints. Three forward scenarios with 12-month NERAI projections."/>
+  <link rel="canonical" href="https://neraicorp.com/blog/2026-05-14-eu-semiconductor-supply-chain-geopolitical-risk-briefing/"/>
+  <meta property="og:title" content="EU Semiconductor Supply Chain — Geopolitical Risk Briefing 2026"/>
+  <meta property="og:description" content="Senior Fellow research brief. EU 95%+ dependent on TSMC/Samsung for sub-7nm logic. ASML's Dutch leverage, China rare-earth coercion patterns, Intel Magdeburg pause, ESMC Dresden ramp. 47-page analysis with three-scenario probability framework, sector allocation, 12-month watch list."/>
+  <meta property="og:url" content="https://neraicorp.com/blog/2026-05-14-eu-semiconductor-supply-chain-geopolitical-risk-briefing/"/>
+  <meta property="og:type" content="article"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0d1f3c; --teal: #0077a8; --teal2: #005f87;
+      --silver: #5a6b82; --white: #ffffff; --accent: #00a886;
+      --red: #c93048; --border: rgba(0,119,168,0.14);
+      --glass: rgba(255,255,255,0.85);
+    }
+    body { font-family: 'Inter', sans-serif; background: #fff; color: var(--navy); line-height: 1.7; }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 28px; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 64px;
+           background: var(--glass); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+    nav .inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; height: 100%;
+                  display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo-svg { height: 32px; }
+    .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
+    .nav-links a { font-size: 0.82rem; font-weight: 500; color: var(--silver); text-decoration: none;
+                    padding: 6px 12px; border-radius: 6px; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--teal); }
+    .nav-cta { background: linear-gradient(135deg, #005f87, #00a886) !important; color: #fff !important;
+                padding: 8px 18px !important; border-radius: 8px !important; font-weight: 600 !important; }
+    .article-header { padding: 104px 0 40px; background: linear-gradient(160deg, #f4f7fb 0%, #e8f4f8 100%);
+                        border-bottom: 1px solid var(--border); }
+    .breadcrumb { font-size: 0.75rem; color: var(--silver); margin-bottom: 20px; }
+    .breadcrumb a { color: var(--teal); text-decoration: none; }
+    .article-tag { display: inline-block; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em;
+                    text-transform: uppercase; color: var(--teal); background: rgba(0,119,168,0.08);
+                    border: 1px solid rgba(0,119,168,0.2); padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; }
+    .article-header h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem);
+                           line-height: 1.2; margin-bottom: 16px; }
+    .article-meta { font-family: 'Courier New', monospace; font-size: 0.75rem; color: var(--silver);
+                     display: flex; gap: 24px; flex-wrap: wrap; }
+    .meta-item { display: flex; align-items: center; gap: 6px; }
+    .author-byline { margin-top: 14px; font-size: 0.82rem; color: var(--silver); }
+    .author-byline strong { color: var(--navy); }
+    .article-body { padding: 56px 0 80px; }
+    .article-body h1, .article-body h2 {
+      font-family: 'DM Serif Display', serif; color: var(--navy);
+      margin: 40px 0 16px; line-height: 1.3;
+    }
+    .article-body h1 { font-size: 1.9rem; }
+    .article-body h2 { font-size: 1.45rem; }
+    .article-body h3 { font-size: 1.1rem; font-weight: 600; color: var(--teal); margin: 28px 0 10px; }
+    .article-body p { margin-bottom: 20px; color: #374151; font-size: 1rem; line-height: 1.8; }
+    .article-body ul { margin: 0 0 20px 20px; }
+    .article-body li { margin-bottom: 8px; color: #374151; }
+    .article-body strong { color: var(--navy); font-weight: 600; }
+    .article-body em { font-style: italic; }
+    .article-body code { font-family: 'Courier New', monospace; font-size: 0.88em; background: #f0f4ff;
+                           padding: 2px 6px; border-radius: 4px; color: var(--teal2); }
+    .article-body hr { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
+    .article-body a { color: var(--teal); }
+    .conf { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em;
+            text-transform: uppercase; padding: 2px 8px; border-radius: 4px; margin-right: 6px; vertical-align: middle; }
+    .conf-high { color: #065f46; background: #d1fae5; border: 1px solid #6ee7b7; }
+    .conf-mod  { color: #92400e; background: #fef3c7; border: 1px solid #fcd34d; }
+    .conf-low  { color: #7c2d12; background: #ffedd5; border: 1px solid #fdba74; }
+    .scenario-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin: 24px 0; }
+    .scenario-card { border: 1px solid var(--border); border-radius: 12px; padding: 18px 22px; background: #fafcfe; }
+    .scenario-card h4 { font-family: 'DM Serif Display', serif; font-size: 1.05rem; margin-bottom: 6px; color: var(--navy); }
+    .scenario-card .prob { display: inline-block; font-family: 'Courier New', monospace; font-size: 0.85rem;
+                          background: var(--teal); color: #fff; padding: 2px 10px; border-radius: 4px; margin-bottom: 8px; }
+    .scenario-card.best .prob { background: var(--accent); }
+    .scenario-card.worst .prob { background: var(--red); }
+    .scenario-card p { font-size: 0.92rem; color: #475569; margin: 0; line-height: 1.6; }
+    .article-cta { background: linear-gradient(135deg, #f4f7fb, #e8f4f8); border: 1px solid var(--border);
+                    border-radius: 12px; padding: 32px; margin: 48px 0 0; text-align: center; }
+    .article-cta h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; margin-bottom: 10px; }
+    .article-cta p { font-size: 0.9rem; color: var(--silver); margin-bottom: 20px; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, #005f87, #00a886);
+                color: #fff; text-decoration: none; padding: 12px 28px; border-radius: 8px;
+                font-weight: 600; font-size: 0.9rem; margin: 4px; }
+    .cta-btn.secondary { background: #fff; color: var(--teal); border: 1.5px solid var(--teal); }
+    .pdf-download { display: flex; align-items: center; gap: 18px;
+                    background: linear-gradient(135deg, #fafcff, #eff6fb);
+                    border: 1px solid var(--border); border-radius: 12px;
+                    padding: 18px 22px; margin: 32px 0; }
+    .pdf-download .pdf-icon { flex-shrink: 0; width: 48px; height: 48px;
+                              background: var(--teal); border-radius: 8px; color: #fff;
+                              display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.7rem; letter-spacing: 0.06em; }
+    .pdf-download .pdf-text { flex: 1; }
+    .pdf-download .pdf-text strong { display: block; color: var(--navy); margin-bottom: 2px; }
+    .pdf-download .pdf-text span { font-size: 0.82rem; color: var(--silver); }
+    .pdf-download a { background: var(--teal); color: #fff; padding: 10px 20px; border-radius: 8px;
+                      text-decoration: none; font-size: 0.85rem; font-weight: 600; white-space: nowrap; }
+    footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 36px 0; font-size: 0.8rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px;
+                     display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+    @media (max-width: 640px) {
+      .nav-links li:not(:last-child) { display: none; }
+      .article-header { padding: 90px 0 32px; }
+      .pdf-download { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="inner">
+    <a href="/" class="nav-logo">
+      <svg class="nav-logo-svg" viewBox="0 0 160 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="6"  cy="6"  r="3.2" fill="#1a2840"/><circle cx="16" cy="6"  r="3.2" fill="#00c8e0"/><circle cx="26" cy="6"  r="3.2" fill="#1a2840"/>
+        <circle cx="6"  cy="16" r="3.2" fill="#00c8e0"/><circle cx="16" cy="16" r="3.2" fill="#1a2840"/><circle cx="26" cy="16" r="3.2" fill="#00c8e0"/>
+        <circle cx="6"  cy="26" r="3.2" fill="#1a2840"/><circle cx="16" cy="26" r="3.2" fill="#00c8e0"/><circle cx="26" cy="26" r="3.2" fill="#1a2840"/>
+        <text x="48" y="32" font-family="'Inter', Arial, sans-serif" font-weight="800" font-size="26" letter-spacing="-0.5" fill="#1a2840">NER</text>
+        <text x="113" y="32" font-family="'Inter', Arial, sans-serif" font-weight="800" font-size="26" letter-spacing="-0.5" fill="#00b4d8">AI</text>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#platform">Platform</a></li>
+      <li><a href="/#methodology">Methodology</a></li>
+      <li><a href="/#usecases">Use Cases</a></li>
+      <li><a href="/blog/" class="active">Insights</a></li>
+      <li><a href="https://nerai-intelligence.streamlit.app/" target="_blank" class="nav-cta">Open Dashboard →</a></li>
+    </ul>
+  </div>
+</nav>
+<header class="article-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">neraicorp.com</a> / <a href="/blog/">Insights</a> / Deep Dive / EU Semiconductor Supply Chain — Geopolitical Risk Briefing 2026</div>
+    <div class="article-tag">Deep Dive · Senior Fellow Brief</div>
+    <h1>EU Semiconductor Supply Chain — Geopolitical Risk Briefing 2026</h1>
+    <div class="article-meta">
+      <span class="meta-item">📅 14 May 2026</span>
+      <span class="meta-item">📊 NERAI Strategic Insights Lab</span>
+      <span class="meta-item">📑 Research Brief · 27 pages</span>
+    </div>
+    <div class="author-byline">By <strong>Serhan Ayik</strong> — Founder &amp; Lead Geopolitical Risk Analyst, NERAI Strategic Insights Lab</div>
+  </div>
+</header>
+<main class="article-body">
+  <div class="container">
+<div class="pdf-download">
+  <div class="pdf-icon">PDF</div>
+  <div class="pdf-text">
+    <strong>Download the full 27-page Senior Fellow Research Brief</strong>
+    <span>Includes TOC · Three-scenario probability framework (68/22/10) · 16 numbered sources · 4 NERAI academic charts</span>
+  </div>
+  <a href="./NERAI_EU_Semiconductor_Briefing_2026_corrected.pdf" download>Download PDF →</a>
+</div>
+
+<h2>Bottom Line Up Front</h2>
+<p><span class="conf conf-high">High Confidence</span> The EU's semiconductor supply chain faces a <strong>structural 95%+ dependence on TSMC and Samsung for advanced-node logic through at least 2028</strong>. This is not a problem amenable to subsidy acceleration or regulatory intervention — it is a structural fact of the global value chain. NERAI's bilateral US-China Tension Index sits at <strong>25.7 (96th percentile)</strong> of the 365-day distribution, with three forward scenarios assigned probabilities <strong>68 / 22 / 10</strong>. <span class="conf conf-mod">Moderate Confidence</span> a major disruption event (any node going offline for &gt;72 hours) is estimated at <strong>34% within 12 months</strong>, concentrated in Q3–Q4 2026 when Taiwan's domestic political stability inflection coincides with both powers' international-support collapse.</p>
+
+<hr/>
+
+<h2>Key Findings</h2>
+<p><span class="conf conf-high">High Confidence</span> <strong>ASML's leverage is over-priced relative to Dutch political constraint.</strong> ASML retains the only commercially viable EUV lithography platform globally (95%+ monopoly), but Dutch government export-control policy under coalition pressure is the real binding constraint — not Chinese demand recovery. The 2023 Netherlands MFA export-control update remains the operative regime.</p>
+
+<p><span class="conf conf-high">High Confidence</span> <strong>EU Chips Act facility groundbreaks are real but execution velocity has collapsed.</strong> Intel's Magdeburg megafab was formally paused for at least 2 years (announced September 2024); TSMC's Dresden (ESMC joint venture, ~€10 billion total cost) is in equipment-installation phase but operating ~30% below nameplate; STMicroelectronics–GlobalFoundries Crolles-2 (Grenoble) is in early ramp producing 18nm FD-SOI legacy-node chips. The EU will remain &gt;95% dependent on TSMC and Samsung for sub-7nm logic through 2028.</p>
+
+<p><span class="conf conf-mod">Moderate Confidence</span> <strong>China's rare-earth coercion playbook is the dominant tail risk.</strong> The 2023 China gallium / germanium export-control announcement and 2024 graphite controls establish a clear pattern of weaponised dual-use exports following geopolitical friction. The closest documented analogues are the 2010 China–Japan rare-earth embargo (Senkaku/Diaoyu confrontation, retaliation within 60 days) and the 2017 THAAD / Lotte boycott (consumer-economy coercion within 90 days of US-aligned defensive deployment). Generic 1989 or 1990s analogies are NOT applicable.</p>
+
+<p><span class="conf conf-mod">Moderate Confidence</span> <strong>Russia and Ukraine specialty-gas leverage has evaporated.</strong> Ukraine and Russia together supplied approximately 70% of semiconductor-grade neon pre-2022 (Ukraine ~50% via Ingas Mariupol and Cryoin Odesa; Russia ~20%). Post-2022 substitution from Korean (Samsung subsidiary Siltron) and Australian (Lynas) suppliers has displaced this leverage. Current NERAI data shows neon-supply concentration risk fallen to historically normal levels.</p>
+
+<p><span class="conf conf-low">Low Confidence</span> <strong>The claim that EU Chips Act groundbreaks will materially reduce Taiwan / TSMC dependence by 2028 remains unproven</strong>. Magdeburg pause, Dresden capacity constraints, and Crolles-2 legacy-node focus together imply EU advanced-node sovereignty is at least 7–10 years away under current execution velocity.</p>
+
+<hr/>
+
+<h2>Three Forward Scenarios</h2>
+<div class="scenario-grid">
+  <div class="scenario-card best">
+    <h4>Slow Bifurcation — Base Case</h4>
+    <span class="prob">Probability: 68%</span>
+    <p>Creeping regionalisation: EU Chips Act facilities ramp slowly (Magdeburg pause continues, Dresden 35% nameplate, Crolles-2 legacy-node only). China retains advanced-node access via grey-market routes; Trump 2.0 maintains H-1B restrictions but no fab shutdowns. <strong>NERAI Tension Index 26–32 range</strong>; gradual decoupling without acute shock. EU automotive sees 5–8% friction-cost drag; equipment vendors (ASML, Applied, Lam) gain 8–15%; defence/aerospace gain 8–15% on government stockpiling.</p>
+  </div>
+  <div class="scenario-card">
+    <h4>Taiwan Quarantine — Escalation Case</h4>
+    <span class="prob">Probability: 22%</span>
+    <p>PRC imposes quarantine (not invasion) around Taiwan following a Q3–Q4 2026 trigger event. TSMC operations partially suspended for 14–60 days; EU automotive sees 20–35% production loss; semiconductor equipment vendors lose 5–10% on near-term order pause. <strong>NERAI Tension Index explodes from 25.7 to 38.0–42.0</strong>. Korean fabs become critical bottleneck — Samsung gains 12–18% on diversification benefit but at execution risk.</p>
+  </div>
+  <div class="scenario-card worst">
+    <h4>Bifurcation Collapse — Tail Risk</h4>
+    <span class="prob">Probability: 10%</span>
+    <p>Compounded shock: simultaneous Taiwan event + Korean political crisis + EU regulatory escalation. Sub-5nm logic global supply contracts 40–60%; EU industrial output -3% YoY. ASML revenue loss €1.3–2.0 billion (range, not point estimate); Magdeburg restart deferred indefinitely. Low-probability / catastrophic-impact — requires Congressional, EU Council, and Beijing escalation simultaneously.</p>
+  </div>
+</div>
+
+<hr/>
+
+<h2>Causal Network — Two Principal Propagation Chains</h2>
+<p><strong>Pathway 1: China Political Risk → Korean Industrial Output (6–8 week lag) → EU Chipset Availability (additional 2–4 weeks).</strong> Granger causality testing on 2020–2025 NERAI event data shows Chinese political-instability signals leading Korean industrial-output movements with a 6–8 week lag. Korean output, in turn, drives EU chipset availability with 2–4 week additional lag. Total propagation: 8–12 weeks.</p>
+
+<p><strong>Pathway 2: US Political Instability → Technology Export Controls (4–6 week lag) → TSMC EU Revenue (immediate).</strong> US political-instability spikes (administration transitions, congressional action) propagate to BIS export-control announcements within 4–6 weeks; TSMC's EU-bound revenue absorbs immediate impact when controls expand. This is the faster of the two pathways and the dominant short-window risk.</p>
+
+<p><strong>Counter-Intuitive Finding</strong>: Taiwan's <em>domestic</em> political stability reduces near-term cross-strait escalation risk within the 12-month window — but the tail-risk window 2027–2028 remains unchanged. The Lai Ching-te administration's January 2024 mandate gives Beijing fewer near-term provocations to react to; the longer-term structural confrontation is unaffected.</p>
+
+<hr/>
+
+<h2>Counter-Thesis: The "Capex Will Catch Up" Argument</h2>
+<p>The strongest opposing view holds that EU Chips Act capex (€43 billion programme), combined with national contributions from Germany, France, and the Netherlands, will close the advanced-node gap by 2027–2028. This view holds rigorously under the base case but <strong>fails catastrophically under escalation scenarios</strong>. The empirical record contradicts it on three points:</p>
+
+<p><strong>First</strong>, execution velocity has collapsed. Intel Magdeburg PAUSED (September 2024). TSMC Dresden at 35% nameplate. Crolles-2 producing legacy nodes only. <strong>Second</strong>, talent constraint is binding through 2028 — German electronics-engineer pipeline was not rebuilt after 2010 and cannot ramp at pace required. <strong>Third</strong>, even if capex executes flawlessly, sub-5nm process tooling depends on ASML EUV — itself subject to Dutch export-control political risk. Capex is necessary but not sufficient for sovereignty.</p>
+
+<hr/>
+
+<h2>Policy Recommendations (Operational)</h2>
+
+<h3>For European Commission</h3>
+<p><strong>1. Activate Critical Raw Materials Act (CRMA) safeguard mechanism</strong> for gallium, germanium, graphite, and neon — pre-authorise emergency procurement budget for 90-day strategic reserves. <em>Who: DG GROW + DG TRADE + Member State permanent representations. When: within 60 days. Metric: 90-day strategic reserve coverage for top-12 critical inputs.</em></p>
+
+<p><strong>2. Negotiate ESMC Dresden capacity acceleration with TSMC + German Federal Government</strong> — link additional state-aid tranche to milestones for 60% nameplate by Q4 2027. Use existing IPCEI Microelectronics II framework.</p>
+
+<p><strong>3. Coordinate with US BIS on third-country trans-shipment enforcement</strong> for advanced-node equipment via Export Administration Regulations Part 740 Supplement 3 alignment — closes the Malaysia / Vietnam re-export channel.</p>
+
+<p><strong>4. Defer Intel Magdeburg state-aid renegotiation</strong> to Q4 2026 pending Intel corporate-finance recovery and clarification of US administration semiconductor policy. Avoid premature commitment that locks EU into a paused project.</p>
+
+<h3>For Member-State Governments (Germany, France, Netherlands)</h3>
+<p><strong>5. Bilateral talent-pipeline agreement with India and South Korea</strong> on EU Blue Card fast-track for semiconductor process engineers — Crolles-2 and Dresden will hire 70–80% of advanced-node engineers from outside the EU. Without this, fab ramps stall regardless of capex.</p>
+
+<p><strong>6. Netherlands: maintain coalition discipline on ASML export-control regime</strong> — the 2023 framework remains operative; any unilateral relaxation triggers BIS retaliation and ESMC subsidy revocation risk.</p>
+
+<h3>For Institutional Investors and Corporate Buyers</h3>
+<p><strong>7. Sector allocation stance (12-month horizon)</strong>: Long ASML / Applied / Lam with Q3 strength-selling discipline. Long Samsung; cautious-long TSMC with put protection; scale into Intel weakness. Long specialty chemicals (Japan, Korea, Australia). Short EU automotive on supply-chain friction drag. Long defence / aerospace on geopolitical premium.</p>
+
+<p><strong>8. Watch list trigger events</strong> (12-month window): (i) Intel Magdeburg restart announcement; (ii) Chinese gallium / germanium tightening or expansion; (iii) Dutch coalition vote on ASML export controls; (iv) Taiwan domestic stability — Lai administration legislative agenda; (v) TSMC Dresden equipment-installation milestones; (vi) Korean Samsung diversification announcements.</p>
+
+<hr/>
+
+<h2>Conclusion</h2>
+<p>EU semiconductor sovereignty is at least 7–10 years away under current execution velocity. Decision-makers must treat this not as a forecasting problem amenable to hedging, but as a <strong>strategic positioning problem</strong>: the EU will operate from a structurally dependent position through 2028, and policy effort should focus on managing that dependency (strategic reserves, talent-pipeline diplomacy, ASML coalition discipline) rather than pretending it can be eliminated by capex announcements.</p>
+
+<p>The 68% base case (Slow Bifurcation) is the most defensible reading of current NERAI signals. The 22% Taiwan Quarantine and 10% Bifurcation Collapse scenarios are <em>not</em> point forecasts but quantified contingencies — they shape which sectors require hedging, not whether they are likely. The dominant short-window risk is the US political-instability → export-controls propagation chain; the dominant medium-window risk is China's rare-earth coercion playbook against EU automotive and industrial supply chains.</p>
+
+<hr/>
+
+<p><em>This is a summary of the full 27-page Senior Fellow Research Brief authored by Serhan Ayik for the NERAI Strategic Insights Lab. The full PDF includes a 16-source numbered bibliography, complete causal-network methodology, three-scenario probability tables with trigger conditions and 12-month NERAI projections, four NERAI academic charts (Tension Index trajectory, causal pathway network, scenario probability allocation, sector-conditional expected returns), the complete sectoral allocation table, and the 15-event 12-month watch list with quarterly milestone calendar.</em></p>
+
+<div class="pdf-download" style="margin-top: 32px;">
+  <div class="pdf-icon">PDF</div>
+  <div class="pdf-text">
+    <strong>Get the full Senior Fellow brief (27 pages)</strong>
+    <span>Complete analysis · 4 charts · bibliography · sectoral allocation table · 12-month watch list</span>
+  </div>
+  <a href="./NERAI_EU_Semiconductor_Briefing_2026_corrected.pdf" download>Download PDF →</a>
+</div>
+
+<div class="article-cta">
+  <h3>Track Supply-Chain Risk in Real-Time</h3>
+  <p>The NERAI Dashboard updates bilateral Tension, Cooperation, Military Escalation, and Dispute Settlement indices daily across 60+ priority economies. Monitor the 6 watch-list trigger conditions from this brief as they evolve.</p>
+  <a href="https://nerai-intelligence.streamlit.app/" class="cta-btn" target="_blank">Open NERAI Dashboard →</a>
+  <a href="/blog/" class="cta-btn secondary">All Insights</a>
+</div>
+
+  </div>
+</main>
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 NERAI Strategic Insights Lab · <a href="https://neraicorp.com">neraicorp.com</a></span>
+    <span>Data: GDELT · ACLED · World Bank · IMF · NERAI Bilateral Indices</span>
+    <span><a href="/blog/">← All Reports</a> · <a href="https://nerai-intelligence.streamlit.app/" target="_blank">Dashboard</a></span>
+  </div>
+</footer>
+</body>
+</html>
