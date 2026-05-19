@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Securitization Equilibrium — Russian Regime Stability Forecast Through May 2027 — NERAI Insights</title>
+  <meta name="description" content="A 24-page NERAI probability forecast by Serhan Ayik on Russian regime stability and coup risk through May 2027. Securitization-as-Stabilization framework. Three forward scenarios (Managed Securitization 35%, Constrained Escalation 45%, Rapid Consolidation 20%). Probabilistic framing only — not a deterministic prediction."/>
+  <link rel="canonical" href="https://neraicorp.com/blog/2026-05-19-securitization-equilibrium-russia-regime-stability-forecast/"/>
+  <meta property="og:title" content="The Securitization Equilibrium: A NERAI Probability Forecast for Russian Regime Stability Through May 2027"/>
+  <meta property="og:description" content="NERAI's Russia signal cluster (May 2026) shows acute near-term coup-risk elevation but declining 12-month forecast — the diagnostic signature of managed securitization, not regime decay. Three forward scenarios with probability ranges. Counter-thesis (Kendall-Taylor / Snegovaya cascade interpretation) and rebuttal. 60-day watch list with NERAI index thresholds. Probabilistic framing only."/>
+  <meta property="og:url" content="https://neraicorp.com/blog/2026-05-19-securitization-equilibrium-russia-regime-stability-forecast/"/>
+  <meta property="og:type" content="article"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0d1f3c; --teal: #0077a8; --teal2: #005f87;
+      --silver: #5a6b82; --white: #ffffff; --accent: #00a886;
+      --red: #c93048; --amber: #d97706; --green: #059669;
+      --border: rgba(0,119,168,0.14);
+      --glass: rgba(255,255,255,0.85);
+    }
+    body { font-family: 'Inter', sans-serif; background: #fff; color: var(--navy); line-height: 1.7; }
+    .container { max-width: 760px; margin: 0 auto; padding: 0 28px; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 64px;
+           background: var(--glass); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+    nav .inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; height: 100%;
+                  display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo-svg { height: 32px; }
+    .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
+    .nav-links a { font-size: 0.82rem; font-weight: 500; color: var(--silver); text-decoration: none;
+                    padding: 6px 12px; border-radius: 6px; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--teal); }
+    .nav-cta { background: linear-gradient(135deg, #005f87, #00a886) !important; color: #fff !important;
+                padding: 8px 18px !important; border-radius: 8px !important; font-weight: 600 !important; }
+    .article-header { padding: 104px 0 40px; background: linear-gradient(160deg, #f4f7fb 0%, #e8f4f8 100%);
+                        border-bottom: 1px solid var(--border); }
+    .breadcrumb { font-size: 0.75rem; color: var(--silver); margin-bottom: 20px; }
+    .breadcrumb a { color: var(--teal); text-decoration: none; }
+    .article-tag { display: inline-block; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em;
+                    text-transform: uppercase; color: var(--teal); background: rgba(0,119,168,0.08);
+                    border: 1px solid rgba(0,119,168,0.2); padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; }
+    .article-header h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem);
+                           line-height: 1.2; margin-bottom: 16px; }
+    .article-meta { font-family: 'Courier New', monospace; font-size: 0.75rem; color: var(--silver);
+                     display: flex; gap: 24px; flex-wrap: wrap; }
+    .meta-item { display: flex; align-items: center; gap: 6px; }
+    .author-byline { margin-top: 14px; font-size: 0.82rem; color: var(--silver); }
+    .author-byline strong { color: var(--navy); }
+    .article-body { padding: 56px 0 80px; }
+    .article-body h1, .article-body h2 {
+      font-family: 'DM Serif Display', serif; color: var(--navy);
+      margin: 40px 0 16px; line-height: 1.3;
+    }
+    .article-body h1 { font-size: 1.9rem; }
+    .article-body h2 { font-size: 1.45rem; }
+    .article-body h3 { font-size: 1.05rem; font-weight: 600; color: var(--teal); margin: 24px 0 8px; }
+    .article-body p { margin-bottom: 18px; color: #374151; font-size: 1rem; line-height: 1.75; }
+    .article-body ul { margin: 0 0 20px 20px; }
+    .article-body li { margin-bottom: 8px; color: #374151; }
+    .article-body strong { color: var(--navy); font-weight: 600; }
+    .article-body em { font-style: italic; }
+    .article-body hr { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
+    .article-body a { color: var(--teal); }
+    .conf { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em;
+            text-transform: uppercase; padding: 2px 8px; border-radius: 4px; margin-right: 6px; vertical-align: middle; }
+    .conf-high { color: #065f46; background: #d1fae5; border: 1px solid #6ee7b7; }
+    .conf-mod  { color: #92400e; background: #fef3c7; border: 1px solid #fcd34d; }
+    .conf-low  { color: #7c2d12; background: #ffedd5; border: 1px solid #fdba74; }
+    .scenario-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin: 24px 0; }
+    .scenario-card { border: 1px solid var(--border); border-radius: 12px; padding: 18px 22px; background: #fafcfe; }
+    .scenario-card h4 { font-family: 'DM Serif Display', serif; font-size: 1.05rem; margin-bottom: 6px; color: var(--navy); }
+    .scenario-card .prob { display: inline-block; font-family: 'Courier New', monospace; font-size: 0.85rem;
+                          background: var(--teal); color: #fff; padding: 2px 10px; border-radius: 4px; margin-bottom: 8px; }
+    .scenario-card.base .prob { background: var(--accent); }
+    .scenario-card.stress .prob { background: var(--amber); }
+    .scenario-card.upside .prob { background: var(--teal); }
+    .scenario-card p { font-size: 0.92rem; color: #475569; margin: 0; line-height: 1.6; }
+    .signal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
+    .signal-card { border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; background: #fafcff; }
+    .signal-card .lbl { font-size: 0.7rem; color: var(--silver); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+    .signal-card .val { font-family: 'Courier New', monospace; font-size: 1.05rem; color: var(--navy); font-weight: 700; }
+    .signal-card .pct { font-size: 0.78rem; color: var(--silver); font-weight: 600; }
+    .signal-card .pct.down { color: var(--green); }
+    .article-cta { background: linear-gradient(135deg, #f4f7fb, #e8f4f8); border: 1px solid var(--border);
+                    border-radius: 12px; padding: 32px; margin: 48px 0 0; text-align: center; }
+    .article-cta h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; margin-bottom: 10px; }
+    .article-cta p { font-size: 0.9rem; color: var(--silver); margin-bottom: 20px; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, #005f87, #00a886);
+                color: #fff; text-decoration: none; padding: 12px 28px; border-radius: 8px;
+                font-weight: 600; font-size: 0.9rem; margin: 4px; }
+    .cta-btn.secondary { background: #fff; color: var(--teal); border: 1.5px solid var(--teal); }
+    .pdf-download { display: flex; align-items: center; gap: 18px;
+                    background: linear-gradient(135deg, #fafcff, #eff6fb);
+                    border: 1px solid var(--border); border-radius: 12px;
+                    padding: 18px 22px; margin: 32px 0; }
+    .pdf-download .pdf-icon { flex-shrink: 0; width: 48px; height: 48px;
+                              background: var(--teal); border-radius: 8px; color: #fff;
+                              display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.7rem; letter-spacing: 0.06em; }
+    .pdf-download .pdf-text { flex: 1; }
+    .pdf-download .pdf-text strong { display: block; color: var(--navy); margin-bottom: 2px; }
+    .pdf-download .pdf-text span { font-size: 0.82rem; color: var(--silver); }
+    .pdf-download a { background: var(--teal); color: #fff; padding: 10px 20px; border-radius: 8px;
+                      text-decoration: none; font-size: 0.85rem; font-weight: 600; white-space: nowrap; }
+    .disclaimer-box { border-left: 4px solid var(--amber); background: #fef9ec; padding: 16px 20px;
+                      border-radius: 4px; font-size: 0.88rem; color: #475569; margin: 24px 0; line-height: 1.65; }
+    .disclaimer-box strong { color: var(--navy); }
+    .insight-box { border-left: 4px solid var(--accent); background: #f0fbf8; padding: 16px 20px;
+                   border-radius: 4px; margin: 24px 0; font-size: 0.95rem; }
+    .insight-box strong { color: var(--navy); }
+    footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 36px 0; font-size: 0.8rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px;
+                     display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+    @media (max-width: 640px) {
+      .nav-links li:not(:last-child) { display: none; }
+      .article-header { padding: 90px 0 32px; }
+      .pdf-download { flex-direction: column; align-items: flex-start; }
+      .signal-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="inner">
+    <a href="/" class="nav-logo">
+      <svg class="nav-logo-svg" viewBox="0 0 160 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="6"  cy="6"  r="3.2" fill="#1a2840"/><circle cx="16" cy="6"  r="3.2" fill="#00c8e0"/><circle cx="26" cy="6"  r="3.2" fill="#1a2840"/>
+        <circle cx="6"  cy="16" r="3.2" fill="#00c8e0"/><circle cx="16" cy="16" r="3.2" fill="#1a2840"/><circle cx="26" cy="16" r="3.2" fill="#00c8e0"/>
+        <circle cx="6"  cy="26" r="3.2" fill="#1a2840"/><circle cx="16" cy="26" r="3.2" fill="#00c8e0"/><circle cx="26" cy="26" r="3.2" fill="#1a2840"/>
+        <text x="48" y="32" font-family="'Inter', Arial, sans-serif" font-weight="800" font-size="26" letter-spacing="-0.5" fill="#1a2840">NER</text>
+        <text x="113" y="32" font-family="'Inter', Arial, sans-serif" font-weight="800" font-size="26" letter-spacing="-0.5" fill="#00b4d8">AI</text>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#platform">Platform</a></li>
+      <li><a href="/#methodology">Methodology</a></li>
+      <li><a href="/#usecases">Use Cases</a></li>
+      <li><a href="/blog/" class="active">Insights</a></li>
+      <li><a href="https://nerai-intelligence.streamlit.app/" target="_blank" class="nav-cta">Open Dashboard &rarr;</a></li>
+    </ul>
+  </div>
+</nav>
+<header class="article-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">neraicorp.com</a> / <a href="/blog/">Insights</a> / Forecast / The Securitization Equilibrium &mdash; Russian Regime Stability Through May 2027</div>
+    <div class="article-tag">Forecast &middot; Probability Brief &middot; NERAI-Unrestricted</div>
+    <h1>The Securitization Equilibrium: A NERAI Probability Forecast for Russian Regime Stability and Coup Risk Through May 2027</h1>
+    <div class="article-meta">
+      <span class="meta-item">&#128197; 19 May 2026</span>
+      <span class="meta-item">&#128202; NERAI Strategic Insights Lab</span>
+      <span class="meta-item">&#128209; Research Brief &middot; 24 pages</span>
+      <span class="meta-item">&#127479;&#127482; Russia &middot; 12-month horizon</span>
+    </div>
+    <div class="author-byline">By <strong>Serhan Ayik</strong> &mdash; Founder &amp; Lead Geopolitical Risk Analyst, NERAI Strategic Insights Lab</div>
+  </div>
+</header>
+<main class="article-body">
+  <div class="container">
+
+<div class="pdf-download">
+  <div class="pdf-icon">PDF</div>
+  <div class="pdf-text">
+    <strong>Download the full 24-page Probability Forecast</strong>
+    <span>Three forward scenarios &middot; NERAI bilateral index trajectories &middot; Counter-thesis (Kendall-Taylor / Snegovaya) and rebuttal &middot; 60-day watch list with index thresholds &middot; Policy recommendations across Washington, Beijing, Brussels &middot; Methodology &amp; legal disclaimer</span>
+  </div>
+  <a href="./NERAI_Securitization_Equilibrium_Russia_Forecast_2026.pdf" download>Download PDF &rarr;</a>
+</div>
+
+<div class="disclaimer-box">
+  <strong>Probabilistic Framing Notice.</strong> Every forward statement in this brief is a <em>conditional analytical inference about the direction and magnitude of probability shifts</em> &mdash; not a prediction of any specific event involving any specific individual. NERAI takes no position on, and offers no inference about, the choices any Russian, American, European, or other decision-maker will or should make. Probability ranges (35% / 45% / 20%) are structured analytical estimates, not quantitative forecasts. Russian decision-making is opaque; all scenarios carry irreducible uncertainty. Nothing in this brief constitutes financial, legal, or investment advice. Named individuals retain the presumption of innocence in all referenced legal proceedings.
+</div>
+
+<h2>Bottom Line Up Front</h2>
+<p><span class="conf conf-mod">Moderate Confidence</span> NERAI's Russia signal cluster as of mid-May 2026 shows an <strong>acute near-term elevation in coup-risk and military-institutional instability indices</strong>, but the underlying 12-month forecast trajectory for regime destabilisation is modestly <em>declining</em>, not accelerating &mdash; a distinction that reframes the threat picture from imminent rupture to <strong>managed fragility under intensifying paranoia</strong>.</p>
+
+<div class="signal-grid">
+  <div class="signal-card">
+    <div class="lbl">Russia Coup Index</div>
+    <div class="val">53.5 / 100</div>
+    <div class="pct">95th percentile &middot; 90-day rising</div>
+  </div>
+  <div class="signal-card">
+    <div class="lbl">12-month Coup Forecast</div>
+    <div class="val">0.110 &rarr; 0.070</div>
+    <div class="pct down">&minus;36% projected decline</div>
+  </div>
+  <div class="signal-card">
+    <div class="lbl">Russia Military Crisis</div>
+    <div class="val">53.4 / 100</div>
+    <div class="pct">90-day rising</div>
+  </div>
+  <div class="signal-card">
+    <div class="lbl">Govt Instability Alarm</div>
+    <div class="val">3.7 / 100</div>
+    <div class="pct down">12-mo forecast 0.100 &rarr; 0.050</div>
+  </div>
+  <div class="signal-card">
+    <div class="lbl">US-Russia Asymmetric Gap</div>
+    <div class="val">29.3 pts</div>
+    <div class="pct">Russia 48.1 vs. US 18.8 deteriorating-relations</div>
+  </div>
+  <div class="signal-card">
+    <div class="lbl">Military Escalation</div>
+    <div class="val">54.1 / 100</div>
+    <div class="pct down">12-mo 0.210 &rarr; 0.190</div>
+  </div>
+</div>
+
+<div class="insight-box">
+<strong>The diagnostic inversion.</strong> In systems undergoing genuine cascade-phase instability (Egypt 2011&ndash;13, Libya 2011, Thailand 2014), coup indices spike <em>and persist or accelerate</em>; forecasted probabilities do not decline. The NERAI Russia pattern is the inverse: near-term spike combined with a 36% projected decline in 12-month coup probability. This is the signature of <strong>acute threat-perception adjustment followed by institutional counter-mobilisation</strong> &mdash; not regime decay.
+</div>
+
+<hr/>
+
+<h2>Analytical Framework — Securitization as Stabilization</h2>
+<p>This brief assesses Russia's post-disclosure institutional trajectory through the lens of <em>securitization-as-stabilization</em>: the hypothesis that heightened regime-threat perception, when successfully channeled into visible institutional response (purges, security expansion, military resource reallocation), can paradoxically <strong>reinforce</strong> elite coordination around succession protocols rather than triggering cascading defection.</p>
+
+<p>The evidence for this framework operates at three levels:</p>
+<ul>
+  <li><strong>NERAI index structure</strong> &mdash; rising near-term threat perception <em>concurrent with</em> declining 12-month destabilisation probability is the diagnostic signature of managed threat response.</li>
+  <li><strong>Historical pattern</strong> &mdash; Putin's response to elite-fragmentation crises (2012&ndash;14 Bolotnaya wave, 2016&ndash;17 oligarch-prosecution wave) followed the same <em>securitisation &rarr; institutional response &rarr; elite re-stabilisation</em> arc.</li>
+  <li><strong>Academic consensus</strong> &mdash; Henry E. Hale's elite-coordination framework, Tatiana Stanovaya's siloviki-faction dynamics, and Mark Galeotti's institutional-competition analysis converge on the assessment that Russian autocratic stability depends not on coercive capacity but on elite credibility in succession management &mdash; credibility that <em>increases</em> when the leader demonstrates capacity for institutional response to threat signals.</li>
+</ul>
+
+<hr/>
+
+<h2>Three Forward Scenarios (12-Month Horizon, May 2026 &rarr; May 2027)</h2>
+<div class="scenario-grid">
+  <div class="scenario-card base">
+    <h4>Scenario 1 &mdash; Managed Securitization (Base Case)</h4>
+    <span class="prob">Analytical Likelihood: ~35%</span>
+    <p>Putin consolidates internal elite coordination around a war-extended, externally-securitised equilibrium. Recent removals are concluded as managed elite repositioning; FSO expansion is formalised and incorporated into factional resource-distribution agreements. Military spending stays at 5.5&ndash;6.0% of GDP. Internal factional competition continues but remains administrative and contained within security-service channels. No cascade-phase political crisis. NERAI projection: Coup Index 48&ndash;52, Govt Instability 2.5&ndash;4.0, Political Instability 0.050&ndash;0.070.</p>
+  </div>
+  <div class="scenario-card stress">
+    <h4>Scenario 2 &mdash; Constrained Escalation (Stress Case)</h4>
+    <span class="prob">Analytical Likelihood: ~45%</span>
+    <p>The disclosure crystallises elite doubt more deeply than the Kremlin response can address. Factional competition accelerates rather than stabilises. Purges expand beyond mid-level FSO/GRU personnel to higher-ranking commanders or oligarch-linked officials. A secondary cascading event (military setback, sanctions shock, leaked elite communication) occurs by Q3/Q4 2026. Succession speculation becomes semi-public through faction-aligned media. No regime collapse, but severe institutional strain. NERAI projection: Coup Index 55&ndash;70, Govt Instability 5.0&ndash;8.0, Military Escalation 0.220&ndash;0.250 (accelerating).</p>
+  </div>
+  <div class="scenario-card upside">
+    <h4>Scenario 3 &mdash; Rapid Consolidation (Upside Case)</h4>
+    <span class="prob">Analytical Likelihood: ~20%</span>
+    <p>Putin executes a decisive institutional reset by late Q2 2026. High-profile factional leaders perceived as succession threats are prosecuted or exiled on corruption/security charges. Succession protocol (likely involving a trusted technocrat) is formalised and communicated to elite. By Q3 2026 elite coordination has hardened decisively; coup indices decline sharply. Succession risk is <em>managed</em>, not eliminated &mdash; but it becomes <em>predictable</em>. NERAI projection: Coup Index 38&ndash;48, Govt Instability 1.5&ndash;2.5, Political Instability 0.040&ndash;0.060.</p>
+  </div>
+</div>
+
+<hr/>
+
+<h2>The Bilateral Asymmetry &mdash; External Securitization Substituting for Internal Settlement</h2>
+<p>A non-obvious but decisive insight emerges from the bilateral US-Russia indices. Russia's deteriorating-relations score stands at <strong>48.1</strong> while the US deteriorating-relations score is only <strong>18.8</strong> &mdash; a <strong>29.3-point asymmetric gap</strong>. Russia perceives threat escalation from the United States at roughly <em>2.5&times; the rate</em> the United States perceives threat from Russia.</p>
+
+<p>This perception gap is functional, not random. When internal elite cohesion is fragmented, external threat perception can serve as a unity-mechanism: elites coordinate <em>against</em> external threat because doing so provides cover for internal repositioning, and external military mobilisation generates resource flows that can be distributed to factional allies. The May 2026 environment mirrors the 2012&ndash;14 Bolotnaya-then-Ukraine arc: external threat perception is <em>elevated</em> relative to internal threat perception on the US side, creating opportunity for Putin-aligned factions to consolidate internally while claiming external-securitisation rationale. <span class="conf conf-high">High Confidence</span></p>
+
+<hr/>
+
+<h2>Counter-Thesis &mdash; The Autonomous Regime Collapse Interpretation</h2>
+<p>The strongest opposing view comes from CFR's <strong>Andrea Kendall-Taylor</strong> and CSIS Russia Program analyst <strong>Maria Snegovaya</strong>, who have argued that Ukraine war attrition, Western sanctions on oligarchs and banks, and demographic turnover within the security elite have <em>exhausted</em> the traditional mechanisms by which Putin managed elite coordination &mdash; factional bribery through resource-distribution, external securitisation through military adventure, and selective coercion against rival factions. In this framework, the recent disclosure is not a <em>symptom</em> of managed fragmentation but a <em>trigger</em> for cascade-phase breakdown.</p>
+
+<p><strong>Rebuttal.</strong> Kendall-Taylor and Snegovaya identify genuine structural constraints, but the NERAI data do not yet show cascade-phase elite breakdown. Their argument depends on resource constraints being <em>binding</em> on elite coordination &mdash; yet the 12-month Military Escalation forecast (0.190, essentially flat from current 0.210) implies NERAI's model is pricing in <em>continued</em> military spending at current intensity, not resource-constraint-forced demobilisation. Second, NERAI's Political Instability bilateral index (0.080) shows no spike in Russia's external-alignment signalling that would indicate younger oligarchs or military commanders seeking external support or negotiated settlement independent of Kremlin-faction coordination. Third, the oligarch wealth decline, while real, has not yet forced visible defection: the Kremlin has adjusted factional compensation through <em>security priority</em> rather than wealth redistribution. <span class="conf conf-mod">Moderate Confidence</span> the NERAI data are most consistent with managed internal repositioning under external securitisation, not autonomous cascade-phase collapse. Kendall-Taylor and Snegovaya may well be correct that <em>medium-term</em> (18&ndash;36 month) structural constraints will eventually force elite reckoning; but the 12-month forecast window shows NERAI predicting stabilisation, not breakdown.</p>
+
+<hr/>
+
+<h2>60-Day Watch List &mdash; NERAI Index Thresholds (19 May &rarr; 18 July 2026)</h2>
+<p>Eight monitorable triggers whose resolution will shift the scenario-probability allocation:</p>
+<ul>
+  <li><strong>Coup Index trajectory</strong> (weekly) &mdash; 50&ndash;55/100 through June maintains base case; spike above 60 sustained signals stress case; fall below 48 by late June signals upside case.</li>
+  <li><strong>Siloviki personnel moves</strong> (monthly) &mdash; 0&ndash;1 additional high-ranking removals (Lt. Gen or above, FSO/GRU/FSB/Rosgvardia) maintains base case; 2+ removals by August signal stress case; high-profile oligarch prosecution or exile signals upside case.</li>
+  <li><strong>Military Escalation forecast revision</strong> &mdash; current 12-month projection 0.190. Upward revision in subsequent NERAI cycles signals stress case; decline below 0.180 favours upside case.</li>
+  <li><strong>Political Instability bilateral index</strong> (weekly) &mdash; index crossing 0.15 signals cascade-phase risk; index declining below 0.060 by July signals upside case.</li>
+  <li><strong>Bilateral Tension Index</strong> &mdash; current US-Russia tension at 46.9 (7-day trend improving). Reversion above 55 signals external securitisation failing to stabilise elite coordination; sustained decline below 45 signals managed securitisation succeeding.</li>
+  <li><strong>FSO and military resource allocation</strong> (monthly) &mdash; visible expansion beyond current scope signals rapid consolidation; consolidation without public announcement signals managed securitisation; <em>reversal</em> of expansion would be anomalous and signal regime stress.</li>
+  <li><strong>Commodity anchors</strong> &mdash; Brent above $120/bbl sustains external-risk premium and resource flows for factional compensation. Wheat above $680/bushel indicates food-security concerns. Equity-market loss of confidence in US-Russia settlement capacity would force Kremlin to reassess.</li>
+  <li><strong>Ukraine military dynamics</strong> (weekly cross-check) &mdash; major Ukrainian territorial gains or Russian withdrawal from key sectors undermines the external-securitisation rationale and triggers elite reassessment (stress-case risk). Continued stalemate or Russian incremental advances maintain the securitisation equilibrium.</li>
+</ul>
+
+<hr/>
+
+<h2>Methodological Caveat</h2>
+<p>The current NERAI Coup Index elevation reflects genuine signal movement, but the underlying data-generation process merits explicit transparency. The index aggregates GDELT event-data clustering, structured analyst judgment, and proprietary NERAI sentiment analysis on Russian-language sources. A high-salience disclosure event of the type referenced in the full brief would naturally trigger increased GDELT frequency and elevated sentiment-analysis scores on succession-related terms. A portion of the current near-term elevation may reflect news-cycle amplification.</p>
+
+<p>However, the concurrent rise in <em>corroborating non-news institutional events</em> within a 60-day window suggests the NERAI spike captures genuine elite-repositioning activity, not merely media artifact. The 12-month forecast decline (&minus;36%) provides further calibration: if the spike were pure news-cycle noise, the forecast would show no material decline because underlying drivers would be unchanged. The forecast decline suggests the model is interpreting the near-term spike as acute response combined with institutional counter-response, with both dynamics expected to stabilise the regime by Q2 2027. This interpretation carries <span class="conf conf-mod">Moderate Confidence</span> &mdash; alternative readings (Kendall-Taylor / Snegovaya cascade interpretation) might interpret the same data as indicating that institutional responses are <em>inadequate</em> to address structural constraints.</p>
+
+<p>The NERAI index data are reliable; the <em>causal interpretation</em> of that signal (regime-destabilising vs. managed-repositioning) remains analytically contested. Readers should treat the 35%/45%/20% scenario allocation as ordinal rankings, not precise point estimates.</p>
+
+<hr/>
+
+<p><em>This is the open-access summary of the full 24-page Probability Forecast. The PDF includes the complete signal cluster analysis, the historical pattern-recognition comparison with 2012&ndash;14 and 2016&ndash;17 elite-coordination cycles, full external-actor matrix (Trump administration, Beijing, EU/NATO), the eight-track policy recommendation set, the quantitative architecture supporting the securitisation-as-stabilisation framework, expanded Methodological Caveat, full Bibliography with academic and institutional sources, Legal Notice and right-of-reply framework.</em></p>
+
+<div class="pdf-download" style="margin-top: 32px;">
+  <div class="pdf-icon">PDF</div>
+  <div class="pdf-text">
+    <strong>Get the full 24-page Probability Forecast</strong>
+    <span>Three scenarios &middot; NERAI signal architecture &middot; counter-thesis &amp; rebuttal &middot; 60-day watch list &middot; policy recommendations &middot; methodology &middot; bibliography</span>
+  </div>
+  <a href="./NERAI_Securitization_Equilibrium_Russia_Forecast_2026.pdf" download>Download PDF &rarr;</a>
+</div>
+
+<div class="article-cta">
+  <h3>Track Russian Regime Stability in Real Time</h3>
+  <p>The NERAI Dashboard updates Russia's Coup Index, Government Instability, Military Escalation, Political Repression, and US-Russia bilateral indices daily. Monitor the eight watch-list thresholds from this brief as they evolve between now and mid-July 2026.</p>
+  <a href="https://nerai-intelligence.streamlit.app/" class="cta-btn" target="_blank">Open NERAI Dashboard &rarr;</a>
+  <a href="/blog/" class="cta-btn secondary">All Insights</a>
+</div>
+
+  </div>
+</main>
+<footer>
+  <div class="footer-inner">
+    <span>&copy; 2026 NERAI Strategic Insights Lab &middot; <a href="https://neraicorp.com">neraicorp.com</a></span>
+    <span>Data: GDELT &middot; ACLED &middot; World Bank &middot; IMF &middot; NERAI Bilateral Indices</span>
+    <span><a href="/blog/">&larr; All Reports</a> &middot; <a href="https://nerai-intelligence.streamlit.app/" target="_blank">Dashboard</a></span>
+  </div>
+</footer>
+</body>
+</html>
