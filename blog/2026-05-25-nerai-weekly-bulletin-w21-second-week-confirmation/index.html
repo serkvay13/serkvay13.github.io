@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NERAI Weekly Bulletin — W21: Second-Week Confirmation, Lebanon Attrition Deepens (May 2026) — NERAI Insights</title>
+  <meta name="description" content="NERAI Week 21 (May 18–24, 2026) bulletin: second-week confirmation of the Indonesia &amp; Mexico EM-instability cluster. Lebanon strike campaign resumes May 19 and 22 despite the May 15 ceasefire extension; corridor remains the dataset's highest absolute Military Escalation theater (40.9/100)."/>
+  <link rel="canonical" href="https://neraicorp.com/blog/2026-05-25-nerai-weekly-bulletin-w21-second-week-confirmation/"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0d1f3c; --teal: #0077a8; --teal2: #005f87;
+      --silver: #5a6b82; --white: #ffffff; --accent: #00a886;
+      --red: #c93048; --border: rgba(0,119,168,0.14);
+      --glass: rgba(255,255,255,0.85);
+    }
+    body { font-family: 'Inter', sans-serif; background: #fff; color: var(--navy); line-height: 1.7; }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 28px; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 64px;
+           background: var(--glass); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+    nav .inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; height: 100%;
+                  display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo-svg { height: 32px; }
+    .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
+    .nav-links a { font-size: 0.82rem; font-weight: 500; color: var(--silver); text-decoration: none;
+                    padding: 6px 12px; border-radius: 6px; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--teal); }
+    .nav-cta { background: linear-gradient(135deg, #005f87, #00a886) !important; color: #fff !important;
+                padding: 8px 18px !important; border-radius: 8px !important; font-weight: 600 !important; }
+
+    /* ARTICLE HEADER */
+    .article-header { padding: 104px 0 40px; background: linear-gradient(160deg, #f4f7fb 0%, #e8f4f8 100%);
+                        border-bottom: 1px solid var(--border); }
+    .breadcrumb { font-size: 0.75rem; color: var(--silver); margin-bottom: 20px; }
+    .breadcrumb a { color: var(--teal); text-decoration: none; }
+    .article-tag { display: inline-block; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em;
+                    text-transform: uppercase; color: var(--teal); background: rgba(0,119,168,0.08);
+                    border: 1px solid rgba(0,119,168,0.2); padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; }
+    .article-header h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem);
+                           line-height: 1.2; margin-bottom: 16px; }
+    .article-meta { font-family: 'Courier New', monospace; font-size: 0.75rem; color: var(--silver);
+                     display: flex; gap: 24px; flex-wrap: wrap; }
+    .meta-item { display: flex; align-items: center; gap: 6px; }
+
+    /* ARTICLE BODY */
+    .article-body { padding: 56px 0 80px; }
+    .article-body h1, .article-body h2 {
+      font-family: 'DM Serif Display', serif; color: var(--navy);
+      margin: 40px 0 16px; line-height: 1.3;
+    }
+    .article-body h1 { font-size: 1.9rem; }
+    .article-body h2 { font-size: 1.45rem; }
+    .article-body h3 { font-size: 1.1rem; font-weight: 600; color: var(--teal); margin: 28px 0 10px; }
+    .article-body p { margin-bottom: 20px; color: #374151; font-size: 1rem; line-height: 1.8; }
+    .article-body ul { margin: 0 0 20px 20px; }
+    .article-body li { margin-bottom: 8px; color: #374151; }
+    .article-body strong { color: var(--navy); font-weight: 600; }
+    .article-body em { font-style: italic; }
+    .article-body code { font-family: 'Courier New', monospace; font-size: 0.88em; background: #f0f4ff;
+                           padding: 2px 6px; border-radius: 4px; color: var(--teal2); }
+    .article-body hr { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
+    .article-body a { color: var(--teal); }
+
+    /* CTA */
+    .article-cta { background: linear-gradient(135deg, #f4f7fb, #e8f4f8); border: 1px solid var(--border);
+                    border-radius: 12px; padding: 32px; margin: 48px 0 0; text-align: center; }
+    .article-cta h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; margin-bottom: 10px; }
+    .article-cta p { font-size: 0.9rem; color: var(--silver); margin-bottom: 20px; }
+    .cta-btn { display: inline-block; background: linear-gradient(135deg, #005f87, #00a886);
+                color: #fff; text-decoration: none; padding: 12px 28px; border-radius: 8px;
+                font-weight: 600; font-size: 0.9rem; }
+
+    /* FOOTER */
+    footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 36px 0; font-size: 0.8rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px;
+                     display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      .nav-links li:not(:last-child) { display: none; }
+      .article-header { padding: 90px 0 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a href="/" class="nav-logo">
+      <svg class="nav-logo-svg" viewBox="0 0 160 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="6"  cy="6"  r="3.2" fill="#1a2840"/>
+        <circle cx="16" cy="6"  r="3.2" fill="#00c8e0"/>
+        <circle cx="26" cy="6"  r="3.2" fill="#1a2840"/>
+        <circle cx="6"  cy="16" r="3.2" fill="#00c8e0"/>
+        <circle cx="16" cy="16" r="3.2" fill="#1a2840"/>
+        <circle cx="26" cy="16" r="3.2" fill="#00c8e0"/>
+        <circle cx="6"  cy="26" r="3.2" fill="#1a2840"/>
+        <circle cx="16" cy="26" r="3.2" fill="#00c8e0"/>
+        <circle cx="26" cy="26" r="3.2" fill="#1a2840"/>
+        <text x="48" y="32" font-family="'Inter', Arial, sans-serif" font-weight="800" font-size="26" letter-spacing="-0.5" fill="#1a2840">NER</text>
+        <text x="113" y="32" font-family="'Inter', Arial, sans-serif" font-weight="800" font-size="26" letter-spacing="-0.5" fill="#00b4d8">AI</text>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#platform">Platform</a></li>
+      <li><a href="/#methodology">Methodology</a></li>
+      <li><a href="/#usecases">Use Cases</a></li>
+      <li><a href="/blog/" class="active">Insights</a></li>
+      <li><a href="https://nerai-intelligence.streamlit.app/" target="_blank" class="nav-cta">Open Dashboard →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="article-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">neraicorp.com</a> / <a href="/blog/">Insights</a> / NERAI Weekly Bulletin — W21: Second-Week Confirmation</div>
+    <div class="article-tag">Weekly Pulse</div>
+    <h1>NERAI Weekly Bulletin — W21: Second-Week Confirmation, Lebanon Attrition Deepens (May 2026)</h1>
+
+<p><strong>Published:</strong> May 25, 2026 | <strong>Author:</strong> NERAI Intelligence Team | <strong>Category:</strong> Weekly Risk Briefing | <strong>Coverage:</strong> Week 21 (May 18–24, 2026) | <strong>Data window:</strong> indices through May 15, 2026</p>
+
+<hr/>
+
+<h2>Executive Summary</h2>
+
+<p>Week 21 prints a second-week confirmation of the dual signal Week 20 first surfaced. The Indonesia &amp; Mexico emerging-market democratic-backsliding cluster has not unwound on the latest data cycle — Political Instability remains at 25.1/100 in Indonesia and 25.0/100 in Mexico, with Political Repression sustained at 21.6 and 17.3 respectively. The Lebanon attrition theater that NERAI flagged as the Middle East corridor's exit valve in W20 hardened in the news cycle: Israeli airstrikes on May&nbsp;19 killed at least 22 people in Deir Qanoun an-Naher, Nabatieh and Kfar Sir, and another wave on May&nbsp;22 killed six Lebanese paramedics across two separate strikes — both events occurring <em>after</em> the May&nbsp;15 ceasefire extension was formalized for a further 45 days. Mexico's bilateral signal stiffened on May&nbsp;19 when President Sheinbaum publicly reframed the Rocha Moya extradition standoff as a reciprocity dispute (269 Mexican requests, zero handed over). The data window remains the May&nbsp;15 index cycle; a fresh data refresh is pending.</p>
+
+<h2>Top Risk Signals (Week 21)</h2>
+
+<p>The ten highest negative-side index readings on the current data cycle:</p>
+
+<ul>
+<li><strong>Lebanon — Military Escalation: 40.9/100</strong> (+3.4 pts WoW) — dataset's highest absolute reading, second consecutive week.</li>
+<li><strong>Lebanon — Military Clash: 38.5/100</strong> (+6.0 pts WoW) — corroborated by May&nbsp;19 and May&nbsp;22 strike clusters.</li>
+<li><strong>Niger — Military Escalation: 32.4/100</strong> (−3.9 pts WoW) — elevated; Sahel insurgency baseline holds.</li>
+<li><strong>Gaza Strip — Military Escalation: 30.6/100</strong> (−5.9 pts WoW).</li>
+<li><strong>Ukraine — Military Escalation: 28.0/100</strong> (−2.9 pts WoW).</li>
+<li><strong>Israel — Military Escalation: 26.7/100</strong> (−4.2 pts WoW).</li>
+<li><strong>Indonesia — Political Instability: 25.1/100</strong> (+14.5 pts WoW vs the W20 base period) — surge confirmed.</li>
+<li><strong>Mexico — Political Instability: 25.0/100</strong> (+15.0 pts WoW vs the W20 base period) — parallel surge confirmed.</li>
+<li><strong>Iraq — Military Escalation: 24.5/100</strong> (+0.8 pts WoW) — stable.</li>
+<li><strong>Kuwait — Military Escalation: 24.1/100</strong> (+8.9 pts WoW) — Gulf spillover watch.</li>
+</ul>
+
+<p><em>Note on the data window: the indices file's most recent date is May&nbsp;15, 2026. The numerical readings above therefore reflect the same 7-day window NERAI's W20 bulletin used. The W21 framing focuses on what news flow from May&nbsp;18–24 — outside the index window — has confirmed, contradicted or extended.</em></p>
+
+<h2>EM Cluster — Confirmation, Not Reversal</h2>
+
+<p>The defining test of any single-week +14 to +16 point signal is whether it holds on the second print. Through the news cycle of May&nbsp;18–24, the Indonesia and Mexico clusters held. Amnesty International published a focused report on May&nbsp;21, 2026 documenting coordinated military disinformation campaigns under the Prabowo administration that brand activists and journalists as "foreign agents" — a tactic Amnesty characterizes as a systematic shift in the Indonesian state's response to civic dissent rather than incidental enforcement. The Council on Foreign Relations published a parallel analysis warning that "Prabowo's crackdown could escalate violence." Both readings are consistent with the +16.2-point Political Repression surge NERAI captured in W20.</p>
+
+<p>Mexico's W20 cluster correlated with the April&nbsp;29 indictment of Sinaloa Governor Rubén Rocha Moya. On May&nbsp;19, President Sheinbaum reframed the entire standoff at her daily press conference: Foreign Affairs Undersecretary Roberto Velasco read figures showing 269 extradition requests sent by Mexico to the United States since January&nbsp;2018, 36 rejected, 233 still pending, and zero handed over. The implicit position is that Mexico will process Rocha Moya's surrender only if and when Washington unlocks the pending Mexican requests — a structural reciprocity bind, not a tactical refusal. This stiffens the bilateral signal and is consistent with a second-week reading on Government Instability holding at 23.1/100.</p>
+
+<h2>Regional Spotlight — Lebanon Strike Campaign Resumes Post-Extension</h2>
+
+<p>Lebanon is the corridor's exit valve in NERAI's index reading, and the news cycle in W21 hardened that read. On May&nbsp;15, 2026 the Israel–Lebanon ceasefire was formally extended for a further 45 days. The strikes resumed within four days. On May&nbsp;19, at least 22 people, including women and children, were killed in Israeli airstrikes in Deir Qanoun an-Naher, Nabatieh and Kfar Sir in southern Lebanon. On May&nbsp;22, six Lebanese paramedics were killed in two separate strikes in Hanaway and Deir Qanoun an-Naher. President Joseph Aoun publicly condemned the "continuing violations," noting that house demolitions and strikes on places of worship have continued through the ceasefire window. The pattern — a formal extension followed within days by a fresh strike cluster — is the operational profile of a degraded ceasefire rather than a holding one. NERAI's 40.9/100 Lebanon Military Escalation reading is now the dataset's longest-running top-slot signal.</p>
+
+<h2>Emerging Signal — Kyrgyzstan Watch Confirmed</h2>
+
+<p><strong>Kyrgyzstan — Political Instability and Coup Risk:</strong> both indices remain above the 8.0/100 noise floor on the W21 cycle (8.1 and 8.7 respectively) at 14.7× and 9.7× WoW ratios from near-zero baselines. NERAI's W20 watch-list classification is upgraded to a second-week confirmation. Sub-threshold absolute scores, but the persistence of the rate-of-change profile is the signature investors and country-risk teams should be tracking for a possible 4–6 week development cycle.</p>
+
+<h2>Market Implications</h2>
+
+<ul>
+<li><strong>EM Sovereigns:</strong> Confirmed second-week prints on Indonesia and Mexico Political Instability mean the structural political-risk repricing case is more credible than it was on a single-week reading. USD/IDR and USD/MXN forward curves at 60–120 bps widening risk; Indonesia and Mexico 10y CDS at +15 to +25 bps mark-to-market exposure.</li>
+<li><strong>Lebanon &amp; Middle East:</strong> The May&nbsp;19 and May&nbsp;22 strike clusters undermine the W20 thesis of regional de-escalation. Brent's Iran-risk premium remains compressed, but a Lebanon-corridor escalation pathway is now an active scenario rather than a residual tail.</li>
+<li><strong>Bilateral US–Mexico:</strong> Sheinbaum's May&nbsp;19 reciprocity framing locks in an extended diplomatic stalemate. Watch for U.S. Northern Command posture changes, any Treasury OFAC action against Mexican-state entities, or a Sheinbaum cabinet reshuffle as escalation tells.</li>
+<li><strong>Watch:</strong> Whether the data cycle refreshes with May&nbsp;18–24 prints in the coming days. A confirmed third-week Indonesia/Mexico reading would move the cluster from "structural risk" to "regime-change probability" pricing.</li>
+</ul>
+
+<h2>Methodology Note</h2>
+
+<p>NERAI indices are constructed from daily signal ingestion across GDELT (event data), ACLED (conflict events), World Bank and IMF economic indicators, and satellite-derived mobility and infrastructure signals. Scores represent normalized probabilistic risk levels (0.00–1.00) — reported here scaled to 0–100 — derived from causal-network models spanning 2,400+ country–topic interaction pairs. 12-month trend projections are generated via Prophet-based time-series models fit independently per country-topic pair.</p>
+
+<p>This briefing reflects the W21 reading off the current index cycle, with the indices file's last date being May 15, 2026 (data refresh pending). The narrative integrates news flow through May 24, 2026. Scores update daily.</p>
+
+<hr/>
+
+<p><em>Access live data, country deep-dives, and AI-generated briefings at <a href="https://nerai-intelligence.streamlit.app">nerai-intelligence.streamlit.app</a>. Full platform access includes 60 countries, 40 risk dimensions, daily updates, and 12-month AI forecasts. 7-day trial available.</em></p>
+
+    <div class="article-cta">
+      <h3>Access the Full NERAI Dashboard</h3>
+      <p>Daily indices, 12-month AI forecasts, causal network analysis, and intelligence briefings across 60 countries.</p>
+      <a href="https://nerai-intelligence.streamlit.app/" class="cta-btn" target="_blank">Start 7-Day Trial →</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 NERAI Strategic Insights Hub · <a href="https://neraicorp.com">neraicorp.com</a></span>
+    <span>Data: GDELT · ACLED · World Bank · IMF · Satellite</span>
+    <span><a href="/blog/">← All Reports</a> · <a href="https://nerai-intelligence.streamlit.app/" target="_blank">Dashboard</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
