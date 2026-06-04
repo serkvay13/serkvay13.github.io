@@ -2,6 +2,14 @@
   "reports": [
     {
       "category": "Forecast",
+      "date": "June 4, 2026",
+      "excerpt": "A NERAI Political Risk Forecast by Serhan Ayik assessing whether the 2026 US midterm elections function as an institutional release valve or become a contested site of democratic stress. The brief evaluates the current US political-crisis signal cluster, including elevated authoritarianism, pressure-on-parties, repression-tactics and Newark curfew indicators, alongside the US-Iran variable and market-pricing divergence. Three forward scenarios are assessed through Q1 2027: Contained Polarisation 60% base case, Jammed Release Valve 25% worst case, and Accelerated Consolidation 15% tail risk. Probabilistic framing only — not a deterministic prediction.",
+      "published": "2026-06-04",
+      "slug": "2026-06-04-release-valve-test-us-midterms-forecast",
+      "title": "The Release Valve Test: A NERAI Probability Forecast for the 2026 US Midterms and the Political-Crisis Signal Trajectory Through Q1 2027"
+   },
+    {
+      "category": "Forecast",
       "date": "June 3, 2026",
       "excerpt": "A 28-page NERAI Probability Forecast by Serhan Ayik. Pakistan's authoritarianism index spike (level 0.012, 99.4th percentile, +438% 7-day, z90=3.677) signals not an imminent military coup but the quantitative signature of institutional codification — the 27th Constitutional Amendment, passed November 2025 and analysed by Chatham House on 2 December 2025, formally embeds military influence through judicial subordination and Judicial Commission restructuring. Equilibrium-phase consolidation analogous to Turkey post-2016 or Hungary post-2010, not rupture-phase instability. Three forward scenarios: Managed Hybrid Equilibrium 60% (base), Escalation to Overt Military Rule 25% (stress), Negotiated Liberalisation 15% (tail). 14-day watch list anchored to IMF EFF Fourth Review (Q3 2026), Supreme Court PTI rulings, SBP usable-reserves thresholds ($10bn floor / $15bn comfort), Khan trial trajectory, and Corps Commanders Conference rhetoric. Counter-thesis (opposition rhetoric noise hypothesis) fully engaged and rebutted. Probabilistic framing only — not a deterministic prediction.",
       "published": "2026-06-03",
