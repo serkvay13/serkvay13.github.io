@@ -2065,9 +2065,13 @@
           <li>3-month rolling history</li>
           <li>1 seat</li>
         </ul>
-        <a href="https://buy.stripe.com/9B6cN75LTbGS1D2aAxcQU00" target="_blank" rel="noopener" class="btn-paddle btn-paddle-outline">
+        <a href="#" class="btn-paddle btn-paddle-outline"
+           onclick="openTrialModal('Researcher','€29/mo'); return false;">
           Start 7-Day Trial &rarr;
         </a>
+        <div style="text-align:center;margin-top:8px;">
+          <a href="https://buy.stripe.com/9B6cN75LTbGS1D2aAxcQU00" target="_blank" rel="noopener" style="font-size:0.78rem;color:#0077a8;text-decoration:none;">or subscribe now &rarr;</a>
+        </div>
       </div>
 
       <!-- ANALYST -->
@@ -2573,6 +2577,13 @@
       <input type="hidden" name="subject" id="trialSubjectInput" value="NERAI Trial Request">
       <input type="hidden" id="trialPlanInput" name="plan" value="">
       <div style="margin-bottom:16px;">
+        <label style="display:block;font-size:0.82rem;font-weight:600;color:#4b5563;margin-bottom:6px;">Plan</label>
+        <select id="trialPlanSelect" name="plan_select" style="width:100%;padding:10px 14px;border:1.5px solid #d1d5db;border-radius:8px;font-size:0.95rem;box-sizing:border-box;outline:none;background:#fff;">
+          <option value="Researcher">Researcher &mdash; &euro;29/mo</option>
+          <option value="Analyst">Analyst &mdash; &euro;149/mo</option>
+        </select>
+      </div>
+      <div style="margin-bottom:16px;">
         <label style="display:block;font-size:0.82rem;font-weight:600;color:#4b5563;margin-bottom:6px;">Full Name</label>
         <input type="text" name="name" required placeholder="John Smith"
           style="width:100%;padding:10px 14px;border:1.5px solid #d1d5db;border-radius:8px;font-size:0.95rem;box-sizing:border-box;outline:none;transition:border 0.2s;"
@@ -2600,7 +2611,7 @@
     <div id="trialSuccess" style="display:none;text-align:center;padding:20px 0;">
       <div style="font-size:2.5rem;margin-bottom:12px;">✓</div>
       <h3 style="color:#0d1f3c;margin:0 0 8px;">Request Received!</h3>
-      <p style="color:#4b5563;margin:0;font-size:0.95rem;">We'll send your trial access to your email within 24 hours.</p>
+      <p style="color:#4b5563;margin:0;font-size:0.95rem;">Check your email — we've just sent your access code (usually within a minute).</p>
     </div>
   </div>
 </div>
@@ -2609,6 +2620,7 @@
   function openTrialModal(plan, price) {
     document.getElementById('trialPlanLabel').textContent = plan + ' Plan — ' + price + ' · 7-day free trial';
     document.getElementById('trialPlanInput').value = plan;
+    var _ps = document.getElementById('trialPlanSelect'); if (_ps) { _ps.value = plan; }
     document.getElementById('trialSubjectInput').value = 'NERAI Trial Request — ' + plan + ' Plan';
     document.getElementById('trialForm').style.display = 'block';
     document.getElementById('trialSuccess').style.display = 'none';
@@ -2627,29 +2639,25 @@
   });
   function submitTrialForm(e) {
     e.preventDefault();
-    const btn = document.getElementById('trialSubmitBtn');
-    btn.textContent = 'Sending…';
-    btn.disabled = true;
-    const form = e.target;
-    const data = new FormData(form);
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    }).then(r => r.json()).then(r => {
-      if (r.success) {
-        document.getElementById('trialForm').style.display = 'none';
-        document.getElementById('trialSuccess').style.display = 'block';
-        setTimeout(closeTrialModal, 3000);
-      } else {
-        // fallback: mailto
-        const name = data.get('name'), email = data.get('email'), plan = data.get('plan'), company = data.get('company');
-        window.location.href = `mailto:kagan@neraicorp.com?subject=Trial%20Request%20%E2%80%94%20NERAI%20${plan}&body=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0ACompany:%20${encodeURIComponent(company||'N/A')}%0APlan:%20${plan}`;
-        closeTrialModal();
-      }
-    }).catch(() => {
-      const name = data.get('name'), email = data.get('email'), plan = data.get('plan'), company = data.get('company');
-      window.location.href = `mailto:kagan@neraicorp.com?subject=Trial%20Request%20%E2%80%94%20NERAI%20${plan}&body=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0ACompany:%20${encodeURIComponent(company||'N/A')}%0APlan:%20${plan}`;
+    var btn = document.getElementById('trialSubmitBtn');
+    btn.textContent = 'Sending…'; btn.disabled = true;
+    var form = e.target;
+    var payload = {
+      name: form.name.value,
+      email: form.email.value,
+      company: form.company.value,
+      plan: document.getElementById('trialPlanSelect').value
+    };
+    fetch('https://script.google.com/macros/s/AKfycbwS9IePFapxHrgfb0u597E4kyYf2BtdOgvUSNDee0Mw8Jc061aM2JP5fwEdLqjkeqWI/exec', {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    }).then(function () {
+      document.getElementById('trialForm').style.display = 'none';
+      document.getElementById('trialSuccess').style.display = 'block';
+      setTimeout(closeTrialModal, 4500);
+    }).catch(function () {
+      window.location.href = 'mailto:kagan@neraicorp.com?subject=Trial%20Request%20NERAI%20' + encodeURIComponent(payload.plan) + '&body=' + encodeURIComponent('Name: ' + payload.name + '\nEmail: ' + payload.email + '\nCompany: ' + (payload.company || 'N/A') + '\nPlan: ' + payload.plan);
       closeTrialModal();
     });
   }
