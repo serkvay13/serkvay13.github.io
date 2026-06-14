@@ -2008,6 +2008,125 @@
 
 
 <!-- ── PRICING ────────────────────────────────────────── -->
+<!-- ── SUPPLY CHAIN & MARITIME INTELLIGENCE ─────────────── -->
+<section id="supply" style="background:linear-gradient(135deg,#0a1628 0%,#0d2240 60%,#0a1c34 100%);color:#e6eefb;overflow:hidden;">
+  <style>
+    #supply .sg-wrap{max-width:1100px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;}
+    #supply .sg-tag{font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#3fd0e0;margin-bottom:14px;}
+    #supply .sg-title{font-family:'DM Serif Display',serif;font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.12;margin:0 0 16px;color:#f3f8ff;}
+    #supply .sg-sub{font-size:1rem;line-height:1.7;color:#9fb4d0;max-width:520px;margin-bottom:22px;}
+    #supply .sg-list{list-style:none;padding:0;margin:0;display:grid;gap:12px;}
+    #supply .sg-list li{display:flex;gap:12px;align-items:flex-start;font-size:0.92rem;color:#cdd9ec;}
+    #supply .sg-ic{flex:0 0 26px;height:26px;border-radius:7px;display:grid;place-items:center;background:rgba(63,208,224,0.12);border:1px solid rgba(63,208,224,0.3);font-size:0.85rem;}
+    #supply .sg-panel{position:relative;background:rgba(4,12,26,0.55);border:1px solid rgba(63,208,224,0.18);border-radius:18px;padding:26px;box-shadow:0 0 60px rgba(0,140,180,0.12);}
+    #supply .sg-corr{position:relative;height:150px;margin-bottom:18px;}
+    #supply .sg-route{fill:none;stroke:rgba(120,160,210,0.35);stroke-width:2;}
+    #supply .sg-flow{fill:none;stroke:#3fd0e0;stroke-width:2.4;stroke-dasharray:6 12;stroke-linecap:round;animation:sgflow 1.6s linear infinite;}
+    @keyframes sgflow{to{stroke-dashoffset:-36;}}
+    #supply .sg-node{transform-box:fill-box;transform-origin:center;}
+    #supply .sg-node circle{animation:sgpulse 2.4s ease-in-out infinite;}
+    @keyframes sgpulse{0%,100%{opacity:.55;r:5;}50%{opacity:1;r:7;}}
+    #supply .sg-node.crit circle{animation:sgcrit 1.3s ease-in-out infinite;}
+    @keyframes sgcrit{0%,100%{opacity:.7;r:6;}50%{opacity:1;r:9.5;}}
+    #supply .sg-nlbl{font-size:8.5px;fill:#aebfd8;font-family:Inter,sans-serif;}
+    #supply .sg-gauge-l{display:flex;justify-content:space-between;font-size:0.7rem;color:#8aa0bc;margin-bottom:6px;}
+    #supply .sg-track{height:12px;border-radius:8px;background:rgba(255,255,255,0.06);overflow:hidden;}
+    #supply .sg-fill{height:100%;border-radius:8px;width:0;background:linear-gradient(90deg,#22c55e,#f59e0b 60%,#e05060);animation:sgfill 1.8s ease-out forwards;box-shadow:0 0 14px rgba(229,80,96,0.5);}
+    @keyframes sgfill{to{width:88%;}}
+    #supply .sg-chips{display:flex;gap:10px;margin-top:18px;}
+    #supply .sg-chip{flex:1;background:rgba(4,12,26,0.6);border:1px solid rgba(120,160,210,0.18);border-radius:11px;padding:11px 10px;text-align:center;}
+    #supply .sg-chip b{display:block;font-size:1.25rem;font-weight:800;}
+    #supply .sg-chip span{font-size:0.56rem;color:#8aa0bc;letter-spacing:0.5px;}
+    @media(max-width:860px){#supply .sg-wrap{grid-template-columns:1fr;}}
+  </style>
+  <div class="sg-wrap">
+    <div>
+      <div class="sg-tag">Supply Chain &amp; Maritime Intelligence</div>
+      <h2 class="sg-title">Intelligence for the world's<br>trade arteries.</h2>
+      <p class="sg-sub">NERAI turns open supply-chain data into live, decision-grade signals across the corridors that move global trade — chokepoints, pressure, and downstream import risk.</p>
+      <ul class="sg-list">
+        <li><span class="sg-ic">&#9875;</span><div><b>Live maritime chokepoints</b> — transit vs baseline for Hormuz, Suez, Malacca, Panama, Bab-el-Mandeb (IMF PortWatch).</div></li>
+        <li><span class="sg-ic">&#127760;</span><div><b>Global supply-chain pressure</b> — NY Fed GSCPI gauge with country-level disruption-exposure mapping.</div></li>
+        <li><span class="sg-ic">&#9889;</span><div><b>Next-month disruption forecast</b> — calibrated probabilities by country &amp; import product, with real-world drivers.</div></li>
+      </ul>
+    </div>
+    <div class="sg-panel">
+      <svg class="sg-corr" viewBox="0 0 420 150" preserveAspectRatio="none">
+        <path class="sg-route" d="M20,110 C110,30 200,30 250,80 S360,120 405,40"/>
+        <path class="sg-flow" d="M20,110 C110,30 200,30 250,80 S360,120 405,40"/>
+        <g class="sg-node"><circle cx="20" cy="110" r="5" fill="#3fd0e0"/><text class="sg-nlbl" x="6" y="128">Malacca</text></g>
+        <g class="sg-node"><circle cx="135" cy="50" r="5" fill="#3fd0e0"/><text class="sg-nlbl" x="116" y="40">Suez</text></g>
+        <g class="sg-node crit"><circle cx="250" cy="80" r="6" fill="#e05060"/><text class="sg-nlbl" x="222" y="100" fill="#f3a9b3">Hormuz -94%</text></g>
+        <g class="sg-node"><circle cx="335" cy="92" r="5" fill="#3fd0e0"/><text class="sg-nlbl" x="312" y="110">Bab-el-Mandeb</text></g>
+        <g class="sg-node"><circle cx="405" cy="40" r="5" fill="#3fd0e0"/><text class="sg-nlbl" x="372" y="30">Panama</text></g>
+      </svg>
+      <div class="sg-gauge-l"><span>Global supply-chain pressure (GSCPI)</span><span style="color:#f0a">HIGH</span></div>
+      <div class="sg-track"><div class="sg-fill"></div></div>
+      <div class="sg-chips">
+        <div class="sg-chip"><b style="color:#e05060">-94%</b><span>HORMUZ TRANSIT</span></div>
+        <div class="sg-chip"><b style="color:#f59e0b">+1.77&#963;</b><span>GSCPI · 93rd PCTL</span></div>
+        <div class="sg-chip"><b style="color:#3fd0e0">70%</b><span>TOP DISRUPTION RISK</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NEAR-TERM EARLY WARNING ─────────────── -->
+<section id="early-warning" style="background:linear-gradient(135deg,#0a1c34 0%,#0d1f3c 60%,#0a1628 100%);color:#e6eefb;overflow:hidden;">
+  <style>
+    #early-warning .ew-wrap{max-width:1100px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center;}
+    #early-warning .ew-tag{font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#7ab8ff;margin-bottom:14px;}
+    #early-warning .ew-title{font-family:'DM Serif Display',serif;font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.12;margin:0 0 16px;color:#f3f8ff;}
+    #early-warning .ew-sub{font-size:1rem;line-height:1.7;color:#9fb4d0;max-width:520px;margin-bottom:22px;}
+    #early-warning .ew-list{list-style:none;padding:0;margin:0;display:grid;gap:12px;}
+    #early-warning .ew-list li{display:flex;gap:12px;align-items:flex-start;font-size:0.92rem;color:#cdd9ec;}
+    #early-warning .ew-ic{flex:0 0 26px;height:26px;border-radius:7px;display:grid;place-items:center;background:rgba(122,184,255,0.12);border:1px solid rgba(122,184,255,0.3);font-size:0.85rem;}
+    #early-warning .ew-radarwrap{position:relative;background:rgba(4,12,26,0.55);border:1px solid rgba(122,184,255,0.18);border-radius:18px;padding:26px;box-shadow:0 0 60px rgba(40,90,180,0.14);}
+    #early-warning .ew-radar{position:relative;width:230px;height:230px;margin:0 auto 18px;border-radius:50%;background:
+      radial-gradient(circle,rgba(122,184,255,0.10) 0%,transparent 70%);
+      border:1px solid rgba(122,184,255,0.25);}
+    #early-warning .ew-ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(122,184,255,0.14);}
+    #early-warning .ew-ring.r2{inset:38px;}#early-warning .ew-ring.r3{inset:76px;}
+    #early-warning .ew-sweep{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(122,184,255,0.35),transparent 28%);animation:ewspin 3.4s linear infinite;}
+    @keyframes ewspin{to{transform:rotate(360deg);}}
+    #early-warning .ew-blip{position:absolute;width:11px;height:11px;border-radius:50%;background:#e05060;box-shadow:0 0 12px #e05060;animation:ewblip 1.8s ease-in-out infinite;}
+    @keyframes ewblip{0%,100%{transform:scale(.7);opacity:.6;}50%{transform:scale(1.3);opacity:1;}}
+    #early-warning .ew-regimes{display:flex;gap:10px;}
+    #early-warning .ew-rg{flex:1;border-radius:11px;padding:11px 8px;text-align:center;border:1px solid rgba(255,255,255,0.08);}
+    #early-warning .ew-rg b{display:block;font-size:0.82rem;font-weight:800;}
+    #early-warning .ew-rg span{font-size:0.54rem;color:#8aa0bc;letter-spacing:0.5px;}
+    #early-warning .ew-rg.crisis{border-color:rgba(224,80,96,0.5);background:rgba(224,80,96,0.08);animation:ewglow 1.6s ease-in-out infinite;}
+    @keyframes ewglow{0%,100%{box-shadow:0 0 0 rgba(224,80,96,0);}50%{box-shadow:0 0 18px rgba(224,80,96,0.45);}}
+    @media(max-width:860px){#early-warning .ew-wrap{grid-template-columns:1fr;}#early-warning .ew-radarwrap{order:-1;}}
+  </style>
+  <div class="ew-wrap">
+    <div class="ew-radarwrap">
+      <div class="ew-radar">
+        <div class="ew-ring"></div><div class="ew-ring r2"></div><div class="ew-ring r3"></div>
+        <div class="ew-sweep"></div>
+        <div class="ew-blip" style="top:30%;left:62%;"></div>
+        <div class="ew-blip" style="top:58%;left:40%;animation-delay:.5s;"></div>
+        <div class="ew-blip" style="top:46%;left:70%;animation-delay:1s;background:#f59e0b;box-shadow:0 0 12px #f59e0b;"></div>
+      </div>
+      <div class="ew-regimes">
+        <div class="ew-rg"><b style="color:#22c55e">Calm</b><span>STABLE</span></div>
+        <div class="ew-rg"><b style="color:#f59e0b">Tension</b><span>WATCH</span></div>
+        <div class="ew-rg crisis"><b style="color:#e05060">Crisis</b><span>IR · IL · KW · SA</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="ew-tag">Near-Term Early Warning</div>
+      <h2 class="ew-title">See escalation before<br>it surfaces.</h2>
+      <p class="ew-sub">A tactical layer focused on the next 1&ndash;4 weeks &mdash; flagging where instability is accelerating before it reaches the headlines, grounded in the strongest predictors from conflict-forecasting research.</p>
+      <ul class="ew-list">
+        <li><span class="ew-ic">&#128680;</span><div><b>Tone-reversal &amp; protest-spike</b> — the two leading signals research finds strongest, fused into a 0&ndash;100 early-warning score.</div></li>
+        <li><span class="ew-ic">&#128300;</span><div><b>Instability regimes (HMM)</b> — Calm / Tension / Crisis state per country, with the probability of escalating next.</div></li>
+        <li><span class="ew-ic">&#128201;</span><div><b>Unrest-activity forecast</b> — calibrated Negative-Binomial next-week outlook (90% interval coverage, backtested).</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <section id="pricing">
   <div class="container">
     <div class="pricing-header">
