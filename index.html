@@ -1492,7 +1492,7 @@
             <div class="feature-icon fi-green">🔮</div>
             <div class="feature-body">
               <div class="feature-name">12-Month Forecasts</div>
-              <div class="feature-desc">Multi-model statistical ensemble (ETS, Theta, Damped Trend, SES with drift, Linear Trend) weighted by expanding-window cross-validation MAPE &mdash; with confidence bands for each 12-month projection.</div>
+              <div class="feature-desc">Horizon-weighted ensemble: a global gradient-boosted model (learning across all series) for the near-to-mid term, blended with a mean-reversion &amp; damped-trend model for the long horizon &mdash; with calibrated (conformal) confidence bands, validated out-of-sample.</div>
             </div>
           </div>
           <div class="feature-item">
@@ -1683,8 +1683,8 @@
           <div class="pipe-step">
             <div class="pipe-num">4</div>
             <div class="pipe-text">
-              <strong>Forecasting: Statistical Ensemble</strong>
-              <span>Multi-model forecasting using ETS, Theta, Damped Trend, SES with drift, and Linear Trend &mdash; weighted by expanding-window cross-validation MAPE.</span>
+              <strong>Forecasting: Horizon-Weighted Ensemble</strong>
+              <span>A global gradient-boosted learner (trained across all series) handles near/mid-term horizons and is blended with a mean-reversion + damped-trend model for the 12-month horizon, with conformal prediction intervals. Every component is validated out-of-sample (rolling-origin MASE and directional accuracy).</span>
             </div>
           </div>
           <div class="pipe-step">
@@ -1720,8 +1720,8 @@
           <div class="ds-item">
             <div class="ds-icon">🔮</div>
             <div>
-              <div class="ds-label">Statistical Ensemble</div>
-              <div class="ds-desc">Multi-model · 12-month horizon · MAPE-weighted</div>
+              <div class="ds-label">Forecast Ensemble</div>
+              <div class="ds-desc">Global GBM + mean-reversion · conformal bands · OOS-backtested</div>
             </div>
             <span class="ds-badge">Models</span>
           </div>
@@ -2082,7 +2082,7 @@
         <ul class="pricing-features">
           <li>Everything in Researcher</li>
           <li>13-month full history</li>
-          <li>12-month statistical forecasts (multi-model ensemble)</li>
+          <li>12-month forecasts (global-ML + statistical ensemble, calibrated intervals)</li>
           <li>Granger causality network access</li>
           <li>Unlimited What-If scenarios</li>
           <li>CSV data export</li>
