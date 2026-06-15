@@ -1,5 +1,21 @@
 [
   {
+    "category": "Risk Alert",
+    "date": "June 15, 2026",
+    "excerpt": "Jordan's Military Clash signal rose 21.2 points to 27.0/100 in a single week, the largest WoW movement observed. Concurrent escalation signals in Lebanon (+4.6), Yemen (+15.3), and Israel (+5.2) indicate broadening regional friction. Multi-dimensional signal elevation (clash + escalation + ethnic violence in Jordan) suggests either acute incident or systemic tension surge.",
+    "published": "2026-06-15",
+    "slug": "2026-06-15-nerai-risk-alert-w24",
+    "title": "NERAI Risk Alert \u2014 W24: Levant Military Clash Surge: Jordan Leads Regional Escalation"
+  },
+  {
+    "category": "Weekly Pulse",
+    "date": "June 15, 2026",
+    "excerpt": "Week 24 registers a sharp escalation in military clash signals across the Levant and Gulf, with Jordan's Military Clash score surging 21.2 points to 27.0/100\u2014the week's most volatile signal. Lebanon, Yemen, and Israel show supporting upward momentum in both clash and escalation metrics, signalling a broadening regional tension pattern. Kuwait remains elevated but stable. The absence of retrieved headlines for Jordan warrants heightened monitoring of ground-truth validation.",
+    "published": "2026-06-15",
+    "slug": "2026-06-15-nerai-weekly-bulletin-w24",
+    "title": "NERAI Weekly Bulletin \u2014 Week 24 (Jun 8 \u2013 14, 2026)"
+  },
+  {
     "category": "Deep Dive",
     "date": "June 15, 2026",
     "excerpt": "The Strait of Hormuz shock has triggered the most severe maritime chokepoint crisis in modern trade history, and NERAI data reveal global supply-chain pressure at the 93rd percentile of the post-2008 era while US import-disruption probabilities cluster at alarm levels for Asia-sourced consumer goods.",
@@ -13,7 +29,7 @@
     "excerpt": "Gaza Strip / Coup metric surged +13.3 WoW to 14.0/100, coinciding with Kuwait Military Clash peak (25.1/100) and compounded Gaza escalation signals. Headlines indicate U.S.-Iran strategic repositioning with reduced diplomatic de-escalation. Compound institutional and military risk across two primary nodes.",
     "published": "2026-06-08",
     "slug": "2026-06-08-nerai-risk-alert-w23",
-    "title": "NERAI Risk Alert — W23: Gaza Coup Signal Spike + Kuwait Theater Escalation"
+    "title": "NERAI Risk Alert \u2014 W23: Gaza Coup Signal Spike + Kuwait Theater Escalation"
   },
   {
     "category": "Weekly Pulse",
@@ -21,12 +37,12 @@
     "excerpt": "Week 23 reveals intensifying regional military signaling across the Middle East, with Gaza Strip / Coup emerging as the largest volatility driver (+13.3 WoW to 14.0/100). Kuwait Military Clash remains the week's highest-scoring signal at 25.1/100 (+9.4 WoW), reflecting elevated tensions. Gaza Strip Military Clash (22.4/100, +9.4 WoW) and Gaza Strip Military Escalation (15.1/100, +7.2 WoW) underscore compound escalation risk. Ukraine Military Clash (15.2/100) maintains tertiary positioning. Headline context references Iran strategic positioning, U.S. drone operations, and diplomatic friction ov",
     "published": "2026-06-08",
     "slug": "2026-06-08-nerai-weekly-bulletin-w23",
-    "title": "NERAI Weekly Bulletin — Week 23 (Jun 1 – 7, 2026)"
+    "title": "NERAI Weekly Bulletin \u2014 Week 23 (Jun 1 \u2013 7, 2026)"
   },
   {
     "category": "Forecast",
     "date": "June 4, 2026",
-    "excerpt": "A NERAI Political Risk Forecast by Serhan Ayik assessing whether the 2026 US midterm elections function as an institutional release valve or become a contested site of democratic stress. The brief evaluates the current US political-crisis signal cluster, including elevated authoritarianism, pressure-on-parties, repression-tactics and Newark curfew indicators, alongside the US-Iran variable and market-pricing divergence. Three forward scenarios are assessed through Q1 2027: Contained Polarisation 60% base case, Jammed Release Valve 25% worst case, and Accelerated Consolidation 15% tail risk. Probabilistic framing only — not a deterministic prediction.",
+    "excerpt": "A NERAI Political Risk Forecast by Serhan Ayik assessing whether the 2026 US midterm elections function as an institutional release valve or become a contested site of democratic stress. The brief evaluates the current US political-crisis signal cluster, including elevated authoritarianism, pressure-on-parties, repression-tactics and Newark curfew indicators, alongside the US-Iran variable and market-pricing divergence. Three forward scenarios are assessed through Q1 2027: Contained Polarisation 60% base case, Jammed Release Valve 25% worst case, and Accelerated Consolidation 15% tail risk. Probabilistic framing only \u2014 not a deterministic prediction.",
     "published": "2026-06-04",
     "slug": "2026-06-04-release-valve-test-us-midterms-forecast",
     "title": "The Release Valve Test: A NERAI Probability Forecast for the 2026 US Midterms and the Political-Crisis Signal Trajectory Through Q1 2027"
@@ -34,39 +50,39 @@
   {
     "category": "Forecast",
     "date": "June 3, 2026",
-    "excerpt": "Mainstream commentary frames Pakistan's authoritarianism spike as imminent military takeover. The NERAI data tell a different story: this is institutional codification — the 27th Amendment (passed November 2025) embeds military influence through constitutional rewrite. Equilibrium-phase consolidation analogous to Turkey post-2016 or Hungary post-2010, not Egypt 2011 or Sudan 2019. Three scenarios (60%/25%/15%), 14-day watch list, full counter-thesis. Probabilistic framing only.",
+    "excerpt": "Mainstream commentary frames Pakistan's authoritarianism spike as imminent military takeover. The NERAI data tell a different story: this is institutional codification \u2014 the 27th Amendment (passed November 2025) embeds military influence through constitutional rewrite. Equilibrium-phase consolidation analogous to Turkey post-2016 or Hungary post-2010, not Egypt 2011 or Sudan 2019. Three scenarios (60%/25%/15%), 14-day watch list, full counter-thesis. Probabilistic framing only.",
     "published": "2026-06-03",
     "slug": "2026-06-03-codification-not-coup-pakistan-forecast",
     "title": "Codification, Not Coup: A NERAI Probability Forecast for Pakistan's Hybrid Authoritarian Equilibrium Through Mid-2027"
   },
   {
     "slug": "2026-06-01-nerai-weekly-bulletin-w22-gulf-spillover-kuwait",
-    "title": "NERAI Weekly Bulletin — W22: Gulf Spillover, Iran Strikes on Kuwait Top the Dataset (May 2026)",
-    "excerpt": "Week 22 — the first bulletin on fully refreshed indices (now current through May 31). Kuwait vaults to the top of the dataset on Military Clash (15.7/100, +12.9 WoW) after Iran launched missile and drone attacks on May 27–28 and a strike on a US base killed six servicemembers. Middle East dominates with a +140 aggregate WoW jump; Israel expands its ground invasion into southern Lebanon.",
+    "title": "NERAI Weekly Bulletin \u2014 W22: Gulf Spillover, Iran Strikes on Kuwait Top the Dataset (May 2026)",
+    "excerpt": "Week 22 \u2014 the first bulletin on fully refreshed indices (now current through May 31). Kuwait vaults to the top of the dataset on Military Clash (15.7/100, +12.9 WoW) after Iran launched missile and drone attacks on May 27\u201328 and a strike on a US base killed six servicemembers. Middle East dominates with a +140 aggregate WoW jump; Israel expands its ground invasion into southern Lebanon.",
     "date": "June 1, 2026",
     "category": "Weekly Pulse",
     "published": "2026-06-01"
   },
   {
     "slug": "2026-06-01-nerai-risk-alert-w22-kuwait-iran-strikes",
-    "title": "NERAI Risk Alert — W22: Iran Missile & Drone Strikes on Kuwait, US Base Hit (May 2026)",
-    "excerpt": "Kuwait Military Clash 15.7/100 (+12.9 WoW) tops the NERAI dataset after Iran ballistic-missile and drone strikes on May 27–28, 2026; a strike on a US base in Kuwait killed six US servicemembers and the US struck Iranian drone sites at Bandar Abbas. The seven-week Iran ceasefire is under severe strain; Lebanon ground invasion runs as a parallel front.",
+    "title": "NERAI Risk Alert \u2014 W22: Iran Missile & Drone Strikes on Kuwait, US Base Hit (May 2026)",
+    "excerpt": "Kuwait Military Clash 15.7/100 (+12.9 WoW) tops the NERAI dataset after Iran ballistic-missile and drone strikes on May 27\u201328, 2026; a strike on a US base in Kuwait killed six US servicemembers and the US struck Iranian drone sites at Bandar Abbas. The seven-week Iran ceasefire is under severe strain; Lebanon ground invasion runs as a parallel front.",
     "date": "June 1, 2026",
     "category": "Risk Alert",
     "published": "2026-06-01"
   },
   {
     "slug": "2026-05-25-nerai-weekly-bulletin-w21-second-week-confirmation",
-    "title": "NERAI Weekly Bulletin — W21: Second-Week Confirmation, Lebanon Attrition Deepens (May 2026)",
-    "excerpt": "Week 21 confirms the W20 Indonesia & Mexico EM-instability cluster on the second print: Political Instability holds at 25.1 and 25.0 respectively. The Lebanon strike campaign resumed within four days of the May 15 ceasefire extension — May 19 (22 killed) and May 22 (6 paramedics killed) — keeping the corridor at the dataset's top Military Escalation slot (40.9/100).",
+    "title": "NERAI Weekly Bulletin \u2014 W21: Second-Week Confirmation, Lebanon Attrition Deepens (May 2026)",
+    "excerpt": "Week 21 confirms the W20 Indonesia & Mexico EM-instability cluster on the second print: Political Instability holds at 25.1 and 25.0 respectively. The Lebanon strike campaign resumed within four days of the May 15 ceasefire extension \u2014 May 19 (22 killed) and May 22 (6 paramedics killed) \u2014 keeping the corridor at the dataset's top Military Escalation slot (40.9/100).",
     "date": "May 25, 2026",
     "category": "Weekly Pulse",
     "published": "2026-05-25"
   },
   {
     "slug": "2026-05-25-nerai-risk-alert-w21-lebanon-ceasefire-erosion",
-    "title": "NERAI Risk Alert — W21: Lebanon Strike Campaign Resumes Despite Ceasefire Extension (May 2026)",
-    "excerpt": "Lebanon Military Escalation 40.9/100 — second consecutive week at the top of the NERAI dataset. Israeli strike clusters on May 19 (22 killed in Deir Qanoun, Nabatieh, Kfar Sir) and May 22 (six paramedics killed) followed the May 15 ceasefire extension within four days. Degraded ceasefire, not a holding one.",
+    "title": "NERAI Risk Alert \u2014 W21: Lebanon Strike Campaign Resumes Despite Ceasefire Extension (May 2026)",
+    "excerpt": "Lebanon Military Escalation 40.9/100 \u2014 second consecutive week at the top of the NERAI dataset. Israeli strike clusters on May 19 (22 killed in Deir Qanoun, Nabatieh, Kfar Sir) and May 22 (six paramedics killed) followed the May 15 ceasefire extension within four days. Degraded ceasefire, not a holding one.",
     "date": "May 25, 2026",
     "category": "Risk Alert",
     "published": "2026-05-25"
@@ -74,7 +90,7 @@
   {
     "category": "Deep Dive",
     "date": "May 26, 2026",
-    "excerpt": "Schotte's Credendo Risk Insight gave us the denominator — debt-service ratios, bilateral-creditor composition, the China–Paris Club coordination deficit. This brief layers the numerator: NERAI political-event signals that determine when and how debt vulnerability converts into distress. Kenya, Ghana, Ethiopia — three transmission channels, one synchronised −56%/−60%/−64% collapse in 12-month donor-support forecasts. Includes 14-day watch list with monitoring thresholds for trade-credit insurers and Paris Club coordinators.",
+    "excerpt": "Schotte's Credendo Risk Insight gave us the denominator \u2014 debt-service ratios, bilateral-creditor composition, the China\u2013Paris Club coordination deficit. This brief layers the numerator: NERAI political-event signals that determine when and how debt vulnerability converts into distress. Kenya, Ghana, Ethiopia \u2014 three transmission channels, one synchronised \u221256%/\u221260%/\u221264% collapse in 12-month donor-support forecasts. Includes 14-day watch list with monitoring thresholds for trade-credit insurers and Paris Club coordinators.",
     "published": "2026-05-26",
     "slug": "2026-05-26-ssa-debt-distress-political-event-signal-layer-q2-2026",
     "title": "Beyond the Debt Numbers: A Political & Event-Signal Layer on Sub-Saharan Africa's Debt-Distress Triggers (Q2 2026)"
@@ -82,23 +98,23 @@
   {
     "category": "Forecast",
     "date": "May 19, 2026",
-    "excerpt": "A 24-page probability forecast by Serhan Ayik. NERAI's Russia Coup Index at 53.5/100 (95th percentile, 90-day rising) with the 12-month forecast declining -36% (0.110 → 0.070) — the diagnostic signature of managed securitisation, not regime decay. Securitisation-as-Stabilisation framework: heightened threat perception channeled into visible institutional response (purges, FSO expansion, military resource reallocation) reinforces elite coordination rather than triggering cascading defection. Three forward scenarios (Managed Securitisation 35%, Constrained Escalation 45%, Rapid Consolidation 20%) with full counter-thesis (Kendall-Taylor / Snegovaya cascade interpretation) and rebuttal. Probabilistic framing only — not a deterministic prediction.",
+    "excerpt": "A 24-page probability forecast by Serhan Ayik. NERAI's Russia Coup Index at 53.5/100 (95th percentile, 90-day rising) with the 12-month forecast declining -36% (0.110 \u2192 0.070) \u2014 the diagnostic signature of managed securitisation, not regime decay. Securitisation-as-Stabilisation framework: heightened threat perception channeled into visible institutional response (purges, FSO expansion, military resource reallocation) reinforces elite coordination rather than triggering cascading defection. Three forward scenarios (Managed Securitisation 35%, Constrained Escalation 45%, Rapid Consolidation 20%) with full counter-thesis (Kendall-Taylor / Snegovaya cascade interpretation) and rebuttal. Probabilistic framing only \u2014 not a deterministic prediction.",
     "published": "2026-05-19",
     "slug": "2026-05-19-securitization-equilibrium-russia-regime-stability-forecast",
     "title": "The Securitization Equilibrium: A NERAI Probability Forecast for Russian Regime Stability and Coup Risk Through May 2027"
   },
   {
     "slug": "2026-05-18-nerai-weekly-bulletin-w20-em-democracy-stress",
-    "title": "NERAI Weekly Bulletin — W20: Emerging-Market Democratic Stress, Middle East De-escalation (May 2026)",
-    "excerpt": "Indonesia and Mexico register synchronous +14 to +16 pt single-week jumps across Political Instability, Government Instability and Political Repression — the largest concentrated EM democratic-backsliding signal in the post-Kashmir cycle. Iran, Israel, Russia, Gaza all print negative WoW. Lebanon (40.9/100) holds top Military Escalation slot.",
+    "title": "NERAI Weekly Bulletin \u2014 W20: Emerging-Market Democratic Stress, Middle East De-escalation (May 2026)",
+    "excerpt": "Indonesia and Mexico register synchronous +14 to +16 pt single-week jumps across Political Instability, Government Instability and Political Repression \u2014 the largest concentrated EM democratic-backsliding signal in the post-Kashmir cycle. Iran, Israel, Russia, Gaza all print negative WoW. Lebanon (40.9/100) holds top Military Escalation slot.",
     "date": "May 18, 2026",
     "category": "Weekly Pulse",
     "published": "2026-05-18"
   },
   {
     "slug": "2026-05-18-nerai-risk-alert-w20-indonesia-mexico-surge",
-    "title": "NERAI Risk Alert — W20: Indonesia & Mexico Twin Political-Instability Surge (May 2026)",
-    "excerpt": "Indonesia Political Repression: 21.6/100 (+16.2 pts, 4.0× WoW). Five-dimension instability cluster surges in lockstep across Indonesia and Mexico — a configuration NERAI has flagged only twice before in the dataset. Mexican cluster correlates with US extradition standoff over Sinaloa Governor Rocha Moya.",
+    "title": "NERAI Risk Alert \u2014 W20: Indonesia & Mexico Twin Political-Instability Surge (May 2026)",
+    "excerpt": "Indonesia Political Repression: 21.6/100 (+16.2 pts, 4.0\u00d7 WoW). Five-dimension instability cluster surges in lockstep across Indonesia and Mexico \u2014 a configuration NERAI has flagged only twice before in the dataset. Mexican cluster correlates with US extradition standoff over Sinaloa Governor Rocha Moya.",
     "date": "May 18, 2026",
     "category": "Risk Alert",
     "published": "2026-05-18"
@@ -106,26 +122,26 @@
   {
     "category": "Deep Dive",
     "date": "May 18, 2026",
-    "excerpt": "Eight markets where Belgian and Dutch SME exporters carry concentrated risk exposure in Q2 2026 — and what the NERAI data says will happen next. Türkiye dissent at 99th percentile, Egypt at maximal human-rights alert with IMF Article IV pending, Nigeria FX-reserve squeeze, Morocco as the stability comparator. Dominant cross-market signal: synchronised forecast decline in International Support across all eight markets through 2027 — structural liquidity squeeze raising credit-event and capital-control probability in H2 2026. Includes 60-day watch list and 60-second CFO summary table.",
+    "excerpt": "Eight markets where Belgian and Dutch SME exporters carry concentrated risk exposure in Q2 2026 \u2014 and what the NERAI data says will happen next. T\u00fcrkiye dissent at 99th percentile, Egypt at maximal human-rights alert with IMF Article IV pending, Nigeria FX-reserve squeeze, Morocco as the stability comparator. Dominant cross-market signal: synchronised forecast decline in International Support across all eight markets through 2027 \u2014 structural liquidity squeeze raising credit-event and capital-control probability in H2 2026. Includes 60-day watch list and 60-second CFO summary table.",
     "published": "2026-05-18",
     "slug": "2026-05-18-belgium-netherlands-sme-export-risk-snapshot-q2-2026",
-    "title": "Belgium-Netherlands SME Export Risk Snapshot — Q2 2026"
+    "title": "Belgium-Netherlands SME Export Risk Snapshot \u2014 Q2 2026"
   },
   {
     "category": "Deep Dive",
     "date": "May 17, 2026",
-    "excerpt": "Senior Fellow research brief by Serhan Ayik. NERAI 15 May 2026 signal cluster: ethnic-religious violence z=4.014 (99.4th pct, +528% 7-day Δ), political repression z=3.848, institutional deterioration z=3.787, government instability z=3.222 — a domestic pre-electoral squeeze signature with no bilateral coupling. Three forward scenarios (65/25/10) for the late-2026 Gambian presidential election. Senegal's PASTEF government under President Faye is the critical external variable. 10-point 60-day watch list, eight policy tracks. Full counter-thesis and methodological disclaimer.",
+    "excerpt": "Senior Fellow research brief by Serhan Ayik. NERAI 15 May 2026 signal cluster: ethnic-religious violence z=4.014 (99.4th pct, +528% 7-day \u0394), political repression z=3.848, institutional deterioration z=3.787, government instability z=3.222 \u2014 a domestic pre-electoral squeeze signature with no bilateral coupling. Three forward scenarios (65/25/10) for the late-2026 Gambian presidential election. Senegal's PASTEF government under President Faye is the critical external variable. 10-point 60-day watch list, eight policy tracks. Full counter-thesis and methodological disclaimer.",
     "published": "2026-05-17",
     "slug": "2026-05-17-gambia-2026-pre-election-strategic-risk-assessment",
-    "title": "The Gambia 2026 — Pre-Election Strategic Risk Assessment"
+    "title": "The Gambia 2026 \u2014 Pre-Election Strategic Risk Assessment"
   },
   {
     "category": "Deep Dive",
     "date": "May 14, 2026",
-    "excerpt": "Senior Fellow research brief by Serhan Ayik. EU 95%+ dependent on TSMC/Samsung for sub-7nm logic through 2028. NERAI US-China Tension Index at 25.7 (96th percentile). Three forward scenarios: Slow Bifurcation 68% (base), Taiwan Quarantine 22%, Bifurcation Collapse 10%. Intel Magdeburg PAUSED; TSMC Dresden (ESMC) at 35% nameplate; STMicro-GlobalFoundries Crolles-2 in legacy-node ramp. Causal pathway analysis shows China-PR → Korean output (6-8wk lag) and US-PI → tech export controls (4-6wk lag) as dominant propagation chains.",
+    "excerpt": "Senior Fellow research brief by Serhan Ayik. EU 95%+ dependent on TSMC/Samsung for sub-7nm logic through 2028. NERAI US-China Tension Index at 25.7 (96th percentile). Three forward scenarios: Slow Bifurcation 68% (base), Taiwan Quarantine 22%, Bifurcation Collapse 10%. Intel Magdeburg PAUSED; TSMC Dresden (ESMC) at 35% nameplate; STMicro-GlobalFoundries Crolles-2 in legacy-node ramp. Causal pathway analysis shows China-PR \u2192 Korean output (6-8wk lag) and US-PI \u2192 tech export controls (4-6wk lag) as dominant propagation chains.",
     "published": "2026-05-14",
     "slug": "2026-05-14-eu-semiconductor-supply-chain-geopolitical-risk-briefing",
-    "title": "EU Semiconductor Supply Chain — Geopolitical Risk Briefing 2026"
+    "title": "EU Semiconductor Supply Chain \u2014 Geopolitical Risk Briefing 2026"
   },
   {
     "category": "Deep Dive",
@@ -137,7 +153,7 @@
   },
   {
     "slug": "2026-05-11-nerai-risk-pulse-week-19-2026-five-critical-theaters-and-the",
-    "title": "NERAI Risk Pulse — Week 19, 2026: Five CRITICAL Theaters and the Quiet Escalation in Western Markets",
+    "title": "NERAI Risk Pulse \u2014 Week 19, 2026: Five CRITICAL Theaters and the Quiet Escalation in Western Markets",
     "excerpt": "Published: May 11, 2026 | Author: NERAI Intelligence Team | Category: Weekly Risk Briefing...",
     "date": "May 11, 2026",
     "category": "Weekly Pulse",
@@ -145,23 +161,23 @@
   },
   {
     "slug": "2026-05-03-nerai-risk-alert-w18-iran-israel-escalation-threatens-global",
-    "title": "NERAI Risk Alert — W18: Iran-Israel Escalation Threatens Global Energy (May 2026)",
-    "excerpt": "Iran's military escalation index stands at 100.0/100 — maximum NERAI rating — representing a +20.7-point surge from Week 17. Iran's government instability score reached 34.4/100 (+...",
+    "title": "NERAI Risk Alert \u2014 W18: Iran-Israel Escalation Threatens Global Energy (May 2026)",
+    "excerpt": "Iran's military escalation index stands at 100.0/100 \u2014 maximum NERAI rating \u2014 representing a +20.7-point surge from Week 17. Iran's government instability score reached 34.4/100 (+...",
     "date": "May 03, 2026",
     "category": "Risk Alert",
     "published": "2026-05-03"
   },
   {
     "slug": "2026-05-03-nerai-risk-pulse-week-18-iran-nuclear-brinkmanship-reshapes-",
-    "title": "NERAI Risk Pulse — Week 18: Iran Nuclear Brinkmanship Reshapes Gulf Security",
-    "excerpt": "Iran's Military Escalation Index has reached 100.0 (↑20.7% week-on-week as of March 19), the highest severity reading in NERAI's conflict taxonomy—driven by US-Israel coordinated s...",
+    "title": "NERAI Risk Pulse \u2014 Week 18: Iran Nuclear Brinkmanship Reshapes Gulf Security",
+    "excerpt": "Iran's Military Escalation Index has reached 100.0 (\u219120.7% week-on-week as of March 19), the highest severity reading in NERAI's conflict taxonomy\u2014driven by US-Israel coordinated s...",
     "date": "May 03, 2026",
     "category": "Weekly Pulse",
     "published": "2026-05-03"
   },
   {
     "slug": "2026-05-03-nerai-risk-alert-w18-global-risk-signals-show-stabilization-",
-    "title": "NERAI Risk Alert — W18: Global Risk Signals Show Stabilization Pattern (May 2026)",
+    "title": "NERAI Risk Alert \u2014 W18: Global Risk Signals Show Stabilization Pattern (May 2026)",
     "excerpt": "CRITICAL MONITORING MODE. No escalating signals crossed the 0.50 threshold this week, marking a significant deviation from typical volatility patterns. NERAI composite stability in...",
     "date": "May 03, 2026",
     "category": "Risk Alert",
@@ -169,8 +185,8 @@
   },
   {
     "slug": "2026-05-03-nerai-risk-pulse-week-18-sahel-instability-accelerates-may-2",
-    "title": "NERAI Risk Pulse — Week 18: Sahel Instability Accelerates (May 2026)",
-    "excerpt": "Geopolitical fragmentation across West Africa's Sahel region has reached critical thresholds this week, with NERAI's Instability Index registering 0.78—the highest recorded level s...",
+    "title": "NERAI Risk Pulse \u2014 Week 18: Sahel Instability Accelerates (May 2026)",
+    "excerpt": "Geopolitical fragmentation across West Africa's Sahel region has reached critical thresholds this week, with NERAI's Instability Index registering 0.78\u2014the highest recorded level s...",
     "date": "May 03, 2026",
     "category": "Weekly Pulse",
     "published": "2026-05-03"
@@ -178,7 +194,7 @@
   {
     "slug": "2026-05-03-20260503-weekly-blog",
     "title": "20260503_weekly_blog",
-    "excerpt": "Geopolitical fragmentation across West Africa's Sahel region has reached critical thresholds this week, with NERAI's Instability Index registering 0.78—the highest recorded level s...",
+    "excerpt": "Geopolitical fragmentation across West Africa's Sahel region has reached critical thresholds this week, with NERAI's Instability Index registering 0.78\u2014the highest recorded level s...",
     "date": "May 03, 2026",
     "category": "Weekly Pulse",
     "published": "2026-05-03"
@@ -186,13 +202,13 @@
   {
     "slug": "2026-05-01-uae-opec-exit-gulf-realignment-nerai-intelligence",
     "title": "UAE Exits OPEC: Gulf Realignment, Iran Risk, and the $118 Oil Shock",
-    "excerpt": "NERAI quantitative analysis of UAE's OPEC departure. Saudi coup risk +149.2% forecast trend, Iran military escalation at 0.1983 (+102.6% vs 90-day baseline), oil at $118/bbl. 25–35% probability of SA–UAE bilateral crisis; primary risk is Iranian regional destabilization.",
+    "excerpt": "NERAI quantitative analysis of UAE's OPEC departure. Saudi coup risk +149.2% forecast trend, Iran military escalation at 0.1983 (+102.6% vs 90-day baseline), oil at $118/bbl. 25\u201335% probability of SA\u2013UAE bilateral crisis; primary risk is Iranian regional destabilization.",
     "date": "May 1, 2026",
     "category": "Deep Dive"
   },
   {
     "slug": "2026-04-29-nerai-intelligence-report-will-argentina-escalate-tensions-w",
-    "title": "NERAI Intelligence Report — Will Argentina Escalate Tensions with the UK over the Falkland Islands?",
+    "title": "NERAI Intelligence Report \u2014 Will Argentina Escalate Tensions with the UK over the Falkland Islands?",
     "excerpt": "Deep Dive | April 29, 2026 | NERAI Strategic Insights Hub...",
     "date": "April 29, 2026",
     "category": "Deep Dive",
@@ -200,7 +216,7 @@
   },
   {
     "slug": "2026-04-26-nerai-risk-pulse-week-17-iran-crosses-red-lines-g7-unity-fra",
-    "title": "NERAI Risk Pulse — Week 17: Iran Crosses Red Lines, G7 Unity Fractures, Pakistan on the Edge (April 2026)",
+    "title": "NERAI Risk Pulse \u2014 Week 17: Iran Crosses Red Lines, G7 Unity Fractures, Pakistan on the Edge (April 2026)",
     "excerpt": "Executive Summary: NERAI's composite risk index registered its sharpest single-week deterioration since October 2023, driven by simultaneous escalation across three independent fla...",
     "date": "April 26, 2026",
     "category": "Weekly Pulse",
@@ -208,7 +224,7 @@
   },
   {
     "slug": "2026-04-20-nerai-risk-pulse-week-17-switzerland-joins-the-crisis-column",
-    "title": "NERAI Risk Pulse — Week 17: Switzerland Joins the Crisis Column, G7 Political Risk at Post-2020 Highs (April 20, 2026)",
+    "title": "NERAI Risk Pulse \u2014 Week 17: Switzerland Joins the Crisis Column, G7 Political Risk at Post-2020 Highs (April 20, 2026)",
     "excerpt": "Weekly Intelligence Brief | April 20, 2026 | NERAI Strategic Insights Hub...",
     "date": "April 20, 2026",
     "category": "Weekly Pulse",
@@ -216,7 +232,7 @@
   },
   {
     "slug": "2026-04-19-nerai-risk-alert-nigeria-military-escalation-hits-0784-iswap",
-    "title": "NERAI Risk Alert — Nigeria: Military Escalation Hits 0.784, ISWAP Kills Brigadier General (April 19, 2026)",
+    "title": "NERAI Risk Alert \u2014 Nigeria: Military Escalation Hits 0.784, ISWAP Kills Brigadier General (April 19, 2026)",
     "excerpt": "RISK ALERT | April 19, 2026 | NERAI Strategic Insights Hub...",
     "date": "April 19, 2026",
     "category": "Risk Alert",
@@ -224,7 +240,7 @@
   },
   {
     "slug": "2026-04-12-nerai-risk-alert-gaza-military-indices-at-099-near-maximum-i",
-    "title": "NERAI Risk Alert — Gaza: Military Indices at 0.99 — Near-Maximum Intensity Confirmed (April 12, 2026)",
+    "title": "NERAI Risk Alert \u2014 Gaza: Military Indices at 0.99 \u2014 Near-Maximum Intensity Confirmed (April 12, 2026)",
     "excerpt": "RISK ALERT | April 12, 2026 | NERAI Strategic Insights Hub...",
     "date": "April 12, 2026",
     "category": "Risk Alert",
@@ -232,7 +248,7 @@
   },
   {
     "slug": "2026-04-12-nerai-risk-pulse-week-15-gaza-hits-near-maximum-ghana-surges",
-    "title": "NERAI Risk Pulse — Week 15: Gaza Hits Near-Maximum, Ghana Surges 1,700%, Ukraine Re-enters Watch List (April 2026)",
+    "title": "NERAI Risk Pulse \u2014 Week 15: Gaza Hits Near-Maximum, Ghana Surges 1,700%, Ukraine Re-enters Watch List (April 2026)",
     "excerpt": "Date: April 12, 2026 | Data Source: NERAI Strategic Insights Hub | Coverage: 60 countries, 40 risk dimensions...",
     "date": "April 12, 2026",
     "category": "Weekly Pulse",
@@ -240,7 +256,7 @@
   },
   {
     "slug": "2026-04-06-nerai-risk-alert-uae-military-indices-surge-1100-in-seven-da",
-    "title": "NERAI Risk Alert — UAE: Military Indices Surge 1,100%+ in Seven Days (April 6, 2026)",
+    "title": "NERAI Risk Alert \u2014 UAE: Military Indices Surge 1,100%+ in Seven Days (April 6, 2026)",
     "excerpt": "RISK ALERT | April 6, 2026 | NERAI Strategic Insights Hub...",
     "date": "April 06, 2026",
     "category": "Risk Alert",
@@ -248,7 +264,7 @@
   },
   {
     "slug": "2026-04-06-nerai-risk-pulse-week-14-uae-military-indices-surge-1100-as-",
-    "title": "NERAI Risk Pulse — Week 14: UAE Military Indices Surge 1,100%+ as Middle East Tensions Escalate (April 2026)",
+    "title": "NERAI Risk Pulse \u2014 Week 14: UAE Military Indices Surge 1,100%+ as Middle East Tensions Escalate (April 2026)",
     "excerpt": "Date: April 6, 2026 | Data Source: NERAI Strategic Insights Hub | Coverage: 60 countries, 40 risk dimensions...",
     "date": "April 06, 2026",
     "category": "Weekly Pulse",
@@ -264,7 +280,7 @@
   },
   {
     "slug": "2026-04-13-nerai-risk-pulse-week-16-nigeria-crosses-critical-iraq-surge",
-    "title": "NERAI Risk Pulse — Week 16: Nigeria Crosses Critical, Iraq Surges, Armenia & Tunisia Emerge",
+    "title": "NERAI Risk Pulse \u2014 Week 16: Nigeria Crosses Critical, Iraq Surges, Armenia & Tunisia Emerge",
     "excerpt": "Date: April 13, 2026 | Data Source: NERAI Strategic Insights Hub | Coverage: 60 countries, 40 risk dimensions...",
     "date": "April 13, 2026",
     "category": "Weekly Pulse",
