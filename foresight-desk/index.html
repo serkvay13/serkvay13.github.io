@@ -69,7 +69,7 @@ font-family:'Inter',system-ui,sans-serif;color:var(--txt);}
 <div class="hero"><div>
   <div class="h1">NERAI Foresight Desk</div>
   <div class="sub">Flashpoints, chokepoints and supply-chain pressure — translated into decision-ready intelligence.</div>
-  <div class="btns"><a class="btn p" href="#reports">READ LATEST BRIEFING →</a><a class="btn o" href="#">REQUEST NERAI ACCESS</a></div>
+  <div class="btns"><a class="btn p" href="#reports">READ LATEST BRIEFING →</a><a class="btn o" href="#" onclick="openReqModal();return false;">REQUEST NERAI ACCESS</a></div>
   <div class="badges">
     <div class="badge"><div class="bdot"></div><div><b>LIVE SIGNALS</b><span>Daily updates</span></div></div>
     <div class="badge"><div class="bdot"></div><div><b>FORWARD-LOOKING</b><span>4-week outlooks</span></div></div>
@@ -191,5 +191,57 @@ font-family:'Inter',system-ui,sans-serif;color:var(--txt);}
     <div class="chk"><b>✓</b> Commercially useful, editorially strong</div>
   </div></div>
 
-<div class="foot">NERAI Foresight Desk · live data refreshed automatically · last generated 2026-06-19 20:44 UTC · neraicorp.com</div>
+<div class="foot">NERAI Foresight Desk · live data refreshed automatically · last generated 2026-06-19 20:48 UTC · neraicorp.com</div>
+
+<div id="reqModal" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(6,16,30,0.82);align-items:center;justify-content:center;padding:16px;">
+  <div style="background:#0e2740;border:1px solid rgba(120,160,210,0.25);border-radius:16px;max-width:460px;width:100%;padding:30px 30px 26px;position:relative;box-shadow:0 24px 70px rgba(0,0,0,0.5);">
+    <button onclick="closeReqModal()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:#9fb6d4;font-size:1.4rem;cursor:pointer;line-height:1;">&#x2715;</button>
+    <div id="reqForm">
+      <div style="font-size:11px;letter-spacing:2.5px;color:#00d4ff;font-weight:800;">NERAI FORESIGHT DESK</div>
+      <div style="font-size:24px;font-weight:800;margin:6px 0 4px;color:#e9f1fb;">Request NERAI Access</div>
+      <p style="font-size:13px;color:#9fb6d4;margin-bottom:16px;line-height:1.5;">Tell us what you need and we'll be in touch shortly.</p>
+      <form onsubmit="submitReqForm(event)">
+        <label class="rqlb">What are you requesting?</label>
+        <div style="display:flex;gap:10px;margin:6px 0 14px;">
+          <label class="rqopt"><input type="radio" name="requestType" value="Dashboard access" checked> Dashboard access</label>
+          <label class="rqopt"><input type="radio" name="requestType" value="Strategic report"> Strategic report</label>
+        </div>
+        <input class="rqin" name="name" placeholder="Full name" required>
+        <input class="rqin" name="email" type="email" placeholder="Work email" required>
+        <input class="rqin" name="company" placeholder="Company / organization">
+        <input class="rqin" name="role" placeholder="Role (optional)">
+        <textarea class="rqin" name="message" rows="3" placeholder="Anything specific? (sector, country, corridor, use case)"></textarea>
+        <button id="reqBtn" type="submit" class="rqsub">Send request &rarr;</button>
+        <div style="font-size:10.5px;color:#74889f;margin-top:10px;text-align:center;">Goes straight to the NERAI team · we never share your details.</div>
+      </form>
+    </div>
+    <div id="reqSuccess" style="display:none;text-align:center;padding:18px 0;">
+      <div style="font-size:40px;">&#9989;</div>
+      <div style="font-size:19px;font-weight:800;color:#e9f1fb;margin-top:8px;">Request received</div>
+      <p style="font-size:13px;color:#9fb6d4;margin-top:6px;">Thanks — the NERAI team will get back to you shortly.</p>
+    </div>
+  </div></div>
+<style>
+.rqlb{font-size:12px;color:#9fb6d4;font-weight:700;}
+.rqopt{flex:1;font-size:12.5px;color:#dce8f6;background:rgba(6,18,34,0.6);border:1px solid rgba(120,160,210,0.2);border-radius:8px;padding:9px 10px;cursor:pointer;display:flex;align-items:center;gap:6px;}
+.rqin{width:100%;background:rgba(6,18,34,0.7);border:1px solid rgba(120,160,210,0.22);border-radius:8px;padding:11px 12px;margin-bottom:10px;color:#e9f1fb;font-size:13.5px;font-family:inherit;}
+.rqin::placeholder{color:#74889f;}
+.rqsub{width:100%;background:linear-gradient(135deg,#2b6fff,#00d4ff);color:#04223a;font-weight:800;font-size:14px;border:none;border-radius:9px;padding:13px;cursor:pointer;margin-top:4px;}
+</style>
+<script>
+var REQ_EP='https://script.google.com/macros/s/AKfycbwS9IePFapxHrgfb0u597E4kyYf2BtdOgvUSNDee0Mw8Jc061aM2JP5fwEdLqjkeqWI/exec';
+function openReqModal(){document.getElementById('reqForm').style.display='block';document.getElementById('reqSuccess').style.display='none';document.getElementById('reqModal').style.display='flex';}
+function closeReqModal(){document.getElementById('reqModal').style.display='none';}
+document.getElementById('reqModal').addEventListener('click',function(e){if(e.target===this)closeReqModal();});
+function submitReqForm(e){
+  e.preventDefault();var f=e.target;var b=document.getElementById('reqBtn');b.textContent='Sending…';b.disabled=true;
+  var rt=(f.querySelector('input[name=requestType]:checked')||{}).value||'Dashboard access';
+  var p={form:'foresight_desk_request',requestType:rt,subject:'NERAI Request ('+rt+') — Foresight Desk',
+    name:f.name.value,email:f.email.value,company:f.company.value,role:f.role.value,message:f.message.value,source:'NERAI Foresight Desk'};
+  fetch(REQ_EP,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(p)})
+    .then(function(){document.getElementById('reqForm').style.display='none';document.getElementById('reqSuccess').style.display='block';setTimeout(closeReqModal,4500);})
+    .catch(function(){window.location.href='mailto:kagan@neraicorp.com?subject='+encodeURIComponent(p.subject)+'&body='+encodeURIComponent('Request type: '+rt+'\nName: '+p.name+'\nEmail: '+p.email+'\nCompany: '+(p.company||'-')+'\nRole: '+(p.role||'-')+'\nMessage: '+(p.message||'-'));closeReqModal();});
+}
+</script>
+
 </div></body></html>
