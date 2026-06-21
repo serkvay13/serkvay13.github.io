@@ -138,7 +138,7 @@ font-family:'Inter',system-ui,sans-serif;color:var(--txt);}
        <span class='rv' style='color:#33c98a'>+4%</span>
        <span class='rs' style='color:#33c98a'>NORMAL</span></div></div>
   <div class="card"><h4>Trade Route Disruption Tracker</h4><div class="cs">Status by corridor</div><div class='row'><span class='rn'>Red Sea / Suez</span><span class='rs' style='color:#33c98a'>NORMAL</span></div><div class='row'><span class='rn'>Strait of Hormuz</span><span class='rs' style='color:#e0556a'>CRITICAL</span></div><div class='row'><span class='rn'>Panama Canal</span><span class='rs' style='color:#33c98a'>NORMAL</span></div><div class='row'><span class='rn'>Malacca / Singapore</span><span class='rs' style='color:#f59e0b'>MODERATE</span></div></div>
-  <div class="card"><h4>Port Incident Hotspots</h4><div class="cs">Most-affected ports (7-day)</div><div class='row'><span class='rn'>Hormuz</span><span class='rv' style='color:#00d4ff'>11</span></div><div class='row'><span class='rn'>Black Sea</span><span class='rv' style='color:#00d4ff'>2</span></div><div class='row'><span class='rn'>Baltimore</span><span class='rv' style='color:#00d4ff'>1</span></div><div class='row'><span class='rn'>English Channel</span><span class='rv' style='color:#00d4ff'>1</span></div><div class='row'><span class='rn'>Hong Kong</span><span class='rv' style='color:#00d4ff'>1</span></div></div>
+  <div class="card"><h4>Port Incident Hotspots</h4><div class="cs">Most-affected ports (7-day)</div><div class='row'><span class='rn'>Hormuz</span><span class='rv' style='color:#00d4ff'>12</span></div><div class='row'><span class='rn'>Black Sea</span><span class='rv' style='color:#00d4ff'>2</span></div><div class='row'><span class='rn'>Baltimore</span><span class='rv' style='color:#00d4ff'>1</span></div><div class='row'><span class='rn'>English Channel</span><span class='rv' style='color:#00d4ff'>1</span></div><div class='row'><span class='rn'>Hong Kong</span><span class='rv' style='color:#00d4ff'>1</span></div></div>
   <div class="card"><h4>Supply Disruption Forecast</h4><div class="cs">Shock next month (probability)</div><div class='row'><span class='rn'>paper <span class='tag'>(product)</span></span>
        <span class='rv' style='color:#e0556a'>70%</span></div><div class='row'><span class='rn'>Hong Kong <span class='tag'>(country)</span></span>
        <span class='rv' style='color:#e0556a'>59%</span></div><div class='row'><span class='rn'>misc manufacturing <span class='tag'>(product)</span></span>
@@ -191,7 +191,7 @@ font-family:'Inter',system-ui,sans-serif;color:var(--txt);}
     <div class="chk"><b>✓</b> Commercially useful, editorially strong</div>
   </div></div>
 
-<div class="foot">NERAI Foresight Desk · live data refreshed automatically · last generated 2026-06-21 20:44 UTC · neraicorp.com</div>
+<div class="foot">NERAI Foresight Desk · live data refreshed automatically · last generated 2026-06-21 20:50 UTC · neraicorp.com</div>
 
 <div id="reqModal" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(6,16,30,0.82);align-items:center;justify-content:center;padding:16px;">
   <div style="background:#0e2740;border:1px solid rgba(120,160,210,0.25);border-radius:16px;max-width:460px;width:100%;padding:30px 30px 26px;position:relative;box-shadow:0 24px 70px rgba(0,0,0,0.5);">
@@ -229,18 +229,19 @@ font-family:'Inter',system-ui,sans-serif;color:var(--txt);}
 .rqsub{width:100%;background:linear-gradient(135deg,#2b6fff,#00d4ff);color:#04223a;font-weight:800;font-size:14px;border:none;border-radius:9px;padding:13px;cursor:pointer;margin-top:4px;}
 </style>
 <script>
-var REQ_EP='https://script.google.com/macros/s/AKfycbwS9IePFapxHrgfb0u597E4kyYf2BtdOgvUSNDee0Mw8Jc061aM2JP5fwEdLqjkeqWI/exec';
+var REQ_EP='https://formsubmit.co/ajax/kagan@neraicorp.com';
 function openReqModal(){document.getElementById('reqForm').style.display='block';document.getElementById('reqSuccess').style.display='none';document.getElementById('reqModal').style.display='flex';}
 function closeReqModal(){document.getElementById('reqModal').style.display='none';}
 document.getElementById('reqModal').addEventListener('click',function(e){if(e.target===this)closeReqModal();});
 function submitReqForm(e){
   e.preventDefault();var f=e.target;var b=document.getElementById('reqBtn');b.textContent='Sending…';b.disabled=true;
   var rt=(f.querySelector('input[name=requestType]:checked')||{}).value||'Dashboard access';
-  var p={form:'foresight_desk_request',requestType:rt,subject:'NERAI Request ('+rt+') — Foresight Desk',
-    name:f.name.value,email:f.email.value,company:f.company.value,role:f.role.value,message:f.message.value,source:'NERAI Foresight Desk'};
-  fetch(REQ_EP,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(p)})
+  var p={_subject:'NERAI Foresight Desk Request ('+rt+')',_template:'table',_captcha:'false',_replyto:f.email.value,
+    'Request type':rt,'Name':f.name.value,'Email':f.email.value,'Company':f.company.value,'Role':f.role.value,'Message':f.message.value,'Source':'NERAI Foresight Desk'};
+  fetch(REQ_EP,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(p)})
+    .then(function(r){return r.json();})
     .then(function(){document.getElementById('reqForm').style.display='none';document.getElementById('reqSuccess').style.display='block';setTimeout(closeReqModal,4500);})
-    .catch(function(){window.location.href='mailto:kagan@neraicorp.com?subject='+encodeURIComponent(p.subject)+'&body='+encodeURIComponent('Request type: '+rt+'\nName: '+p.name+'\nEmail: '+p.email+'\nCompany: '+(p.company||'-')+'\nRole: '+(p.role||'-')+'\nMessage: '+(p.message||'-'));closeReqModal();});
+    .catch(function(){window.location.href='mailto:kagan@neraicorp.com?subject='+encodeURIComponent(p._subject)+'&body='+encodeURIComponent('Request type: '+rt+'\nName: '+p.Name+'\nEmail: '+p.Email+'\nCompany: '+(p.Company||'-')+'\nRole: '+(p.Role||'-')+'\nMessage: '+(p.Message||'-'));closeReqModal();});
 }
 </script>
 
