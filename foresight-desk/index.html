@@ -16,7 +16,7 @@ font-family:'Inter',system-ui,sans-serif;color:var(--txt);}
 .btns{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;}
 .btn{font-size:12.5px;font-weight:800;letter-spacing:1px;padding:11px 18px;border-radius:7px;text-decoration:none;}
 .btn.p{background:var(--blue);color:#fff;} .btn.o{border:1px solid var(--line);color:#cfe0f5;}
-.nlogo{font-size:40px;font-weight:800;letter-spacing:-1px;white-space:nowrap;} .nlogo .ai{color:var(--cyan);}
+.nlogo{font-size:40px;font-weight:800;letter-spacing:-1px;white-space:nowrap;display:flex;align-items:center;}.nlogo .mark{margin-right:12px;flex:0 0 48px;}.nlogo .wm{line-height:1;} .nlogo .ai{color:var(--cyan);}
 .badges{display:flex;gap:30px;flex-wrap:wrap;margin:26px 0 8px;}
 .badge{display:flex;gap:10px;align-items:flex-start;} .bdot{width:22px;height:22px;border-radius:6px;background:rgba(0,212,255,0.12);border:1px solid rgba(0,212,255,0.4);flex:0 0 22px;margin-top:2px;}
 .badge b{font-size:12px;letter-spacing:1px;} .badge span{display:block;font-size:11px;color:var(--mut);}
@@ -69,14 +69,14 @@ font-family:'Inter',system-ui,sans-serif;color:var(--txt);}
 <div class="hero"><div>
   <div class="h1">NERAI Foresight Desk</div>
   <div class="sub">Flashpoints, chokepoints and supply-chain pressure — translated into decision-ready intelligence.</div>
-  <div class="btns"><a class="btn p" href="#reports">READ LATEST BRIEFING →</a><a class="btn o" href="#" onclick="openReqModal();return false;">REQUEST NERAI ACCESS</a></div>
+  <div class="btns"><a class="btn p" href="https://neraicorp.com/NERAI_SupplyChain_Outlook_June2026.pdf" target="_blank" rel="noopener">READ LATEST BRIEFING →</a><a class="btn o" href="#" onclick="openReqModal();return false;">REQUEST NERAI ACCESS</a></div>
   <div class="badges">
     <div class="badge"><div class="bdot"></div><div><b>LIVE SIGNALS</b><span>Daily updates</span></div></div>
     <div class="badge"><div class="bdot"></div><div><b>FORWARD-LOOKING</b><span>4-week outlooks</span></div></div>
     <div class="badge"><div class="bdot"></div><div><b>CHOKEPOINT FOCUS</b><span>Transit vs baseline</span></div></div>
     <div class="badge"><div class="bdot"></div><div><b>EXECUTIVE READY</b><span>Briefings, not noise</span></div></div>
   </div></div>
-  <div class="nlogo">NER<span class="ai">AI</span></div>
+  <div class="nlogo"><svg class='mark' viewBox='0 0 104 104' width='48' height='48' aria-hidden='true'><circle cx='16' cy='16' r='9' fill='#00d4ff'/><circle cx='16' cy='40' r='9' fill='#cfe0f5'/><circle cx='16' cy='64' r='9' fill='#00d4ff'/><circle cx='16' cy='88' r='9' fill='#cfe0f5'/><circle cx='40' cy='16' r='9' fill='#cfe0f5'/><circle cx='40' cy='40' r='9' fill='#00d4ff'/><circle cx='40' cy='64' r='9' fill='#cfe0f5'/><circle cx='40' cy='88' r='9' fill='#00d4ff'/><circle cx='64' cy='16' r='9' fill='#00d4ff'/><circle cx='64' cy='40' r='9' fill='#cfe0f5'/><circle cx='64' cy='64' r='9' fill='#00d4ff'/><circle cx='64' cy='88' r='9' fill='#cfe0f5'/><circle cx='88' cy='16' r='9' fill='#cfe0f5'/><circle cx='88' cy='40' r='9' fill='#00d4ff'/><circle cx='88' cy='64' r='9' fill='#cfe0f5'/><circle cx='88' cy='88' r='9' fill='#00d4ff'/></svg><span class="wm">NER<span class="ai">AI</span></span></div>
 </div>
 
 
@@ -138,7 +138,7 @@ font-family:'Inter',system-ui,sans-serif;color:var(--txt);}
        <span class='rv' style='color:#33c98a'>+4%</span>
        <span class='rs' style='color:#33c98a'>NORMAL</span></div></div>
   <div class="card"><h4>Trade Route Disruption Tracker</h4><div class="cs">Status by corridor</div><div class='row'><span class='rn'>Red Sea / Suez</span><span class='rs' style='color:#33c98a'>NORMAL</span></div><div class='row'><span class='rn'>Strait of Hormuz</span><span class='rs' style='color:#e0556a'>CRITICAL</span></div><div class='row'><span class='rn'>Panama Canal</span><span class='rs' style='color:#33c98a'>NORMAL</span></div><div class='row'><span class='rn'>Malacca / Singapore</span><span class='rs' style='color:#f59e0b'>MODERATE</span></div></div>
-  <div class="card"><h4>Port Incident Hotspots</h4><div class="cs">Most-affected ports (7-day)</div><div class='row'><span class='rn'>Hormuz</span><span class='rv' style='color:#00d4ff'>12</span></div><div class='row'><span class='rn'>Black Sea</span><span class='rv' style='color:#00d4ff'>2</span></div><div class='row'><span class='rn'>Baltimore</span><span class='rv' style='color:#00d4ff'>1</span></div><div class='row'><span class='rn'>English Channel</span><span class='rv' style='color:#00d4ff'>1</span></div><div class='row'><span class='rn'>Hong Kong</span><span class='rv' style='color:#00d4ff'>1</span></div></div>
+  <div class="card"><h4>Port Incident Hotspots</h4><div class="cs">Most-affected ports (7-day)</div><div class='row'><span class='rn'>Hormuz</span><span class='rv' style='color:#00d4ff'>11</span></div><div class='row'><span class='rn'>Black Sea</span><span class='rv' style='color:#00d4ff'>2</span></div><div class='row'><span class='rn'>Baltimore</span><span class='rv' style='color:#00d4ff'>1</span></div><div class='row'><span class='rn'>English Channel</span><span class='rv' style='color:#00d4ff'>1</span></div><div class='row'><span class='rn'>Hong Kong</span><span class='rv' style='color:#00d4ff'>1</span></div></div>
   <div class="card"><h4>Supply Disruption Forecast</h4><div class="cs">Shock next month (probability)</div><div class='row'><span class='rn'>paper <span class='tag'>(product)</span></span>
        <span class='rv' style='color:#e0556a'>70%</span></div><div class='row'><span class='rn'>Hong Kong <span class='tag'>(country)</span></span>
        <span class='rv' style='color:#e0556a'>59%</span></div><div class='row'><span class='rn'>misc manufacturing <span class='tag'>(product)</span></span>
@@ -191,7 +191,7 @@ font-family:'Inter',system-ui,sans-serif;color:var(--txt);}
     <div class="chk"><b>✓</b> Commercially useful, editorially strong</div>
   </div></div>
 
-<div class="foot">NERAI Foresight Desk · live data refreshed automatically · last generated 2026-06-21 20:05 UTC · neraicorp.com</div>
+<div class="foot">NERAI Foresight Desk · live data refreshed automatically · last generated 2026-06-21 20:44 UTC · neraicorp.com</div>
 
 <div id="reqModal" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(6,16,30,0.82);align-items:center;justify-content:center;padding:16px;">
   <div style="background:#0e2740;border:1px solid rgba(120,160,210,0.25);border-radius:16px;max-width:460px;width:100%;padding:30px 30px 26px;position:relative;box-shadow:0 24px 70px rgba(0,0,0,0.5);">
