@@ -1,204 +1,125 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NERAI Foresight Desk · Power & Corridors</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<title>Foresight Desk · Power & Corridors × NERAI</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a1628;--bg2:#0d2036;--panel:#0e2740;--line:rgba(120,160,210,0.16);--cyan:#00d4ff;--blue:#2b6fff;
---green:#33c98a;--amber:#f59e0b;--red:#e0556a;--txt:#e9f1fb;--mut:#9fb6d4;--dim:#74889f;}
+:root{--bg:#0a1628;--panel:#0e2740;--line:rgba(120,160,210,0.16);--cyan:#00d4ff;--blue:#2b6fff;--green:#33c98a;--amber:#f59e0b;--red:#e0556a;--txt:#e9f1fb;--mut:#9fb6d4;--dim:#74889f;}
 *{box-sizing:border-box;margin:0;padding:0;}
-body{background:radial-gradient(1200px 700px at 80% -5%,rgba(0,119,168,0.28),transparent 60%),linear-gradient(160deg,#0d2036,#0a1628 62%,#08111f);
-font-family:'Inter',system-ui,sans-serif;color:var(--txt);}
-.wrap{max-width:1120px;margin:0 auto;padding:34px 26px 60px;}
-.cobrand{font-size:12px;letter-spacing:3px;font-weight:800;color:var(--cyan);text-transform:uppercase;}
-.hero{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;margin-top:10px;}
-.h1{font-size:54px;font-weight:800;line-height:1.0;letter-spacing:-1px;}
-.sub{font-size:18px;color:var(--mut);margin-top:14px;max-width:560px;line-height:1.5;}
-.btns{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;}
-.btn{font-size:12.5px;font-weight:800;letter-spacing:1px;padding:11px 18px;border-radius:7px;text-decoration:none;}
-.btn.p{background:var(--blue);color:#fff;} .btn.o{border:1px solid var(--line);color:#cfe0f5;}
-.nlogo{font-size:40px;font-weight:800;letter-spacing:-1px;white-space:nowrap;display:flex;align-items:center;}.nlogo .mark{margin-right:12px;flex:0 0 48px;}.nlogo .wm{line-height:1;} .nlogo .ai{color:var(--cyan);}
-.badges{display:flex;gap:30px;flex-wrap:wrap;margin:26px 0 8px;}
-.badge{display:flex;gap:10px;align-items:flex-start;} .bdot{width:22px;height:22px;border-radius:6px;background:rgba(0,212,255,0.12);border:1px solid rgba(0,212,255,0.4);flex:0 0 22px;margin-top:2px;}
-.badge b{font-size:12px;letter-spacing:1px;} .badge span{display:block;font-size:11px;color:var(--mut);}
-.panel{background:rgba(10,26,46,0.6);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-top:18px;}
-.eyebrow{font-size:11px;letter-spacing:2.5px;font-weight:800;color:var(--cyan);}
-.psub{font-size:14px;color:var(--mut);margin-top:8px;} .ptitle{font-size:30px;font-weight:800;margin-top:2px;}
-.pmeta{font-size:12px;color:var(--dim);margin-top:4px;}
-.ph{display:flex;justify-content:space-between;align-items:flex-start;}
-.fbadge{font-size:11px;letter-spacing:1.5px;color:var(--mut);border:1px solid var(--line);border-radius:6px;padding:7px 12px;}
-.fgrid{display:grid;grid-template-columns:1.15fr 1fr;gap:24px;margin-top:18px;}
-.sublbl{font-size:10.5px;letter-spacing:2px;color:var(--mut);font-weight:700;margin-bottom:10px;}
-.gauges,.regimes,.cbs2{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
-.cbs2{grid-template-columns:1fr 1fr;}
-.g,.rg,.cb{background:rgba(6,18,34,0.7);border:1px solid var(--line);border-radius:10px;padding:12px;text-align:center;}
-.gl,.rgn,.cbn{font-size:11px;color:#c8d8f0;min-height:28px;} .gv{font-size:30px;font-weight:800;line-height:1;margin:2px 0;}
-.gbar,.exbar{height:6px;border-radius:4px;background:rgba(255,255,255,0.07);overflow:hidden;margin:4px 0;}
-.gbar span,.exbar span{display:block;height:100%;border-radius:4px;}
-.gc{font-size:9.5px;} .rgs{font-size:15px;font-weight:800;margin:3px 0;} .rgm{font-size:9.5px;color:var(--dim);}
-.cbv{font-size:26px;font-weight:800;} .cbs{font-size:11px;font-weight:800;} .cbl{font-size:9px;color:var(--dim);}
-.exp{font-size:12.5px;color:var(--mut);line-height:1.55;margin-top:14px;} .rl{display:inline-block;margin-top:10px;font-size:12px;color:var(--cyan);font-weight:700;text-decoration:none;}
-.sect{font-size:11px;letter-spacing:2.5px;color:var(--cyan);font-weight:800;margin:30px 0 12px;}
-.live{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
-.lf{background:rgba(10,26,46,0.6);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
-.lfh{display:flex;justify-content:space-between;} .lfh b{font-size:16px;} .arr{color:var(--mut);}
-.lf p{font-size:12.5px;color:var(--mut);margin:8px 0 10px;line-height:1.45;} .lfs{font-size:12px;font-weight:800;}
-.gscpi{display:flex;align-items:center;gap:22px;background:rgba(10,26,46,0.7);border:1px solid var(--line);border-radius:12px;padding:14px 20px;margin-bottom:14px;flex-wrap:wrap;}.gsl{font-size:11px;letter-spacing:2px;color:var(--mut);font-weight:700;}.gss{display:block;font-size:10px;color:var(--dim);letter-spacing:0.5px;margin-top:3px;}.gsv{font-size:34px;font-weight:800;line-height:1;}.gsmeta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}.gsbadge{font-size:11px;font-weight:800;border:1px solid;border-radius:5px;padding:4px 10px;}.gsp{font-size:12px;color:var(--mut);}.cards4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px;}
-.card{background:rgba(10,26,46,0.6);border:1px solid var(--line);border-radius:12px;padding:16px 16px;}
-.card h4{font-size:15px;font-weight:800;line-height:1.15;} .card .cs{font-size:10.5px;color:var(--dim);margin:3px 0 10px;}
-.row{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:12px;}
-.row:last-child{border-bottom:none;} .rn{flex:1;color:#dce8f6;} .rv{font-weight:800;} .rs{font-weight:800;font-size:10.5px;}
-.tag{color:var(--dim);font-size:10px;} .muted{font-size:11.5px;color:var(--dim);padding:8px 0;}
-.clink{font-size:11px;color:var(--cyan);font-weight:700;margin-top:8px;display:inline-block;text-decoration:none;}
-.expanel{display:grid;grid-template-columns:1fr 1fr;gap:8px 30px;margin-top:6px;}
-.exrow{display:flex;align-items:center;gap:10px;font-size:12.5px;} .exn{flex:0 0 150px;color:#dce8f6;}
-.exbar{flex:1;} .exv{font-weight:800;width:30px;text-align:right;}
-.exleg{font-size:12px;color:var(--mut);max-width:330px;line-height:1.5;}
-.reports{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
-.rep{background:rgba(10,26,46,0.6);border:1px solid var(--line);border-radius:12px;padding:16px 14px;}
-.rep b{font-size:14px;} .rep p{font-size:11.5px;color:var(--mut);margin:8px 0 10px;line-height:1.4;} .cad{font-size:11px;color:var(--cyan);font-weight:700;}
-.bigh{font-size:30px;font-weight:800;margin-bottom:4px;} .bigsub{font-size:14px;color:var(--mut);margin-bottom:14px;}
-.why{margin-top:30px;border-top:1px solid var(--line);padding-top:24px;display:flex;gap:30px;align-items:flex-start;flex-wrap:wrap;}
-.why h3{font-size:22px;font-weight:800;} .why p{font-size:13px;color:var(--mut);max-width:520px;line-height:1.6;margin-top:8px;}
-.checks{display:grid;gap:10px;} .chk{font-size:13px;color:#cfe0f5;} .chk b{color:var(--green);}
-.foot{margin-top:24px;font-size:11px;color:var(--dim);text-align:center;}
-@media(max-width:880px){.fgrid,.live,.cards4,.reports,.gauges,.regimes,.expanel{grid-template-columns:1fr 1fr;}.h1{font-size:40px;}.nlogo{display:none;}}
-@media(max-width:560px){.fgrid,.live,.cards4,.reports,.gauges,.regimes,.cbs2,.expanel{grid-template-columns:1fr;}}
+body{background:radial-gradient(1100px 700px at 82% -5%,rgba(0,119,168,0.22),transparent 60%),linear-gradient(160deg,#0d2036,#0a1628 62%,#08111f);font-family:'Inter',system-ui,sans-serif;color:var(--txt);}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px 60px;}
+.cover{display:block;width:100%;border-radius:0 0 16px 16px;margin-bottom:26px;}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin:6px 0 8px;}
+.btn{font-size:13px;font-weight:800;letter-spacing:0.5px;padding:13px 22px;border-radius:8px;text-decoration:none;cursor:pointer;border:none;}
+.btn.p{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#04223a;}
+.btn.o{border:1px solid var(--line);color:#cfe0f5;background:transparent;}
+.lead{font-size:18px;color:var(--mut);line-height:1.55;max-width:760px;margin:12px 0 6px;}
+.sect{font-size:11px;letter-spacing:2.5px;color:var(--cyan);font-weight:800;margin:38px 0 14px;}
+.h2{font-family:'DM Serif Display',Georgia,serif;font-size:30px;line-height:1.1;margin-bottom:6px;}
+.track{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.tk{background:rgba(10,26,46,0.6);border:1px solid var(--line);border-left:3px solid var(--cyan);border-radius:12px;padding:16px 18px;}
+.tk b{font-size:15px;} .tk p{font-size:12.5px;color:var(--mut);margin-top:5px;line-height:1.45;}
+.outlook{background:linear-gradient(180deg,rgba(20,50,90,0.4),rgba(8,22,43,0.75));border:1px solid var(--line);border-radius:16px;padding:26px 28px;}
+.obadge{font-size:11px;letter-spacing:1.5px;color:var(--cyan);font-weight:800;}
+.ot{font-family:'DM Serif Display',Georgia,serif;font-size:26px;margin:6px 0 2px;}
+.om{font-size:12px;color:var(--dim);margin-bottom:16px;}
+.find{display:flex;gap:12px;margin-bottom:13px;} .fdot{width:9px;height:9px;border-radius:50%;background:var(--cyan);margin-top:6px;flex:0 0 9px;box-shadow:0 0 9px var(--cyan);}
+.find p{font-size:14px;color:#dce8f6;line-height:1.5;} .find b{color:#fff;}
+.orl{display:inline-block;margin-top:6px;font-size:13px;font-weight:800;color:var(--cyan);text-decoration:none;}
+.signals{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.lt{background:rgba(10,26,46,0.6);border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center;}
+.ltn{font-size:11px;color:var(--mut);letter-spacing:0.5px;} .ltv{font-size:30px;font-weight:800;line-height:1;margin:6px 0;}
+.lts{font-size:11px;font-weight:800;} .ltl{font-size:10px;color:var(--dim);margin-top:3px;}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+.card{background:rgba(10,26,46,0.6);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
+.card h4{font-size:14px;margin-bottom:8px;} .row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:13px;}
+.row:last-child{border-bottom:none;} .rn{color:#dce8f6;} .rv{font-weight:800;} .tag{color:var(--dim);font-size:10.5px;text-transform:uppercase;}
+.proof{font-size:11px;color:var(--dim);margin-top:10px;}
+.receive{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
+.rc{background:rgba(10,26,46,0.6);border:1px solid var(--line);border-radius:12px;padding:15px 13px;} .rc b{font-size:13.5px;} .rc p{font-size:11px;color:var(--mut);margin:7px 0 9px;line-height:1.4;} .rc .cad{font-size:10.5px;color:var(--cyan);font-weight:700;}
+.who{display:flex;flex-wrap:wrap;gap:10px;} .wc{font-size:13px;color:#dce8f6;background:rgba(0,40,72,0.5);border:1px solid rgba(0,212,255,0.2);border-radius:24px;padding:9px 16px;}
+.why{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start;background:rgba(10,26,46,0.5);border:1px solid var(--line);border-radius:14px;padding:24px 26px;}
+.why p{font-size:14px;color:var(--mut);line-height:1.6;max-width:560px;} .why .b{flex:1;min-width:260px;}
+.why h3{font-family:'DM Serif Display',Georgia,serif;font-size:22px;margin-bottom:8px;}
+.checks{display:grid;gap:9px;} .chk{font-size:13px;color:#cfe0f5;} .chk b{color:var(--green);}
+.foot{margin-top:26px;font-size:11px;color:var(--dim);text-align:center;}
+@media(max-width:820px){.track,.signals,.receive{grid-template-columns:1fr 1fr;}.twocol{grid-template-columns:1fr;}}
+@media(max-width:520px){.track,.signals,.receive{grid-template-columns:1fr;}}
 </style></head><body><div class="wrap">
 
-<div class="cobrand">Power &amp; Corridors × NERAI</div>
-<div class="hero"><div>
-  <div class="h1">NERAI Foresight Desk</div>
-  <div class="sub">Flashpoints, chokepoints and supply-chain pressure — translated into decision-ready intelligence.</div>
-  <div class="btns"><a class="btn p" href="https://neraicorp.com/NERAI_SupplyChain_Outlook_June2026.pdf" target="_blank" rel="noopener">READ LATEST BRIEFING →</a><a class="btn o" href="#" onclick="openReqModal();return false;">REQUEST NERAI ACCESS</a></div>
-  <div class="badges">
-    <div class="badge"><div class="bdot"></div><div><b>LIVE SIGNALS</b><span>Daily updates</span></div></div>
-    <div class="badge"><div class="bdot"></div><div><b>FORWARD-LOOKING</b><span>4-week outlooks</span></div></div>
-    <div class="badge"><div class="bdot"></div><div><b>CHOKEPOINT FOCUS</b><span>Transit vs baseline</span></div></div>
-    <div class="badge"><div class="bdot"></div><div><b>EXECUTIVE READY</b><span>Briefings, not noise</span></div></div>
-  </div></div>
-  <div class="nlogo"><svg class='mark' viewBox='0 0 104 104' width='48' height='48' aria-hidden='true'><circle cx='16' cy='16' r='9' fill='#00d4ff'/><circle cx='16' cy='40' r='9' fill='#cfe0f5'/><circle cx='16' cy='64' r='9' fill='#00d4ff'/><circle cx='16' cy='88' r='9' fill='#cfe0f5'/><circle cx='40' cy='16' r='9' fill='#cfe0f5'/><circle cx='40' cy='40' r='9' fill='#00d4ff'/><circle cx='40' cy='64' r='9' fill='#cfe0f5'/><circle cx='40' cy='88' r='9' fill='#00d4ff'/><circle cx='64' cy='16' r='9' fill='#00d4ff'/><circle cx='64' cy='40' r='9' fill='#cfe0f5'/><circle cx='64' cy='64' r='9' fill='#00d4ff'/><circle cx='64' cy='88' r='9' fill='#cfe0f5'/><circle cx='88' cy='16' r='9' fill='#cfe0f5'/><circle cx='88' cy='40' r='9' fill='#00d4ff'/><circle cx='88' cy='64' r='9' fill='#cfe0f5'/><circle cx='88' cy='88' r='9' fill='#00d4ff'/></svg><span class="wm">NER<span class="ai">AI</span></span></div>
+<img class="cover" src="cover.png" alt="Power & Corridors × NERAI — Foresight Desk">
+
+<p class="lead">The Power&nbsp;&amp;&nbsp;Corridors Foresight Desk, powered by NERAI — geopolitical and supply-chain intelligence that turns chokepoints, trade corridors, tariffs and flashpoints into decision-ready outlook for your business.</p>
+<div class="cta">
+  <a class="btn p" href="https://neraicorp.com/NERAI_SupplyChain_Outlook_June2026.pdf" target="_blank" rel="noopener">Read latest briefing →</a>
+  <a class="btn o" href="#" onclick="openReqModal();return false;">Request access</a>
 </div>
 
-
-        <div class='panel feat'>
-          <div class='ph'><div><div class='eyebrow'>FEATURED INTELLIGENCE</div>
-            <div class='psub'>This Week's Foresight Briefing</div>
-            <div class='ptitle'>South China Sea / Taiwan</div>
-            <div class='pmeta'>Window 20260617–20260620 vs 20260613–20260616 · Updated 2026-06-21</div></div>
-            <div class='fbadge'>FORECAST <b style='color:#33c98a'>FALLING</b></div></div>
-          <div class='fgrid'>
-            <div class='fleft'><div class='sublbl'>FLASHPOINT MONITOR</div><div class='gauges'><div class='g'><div class='gl'>China–Philippines</div>
-          <div class='gv' style='color:#33c98a'>18</div>
-          <div class='gbar'><span style='width:18%;background:#33c98a'></span></div>
-          <div class='gc' style='color:#e0556a'>▲ 64% vs prior 4 wks</div></div><div class='g'><div class='gl'>United States–China</div>
-          <div class='gv' style='color:#f59e0b'>32</div>
-          <div class='gbar'><span style='width:32%;background:#f59e0b'></span></div>
-          <div class='gc' style='color:#e0556a'>▲ 64% vs prior 4 wks</div></div><div class='g'><div class='gl'>China–Malaysia</div>
-          <div class='gv' style='color:#33c98a'>15</div>
-          <div class='gbar'><span style='width:15%;background:#33c98a'></span></div>
-          <div class='gc' style='color:#e0556a'>▲ 12% vs prior 4 wks</div></div></div>
-              <div class='sublbl' style='margin-top:14px'>ACTOR REGIMES</div><div class='regimes'><div class='rg'><div class='rgn'>China</div>
-          <div class='rgs' style='color:#e0556a'>Crisis</div>
-          <div class='rgm'>Escalation 24/100 · P(escalate) 0%</div></div><div class='rg'><div class='rgn'>Philippines</div>
-          <div class='rgs' style='color:#f59e0b'>Tension</div>
-          <div class='rgm'>Escalation 11/100 · P(escalate) 16%</div></div><div class='rg'><div class='rgn'>Malaysia</div>
-          <div class='rgs' style='color:#33c98a'>Calm</div>
-          <div class='rgm'>Escalation 5/100 · P(escalate) 12%</div></div></div></div>
-            <div class='fright'><div class='sublbl'>CONFLICT → SUPPLY-CHAIN BRIDGE</div><div class='cbs2'><div class='cb'><div class='cbn'>Taiwan Strait</div>
-          <div class='cbv' style='color:#33c98a'>+4%</div>
-          <div class='cbs' style='color:#33c98a'>NORMAL</div>
-          <div class='cbl'>Transit vs baseline</div></div><div class='cb'><div class='cbn'>Malacca Strait</div>
-          <div class='cbv' style='color:#f59e0b'>-11%</div>
-          <div class='cbs' style='color:#f59e0b'>STRAINED</div>
-          <div class='cbl'>Transit vs baseline</div></div></div>
-              <div class='exp'>Roughly a third of global shipping transits the South China Sea; Taiwan produces the large majority of the world's most advanced semiconductors. A Taiwan Strait or Malacca closure would ripple straight into electronics, autos and East-Asian energy imports.</div></div>
-          </div></div>
-
-<div class="sect">◆ LIVE FLASHPOINTS</div>
-<div class="live"><div class='lf'><div class='lfh'><b>South China Sea / Taiwan</b><span class='arr'>→</span></div>
-       <p>Elevated military and gray-zone activity around Taiwan Strait and SCS.</p>
-       <div class='lfs' style='color:#e0556a'>Rising ↗</div></div><div class='lf'><div class='lfh'><b>Russia–Ukraine</b><span class='arr'>→</span></div>
-       <p>Prolonged conflict with continued strikes and sanctions pressure.</p>
-       <div class='lfs' style='color:#e0556a'>Rising ↗</div></div><div class='lf'><div class='lfh'><b>Iran / Strait of Hormuz</b><span class='arr'>→</span></div>
-       <p>Tensions persist with periodic harassment and tanker risk.</p>
-       <div class='lfs' style='color:#f59e0b'>Elevated ↗</div></div></div>
-
-<div class="sect">CORRIDOR INTELLIGENCE / SUPPLY GRID</div>
-<div class='gscpi'><div class='gsl'>GLOBAL SUPPLY-CHAIN PRESSURE<span class='gss'>NY Fed GSCPI · 2026-05-31</span></div><div class='gsv' style='color:#e0556a'>+1.77σ</div><div class='gsmeta'><span class='gsbadge' style='color:#e0556a;border-color:#e0556a'>HIGH</span><span class='gsp'>▼ 93th percentile of history · 0 = normal</span></div></div>
-<div class="cards4">
-  <div class="card"><h4>Critical Maritime Chokepoints</h4><div class="cs">Transit vs baseline (30-day)</div><div class='row'><span class='rn'>Strait of Hormuz</span>
-       <span class='rv' style='color:#e0556a'>-94%</span>
-       <span class='rs' style='color:#e0556a'>SEVERE</span></div><div class='row'><span class='rn'>Malacca Strait</span>
-       <span class='rv' style='color:#f59e0b'>-11%</span>
-       <span class='rs' style='color:#f59e0b'>STRAINED</span></div><div class='row'><span class='rn'>Suez Canal</span>
-       <span class='rv' style='color:#33c98a'>-4%</span>
-       <span class='rs' style='color:#33c98a'>NORMAL</span></div><div class='row'><span class='rn'>Bab el-Mandeb Strait</span>
-       <span class='rv' style='color:#33c98a'>+1%</span>
-       <span class='rs' style='color:#33c98a'>NORMAL</span></div><div class='row'><span class='rn'>Panama Canal</span>
-       <span class='rv' style='color:#33c98a'>+4%</span>
-       <span class='rs' style='color:#33c98a'>NORMAL</span></div></div>
-  <div class="card"><h4>Trade Route Disruption Tracker</h4><div class="cs">Status by corridor</div><div class='row'><span class='rn'>Red Sea / Suez</span><span class='rs' style='color:#33c98a'>NORMAL</span></div><div class='row'><span class='rn'>Strait of Hormuz</span><span class='rs' style='color:#e0556a'>CRITICAL</span></div><div class='row'><span class='rn'>Panama Canal</span><span class='rs' style='color:#33c98a'>NORMAL</span></div><div class='row'><span class='rn'>Malacca / Singapore</span><span class='rs' style='color:#f59e0b'>MODERATE</span></div></div>
-  <div class="card"><h4>Port Incident Hotspots</h4><div class="cs">Most-affected ports (7-day)</div><div class='row'><span class='rn'>Hormuz</span><span class='rv' style='color:#00d4ff'>11</span></div><div class='row'><span class='rn'>Singapore</span><span class='rv' style='color:#00d4ff'>2</span></div><div class='row'><span class='rn'>Black Sea</span><span class='rv' style='color:#00d4ff'>2</span></div><div class='row'><span class='rn'>English Channel</span><span class='rv' style='color:#00d4ff'>1</span></div><div class='row'><span class='rn'>Hong Kong</span><span class='rv' style='color:#00d4ff'>1</span></div></div>
-  <div class="card"><h4>Supply Disruption Forecast</h4><div class="cs">Shock next month (probability)</div><div class='row'><span class='rn'>paper <span class='tag'>(product)</span></span>
-       <span class='rv' style='color:#e0556a'>70%</span></div><div class='row'><span class='rn'>Hong Kong <span class='tag'>(country)</span></span>
-       <span class='rv' style='color:#e0556a'>59%</span></div><div class='row'><span class='rn'>misc manufacturing <span class='tag'>(product)</span></span>
-       <span class='rv' style='color:#f59e0b'>50%</span></div><div class='row'><span class='rn'>China <span class='tag'>(country)</span></span>
-       <span class='rv' style='color:#f59e0b'>50%</span></div><div class='row'><span class='rn'>leather <span class='tag'>(product)</span></span>
-       <span class='rv' style='color:#f59e0b'>49%</span></div></div>
+<div class="sect">WHAT THE FORESIGHT DESK TRACKS</div>
+<div class="track">
+  <div class="tk"><b>Flashpoints</b><p>Escalation, regime state and a 4-week outlook across the key theatres.</p></div>
+  <div class="tk"><b>Chokepoints</b><p>Hormuz, Suez, Malacca, Bab-el-Mandeb — transit vs baseline, daily.</p></div>
+  <div class="tk"><b>Supply-chain pressure</b><p>Global pressure (GSCPI) and next-month disruption probabilities.</p></div>
+  <div class="tk"><b>Route disruption</b><p>Maritime corridor and port-incident risk as it emerges.</p></div>
+  <div class="tk"><b>Country exposure</b><p>Where conflict, instability and trade friction hit production and exports.</p></div>
+  <div class="tk"><b>Tariff &amp; trade risk</b><p>Section 301/232 exposure by product and corridor.</p></div>
 </div>
 
-<div class="panel"><div class="sect" style="margin-top:0">COUNTRY SUPPLY-DISRUPTION EXPOSURE</div>
-  <div style="display:flex;gap:30px;flex-wrap:wrap;align-items:flex-start">
-    <div class="exleg">0–100 exposure score — conditions (conflict, instability, trade friction) that disrupt a country's production, logistics and exports. Most-exposed shown.</div>
-    <div class="expanel" style="flex:1;min-width:320px"><div class='exrow'><span class='exn'>Kuwait</span>
-       <div class='exbar'><span style='width:100%;background:#e0556a'></span></div>
-       <span class='exv' style='color:#e0556a'>100</span></div><div class='exrow'><span class='exn'>Lebanon</span>
-       <div class='exbar'><span style='width:100%;background:#e0556a'></span></div>
-       <span class='exv' style='color:#e0556a'>100</span></div><div class='exrow'><span class='exn'>Israel</span>
-       <div class='exbar'><span style='width:98%;background:#e0556a'></span></div>
-       <span class='exv' style='color:#e0556a'>98</span></div><div class='exrow'><span class='exn'>Gaza Strip</span>
-       <div class='exbar'><span style='width:95%;background:#e0556a'></span></div>
-       <span class='exv' style='color:#e0556a'>95</span></div><div class='exrow'><span class='exn'>Ukraine</span>
-       <div class='exbar'><span style='width:94%;background:#e0556a'></span></div>
-       <span class='exv' style='color:#e0556a'>94</span></div><div class='exrow'><span class='exn'>Iran</span>
-       <div class='exbar'><span style='width:70%;background:#e0556a'></span></div>
-       <span class='exv' style='color:#e0556a'>70</span></div><div class='exrow'><span class='exn'>Russia</span>
-       <div class='exbar'><span style='width:66%;background:#f59e0b'></span></div>
-       <span class='exv' style='color:#f59e0b'>66</span></div><div class='exrow'><span class='exn'>Yemen</span>
-       <div class='exbar'><span style='width:59%;background:#f59e0b'></span></div>
-       <span class='exv' style='color:#f59e0b'>59</span></div><div class='exrow'><span class='exn'>Jordan</span>
-       <div class='exbar'><span style='width:57%;background:#f59e0b'></span></div>
-       <span class='exv' style='color:#f59e0b'>57</span></div><div class='exrow'><span class='exn'>Afghanistan</span>
-       <div class='exbar'><span style='width:52%;background:#f59e0b'></span></div>
-       <span class='exv' style='color:#f59e0b'>52</span></div><div class='exrow'><span class='exn'>Iraq</span>
-       <div class='exbar'><span style='width:47%;background:#f59e0b'></span></div>
-       <span class='exv' style='color:#f59e0b'>47</span></div><div class='exrow'><span class='exn'>Australia</span>
-       <div class='exbar'><span style='width:47%;background:#f59e0b'></span></div>
-       <span class='exv' style='color:#f59e0b'>47</span></div></div>
-  </div></div>
+<div class="sect">LATEST OUTLOOK</div>
+<div class="outlook">
+  <div class="obadge">THIS WEEK'S BRIEFING</div>
+  <div class="ot">Supply-Chain Disruption Outlook — June 2026</div>
+  <div class="om">A synchronized, three-vector shock to watch over the next 30–90 days.</div>
+  <div class="find"><div class="fdot"></div><p><b>Strait of Hormuz:</b> transit remains ~94% below normal (≈5 vessels/day vs ~92 baseline) despite first-round US–Iran talks — Gulf energy and freight risk stays elevated.</p></div>
+  <div class="find"><div class="fdot"></div><p><b>Paper &amp; pulp:</b> ~70% next-month disruption probability, driven by layered antidumping actions and tariff-induced rerouting.</p></div>
+  <div class="find"><div class="fdot"></div><p><b>China &amp; Hong Kong light manufacturing:</b> 50–59% disruption probability while 30% tariffs hold under the 11 June 60-day pause.</p></div>
+  <div class="find"><div class="fdot"></div><p><b>Worst case (~25% over 90 days):</b> simultaneous Hormuz re-closure, tariff escalation and paper-mill exits would lift container freight 40–60%.</p></div>
+  <a class="orl" href="https://neraicorp.com/NERAI_SupplyChain_Outlook_June2026.pdf" target="_blank" rel="noopener">Read the full briefing (PDF) →</a>
+</div>
 
-<div class="sect" id="reports">REPORTS &amp; BRIEFINGS</div>
-<div class="bigh">Decision-ready briefings, not just dashboards.</div>
-<div class="bigsub">The dashboard is the engine. The briefing is the product.</div>
-<div class="reports"><div class='rep'><b>Weekly Signals to Watch</b><p>What matters now — and why it will matter.</p><span class='cad'>Weekly</span></div><div class='rep'><b>Flashpoint Brief</b><p>Deep dive on a single flashpoint and likely trajectories.</p><span class='cad'>1–2x per week</span></div><div class='rep'><b>Corridor Risk Outlook</b><p>Chokepoint health, routes, and trade impacts ahead.</p><span class='cad'>Weekly</span></div><div class='rep'><b>Sector Exposure Note</b><p>How sectors face supply shocks and second-order effects.</p><span class='cad'>Weekly</span></div><div class='rep'><b>Custom Strategic Briefing</b><p>Tailored analysis for members and teams.</p><span class='cad'>On request</span></div></div>
+<div class="sect">LIVE SIGNALS <span style="color:var(--dim);font-weight:600;letter-spacing:0.5px;">· the data behind the briefings</span></div>
+<div class="signals"><div class='lt'><div class='ltn'>Strait of Hormuz</div><div class='ltv' style='color:#e0556a'>-94%</div><div class='lts' style='color:#e0556a'>SEVERE</div><div class='ltl'>transit vs baseline</div></div><div class='lt'><div class='ltn'>Malacca Strait</div><div class='ltv' style='color:#f59e0b'>-11%</div><div class='lts' style='color:#f59e0b'>STRAINED</div><div class='ltl'>transit vs baseline</div></div><div class='lt'><div class='ltn'>Global pressure</div><div class='ltv' style='color:#e0556a'>+1.77σ</div><div class='lts' style='color:#e0556a'>HIGH</div><div class='ltl'>NY Fed GSCPI</div></div></div>
+<div class="twocol">
+  <div class="card"><h4>Top supply-disruption risks</h4><div class='row'><span class='rn'>Paper <span class='tag'>product</span></span><span class='rv' style='color:#e0556a'>70%</span></div><div class='row'><span class='rn'>Hong Kong <span class='tag'>country</span></span><span class='rv' style='color:#e0556a'>59%</span></div><div class='row'><span class='rn'>Misc Manufacturing <span class='tag'>product</span></span><span class='rv' style='color:#f59e0b'>50%</span></div><div class='row'><span class='rn'>China <span class='tag'>country</span></span><span class='rv' style='color:#f59e0b'>50%</span></div></div>
+  <div class="card"><h4>Current flashpoints</h4><div class='row'><span class='rn'>South China Sea / Taiwan</span><span class='rv' style='color:#e0556a'>Rising</span></div><div class='row'><span class='rn'>Russia–Ukraine</span><span class='rv' style='color:#e0556a'>Rising</span></div><div class='row'><span class='rn'>Iran / Strait of Hormuz</span><span class='rv' style='color:#f59e0b'>Elevated</span></div></div>
+</div>
+<div class="proof">Live signals refresh automatically — chokepoints, flashpoints and country exposure daily; incident feed every few hours.</div>
 
+<div class="sect">WHAT READERS RECEIVE</div>
+<div class="receive">
+  <div class="rc"><b>Weekly Signals to Watch</b><p>What matters now — and why it will matter.</p><span class="cad">Weekly</span></div>
+  <div class="rc"><b>Flashpoint Brief</b><p>Deep dive on a single flashpoint and likely trajectories.</p><span class="cad">1–2x / week</span></div>
+  <div class="rc"><b>Corridor Risk Outlook</b><p>Chokepoint health, routes and trade impacts ahead.</p><span class="cad">Monthly</span></div>
+  <div class="rc"><b>Sector Exposure Note</b><p>How sectors face supply shocks and second-order effects.</p><span class="cad">Monthly</span></div>
+  <div class="rc"><b>Custom Strategic Briefing</b><p>Tailored analysis for members and teams.</p><span class="cad">On request</span></div>
+</div>
+
+<div class="sect">WHO IT'S FOR</div>
+<div class="who">
+  <span class="wc">Logistics operators</span><span class="wc">Insurers &amp; brokers</span><span class="wc">Banks &amp; trade finance</span>
+  <span class="wc">Procurement teams</span><span class="wc">Ports &amp; free zones</span><span class="wc">Corporate risk teams</span>
+  <span class="wc">Policy-facing organisations</span>
+</div>
+
+<div class="sect">WHY POWER &amp; CORRIDORS × NERAI</div>
 <div class="why">
-  <div><h3>Why this fits Power &amp; Corridors</h3>
-  <p>Power &amp; Corridors covers geopolitics, ports, energy routes, infrastructure and trade corridors. NERAI adds a live foresight layer: daily signals, 4-week forecasts, chokepoint health, supply-chain pressure and executive-ready briefings — so you can see around the next turn.</p></div>
+  <div class="b"><h3>Editorial depth meets a live foresight layer.</h3>
+    <p>Power &amp; Corridors brings the corridor-focused audience and editorial authority. NERAI brings the data, modelling and foresight — import-flow modelling, open-source event monitoring, maritime chokepoint data and analyst review, combined into outlook you can act on.</p></div>
   <div class="checks">
-    <div class="chk"><b>✓</b> Actionable intelligence, not raw data</div>
+    <div class="chk"><b>✓</b> Decision-ready, not raw data</div>
     <div class="chk"><b>✓</b> Global coverage with corridor depth</div>
     <div class="chk"><b>✓</b> Commercially useful, editorially strong</div>
-  </div></div>
+  </div>
+</div>
 
-<div class="foot">NERAI Foresight Desk · live data refreshed automatically · last generated 2026-06-22 12:27 UTC · neraicorp.com</div>
+<div class="foot">Power &amp; Corridors × NERAI · Foresight Desk · live data, refreshed automatically · last updated 2026-06-22 16:05 UTC · neraicorp.com</div>
+</div>
 
 <div id="reqModal" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(6,16,30,0.82);align-items:center;justify-content:center;padding:16px;">
-  <div style="background:#0e2740;border:1px solid rgba(120,160,210,0.25);border-radius:16px;max-width:460px;width:100%;padding:30px 30px 26px;position:relative;box-shadow:0 24px 70px rgba(0,0,0,0.5);">
-    <button onclick="closeReqModal()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:#9fb6d4;font-size:1.4rem;cursor:pointer;line-height:1;">&#x2715;</button>
+  <div style="background:#0e2740;border:1px solid rgba(120,160,210,0.25);border-radius:16px;max-width:460px;width:100%;padding:30px;position:relative;box-shadow:0 24px 70px rgba(0,0,0,0.5);">
+    <button onclick="closeReqModal()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:#9fb6d4;font-size:1.4rem;cursor:pointer;">&#x2715;</button>
     <div id="reqForm">
-      <div style="font-size:11px;letter-spacing:2.5px;color:#00d4ff;font-weight:800;">NERAI FORESIGHT DESK</div>
-      <div style="font-size:24px;font-weight:800;margin:6px 0 4px;color:#e9f1fb;">Request NERAI Access</div>
+      <div style="font-size:11px;letter-spacing:2.5px;color:#00d4ff;font-weight:800;">FORESIGHT DESK</div>
+      <div style="font-size:23px;font-weight:800;margin:6px 0 4px;">Request NERAI Access</div>
       <p style="font-size:13px;color:#9fb6d4;margin-bottom:16px;line-height:1.5;">Tell us what you need and we'll be in touch shortly.</p>
       <form onsubmit="submitReqForm(event)">
         <label class="rqlb">What are you requesting?</label>
@@ -216,8 +137,7 @@ font-family:'Inter',system-ui,sans-serif;color:var(--txt);}
       </form>
     </div>
     <div id="reqSuccess" style="display:none;text-align:center;padding:18px 0;">
-      <div style="font-size:40px;">&#9989;</div>
-      <div style="font-size:19px;font-weight:800;color:#e9f1fb;margin-top:8px;">Request received</div>
+      <div style="font-size:40px;">&#9989;</div><div style="font-size:19px;font-weight:800;margin-top:8px;">Request received</div>
       <p style="font-size:13px;color:#9fb6d4;margin-top:6px;">Thanks — the NERAI team will get back to you shortly.</p>
     </div>
   </div></div>
@@ -226,23 +146,20 @@ font-family:'Inter',system-ui,sans-serif;color:var(--txt);}
 .rqopt{flex:1;font-size:12.5px;color:#dce8f6;background:rgba(6,18,34,0.6);border:1px solid rgba(120,160,210,0.2);border-radius:8px;padding:9px 10px;cursor:pointer;display:flex;align-items:center;gap:6px;}
 .rqin{width:100%;background:rgba(6,18,34,0.7);border:1px solid rgba(120,160,210,0.22);border-radius:8px;padding:11px 12px;margin-bottom:10px;color:#e9f1fb;font-size:13.5px;font-family:inherit;}
 .rqin::placeholder{color:#74889f;}
-.rqsub{width:100%;background:linear-gradient(135deg,#2b6fff,#00d4ff);color:#04223a;font-weight:800;font-size:14px;border:none;border-radius:9px;padding:13px;cursor:pointer;margin-top:4px;}
+.rqsub{width:100%;background:linear-gradient(135deg,#2b6fff,#00d4ff);color:#04223a;font-weight:800;font-size:14px;border:none;border-radius:9px;padding:13px;cursor:pointer;}
 </style>
 <script>
 var REQ_EP='https://formsubmit.co/ajax/kagan@neraicorp.com';
 function openReqModal(){document.getElementById('reqForm').style.display='block';document.getElementById('reqSuccess').style.display='none';document.getElementById('reqModal').style.display='flex';}
 function closeReqModal(){document.getElementById('reqModal').style.display='none';}
 document.getElementById('reqModal').addEventListener('click',function(e){if(e.target===this)closeReqModal();});
-function submitReqForm(e){
-  e.preventDefault();var f=e.target;var b=document.getElementById('reqBtn');b.textContent='Sending…';b.disabled=true;
+function submitReqForm(e){e.preventDefault();var f=e.target;var b=document.getElementById('reqBtn');b.textContent='Sending…';b.disabled=true;
   var rt=(f.querySelector('input[name=requestType]:checked')||{}).value||'Dashboard access';
   var p={_subject:'NERAI Foresight Desk Request ('+rt+')',_template:'table',_captcha:'false',_replyto:f.email.value,
     'Request type':rt,'Name':f.name.value,'Email':f.email.value,'Company':f.company.value,'Role':f.role.value,'Message':f.message.value,'Source':'NERAI Foresight Desk'};
   fetch(REQ_EP,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(p)})
-    .then(function(r){return r.json();})
-    .then(function(){document.getElementById('reqForm').style.display='none';document.getElementById('reqSuccess').style.display='block';setTimeout(closeReqModal,4500);})
-    .catch(function(){window.location.href='mailto:kagan@neraicorp.com?subject='+encodeURIComponent(p._subject)+'&body='+encodeURIComponent('Request type: '+rt+'\nName: '+p.Name+'\nEmail: '+p.Email+'\nCompany: '+(p.Company||'-')+'\nRole: '+(p.Role||'-')+'\nMessage: '+(p.Message||'-'));closeReqModal();});
-}
+   .then(function(r){return r.json();})
+   .then(function(){document.getElementById('reqForm').style.display='none';document.getElementById('reqSuccess').style.display='block';setTimeout(closeReqModal,4500);})
+   .catch(function(){window.location.href='mailto:kagan@neraicorp.com?subject='+encodeURIComponent(p._subject)+'&body='+encodeURIComponent('Type: '+rt+'\nName: '+p.Name+'\nEmail: '+p.Email+'\nCompany: '+(p.Company||'-')+'\nRole: '+(p.Role||'-')+'\nMessage: '+(p.Message||'-'));closeReqModal();});}
 </script>
-
-</div></body></html>
+</body></html>
