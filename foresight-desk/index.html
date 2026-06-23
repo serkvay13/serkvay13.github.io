@@ -7,7 +7,7 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 body{background:radial-gradient(1100px 700px at 82% -5%,rgba(0,119,168,0.22),transparent 60%),linear-gradient(160deg,#0d2036,#0a1628 62%,#08111f);font-family:'Inter',system-ui,sans-serif;color:var(--txt);}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px 60px;}
-.cover{display:block;width:100%;border-radius:0 0 16px 16px;margin-bottom:26px;}
+.herowrap{position:relative;display:block;line-height:0;margin-bottom:10px;}.cover{display:block;width:100%;border-radius:0 0 16px 16px;}.hot{position:absolute;display:block;background:transparent;border-radius:8px;}
 .cta{display:flex;gap:12px;flex-wrap:wrap;margin:6px 0 8px;}
 .btn{font-size:13px;font-weight:800;letter-spacing:0.5px;padding:13px 22px;border-radius:8px;text-decoration:none;cursor:pointer;border:none;}
 .btn.p{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#04223a;}
@@ -46,24 +46,11 @@ body{background:radial-gradient(1100px 700px at 82% -5%,rgba(0,119,168,0.22),tra
 @media(max-width:520px){.track,.signals,.receive{grid-template-columns:1fr;}}
 </style></head><body><div class="wrap">
 
-<img class="cover" src="cover.png" alt="Power & Corridors × NERAI — Foresight Desk">
-
-<p class="lead">The Power&nbsp;&amp;&nbsp;Corridors Foresight Desk, powered by NERAI — geopolitical and supply-chain intelligence that turns chokepoints, trade corridors, tariffs and flashpoints into decision-ready outlook for your business.</p>
-<div class="cta">
-  <a class="btn p" href="https://neraicorp.com/NERAI_SupplyChain_Outlook_June2026.pdf" target="_blank" rel="noopener">Read latest briefing →</a>
-  <a class="btn o" href="#" onclick="openReqModal();return false;">Request access</a>
+<div class="herowrap">
+  <img class="cover" src="cover.png" alt="Power & Corridors × NERAI — Foresight Desk: see risk, stay ahead.">
+  <a class="hot" href="https://neraicorp.com/NERAI_SupplyChain_Outlook_June2026.pdf" target="_blank" rel="noopener" aria-label="Read latest briefing" style="left:3.5%;top:81%;width:18.5%;height:7%;"></a>
+  <a class="hot" href="#" onclick="openReqModal();return false;" aria-label="Request access" style="left:23%;top:81%;width:13.5%;height:7%;"></a>
 </div>
-
-<div class="sect">WHAT THE FORESIGHT DESK TRACKS</div>
-<div class="track">
-  <div class="tk"><b>Flashpoints</b><p>Escalation, regime state and a 4-week outlook across the key theatres.</p></div>
-  <div class="tk"><b>Chokepoints</b><p>Hormuz, Suez, Malacca, Bab-el-Mandeb — transit vs baseline, daily.</p></div>
-  <div class="tk"><b>Supply-chain pressure</b><p>Global pressure (GSCPI) and next-month disruption probabilities.</p></div>
-  <div class="tk"><b>Route disruption</b><p>Maritime corridor and port-incident risk as it emerges.</p></div>
-  <div class="tk"><b>Country exposure</b><p>Where conflict, instability and trade friction hit production and exports.</p></div>
-  <div class="tk"><b>Tariff &amp; trade risk</b><p>Section 301/232 exposure by product and corridor.</p></div>
-</div>
-
 <div class="sect">LATEST OUTLOOK</div>
 <div class="outlook">
   <div class="obadge">THIS WEEK'S BRIEFING</div>
@@ -111,7 +98,7 @@ body{background:radial-gradient(1100px 700px at 82% -5%,rgba(0,119,168,0.22),tra
   </div>
 </div>
 
-<div class="foot">Power &amp; Corridors × NERAI · Foresight Desk · live data, refreshed automatically · last updated 2026-06-23 04:31 UTC · neraicorp.com</div>
+<div class="foot">Power &amp; Corridors × NERAI · Foresight Desk · live data, refreshed automatically · last updated 2026-06-23 07:30 UTC · neraicorp.com</div>
 </div>
 
 <div id="reqModal" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(6,16,30,0.82);align-items:center;justify-content:center;padding:16px;">
