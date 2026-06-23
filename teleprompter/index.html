@@ -1,0 +1,165 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>NERAI Prompter (remote)</title>
+<script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;background:#000;color:#fff;font-family:Georgia,serif;overflow:hidden;}
+#pick{position:fixed;inset:0;z-index:40;background:#0b0e13;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;font-family:Arial,sans-serif;padding:24px;text-align:center;}
+#pick h1{font-size:22px;color:#e9f1fb;font-weight:800;}#pick p{color:#9fb6d4;font-size:14px;max-width:420px;line-height:1.5;}
+.room{display:flex;gap:8px;align-items:center;color:#9fb6d4;font-size:14px;}
+.room input{background:#11151c;border:1px solid #2e3a4f;border-radius:8px;color:#e9f1fb;font-size:20px;letter-spacing:3px;text-align:center;width:150px;padding:9px;font-weight:800;}
+.roles{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.role{background:#1c2230;border:1px solid #2e3a4f;border-radius:12px;padding:20px 22px;width:200px;cursor:pointer;color:#dbe6f5;}
+.role:hover{border-color:#4aa8ff;}.role b{display:block;font-size:16px;margin-bottom:6px;color:#fff;}.role span{font-size:12px;color:#9fb6d4;}
+#bar{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:9px 14px;background:rgba(15,18,24,0.92);border-bottom:1px solid #222;font-family:Arial,sans-serif;font-size:13px;transition:opacity .3s;}
+#bar.hide{opacity:0;pointer-events:none;}
+button{background:#1c2230;color:#dbe6f5;border:1px solid #2e3a4f;border-radius:7px;padding:8px 12px;font-size:13px;font-weight:700;cursor:pointer;}
+button.on{background:#2b6fff;color:#fff;border-color:#2b6fff;}
+.grp{display:flex;align-items:center;gap:6px;color:#9fb6d4;}input[type=range]{width:120px;accent-color:#00d4ff;}
+.dot{width:9px;height:9px;border-radius:50%;background:#c0392b;display:inline-block;}.dot.ok{background:#33c98a;}
+#stat{margin-left:auto;color:#74889f;font-size:11px;}
+/* display */
+#viewport{position:absolute;inset:0;overflow:hidden;}
+#scroller{position:absolute;left:50%;top:0;transform:translateX(-50%) translateY(0);width:84%;max-width:1100px;white-space:pre-wrap;word-wrap:break-word;text-align:center;font-size:60px;line-height:1.45;font-weight:700;}
+#guide{position:fixed;left:0;right:0;top:34%;border-top:2px solid rgba(255,80,80,0.55);z-index:6;pointer-events:none;}
+.amber #scroller{color:#ffd24a;}
+/* controller */
+#ctrl{position:absolute;inset:48px 0 0;display:none;flex-direction:column;padding:0;}
+#ctrl textarea{flex:1;background:#0b0e13;color:#e9f1fb;border:none;outline:none;resize:none;font-family:Arial,sans-serif;font-size:17px;line-height:1.6;padding:14px 18px;}
+#ctrl .crow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:12px 16px;background:#0b0e13;border-top:1px solid #222;font-family:Arial,sans-serif;}
+#ctrl .send{background:#2b6fff;color:#fff;border-color:#2b6fff;font-size:15px;padding:11px 22px;}
+.khint{font-size:11px;color:#5f738f;font-family:Arial,sans-serif;}
+</style></head><body>
+
+<div id="pick">
+  <h1>NERAI Prompter — remote</h1>
+  <p>Telefonu <b>ekran</b> yap, bilgisayarı <b>kumanda</b> yap. İki cihazda da aynı <b>oda kodunu</b> gir.</p>
+  <div class="room">Oda kodu: <input id="room" maxlength="6"></div>
+  <div class="roles">
+    <div class="role" id="rDisplay"><b>📱 Ekran (telefon)</b><span>Metni büyük puntoyla gösterir ve kaydırır. Genelde telefonda bunu seç.</span></div>
+    <div class="role" id="rCtrl"><b>⌨️ Kumanda (bilgisayar)</b><span>Metni yazar, hızı ↑↓ ile, başlat/duraklat'ı Boşluk ile yönetir.</span></div>
+  </div>
+  <p class="khint" id="pickhint"></p>
+</div>
+
+<div id="bar" style="display:none">
+  <span class="dot" id="conn"></span>
+  <span style="color:#9fb6d4">Oda <b id="roomLbl" style="color:#cfe0f5"></b></span>
+  <span id="ctrlBtns" style="display:none;gap:12px;align-items:center" >
+    <button id="play">▶ Başlat</button><button id="restart">⟲ Baştan</button>
+    <div class="grp">Hız <input id="speed" type="range" min="8" max="260" value="55"><span id="speedV">55</span></div>
+    <div class="grp">Yazı <input id="font" type="range" min="28" max="140" value="60"><span id="fontV">60</span></div>
+    <button id="mirror">⇋ Ayna</button><span class="khint">↑↓ hız · Boşluk başlat/dur · +/− yazı · R baştan</span>
+  </span>
+  <button id="dispLocal" style="display:none">Yerel kontrol</button>
+  <span id="stat">bağlanıyor…</span>
+</div>
+
+<!-- display -->
+<div id="viewport"><div id="scroller"></div></div>
+<div id="guide"></div>
+
+<!-- controller -->
+<div id="ctrl">
+  <textarea id="script" spellcheck="false" placeholder="Konuşma metnini buraya yaz/yapıştır, sonra 'Telefona gönder'e bas…">Metnini buraya yapıştır ve "Telefona gönder"e bas.
+
+Bilgisayarda yukarı-aşağı oklarla hızı, boşlukla başlat/duraklat'ı yönetirsin. Telefon ekranında metin yavaşça akar.</textarea>
+  <div class="crow"><button class="send" id="send">📤 Telefona gönder</button><span class="khint">Gönderdikten sonra: ↑↓ hız · Boşluk başlat/dur · R baştan · ⇋ ayna</span></div>
+</div>
+
+<script>
+(function(){
+ var P=document.getElementById('pick'),bar=document.getElementById('bar'),sc=document.getElementById('scroller'),
+   vp=document.getElementById('viewport'),guide=document.getElementById('guide'),ctrl=document.getElementById('ctrl'),
+   conn=document.getElementById('conn'),stat=document.getElementById('stat'),body=document.body;
+ var role=null,client=null,topic=null,room=null;
+ var speed=55,font=60,offset=0,playing=false,raf=null,last=0,mH=false;
+ // room from URL or random
+ var url=new URL(location.href); var rp=url.searchParams.get('room');
+ var roomInput=document.getElementById('room');
+ roomInput.value=(rp||(Math.random().toString(36).slice(2,8))).toUpperCase();
+ document.getElementById('pickhint').textContent='İpucu: telefonda bu sayfayı açıp aynı kodu gir (ya da bilgisayardaki linki ?room='+roomInput.value+' ile paylaş).';
+
+ function start(r){ role=r; room=roomInput.value.trim().toUpperCase()||'NERAI'; topic='nerai/tp/'+room;
+   P.style.display='none'; bar.style.display='flex'; document.getElementById('roomLbl').textContent=room;
+   if(role==='ctrl'){ document.getElementById('ctrlBtns').style.display='inline-flex'; ctrl.style.display='flex'; guide.style.display='none'; }
+   else { document.getElementById('dispLocal').style.display='inline-block'; setText(sc.textContent||' '); }
+   connect();
+ }
+ document.getElementById('rDisplay').onclick=function(){start('display');};
+ document.getElementById('rCtrl').onclick=function(){start('ctrl');};
+
+ function connect(){
+   try{
+     client=mqtt.connect('wss://broker.hivemq.com:8884/mqtt',{clientId:'nerai_'+role+'_'+Math.random().toString(16).slice(2),reconnectPeriod:3000});
+     client.on('connect',function(){conn.classList.add('ok');stat.textContent='bağlı';client.subscribe(topic);
+       if(role==='display'){pub({t:'hello'});} });
+     client.on('reconnect',function(){conn.classList.remove('ok');stat.textContent='yeniden bağlanıyor…';});
+     client.on('close',function(){conn.classList.remove('ok');stat.textContent='bağlantı kapalı';});
+     client.on('message',function(tp,msg){ try{onMsg(JSON.parse(msg.toString()));}catch(e){} });
+   }catch(e){ stat.textContent='kanal yok (yerel mod)'; }
+ }
+ function pub(o){ if(client&&client.connected){ o.from=role; client.publish(topic,JSON.stringify(o)); } }
+
+ // ===== display engine =====
+ function setOffsetStart(){offset=vp.clientHeight*0.34;render();}
+ function render(){sc.style.transform='translateX(-50%) translateY('+offset+'px) scaleX('+(mH?-1:1)+')';}
+ function setText(t){sc.textContent=t;setOffsetStart();}
+ function tick(ts){ if(!playing)return; if(!last)last=ts; var dt=(ts-last)/1000; last=ts; offset-=speed*dt; render();
+   if(offset<-(sc.offsetHeight+vp.clientHeight*0.2)){playing=false;} raf=requestAnimationFrame(tick); }
+ function play(){ if(playing)return; playing=true;last=0; raf=requestAnimationFrame(tick); upd(); }
+ function pause(){ playing=false; if(raf)cancelAnimationFrame(raf); upd(); }
+ function applyFont(){ sc.style.fontSize=font+'px'; }
+ function upd(){ var b=document.getElementById('play'); if(b){b.textContent=playing?'⏸ Duraklat':'▶ Başlat';b.classList.toggle('on',playing);} }
+
+ // role=display: react to controller messages
+ function onMsg(o){
+   if(o.from===role) return;
+   if(role==='display'){
+     if(o.t==='text'){ setText(o.text||' '); }
+     else if(o.t==='speed'){ speed=o.v; }
+     else if(o.t==='font'){ font=o.v; applyFont(); render(); }
+     else if(o.t==='play'){ play(); }
+     else if(o.t==='pause'){ pause(); }
+     else if(o.t==='restart'){ setOffsetStart(); }
+     else if(o.t==='mirror'){ mH=o.h; render(); }
+   } else if(role==='ctrl'){
+     if(o.t==='hello'){ sendState(); } // late-joining phone -> resend everything
+   }
+ }
+ // role=ctrl: send commands
+ function sendText(){ pub({t:'text',text:document.getElementById('script').value}); }
+ function sendState(){ sendText(); pub({t:'speed',v:speed}); pub({t:'font',v:font}); pub({t:'mirror',h:mH}); }
+ function cPlay(){ playing=!playing; pub({t:playing?'play':'pause'}); upd(); }
+ function cRestart(){ pub({t:'restart'}); }
+ function cSpeed(v){ speed=Math.max(8,Math.min(260,v)); document.getElementById('speed').value=speed; document.getElementById('speedV').textContent=speed; pub({t:'speed',v:speed}); }
+ function cFont(v){ font=Math.max(28,Math.min(140,v)); document.getElementById('font').value=font; document.getElementById('fontV').textContent=font; pub({t:'font',v:font}); }
+ function cMirror(){ mH=!mH; document.getElementById('mirror').classList.toggle('on',mH); pub({t:'mirror',h:mH}); }
+
+ document.getElementById('send').onclick=function(){ sendText(); stat.textContent='gönderildi'; };
+ document.getElementById('play').onclick=cPlay;
+ document.getElementById('restart').onclick=cRestart;
+ document.getElementById('speed').oninput=function(){cSpeed(+this.value);};
+ document.getElementById('font').oninput=function(){cFont(+this.value);};
+ document.getElementById('mirror').onclick=cMirror;
+ document.getElementById('dispLocal').onclick=function(){ playing?pause():play(); };
+
+ // keyboard (controller)
+ document.addEventListener('keydown',function(e){
+   if(role!=='ctrl') return;
+   if(document.activeElement===document.getElementById('script') && e.key!=='Escape') return; // typing
+   if(e.code==='Space'){e.preventDefault();cPlay();}
+   else if(e.key==='ArrowUp'){e.preventDefault();cSpeed(speed+5);}
+   else if(e.key==='ArrowDown'){e.preventDefault();cSpeed(speed-5);}
+   else if(e.key==='+'||e.key==='='){cFont(font+4);}
+   else if(e.key==='-'){cFont(font-4);}
+   else if(e.key==='r'||e.key==='R'){cRestart();}
+   else if(e.key==='m'||e.key==='M'){cMirror();}
+ });
+ applyFont(); window.addEventListener('resize',render);
+ // auto-hide bar on display while playing
+ var ht=null; document.addEventListener('mousemove',function(){bar.classList.remove('hide');clearTimeout(ht);if(role==='display'&&playing)ht=setTimeout(function(){bar.classList.add('hide');},2500);});
+ document.addEventListener('touchstart',function(){bar.classList.toggle('hide');});
+})();
+</script></body></html>
