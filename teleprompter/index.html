@@ -108,10 +108,14 @@ Bilgisayarda yukarı-aşağı oklarla hızı, boşlukla başlat/duraklat'ı yön
  function setText(t){sc.textContent=t;setOffsetStart();}
  function tick(ts){ if(!playing)return; if(!last)last=ts; var dt=(ts-last)/1000; last=ts; offset-=speed*dt; render();
    if(offset<-(sc.offsetHeight+vp.clientHeight*0.2)){playing=false;} raf=requestAnimationFrame(tick); }
- function play(){ if(playing)return; playing=true;last=0; raf=requestAnimationFrame(tick); upd(); }
- function pause(){ playing=false; if(raf)cancelAnimationFrame(raf); upd(); }
+ function play(){ if(playing)return; playing=true;last=0; raf=requestAnimationFrame(tick); upd(); barByState(); }
+ function pause(){ playing=false; if(raf)cancelAnimationFrame(raf); upd(); barByState(); }
  function applyFont(){ sc.style.fontSize=font+'px'; }
  function upd(){ var b=document.getElementById('play'); if(b){b.textContent=playing?'⏸ Duraklat':'▶ Başlat';b.classList.toggle('on',playing);} }
+ // phone: show the control bar when paused, hide it while scrolling
+ function barByState(){ if(role==='display'){ bar.classList.toggle('hide', playing); } }
+ // phone: tap the screen = play/pause (mirrors Space on the computer)
+ function dispToggle(){ var willPlay=!playing; if(willPlay)play(); else pause(); pub({t: willPlay?'play':'pause'}); }
 
  // role=display: react to controller messages
  function onMsg(o){
@@ -126,6 +130,8 @@ Bilgisayarda yukarı-aşağı oklarla hızı, boşlukla başlat/duraklat'ı yön
      else if(o.t==='mirror'){ mH=o.h; render(); }
    } else if(role==='ctrl'){
      if(o.t==='hello'){ sendState(); } // late-joining phone -> resend everything
+     else if(o.t==='play'){ playing=true; upd(); }   // phone tapped -> resume
+     else if(o.t==='pause'){ playing=false; upd(); } // phone tapped -> pause
    }
  }
  // role=ctrl: send commands
@@ -160,6 +166,7 @@ Bilgisayarda yukarı-aşağı oklarla hızı, boşlukla başlat/duraklat'ı yön
  applyFont(); window.addEventListener('resize',render);
  // auto-hide bar on display while playing
  var ht=null; document.addEventListener('mousemove',function(){bar.classList.remove('hide');clearTimeout(ht);if(role==='display'&&playing)ht=setTimeout(function(){bar.classList.add('hide');},2500);});
- document.addEventListener('touchstart',function(){bar.classList.toggle('hide');});
+ // display: a tap anywhere (except on the control bar) toggles play/pause
+ document.addEventListener('click',function(e){ if(role!=='display')return; if(e.target.closest&&e.target.closest('#bar'))return; dispToggle(); });
 })();
 </script></body></html>
