@@ -1,0 +1,53 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report Archive · Power & Corridors × NERAI Foresight Desk</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--line:rgba(120,160,210,0.16);--cyan:#00d4ff;--blue:#2b6fff;--txt:#e9f1fb;--mut:#9fb6d4;--dim:#74889f;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:radial-gradient(1100px 700px at 82% -5%,rgba(0,119,168,0.2),transparent 60%),linear-gradient(160deg,#0d2036,#0a1628 62%,#08111f);font-family:'Inter',system-ui,sans-serif;color:var(--txt);min-height:100vh;}
+.wrap{max-width:1000px;margin:0 auto;padding:42px 24px 70px;}
+.top{display:flex;align-items:center;gap:12px;}
+.mark{flex:0 0 40px;} .brand{font-size:22px;font-weight:800;letter-spacing:-0.5px;} .brand .ai{color:var(--cyan);}
+.div{height:20px;width:1px;background:var(--line);margin:0 4px;}
+.pc{font-size:12px;letter-spacing:2px;color:var(--mut);font-weight:700;}
+.back{margin-left:auto;font-size:12.5px;color:var(--cyan);text-decoration:none;font-weight:700;}
+h1{font-family:'DM Serif Display',Georgia,serif;font-size:42px;margin:26px 0 6px;}
+.sub{font-size:16px;color:var(--mut);max-width:640px;line-height:1.5;margin-bottom:28px;}
+.list{display:grid;gap:16px;}
+.rep{background:rgba(10,26,46,0.6);border:1px solid var(--line);border-radius:14px;padding:22px 24px;display:flex;gap:22px;flex-wrap:wrap;align-items:flex-start;}
+.rep .meta{flex:0 0 130px;} .rep .date{font-size:13px;font-weight:800;color:var(--cyan);} .rep .typ{font-size:11px;color:var(--dim);margin-top:4px;text-transform:uppercase;letter-spacing:0.5px;}
+.rep .body{flex:1;min-width:280px;} .rep h3{font-family:'DM Serif Display',Georgia,serif;font-size:22px;line-height:1.15;}
+.rep p{font-size:13.5px;color:var(--mut);line-height:1.5;margin:8px 0 12px;}
+.tags{margin-bottom:12px;} .tag{display:inline-block;font-size:10.5px;color:#cfe0f5;background:rgba(0,40,72,0.5);border:1px solid rgba(0,212,255,0.2);border-radius:20px;padding:3px 10px;margin:0 6px 6px 0;}
+.links a{font-size:13px;font-weight:700;text-decoration:none;margin-right:18px;}
+.links .a1{color:var(--cyan);} .links .a2{color:var(--mut);}
+.empty{font-size:14px;color:var(--dim);padding:30px 0;}
+.foot{margin-top:30px;font-size:11px;color:var(--dim);text-align:center;}
+@media(max-width:560px){.rep .meta{flex-basis:100%;}}
+</style></head><body><div class="wrap">
+<div class="top">
+  <svg class="mark" viewBox="0 0 104 104" width="40" height="40" aria-hidden="true" id="logo"></svg>
+  <span class="brand">NER<span class="ai">AI</span></span><span class="div"></span><span class="pc">POWER &amp; CORRIDORS</span>
+  <a class="back" href="../">← Foresight Desk</a>
+</div>
+<h1>Report Archive</h1>
+<div class="sub">Every NERAI × Power &amp; Corridors briefing, in one place. New outlooks, flashpoint briefs and corridor reports are added here as they publish.</div>
+<div class="list" id="list"><div class="empty">Loading reports…</div></div>
+<div class="foot">Power &amp; Corridors × NERAI · Foresight Desk · neraicorp.com</div>
+</div>
+<script>
+// logo dot-grid
+(function(){var s=document.getElementById('logo');var h='';for(var i=0;i<4;i++)for(var j=0;j<4;j++){var c=((i+j)%2==0)?'#00d4ff':'#cfe0f5';h+="<circle cx='"+(16+i*24)+"' cy='"+(16+j*24)+"' r='9' fill='"+c+"'/>";}s.innerHTML=h;})();
+fetch('../reports.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+  var L=document.getElementById('list');var rs=(d.reports||[]);
+  if(!rs.length){L.innerHTML="<div class='empty'>No reports yet.</div>";return;}
+  L.innerHTML=rs.map(function(x){
+    var tags=(x.tags||[]).map(function(t){return "<span class='tag'>"+t+"</span>";}).join('');
+    var full=x.full?(" <a class='a2' href='"+x.full+"' target='_blank' rel='noopener'>Full analyst version →</a>"):"";
+    return "<div class='rep'><div class='meta'><div class='date'>"+(x.date||'')+"</div><div class='typ'>"+(x.type||'')+"</div></div>"+
+      "<div class='body'><h3>"+x.title+"</h3><p>"+(x.summary||'')+"</p><div class='tags'>"+tags+"</div>"+
+      "<div class='links'><a class='a1' href='"+x.file+"' target='_blank' rel='noopener'>Read briefing (PDF) →</a>"+full+"</div></div></div>";
+  }).join('');
+});
+</script></body></html>
