@@ -2739,6 +2739,7 @@
       headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify(payload)
     }).then(function () {
+      if (window.gr) { gr('track', 'conversion', { email: payload.email }); }
       document.getElementById('trialForm').style.display = 'none';
       document.getElementById('trialSuccess').style.display = 'block';
       setTimeout(closeTrialModal, 4500);
