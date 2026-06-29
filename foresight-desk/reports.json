@@ -1,14 +1,34 @@
 {
-  "updated": "2026-06-23",
+  "updated": "2026-06-29",
   "reports": [
     {
-      "title": "Supply-Chain Disruption Outlook — June 2026",
+      "title": "Shadow Fleet Enforcement Risk \u2014 June 2026",
+      "date": "June 2026",
+      "type": "Maritime Sanctions & Insurance Risk",
+      "summary": "Russia's shadow-fleet oil trade: enforcement pressure is tightening at the margins (NERAI index 35/100, Stable) but cost transmission stays weak while revenue holds at ~\u20ac726mn/day. Black Sea is the only Act-driven corridor; threat-vs-act phase, cost-transmission channels and an underwriter checklist.",
+      "file": "/NERAI_ShadowFleet_Briefing_June2026.pdf",
+      "full": "/NERAI_ShadowFleet_Report_June2026_Full.pdf",
+      "tags": [
+        "Shadow Fleet",
+        "Sanctions",
+        "Russia",
+        "Maritime",
+        "Insurance"
+      ]
+    },
+    {
+      "title": "Supply-Chain Disruption Outlook \u2014 June 2026",
       "date": "June 2026",
       "type": "Supply-Chain Outlook",
-      "summary": "A synchronized three-vector shock: the Strait of Hormuz collapse, the US–China tariff pause, and paper/pulp disruption — a 30–90 day outlook with scenarios and business implications.",
+      "summary": "A synchronized three-vector shock: the Strait of Hormuz collapse, the US\u2013China tariff pause, and paper/pulp disruption \u2014 a 30\u201390 day outlook with scenarios and business implications.",
       "file": "/NERAI_SupplyChain_Outlook_June2026.pdf",
       "full": "/NERAI_SupplyChain_Outlook_June2026_Full.pdf",
-      "tags": ["Hormuz", "Tariffs", "Maritime", "Trade"]
+      "tags": [
+        "Hormuz",
+        "Tariffs",
+        "Maritime",
+        "Trade"
+      ]
     }
   ]
 }
