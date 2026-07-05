@@ -1,11 +1,26 @@
 {
-  "updated": "2026-06-29",
+  "updated": "2026-07-05",
   "reports": [
     {
-      "title": "Shadow Fleet Enforcement Risk \u2014 June 2026",
+      "title": "Russia–Poland Escalation Risk — July 2026",
+      "date": "July 2026",
+      "type": "Political / Military Risk Forecast",
+      "summary": "Will Russia move against Poland? Not a full invasion (HIGH confidence), but the groundwork for a limited, deniable border provocation to test NATO Article 5 credibility. Base case: a time-bound Poland–Kaliningrad / Suwałki incident within 90 days (45%). Tension 28.1/100 (91st pctile, +8.5/7d); Military Clash & Escalation at the 95th percentile; Russia in NERAI's 'Crisis' regime.",
+      "file": "/NERAI_RussiaPoland_Briefing_July2026.pdf",
+      "full": "/NERAI_RussiaPoland_Report_July2026_Full.pdf",
+      "tags": [
+        "Russia",
+        "Poland",
+        "NATO",
+        "Article 5",
+        "Escalation"
+      ]
+    },
+    {
+      "title": "Shadow Fleet Enforcement Risk — June 2026",
       "date": "June 2026",
       "type": "Maritime Sanctions & Insurance Risk",
-      "summary": "Russia's shadow-fleet oil trade: enforcement pressure is tightening at the margins (NERAI index 35/100, Stable) but cost transmission stays weak while revenue holds at ~\u20ac726mn/day. Black Sea is the only Act-driven corridor; threat-vs-act phase, cost-transmission channels and an underwriter checklist.",
+      "summary": "Russia's shadow-fleet oil trade: enforcement pressure is tightening at the margins (NERAI index 35/100, Stable) but cost transmission stays weak while revenue holds at ~€726mn/day. Black Sea is the only Act-driven corridor; threat-vs-act phase, cost-transmission channels and an underwriter checklist.",
       "file": "/NERAI_ShadowFleet_Briefing_June2026.pdf",
       "full": "/NERAI_ShadowFleet_Report_June2026_Full.pdf",
       "tags": [
@@ -17,10 +32,10 @@
       ]
     },
     {
-      "title": "Supply-Chain Disruption Outlook \u2014 June 2026",
+      "title": "Supply-Chain Disruption Outlook — June 2026",
       "date": "June 2026",
       "type": "Supply-Chain Outlook",
-      "summary": "A synchronized three-vector shock: the Strait of Hormuz collapse, the US\u2013China tariff pause, and paper/pulp disruption \u2014 a 30\u201390 day outlook with scenarios and business implications.",
+      "summary": "A synchronized three-vector shock: the Strait of Hormuz collapse, the US–China tariff pause, and paper/pulp disruption — a 30–90 day outlook with scenarios and business implications.",
       "file": "/NERAI_SupplyChain_Outlook_June2026.pdf",
       "full": "/NERAI_SupplyChain_Outlook_June2026_Full.pdf",
       "tags": [
