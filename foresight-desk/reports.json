@@ -1,6 +1,21 @@
 {
-  "updated": "2026-07-05",
+  "updated": "2026-07-13",
   "reports": [
+    {
+      "title": "Three Corridors, Three Risk Channels — July 2026",
+      "date": "July 2026",
+      "type": "Sector / Supply-Chain Risk Assessment",
+      "summary": "Black Sea, Malacca and Taiwan Strait: container and dry-bulk pressure sit in the low-to-medium 40s across all three, yet each transmits commercial risk through a different channel. Black Sea = sanctions, re-export corridors (Severe 84–90/100) and shadow-fleet enforcement (index 45.0/100, Moderate/falling) with transit strained ‑10.8%. Malacca = quiet chokepoint carrying the highest news signal of the three (83.0/100) plus Indonesia natural-hazard exposure — a monitoring story, not a panic story. Taiwan Strait = normal transit (+6.9%) but the largest strategic tail-risk via China sanctions (32.0/100), Section 301 tariff exposure and semiconductor dependency. The absence of a freight shock is not the absence of risk.",
+      "file": "/NERAI_ThreeCorridors_Briefing_July2026.pdf",
+      "full": "/NERAI_ThreeCorridors_Report_July2026_Full.pdf",
+      "tags": [
+        "Black Sea",
+        "Malacca",
+        "Taiwan Strait",
+        "Sanctions",
+        "Supply Chain"
+      ]
+    },
     {
       "title": "Russia–Poland Escalation Risk — July 2026",
       "date": "July 2026",
