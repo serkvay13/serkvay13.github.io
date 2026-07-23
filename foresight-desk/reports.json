@@ -1,6 +1,28 @@
 {
-  "updated": "2026-07-13",
+  "updated": "2026-07-23",
   "reports": [
+    {
+      "title": "India's July 2026 Instability Spike: Legislative Disruption, Not Regime Fracture",
+      "date": "July 2026",
+      "type": "Country Risk Assessment",
+      "om": "India's political-instability indices hit the highest readings in NERAI's series history in the week of 15–22 July — political dissent and opposition activeness at 90.9/100 (100th percentile). The verified driver is a protest-and-parliament cycle around the NEET-UG paper-leak controversy, not a coalition collapse.",
+      "summary": "India's instability indices hit series-history highs in the week of 15–22 July (dissent and opposition activeness 90.9/100, +13σ). Verified drivers: the NEET-UG paper-leak controversy stalling both Houses from 20 July, student protests, and the 21 July detention of Rahul and Priyanka Gandhi with multi-state Congress protests. NERAI's read: a bounded legislative-session clash — Crisis-regime persistence ~3.9 days, 12-month forecast −50 to −73%, head-of-government change within 180 days under 5%. The risk is legislative-efficiency degradation and durable opposition coordination, not government collapse.",
+      "findings": [
+        "<b>The signal (record prints):</b> political_dissent and opposition_activeness at 90.9/100 (100th percentile, +13σ), government_instability at 49.5/100 — the most extreme domestic-dissent cluster in NERAI's India series, with a verified changepoint in week 27.",
+        "<b>The verified driver:</b> the NEET-UG paper-leak controversy — both Houses stalled from the session's opening on 20 July, demands for Education Minister Pradhan's resignation, student protests met with police action, and the 21 July detention of Rahul and Priyanka Gandhi followed by protests across 5+ states.",
+        "<b>The institutional read:</b> a 293-seat NDA, an intact Cabinet and zero coalition-defection signals. HMM 'Crisis' regime persistence is ~3.9 days with 0% escalation probability; the closest analog (2026-W08) eased within 8 weeks.",
+        "<b>The outlook:</b> mean-reversion base case 55% (indices back to 40–50 range within 2–4 weeks); exam-integrity escalation risk case 32%; discrete-shock tail 13% per the calibrated model. Head-of-government change within 90–180 days: under 5% (HIGH CONFIDENCE)."
+      ],
+      "file": "/NERAI_India_Briefing_July2026.pdf",
+      "full": "/NERAI_India_Report_July2026_Full.pdf",
+      "tags": [
+        "India",
+        "Political Instability",
+        "Parliament",
+        "Early Warning",
+        "Country Risk"
+      ]
+    },
     {
       "title": "Three Corridors, Three Risk Channels — July 2026",
       "date": "July 2026",
