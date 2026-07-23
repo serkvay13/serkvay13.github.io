@@ -1,14 +1,26 @@
 {
- "updated": "2026-07-23 09:52 UTC",
+ "updated": "2026-07-23 09:59 UTC",
  "week": "2026-W30",
  "maritime": {
   "title": "NERAI Maritime Weekly",
-  "events": [],
-  "summary": ""
+  "events": [
+   "Strait of Hormuz Near-Standstill as US-Iran War Drives Tanker Attacks",
+   "Houthis Resume Saudi Tanker Attacks, Forcing Vessels to Reverse Course in Red Sea",
+   "INTERTANKO Warns Shipping Threat Now Spans Entire Gulf Region",
+   "Oil Prices Surge Past $96; Goldman Warns Brent Could Top $120 on Dual-Chokepoint Crisis",
+   "Suspected Somali Pirates Seize Tanker Near Yemen Amid Wave of Hijackings"
+  ],
+  "summary": "The week was dominated by an intensifying US-Iran military confrontation that has pushed the Strait of Hormuz into a near-standstill, with vessel crossings falling to multi-week lows and multiple tankers struck or set ablaze. Simultaneously, the Houthis reopened a second front by threatening and attacking Saudi oil exports transiting the Red Sea and Bab el-Mandeb, forcing tankers to reverse course and reroute, compounding the dual-chokepoint energy risk. Together, these developments represent the most severe simultaneous disruption to Gulf and Red Sea shipping corridors in recent memory, with oil prices surging past $96 and Goldman Sachs warning Brent could exceed $120."
  },
  "sanctions": {
   "title": "NERAI Sanctions Weekly",
-  "events": [],
-  "summary": ""
+  "events": [
+   "Treasury Doubles Down on Iran: Shamkhani Shipping Empire and Weapons-Procurement Network Hit",
+   "EU's 21st Russia Sanctions Package Stalls as Member-State Divisions Deepen",
+   "U.S. Expands Cuba Sanctions, Alleges Spy Infiltration of Trump Administration",
+   "DOJ Indicts Three Russians for Hosting LockBit, Cl0p and Play Ransomware Infrastructure",
+   "OFAC VPN Designation Accidentally Disables Telegram Short Links Globally"
+  ],
+  "summary": "This week's sanctions landscape was dominated by a sustained U.S. maximum-pressure campaign against Iran's illicit shipping and weapons-procurement networks, while Europe's internal divisions continued to stall the 21st Russia sanctions package and undermine enforcement coherence. Secondary threads — U.S. Cuba designations, UN action in eastern Congo, and the collateral disruption caused by a VPN-related OFAC designation — round out a week that illustrates both the expanding scope of unilateral U.S. sanctions and the persistent fragmentation of multilateral enforcement."
  }
 }
