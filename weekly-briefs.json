@@ -1,26 +1,26 @@
 {
- "updated": "2026-07-23 09:59 UTC",
+ "updated": "2026-07-23 11:05 UTC",
  "week": "2026-W30",
  "maritime": {
   "title": "NERAI Maritime Weekly",
   "events": [
-   "Strait of Hormuz Near-Standstill as US-Iran War Drives Tanker Attacks",
-   "Houthis Resume Saudi Tanker Attacks, Forcing Vessels to Reverse Course in Red Sea",
-   "INTERTANKO Warns Shipping Threat Now Spans Entire Gulf Region",
-   "Oil Prices Surge Past $96; Goldman Warns Brent Could Top $120 on Dual-Chokepoint Crisis",
-   "Suspected Somali Pirates Seize Tanker Near Yemen Amid Wave of Hijackings"
+   "US-Iran War Drives Hormuz Transits to Near-Standstill; Two Tankers Attacked",
+   "Houthis Resume Attacks on Saudi Tankers, Threaten Bab el-Mandeb Blockade",
+   "Gulf Producers Race to Activate Hormuz Bypass Routes as Oil Tops $96",
+   "Somali Pirates Seize Tanker in Gulf of Aden Amid Regional Security Vacuum",
+   "Iran Strikes US Bases in Kuwait and Bahrain; Trump Threatens Infrastructure Strikes"
   ],
-  "summary": "The week was dominated by an intensifying US-Iran military confrontation that has pushed the Strait of Hormuz into a near-standstill, with vessel crossings falling to multi-week lows and multiple tankers struck or set ablaze. Simultaneously, the Houthis reopened a second front by threatening and attacking Saudi oil exports transiting the Red Sea and Bab el-Mandeb, forcing tankers to reverse course and reroute, compounding the dual-chokepoint energy risk. Together, these developments represent the most severe simultaneous disruption to Gulf and Red Sea shipping corridors in recent memory, with oil prices surging past $96 and Goldman Sachs warning Brent could exceed $120."
+  "summary": "This week's maritime landscape was dominated by the escalating US-Iran conflict and its cascading effects on the two most critical energy chokepoints — the Strait of Hormuz and Bab el-Mandeb. Iran conducted direct attacks on commercial vessels near Hormuz while the Houthis simultaneously resumed strikes on Saudi oil tankers and threatened a full blockade of the Red Sea, forcing multiple vessels to reverse course. The dual-chokepoint pressure has pushed oil prices above $96, rattled global supply chains, and is forcing Asian refiners and Gulf producers to urgently seek alternative routing and pipeline infrastructure."
  },
  "sanctions": {
   "title": "NERAI Sanctions Weekly",
   "events": [
-   "Treasury Doubles Down on Iran: Shamkhani Shipping Empire and Weapons-Procurement Network Hit",
-   "EU's 21st Russia Sanctions Package Stalls as Member-State Divisions Deepen",
-   "U.S. Expands Cuba Sanctions, Alleges Spy Infiltration of Trump Administration",
-   "DOJ Indicts Three Russians for Hosting LockBit, Cl0p and Play Ransomware Infrastructure",
-   "OFAC VPN Designation Accidentally Disables Telegram Short Links Globally"
+   "U.S. Treasury Doubles Down on Iran: Shamkhani Shipping Empire & Weapons Network Hit",
+   "EU Russia Sanctions Package Stalls; Oil Price Cap Locked In Amid Member-State Fractures",
+   "U.S. Cuba Sanctions Escalation Forces Meliá Exit and Draws Espionage Charges",
+   "OFAC VPN Sanctions Produce Global Telegram Short-Link Outage — Collateral Digital Infrastructure Risk",
+   "South Korea Seizes Vessel in North Korea UN Sanctions Violation; Putin-DPRK Diplomat Meeting Signals Axis Deepening"
   ],
-  "summary": "This week's sanctions landscape was dominated by a sustained U.S. maximum-pressure campaign against Iran's illicit shipping and weapons-procurement networks, while Europe's internal divisions continued to stall the 21st Russia sanctions package and undermine enforcement coherence. Secondary threads — U.S. Cuba designations, UN action in eastern Congo, and the collateral disruption caused by a VPN-related OFAC designation — round out a week that illustrates both the expanding scope of unilateral U.S. sanctions and the persistent fragmentation of multilateral enforcement."
+  "summary": "This week's sanctions landscape was dominated by sustained U.S. pressure on Iran's illicit networks and shipping empire, a fracturing EU consensus on Russia that allowed fossil-fuel revenues to remain robust, and an escalating Cuba crackdown with tangible third-party corporate casualties. Secondary signals — a Danish shipyard controversy, a North Korea vessel seizure, and collateral digital infrastructure damage from a VPN designation — underscore that enforcement tools are increasingly producing unintended systemic consequences alongside deliberate strategic pressure."
  }
 }
