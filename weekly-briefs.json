@@ -1,26 +1,26 @@
 {
- "updated": "2026-07-23 11:05 UTC",
+ "updated": "2026-07-23 11:12 UTC",
  "week": "2026-W30",
  "maritime": {
   "title": "NERAI Maritime Weekly",
   "events": [
-   "US-Iran War Drives Hormuz Transits to Near-Standstill; Two Tankers Attacked",
-   "Houthis Resume Attacks on Saudi Tankers, Threaten Bab el-Mandeb Blockade",
-   "Gulf Producers Race to Activate Hormuz Bypass Routes as Oil Tops $96",
-   "Somali Pirates Seize Tanker in Gulf of Aden Amid Regional Security Vacuum",
-   "Iran Strikes US Bases in Kuwait and Bahrain; Trump Threatens Infrastructure Strikes"
+   "Tanker Struck and Set Ablaze Off Saudi Coast in Red Sea on 23 July",
+   "Strait of Hormuz Transits Hit Near-Standstill as US-Iran Conflict Enters 12th Day",
+   "Houthi Blockade Forces Saudi Tankers to Reverse Course, Asian Refiners Reroute via Suez",
+   "Gulf Producers Race to Activate Hormuz Bypass Routes as Pipeline Alternatives Gain Urgency",
+   "Somali Pirates Board Tanker Off Yemen on 17 July Amid Regional Security Vacuum"
   ],
-  "summary": "This week's maritime landscape was dominated by the escalating US-Iran conflict and its cascading effects on the two most critical energy chokepoints — the Strait of Hormuz and Bab el-Mandeb. Iran conducted direct attacks on commercial vessels near Hormuz while the Houthis simultaneously resumed strikes on Saudi oil tankers and threatened a full blockade of the Red Sea, forcing multiple vessels to reverse course. The dual-chokepoint pressure has pushed oil prices above $96, rattled global supply chains, and is forcing Asian refiners and Gulf producers to urgently seek alternative routing and pipeline infrastructure."
+  "summary": "This week's maritime landscape was dominated by the active US-Iran conflict and its cascading effects across two critical chokepoints simultaneously: ongoing vessel strikes near the Strait of Hormuz depressed transits to severe levels, while Houthi forces escalated by threatening and attacking Saudi oil tankers in the Red Sea, forcing rerouting via the Cape of Good Hope and Suez Canal. The convergence of a near-standstill at Hormuz and a credible Houthi blockade threat at Bab el-Mandeb represents the most serious dual-chokepoint energy shipping crisis in recent memory, driving oil prices to six-week highs above $96 and prompting Goldman Sachs to warn Brent could exceed $120 if the crisis deepens."
  },
  "sanctions": {
   "title": "NERAI Sanctions Weekly",
   "events": [
-   "U.S. Treasury Doubles Down on Iran: Shamkhani Shipping Empire & Weapons Network Hit",
-   "EU Russia Sanctions Package Stalls; Oil Price Cap Locked In Amid Member-State Fractures",
-   "U.S. Cuba Sanctions Escalation Forces Meliá Exit and Draws Espionage Charges",
-   "OFAC VPN Sanctions Produce Global Telegram Short-Link Outage — Collateral Digital Infrastructure Risk",
-   "South Korea Seizes Vessel in North Korea UN Sanctions Violation; Putin-DPRK Diplomat Meeting Signals Axis Deepening"
+   "EU 21st Russia Sanctions Package Stalls; Oil Price Cap Locked In Amid LNG Surge",
+   "U.S. Treasury Hits Shamkhani Shipping Empire and Iranian Weapons Procurement Network",
+   "U.S. Cuba Sanctions Tightened; Meliá Exits as Spy Accusations Escalate",
+   "South Korea Seizes Cargo Vessel Suspected of Violating UN North Korea Sanctions",
+   "Houthis Announce Maritime Blockade of Saudi Arabia Ports"
   ],
-  "summary": "This week's sanctions landscape was dominated by sustained U.S. pressure on Iran's illicit networks and shipping empire, a fracturing EU consensus on Russia that allowed fossil-fuel revenues to remain robust, and an escalating Cuba crackdown with tangible third-party corporate casualties. Secondary signals — a Danish shipyard controversy, a North Korea vessel seizure, and collateral digital infrastructure damage from a VPN designation — underscore that enforcement tools are increasingly producing unintended systemic consequences alongside deliberate strategic pressure."
+  "summary": "This week's sanctions landscape was dominated by three converging pressures: a sustained U.S. campaign against Iranian procurement and shipping networks, turbulence inside the EU's Russia sanctions architecture as the 21st package stalled over energy and member-state interests, and an intensifying U.S. squeeze on Cuba that is already producing measurable third-party commercial exits. Secondary developments — including a South Korean vessel seizure for North Korea sanctions violations and a Danish shipyard controversy over Russian gas-tanker maintenance — underscore that enforcement is broadening across multiple regimes simultaneously."
  }
 }
