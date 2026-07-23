@@ -10,7 +10,7 @@
       "findings": [
         "<b>The signal (record prints):</b> political_dissent and opposition_activeness at 90.9/100 (100th percentile, +13σ), government_instability at 49.5/100 — the most extreme domestic-dissent cluster in NERAI's India series, with a verified changepoint in week 27.",
         "<b>The verified driver:</b> the NEET-UG paper-leak controversy — both Houses stalled from the session's opening on 20 July, demands for Education Minister Pradhan's resignation, student protests met with police action, and the 21 July detention of Rahul and Priyanka Gandhi followed by protests across 5+ states.",
-        "<b>The institutional read:</b> a 293-seat NDA, an intact Cabinet and zero coalition-defection signals. HMM 'Crisis' regime persistence is ~3.9 days with 0% escalation probability; the closest analog (2026-W08) eased within 8 weeks.",
+        "<b>The institutional read:</b> a 293-seat NDA, an intact Cabinet and zero coalition-defection signals. HMM 'Crisis' regime persistence is ~3.9 days — Crisis is the model's top state, so the informative signal is the short expected stay, not the (structurally zero) escalation probability. The closest analog (2026-W08) eased within 8 weeks.",
         "<b>The outlook:</b> mean-reversion base case 55% (indices back to 40–50 range within 2–4 weeks); exam-integrity escalation risk case 32%; discrete-shock tail 13% per the calibrated model. Head-of-government change within 90–180 days: under 5% (HIGH CONFIDENCE)."
       ],
       "file": "/NERAI_India_Briefing_July2026.pdf",
