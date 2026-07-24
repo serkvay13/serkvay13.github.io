@@ -417,6 +417,61 @@
       .cap-grid, .steps, .grounded-inner { grid-template-columns: 1fr; }
       .hero-stats { gap: 24px; }
     }
+
+    /* ── VISUAL UPGRADES (decorative layer only) ────────── */
+    section { position: relative; }
+    .sec-line {
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      pointer-events: none; z-index: 2; opacity: 0.5;
+      background: linear-gradient(90deg, var(--teal), var(--accent), var(--teal));
+      background-size: 200% 100%;
+      transform: scaleX(0); transform-origin: left center;
+      transition: transform 1.2s cubic-bezier(.22,1,.36,1);
+    }
+    .sec-line.in { transform: scaleX(1); }
+    @media (prefers-reduced-motion: no-preference) {
+      .sec-line.in { animation: lineFlow 7s linear infinite; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .sec-line { transition: none; }
+    }
+    @keyframes lineFlow {
+      from { background-position: 0% 0; }
+      to   { background-position: 200% 0; }
+    }
+    .ambient-canvas {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 0; opacity: 0.12;
+    }
+    #models .container { position: relative; z-index: 1; }
+    .cap-card, .pred-card, .step {
+      transition: transform .28s cubic-bezier(.22,1,.36,1), box-shadow .28s ease, border-color .28s ease;
+    }
+    .cap-card:hover, .pred-card:hover, .step:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0,168,134,0.45);
+      box-shadow: 0 12px 30px rgba(13,31,60,0.10), 0 0 0 1px rgba(0,168,134,0.22), 0 0 20px rgba(0,168,134,0.10);
+    }
+    .cta-fx {
+      position: absolute; inset: 0; overflow: hidden;
+      pointer-events: none; z-index: 0;
+    }
+    .cta-dashes {
+      position: absolute; left: -84px; right: -84px; height: 3px; opacity: 0.3;
+      background: repeating-linear-gradient(90deg,
+        rgba(0,168,134,0.9) 0 26px, transparent 26px 42px,
+        rgba(0,119,168,0.9) 42px 68px, transparent 68px 84px);
+    }
+    .cta-dashes.top { top: 10px; }
+    .cta-dashes.bottom { bottom: 10px; }
+    @media (prefers-reduced-motion: no-preference) {
+      .cta-dashes.top    { animation: dashMove 8s linear infinite; }
+      .cta-dashes.bottom { animation: dashMove 8s linear infinite reverse; }
+    }
+    @keyframes dashMove {
+      from { transform: translateX(0); }
+      to   { transform: translateX(84px); }
+    }
   </style>
 </head>
 <body>
@@ -497,6 +552,7 @@
 
 <!-- ── CAPABILITIES ───────────────────────────────────── -->
 <section id="capabilities">
+  <div class="sec-line" aria-hidden="true"></div>
   <div class="container">
     <div class="section-tag fade">What you get</div>
     <h2 class="section-title serif fade">Corridor pressure, route risk, and the network behind both.</h2>
@@ -571,6 +627,8 @@
 
 <!-- ── HOW THE MODELS WORK ────────────────────────────── -->
 <section id="models">
+  <div class="sec-line" aria-hidden="true"></div>
+  <canvas class="ambient-canvas" id="ambientCanvas" aria-hidden="true"></canvas>
   <div class="container">
     <div class="section-tag fade">Methodology</div>
     <h2 class="section-title serif fade">How the models work.</h2>
@@ -648,6 +706,7 @@
 
 <!-- ── PREDICTIONS ────────────────────────────────────── -->
 <section id="predictions">
+  <div class="sec-line" aria-hidden="true"></div>
   <div class="container">
     <div class="section-tag fade">Predictions</div>
     <h2 class="section-title serif fade">Probabilities with a track record.</h2>
@@ -687,6 +746,7 @@
 
 <!-- ── CTA BAND ───────────────────────────────────────── -->
 <section class="cta-band">
+  <div class="cta-fx" aria-hidden="true"><div class="cta-dashes top"></div><div class="cta-dashes bottom"></div></div>
   <div class="container">
     <h2 class="cta-title fade">Stress-test your supply chain against what&rsquo;s coming.</h2>
     <p class="cta-sub fade">
@@ -757,111 +817,215 @@
     }, { threshold: 0.5 }).observe(el);
   });
 
-  /* ── Hero canvas: flowing routes + disruption pulse ─── */
-  var cvs = document.getElementById('heroCanvas');
-  if (!cvs) return;
-  var ctx = cvs.getContext('2d');
-  var TAU = Math.PI * 2;
-  var W, H, routes = [], mids = [];
+  /* ── Section divider lines: draw across on scroll ────── */
+  var lio = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); lio.unobserve(e.target); } });
+  }, { threshold: 0 });
+  document.querySelectorAll('.sec-line').forEach(function (el) { lio.observe(el); });
 
+  /* ── Canvas runtime: DPR-capped, pausable, one rAF per canvas ── */
+  var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var TAU = Math.PI * 2;
   function rand(a, b) { return Math.random() * (b - a) + a; }
 
-  function qpoint(p0, p1, p2, t) {
-    var u = 1 - t;
-    return {
-      x: u * u * p0.x + 2 * u * t * p1.x + t * t * p2.x,
-      y: u * u * p0.y + 2 * u * t * p1.y + t * t * p2.y
-    };
+  function canvasLoop(canvas, opts) {
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var st = { w: 0, h: 0, vis: false, raf: 0, t: 0 };
+    function resize() {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      st.w = canvas.offsetWidth; st.h = canvas.offsetHeight;
+      canvas.width = Math.max(1, Math.round(st.w * dpr));
+      canvas.height = Math.max(1, Math.round(st.h * dpr));
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      if (opts.build) opts.build(st.w, st.h);
+      if (REDUCED) {
+        ctx.clearRect(0, 0, st.w, st.h);
+        (opts.staticFrame || opts.draw)(ctx, st.w, st.h, 0);
+      }
+    }
+    function frame() {
+      st.raf = 0;
+      if (REDUCED || !st.vis || document.hidden) return;
+      st.t++;
+      ctx.clearRect(0, 0, st.w, st.h);
+      opts.draw(ctx, st.w, st.h, st.t);
+      st.raf = requestAnimationFrame(frame);
+    }
+    function play() {
+      if (!REDUCED && !st.raf && st.vis && !document.hidden) st.raf = requestAnimationFrame(frame);
+    }
+    window.addEventListener('resize', resize);
+    document.addEventListener('visibilitychange', play);
+    new IntersectionObserver(function (es) { st.vis = es[0].isIntersecting; play(); }, { threshold: 0.02 }).observe(canvas);
+    resize();
+    play();
   }
 
-  function build() {
-    routes = []; mids = [];
-    var m = 3;
-    for (var i = 0; i < m; i++) {
-      mids.push({
-        x: W * rand(0.42, 0.58),
-        y: H * (0.22 + i * 0.28) + rand(-14, 14),
-        pulse: 0, phase: rand(0, TAU)
-      });
-    }
-    var nRoutes = 8;
-    for (var r = 0; r < nRoutes; r++) {
-      var mid = mids[r % m];
-      var start = { x: -20, y: H * rand(0.08, 0.92) };
-      var end   = { x: W + 20, y: H * rand(0.08, 0.92) };
-      var pkts = [];
-      var np = 2 + Math.floor(rand(0, 3));
-      for (var p = 0; p < np; p++) pkts.push({ t: rand(0, 1), spd: rand(0.0012, 0.0028) });
-      routes.push({ a: start, m: mid, b: end, pkts: pkts, accent: Math.random() < 0.4 });
-    }
-  }
+  /* ── Hero: trade routes that visibly reroute at chokepoints ── */
+  (function () {
+    var cvs = document.getElementById('heroCanvas');
+    if (!cvs) return;
+    var chokes = [], routes = [], pressure = 0, nextPulse = 160;
 
-  function resize() {
-    W = cvs.width = cvs.offsetWidth;
-    H = cvs.height = cvs.offsetHeight;
-    build();
-  }
-  window.addEventListener('resize', resize);
-  resize();
-
-  var frame = 0, nextPulse = 140;
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    frame++;
-
-    if (frame >= nextPulse) {
-      mids[Math.floor(rand(0, mids.length))].pulse = 160;
-      nextPulse = frame + Math.round(rand(220, 420));
+    function qp(a, c, b, t) {
+      var u = 1 - t;
+      return { x: u * u * a.x + 2 * u * t * c.x + t * t * b.x,
+               y: u * u * a.y + 2 * u * t * c.y + t * t * b.y };
     }
 
-    routes.forEach(function (rt) {
-      var disrupted = rt.m.pulse > 0;
+    function arc(ctx, a, c, b) {
       ctx.beginPath();
-      ctx.moveTo(rt.a.x, rt.a.y);
-      ctx.quadraticCurveTo(rt.m.x, rt.m.y, rt.b.x, rt.b.y);
-      ctx.strokeStyle = disrupted ? 'rgba(217,119,6,0.22)'
-                      : (rt.accent ? 'rgba(0,168,134,0.14)' : 'rgba(0,119,168,0.14)');
-      ctx.lineWidth = 1.1;
+      ctx.moveTo(a.x, a.y);
+      ctx.quadraticCurveTo(c.x, c.y, b.x, b.y);
       ctx.stroke();
+    }
 
-      rt.pkts.forEach(function (pk) {
-        pk.t += pk.spd * (disrupted ? 0.35 : 1);
-        if (pk.t > 1) pk.t = 0;
-        var pos = qpoint(rt.a, rt.m, rt.b, pk.t);
+    function build(w, h) {
+      chokes = []; routes = [];
+      for (var i = 0; i < 3; i++) {
+        chokes.push({
+          x: w * rand(0.44, 0.56),
+          y: h * (0.2 + i * 0.26) + rand(-12, 12),
+          alert: 0, phase: rand(0, TAU)
+        });
+      }
+      for (var r = 0; r < 9; r++) {
+        var m1 = chokes[r % 3];
+        var m2 = chokes[(r + 1 + Math.floor(rand(0, 2))) % 3];
+        if (m2 === m1) m2 = chokes[(r + 2) % 3];
+        var a = { x: -20, y: h * rand(0.08, 0.88) };
+        var b = { x: w + 20, y: h * rand(0.08, 0.88) };
+        var pkts = [];
+        var np = 2 + Math.floor(rand(0, 3));
+        for (var p = 0; p < np; p++) {
+          pkts.push({ t: rand(0, 1), spd: rand(0.0028, 0.0048), cx: m1.x, cy: m1.y });
+        }
+        routes.push({ a: a, b: b, m1: m1, m2: m2, pkts: pkts, accent: Math.random() < 0.4 });
+      }
+    }
+
+    function ribbon(ctx, w, h, t) {
+      for (var k = 0; k < 3; k++) {
         ctx.beginPath();
-        ctx.arc(pos.x, pos.y, 2.4, 0, TAU);
-        ctx.fillStyle = disrupted ? 'rgba(217,119,6,0.8)'
-                      : (rt.accent ? 'rgba(0,168,134,0.75)' : 'rgba(0,119,168,0.75)');
-        ctx.fill();
-      });
-    });
+        for (var x = 0; x <= w; x += 10) {
+          var y = h * 0.9 + k * 7
+                + Math.sin(x * 0.012 + t * 0.02 + k * 1.7) * (5 + pressure * 9)
+                + Math.sin(x * 0.004 - t * 0.011) * 4;
+          if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        }
+        ctx.strokeStyle = k === 1 ? 'rgba(0,168,134,0.16)' : 'rgba(0,119,168,0.12)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+    }
 
-    mids.forEach(function (md) {
-      md.phase += 0.035;
-      var pulse = 0.7 + Math.sin(md.phase) * 0.3;
-      ctx.beginPath();
-      ctx.arc(md.x, md.y, 4.4, 0, TAU);
-      ctx.fillStyle = md.pulse > 0
-        ? 'rgba(201,48,72,' + (0.5 + 0.35 * pulse).toFixed(3) + ')'
-        : 'rgba(0,119,168,' + (0.65 * pulse).toFixed(3) + ')';
-      ctx.fill();
+    function scene(ctx, w, h, t, animate) {
+      if (animate) {
+        if (t >= nextPulse) {
+          chokes[Math.floor(rand(0, chokes.length))].alert = 420;
+          nextPulse = t + Math.round(rand(380, 620));
+        }
+        var anyAlert = chokes.some(function (c) { return c.alert > 0; });
+        pressure += ((anyAlert ? 1 : 0) - pressure) * 0.02;
+      }
 
-      if (md.pulse > 0) {
-        md.pulse--;
-        var rr = (160 - md.pulse) * 0.45;
-        if (rr < 60) {
+      routes.forEach(function (rt) {
+        var disrupted = rt.m1.alert > 0;
+
+        /* direct arc — dims while its chokepoint is hot */
+        ctx.strokeStyle = disrupted ? 'rgba(217,119,6,0.10)'
+                        : (rt.accent ? 'rgba(0,168,134,0.15)' : 'rgba(0,119,168,0.15)');
+        ctx.lineWidth = 1.1;
+        arc(ctx, rt.a, rt.m1, rt.b);
+
+        /* alternative arc — lights up and animates while rerouting */
+        if (disrupted) {
+          ctx.setLineDash([6, 6]);
+          ctx.lineDashOffset = -t * 0.6;
+          ctx.strokeStyle = 'rgba(0,168,134,0.24)';
+        } else {
+          ctx.strokeStyle = 'rgba(0,168,134,0.045)';
+        }
+        arc(ctx, rt.a, rt.m2, rt.b);
+        ctx.setLineDash([]);
+        ctx.lineDashOffset = 0;
+
+        /* cargo packets bend toward the active corridor */
+        rt.pkts.forEach(function (pk) {
+          if (animate) {
+            pk.t += pk.spd;
+            if (pk.t > 1) pk.t = 0;
+            var target = disrupted ? rt.m2 : rt.m1;
+            pk.cx += (target.x - pk.cx) * 0.045;
+            pk.cy += (target.y - pk.cy) * 0.045;
+          }
+          var pos = qp(rt.a, { x: pk.cx, y: pk.cy }, rt.b, pk.t);
           ctx.beginPath();
-          ctx.arc(md.x, md.y, 6 + rr, 0, TAU);
-          ctx.strokeStyle = 'rgba(201,48,72,' + (0.45 * (1 - rr / 60)).toFixed(3) + ')';
-          ctx.lineWidth = 1.6;
+          ctx.arc(pos.x, pos.y, 2.3, 0, TAU);
+          ctx.fillStyle = disrupted ? 'rgba(0,168,134,0.85)'
+                        : (rt.accent ? 'rgba(0,168,134,0.75)' : 'rgba(0,119,168,0.75)');
+          ctx.fill();
+        });
+      });
+
+      chokes.forEach(function (c) {
+        if (animate) {
+          c.phase += 0.035;
+          if (c.alert > 0) c.alert--;
+        }
+        var p = 0.7 + Math.sin(c.phase) * 0.3;
+        var alerting = c.alert > 0;
+        ctx.beginPath();
+        ctx.arc(c.x, c.y, 4.6, 0, TAU);
+        ctx.fillStyle = alerting
+          ? 'rgba(201,48,72,' + (0.5 + 0.35 * p).toFixed(3) + ')'
+          : 'rgba(0,119,168,' + (0.65 * p).toFixed(3) + ')';
+        ctx.fill();
+        if (alerting) {
+          var rr = ((420 - c.alert) % 90) * 0.7;
+          ctx.beginPath();
+          ctx.arc(c.x, c.y, 6 + rr, 0, TAU);
+          ctx.strokeStyle = 'rgba(201,48,72,' + (0.4 * Math.max(0, 1 - rr / 63)).toFixed(3) + ')';
+          ctx.lineWidth = 1.5;
           ctx.stroke();
         }
-      }
-    });
+      });
 
-    requestAnimationFrame(draw);
-  }
-  draw();
+      /* cost-pressure wave along the bottom */
+      ribbon(ctx, w, h, animate ? t : 0);
+    }
+
+    canvasLoop(cvs, {
+      build: build,
+      draw: function (ctx, w, h, t) { scene(ctx, w, h, t, true); },
+      staticFrame: function (ctx, w, h) { scene(ctx, w, h, 0, false); }
+    });
+  })();
+
+  /* ── Ambient: flowing thin lines behind Methodology ──── */
+  (function () {
+    var cvs = document.getElementById('ambientCanvas');
+    if (!cvs) return;
+    function drawLines(ctx, w, h, t) {
+      var par = (window.pageYOffset || 0) * 0.06;
+      var n = 6;
+      for (var k = 0; k < n; k++) {
+        ctx.beginPath();
+        var base = (h / (n + 1)) * (k + 1);
+        for (var x = 0; x <= w; x += 12) {
+          var y = base
+                + Math.sin(x * 0.007 + t * 0.016 + par * 0.02 + k * 1.4) * 11
+                + Math.sin(x * 0.017 - t * 0.009 + k) * 5;
+          if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        }
+        ctx.strokeStyle = k % 2 === 0 ? 'rgba(0,119,168,0.5)' : 'rgba(0,168,134,0.5)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+    }
+    canvasLoop(cvs, { draw: drawLines });
+  })();
 })();
 </script>
 

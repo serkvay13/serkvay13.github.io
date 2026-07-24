@@ -417,6 +417,63 @@
       .cap-grid, .steps, .grounded-inner { grid-template-columns: 1fr; }
       .hero-stats { gap: 24px; }
     }
+
+    /* ── VISUAL UPGRADES (decorative layer only) ────────── */
+    section { position: relative; }
+    .sec-line {
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      pointer-events: none; z-index: 2; opacity: 0.5;
+      background: linear-gradient(90deg, var(--teal), var(--accent), var(--teal));
+      background-size: 200% 100%;
+      transform: scaleX(0); transform-origin: left center;
+      transition: transform 1.2s cubic-bezier(.22,1,.36,1);
+    }
+    .sec-line.in { transform: scaleX(1); }
+    @media (prefers-reduced-motion: no-preference) {
+      .sec-line.in { animation: lineFlow 7s linear infinite; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .sec-line { transition: none; }
+    }
+    @keyframes lineFlow {
+      from { background-position: 0% 0; }
+      to   { background-position: 200% 0; }
+    }
+    .ambient-canvas {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 0; opacity: 0.12;
+    }
+    #models .container { position: relative; z-index: 1; }
+    .cap-card, .pred-card, .step {
+      transition: transform .28s cubic-bezier(.22,1,.36,1), box-shadow .28s ease, border-color .28s ease;
+    }
+    .cap-card:hover, .pred-card:hover, .step:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0,168,134,0.45);
+      box-shadow: 0 12px 30px rgba(13,31,60,0.10), 0 0 0 1px rgba(0,168,134,0.22), 0 0 20px rgba(0,168,134,0.10);
+    }
+    .cta-fx {
+      position: absolute; inset: 0; overflow: hidden;
+      pointer-events: none; z-index: 0;
+    }
+    .cta-ring {
+      position: absolute; left: 50%; top: 50%;
+      width: 130px; height: 130px; margin: -65px 0 0 -65px;
+      border: 1px solid rgba(0,168,134,0.28); border-radius: 50%;
+    }
+    .cta-ring::before, .cta-ring::after {
+      content: ''; position: absolute; inset: -1px;
+      border: 1px solid rgba(0,168,134,0.35); border-radius: 50%;
+      opacity: 0;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .cta-ring::before { animation: ctaPing 3.6s ease-out infinite; }
+      .cta-ring::after  { animation: ctaPing 3.6s ease-out 1.8s infinite; }
+    }
+    @keyframes ctaPing {
+      0%   { transform: scale(1);   opacity: 0.5; }
+      100% { transform: scale(3.4); opacity: 0; }
+    }
   </style>
 </head>
 <body>
@@ -497,6 +554,7 @@
 
 <!-- ── CAPABILITIES ───────────────────────────────────── -->
 <section id="capabilities">
+  <div class="sec-line" aria-hidden="true"></div>
   <div class="container">
     <div class="section-tag fade">What you get</div>
     <h2 class="section-title serif fade">The full sanctions picture, continuously updated.</h2>
@@ -567,6 +625,8 @@
 
 <!-- ── HOW THE MODELS WORK ────────────────────────────── -->
 <section id="models">
+  <div class="sec-line" aria-hidden="true"></div>
+  <canvas class="ambient-canvas" id="ambientCanvas" aria-hidden="true"></canvas>
   <div class="container">
     <div class="section-tag fade">Methodology</div>
     <h2 class="section-title serif fade">How the models work.</h2>
@@ -644,6 +704,7 @@
 
 <!-- ── PREDICTIONS ────────────────────────────────────── -->
 <section id="predictions">
+  <div class="sec-line" aria-hidden="true"></div>
   <div class="container">
     <div class="section-tag fade">Predictions</div>
     <h2 class="section-title serif fade">Forecasts you can score, not vibes.</h2>
@@ -684,6 +745,7 @@
 
 <!-- ── CTA BAND ───────────────────────────────────────── -->
 <section class="cta-band">
+  <div class="cta-fx" aria-hidden="true"><div class="cta-ring"></div></div>
   <div class="container">
     <h2 class="cta-title fade">Put sanctions intelligence on your desk.</h2>
     <p class="cta-sub fade">
@@ -754,100 +816,228 @@
     }, { threshold: 0.5 }).observe(el);
   });
 
-  /* ── Hero canvas: sanctions network, nodes flip red ──── */
-  var cvs = document.getElementById('heroCanvas');
-  if (!cvs) return;
-  var ctx = cvs.getContext('2d');
-  var TAU = Math.PI * 2;
-  var W, H, nodes = [], edges = [];
+  /* ── Section divider lines: draw across on scroll ────── */
+  var lio = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); lio.unobserve(e.target); } });
+  }, { threshold: 0 });
+  document.querySelectorAll('.sec-line').forEach(function (el) { lio.observe(el); });
 
+  /* ── Canvas runtime: DPR-capped, pausable, one rAF per canvas ── */
+  var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var TAU = Math.PI * 2;
   function rand(a, b) { return Math.random() * (b - a) + a; }
 
-  function build() {
-    nodes = []; edges = [];
-    var count = Math.max(26, Math.round(W * H / 26000));
-    for (var i = 0; i < count; i++) {
-      nodes.push({
-        x: rand(0, W), y: rand(0, H),
-        vx: rand(-0.14, 0.14), vy: rand(-0.1, 0.1),
-        r: rand(2, 3.6),
-        accent: Math.random() < 0.35,
-        flag: 0,
-        phase: rand(0, TAU)
-      });
-    }
-    for (var a = 0; a < nodes.length; a++) {
-      for (var b = a + 1; b < nodes.length; b++) {
-        var d = Math.hypot(nodes[a].x - nodes[b].x, nodes[a].y - nodes[b].y);
-        if (d < 150 && Math.random() < 0.5) edges.push([a, b]);
+  function canvasLoop(canvas, opts) {
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var st = { w: 0, h: 0, vis: false, raf: 0, t: 0 };
+    function resize() {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      st.w = canvas.offsetWidth; st.h = canvas.offsetHeight;
+      canvas.width = Math.max(1, Math.round(st.w * dpr));
+      canvas.height = Math.max(1, Math.round(st.h * dpr));
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      if (opts.build) opts.build(st.w, st.h);
+      if (REDUCED) {
+        ctx.clearRect(0, 0, st.w, st.h);
+        (opts.staticFrame || opts.draw)(ctx, st.w, st.h, 0);
       }
     }
+    function frame() {
+      st.raf = 0;
+      if (REDUCED || !st.vis || document.hidden) return;
+      st.t++;
+      ctx.clearRect(0, 0, st.w, st.h);
+      opts.draw(ctx, st.w, st.h, st.t);
+      st.raf = requestAnimationFrame(frame);
+    }
+    function play() {
+      if (!REDUCED && !st.raf && st.vis && !document.hidden) st.raf = requestAnimationFrame(frame);
+    }
+    window.addEventListener('resize', resize);
+    document.addEventListener('visibilitychange', play);
+    new IntersectionObserver(function (es) { st.vis = es[0].isIntersecting; play(); }, { threshold: 0.02 }).observe(canvas);
+    resize();
+    play();
   }
 
-  function resize() {
-    W = cvs.width = cvs.offsetWidth;
-    H = cvs.height = cvs.offsetHeight;
-    build();
-  }
-  window.addEventListener('resize', resize);
-  resize();
+  /* ── Hero: designation cascade over a dotted network ── */
+  (function () {
+    var cvs = document.getElementById('heroCanvas');
+    if (!cvs) return;
+    var nodes = [], edges = [], chips = [], casc = [];
+    var sweep = rand(0, TAU), nextFlag = 90;
+    var LABELS = ['SDN +12', 'EU pkg 21'];
 
-  var frame = 0, nextFlag = 90;
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    frame++;
-
-    if (frame >= nextFlag) {
-      var clean = nodes.filter(function (n) { return n.flag === 0; });
-      if (clean.length) {
-        var pick = clean[Math.floor(rand(0, clean.length))];
-        pick.flag = 420;
+    function neighborsOf(i) {
+      var out = [];
+      for (var e = 0; e < edges.length; e++) {
+        if (edges[e][0] === i) out.push(edges[e][1]);
+        else if (edges[e][1] === i) out.push(edges[e][0]);
       }
-      nextFlag = frame + Math.round(rand(120, 260));
+      return out;
     }
 
-    edges.forEach(function (e) {
-      var a = nodes[e[0]], b = nodes[e[1]];
-      var flagged = a.flag > 0 || b.flag > 0;
-      ctx.beginPath();
-      ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
-      ctx.strokeStyle = flagged ? 'rgba(201,48,72,0.22)' : 'rgba(0,119,168,0.12)';
-      ctx.lineWidth = 1;
-      ctx.stroke();
-    });
-
-    nodes.forEach(function (n) {
-      n.x += n.vx; n.y += n.vy;
-      if (n.x < -10) n.x = W + 10; if (n.x > W + 10) n.x = -10;
-      if (n.y < -10) n.y = H + 10; if (n.y > H + 10) n.y = -10;
-      n.phase += 0.03;
-      if (n.flag > 0) n.flag--;
-
-      var pulse = 0.75 + Math.sin(n.phase) * 0.25;
-      if (n.flag > 0) {
-        ctx.fillStyle = 'rgba(201,48,72,' + (0.55 * pulse + 0.25).toFixed(3) + ')';
-      } else if (n.accent) {
-        ctx.fillStyle = 'rgba(0,168,134,' + (0.5 * pulse).toFixed(3) + ')';
-      } else {
-        ctx.fillStyle = 'rgba(0,119,168,' + (0.5 * pulse).toFixed(3) + ')';
+    function flagNode(i, t, depth) {
+      var n = nodes[i];
+      if (!n || n.flag > 0) return;
+      n.flag = 420;
+      if (Math.random() < 0.55) {
+        chips.push({
+          x: n.x + rand(-14, 6), y: n.y - 10,
+          text: LABELS[Math.floor(rand(0, LABELS.length))],
+          life: 180
+        });
       }
-      ctx.beginPath();
-      ctx.arc(n.x, n.y, n.r, 0, TAU);
-      ctx.fill();
+      if (depth < 2) {
+        var nb = neighborsOf(i).filter(function (j) { return nodes[j].flag === 0; });
+        nb.slice(0, 2 + Math.floor(rand(0, 2))).forEach(function (j, k) {
+          casc.push({ node: j, at: t + 42 + k * 22, depth: depth + 1 });
+        });
+      }
+    }
 
-      if (n.flag > 300) {
-        var rr = (420 - n.flag) * 0.42;
+    function build(w, h) {
+      nodes = []; edges = []; chips = []; casc = [];
+      var count = Math.max(26, Math.round(w * h / 28000));
+      for (var i = 0; i < count; i++) {
+        nodes.push({
+          x: rand(0, w), y: rand(0, h),
+          vx: rand(-0.12, 0.12), vy: rand(-0.09, 0.09),
+          r: rand(2, 3.4),
+          accent: Math.random() < 0.35,
+          flag: 0, phase: rand(0, TAU)
+        });
+      }
+      for (var a = 0; a < count; a++) {
+        for (var b = a + 1; b < count; b++) {
+          var d = Math.hypot(nodes[a].x - nodes[b].x, nodes[a].y - nodes[b].y);
+          if (d < 155 && Math.random() < 0.5) edges.push([a, b]);
+        }
+      }
+    }
+
+    function scene(ctx, w, h, t, animate) {
+      /* faint dotted world grid */
+      var gap = 56;
+      ctx.fillStyle = 'rgba(13,31,60,0.07)';
+      for (var gx = gap / 2; gx < w; gx += gap) {
+        for (var gy = gap / 2; gy < h; gy += gap) {
+          ctx.fillRect(gx - 0.7, gy - 0.7, 1.4, 1.4);
+        }
+      }
+
+      if (animate) {
+        if (t >= nextFlag) {
+          var clean = [];
+          nodes.forEach(function (n, i) { if (n.flag === 0) clean.push(i); });
+          if (clean.length) flagNode(clean[Math.floor(rand(0, clean.length))], t, 0);
+          nextFlag = t + Math.round(rand(240, 420));
+        }
+        casc = casc.filter(function (c) {
+          if (t >= c.at) { flagNode(c.node, t, c.depth); return false; }
+          return true;
+        });
+      }
+
+      edges.forEach(function (e) {
+        var a = nodes[e[0]], b = nodes[e[1]];
+        var hot = a.flag > 0 && b.flag > 0;
+        var warm = a.flag > 0 || b.flag > 0;
         ctx.beginPath();
-        ctx.arc(n.x, n.y, n.r + rr, 0, TAU);
-        ctx.strokeStyle = 'rgba(201,48,72,' + (0.4 * (1 - rr / 52)).toFixed(3) + ')';
-        ctx.lineWidth = 1.4;
+        ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+        ctx.strokeStyle = hot ? 'rgba(201,48,72,0.3)'
+                        : warm ? 'rgba(201,48,72,0.16)' : 'rgba(0,119,168,0.11)';
+        ctx.lineWidth = 1;
         ctx.stroke();
-      }
-    });
+      });
 
-    requestAnimationFrame(draw);
-  }
-  draw();
+      nodes.forEach(function (n) {
+        if (animate) {
+          n.x += n.vx; n.y += n.vy;
+          if (n.x < -10) n.x = w + 10; if (n.x > w + 10) n.x = -10;
+          if (n.y < -10) n.y = h + 10; if (n.y > h + 10) n.y = -10;
+          n.phase += 0.03;
+          if (n.flag > 0) n.flag--;
+        }
+        var pulse = 0.75 + Math.sin(n.phase) * 0.25;
+        if (n.flag > 0) {
+          ctx.fillStyle = 'rgba(201,48,72,' + (0.55 * pulse + 0.25).toFixed(3) + ')';
+        } else if (n.accent) {
+          ctx.fillStyle = 'rgba(0,168,134,' + (0.5 * pulse).toFixed(3) + ')';
+        } else {
+          ctx.fillStyle = 'rgba(0,119,168,' + (0.5 * pulse).toFixed(3) + ')';
+        }
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r, 0, TAU);
+        ctx.fill();
+
+        if (n.flag > 330) {
+          var rr = (420 - n.flag) * 0.62;
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, n.r + rr, 0, TAU);
+          ctx.strokeStyle = 'rgba(201,48,72,' + (0.42 * (1 - rr / 56)).toFixed(3) + ')';
+          ctx.lineWidth = 1.4;
+          ctx.stroke();
+        }
+      });
+
+      if (animate) {
+        /* thin radar sweep */
+        sweep += 0.005;
+        var cx = w * 0.5, cy = h * 0.52, R = Math.hypot(w, h) * 0.62;
+        for (var s = 9; s >= 0; s--) {
+          var ang = sweep - s * 0.022;
+          ctx.beginPath();
+          ctx.moveTo(cx, cy);
+          ctx.lineTo(cx + Math.cos(ang) * R, cy + Math.sin(ang) * R);
+          ctx.strokeStyle = 'rgba(0,119,168,' + (0.085 * (1 - s / 10)).toFixed(3) + ')';
+          ctx.lineWidth = s === 0 ? 1 : 2.2;
+          ctx.stroke();
+        }
+
+        /* drifting designation chips */
+        ctx.font = '600 10px "Courier New", monospace';
+        chips = chips.filter(function (c) {
+          c.y -= 0.32; c.life--;
+          if (c.life <= 0) return false;
+          var a = Math.min(1, c.life / 70) * 0.5;
+          ctx.fillStyle = 'rgba(201,48,72,' + a.toFixed(3) + ')';
+          ctx.fillText(c.text, c.x, c.y);
+          return true;
+        });
+      }
+    }
+
+    canvasLoop(cvs, {
+      build: build,
+      draw: function (ctx, w, h, t) { scene(ctx, w, h, t, true); },
+      staticFrame: function (ctx, w, h) { scene(ctx, w, h, 0, false); }
+    });
+  })();
+
+  /* ── Ambient: drifting particle grid behind Methodology ── */
+  (function () {
+    var cvs = document.getElementById('ambientCanvas');
+    if (!cvs) return;
+    function drawDots(ctx, w, h, t) {
+      var gap = 46;
+      var par = (window.pageYOffset || 0) * 0.08;
+      var ox = (t * 0.10) % gap, oy = (t * 0.06 + par) % gap;
+      for (var x = -gap + ox; x < w + gap; x += gap) {
+        for (var y = -gap + oy; y < h + gap; y += gap) {
+          var a = 0.35 + 0.3 * Math.sin(x * 0.02 + y * 0.03 + t * 0.02);
+          ctx.fillStyle = Math.round((x + y) / gap) % 2 === 0
+            ? 'rgba(0,119,168,' + a.toFixed(3) + ')'
+            : 'rgba(0,168,134,' + a.toFixed(3) + ')';
+          ctx.beginPath();
+          ctx.arc(x, y, 1.5, 0, TAU);
+          ctx.fill();
+        }
+      }
+    }
+    canvasLoop(cvs, { draw: drawDots });
+  })();
 })();
 </script>
 
