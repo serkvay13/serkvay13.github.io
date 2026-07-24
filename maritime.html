@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maritime Risk Intelligence — NERAI</title>
+  <meta name="description" content="NERAI Maritime Risk Intelligence: live chokepoint monitoring for Hormuz, Suez/Red Sea, Bab el-Mandeb and Panama, shadow-fleet index, escalation probabilities, war-risk signal, and the NERAI Maritime Weekly." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0d1f3c;
+      --navy2:  #f4f7fb;
+      --blue:   #e8f0f8;
+      --teal:   #0077a8;
+      --teal2:  #005f87;
+      --silver: #5a6b82;
+      --white:  #ffffff;
+      --accent: #00a886;
+      --warn:   #d97706;
+      --red:    #c93048;
+      --border: rgba(0,119,168,0.14);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--navy);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+    .serif { font-family: 'DM Serif Display', serif; }
+
+    /* ── NAV ─────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+      display: flex; align-items: center;
+    }
+    nav .inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 28px;
+      width: 100%;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-mark { display: flex; align-items: center; }
+    .nav-logo-svg { height: 32px; width: auto; }
+    .nav-links {
+      display: flex; align-items: center; gap: 22px;
+      list-style: none; flex-wrap: nowrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--silver);
+      font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-links a.active {
+      color: var(--navy); font-weight: 600;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 2px;
+    }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--teal2), var(--accent));
+      color: #fff !important;
+      padding: 6px 18px;
+      border-radius: 6px;
+      font-weight: 600 !important;
+      letter-spacing: 0.03em !important;
+      transition: opacity 0.2s !important;
+      border-bottom: none !important;
+    }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* ── HERO ────────────────────────────────────────────── */
+    #hero {
+      min-height: 88vh;
+      display: flex; flex-direction: column; justify-content: center;
+      position: relative;
+      padding: 130px 0 80px;
+      overflow: hidden;
+      background: var(--white);
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,119,168,0.07) 0%, transparent 70%),
+                  radial-gradient(ellipse 50% 40% at 80% 80%, rgba(0,168,134,0.04) 0%, transparent 60%);
+    }
+    #heroCanvas {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      pointer-events: none; z-index: 0;
+      opacity: 0.6;
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      max-width: 1100px; margin: 0 auto; padding: 0 28px;
+      width: 100%;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 28px;
+    }
+    .hero-tag::before {
+      content: ''; display: block;
+      width: 24px; height: 1px;
+      background: var(--teal); opacity: 0.6;
+    }
+    .hero-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      line-height: 1.12;
+      color: var(--navy);
+      max-width: 760px;
+      margin-bottom: 24px;
+    }
+    .hero-title em {
+      font-style: italic;
+      background: linear-gradient(90deg, var(--teal), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-sub {
+      font-size: 1.02rem;
+      color: var(--silver);
+      max-width: 560px;
+      margin-bottom: 40px;
+      line-height: 1.75;
+    }
+    .hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px;
+      background: linear-gradient(135deg, var(--teal2), var(--accent));
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.88rem; font-weight: 600;
+      letter-spacing: 0.03em;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 24px rgba(0,212,170,0.2);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,212,170,0.3); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 24px;
+      border: 1px solid rgba(0,119,168,0.3);
+      color: var(--navy);
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.88rem; font-weight: 500;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--teal); color: var(--teal); background: rgba(0,119,168,0.05); }
+
+    .hero-stats {
+      display: flex; gap: 40px; flex-wrap: wrap;
+      margin-top: 60px; padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+    .hero-stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem; color: var(--navy);
+    }
+    .hero-stat-label {
+      font-size: 0.72rem; color: var(--silver);
+      letter-spacing: 0.06em; text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* ── SECTION BASE ────────────────────────────────────── */
+    section { padding: 96px 0; }
+    .section-tag {
+      font-size: 0.65rem; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
+      color: var(--navy); line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 0.95rem; color: var(--silver);
+      max-width: 560px; line-height: 1.75;
+    }
+    .divider {
+      width: 40px; height: 2px;
+      background: linear-gradient(90deg, var(--teal), var(--accent));
+      margin: 20px 0 40px; border-radius: 2px;
+    }
+
+    /* ── CAPABILITY CARDS ────────────────────────────────── */
+    #capabilities { background: var(--navy2); border-top: 1px solid rgba(0,119,168,0.08); }
+    .cap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px; margin-top: 48px;
+    }
+    .cap-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cap-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,0.08); }
+    .cap-icon {
+      width: 40px; height: 40px;
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.15rem; margin-bottom: 16px;
+    }
+    .ci-blue  { background: rgba(0,119,168,0.15); }
+    .ci-green { background: rgba(0,168,134,0.12); }
+    .ci-amber { background: rgba(217,119,6,0.12); }
+    .ci-red   { background: rgba(201,48,72,0.1); }
+    .cap-name { font-size: 0.9rem; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+    .cap-desc { font-size: 0.76rem; color: var(--silver); line-height: 1.7; }
+    .cap-meta {
+      margin-top: 14px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--teal);
+    }
+
+    /* ── HOW THE MODELS WORK ─────────────────────────────── */
+    #models { background: var(--white); }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      position: relative;
+      margin-top: 56px;
+    }
+    .steps::before {
+      content: ''; position: absolute;
+      top: 28px; left: 14%; right: 14%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--teal2), var(--accent), var(--teal2), transparent);
+      opacity: 0.3;
+    }
+    .step {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 22px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .step-num {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      margin: 0 auto 18px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em;
+    }
+    .step-num.s1 { background: rgba(0,119,168,0.2);  border: 1px solid rgba(0,119,168,0.4);  color: var(--teal); }
+    .step-num.s2 { background: rgba(0,168,134,0.12); border: 1px solid rgba(0,168,134,0.3);  color: var(--accent); }
+    .step-num.s3 { background: rgba(217,119,6,0.12); border: 1px solid rgba(217,119,6,0.25); color: var(--warn); }
+    .step-num.s4 { background: rgba(201,48,72,0.1);  border: 1px solid rgba(201,48,72,0.2);  color: var(--red); }
+    .step-title { font-size: 0.82rem; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+    .step-text  { font-size: 0.72rem; color: var(--silver); line-height: 1.65; }
+
+    /* ── GROUNDED STRIP ──────────────────────────────────── */
+    .grounded {
+      background: var(--navy);
+      padding: 44px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .grounded-inner {
+      display: grid; grid-template-columns: auto repeat(4, 1fr);
+      gap: 28px; align-items: center;
+    }
+    .grounded-label {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem; color: #ffffff; line-height: 1.3;
+      padding-right: 12px;
+      border-right: 1px solid rgba(255,255,255,0.12);
+    }
+    .grounded-item { display: flex; gap: 10px; align-items: flex-start; }
+    .grounded-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0; margin-top: 6px;
+      box-shadow: 0 0 8px rgba(0,168,134,0.7);
+    }
+    .grounded-item p { font-size: 0.72rem; color: #a8b6c8; line-height: 1.6; }
+    .grounded-item strong { color: #ffffff; font-weight: 600; display: block; font-size: 0.74rem; }
+
+    /* ── PREDICTIONS ─────────────────────────────────────── */
+    #predictions { background: var(--navy2); border-top: 1px solid rgba(0,119,168,0.08); }
+    .pred-grid {
+      display: grid; grid-template-columns: 1.4fr 1fr;
+      gap: 24px; margin-top: 48px; align-items: stretch;
+    }
+    .pred-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px 28px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .pred-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem; color: var(--navy); margin-bottom: 14px;
+    }
+    .pred-card p { font-size: 0.82rem; color: var(--silver); line-height: 1.75; margin-bottom: 12px; }
+    .pred-list { list-style: none; margin-top: 8px; }
+    .pred-list li {
+      font-size: 0.78rem; color: var(--silver);
+      padding: 9px 0 9px 22px; position: relative;
+      border-bottom: 1px solid rgba(0,119,168,0.08);
+      line-height: 1.6;
+    }
+    .pred-list li:last-child { border-bottom: none; }
+    .pred-list li::before {
+      content: '▸'; position: absolute; left: 0;
+      color: var(--accent); font-size: 0.7rem;
+    }
+    .pred-badge {
+      display: inline-block;
+      font-family: 'Courier New', monospace;
+      font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid rgba(0,168,134,0.35);
+      border-radius: 20px; padding: 3px 12px; margin-bottom: 16px;
+    }
+
+    /* ── CTA BAND ────────────────────────────────────────── */
+    .cta-band {
+      background: var(--navy);
+      padding: 88px 0;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-band::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(0,119,168,0.25) 0%, transparent 70%);
+    }
+    .cta-band .container { position: relative; z-index: 1; }
+    .cta-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: #ffffff; margin-bottom: 14px;
+    }
+    .cta-sub { font-size: 0.92rem; color: #a8b6c8; max-width: 540px; margin: 0 auto 36px; }
+    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-outline-light {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 24px;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #ffffff; text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.88rem; font-weight: 500;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-outline-light:hover { border-color: var(--accent); background: rgba(0,168,134,0.1); }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    footer {
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 48px 0;
+    }
+    .footer-inner {
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 20px;
+    }
+    .footer-logo-text { font-size: 1rem; font-weight: 700; color: #ffffff; letter-spacing: 0.06em; }
+    .footer-tagline { font-size: 0.7rem; color: var(--silver); margin-top: 4px; }
+    .footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+    .footer-links a { text-decoration: none; color: var(--silver); font-size: 0.75rem; transition: color 0.2s; }
+    .footer-links a:hover { color: #ffffff; }
+    .footer-copy { font-size: 0.68rem; color: rgba(143,163,184,0.5); }
+
+    /* ── FADE-IN ─────────────────────────────────────────── */
+    .fade {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1);
+    }
+    .fade.in { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .cap-grid { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .steps::before { display: none; }
+      .pred-grid { grid-template-columns: 1fr; }
+      .grounded-inner { grid-template-columns: 1fr 1fr; }
+      .grounded-label { border-right: none; grid-column: 1 / -1; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 64px 0; }
+      .cap-grid, .steps, .grounded-inner { grid-template-columns: 1fr; }
+      .hero-stats { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ─────────────────────────────────────── -->
+<nav>
+  <div class="inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg class="nav-logo-svg" viewBox="0 0 160 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="6"  cy="6"  r="3.2" fill="#1a2840"/><circle cx="16" cy="6"  r="3.2" fill="#00c8e0"/><circle cx="26" cy="6"  r="3.2" fill="#1a2840"/><circle cx="36" cy="6"  r="3.2" fill="#00c8e0"/>
+          <circle cx="6"  cy="16" r="3.2" fill="#00c8e0"/><circle cx="16" cy="16" r="3.2" fill="#1a2840"/><circle cx="26" cy="16" r="3.2" fill="#00c8e0"/><circle cx="36" cy="16" r="3.2" fill="#1a2840"/>
+          <circle cx="6"  cy="26" r="3.2" fill="#1a2840"/><circle cx="16" cy="26" r="3.2" fill="#00c8e0"/><circle cx="26" cy="26" r="3.2" fill="#1a2840"/><circle cx="36" cy="26" r="3.2" fill="#00c8e0"/>
+          <circle cx="6"  cy="36" r="3.2" fill="#00c8e0"/><circle cx="16" cy="36" r="3.2" fill="#1a2840"/><circle cx="26" cy="36" r="3.2" fill="#00c8e0"/><circle cx="36" cy="36" r="3.2" fill="#1a2840"/>
+          <text x="48" y="32" font-family="'Inter', Arial, sans-serif" font-weight="800" font-size="26" letter-spacing="-0.5">
+            <tspan fill="#1a2840">NER</tspan><tspan fill="#00b4d8">AI</tspan>
+          </text>
+        </svg>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="sanctions.html">Sanctions</a></li>
+      <li><a href="supply-chain.html">Supply Chain</a></li>
+      <li><a href="maritime.html" class="active">Maritime</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#platform">Platform</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="https://nerai-intelligence.streamlit.app/" target="_blank" class="nav-cta">Open Dashboard →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── HERO ───────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <canvas id="heroCanvas"></canvas>
+
+  <div class="hero-content">
+    <div class="hero-tag">Capability · Maritime Risk Intelligence</div>
+
+    <h1 class="hero-title">
+      Every chokepoint watched.<br>Every risk <em>priced</em>.
+    </h1>
+
+    <p class="hero-sub">
+      NERAI monitors live disruption at the world&rsquo;s chokepoints — Hormuz,
+      Suez and the Red Sea, Bab el-Mandeb, Panama and beyond — tracks the shadow
+      fleet, and prices escalation and war risk on defined horizons.
+    </p>
+
+    <div class="hero-actions">
+      <a href="https://nerai-intelligence.streamlit.app/" target="_blank" class="btn-primary">
+        <span>Explore the Dashboard</span><span>→</span>
+      </a>
+      <a href="#capabilities" class="btn-ghost">See the capabilities</a>
+    </div>
+
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num"><span class="count" data-count="13">0</span>-week</div>
+        <div class="hero-stat-label">Shadow-fleet forecast direction</div>
+      </div>
+      <div>
+        <div class="hero-stat-num"><span class="count" data-count="6">0</span>-week</div>
+        <div class="hero-stat-label">War-risk signal horizon</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">2/4/<span class="count" data-count="8">0</span>-wk</div>
+        <div class="hero-stat-label">Escalation horizons</div>
+      </div>
+      <div>
+        <div class="hero-stat-num"><span class="count" data-count="5">0</span></div>
+        <div class="hero-stat-label">Events per weekly brief</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CAPABILITIES ───────────────────────────────────── -->
+<section id="capabilities">
+  <div class="container">
+    <div class="section-tag fade">What you get</div>
+    <h2 class="section-title serif fade">From live AIS watch to priced war risk.</h2>
+    <div class="divider fade"></div>
+    <p class="section-sub fade">
+      Chokepoint by chokepoint, vessel by vessel — maritime risk measured
+      against baseline and projected forward on defined horizons.
+    </p>
+
+    <div class="cap-grid">
+      <div class="cap-card fade">
+        <div class="cap-icon ci-blue">⚓</div>
+        <div class="cap-name">Chokepoint Monitoring</div>
+        <div class="cap-desc">
+          Live disruption % versus baseline for the world&rsquo;s chokepoints —
+          Hormuz, Suez / Red Sea, Bab el-Mandeb, Panama and more — with an
+          AIS-based live operations watch.
+        </div>
+        <div class="cap-meta">Live % vs baseline · AIS watch</div>
+      </div>
+      <div class="cap-card fade">
+        <div class="cap-icon ci-amber">🚨</div>
+        <div class="cap-name">Port Incidents &amp; Warnings</div>
+        <div class="cap-desc">
+          A continuously collected feed of port incidents and navigational
+          warnings, so operational surprises surface as they happen.
+        </div>
+        <div class="cap-meta">Collected continuously</div>
+      </div>
+      <div class="cap-card fade">
+        <div class="cap-icon ci-blue">🚢</div>
+        <div class="cap-name">Shadow-Fleet Index</div>
+        <div class="cap-desc">
+          A composite enforcement-pressure index with a 13-week forecast
+          direction, backed by vessel-exposure analytics.
+        </div>
+        <div class="cap-meta">13-week direction</div>
+      </div>
+      <div class="cap-card fade">
+        <div class="cap-icon ci-green">📈</div>
+        <div class="cap-name">Escalation Probabilities</div>
+        <div class="cap-desc">
+          Escalation probabilities per corridor at 2 / 4 / 8-week horizons —
+          calibrated, not guessed.
+        </div>
+        <div class="cap-meta">2 / 4 / 8-week horizons</div>
+      </div>
+      <div class="cap-card fade">
+        <div class="cap-icon ci-red">⚠</div>
+        <div class="cap-name">War-Risk Signal</div>
+        <div class="cap-desc">
+          A war-risk signal that includes the probability of changes to Joint
+          War Committee listed areas on a 6-week horizon.
+        </div>
+        <div class="cap-meta">JWC listed areas · 6-week</div>
+      </div>
+      <div class="cap-card fade">
+        <div class="cap-icon ci-green">📰</div>
+        <div class="cap-name">NERAI Maritime Weekly</div>
+        <div class="cap-desc">
+          The week&rsquo;s five most consequential maritime events under a strict
+          recency rule, every fact from URL-verified sources, with strategic
+          analysis and a PDF edition.
+        </div>
+        <div class="cap-meta">5 events · URL-verified · PDF</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW THE MODELS WORK ────────────────────────────── -->
+<section id="models">
+  <div class="container">
+    <div class="section-tag fade">Methodology</div>
+    <h2 class="section-title serif fade">How the models work.</h2>
+    <div class="divider fade"></div>
+    <p class="section-sub fade">
+      Watch, score, forecast, verify — from raw AIS movement to a probability
+      you can hold the model to.
+    </p>
+
+    <div class="steps">
+      <div class="step fade">
+        <div class="step-num s1">01</div>
+        <div class="step-title">Watch</div>
+        <div class="step-text">
+          An AIS-based live operations watch tracks disruption % versus baseline
+          at each chokepoint, while port incidents and navigational warnings are
+          collected continuously.
+        </div>
+      </div>
+      <div class="step fade">
+        <div class="step-num s2">02</div>
+        <div class="step-title">Score</div>
+        <div class="step-text">
+          Shadow-fleet enforcement pressure is compressed into a composite
+          index, with vessel-exposure analytics beneath it.
+        </div>
+      </div>
+      <div class="step fade">
+        <div class="step-num s3">03</div>
+        <div class="step-title">Forecast</div>
+        <div class="step-text">
+          Escalation probabilities are issued per corridor at 2 / 4 / 8-week
+          horizons, the shadow-fleet index carries a 13-week direction, and the
+          war-risk signal prices JWC listed-area changes over 6 weeks.
+        </div>
+      </div>
+      <div class="step fade">
+        <div class="step-num s4">04</div>
+        <div class="step-title">Verify &amp; publish</div>
+        <div class="step-text">
+          The Maritime Weekly ships five URL-verified events with strategic
+          analysis and a PDF edition; shadow-fleet, Hormuz, and three-corridors
+          briefings are published on the Foresight Desk.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GROUNDED STRIP ─────────────────────────────────── -->
+<div class="grounded">
+  <div class="container">
+    <div class="grounded-inner">
+      <div class="grounded-label fade">Grounded<br>by design</div>
+      <div class="grounded-item fade">
+        <div class="grounded-dot"></div>
+        <p><strong>Significance testing</strong> Signals are tested before they become claims.</p>
+      </div>
+      <div class="grounded-item fade">
+        <div class="grounded-dot"></div>
+        <p><strong>Event-level verification</strong> Every event is verified before any narrative is written.</p>
+      </div>
+      <div class="grounded-item fade">
+        <div class="grounded-dot"></div>
+        <p><strong>ICD-203-aligned</strong> A grounding guard aligned with ICD-203 analytic standards.</p>
+      </div>
+      <div class="grounded-item fade">
+        <div class="grounded-dot"></div>
+        <p><strong>No unverified claims</strong> If it cannot be verified, it does not ship.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PREDICTIONS ────────────────────────────────────── -->
+<section id="predictions">
+  <div class="container">
+    <div class="section-tag fade">Predictions</div>
+    <h2 class="section-title serif fade">Maritime forecasts, held to a score.</h2>
+    <div class="divider fade"></div>
+
+    <div class="pred-grid">
+      <div class="pred-card fade">
+        <span class="pred-badge">Forecast Desk</span>
+        <h3>Maritime &amp; chokepoint predictions</h3>
+        <p>
+          The Forecast Desk publishes maritime and chokepoint predictions under
+          the same grounding contract as every NERAI forecast.
+        </p>
+        <ul class="pred-list">
+          <li>Every question cites at least two verified sources.</li>
+          <li>Resolution happens only via whitelisted authorities.</li>
+          <li>Probabilities are calibrated model estimates, tracked by Brier score.</li>
+          <li>An anti-hallucination contract is enforced in code, not by convention.</li>
+        </ul>
+      </div>
+      <div class="pred-card fade">
+        <span class="pred-badge">Published research</span>
+        <h3>Briefings on the Foresight Desk</h3>
+        <p>
+          NERAI&rsquo;s published maritime research includes the shadow-fleet,
+          Hormuz, and three-corridors briefings — available on the Foresight
+          Desk.
+        </p>
+        <p>
+          Alongside them, the NERAI Maritime Weekly delivers the week&rsquo;s
+          five most consequential events with strict recency and URL-verified
+          sourcing.
+        </p>
+        <a href="foresight-desk/" class="btn-ghost" style="margin-top:8px;">Read published research →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BAND ───────────────────────────────────────── -->
+<section class="cta-band">
+  <div class="container">
+    <h2 class="cta-title fade">Bring maritime risk into focus.</h2>
+    <p class="cta-sub fade">
+      Open the live dashboard, browse the published research, or talk to us
+      about the lanes and vessels you need watched.
+    </p>
+    <div class="cta-actions fade">
+      <a href="index.html#contact" class="btn-primary"><span>Contact us</span><span>→</span></a>
+      <a href="https://nerai-intelligence.streamlit.app/" target="_blank" class="btn-outline-light">Open the Dashboard</a>
+      <a href="foresight-desk/" class="btn-outline-light">Foresight Desk research</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo-text">NERAI</div>
+        <div class="footer-tagline">Geopolitical Intelligence Platform · Powered by GDELT</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#platform">Platform</a></li>
+        <li><a href="sanctions.html">Sanctions</a></li>
+        <li><a href="supply-chain.html">Supply Chain</a></li>
+        <li><a href="maritime.html">Maritime</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="https://nerai-intelligence.streamlit.app/" target="_blank">Dashboard</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+      </ul>
+      <div class="footer-copy">© 2026 NERAI. Data: GDELT Project (Open Access).</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── SCRIPTS ────────────────────────────────────────── -->
+<script>
+(function () {
+  'use strict';
+
+  /* ── Scroll fade-ins ─────────────────────────────────── */
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.18 });
+  document.querySelectorAll('.fade').forEach(function (el, i) {
+    el.style.transitionDelay = (i % 4) * 70 + 'ms';
+    io.observe(el);
+  });
+
+  /* ── Stat counters ───────────────────────────────────── */
+  document.querySelectorAll('.count').forEach(function (el) {
+    var target = parseFloat(el.getAttribute('data-count'));
+    var seen = false;
+    new IntersectionObserver(function (es, obs) {
+      if (!es[0].isIntersecting || seen) return;
+      seen = true; obs.disconnect();
+      var dur = 1500, start = performance.now();
+      function tick(now) {
+        var p = Math.min((now - start) / dur, 1);
+        var e = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * e).toLocaleString('en-US');
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }, { threshold: 0.5 }).observe(el);
+  });
+
+  /* ── Hero canvas: sea lanes, vessel tracks, chokepoints ── */
+  var cvs = document.getElementById('heroCanvas');
+  if (!cvs) return;
+  var ctx = cvs.getContext('2d');
+  var TAU = Math.PI * 2;
+  var W, H, lanes = [];
+
+  function rand(a, b) { return Math.random() * (b - a) + a; }
+
+  function laneY(ln, x) {
+    return ln.base + Math.sin(x * ln.k + ln.phase) * ln.amp;
+  }
+
+  function build() {
+    lanes = [];
+    var n = 4;
+    for (var i = 0; i < n; i++) {
+      var base = H * (0.15 + i * 0.24) + rand(-10, 10);
+      var lane = {
+        base: base,
+        amp: rand(12, 30),
+        k: rand(0.004, 0.008),
+        phase: rand(0, TAU),
+        gates: [],
+        vessels: []
+      };
+      var gx = [W * rand(0.28, 0.38), W * rand(0.6, 0.72)];
+      gx.forEach(function (x) {
+        lane.gates.push({ x: x, pulse: rand(0, TAU), alert: 0 });
+      });
+      var nv = 2 + Math.floor(rand(0, 2));
+      for (var v = 0; v < nv; v++) {
+        lane.vessels.push({
+          x: rand(0, W),
+          spd: rand(0.35, 0.85),
+          accent: Math.random() < 0.45,
+          trail: []
+        });
+      }
+      lanes.push(lane);
+    }
+  }
+
+  function resize() {
+    W = cvs.width = cvs.offsetWidth;
+    H = cvs.height = cvs.offsetHeight;
+    build();
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  var frame = 0, nextAlert = 200;
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    frame++;
+
+    if (frame >= nextAlert) {
+      var ln = lanes[Math.floor(rand(0, lanes.length))];
+      ln.gates[Math.floor(rand(0, ln.gates.length))].alert = 150;
+      nextAlert = frame + Math.round(rand(260, 480));
+    }
+
+    lanes.forEach(function (ln) {
+      /* lane path (dashed sea route) */
+      ctx.beginPath();
+      for (var x = 0; x <= W; x += 14) {
+        var y = laneY(ln, x);
+        x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      }
+      ctx.setLineDash([2, 8]);
+      ctx.strokeStyle = 'rgba(0,119,168,0.18)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      /* chokepoint gates */
+      ln.gates.forEach(function (g) {
+        g.pulse += 0.04;
+        var gy = laneY(ln, g.x);
+        var p = 0.65 + Math.sin(g.pulse) * 0.35;
+        var alerting = g.alert > 0;
+        if (alerting) g.alert--;
+
+        /* pinch marks above/below the lane */
+        ctx.fillStyle = alerting
+          ? 'rgba(201,48,72,' + (0.5 + 0.3 * p).toFixed(3) + ')'
+          : 'rgba(0,119,168,' + (0.55 * p).toFixed(3) + ')';
+        ctx.beginPath(); ctx.arc(g.x, gy - 13, 3, 0, TAU); ctx.fill();
+        ctx.beginPath(); ctx.arc(g.x, gy + 13, 3, 0, TAU); ctx.fill();
+
+        /* pulsing ring on the lane */
+        var rr = alerting ? (150 - g.alert) * 0.4 : 8 + Math.sin(g.pulse) * 3;
+        if (!alerting || rr < 52) {
+          ctx.beginPath();
+          ctx.arc(g.x, gy, rr, 0, TAU);
+          ctx.strokeStyle = alerting
+            ? 'rgba(201,48,72,' + (0.45 * (1 - rr / 52)).toFixed(3) + ')'
+            : 'rgba(0,168,134,' + (0.22 * p).toFixed(3) + ')';
+          ctx.lineWidth = 1.3;
+          ctx.stroke();
+        }
+      });
+
+      /* vessels + fading tracks */
+      ln.vessels.forEach(function (v) {
+        v.x += v.spd;
+        if (v.x > W + 20) { v.x = -20; v.trail = []; }
+        var vy = laneY(ln, v.x);
+        v.trail.push({ x: v.x, y: vy });
+        if (v.trail.length > 26) v.trail.shift();
+
+        for (var t = 0; t < v.trail.length; t++) {
+          var a = (t / v.trail.length) * 0.35;
+          ctx.beginPath();
+          ctx.arc(v.trail[t].x, v.trail[t].y, 1.1, 0, TAU);
+          ctx.fillStyle = v.accent
+            ? 'rgba(0,168,134,' + a.toFixed(3) + ')'
+            : 'rgba(0,119,168,' + a.toFixed(3) + ')';
+          ctx.fill();
+        }
+
+        ctx.beginPath();
+        ctx.arc(v.x, vy, 2.8, 0, TAU);
+        ctx.fillStyle = v.accent ? 'rgba(0,168,134,0.85)' : 'rgba(0,119,168,0.85)';
+        ctx.fill();
+      });
+    });
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+
+</body>
+</html>
