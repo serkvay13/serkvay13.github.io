@@ -625,6 +625,63 @@
   </div>
 </section>
 
+<!-- ── LIVE CORRIDOR SNAPSHOT ────────────────────────── -->
+<section id="corridor-snapshot">
+  <style>
+    #corridor-snapshot .cs-panel{position:relative;max-width:660px;margin:44px auto 0;background:#0d1f3c;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:26px;box-shadow:0 24px 60px rgba(13,31,60,0.35),0 2px 8px rgba(13,31,60,0.22);}
+    #corridor-snapshot .cs-corr{position:relative;width:100%;height:150px;margin-bottom:18px;pointer-events:none;}
+    #corridor-snapshot .cs-route{fill:none;stroke:rgba(120,160,210,0.35);stroke-width:2;}
+    #corridor-snapshot .cs-flow{fill:none;stroke:#3fd0e0;stroke-width:2.4;stroke-dasharray:6 12;stroke-linecap:round;animation:csflow 1.6s linear infinite;}
+    @keyframes csflow{to{stroke-dashoffset:-36;}}
+    #corridor-snapshot .cs-node{transform-box:fill-box;transform-origin:center;}
+    #corridor-snapshot .cs-node circle{animation:cspulse 2.4s ease-in-out infinite;}
+    @keyframes cspulse{0%,100%{opacity:.55;r:5;}50%{opacity:1;r:7;}}
+    #corridor-snapshot .cs-node.crit circle{animation:cscrit 1.3s ease-in-out infinite;}
+    @keyframes cscrit{0%,100%{opacity:.7;r:6;}50%{opacity:1;r:9.5;}}
+    #corridor-snapshot .cs-nlbl{font-size:8.5px;fill:#9fb6d4;font-family:Inter,sans-serif;}
+    #corridor-snapshot .cs-gauge-l{display:flex;justify-content:space-between;font-size:0.7rem;color:#9fb6d4;margin-bottom:6px;line-height:1.5;}
+    #corridor-snapshot .cs-gauge-l span:first-child{color:#fff;font-weight:600;}
+    #corridor-snapshot .cs-track{height:12px;border-radius:8px;background:rgba(255,255,255,0.10);overflow:hidden;}
+    #corridor-snapshot .cs-fill{height:100%;border-radius:8px;width:0;background:linear-gradient(90deg,#22c55e,#f59e0b 60%,#e05060);box-shadow:0 0 14px rgba(229,80,96,0.5);}
+    #corridor-snapshot .cs-panel.in .cs-fill{animation:csfill 1.8s ease-out forwards;}
+    @keyframes csfill{to{width:88%;}}
+    #corridor-snapshot .cs-chips{display:flex;gap:10px;margin-top:18px;}
+    #corridor-snapshot .cs-chip{flex:1;background:#16294a;border:1px solid rgba(255,255,255,0.08);border-radius:11px;padding:11px 10px;text-align:center;}
+    #corridor-snapshot .cs-chip b{display:block;font-size:1.25rem;font-weight:800;line-height:1.3;}
+    #corridor-snapshot .cs-chip span{font-size:0.56rem;color:#9fb6d4;letter-spacing:0.5px;}
+    @media(max-width:560px){#corridor-snapshot .cs-chips{flex-direction:column;}}
+    @media (prefers-reduced-motion: reduce){
+      #corridor-snapshot .cs-flow,#corridor-snapshot .cs-node circle{animation:none;}
+      #corridor-snapshot .cs-fill,#corridor-snapshot .cs-panel.in .cs-fill{animation:none;width:88%;}
+    }
+  </style>
+  <div class="sec-line" aria-hidden="true"></div>
+  <div class="container">
+    <div class="section-tag fade">Live corridor snapshot</div>
+    <h2 class="section-title serif fade">The trade arteries, right now.</h2>
+    <div class="divider fade"></div>
+    <p class="section-sub fade">One view of the chokepoints, global pressure, and the corridor most at risk.</p>
+    <div class="cs-panel fade">
+      <svg class="cs-corr" viewBox="0 0 420 150" preserveAspectRatio="none" aria-hidden="true">
+        <path class="cs-route" d="M20,110 C110,30 200,30 250,80 S360,120 405,40"/>
+        <path class="cs-flow" d="M20,110 C110,30 200,30 250,80 S360,120 405,40"/>
+        <g class="cs-node"><circle cx="20" cy="110" r="5" fill="#3fd0e0"/><text class="cs-nlbl" x="6" y="128">Malacca</text></g>
+        <g class="cs-node"><circle cx="135" cy="50" r="5" fill="#3fd0e0"/><text class="cs-nlbl" x="116" y="40">Suez</text></g>
+        <g class="cs-node crit"><circle cx="250" cy="80" r="6" fill="#e05060"/><text class="cs-nlbl" x="222" y="100" fill="#ffaab6">Hormuz -94%</text></g>
+        <g class="cs-node"><circle cx="335" cy="92" r="5" fill="#3fd0e0"/><text class="cs-nlbl" x="312" y="110">Bab-el-Mandeb</text></g>
+        <g class="cs-node"><circle cx="405" cy="40" r="5" fill="#3fd0e0"/><text class="cs-nlbl" x="372" y="30">Panama</text></g>
+      </svg>
+      <div class="cs-gauge-l"><span>Global supply-chain pressure (GSCPI)</span><span style="color:#f0a">HIGH</span></div>
+      <div class="cs-track"><div class="cs-fill"></div></div>
+      <div class="cs-chips">
+        <div class="cs-chip"><b style="color:#e05060">-94%</b><span>HORMUZ TRANSIT</span></div>
+        <div class="cs-chip"><b style="color:#f59e0b">+1.77&#963;</b><span>GSCPI · 93rd PCTL</span></div>
+        <div class="cs-chip"><b style="color:#3fd0e0">70%</b><span>TOP DISRUPTION RISK</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── HOW THE MODELS WORK ────────────────────────────── -->
 <section id="models">
   <div class="sec-line" aria-hidden="true"></div>

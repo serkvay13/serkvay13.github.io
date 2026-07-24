@@ -2046,7 +2046,7 @@
     #supply .sg-list{list-style:none;padding:0;margin:0;display:grid;gap:12px;}
     #supply .sg-list li{display:flex;gap:12px;align-items:flex-start;font-size:0.92rem;color:#33425a;}
     #supply .sg-ic{flex:0 0 26px;height:26px;border-radius:7px;display:grid;place-items:center;background:rgba(0,119,168,0.10);border:1px solid rgba(0,119,168,0.28);color:var(--teal);font-size:0.85rem;}
-    #supply .sg-panel{position:relative;background:rgba(4,12,26,0.55);border:1px solid rgba(63,208,224,0.18);border-radius:18px;padding:26px;box-shadow:0 0 60px rgba(0,140,180,0.12);}
+    #supply .sg-panel{position:relative;background:#0d1f3c;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:26px;box-shadow:0 24px 60px rgba(13,31,60,0.35),0 2px 8px rgba(13,31,60,0.22);}
     #supply .sg-corr{position:relative;height:150px;margin-bottom:18px;}
     #supply .sg-route{fill:none;stroke:rgba(120,160,210,0.35);stroke-width:2;}
     #supply .sg-flow{fill:none;stroke:#3fd0e0;stroke-width:2.4;stroke-dasharray:6 12;stroke-linecap:round;animation:sgflow 1.6s linear infinite;}
@@ -2056,16 +2056,18 @@
     @keyframes sgpulse{0%,100%{opacity:.55;r:5;}50%{opacity:1;r:7;}}
     #supply .sg-node.crit circle{animation:sgcrit 1.3s ease-in-out infinite;}
     @keyframes sgcrit{0%,100%{opacity:.7;r:6;}50%{opacity:1;r:9.5;}}
-    #supply .sg-nlbl{font-size:8.5px;fill:#aebfd8;font-family:Inter,sans-serif;}
-    #supply .sg-gauge-l{display:flex;justify-content:space-between;font-size:0.7rem;color:#8aa0bc;margin-bottom:6px;}
-    #supply .sg-track{height:12px;border-radius:8px;background:rgba(255,255,255,0.06);overflow:hidden;}
+    #supply .sg-nlbl{font-size:8.5px;fill:#9fb6d4;font-family:Inter,sans-serif;}
+    #supply .sg-gauge-l{display:flex;justify-content:space-between;font-size:0.7rem;color:#9fb6d4;margin-bottom:6px;}
+    #supply .sg-gauge-l span:first-child{color:#fff;font-weight:600;}
+    #supply .sg-track{height:12px;border-radius:8px;background:rgba(255,255,255,0.10);overflow:hidden;}
     #supply .sg-fill{height:100%;border-radius:8px;width:0;background:linear-gradient(90deg,#22c55e,#f59e0b 60%,#e05060);animation:sgfill 1.8s ease-out forwards;box-shadow:0 0 14px rgba(229,80,96,0.5);}
     @keyframes sgfill{to{width:88%;}}
     #supply .sg-chips{display:flex;gap:10px;margin-top:18px;}
-    #supply .sg-chip{flex:1;background:rgba(4,12,26,0.6);border:1px solid rgba(120,160,210,0.18);border-radius:11px;padding:11px 10px;text-align:center;}
+    #supply .sg-chip{flex:1;background:#16294a;border:1px solid rgba(255,255,255,0.08);border-radius:11px;padding:11px 10px;text-align:center;}
     #supply .sg-chip b{display:block;font-size:1.25rem;font-weight:800;}
-    #supply .sg-chip span{font-size:0.56rem;color:#8aa0bc;letter-spacing:0.5px;}
+    #supply .sg-chip span{font-size:0.56rem;color:#9fb6d4;letter-spacing:0.5px;}
     @media(max-width:860px){#supply .sg-wrap{grid-template-columns:1fr;}}
+    @media(max-width:560px){#supply .sg-chips{flex-direction:column;}}
   </style>
   <div class="sg-wrap">
     <div>
@@ -2084,7 +2086,7 @@
         <path class="sg-flow" d="M20,110 C110,30 200,30 250,80 S360,120 405,40"/>
         <g class="sg-node"><circle cx="20" cy="110" r="5" fill="#3fd0e0"/><text class="sg-nlbl" x="6" y="128">Malacca</text></g>
         <g class="sg-node"><circle cx="135" cy="50" r="5" fill="#3fd0e0"/><text class="sg-nlbl" x="116" y="40">Suez</text></g>
-        <g class="sg-node crit"><circle cx="250" cy="80" r="6" fill="#e05060"/><text class="sg-nlbl" x="222" y="100" fill="#f3a9b3">Hormuz -94%</text></g>
+        <g class="sg-node crit"><circle cx="250" cy="80" r="6" fill="#e05060"/><text class="sg-nlbl" x="222" y="100" fill="#ffaab6">Hormuz -94%</text></g>
         <g class="sg-node"><circle cx="335" cy="92" r="5" fill="#3fd0e0"/><text class="sg-nlbl" x="312" y="110">Bab-el-Mandeb</text></g>
         <g class="sg-node"><circle cx="405" cy="40" r="5" fill="#3fd0e0"/><text class="sg-nlbl" x="372" y="30">Panama</text></g>
       </svg>

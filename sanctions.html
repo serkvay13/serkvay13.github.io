@@ -623,6 +623,70 @@
   </div>
 </section>
 
+<!-- ── ENFORCEMENT PRESSURE BOARD ────────────────────── -->
+<section id="pressure-board">
+  <style>
+    #pressure-board .eb-panel{position:relative;max-width:860px;margin:44px auto 0;background:#0d1f3c;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:26px;box-shadow:0 24px 60px rgba(13,31,60,0.35),0 2px 8px rgba(13,31,60,0.22);}
+    #pressure-board .eb-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:26px;align-items:center;}
+    #pressure-board .eb-feed-h{display:flex;justify-content:space-between;align-items:center;font-size:0.6rem;font-weight:600;letter-spacing:0.14em;color:#9fb6d4;margin-bottom:12px;}
+    #pressure-board .eb-live i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#e05060;box-shadow:0 0 8px rgba(224,80,96,0.7);margin-right:7px;animation:ebPulse 1.6s ease-in-out infinite;}
+    @keyframes ebPulse{0%,100%{opacity:.45;}50%{opacity:1;}}
+    #pressure-board .eb-count b{color:#fff;font-weight:700;}
+    #pressure-board .eb-list{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
+    #pressure-board .eb-list li{display:flex;align-items:center;gap:10px;background:#16294a;border:1px solid rgba(255,255,255,0.08);border-radius:9px;padding:9px 12px;font-size:0.78rem;font-weight:500;color:#fff;animation:ebIn 0.45s ease both;}
+    #pressure-board .eb-list li span{margin-left:auto;font-size:0.6rem;color:#9fb6d4;letter-spacing:0.06em;}
+    @keyframes ebIn{from{opacity:0;transform:translateY(-8px);}to{opacity:1;transform:none;}}
+    #pressure-board .eb-dot{width:8px;height:8px;border-radius:50%;flex:0 0 8px;}
+    #pressure-board .d-red{background:#e05060;box-shadow:0 0 8px rgba(224,80,96,0.55);}
+    #pressure-board .d-teal{background:#3fd0e0;box-shadow:0 0 8px rgba(63,208,224,0.55);}
+    #pressure-board .d-amber{background:#f59e0b;box-shadow:0 0 8px rgba(245,158,11,0.55);}
+    #pressure-board .eb-gauge{text-align:center;}
+    #pressure-board #ebGauge{width:210px;height:150px;max-width:100%;pointer-events:none;}
+    #pressure-board .eb-gauge-cap{font-size:0.58rem;font-weight:600;color:#9fb6d4;letter-spacing:0.14em;margin-top:6px;}
+    #pressure-board .eb-chips{display:flex;gap:10px;margin-top:24px;}
+    #pressure-board .eb-chip{flex:1;background:#16294a;border:1px solid rgba(255,255,255,0.08);border-radius:11px;padding:11px 10px;text-align:center;}
+    #pressure-board .eb-chip b{display:block;font-size:1.15rem;font-weight:800;line-height:1.35;}
+    #pressure-board .eb-chip span{font-size:0.56rem;color:#9fb6d4;letter-spacing:0.5px;}
+    @media(max-width:720px){#pressure-board .eb-grid{grid-template-columns:1fr;}}
+    @media(max-width:560px){#pressure-board .eb-chips{flex-direction:column;}}
+    @media (prefers-reduced-motion: reduce){
+      #pressure-board .eb-live i,#pressure-board .eb-list li{animation:none;}
+    }
+  </style>
+  <div class="sec-line" aria-hidden="true"></div>
+  <div class="container">
+    <div class="section-tag fade">Live signal</div>
+    <h2 class="section-title serif fade">Enforcement pressure board.</h2>
+    <div class="divider fade"></div>
+    <p class="section-sub fade">Designation events as they cascade, and the composite pressure they add up to.</p>
+    <div class="eb-panel fade">
+      <div class="eb-grid">
+        <div class="eb-feed">
+          <div class="eb-feed-h">
+            <span class="eb-live"><i></i>ENFORCEMENT FEED</span>
+            <span class="eb-count"><b id="ebCount">4</b>&nbsp;SIGNALS LOGGED</span>
+          </div>
+          <ul class="eb-list" id="ebList">
+            <li><i class="eb-dot d-red"></i>SDN update<span>now</span></li>
+            <li><i class="eb-dot d-teal"></i>EU package<span>2m</span></li>
+            <li><i class="eb-dot d-amber"></i>UK OFSI notice<span>9m</span></li>
+            <li><i class="eb-dot d-teal"></i>Seizure reported<span>14m</span></li>
+          </ul>
+        </div>
+        <div class="eb-gauge">
+          <canvas id="ebGauge" aria-hidden="true"></canvas>
+          <div class="eb-gauge-cap">COMPOSITE ENFORCEMENT PRESSURE &middot; 0&ndash;100</div>
+        </div>
+      </div>
+      <div class="eb-chips">
+        <div class="eb-chip"><b style="color:#3fd0e0">25,000+</b><span>RESTRICTED PARTIES</span></div>
+        <div class="eb-chip"><b style="color:#f59e0b">13-WEEK TREND &#9650;</b><span>SHADOW-FLEET DIRECTION</span></div>
+        <div class="eb-chip"><b style="color:#e05060">SEVERE CORRIDORS: 3</b><span>0&ndash;100 INTENSITY BANDS</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── HOW THE MODELS WORK ────────────────────────────── -->
 <section id="models">
   <div class="sec-line" aria-hidden="true"></div>
@@ -1037,6 +1101,70 @@
       }
     }
     canvasLoop(cvs, { draw: drawDots });
+  })();
+
+  /* ── Enforcement pressure board ────────────────────── */
+  (function () {
+    var panel = document.querySelector('#pressure-board .eb-panel');
+    if (!panel) return;
+    var visible = false;
+    new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { threshold: 0.15 }).observe(panel);
+
+    /* gauge: 0-100 arc sweeping to its value */
+    var TARGET = 72, val = 0;
+    function renderGauge(ctx, w, h, v) {
+      var cx = w / 2, cy = h * 0.66, r = Math.min(w * 0.42, h * 0.58);
+      var a0 = Math.PI * 0.75, span = Math.PI * 1.5;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, a0, a0 + span);
+      ctx.strokeStyle = 'rgba(255,255,255,0.10)';
+      ctx.lineWidth = 10;
+      ctx.stroke();
+      var g = ctx.createLinearGradient(cx - r, 0, cx + r, 0);
+      g.addColorStop(0, '#22c55e');
+      g.addColorStop(0.6, '#f59e0b');
+      g.addColorStop(1, '#e05060');
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, a0, a0 + span * Math.max(0.001, Math.min(1, v / 100)));
+      ctx.strokeStyle = g;
+      ctx.lineWidth = 10;
+      ctx.stroke();
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '700 30px Inter, sans-serif';
+      ctx.fillText(String(Math.round(v)), cx, cy + 2);
+      ctx.fillStyle = '#f59e0b';
+      ctx.font = '600 10px Inter, sans-serif';
+      ctx.fillText('HIGH', cx, cy + 20);
+    }
+    canvasLoop(document.getElementById('ebGauge'), {
+      draw: function (ctx, w, h, t) {
+        val += (TARGET - val) * 0.035;
+        var wob = val > TARGET - 2 ? Math.sin(t * 0.045) * 1.3 : 0;
+        renderGauge(ctx, w, h, val + wob);
+      },
+      staticFrame: function (ctx, w, h) { renderGauge(ctx, w, h, TARGET); }
+    });
+
+    /* cascade counter: generic designation events */
+    var labels = ['SDN update', 'EU package', 'UK OFSI notice', 'Seizure reported', 'Penalty action'];
+    var dots = ['d-red', 'd-teal', 'd-amber', 'd-teal', 'd-red'];
+    var list = document.getElementById('ebList');
+    var count = document.getElementById('ebCount');
+    var n = 4, idx = 3;
+    if (!REDUCED && list && count) {
+      setInterval(function () {
+        if (!visible || document.hidden) return;
+        idx = (idx + 1) % labels.length;
+        n++;
+        var li = document.createElement('li');
+        li.innerHTML = '<i class="eb-dot ' + dots[idx] + '"></i>' + labels[idx] + '<span>now</span>';
+        list.insertBefore(li, list.firstChild);
+        while (list.children.length > 4) list.removeChild(list.lastChild);
+        count.textContent = String(n);
+      }, 2600);
+    }
   })();
 })();
 </script>
