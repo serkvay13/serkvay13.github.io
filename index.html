@@ -92,6 +92,20 @@
       white-space: nowrap;
     }
     .nav-links a:hover { color: var(--navy); }
+    .nav-dd { position: relative; }
+    .nav-dd > a::after { content: " \25BE"; font-size: 0.6rem; }
+    .nav-dd-menu {
+      position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+      background: #fff; border: 1px solid #e5eaf1; border-radius: 10px;
+      box-shadow: 0 12px 32px rgba(13,31,60,0.12);
+      padding: 8px 0; margin: 6px 0 0; list-style: none; min-width: 170px;
+      opacity: 0; visibility: hidden; transition: opacity .18s ease;
+      z-index: 300;
+    }
+    .nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity: 1; visibility: visible; }
+    .nav-dd-menu li { padding: 0; }
+    .nav-dd-menu a { display: block; padding: 8px 16px; font-size: 0.78rem; }
+    .nav-dd-menu a:hover { background: #f3f7fb; }
     .nav-cta {
       background: linear-gradient(135deg, var(--teal2), var(--accent));
       color: #fff !important;
@@ -1250,9 +1264,13 @@
       <li><a href="#usecases">Use Cases</a></li>
       <li><a href="#partners">Partners</a></li>
       <li><a href="/blog/">Insights</a></li>
-      <li><a href="sanctions.html">Sanctions</a></li>
-      <li><a href="supply-chain.html">Supply Chain</a></li>
-      <li><a href="maritime.html">Maritime</a></li>
+      <li class="nav-dd"><a href="sanctions.html">Intelligence</a>
+        <ul class="nav-dd-menu">
+          <li><a href="sanctions.html">Sanctions</a></li>
+          <li><a href="supply-chain.html">Supply Chain</a></li>
+          <li><a href="maritime.html">Maritime</a></li>
+        </ul>
+      </li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="https://nerai-intelligence.streamlit.app/" target="_blank" class="nav-cta">Open Dashboard →</a></li>
     </ul>
