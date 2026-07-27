@@ -1,25 +1,26 @@
 {
- "updated": "2026-07-23 11:12 UTC",
- "week": "2026-W30",
+ "updated": "2026-07-27 10:20 UTC",
+ "week": "2026-W31",
  "maritime": {
   "title": "NERAI Maritime Weekly",
   "events": [
-   "Tanker Struck and Set Ablaze Off Saudi Coast in Red Sea on 23 July",
-   "Strait of Hormuz Transits Hit Near-Standstill as US-Iran Conflict Enters 12th Day",
-   "Houthi Blockade Forces Saudi Tankers to Reverse Course, Asian Refiners Reroute via Suez",
-   "Gulf Producers Race to Activate Hormuz Bypass Routes as Pipeline Alternatives Gain Urgency",
-   "Somali Pirates Board Tanker Off Yemen on 17 July Amid Regional Security Vacuum"
+   "US-Iran Mutual Pause in Airstrikes Opens First Diplomatic Off-Ramp",
+   "Houthis Strike Saudi Tankers and Threaten Bab el-Mandeb Blockade, Opening Second Chokepoint Crisis",
+   "US Naval Blockade of Iran Tightens: 12 Ships Redirected, Two Tankers Boarded",
+   "Gulf Producers Race to Build Hormuz Bypass Infrastructure as Oil Touches $100",
+   "Ukraine Strikes Iranian Ship in Caspian Sea; Iran Warns of 'Unforeseen' Consequences"
   ],
-  "summary": "This week's maritime landscape was dominated by the active US-Iran conflict and its cascading effects across two critical chokepoints simultaneously: ongoing vessel strikes near the Strait of Hormuz depressed transits to severe levels, while Houthi forces escalated by threatening and attacking Saudi oil tankers in the Red Sea, forcing rerouting via the Cape of Good Hope and Suez Canal. The convergence of a near-standstill at Hormuz and a credible Houthi blockade threat at Bab el-Mandeb represents the most serious dual-chokepoint energy shipping crisis in recent memory, driving oil prices to six-week highs above $96 and prompting Goldman Sachs to warn Brent could exceed $120 if the crisis deepens."
+  "summary": "The week was dominated by the simultaneous disruption of both the Strait of Hormuz and Bab el-Mandeb, as the active US-Iran conflict and a renewed Houthi blockade campaign against Saudi tankers compressed global oil shipping into its most constrained configuration in years. A US-Iran mutual pause in airstrikes announced on 27 July introduced the first diplomatic opening of the conflict, triggering a sharp oil-price correction, but the structural damage to tanker routing, freight rates, and shipper confidence remains acute. The dual-chokepoint crisis is now forcing lasting rerouting decisions and accelerating Gulf producers' investment in overland bypass infrastructure."
  },
  "sanctions": {
   "title": "NERAI Sanctions Weekly",
   "events": [
-   "EU 21st Russia Sanctions Package Advances After Greek LNG Compromise; Oil Price Cap Locked In",
-   "U.S. Cuba Sanctions Tightened; Meliá Exits Amid Contested Espionage Allegations",
-   "South Korea Seizes Cargo Vessel Suspected of Violating UN North Korea Sanctions",
-   "Houthis Announce Maritime Blockade of Saudi Arabia Ports"
+   "US Lukoil License Expires; Bulgaria Scrambles on Refinery Asset Transfer",
+   "EU Sanctions Russian Energy Giant Inter RAO, Owner of 75% of Telasi",
+   "US Treasury Sanctions Muslim Brotherhood and Hamas Financial Networks",
+   "US Treasury Sanctions Iran Financial-Evasion Network",
+   "Houthis Declare Maritime Blockade of Saudi Arabia, Threatening Gulf Shipping"
   ],
-  "summary": "This week's sanctions landscape was dominated by three converging pressures: a sustained U.S. campaign against Iranian procurement and shipping networks, turbulence inside the EU's Russia sanctions architecture as the 21st package stalled over energy and member-state interests, and an intensifying U.S. squeeze on Cuba that is already producing measurable third-party commercial exits. Secondary developments — including a South Korean vessel seizure for North Korea sanctions violations and a Danish shipyard controversy over Russian gas-tanker maintenance — underscore that enforcement is broadening across multiple regimes simultaneously."
+  "summary": "This week's sanctions landscape was shaped by five distinct pressure points: a US license expiry forcing an accelerated Lukoil asset divestiture in Bulgaria, a broad US Treasury action against Muslim Brotherhood and Hamas financial networks, a fresh EU energy-sector designation targeting Inter RAO, an Iran financial-evasion sanctions round, and a Houthi maritime blockade declaration against Saudi Arabia that is rattling Gulf shipping lanes. Taken together, the week signals continued aggressive use of US and EU unilateral economic tools across the Middle East, Eastern Europe and energy corridors, even as US-Iran indirect talks create a fragile pause in kinetic escalation."
  }
 }
