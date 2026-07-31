@@ -1,6 +1,29 @@
 {
- "updated": "2026-07-28",
+ "updated": "2026-07-31",
  "reports": [
+  {
+   "title": "US-Iran Conflict, American Public Opinion & the 2026 Midterm Election Outlook",
+   "date": "July 2026",
+   "type": "Election / Transition Risk Assessment",
+   "om": "NERAI assesses the US-Iran conflict as a net electoral liability for President Trump and congressional Republicans: no rally effect has materialised, energy costs are feeding economic dissatisfaction, and independents are breaking against the incumbent. Base case: Democrats recapture the House (62%); Republicans narrowly hold the Senate (58%).",
+   "summary": "Five months into the US-Iran war, NERAI finds no 'rally-around-the-flag' dividend for Trump: net approval is flat-to-negative, Brent is up ~12% in 30 days to ~$89, and the Strait of Hormuz is running -73% vs baseline (SEVERE). The report reads the 2026 midterms as a competence referendum decided by suburban independents, with a base case of Democratic House control and Republican Senate retention, conditional on no escalation shock in the final 90 days. Rev. 1.1 corrects the 2026 Senate map and attributes the 31 July Damietta (Egypt) drone strike as unclaimed.",
+   "findings": [
+    "<b>No rally, rising costs:</b> unlike 1991 (Bush ~89%) or post-9/11 (Bush ~86%), Trump has seen no durable approval bounce; Brent +~12%/30d to ~$89 and Hormuz -73% (SEVERE) turn conflict into a pocketbook issue for swing-state voters.",
+    "<b>House base case - Democratic recapture (62%):</b> a ~10-seat Republican net loss (range -6 to -18), below the historical ~28-seat midterm penalty thanks to a redistricting buffer, but enough to flip control; decisive in ~3-5 suburban toss-ups.",
+    "<b>Senate base case - Republicans hold (58%):</b> on a corrected 2026 map, the competitive seats are Democratic-held Georgia (Ossoff) and open Michigan/New Hampshire, and Republican-held Maine, open North Carolina and the Ohio special - Montana, Ohio and West Virginia are Republican-held, and Arizona/Pennsylvania are not on the 2026 Senate ballot.",
+    "<b>The tail risk:</b> a single high-casualty escalation shock (aircraft downed, Hormuz mining, Iranian strike on Saudi oil) in the final 90 days could flip the dynamic - NERAI's Iran Military Escalation index is RISING; the 31 July Damietta drone strike was unclaimed and is not attributed to Iran."
+   ],
+   "file": "/NERAI_US_Iran_Midterm_Report_July2026.pdf",
+   "full": "/NERAI_US_Iran_Midterm_Report_July2026.pdf",
+   "tags": [
+    "United States",
+    "Iran",
+    "Elections",
+    "Political Risk",
+    "Energy",
+    "Country Risk"
+   ]
+  },
   {
    "title": "Saudi Arabia's Oil Corridors Under Pressure: The Hormuz Alternative Is Now Contested",
    "date": "July 2026",
