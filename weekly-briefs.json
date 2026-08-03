@@ -1,26 +1,26 @@
 {
- "updated": "2026-07-27 10:20 UTC",
- "week": "2026-W31",
+ "updated": "2026-08-03 10:17 UTC",
+ "week": "2026-W32",
  "maritime": {
   "title": "NERAI Maritime Weekly",
   "events": [
-   "US-Iran Mutual Pause in Airstrikes Opens First Diplomatic Off-Ramp",
-   "Houthis Strike Saudi Tankers and Threaten Bab el-Mandeb Blockade, Opening Second Chokepoint Crisis",
-   "US Naval Blockade of Iran Tightens: 12 Ships Redirected, Two Tankers Boarded",
-   "Gulf Producers Race to Build Hormuz Bypass Infrastructure as Oil Touches $100",
-   "Ukraine Strikes Iranian Ship in Caspian Sea; Iran Warns of 'Unforeseen' Consequences"
+   "Iran–US Military Standoff Paused as Trump Calls Off Strike, Talks Begin 3 Aug",
+   "GasLog LNG Carrier Struck Exiting Hormuz; UKMTO Reports Two Further Tanker Attacks Off Oman",
+   "Houthis Strike Saudi Oil Tanker; Six Saudi Ships Reroute Around Africa as Red Sea Traffic Hits Multi-Month Low",
+   "Drone Strike on Damietta Port Ignites Security Concerns for Suez Canal Oil Exports",
+   "Saudi Arabia Launches Maritime Defence Coalition as Gulf Security Architecture Shifts"
   ],
-  "summary": "The week was dominated by the simultaneous disruption of both the Strait of Hormuz and Bab el-Mandeb, as the active US-Iran conflict and a renewed Houthi blockade campaign against Saudi tankers compressed global oil shipping into its most constrained configuration in years. A US-Iran mutual pause in airstrikes announced on 27 July introduced the first diplomatic opening of the conflict, triggering a sharp oil-price correction, but the structural damage to tanker routing, freight rates, and shipper confidence remains acute. The dual-chokepoint crisis is now forcing lasting rerouting decisions and accelerating Gulf producers' investment in overland bypass infrastructure."
+  "summary": "The week was dominated by a dangerous convergence of Hormuz LNG tanker strikes, Houthi-driven Saudi oil rerouting to multi-month extremes, a drone attack on Egyptian port infrastructure near Suez, and a last-minute US–Iran diplomatic pivot that suspended planned US strikes in favour of talks beginning 3 August. Together these developments exposed simultaneous pressure on three of the world's most critical energy corridors — Hormuz, Bab el-Mandeb/Red Sea, and Suez — while Saudi Arabia's launch of a new maritime defence coalition signalled a structural shift in Gulf security architecture."
  },
  "sanctions": {
   "title": "NERAI Sanctions Weekly",
   "events": [
-   "US Lukoil License Expires; Bulgaria Scrambles on Refinery Asset Transfer",
-   "EU Sanctions Russian Energy Giant Inter RAO, Owner of 75% of Telasi",
-   "US Treasury Sanctions Muslim Brotherhood and Hamas Financial Networks",
-   "US Treasury Sanctions Iran Financial-Evasion Network",
-   "Houthis Declare Maritime Blockade of Saudi Arabia, Threatening Gulf Shipping"
+   "U.S. Sanctions Mahan Air & IRGC Global Support Network Across China, India, Russia",
+   "U.S. Targets Iran's Strait of Hormuz 'Insurance' Racket and Shadow-Fleet Tankers",
+   "OFAC's Largest-Ever Action Targets Cartel Leadership and Support Networks",
+   "EU Forces Board Sanctioned Russian Shadow-Fleet Tanker in Mediterranean",
+   "U.S. Treasury Removes 84 Targets from Sanctions Lists in 'Modernisation' Review"
   ],
-  "summary": "This week's sanctions landscape was shaped by five distinct pressure points: a US license expiry forcing an accelerated Lukoil asset divestiture in Bulgaria, a broad US Treasury action against Muslim Brotherhood and Hamas financial networks, a fresh EU energy-sector designation targeting Inter RAO, an Iran financial-evasion sanctions round, and a Houthi maritime blockade declaration against Saudi Arabia that is rattling Gulf shipping lanes. Taken together, the week signals continued aggressive use of US and EU unilateral economic tools across the Middle East, Eastern Europe and energy corridors, even as US-Iran indirect talks create a fragile pause in kinetic escalation."
+  "summary": "The week of 28 July–3 August 2026 was dominated by a sustained multi-front U.S. sanctions offensive against Iran — targeting shadow-fleet tankers, the Strait of Hormuz 'insurance' racket, Mahan Air support networks spanning China, India and Russia, and an IRGC-linked crypto network — alongside OFAC's largest-ever cartel action and an EU enforcement milestone in the Mediterranean. The cumulative pressure on Iranian oil logistics and IRGC financial infrastructure was the defining theme, even as a Foreign Policy analysis argued that U.S. sanctions credibility has been eroded by broader Trump-era policy inconsistencies. The EU's physical boarding of a sanctioned Russian shadow-fleet tanker in the Mediterranean marked a rare kinetic enforcement step that could reshape insurance and flag-state compliance calculus for the Russian fossil-fuel corridor."
  }
 }
