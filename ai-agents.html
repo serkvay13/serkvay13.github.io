@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sanctions Intelligence — NERAI</title>
-  <meta name="description" content="NERAI Sanctions Intelligence: 25,000+ restricted-party entries, enforcement-pressure tracking, circumvention-corridor scores, shadow-fleet index, and calibrated weekly sanctions forecasts." />
+  <title>NERAI for AI Agents — MCP Server</title>
+  <meta name="description" content="Connect NERAI risk intelligence directly to Claude and any MCP-compatible AI agent: 60-country risk indices, calibrated shock forecasts, maritime and circumvention corridors, and official trade-control change tracking." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -475,6 +475,40 @@
       100% { transform: scale(3.4); opacity: 0; }
     }
   </style>
+
+<style>
+  .tool-table { width:100%; border-collapse:collapse; margin-top:18px; font-size:0.94rem; }
+  .tool-table th { text-align:left; padding:12px 14px; background:var(--navy2);
+                   color:var(--navy); font-weight:600; font-size:0.78rem; letter-spacing:1px;
+                   text-transform:uppercase; border-bottom:2px solid var(--border); }
+  .tool-table td { padding:12px 14px; border-bottom:1px solid var(--border); vertical-align:top; color:var(--silver); }
+  .tool-table td code { background:var(--navy2); color:var(--teal2); padding:2px 7px;
+                        border-radius:5px; font-size:0.86rem; white-space:nowrap; }
+  .code-box { background:var(--navy); color:#dbe7f3; border-radius:12px; padding:18px 20px;
+              font-family:ui-monospace,Menlo,Consolas,monospace; font-size:0.9rem;
+              overflow-x:auto; margin:14px 0; line-height:1.6; }
+  .code-box .k { color:#00c8e0; }
+  .steps { counter-reset:s; list-style:none; margin-top:18px; }
+  .steps li { counter-increment:s; position:relative; padding-left:44px; margin-bottom:16px; color:var(--silver); }
+  .steps li::before { content:counter(s); position:absolute; left:0; top:-1px;
+                      width:28px; height:28px; border-radius:50%; background:var(--teal);
+                      color:#fff; font-weight:700; font-size:0.85rem;
+                      display:flex; align-items:center; justify-content:center; }
+  .steps li b { color:var(--navy); }
+  .demo-form { display:flex; gap:10px; flex-wrap:wrap; margin-top:20px; }
+  .demo-form input { flex:1; min-width:260px; padding:14px 16px; border:1px solid var(--border);
+                     border-radius:10px; font-family:'Inter',sans-serif; font-size:0.95rem; color:var(--navy); }
+  .demo-form input:focus { outline:none; border-color:var(--teal); }
+  .demo-form button { padding:14px 26px; border:none; border-radius:10px; background:var(--teal);
+                      color:#fff; font-family:'Inter',sans-serif; font-weight:600; font-size:0.95rem; cursor:pointer; }
+  .demo-form button:hover { background:var(--teal2); }
+  .pill-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+  .pill { background:var(--navy2); border:1px solid var(--border); color:var(--teal2);
+          padding:7px 15px; border-radius:20px; font-size:0.83rem; font-weight:500; }
+  .qbox { background:var(--navy2); border-left:3px solid var(--teal); border-radius:0 10px 10px 0;
+          padding:14px 18px; margin:10px 0; color:var(--navy); font-style:italic; }
+  .note-small { font-size:0.85rem; color:var(--silver); margin-top:10px; }
+</style>
 </head>
 <body>
 
@@ -495,10 +529,10 @@
       </div>
     </a>
     <ul class="nav-links">
-      <li><a href="sanctions.html" class="active">Sanctions</a></li>
+      <li><a href="sanctions.html">Sanctions</a></li>
       <li><a href="supply-chain.html">Supply Chain</a></li>
       <li><a href="maritime.html">Maritime</a></li>
-      <li><a href="ai-agents.html">For AI Agents</a></li>
+      <li><a href="ai-agents.html" class="active">For AI Agents</a></li>
       <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#platform">Platform</a></li>
       <li><a href="index.html#contact">Contact</a></li>
@@ -507,325 +541,241 @@
   </div>
 </nav>
 
+
 <!-- ── HERO ───────────────────────────────────────────── -->
 <section id="hero">
   <div class="hero-bg"></div>
   <canvas id="heroCanvas"></canvas>
 
   <div class="hero-content">
-    <div class="hero-tag">Capability · Sanctions Intelligence</div>
+    <div class="hero-tag">Capability · NERAI for AI Agents</div>
 
     <h1 class="hero-title">
-      See the sanctions map<br>as it <em>moves</em>.
+      Your AI agent, with<br>a <em>risk desk</em> attached.
     </h1>
 
     <p class="hero-sub">
-      NERAI aggregates the restricted-party universe, tracks enforcement pressure
-      continuously, scores circumvention corridors, and publishes calibrated
-      sanctions forecasts — every fact verified before it reaches you.
+      NERAI runs a hosted MCP server. Connect it once and Claude — or any
+      MCP-compatible agent — can query 60-country risk indices, calibrated shock
+      forecasts, maritime and circumvention corridors, and official trade-control
+      changes, directly in the conversation where the decision is being made.
     </p>
 
     <div class="hero-actions">
-      <a href="https://nerai-intelligence.streamlit.app/" target="_blank" class="btn-primary">
-        <span>Explore the Dashboard</span><span>→</span>
-      </a>
-      <a href="#capabilities" class="btn-ghost">See the capabilities</a>
+      <a href="#request" class="btn-primary"><span>Request access</span><span>&rarr;</span></a>
+      <a href="#tools" class="btn-ghost">See the tools</a>
     </div>
 
     <div class="hero-stats">
       <div>
-        <div class="hero-stat-num"><span class="count" data-count="25000">0</span>+</div>
-        <div class="hero-stat-label">Restricted-party entries</div>
+        <div class="hero-stat-num"><span class="count" data-count="6">0</span></div>
+        <div class="hero-stat-label">Tools exposed</div>
       </div>
       <div>
-        <div class="hero-stat-num">0–<span class="count" data-count="100">0</span></div>
-        <div class="hero-stat-label">Corridor intensity scale</div>
+        <div class="hero-stat-num"><span class="count" data-count="60">0</span></div>
+        <div class="hero-stat-label">Countries queryable</div>
       </div>
       <div>
-        <div class="hero-stat-num"><span class="count" data-count="13">0</span>-week</div>
-        <div class="hero-stat-label">Shadow-fleet forecast direction</div>
-      </div>
-      <div>
-        <div class="hero-stat-num"><span class="count" data-count="5">0</span></div>
-        <div class="hero-stat-label">Events per weekly brief</div>
+        <div class="hero-stat-num">~<span class="count" data-count="1">0</span>%</div>
+        <div class="hero-stat-label">Out-of-sample calibration error</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── CAPABILITIES ───────────────────────────────────── -->
+<!-- ── WHY ───────────────────────────────────────────── -->
 <section id="capabilities">
-  <div class="sec-line" aria-hidden="true"></div>
   <div class="container">
-    <div class="section-tag fade">What you get</div>
-    <h2 class="section-title serif fade">The full sanctions picture, continuously updated.</h2>
-    <div class="divider fade"></div>
-    <p class="section-sub fade">
-      From list aggregation to corridor-level circumvention scoring, every module
-      is built to answer one question: where is sanctions risk concentrating next?
-    </p>
-
-    <div class="cap-grid">
-      <div class="cap-card fade">
-        <div class="cap-icon ci-blue">🗂</div>
-        <div class="cap-name">Restricted-Party Universe</div>
-        <div class="cap-desc">
-          25,000+ entries aggregated across the major lists — OFAC SDN, EU, UK and
-          others — broken down by list and by country.
-        </div>
-        <div class="cap-meta">OFAC SDN · EU · UK et al.</div>
-      </div>
-      <div class="cap-card fade">
-        <div class="cap-icon ci-amber">⚖</div>
-        <div class="cap-name">Enforcement-Pressure Tracking</div>
-        <div class="cap-desc">
-          A continuously updated timeline of enforcement developments —
-          designations, seizures, and penalties as they land.
-        </div>
-        <div class="cap-meta">Updated continuously</div>
-      </div>
-      <div class="cap-card fade">
-        <div class="cap-icon ci-red">🧭</div>
-        <div class="cap-name">Circumvention-Corridor Scores</div>
-        <div class="cap-desc">
-          Named corridors — such as re-export routes toward Russia — scored 0–100
-          for circumvention intensity, with Severe and High bands.
-        </div>
-        <div class="cap-meta">0–100 · Severe / High bands</div>
-      </div>
-      <div class="cap-card fade">
-        <div class="cap-icon ci-blue">🚢</div>
-        <div class="cap-name">Shadow-Fleet Pressure Index</div>
-        <div class="cap-desc">
-          A composite enforcement-pressure index with a 13-week forecast direction,
-          plus vessel-exposure breakdowns by group and by flag.
-        </div>
-        <div class="cap-meta">13-week direction</div>
-      </div>
-      <div class="cap-card fade">
-        <div class="cap-icon ci-green">👁</div>
-        <div class="cap-name">Secondary-Sanctions Risk</div>
-        <div class="cap-desc">
-          A secondary-sanctions risk read paired with a rolling 7 / 30 / 90-day
-          watchlist of what to monitor next.
-        </div>
-        <div class="cap-meta">7 / 30 / 90-day watchlist</div>
-      </div>
-      <div class="cap-card fade">
-        <div class="cap-icon ci-red">🛢</div>
-        <div class="cap-name">Russia Impact Module</div>
-        <div class="cap-desc">
-          Fossil-revenue tracking built on CREA estimates, enforcement-pressure
-          readings, and the ruble trend — in one view.
-        </div>
-        <div class="cap-meta">CREA estimates · ruble trend</div>
+    <div class="fade">
+      <div class="hero-tag" style="margin-bottom:18px">Why it matters</div>
+      <h2 class="serif" style="font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.2;margin-bottom:18px">
+        Intelligence belongs where the<br>decision happens.
+      </h2>
+      <p style="color:var(--silver);max-width:760px;font-size:1.04rem">
+        Dashboards ask people to go somewhere and look something up. Most decisions
+        don't work that way — they happen in a document, a thread, a call, or an
+        agent workflow. NERAI's MCP server puts calibrated risk data inside those
+        moments: your team asks a question in plain language and gets NERAI's
+        numbers, with the methodology and as-of date attached.
+      </p>
+      <div class="pill-row">
+        <span class="pill">Claude Desktop &amp; Claude.ai</span>
+        <span class="pill">Claude Code</span>
+        <span class="pill">Any MCP-compatible agent</span>
+        <span class="pill">Read-only — no write access</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── ENFORCEMENT PRESSURE BOARD ────────────────────── -->
-<section id="pressure-board">
-  <style>
-    #pressure-board .eb-panel{position:relative;max-width:860px;margin:44px auto 0;background:#0d1f3c;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:26px;box-shadow:0 24px 60px rgba(13,31,60,0.35),0 2px 8px rgba(13,31,60,0.22);}
-    #pressure-board .eb-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:26px;align-items:center;}
-    #pressure-board .eb-feed-h{display:flex;justify-content:space-between;align-items:center;font-size:0.6rem;font-weight:600;letter-spacing:0.14em;color:#9fb6d4;margin-bottom:12px;}
-    #pressure-board .eb-live i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#e05060;box-shadow:0 0 8px rgba(224,80,96,0.7);margin-right:7px;animation:ebPulse 1.6s ease-in-out infinite;}
-    @keyframes ebPulse{0%,100%{opacity:.45;}50%{opacity:1;}}
-    #pressure-board .eb-count b{color:#fff;font-weight:700;}
-    #pressure-board .eb-list{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
-    #pressure-board .eb-list li{display:flex;align-items:center;gap:10px;background:#16294a;border:1px solid rgba(255,255,255,0.08);border-radius:9px;padding:9px 12px;font-size:0.78rem;font-weight:500;color:#fff;animation:ebIn 0.45s ease both;}
-    #pressure-board .eb-list li span{margin-left:auto;font-size:0.6rem;color:#9fb6d4;letter-spacing:0.06em;}
-    @keyframes ebIn{from{opacity:0;transform:translateY(-8px);}to{opacity:1;transform:none;}}
-    #pressure-board .eb-dot{width:8px;height:8px;border-radius:50%;flex:0 0 8px;}
-    #pressure-board .d-red{background:#e05060;box-shadow:0 0 8px rgba(224,80,96,0.55);}
-    #pressure-board .d-teal{background:#3fd0e0;box-shadow:0 0 8px rgba(63,208,224,0.55);}
-    #pressure-board .d-amber{background:#f59e0b;box-shadow:0 0 8px rgba(245,158,11,0.55);}
-    #pressure-board .eb-gauge{text-align:center;}
-    #pressure-board #ebGauge{width:210px;height:150px;max-width:100%;pointer-events:none;}
-    #pressure-board .eb-gauge-cap{font-size:0.58rem;font-weight:600;color:#9fb6d4;letter-spacing:0.14em;margin-top:6px;}
-    #pressure-board .eb-chips{display:flex;gap:10px;margin-top:24px;}
-    #pressure-board .eb-chip{flex:1;background:#16294a;border:1px solid rgba(255,255,255,0.08);border-radius:11px;padding:11px 10px;text-align:center;}
-    #pressure-board .eb-chip b{display:block;font-size:1.15rem;font-weight:800;line-height:1.35;}
-    #pressure-board .eb-chip span{font-size:0.56rem;color:#9fb6d4;letter-spacing:0.5px;}
-    @media(max-width:720px){#pressure-board .eb-grid{grid-template-columns:1fr;}}
-    @media(max-width:560px){#pressure-board .eb-chips{flex-direction:column;}}
-    @media (prefers-reduced-motion: reduce){
-      #pressure-board .eb-live i,#pressure-board .eb-list li{animation:none;}
-    }
-  </style>
-  <div class="sec-line" aria-hidden="true"></div>
+<!-- ── TOOLS ─────────────────────────────────────────── -->
+<section id="tools" style="background:var(--navy2)">
   <div class="container">
-    <div class="section-tag fade">Live signal</div>
-    <h2 class="section-title serif fade">Enforcement pressure board.</h2>
-    <div class="divider fade"></div>
-    <p class="section-sub fade">Designation events as they cascade, and the composite pressure they add up to.</p>
-    <div class="eb-panel fade">
-      <div class="eb-grid">
-        <div class="eb-feed">
-          <div class="eb-feed-h">
-            <span class="eb-live"><i></i>ENFORCEMENT FEED</span>
-            <span class="eb-count"><b id="ebCount">4</b>&nbsp;SIGNALS LOGGED</span>
-          </div>
-          <ul class="eb-list" id="ebList">
-            <li><i class="eb-dot d-red"></i>SDN update<span>now</span></li>
-            <li><i class="eb-dot d-teal"></i>EU package<span>2m</span></li>
-            <li><i class="eb-dot d-amber"></i>UK OFSI notice<span>9m</span></li>
-            <li><i class="eb-dot d-teal"></i>Seizure reported<span>14m</span></li>
-          </ul>
-        </div>
-        <div class="eb-gauge">
-          <canvas id="ebGauge" aria-hidden="true"></canvas>
-          <div class="eb-gauge-cap">COMPOSITE ENFORCEMENT PRESSURE &middot; 0&ndash;100</div>
-        </div>
-      </div>
-      <div class="eb-chips">
-        <div class="eb-chip"><b style="color:#3fd0e0">25,000+</b><span>RESTRICTED PARTIES</span></div>
-        <div class="eb-chip"><b style="color:#f59e0b">13-WEEK TREND &#9650;</b><span>SHADOW-FLEET DIRECTION</span></div>
-        <div class="eb-chip"><b style="color:#e05060">SEVERE CORRIDORS: 3</b><span>0&ndash;100 INTENSITY BANDS</span></div>
-      </div>
+    <div class="fade">
+      <div class="hero-tag" style="margin-bottom:18px">The tools</div>
+      <h2 class="serif" style="font-size:clamp(1.8rem,3.6vw,2.4rem);margin-bottom:6px">
+        Six read-only tools
+      </h2>
+      <p style="color:var(--silver);max-width:720px">
+        Every tool returns live platform data with its methodology and as-of date.
+        Nothing writes, nothing executes — the connector can only read.
+      </p>
+
+      <table class="tool-table">
+        <tr><th>Tool</th><th>What it returns</th></tr>
+        <tr>
+          <td><code>get_country_risk</code></td>
+          <td>Top risk signals for a country as percentiles of the 30-day average versus the
+              series' own history (now / 90 days ago / delta), plus calibrated shock
+              probabilities at 4, 9 and 13-week horizons.</td>
+        </tr>
+        <tr>
+          <td><code>get_maritime_corridors</code></td>
+          <td>Eight monitored corridors — Hormuz, Suez, Red Sea/Bab-el-Mandeb, Black Sea,
+              Malacca, Taiwan Strait, Eastern Mediterranean, South China Sea — with threat and
+              activity scores, transit status and disruption versus baseline, and cost pressure.</td>
+        </tr>
+        <tr>
+          <td><code>get_circumvention_corridors</code></td>
+          <td>Diversion-corridor intensity scores for controlled microelectronics (Common High
+              Priority List, HS 8542 focus), with goods profile and watch items.</td>
+        </tr>
+        <tr>
+          <td><code>get_forecast_desk</code></td>
+          <td>NERAI's open calibrated forecasts — binary questions with probabilities and
+              horizons across sanctions, geopolitical risk, chokepoints, maritime, supply chain
+              and conflict.</td>
+        </tr>
+        <tr>
+          <td><code>get_tradecontrol_changes</code></td>
+          <td>Latest official trade-control changes from the TradeControl Action Desk: UK
+              Sanctions List and US Consolidated Screening List diffs plus CELEX-anchored EU
+              Official Journal acts, each with its legal instrument and source link.</td>
+        </tr>
+        <tr>
+          <td><code>list_countries</code></td>
+          <td>The 60 covered countries and platform metadata, including as-of dates and
+              model calibration.</td>
+        </tr>
+      </table>
     </div>
   </div>
 </section>
 
-<!-- ── HOW THE MODELS WORK ────────────────────────────── -->
-<section id="models">
-  <div class="sec-line" aria-hidden="true"></div>
-  <canvas class="ambient-canvas" id="ambientCanvas" aria-hidden="true"></canvas>
+<!-- ── HOW IT LOOKS ──────────────────────────────────── -->
+<section>
   <div class="container">
-    <div class="section-tag fade">Methodology</div>
-    <h2 class="section-title serif fade">How the models work.</h2>
-    <div class="divider fade"></div>
-    <p class="section-sub fade">
-      Every output on this page follows the same pipeline — aggregate, score,
-      forecast, verify — so a number never appears without a source behind it.
-    </p>
-
-    <div class="steps">
-      <div class="step fade">
-        <div class="step-num s1">01</div>
-        <div class="step-title">Aggregate</div>
-        <div class="step-text">
-          25,000+ restricted-party entries are consolidated across OFAC SDN, EU, UK
-          and other major lists, alongside a continuous timeline of enforcement
-          developments — designations, seizures, penalties.
-        </div>
-      </div>
-      <div class="step fade">
-        <div class="step-num s2">02</div>
-        <div class="step-title">Score</div>
-        <div class="step-text">
-          Named circumvention corridors receive 0–100 intensity scores with Severe
-          and High bands; shadow-fleet enforcement pressure is compressed into a
-          composite index with vessel-exposure breakdowns by group and flag.
-        </div>
-      </div>
-      <div class="step fade">
-        <div class="step-num s3">03</div>
-        <div class="step-title">Forecast</div>
-        <div class="step-text">
-          The shadow-fleet index carries a 13-week forecast direction, and a
-          secondary-sanctions risk read feeds a 7 / 30 / 90-day watchlist.
-          Forecast Desk probabilities are calibrated model estimates.
-        </div>
-      </div>
-      <div class="step fade">
-        <div class="step-num s4">04</div>
-        <div class="step-title">Verify &amp; publish</div>
-        <div class="step-text">
-          Weekly outputs cite URL-verified sources under a strict 7-day recency
-          rule, forecasts resolve only via whitelisted authorities, and accuracy
-          is tracked by Brier score.
-        </div>
-      </div>
+    <div class="fade">
+      <div class="hero-tag" style="margin-bottom:18px">In practice</div>
+      <h2 class="serif" style="font-size:clamp(1.8rem,3.6vw,2.4rem);margin-bottom:14px">
+        Questions your team can simply ask
+      </h2>
+      <div class="qbox">"What does NERAI show for Iran right now, and how has it moved in 90 days?"</div>
+      <div class="qbox">"Which corridors is NERAI rating as severely disrupted this week?"</div>
+      <div class="qbox">"Any new EU trade-control measures we need to act on?"</div>
+      <div class="qbox">"Pull NERAI's open forecasts on chokepoint risk for the board pack."</div>
+      <p class="note-small">
+        The agent calls the relevant tools, combines them, and answers with NERAI's figures —
+        percentiles, probabilities, corridor scores — plus the caveats that belong with them.
+      </p>
     </div>
   </div>
 </section>
 
-<!-- ── GROUNDED STRIP ─────────────────────────────────── -->
-<div class="grounded">
+<!-- ── CONNECT ───────────────────────────────────────── -->
+<section id="connect" style="background:var(--navy2)">
   <div class="container">
-    <div class="grounded-inner">
-      <div class="grounded-label fade">Grounded<br>by design</div>
-      <div class="grounded-item fade">
-        <div class="grounded-dot"></div>
-        <p><strong>Significance testing</strong> Signals are tested before they become claims.</p>
-      </div>
-      <div class="grounded-item fade">
-        <div class="grounded-dot"></div>
-        <p><strong>Event-level verification</strong> Every event is verified before any narrative is written.</p>
-      </div>
-      <div class="grounded-item fade">
-        <div class="grounded-dot"></div>
-        <p><strong>ICD-203-aligned</strong> A grounding guard aligned with ICD-203 analytic standards.</p>
-      </div>
-      <div class="grounded-item fade">
-        <div class="grounded-dot"></div>
-        <p><strong>No unverified claims</strong> If it cannot be verified, it does not ship.</p>
-      </div>
-    </div>
-  </div>
-</div>
+    <div class="fade">
+      <div class="hero-tag" style="margin-bottom:18px">Setup</div>
+      <h2 class="serif" style="font-size:clamp(1.8rem,3.6vw,2.4rem);margin-bottom:10px">
+        Connected in about a minute
+      </h2>
+      <p style="color:var(--silver);max-width:720px">
+        No installation, no infrastructure on your side. You receive a private
+        subscription URL containing your key.
+      </p>
 
-<!-- ── PREDICTIONS ────────────────────────────────────── -->
-<section id="predictions">
-  <div class="sec-line" aria-hidden="true"></div>
-  <div class="container">
-    <div class="section-tag fade">Predictions</div>
-    <h2 class="section-title serif fade">Forecasts you can score, not vibes.</h2>
-    <div class="divider fade"></div>
+      <ol class="steps">
+        <li><b>Open your AI client's connector settings.</b> In Claude: Settings &rarr; Connectors &rarr; Add custom connector.</li>
+        <li><b>Paste your NERAI URL.</b> It looks like this:
+          <div class="code-box">https://nerai-mcp.neraicorp.workers.dev/mcp/<span class="k">&lt;your-key&gt;</span></div>
+        </li>
+        <li><b>Approve the tools</b> the first time your agent uses them, and start asking questions.</li>
+      </ol>
 
-    <div class="pred-grid">
-      <div class="pred-card fade">
-        <span class="pred-badge">New · Forecast Desk</span>
-        <h3>Autonomous weekly sanctions forecasts</h3>
-        <p>
-          Each week the platform autonomously generates binary sanctions
-          forecasts — will a designation land, will a package be adopted — and
-          publishes them with calibrated probabilities.
-        </p>
-        <ul class="pred-list">
-          <li>Every question cites at least two verified sources.</li>
-          <li>Resolution happens only via whitelisted authorities — OFAC, EUR-Lex and peers.</li>
-          <li>Probabilities are calibrated model estimates, tracked by Brier score.</li>
-          <li>An anti-hallucination contract is enforced in code, not by convention.</li>
-        </ul>
-      </div>
-      <div class="pred-card fade">
-        <span class="pred-badge">Weekly</span>
-        <h3>NERAI Sanctions Weekly</h3>
-        <p>
-          Every week: the five most consequential sanctions events, under a strict
-          7-day recency rule, with every fact drawn from URL-verified sources.
-        </p>
-        <p>
-          Each edition adds expert strategic analysis and is available as a PDF
-          download.
-        </p>
-        <a href="foresight-desk/" class="btn-ghost" style="margin-top:8px;">Read published research →</a>
-      </div>
+      <p class="note-small">
+        Clients that support request headers can authenticate with
+        <code style="background:var(--white);padding:2px 6px;border-radius:4px">Authorization: Bearer &lt;your-key&gt;</code>
+        against <code style="background:var(--white);padding:2px 6px;border-radius:4px">/mcp</code> instead.
+        Transport: MCP Streamable HTTP. Keys are per-customer and revocable at any time.
+      </p>
     </div>
   </div>
 </section>
 
-<!-- ── CTA BAND ───────────────────────────────────────── -->
-<section class="cta-band">
-  <div class="cta-fx" aria-hidden="true"><div class="cta-ring"></div></div>
+<!-- ── REQUEST ACCESS ────────────────────────────────── -->
+<section id="request">
   <div class="container">
-    <h2 class="cta-title fade">Put sanctions intelligence on your desk.</h2>
-    <p class="cta-sub fade">
-      Open the live dashboard, browse the published research, or talk to us about
-      what your team needs to see.
-    </p>
-    <div class="cta-actions fade">
-      <a href="index.html#contact" class="btn-primary"><span>Contact us</span><span>→</span></a>
-      <a href="https://nerai-intelligence.streamlit.app/" target="_blank" class="btn-outline-light">Open the Dashboard</a>
-      <a href="foresight-desk/" class="btn-outline-light">Foresight Desk research</a>
+    <div class="fade">
+      <div class="hero-tag" style="margin-bottom:18px">Access</div>
+      <h2 class="serif" style="font-size:clamp(1.8rem,3.6vw,2.4rem);margin-bottom:12px">
+        Request a trial key
+      </h2>
+      <p style="color:var(--silver);max-width:720px">
+        MCP access is included with NERAI data-feed subscriptions and available
+        standalone. Trial keys give you the full connection with a limited data
+        window so your team can test the workflow before committing.
+      </p>
+
+      <form class="demo-form" action="https://formsubmit.co/ajax/kagan@neraicorp.com" method="POST"
+            onsubmit="return neraiSubmit(this)">
+        <input type="email" name="email" placeholder="Work email" required />
+        <input type="text" name="company" placeholder="Company" required />
+        <input type="hidden" name="_subject" value="NERAI MCP — trial key request" />
+        <input type="hidden" name="request" value="MCP trial key" />
+        <button type="submit">Request access</button>
+      </form>
+      <p class="note-small" id="formMsg"></p>
+      <p class="note-small">
+        Or email <a href="mailto:kagan@neraicorp.com" style="color:var(--teal2)">kagan@neraicorp.com</a> directly.
+      </p>
     </div>
   </div>
 </section>
 
-<!-- ── FOOTER ─────────────────────────────────────────── -->
+<!-- ── DATA HANDLING ─────────────────────────────────── -->
+<section style="background:var(--navy2)">
+  <div class="container">
+    <div class="fade">
+      <div class="hero-tag" style="margin-bottom:18px">Data handling</div>
+      <h2 class="serif" style="font-size:clamp(1.6rem,3vw,2.1rem);margin-bottom:14px">
+        What the connector does and doesn't do
+      </h2>
+      <ul style="color:var(--silver);max-width:780px;line-height:2;list-style:none">
+        <li>&#10003; <b style="color:var(--navy)">Read-only.</b> Every tool is annotated read-only; the server exposes no write or destructive operations.</li>
+        <li>&#10003; <b style="color:var(--navy)">No customer data required.</b> You don't upload counterparties, shipments or portfolios to use it.</li>
+        <li>&#10003; <b style="color:var(--navy)">First-party data.</b> Responses come from NERAI's own indices, models and registers, built on public and licensed sources.</li>
+        <li>&#10003; <b style="color:var(--navy)">Refreshed automatically.</b> The served snapshot is rebuilt from the platform twice daily; every response carries its as-of date.</li>
+        <li>&#10003; <b style="color:var(--navy)">Not advice.</b> Calibrated probabilities and ordinal risk ratings support decisions; they are not legal, compliance or investment advice.</li>
+      </ul>
+      <p class="note-small">
+        See our <a href="privacy.html" style="color:var(--teal2)">Privacy Policy</a> and
+        <a href="terms.html" style="color:var(--teal2)">Terms of Service</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  function neraiSubmit(f) {
+    var msg = document.getElementById('formMsg');
+    var data = new FormData(f);
+    fetch(f.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+      .then(function(){ msg.textContent = 'Thank you — we will send your trial key shortly.'; f.reset(); })
+      .catch(function(){ msg.textContent = 'Something went wrong. Please email kagan@neraicorp.com.'; });
+    return false;
+  }
+</script>
 <footer>
   <div class="container">
     <div class="footer-inner">
