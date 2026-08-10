@@ -1,26 +1,14 @@
 {
- "updated": "2026-08-03 10:17 UTC",
- "week": "2026-W32",
+ "updated": "2026-08-10 08:12 UTC",
+ "week": "2026-W33",
  "maritime": {
   "title": "NERAI Maritime Weekly",
-  "events": [
-   "Iran–US Military Standoff Paused as Trump Calls Off Strike, Talks Begin 3 Aug",
-   "GasLog LNG Carrier Struck Exiting Hormuz; UKMTO Reports Two Further Tanker Attacks Off Oman",
-   "Houthis Strike Saudi Oil Tanker; Six Saudi Ships Reroute Around Africa as Red Sea Traffic Hits Multi-Month Low",
-   "Drone Strike on Damietta Port Ignites Security Concerns for Suez Canal Oil Exports",
-   "Saudi Arabia Launches Maritime Defence Coalition as Gulf Security Architecture Shifts"
-  ],
-  "summary": "The week was dominated by a dangerous convergence of Hormuz LNG tanker strikes, Houthi-driven Saudi oil rerouting to multi-month extremes, a drone attack on Egyptian port infrastructure near Suez, and a last-minute US–Iran diplomatic pivot that suspended planned US strikes in favour of talks beginning 3 August. Together these developments exposed simultaneous pressure on three of the world's most critical energy corridors — Hormuz, Bab el-Mandeb/Red Sea, and Suez — while Saudi Arabia's launch of a new maritime defence coalition signalled a structural shift in Gulf security architecture."
+  "events": [],
+  "summary": ""
  },
  "sanctions": {
   "title": "NERAI Sanctions Weekly",
-  "events": [
-   "U.S. Sanctions Mahan Air & IRGC Global Support Network Across China, India, Russia",
-   "U.S. Targets Iran's Strait of Hormuz 'Insurance' Racket and Shadow-Fleet Tankers",
-   "OFAC's Largest-Ever Action Targets Cartel Leadership and Support Networks",
-   "EU Forces Board Sanctioned Russian Shadow-Fleet Tanker in Mediterranean",
-   "U.S. Treasury Removes 84 Targets from Sanctions Lists in 'Modernisation' Review"
-  ],
-  "summary": "The week of 28 July–3 August 2026 was dominated by a sustained multi-front U.S. sanctions offensive against Iran — targeting shadow-fleet tankers, the Strait of Hormuz 'insurance' racket, Mahan Air support networks spanning China, India and Russia, and an IRGC-linked crypto network — alongside OFAC's largest-ever cartel action and an EU enforcement milestone in the Mediterranean. The cumulative pressure on Iranian oil logistics and IRGC financial infrastructure was the defining theme, even as a Foreign Policy analysis argued that U.S. sanctions credibility has been eroded by broader Trump-era policy inconsistencies. The EU's physical boarding of a sanctioned Russian shadow-fleet tanker in the Mediterranean marked a rare kinetic enforcement step that could reshape insurance and flag-state compliance calculus for the Russian fossil-fuel corridor."
+  "events": [],
+  "summary": ""
  }
 }
