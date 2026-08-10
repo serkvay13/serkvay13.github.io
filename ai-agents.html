@@ -562,13 +562,13 @@
     </p>
 
     <div class="hero-actions">
-      <a href="#request" class="btn-primary"><span>Request access</span><span>&rarr;</span></a>
+      <a href="#pricing" class="btn-primary"><span>Get a free key</span><span>&rarr;</span></a>
       <a href="#tools" class="btn-ghost">See the tools</a>
     </div>
 
     <div class="hero-stats">
       <div>
-        <div class="hero-stat-num"><span class="count" data-count="6">0</span></div>
+        <div class="hero-stat-num"><span class="count" data-count="16">0</span></div>
         <div class="hero-stat-label">Tools exposed</div>
       </div>
       <div>
@@ -683,6 +683,81 @@
 </section>
 
 <!-- ── CONNECT ───────────────────────────────────────── -->
+
+<!-- ── PRICING ───────────────────────────────────────── -->
+<section id="pricing">
+  <div class="container">
+    <div class="fade">
+      <div class="hero-tag" style="margin-bottom:18px">Pricing</div>
+      <h2 class="serif" style="font-size:clamp(1.8rem,3.6vw,2.4rem);margin-bottom:10px">
+        Start free. Upgrade when your agent does.
+      </h2>
+      <p style="color:var(--silver);max-width:720px;margin-bottom:34px">
+        Every response carries its own <code style="background:var(--white);padding:2px 6px;border-radius:4px">as_of</code> stamp,
+        source, refresh cadence and limitations — and forecast validation
+        (out-of-sample MASE and directional accuracy) is published, not promised.
+      </p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;align-items:stretch">
+
+        <div style="background:var(--white);border:1px solid var(--rule);border-radius:14px;padding:28px">
+          <div style="font-weight:800;letter-spacing:.08em;font-size:.75rem;color:var(--silver)">FREE</div>
+          <div class="serif" style="font-size:2rem;margin:8px 0 2px">€0</div>
+          <div style="color:var(--silver);font-size:.85rem;margin-bottom:16px">for evaluation</div>
+          <ul style="list-style:none;padding:0;font-size:.9rem;line-height:2">
+            <li>&#10003; 5 countries (TR, UA, CN, RU, IR)</li>
+            <li>&#10003; Country risk, corridors</li>
+            <li>&#10003; 100 tool calls / month</li>
+            <li>&#10003; Instant key — no card, no call</li>
+          </ul>
+          <form onsubmit="return neraiFreeKey(this)" style="margin-top:14px">
+            <input type="email" name="email" placeholder="Work email" required
+                   style="width:100%;padding:11px 14px;border:1px solid var(--rule);border-radius:8px;margin-bottom:10px" />
+            <button type="submit" class="btn-primary" style="width:100%;justify-content:center">Get my free key</button>
+          </form>
+          <div id="freeKeyOut" style="display:none;margin-top:14px;background:var(--navy);color:#dff1fa;border-radius:8px;padding:14px;font-family:monospace;font-size:.8rem;word-break:break-all"></div>
+        </div>
+
+        <div style="background:var(--navy);color:#fff;border-radius:14px;padding:28px;box-shadow:0 18px 44px rgba(10,37,64,.28)">
+          <div style="font-weight:800;letter-spacing:.08em;font-size:.75rem;color:#8fc3dc">PRO</div>
+          <div class="serif" style="font-size:2rem;margin:8px 0 2px">€490<span style="font-size:1rem;color:#9ec9de">/month</span></div>
+          <div style="color:#9ec9de;font-size:.85rem;margin-bottom:16px">or €4,900/year — 2 months free, by invoice</div>
+          <ul style="list-style:none;padding:0;font-size:.9rem;line-height:2">
+            <li>&#10003; All 60 countries, all risk topics</li>
+            <li>&#10003; Calibrated forecasts &amp; early warning</li>
+            <li>&#10003; Live chokepoint AIS &amp; circumvention corridors</li>
+            <li>&#10003; Sanctions overview &amp; TradeControl changes</li>
+            <li>&#10003; 100,000 tool calls / month</li>
+            <li>&#10003; Key delivered instantly after checkout</li>
+          </ul>
+          <a href="https://buy.stripe.com/cNieVf3DLaCO2H68spcQU03" class="btn-primary"
+             style="width:100%;justify-content:center;margin-top:14px;background:#fff;color:var(--navy)">
+            <span>Subscribe</span><span>&rarr;</span></a>
+        </div>
+
+        <div style="background:var(--white);border:1px solid var(--rule);border-radius:14px;padding:28px">
+          <div style="font-weight:800;letter-spacing:.08em;font-size:.75rem;color:var(--silver)">ENTERPRISE</div>
+          <div class="serif" style="font-size:2rem;margin:8px 0 2px">from €15,000<span style="font-size:1rem;color:var(--silver)">/year</span></div>
+          <div style="color:var(--silver);font-size:.85rem;margin-bottom:16px">invoiced annually</div>
+          <ul style="list-style:none;padding:0;font-size:.9rem;line-height:2">
+            <li>&#10003; Everything in Pro, unlimited calls</li>
+            <li>&#10003; Commodity control checks (HS-level)</li>
+            <li>&#10003; Analyst-reviewed enforcement precedents</li>
+            <li>&#10003; SLA &amp; priority support</li>
+          </ul>
+          <a href="#request" class="btn-ghost" style="width:100%;justify-content:center;margin-top:14px;display:flex">Talk to us</a>
+        </div>
+      </div>
+
+      <p class="note-small" style="margin-top:22px">
+        Prices include VAT where applicable. Machine-readable tier table:
+        <a href="https://nerai-mcp.neraicorp.workers.dev/pricing" style="color:var(--teal2)">/pricing</a> ·
+        agent-readable capability sheet: <a href="https://nerai-mcp.neraicorp.workers.dev/llms.txt" style="color:var(--teal2)">/llms.txt</a>
+      </p>
+    </div>
+  </div>
+</section>
+
 <section id="connect" style="background:var(--navy2)">
   <div class="container">
     <div class="fade">
@@ -719,20 +794,21 @@
     <div class="fade">
       <div class="hero-tag" style="margin-bottom:18px">Access</div>
       <h2 class="serif" style="font-size:clamp(1.8rem,3.6vw,2.4rem);margin-bottom:12px">
-        Request a trial key
+        Enterprise &amp; annual plans
       </h2>
       <p style="color:var(--silver);max-width:720px">
-        MCP access is included with NERAI data-feed subscriptions and available
-        standalone. Trial keys give you the full connection with a limited data
-        window so your team can test the workflow before committing.
+        Compliance-grade tools — HS-level commodity control checks and the
+        analyst-reviewed enforcement precedent corpus — ship on the Enterprise
+        tier, with SLA and invoicing. Annual Pro (€4,900, two months free) is
+        also arranged here.
       </p>
 
       <form class="demo-form" action="https://formsubmit.co/ajax/kagan@neraicorp.com" method="POST"
             onsubmit="return neraiSubmit(this)">
         <input type="email" name="email" placeholder="Work email" required />
         <input type="text" name="company" placeholder="Company" required />
-        <input type="hidden" name="_subject" value="NERAI MCP — trial key request" />
-        <input type="hidden" name="request" value="MCP trial key" />
+        <input type="hidden" name="_subject" value="NERAI MCP — enterprise / annual enquiry" />
+        <input type="hidden" name="request" value="MCP enterprise or annual plan" />
         <button type="submit">Request access</button>
       </form>
       <p class="note-small" id="formMsg"></p>
@@ -773,6 +849,23 @@
     fetch(f.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
       .then(function(){ msg.textContent = 'Thank you — we will send your trial key shortly.'; f.reset(); })
       .catch(function(){ msg.textContent = 'Something went wrong. Please email kagan@neraicorp.com.'; });
+  return false;
+}
+function neraiFreeKey(f){
+  var out = document.getElementById('freeKeyOut');
+  out.style.display='block'; out.textContent='Minting your key…';
+  fetch('https://nerai-mcp.neraicorp.workers.dev/register',{
+    method:'POST', headers:{'content-type':'application/json'},
+    body: JSON.stringify({email: f.email.value})
+  }).then(function(r){return r.json();}).then(function(d){
+    if(d.key){
+      out.innerHTML = 'Your key:<br><b>'+d.key+'</b><br><br>Connect URL:<br>'+
+        'https://nerai-mcp.neraicorp.workers.dev/mcp/'+d.key+
+        '<br><br>Claude: Settings &rarr; Connectors &rarr; Add custom connector &rarr; paste the URL.';
+    } else {
+      out.textContent = d.error || 'Could not create a key — please email kagan@neraicorp.com.';
+    }
+  }).catch(function(){ out.textContent='Network error — please email kagan@neraicorp.com.'; });
     return false;
   }
 </script>
