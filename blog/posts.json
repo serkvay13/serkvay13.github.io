@@ -1,6 +1,22 @@
 [
   {
     "category": "Risk Alert",
+    "date": "August 10, 2026",
+    "excerpt": "Ukraine Military Clash moved +12.6 WoW to 23.5/100, the week's most notable shift in the NERAI indices.",
+    "published": "2026-08-10",
+    "slug": "2026-08-10-nerai-risk-alert-w32",
+    "title": "NERAI Risk Alert \u2014 W32: Ukraine Military Clash Surge"
+  },
+  {
+    "category": "Weekly Pulse",
+    "date": "August 10, 2026",
+    "excerpt": "For Week 32 (Aug 3 \u2013 9, 2026), Ukraine leads the NERAI dataset on Military Clash at 23.5/100 (+12.6 WoW). The largest week-on-week mover is Ukraine Military Clash (+12.6).",
+    "published": "2026-08-10",
+    "slug": "2026-08-10-nerai-weekly-bulletin-w32",
+    "title": "NERAI Weekly Bulletin \u2014 Week 32 (Aug 3 \u2013 9, 2026)"
+  },
+  {
+    "category": "Risk Alert",
     "date": "August 3, 2026",
     "excerpt": "Greece Military Clash signal registered the week's sharpest week-over-week acceleration at +15.4 points, now at 19.3/100. This rapid elevation alongside France's dominant 22.4/100 and Spain's 18.7/100 signals indicates concentrated Mediterranean military friction requiring institutional attention.",
     "published": "2026-08-03",
