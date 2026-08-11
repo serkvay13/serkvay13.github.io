@@ -2,6 +2,31 @@
  "updated": "2026-07-31",
  "reports": [
   {
+   "title": "Russia's Tactical Nuclear Threshold: Low, Rising, and Concentrated in the Compound Path",
+   "date": "August 2026",
+   "type": "Political-Military Risk Assessment",
+   "om": "NERAI assesses Russian tactical nuclear use within 12 months at 3-6% (structured low-confidence estimate, derivation published) - roughly an order of magnitude above any pre-2022 baseline, concentrated where battlefield reversal compounds with regime stress (15-30% in that branch).",
+   "summary": "Five use-preparation indicators, one honest reading: warhead production quiet (no evidence of large-scale non-strategic growth; rate unknown), custody rehearsed but not enacted (the May 2026 unannounced exercise filmed dummy-warhead transfer to a Belarusian Iskander unit), exercises institutionalizing, rhetoric plateaued, context triggers converging slowly. A qualitatively larger Russian offensive is not the base case (15-25%): ground-force stock has grown (ATA 2026) but the flow - recruitment intake, casualty-per-gain, armour storage - is deteriorating. Internal strain (persisting fuel crisis; Levada June 2026: 64% back negotiations, 29% back continuing) is a conditional risk multiplier, not yet a pathway: no evidence of elite fracture or regime-security alarm. Every probability is a labelled analyst judgment with its assumptions table in the full version; single-origin claims (the DPRK deployment picture) are flagged as unverified.",
+   "findings": [
+    "<b>The quiet indicator:</b> ~1,794 non-strategic warheads (FAS 2026), no evidence of large-scale increase - and with ~1,800 already in inventory, stasis says little about limited-use intent.",
+    "<b>The moving indicator:</b> the unannounced 19-21 May 2026 exercise rehearsed physical warhead transfer to a Belarusian Iskander unit on film - capability practice, not enactment.",
+    "<b>The scenario grid:</b> grinding continuation 50-60% (TNW 1-3%; 4-8% with internal shock), freeze 15-20%, major reversal 12-18% (TNW 8-15%; 15-30% compounded), Russian success 8-16%. Weighted: ~3-6%.",
+    "<b>The compound path is the planner's cell:</b> by weight of probability the grinding branch carries the largest share of total risk - slow failure plus internal rupture gives less warning than the cinematic scenario.",
+    "<b>Watchlist discipline:</b> 12th GUMO movement outside exercises, Belarus visual confirmation, mobilization signals, elite coercion (NERAI confiscate-property at 98th pct, +53), fuel-fiscal markers, decision-maker specificity."
+   ],
+   "file": "/NERAI_Russia_TNW_Briefing_August2026.pdf",
+   "full": "/NERAI_Russia_Ukraine_TNW_Report_August2026_Full.pdf",
+   "tags": [
+    "Russia",
+    "Ukraine",
+    "Nuclear Risk",
+    "Escalation",
+    "Belarus",
+    "North Korea",
+    "Scenario Forecast"
+   ]
+  },
+  {
    "title": "US-Iran Conflict, American Public Opinion & the 2026 Midterm Election Outlook",
    "date": "July 2026",
    "type": "Election / Transition Risk Assessment",
