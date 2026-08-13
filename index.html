@@ -2998,7 +2998,10 @@ function wbSubmit(e){e.preventDefault();var f=e.target;var b=document.getElement
   var wk=(window.__wbMeta||{}).week||'';
   var p={_subject:'Weekly Briefs subscriber ('+wk+')',_template:'table',_captcha:'false',_replyto:f.email.value,
     'Type':'Weekly Briefs email signup','Week':wk,'Name':f.name.value||'-','Email':f.email.value,'Source':'neraicorp.com banner'};
-  fetch('https://formsubmit.co/ajax/kagan@neraicorp.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(p)})
+  <!-- FormSubmit endpoint uses the account's opaque token rather than the naked
+     address: the email no longer sits in page source for harvesters. Same
+     inbox, same behaviour - only the address is no longer public. -->
+  fetch('https://formsubmit.co/ajax/ff5447eba588e3a45365ec95443e2377',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(p)})
    .then(function(r){return r.json();})
    .then(function(){document.getElementById('wbForm').style.display='none';document.getElementById('wbOk').style.display='block';wbDismiss();setTimeout(wbClose,3800);})
    .catch(function(){b.textContent='Send me the briefs →';b.disabled=false;alert('Could not submit right now — please email kagan@neraicorp.com');});}

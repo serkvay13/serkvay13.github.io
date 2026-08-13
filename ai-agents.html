@@ -803,7 +803,10 @@
         also arranged here.
       </p>
 
-      <form class="demo-form" action="https://formsubmit.co/ajax/kagan@neraicorp.com" method="POST"
+      <!-- FormSubmit endpoint uses the account's opaque token rather than the naked
+     address: the email no longer sits in page source for harvesters. Same
+     inbox, same behaviour - only the address is no longer public. -->
+      <form class="demo-form" action="https://formsubmit.co/ajax/ff5447eba588e3a45365ec95443e2377" method="POST"
             onsubmit="return neraiSubmit(this)">
         <input type="email" name="email" placeholder="Work email" required />
         <input type="text" name="company" placeholder="Company" required />
