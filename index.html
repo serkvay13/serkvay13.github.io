@@ -2997,7 +2997,15 @@ document.getElementById('wbModal').addEventListener('click',function(e){if(e.tar
 function wbSubmit(e){e.preventDefault();var f=e.target;var b=document.getElementById('wbBtn');b.textContent='Sending…';b.disabled=true;
   var wk=(window.__wbMeta||{}).week||'';
   var p={_subject:'Weekly Briefs subscriber ('+wk+')',_template:'table',_captcha:'false',_replyto:f.email.value,
+    _honey:'',
     'Type':'Weekly Briefs email signup','Week':wk,'Name':f.name.value||'-','Email':f.email.value,'Source':'neraicorp.com banner'};
+  /* Link-injection guard. Form spam works by planting a phishing URL in a text
+     field so it lands inside the notification email the owner then opens. A
+     signup name has no reason to contain a URL, so submissions carrying one are
+     dropped here rather than delivered. */
+  if(/https?:\/\/|www\.|\.net\/|\.top\b|\bhs=/i.test((f.name.value||'')+' '+(f.email.value||''))){
+    return false;
+  }
   <!-- FormSubmit endpoint uses the account's opaque token rather than the naked
      address: the email no longer sits in page source for harvesters. Same
      inbox, same behaviour - only the address is no longer public. -->

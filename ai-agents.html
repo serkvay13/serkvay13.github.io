@@ -811,6 +811,11 @@
         <input type="email" name="email" placeholder="Work email" required />
         <input type="text" name="company" placeholder="Company" required />
         <input type="hidden" name="_subject" value="NERAI MCP — enterprise / annual enquiry" />
+        <!-- Honeypot. Bots fill every field they find; a human never sees this one,
+             so any submission carrying a value here is discarded by FormSubmit
+             before it reaches the inbox. The first submission this form ever
+             received was link-injection spam, which is what prompted it. -->
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
         <input type="hidden" name="request" value="MCP enterprise or annual plan" />
         <button type="submit">Request access</button>
       </form>
