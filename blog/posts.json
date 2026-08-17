@@ -1,6 +1,22 @@
 [
   {
     "category": "Risk Alert",
+    "date": "August 17, 2026",
+    "excerpt": "Yemen Military Clash holds highest NERAI signal (25.8/100) with consecutive weekly gains; Indonesia Military Clash +10.6 WoW represents largest directional mover. Combined signals indicate sustained regional conflict pressure and emerging secondary flashpoints.",
+    "published": "2026-08-17",
+    "slug": "2026-08-17-nerai-risk-alert-w33",
+    "title": "NERAI Risk Alert \u2014 W33: Yemen Intensity Sustained; Indonesia Volatility Spike"
+  },
+  {
+    "category": "Weekly Pulse",
+    "date": "August 17, 2026",
+    "excerpt": "Week 33 tracking elevated military tension in Yemen (25.8/100 Military Clash, +5.7 WoW) alongside emerging flashpoints in Indonesia (+10.6 WoW spike to 12.0/100) and North Korea (+7.3 to 10.2/100). Ukraine signals moderating (-6.7 on Clash, -4.2 on Escalation). Colombia's International Support metric surged +7.8 to 12.1/100, signalling external intervention dynamics. Risk landscape remains fragmented across multiple regions with no single dominant escalation but sustained Yemen volatility.",
+    "published": "2026-08-17",
+    "slug": "2026-08-17-nerai-weekly-bulletin-w33",
+    "title": "NERAI Weekly Bulletin \u2014 Week 33 (Aug 10 \u2013 16, 2026)"
+  },
+  {
+    "category": "Risk Alert",
     "date": "August 10, 2026",
     "excerpt": "Ukraine Military Clash moved +12.6 WoW to 23.5/100, the week's most notable shift in the NERAI indices.",
     "published": "2026-08-10",
