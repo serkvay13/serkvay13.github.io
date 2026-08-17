@@ -1,14 +1,25 @@
 {
- "updated": "2026-08-10 08:12 UTC",
- "week": "2026-W33",
+ "updated": "2026-08-17 08:32 UTC",
+ "week": "2026-W34",
  "maritime": {
   "title": "NERAI Maritime Weekly",
-  "events": [],
-  "summary": ""
+  "events": [
+   "US–Iran Ceasefire MOU Expires; Hormuz Shipping Falls Sharply",
+   "Drone Strikes Hit Two Tankers in Hormuz, Including ADNOC Vessel, This Week",
+   "Shadow-Fleet Tanker Oil Spill Reaches Oman Coast, Covers 400 sq km",
+   "Red Sea: Four Crew, Two Rescuers Killed in Houthi Attack; Saudi Oil Exports Go Dark",
+   "Russia Threatens to Board UK and French Vessels in Retaliation for Shadow-Fleet Seizures"
+  ],
+  "summary": "The week of 10–17 August 2026 was dominated by compounding crises at the Strait of Hormuz and the Gulf of Oman: drone attacks on tankers, a major oil spill from a sanctioned shadow-fleet vessel, and the expiry of the US–Iran ceasefire MOU drove a sharp drop in Hormuz transits and pushed the NY Fed GSCPI to 1.769 sigma (93rd percentile). In the Red Sea, Houthi attacks continued to kill crew and deter Saudi oil loadings, while Russia escalated its rhetoric against European navies enforcing shadow-fleet seizures. Together, these threads signal a multi-corridor stress event with serious near-term consequences for energy supply chains, insurance markets, and compliance frameworks."
  },
  "sanctions": {
   "title": "NERAI Sanctions Weekly",
-  "events": [],
-  "summary": ""
+  "events": [
+   "US–Iran Ceasefire MOU Expires; Washington Eyes 'Unprecedented Economic Isolation'",
+   "OFAC Grants ONGC Licence to Resume Full Venezuela Operations",
+   "Putin Threatens to Seize EU Vessels; UK Defends Shadow-Fleet Tanker Detention",
+   "OFAC Largest-Ever CJNG Sanctions Action Raises Mexico Supply-Chain Risk"
+  ],
+  "summary": "The dominant theme this week is the unravelling of the US–Iran ceasefire framework, with the 60-day MOU expiring on 17 August without a permanent deal, opening the door to an 'unprecedented economic isolation' campaign whose contours are still being debated in Washington. Separately, OFAC granted India's ONGC a licence to resume full Venezuelan operations — a notable carve-out that underscores how selectively Washington is deploying its sanctions toolkit. Russia's shadow-fleet and Arctic-corridor posture added further shipping and circumvention dimensions to an already complex week."
  }
 }
