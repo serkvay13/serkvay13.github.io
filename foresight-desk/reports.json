@@ -1,6 +1,30 @@
 {
- "updated": "2026-07-31",
+ "updated": "2026-08-20",
  "reports": [
+  {
+   "title": "Red Sea / Bab-el-Mandeb: Selective Disruption, Not Closure",
+   "date": "August 2026",
+   "type": "Maritime Corridor Risk Assessment",
+   "om": "NERAI's corridor model puts Bab-el-Mandeb disruption probability at 15.8% over 2 weeks, 47.0% over 4 weeks and 74.6% over 8 weeks - disruption, not formal closure. The corridor is already in selective operational disruption: traffic fell sharply after July's blockade of Saudi Arabia, then stabilised, with tankers hit harder than container shipping.",
+   "summary": "A corridor that drops and then holds is being priced, not abandoned. This briefing separates three things that are usually merged: what was observed, what the model says, and what the analyst infers. Every claim carries a label - [VERIFIED] for an official publication or dated named-outlet reporting, [NERAI] for proprietary model output, [INFERENCE] for judgement drawn from the two. Corridor probabilities and JWC-Cast are recorded in NERAI's public forecast ledger on the date shown, so they can be scored later against what actually happened. One baseline is retired along the way: the 8.7 mb/d figure still quoted for Bab-el-Mandeb oil flows is the 2023 level, and measuring today's corridor against it overstates the shortfall while understating the concentration risk that replaced it.",
+   "findings": [
+    "<b>The distinction is the whole brief:</b> closure is a physical state, disruption is a commercial one. Almost everything that matters to a shipowner, an insurer or a cargo owner happens inside the second - and reporting that collapses the two makes a corridor look binary when the decisions are not.",
+    "<b>Scoping explains the pattern:</b> the 20 July Houthi blockade was declared against Saudi Arabia specifically, not Red Sea shipping generally. That is why the tanker segment absorbed the shock and container traffic largely did not.",
+    "<b>Why a limited strike carried outsized weight:</b> the 25 July hits on Jizan and Yanbu landed on the terminal end of the East-West pipeline, which had become the dominant route for Saudi seaborne crude after Hormuz closed.",
+    "<b>War-risk repriced, but from an existing base:</b> JWLA-034 of 29 July added Saudi and Eritrean ports and coastal waters and moved the Red Sea notification line north. This is an expansion of a listing already in force, not a first designation - JWC-Cast puts a further change within six weeks at 31.6%.",
+    "<b>Scenario grid:</b> contained pressure 55%, expanding confrontation with partial closure 30%, systemic closure 10%. These sum to 95%; the remaining 5% is stated as residual rather than silently redistributed."
+   ],
+   "file": "/NERAI_BabelMandeb_Briefing_August2026.pdf",
+   "tags": [
+    "Red Sea",
+    "Bab-el-Mandeb",
+    "Yemen",
+    "Saudi Arabia",
+    "War Risk",
+    "Shipping",
+    "Scenario Forecast"
+   ]
+  },
   {
    "title": "Russia's Tactical Nuclear Threshold: Low, Rising, and Concentrated in the Compound Path",
    "date": "August 2026",
