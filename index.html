@@ -2960,7 +2960,7 @@
     <div id="wbForm">
       <div class="sm">NERAI WEEKLY BRIEFS</div>
       <h3>Get this week's briefs</h3>
-      <p>Enter your email and we'll send you access to this week's <b style="color:#e9f1fb">Maritime Weekly</b> and <b style="color:#e9f1fb">Sanctions Weekly</b> — and add you to the Monday list.</p>
+      <p>Enter your email and we'll send you this week's <b style="color:#e9f1fb">Maritime Weekly</b>, <b style="color:#e9f1fb">Sanctions Weekly</b>, <b style="color:#e9f1fb">Weekly Pulse</b> and <b style="color:#e9f1fb">Risk Alert</b> — and add you to the list.</p>
       <ul id="wbTeaser"></ul>
       <form onsubmit="wbSubmit(event)">
         <input name="name" placeholder="Name (optional)">
@@ -3009,6 +3009,13 @@ function wbSubmit(e){e.preventDefault();var f=e.target;var b=document.getElement
   /* FormSubmit endpoint uses the account's opaque token rather than the naked
      address: the email no longer sits in page source for harvesters. Same
      inbox, same behaviour - only the address is no longer public. */
+  /* Two calls, deliberately. The Worker stores the subscriber so delivery can be
+     automated - FormSubmit only mails the operator and keeps nothing, which is why
+     a signup used to exist solely as an unread notification. FormSubmit stays as
+     the human notification; the Worker is the system of record. Delivery is not
+     blocked on the notification succeeding. */
+  fetch('https://nerai-mcp.neraicorp.workers.dev/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({email:f.email.value,name:f.name.value||'',source:'neraicorp.com banner',_honey:''})}).catch(function(){});
   fetch('https://formsubmit.co/ajax/ff5447eba588e3a45365ec95443e2377',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(p)})
    .then(function(r){return r.json();})
    .then(function(){document.getElementById('wbForm').style.display='none';document.getElementById('wbOk').style.display='block';wbDismiss();setTimeout(wbClose,3800);})
