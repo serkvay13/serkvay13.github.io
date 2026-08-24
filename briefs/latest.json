@@ -1,36 +1,38 @@
 {
- "generated": "2026-08-20 17:06 UTC",
+ "generated": "2026-08-24 08:56 UTC",
  "items": [
   {
    "kind": "Maritime",
-   "title": "NERAI Maritime Weekly (Corrected)",
-   "week": "2026-W34",
-   "url": "/briefs/2026-W34/NERAI_Maritime_Weekly_2026-W34.pdf",
+   "title": "NERAI Maritime Weekly",
+   "week": "2026-W35",
+   "url": "/briefs/2026-W35/NERAI_Maritime_Weekly_2026-W35.pdf",
    "events": [
-    "US–Iran Ceasefire MOU Expires; Hormuz Shipping Falls Sharply",
-    "Drone Strikes Hit Two Tankers in Hormuz, Including ADNOC Vessel, This Week",
-    "Shadow-Fleet Tanker Spill Reaches Oman Coast; Satellite Estimates Now Exceed 2,000 sq km",
-    "Red Sea: Deadly Houthi Attack as Saudi Crude Voyages Go Dark on AIS",
-    "Russia Threatens to Board UK and French Vessels in Retaliation for Shadow-Fleet Seizures"
+    "Greek Chief Engineer Killed as Minoan Dignity Struck in Strait of Hormuz",
+    "Fewer Than 20 Vessels Cross Hormuz Over Weekend as Physical Flow Hits -95.4% vs Baseline",
+    "Iran Detains UAE-Owned Tanker Near Qeshm Island, Diverts It to Bandar Abbas",
+    "Two Vessels Hijacked off Yemen and Somalia; 22 Indian Seafarers Aboard",
+    "Saudi Aramco Resumes VLCC Transits Through Hormuz After Three-Week Suspension"
    ],
-   "summary": "The week of 10-17 August 2026 was dominated by compounding pressure at the Strait of Hormuz and in the Gulf of Oman: drone attacks on tankers, the expiry of the US-Iran ceasefire MOU, and a shadow-fleet spill that satellite analysis now puts above 2,000 sq km on the Omani coast - five times the officially reported extent. Hormuz transits fell sharply and the NY Fed GSCPI stands at 1.769 sigma (93rd percentile). In the Red Sea, a Houthi attack killed four crew and two rescuers, while Saudi crude loadings at Yanbu switched off their AIS transponders. That last development is a loss of visibility rather than a stoppage - loadings continue, but tracking firms' volume estimates now diverge by nearly a factor of three, so the corridor has become difficult to underwrite rather than impossible to use. Russia meanwhile escalated its rhetoric against European navies enforcing shadow-fleet seizures. The common thread is not closure but opacity: in three of these five events the authoritative number is now contested, and clients should treat single-source figures this month as provisional.",
-   "corrections": 6,
-   "bytes": 17685
+   "summary": "The week was dominated by the near-paralysis of the Strait of Hormuz — the single most consequential chokepoint in global energy — where oil transit fell to approximately 1.0 mb/d, -95.4% vs baseline (NERAI, observed 2026-08-24), fewer than 20 vessels crossed the strait over the weekend, and a Greek seafarer was killed aboard the Minoan Dignity. Simultaneously, a resurgence of piracy off Yemen and Somalia produced at least two vessel seizures and put 22 Indian seafarers at risk, stretching naval resources thin across both theatres. With no corridor deteriorating on both the forward model and physical flow simultaneously (NERAI change-since 2026-08-21), the model and the water are not pointing the same way, arguing for treating current pressure as episodic rather than structural — though the 8-week Eastern Mediterranean disruption probability at 80% (NERAI, observed 2026-08-24) warns that episodic can become systemic quickly.",
+   "corrections": 0,
+   "bytes": 15340
   },
   {
    "kind": "Sanctions",
    "title": "NERAI Sanctions Weekly",
-   "week": "2026-W34",
-   "url": "/briefs/2026-W34/NERAI_Sanctions_Weekly_2026-W34.pdf",
+   "week": "2026-W35",
+   "url": "/briefs/2026-W35/NERAI_Sanctions_Weekly_2026-W35.pdf",
    "events": [
-    "US–Iran 60-Day Deadline Expires as Washington Prepares Further Economic Pressure",
-    "Putin Threatens Retaliatory Vessel Seizures as UK Defends Earlier Shadow-Fleet Enforcement",
-    "FOLLOW-UP — ONGC Discloses Expanded OFAC Authorisation for Venezuela Operations"
+    "UAE Imposes Indefinite Trade Embargo on Iran Over Missile Attacks",
+    "US Treasury Targets Hezbollah Cash-Smuggling Network; 10 Individuals Designated",
+    "US 'Economic D-Day' Iran Sanctions Package Imminent; Markets React",
+    "US Expands Cuba Sanctions: Construction Ministry, Nickel, Steel Enterprises and Intelligence Figures Designated",
+    "FOLLOW-UP: US Extends Lukoil Bulgaria Asset-Sale Deadline to 19 September 2026"
    ],
-   "summary": "Two threads dominated. The 60-day US–Iran deadline expired on 17 August with no permanent deal — though the interim framework it belonged to had already unravelled weeks earlier — and Washington is preparing a further economic-pressure package. Separately, Putin threatened on 12 August to seize European vessels in retaliation for enforcement against Russian-linked ships, moving the shadow-fleet contest from designation lists toward physical interdiction. A third item, ONGC's disclosure of expanded OFAC authorisation for Venezuela, is carried as a follow-up rather than a new action.",
-   "corrections": 8,
-   "bytes": 9363
+   "summary": "The week ending 24 August 2026 was dominated by a convergent Iran pressure campaign: the UAE imposed an indefinite trade embargo citing ballistic-missile attacks, the US Treasury designated a Hezbollah cash-smuggling network and a Dubai crypto exchange, and Washington signalled imminent 'Economic D-Day' sanctions still pending final announcement. Cuba saw a parallel tightening, with OFAC adding the Construction Ministry, nickel and steel state enterprises, and former intelligence figures. A Lukoil-Bulgaria deadline extension and an uncovered EU designation round out a consequential week for compliance teams across energy, crypto, and financial services.",
+   "corrections": 0,
+   "bytes": 14255
   }
  ],
- "week": "2026-W34"
+ "week": "2026-W35"
 }
