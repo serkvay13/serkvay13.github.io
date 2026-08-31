@@ -1,6 +1,22 @@
 [
   {
     "category": "Risk Alert",
+    "date": "August 31, 2026",
+    "excerpt": "Niger Military Clash moved +6.5 WoW to 16.1/100, the week's most notable shift in the NERAI indices.",
+    "published": "2026-08-31",
+    "slug": "2026-08-31-nerai-risk-alert-w35",
+    "title": "NERAI Risk Alert \u2014 W35: Niger Military Clash Surge"
+  },
+  {
+    "category": "Weekly Pulse",
+    "date": "August 31, 2026",
+    "excerpt": "For Week 35 (Aug 24 \u2013 30, 2026), Niger leads the NERAI dataset on Military Clash at 16.1/100 (+6.5 WoW). The largest week-on-week mover is Niger Military Clash (+6.5).",
+    "published": "2026-08-31",
+    "slug": "2026-08-31-nerai-weekly-bulletin-w35",
+    "title": "NERAI Weekly Bulletin \u2014 Week 35 (Aug 24 \u2013 30, 2026)"
+  },
+  {
+    "category": "Risk Alert",
     "date": "August 24, 2026",
     "excerpt": "Yemen clash (25.8) and escalation (18.0) signals remain elevated with positive weekly momentum (+5.7, +3.5). Indonesia military clash (+10.6 WoW) represents single largest directional mover, triggering tactical reassessment protocol. Combined regional pressure warrants institutional attention.",
     "published": "2026-08-24",
