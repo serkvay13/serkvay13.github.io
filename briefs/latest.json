@@ -1,38 +1,26 @@
 {
- "generated": "2026-08-24 09:27 UTC",
+ "generated": "2026-08-31 14:17 UTC",
  "items": [
   {
    "kind": "Maritime",
    "title": "NERAI Maritime Weekly",
-   "week": "2026-W35",
-   "url": "/briefs/2026-W35/NERAI_Maritime_Weekly_2026-W35.pdf",
-   "events": [
-    "Greek Chief Engineer Killed as Minoan Dignity Struck in Strait of Hormuz",
-    "Fewer Than 20 Vessels Cross Hormuz Over Weekend as Physical Flow Hits -95.4% vs Baseline",
-    "Iran Detains UAE-Owned Tanker Near Qeshm Island, Diverts It to Bandar Abbas",
-    "Two Vessels Hijacked off Yemen and Somalia; 22 Indian Seafarers Aboard",
-    "Saudi Aramco Resumes VLCC Transits Through Hormuz After Three-Week Suspension"
-   ],
-   "summary": "The week was dominated by the near-paralysis of the Strait of Hormuz — the single most consequential chokepoint in global energy — where oil transit fell to approximately 1.0 mb/d, -95.4% vs baseline (NERAI, observed 2026-08-24), fewer than 20 vessels crossed the strait over the weekend, and a Greek seafarer was killed aboard the Minoan Dignity. Simultaneously, a resurgence of piracy off Yemen and Somalia produced at least two vessel seizures and put 22 Indian seafarers at risk, stretching naval resources thin across both theatres. With no corridor deteriorating on both the forward model and physical flow simultaneously (NERAI change-since 2026-08-21), the model and the water are not pointing the same way, arguing for treating current pressure as episodic rather than structural — though the 8-week Eastern Mediterranean disruption probability at 80% (NERAI, observed 2026-08-24) warns that episodic can become systemic quickly.",
+   "week": "2026-W36",
+   "url": "/briefs/2026-W36/NERAI_Maritime_Weekly_2026-W36.pdf",
+   "events": [],
+   "summary": "",
    "corrections": 0,
-   "bytes": 15340
+   "bytes": 2289
   },
   {
    "kind": "Sanctions",
    "title": "NERAI Sanctions Weekly",
-   "week": "2026-W35",
-   "url": "/briefs/2026-W35/NERAI_Sanctions_Weekly_2026-W35.pdf",
-   "events": [
-    "UAE Imposes Indefinite Trade Embargo on Iran Over Missile Attacks",
-    "US Treasury Targets Hezbollah Cash-Smuggling Network; 10 Individuals Designated",
-    "US 'Economic D-Day' Iran Sanctions Package Imminent; Markets React",
-    "US Expands Cuba Sanctions: Construction Ministry, Nickel, Steel Enterprises and Intelligence Figures Designated",
-    "OFAC Extends Lukoil International Divestment Negotiation Window to 19 September 2026"
-   ],
-   "summary": "The week ending 24 August 2026 was dominated by a convergent Iran pressure campaign: the UAE imposed an indefinite trade embargo citing ballistic-missile attacks, the US Treasury designated a Hezbollah cash-smuggling network, and Washington signalled imminent 'Economic D-Day' sanctions still pending final announcement. Cuba saw a parallel tightening, with OFAC adding the Construction Ministry, nickel and steel state enterprises, and former intelligence figures. An extension of the OFAC negotiation window for the Lukoil International divestment rounds out a consequential week for compliance teams across energy and financial services.",
-   "corrections": 5,
-   "bytes": 15394
+   "week": "2026-W36",
+   "url": "/briefs/2026-W36/NERAI_Sanctions_Weekly_2026-W36.pdf",
+   "events": [],
+   "summary": "",
+   "corrections": 0,
+   "bytes": 2286
   }
  ],
- "week": "2026-W35"
+ "week": "2026-W36"
 }
