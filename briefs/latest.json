@@ -1,26 +1,37 @@
 {
- "generated": "2026-08-31 14:17 UTC",
+ "generated": "2026-09-07 12:56 UTC",
  "items": [
   {
    "kind": "Maritime",
    "title": "NERAI Maritime Weekly",
-   "week": "2026-W36",
-   "url": "/briefs/2026-W36/NERAI_Maritime_Weekly_2026-W36.pdf",
-   "events": [],
-   "summary": "",
+   "week": "2026-W37",
+   "url": "/briefs/2026-W37/NERAI_Maritime_Weekly_2026-W37.pdf",
+   "events": [
+    "US–Iran tanker war escalates: Sidr struck, 2 Filipino sailors killed, US destroys 3 Iranian tankers",
+    "Houthi offensive toward Bab al-Mandeb kills 129, pushes Bab el-Mandeb flow to SEVERE",
+    "Taiwan Strait 4-week disruption probability surges 10 points to 54% — highest in corpus",
+    "Japanese tanker giant warns Hormuz disruptions could drag into 2027 as commercial avoidance deepens"
+   ],
+   "summary": "The week was dominated by two interlocking crises that are now compounding each other: the US–Iran conflict has driven Strait of Hormuz oil transit to a SEVERE -92.9% versus baseline, while a simultaneous Houthi offensive toward Bab al-Mandeb has pushed that chokepoint into SEVERE territory as well (-33.3% vs baseline). Four corridors are deteriorating on the model and in the water simultaneously, creating a vessel and port-capacity squeeze that transforms rerouting from a cost into a structural constraint. The Taiwan Strait forward disruption probability rose 10.2 points to 54% over four weeks, adding a third, independent axis of risk that markets have not yet fully priced.",
    "corrections": 0,
-   "bytes": 2289
+   "bytes": 12661
   },
   {
    "kind": "Sanctions",
    "title": "NERAI Sanctions Weekly",
-   "week": "2026-W36",
-   "url": "/briefs/2026-W36/NERAI_Sanctions_Weekly_2026-W36.pdf",
-   "events": [],
-   "summary": "",
+   "week": "2026-W37",
+   "url": "/briefs/2026-W37/NERAI_Sanctions_Weekly_2026-W37.pdf",
+   "events": [
+    "US Treasury Designates Turkish Bank and Two Subsidiaries Over Iran Links",
+    "Iran Announces Imminent New Gulf Restricted Zone; Anti-Destroyer Missile Fired at US Vessel",
+    "UK Set to Announce Trade Ban on Israeli Settlement Goods on Tuesday",
+    "EU Forces Board Sixth Suspected Russian Shadow-Fleet Tanker",
+    "US Calls for All-Out UN Arms Embargo on Sudan as External Networks Fuel War"
+   ],
+   "summary": "The week's dominant sanctions theme was US escalation against Iran's financial infrastructure, centred on the designation of a Turkish bank and two subsidiaries for allegedly processing Iranian funds through the Türkiye corridor. Separately, Iran announced plans for a new Gulf restricted zone and deployed an anti-destroyer missile against a US vessel, sharply lifting oil-price risk. The UK moved toward a trade ban on Israeli settlement goods, while diplomatic pressure mounted—without result—for a UN arms embargo on Sudan.",
    "corrections": 0,
-   "bytes": 2286
+   "bytes": 13172
   }
  ],
- "week": "2026-W36"
+ "week": "2026-W37"
 }
