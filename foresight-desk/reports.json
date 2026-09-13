@@ -1,6 +1,33 @@
 {
-  "updated": "2026-09-09",
+  "updated": "2026-09-13",
   "reports": [
+    {
+      "title": "Yemen After the Red Sea Breakthrough: The Makkah Pact, Iran's Dual-Chokepoint Position and Türkiye's Escalation Risk",
+      "date": "September 2026",
+      "type": "Maritime Corridor & Political-Military Risk Assessment",
+      "om": "Two chokepoints, two different mechanisms: the Strait of Hormuz has been closed since early March 2026 and reads −92.2% against baseline, while Bab el-Mandeb stays open at −21.0% and is now coercible from the Yemeni coast. The week's decisive event was not in Yemen at all — drones launched from Maysan province in Iraq shut Saudi Arabia's 4–5 million b/d East–West pipeline on 11–12 September, closing the kingdom's only Hormuz bypass and leaving it exposed on both export geometries at once.",
+      "summary": "Mocha, Dhubab and Perim/Mayyun fell in three days, and most coverage read it as the Houthis taking control of Bab el-Mandeb. This briefing does not. It separates what is verified from what the model says and what the analyst infers — every claim carries a label ([VERIFIED] / [NERAI] / [INFERENCE]) — and corrects three readings that have travelled further than the evidence: that Hormuz is a signalling lever rather than a closed and contested waterway; that the Petroline shutdown was a Houthi operation; and that the coastal collapse was an opening move rather than the wreckage of the Yemeni government's own 8 September counter-offensive toward Sanaa. It then prices the question that follows. The Makkah Joint Defence Agreement took effect on 31 August with a secretariat in Riyadh and a Pakistani secretary-general, and it makes Turkish support materially more plausible than it was in July — but at the support layer, not as a ground combatant. The real risk is sequencing: Turkish ISR, air-defence or naval assets entering the theatre under the pact, then Washington intensifying its Iran campaign after the 3 November midterms. Corrected edition v2: the factual layer was re-verified line by line against primary sources.",
+      "findings": [
+        "<b>Two chokepoints, not one:</b> Hormuz at −92.2% is a closure Iran has been defending since early March against a 22-nation coalition; Bab el-Mandeb at −21.0% is an open waterway now coercible at arm's length through an aligned Yemeni actor. Conflating the two is this file's most common analytical error.",
+        "<b>The decisive strike came from Iraq, not Yemen:</b> drones launched from Maysan province shut the 1,200 km Abqaiq–Yanbu pipeline on 11–12 September — 4–5 million barrels a day, roughly 4–5% of global supply — closing Saudi Arabia's only Hormuz bypass and leaving the kingdom exposed on both export geometries at once.",
+        "<b>The coastal collapse was a counter-move:</b> Yemen's government launched an offensive on 8 September vowing to retake Sanaa; it unravelled despite a heavy Saudi air campaign, and Mocha, Dhubab and Perim/Mayyun followed. Eight nominally allied armies under a split command cannot convert air superiority into held ground.",
+        "<b>The Makkah Pact is institutionalised, not activated:</b> in effect since the 31 August committee meeting, with a permanent secretariat in Riyadh and a Pakistani first secretary-general — while Islamabad confirms no military response has yet been discussed. Türkiye's likely role is ISR, air defence and maritime escort (65% at three months, 80% at twelve), not a ground campaign.",
+        "<b>The risk is sequencing, not intent:</b> a direct Türkiye–Iran kinetic incident runs at ~8% over twelve months with no Turkish deployment and ~45% if Turkish assets are already in theatre when Washington intensifies against Iran after the 3 November midterms. Physical exposure is what changes the risk regime."
+      ],
+      "file": "/NERAI_Yemen_RedSea_Briefing_September2026.pdf",
+      "full": "/NERAI_Yemen_RedSea_Hormuz_Report_September2026_Full.pdf",
+      "tags": [
+        "Yemen",
+        "Red Sea",
+        "Bab el-Mandeb",
+        "Strait of Hormuz",
+        "Makkah Pact",
+        "Türkiye",
+        "Saudi Arabia",
+        "Iran",
+        "Maritime Corridors"
+      ]
+    },
     {
       "title": "Europe's Defence Architecture 2024–2026: Rearmament, Partnerships, and the Germany–Russia Confrontation",
       "date": "September 2026",
