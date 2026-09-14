@@ -1,26 +1,20 @@
 {
- "updated": "2026-09-14 11:47 UTC",
+ "updated": "2026-09-14 13:16 UTC",
  "week": "2026-W38",
  "maritime": {
   "title": "NERAI Maritime Weekly",
   "events": [
-   "Saudi East-West Pipeline struck and shut, last Hormuz bypass eliminated",
-   "Hormuz forward risk falls 6.8 pts to 44% even as physical flow hits -96.4% — a critical divergence",
-   "Houthis seize Mocha port and Perim Island, placing Bab el-Mandeb under direct control",
-   "Iranian commercial vessel struck near Qeshm/Hormuz, 1 killed — fresh attack in active conflict zone",
-   "Eastern Mediterranean 8-week risk hits 82% — highest forward probability in NERAI corpus"
+   "FOLLOW-UP - Hormuz Blockade: 4-Week Risk Falls 6.8 pts Even as Oil Flow Stays at -96.4% — Divergence Persists",
+   "Oman-Mediated Hormuz Talks: Technical Framework Agreed, No Signed Deal Yet",
+   "FOLLOW-UP - Saudi East-West Pipeline Struck Again — Last Hormuz Bypass Remains Disabled",
+   "FOLLOW-UP - Houthis Consolidate Bab el-Mandeb Control: Mocha Port, Perim Island Held; IRGC Officers Deployed",
+   "Iranian Commercial Vessel Struck Near Qeshm; Iran Attributes Attack to U.S., 1 Killed, 3 Injured"
   ],
-  "summary": "The Gulf crisis deepened across multiple fronts this week: Hormuz physical oil flow collapsed to 0.7 mb/d (-96.4% vs baseline, SEVERE), the Saudi East-West Pipeline was struck and shut down — eliminating the primary Hormuz bypass — while Houthi forces seized Perim Island and the port of Mocha, tightening their grip on Bab el-Mandeb. Against this, the NERAI 4-week disruption probability for Hormuz fell 6.8 points to 44%, a divergence from the physical collapse that is itself the key analytic signal of the week. Diplomatic back-channels flickered: an Oman-mediated Hormuz routing agreement was reported but an Iranian official cautioned no signed deal was yet expected from Monday's meeting."
+  "summary": "The Gulf crisis deepened materially this week as Hormuz physical oil flow remained at -96.4% versus baseline while NERAI's 4-week disruption probability fell 6.8 points to 44% — a sustained divergence between the forward model and the water that warrants close monitoring. Simultaneously, Houthi consolidation of Bab el-Mandeb accelerated, closing the Cape-of-Good-Hope reroute valve from the Red Sea side, and the Saudi East-West pipeline sustained a second alleged strike, eliminating the last credible overland Hormuz bypass. Diplomatic activity in Muscat produced a technical framework on Hormuz transit lanes but no signed agreement, leaving the strategic picture unresolved heading into next week."
  },
  "sanctions": {
   "title": "NERAI Sanctions Weekly",
-  "events": [
-   "US Sanctions All 27 Remaining Active Iranian Airlines in 36-Target Aviation Sweep",
-   "US Sanctions Networks Aiding Iran Proxies Across Middle East in Expanded Campaign",
-   "UN Security Council Rolls Over Sudan Darfur Embargo One Month; Nationwide Ban Unresolved",
-   "OFAC Sanctions Chinese Cybercrime Platform Xinbi Guarantee; $24B Alleged Fraud Ring Dismantled",
-   "Switzerland Bans Purchase and Import of Sudanese Gold, Squeezing War Economy"
-  ],
-  "summary": "The week was dominated by a sweeping US aviation sanctions package against Iran — the largest single-sector designation in recent memory — complemented by a parallel action targeting Iran's proxy-financing networks across the Middle East and a cybercrime/sanctions-evasion sweep against a Chinese-run platform. The UN Security Council took a minimalist path on Sudan, rolling over the Darfur-only embargo for one month while US pressure for a nationwide ban remains unresolved. Switzerland's new Sudanese gold import ban added a meaningful multilateral flanking measure to an otherwise stalled Sudan enforcement picture."
+  "events": [],
+  "summary": ""
  }
 }
