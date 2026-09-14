@@ -1,26 +1,38 @@
 {
- "generated": "2026-09-09 09:00 UTC",
+ "generated": "2026-09-14 11:47 UTC",
  "items": [
   {
    "kind": "Maritime",
    "title": "NERAI Maritime Weekly",
-   "week": "2026-W37",
-   "url": "/briefs/2026-W37/NERAI_Maritime_Weekly_2026-W37.pdf",
-   "events": [],
-   "summary": "",
+   "week": "2026-W38",
+   "url": "/briefs/2026-W38/NERAI_Maritime_Weekly_2026-W38.pdf",
+   "events": [
+    "Saudi East-West Pipeline struck and shut, last Hormuz bypass eliminated",
+    "Hormuz forward risk falls 6.8 pts to 44% even as physical flow hits -96.4% — a critical divergence",
+    "Houthis seize Mocha port and Perim Island, placing Bab el-Mandeb under direct control",
+    "Iranian commercial vessel struck near Qeshm/Hormuz, 1 killed — fresh attack in active conflict zone",
+    "Eastern Mediterranean 8-week risk hits 82% — highest forward probability in NERAI corpus"
+   ],
+   "summary": "The Gulf crisis deepened across multiple fronts this week: Hormuz physical oil flow collapsed to 0.7 mb/d (-96.4% vs baseline, SEVERE), the Saudi East-West Pipeline was struck and shut down — eliminating the primary Hormuz bypass — while Houthi forces seized Perim Island and the port of Mocha, tightening their grip on Bab el-Mandeb. Against this, the NERAI 4-week disruption probability for Hormuz fell 6.8 points to 44%, a divergence from the physical collapse that is itself the key analytic signal of the week. Diplomatic back-channels flickered: an Oman-mediated Hormuz routing agreement was reported but an Iranian official cautioned no signed deal was yet expected from Monday's meeting.",
    "corrections": 0,
-   "bytes": 2289
+   "bytes": 14941
   },
   {
    "kind": "Sanctions",
    "title": "NERAI Sanctions Weekly",
-   "week": "2026-W37",
-   "url": "/briefs/2026-W37/NERAI_Sanctions_Weekly_2026-W37.pdf",
-   "events": [],
-   "summary": "",
+   "week": "2026-W38",
+   "url": "/briefs/2026-W38/NERAI_Sanctions_Weekly_2026-W38.pdf",
+   "events": [
+    "US Sanctions All 27 Remaining Active Iranian Airlines in 36-Target Aviation Sweep",
+    "US Sanctions Networks Aiding Iran Proxies Across Middle East in Expanded Campaign",
+    "UN Security Council Rolls Over Sudan Darfur Embargo One Month; Nationwide Ban Unresolved",
+    "OFAC Sanctions Chinese Cybercrime Platform Xinbi Guarantee; $24B Alleged Fraud Ring Dismantled",
+    "Switzerland Bans Purchase and Import of Sudanese Gold, Squeezing War Economy"
+   ],
+   "summary": "The week was dominated by a sweeping US aviation sanctions package against Iran — the largest single-sector designation in recent memory — complemented by a parallel action targeting Iran's proxy-financing networks across the Middle East and a cybercrime/sanctions-evasion sweep against a Chinese-run platform. The UN Security Council took a minimalist path on Sudan, rolling over the Darfur-only embargo for one month while US pressure for a nationwide ban remains unresolved. Switzerland's new Sudanese gold import ban added a meaningful multilateral flanking measure to an otherwise stalled Sudan enforcement picture.",
    "corrections": 0,
-   "bytes": 2286
+   "bytes": 13998
   }
  ],
- "week": "2026-W37"
+ "week": "2026-W38"
 }
