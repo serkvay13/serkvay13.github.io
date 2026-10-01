@@ -1,6 +1,33 @@
 {
-  "updated": "2026-09-13",
+  "updated": "2026-10-01",
   "reports": [
+    {
+      "title": "From Hormuz to East Asia: China's Exposure, Regional Crisis Risks, and Forecast-Based Scenarios",
+      "date": "October 2026",
+      "type": "Geopolitical & Maritime Risk Assessment",
+      "om": "The Strait of Hormuz has been closed or severely restricted since 28 February 2026 and reads −92.7% against baseline, yet China has absorbed the shock through demand compression, inventory draws and Russian barrels rather than alternative routes. The transmission to Beijing is macro-financial and diplomatic, not an outage — and the neighbour with which China is most likely to enter a geopolitical crisis over the coming year is the Philippines, not Taiwan.",
+      "summary": "Hormuz is an amplifier, not a driver. Before the crisis 45–50% of China's crude imports and about 30% of its LNG transited the strait; since March Beijing has run a managed shortage — 1.39 bn barrels of reserves drawn down, refinery runs trimmed, distillate exports lifted to 963 kb/d, Russian seaborne crude up to 1.68 mb/d. Seaborne crude imports were 7.14 mb/d in August, 37.4% below the pre-war baseline, with Iranian crude down to a provisional 534 kb/d. What Hormuz changed is US naval attention and Beijing's economic bandwidth. The highest-priority crisis dyad is China–Philippines: both parties' military-clash series sit at their 18-month maxima simultaneously (Philippines 100th percentile, China 99th), the CN–PH flashpoint dyad is rising while the US–CN dyad falls, and the 18 September ramming of the Magat Salamat 54 nm off Palawan matches the signal. The most plausible form is a limited coast-guard or maritime-militia incident with casualties, followed by Philippine invocation of alliance consultations. The Taiwan Strait is the highest-consequence theatre but the lowest-signal one; the Korean Peninsula is the fastest-rising military signal, with China as a constraint rather than a party.",
+      "findings": [
+        "<b>Hormuz is an amplifier, not a driver:</b> the corridor layer reads −92.7% against baseline at the cutoff and PortWatch showed five and then zero transits on 27–28 September, but China absorbed the shock through demand compression, inventory draws and Russian barrels. The transmission is macro-financial and diplomatic, not a physical outage.",
+        "<b>The Philippines ranks first — and the ranking is not a prediction:</b> both parties' military-clash series sit at their 18-month maxima at the same time (Philippines 100th percentile, China 99th), on a flashpoint dyad score rising from 10.8 to 14.9 and on verified incidents on 23 July and 18 September 2026. The 4-week shock probability of 0.341 against a 0.324 base rate means the model sees no unusual jump risk on top of an already-elevated level; the level itself is the warning.",
+        "<b>Energy stress has not weakened China's hand:</b> 1.39 bn barrels of reserves covering 120 days of net imports, refinery runs trimmed, distillate exports at 963 kb/d and Russian seaborne crude up to 1.68 mb/d plus pipeline. The Iran-approved corridor gives Beijing a privileged but politically costly channel, and the Forecast Desk prices critical-mineral export controls at 80% to expand by September 2027.",
+        "<b>The real risk is incident tempo, not a decision in Beijing:</b> the dangerous sequence — monsoon-season resupply to Second Thomas Shoal or Scarborough, water cannon or ramming against a crewed deck, a Philippine casualty, Mutual Defense Treaty consultations, a US escort request — has a verified 2025–26 precedent at every step except the casualty.",
+        "<b>Taiwan is the highest-consequence theatre but the lowest-signal one:</b> 125 ADIZ incursions in August, under half of 2024–25, with aerial pressure declining. South Korea's military-crisis series jumped from the 1st to the 97th percentile after the 21 September DMZ mine injury and 22 September rocket test — but China is an external stabiliser there, not a party."
+      ],
+      "file": "/NERAI_Hormuz_EastAsia_Briefing_October2026.pdf",
+      "full": "/NERAI_Hormuz_EastAsia_Report_October2026_Full.pdf",
+      "tags": [
+        "China",
+        "Strait of Hormuz",
+        "Philippines",
+        "South China Sea",
+        "Taiwan",
+        "Korean Peninsula",
+        "Energy Security",
+        "Maritime Corridors",
+        "Forecast Desk"
+      ]
+    },
     {
       "title": "Yemen After the Red Sea Breakthrough: The Makkah Pact, Iran's Dual-Chokepoint Position and Türkiye's Escalation Risk",
       "date": "September 2026",
