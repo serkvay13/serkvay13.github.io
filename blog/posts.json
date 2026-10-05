@@ -1,6 +1,22 @@
 [
   {
     "category": "Risk Alert",
+    "date": "October 5, 2026",
+    "excerpt": "Somalia Military Clash moved +12.7 WoW to 16.1/100, the week's most notable shift in the NERAI indices.",
+    "published": "2026-10-05",
+    "slug": "2026-10-05-nerai-risk-alert-w40",
+    "title": "NERAI Risk Alert \u2014 W40: Somalia Military Clash Surge"
+  },
+  {
+    "category": "Weekly Pulse",
+    "date": "October 5, 2026",
+    "excerpt": "For Week 40 (Sep 28 \u2013 Oct 4, 2026), Yemen leads the NERAI dataset on Military Clash at 18.7/100 (+4.4 WoW). The largest week-on-week mover is Somalia Military Clash (+12.7).",
+    "published": "2026-10-05",
+    "slug": "2026-10-05-nerai-weekly-bulletin-w40",
+    "title": "NERAI Weekly Bulletin \u2014 Week 40 (Sep 28 \u2013 Oct 4, 2026)"
+  },
+  {
+    "category": "Risk Alert",
     "date": "September 14, 2026",
     "excerpt": "Yemen military clash (21.8/100) holds top rank; Saudi Arabia WoW surge (+10.1) signals regional escalation. Puerto Rico coup signal (10.2/100, +10.2 WoW) enters tracking. Combined signals indicate multi-zone instability.",
     "published": "2026-09-14",
