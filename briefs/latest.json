@@ -1,32 +1,26 @@
 {
- "generated": "2026-09-14 13:16 UTC",
+ "generated": "2026-10-05 15:04 UTC",
  "items": [
   {
    "kind": "Maritime",
    "title": "NERAI Maritime Weekly",
-   "week": "2026-W38",
-   "url": "/briefs/2026-W38/NERAI_Maritime_Weekly_2026-W38.pdf",
-   "events": [
-    "FOLLOW-UP - Hormuz Blockade: 4-Week Risk Falls 6.8 pts Even as Oil Flow Stays at -96.4% — Divergence Persists",
-    "Oman-Mediated Hormuz Talks: Technical Framework Agreed, No Signed Deal Yet",
-    "FOLLOW-UP - Saudi East-West Pipeline Struck Again — Last Hormuz Bypass Remains Disabled",
-    "FOLLOW-UP - Houthis Consolidate Bab el-Mandeb Control: Mocha Port, Perim Island Held; IRGC Officers Deployed",
-    "Iranian Commercial Vessel Struck Near Qeshm; Iran Attributes Attack to U.S., 1 Killed, 3 Injured"
-   ],
-   "summary": "The Gulf crisis deepened materially this week as Hormuz physical oil flow remained at -96.4% versus baseline while NERAI's 4-week disruption probability fell 6.8 points to 44% — a sustained divergence between the forward model and the water that warrants close monitoring. Simultaneously, Houthi consolidation of Bab el-Mandeb accelerated, closing the Cape-of-Good-Hope reroute valve from the Red Sea side, and the Saudi East-West pipeline sustained a second alleged strike, eliminating the last credible overland Hormuz bypass. Diplomatic activity in Muscat produced a technical framework on Hormuz transit lanes but no signed agreement, leaving the strategic picture unresolved heading into next week.",
+   "week": "2026-W41",
+   "url": "/briefs/2026-W41/NERAI_Maritime_Weekly_2026-W41.pdf",
+   "events": [],
+   "summary": "",
    "corrections": 0,
-   "bytes": 15040
+   "bytes": 2288
   },
   {
    "kind": "Sanctions",
    "title": "NERAI Sanctions Weekly",
-   "week": "2026-W38",
-   "url": "/briefs/2026-W38/NERAI_Sanctions_Weekly_2026-W38.pdf",
+   "week": "2026-W41",
+   "url": "/briefs/2026-W41/NERAI_Sanctions_Weekly_2026-W41.pdf",
    "events": [],
    "summary": "",
    "corrections": 0,
-   "bytes": 2286
+   "bytes": 2287
   }
  ],
- "week": "2026-W38"
+ "week": "2026-W41"
 }
