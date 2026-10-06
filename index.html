@@ -1107,6 +1107,41 @@
       color: var(--silver);
       line-height: 1.65;
     }
+        .partner-video {
+      display: grid;
+      grid-template-columns: minmax(0, 380px) minmax(0, 1fr);
+      gap: 56px;
+      align-items: center;
+      margin: 8px auto 72px;
+      max-width: 1000px;
+    }
+    .partner-video-frame {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      background: #070f1c;
+      box-shadow: 0 30px 80px rgba(13,31,60,0.28), 0 0 0 1px rgba(0,119,168,0.15);
+    }
+    .partner-video-frame video { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .partner-video-copy .section-tag { margin-bottom: 14px; }
+    .partner-video-copy h3 {
+      font-family: 'DM Serif Display', serif; font-weight: 400;
+      font-size: 34px; line-height: 1.15; color: var(--navy); margin: 0 0 18px;
+    }
+    .partner-video-copy p { font-size: 16px; line-height: 1.7; color: var(--silver); margin: 0 0 22px; }
+    .partner-video-copy ul { list-style: none; padding: 0; margin: 0; }
+    .partner-video-copy li {
+      position: relative; padding-left: 28px; margin-bottom: 12px;
+      font-size: 15.5px; color: var(--navy); font-weight: 500;
+    }
+    .partner-video-copy li::before {
+      content: ''; position: absolute; left: 0; top: 7px; width: 10px; height: 10px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal), var(--accent));
+    }
+    @media (max-width: 860px) {
+      .partner-video { grid-template-columns: 1fr; gap: 32px; max-width: 420px; }
+    }
 
     /* ── FOOTER ──────────────────────────────────────────── */
     footer {
@@ -2272,7 +2307,28 @@
         research firepower, and a generous commission &mdash; you bring the relationships.
       </p>
     </div>
-
+    <div class="partner-video">
+      <div class="partner-video-frame">
+        <video src="assets/video/nerai-partner-program.mp4" poster="assets/video/nerai-partner-program-poster.jpg"
+               autoplay muted loop playsinline preload="metadata"
+               aria-label="NERAI Partner Program overview video"></video>
+      </div>
+      <div class="partner-video-copy">
+        <div class="section-tag">The program in 54 seconds</div>
+        <h3>Bring NERAI to the clients you already serve</h3>
+        <p>
+          Your clients get proprietary intelligence they will not find anywhere else: calibrated forecasts,
+          live chokepoint and corridor reads, war-risk outlooks and daily sanctions changes. You keep the
+          relationship; we provide the product and the research behind it.
+        </p>
+        <ul>
+          <li>Briefings co-branded with your firm</li>
+          <li>Corridor and port reads on your clients' own lanes</li>
+          <li>Early-warning alerts when signals move</li>
+          <li>A white-label client environment</li>
+        </ul>
+      </div>
+    </div>
     <div class="partner-grid">
 
       <!-- AFFILIATES -->
