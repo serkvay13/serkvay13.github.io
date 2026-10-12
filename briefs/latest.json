@@ -1,26 +1,40 @@
 {
- "generated": "2026-10-05 15:04 UTC",
+ "generated": "2026-10-12 15:59 UTC",
  "items": [
   {
    "kind": "Maritime",
    "title": "NERAI Maritime Weekly",
-   "week": "2026-W41",
-   "url": "/briefs/2026-W41/NERAI_Maritime_Weekly_2026-W41.pdf",
-   "events": [],
-   "summary": "",
+   "week": "2026-W42",
+   "engine": "claude",
+   "url": "/briefs/2026-W42/NERAI_Maritime_Weekly_2026-W42.pdf",
+   "events": [
+    "Houthis Strike Saudi Airports and Aramco; Saudi-Backed Forces Counterattack",
+    "Vessel Attacks Drive Hormuz Oil Exports Sharply Lower; Tanker Hit at Sharjah",
+    "UK Adds New Russia Designations Under the 2019 Sanctions Regulations",
+    "South Korea Threatens Legal Action Over Fuel Shipments to Russia",
+    "US Labels Chinese Actions Off Taiwan 'Deeply Destabilising'; Diplomat Warns Markets Under-Pricing Conflict"
+   ],
+   "summary": "The week's dominant theme was Gulf and Red Sea energy-corridor stress: Houthi strikes on Saudi civilian and energy infrastructure, a product-tanker attack at Sharjah, and reporting that Hormuz oil exports have fallen sharply under sustained vessel attacks drove Brent crude up 10.1% in seven days to $125.44/bbl. Compliance calendars were also busy, with the UK adding Russia designations under the 2019 Regulations and South Korea threatening legal action against domestic firms that may have shipped fuel to Russia. Taiwan Strait tensions were verbally escalated by Washington but NERAI's model reads the corridor as scenario-monitored rather than actively disrupted.",
    "corrections": 0,
-   "bytes": 2288
+   "bytes": 14021
   },
   {
    "kind": "Sanctions",
    "title": "NERAI Sanctions Weekly",
-   "week": "2026-W41",
-   "url": "/briefs/2026-W41/NERAI_Sanctions_Weekly_2026-W41.pdf",
-   "events": [],
-   "summary": "",
+   "week": "2026-W42",
+   "engine": "claude",
+   "url": "/briefs/2026-W42/NERAI_Sanctions_Weekly_2026-W42.pdf",
+   "events": [
+    "Trump-Putin Diesel Deal: US Lifts Russia Energy Sanctions",
+    "US Imposes Sanctions on ICC After Nobel Prize Awarded to Ex-Judge Pillay",
+    "South Korea Threatens Legal Action Over Russian Fuel Shipments",
+    "UK Issues New Designation Under Russia Sanctions Regulations",
+    "US Lifts Sanctions on Daughter of Myanmar Military-Linked Businessman"
+   ],
+   "summary": "The week was dominated by a surprise Trump-Putin diesel deal that raises acute questions about the durability of Russia energy sanctions, compounded by South Korea's parallel enforcement signal and a dense wave of new EU and UK designations. US sanctions on the ICC added a second major geopolitical rupture, signalling continued unilateral pressure on multilateral institutions. Compliance officers face simultaneous register additions and a politically-driven erosion of enforcement consensus on Russia.",
    "corrections": 0,
-   "bytes": 2287
+   "bytes": 12999
   }
  ],
- "week": "2026-W41"
+ "week": "2026-W42"
 }
