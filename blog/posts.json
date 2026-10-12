@@ -1,6 +1,22 @@
 [
   {
     "category": "Risk Alert",
+    "date": "October 12, 2026",
+    "excerpt": "Yemen Military Clash sustained at 30.7/100 (+12.0 WoW), highest NERAI signal; Red Sea corridor (DP World, China Merchants terminals) transit below baseline. Simultaneous torture reporting spike across six jurisdictions (Greece z +27.3, US z +50.6, Spain z +35.1) with false-discovery control (q<0.03) indicates either investigative disclosure or operational escalation\u2014institutional precedent breach.",
+    "published": "2026-10-12",
+    "slug": "2026-10-12-nerai-risk-alert-w41",
+    "title": "NERAI Risk Alert \u2014 W41: Yemen Military Clash Sustained; Torture Reporting Surge"
+  },
+  {
+    "category": "Weekly Pulse",
+    "date": "October 12, 2026",
+    "excerpt": "Week 41 shows sustained elevation in Yemen military activity (30.7/100 clash, 20.3/100 escalation), outpacing Ukraine and Saudi Arabia signals. Simultaneously, a statistically controlled scan reveals six unprecedented spikes in torture and terrorism reporting across Greece, Spain, United States, Iraq, Canada, and Europe\u2014most striking: Greece terrorism at z +27.3 (q=7.86e-05), a deviation 27 standard deviations above its own baseline. Red Sea chokepoint risk remains elevated; transit volumes lag pre-2024 baseline despite planned alternatives (Saudi Landbridge, Ethiopia\u2013Djibouti Railway). Hormuz",
+    "published": "2026-10-12",
+    "slug": "2026-10-12-nerai-weekly-bulletin-w41",
+    "title": "NERAI Weekly Bulletin \u2014 Week 41 (Oct 5 \u2013 11, 2026)"
+  },
+  {
+    "category": "Risk Alert",
     "date": "October 5, 2026",
     "excerpt": "Somalia Military Clash moved +12.7 WoW to 16.1/100, the week's most notable shift in the NERAI indices.",
     "published": "2026-10-05",
