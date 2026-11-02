@@ -1,40 +1,23 @@
 {
- "generated": "2026-10-12 15:59 UTC",
+ "generated": "2026-11-02 16:29 UTC",
  "items": [
   {
    "kind": "Maritime",
    "title": "NERAI Maritime Weekly",
-   "week": "2026-W42",
+   "week": "2026-W45",
    "engine": "claude",
-   "url": "/briefs/2026-W42/NERAI_Maritime_Weekly_2026-W42.pdf",
+   "url": "/briefs/2026-W45/NERAI_Maritime_Weekly_2026-W45.pdf",
    "events": [
-    "Houthis Strike Saudi Airports and Aramco; Saudi-Backed Forces Counterattack",
-    "Vessel Attacks Drive Hormuz Oil Exports Sharply Lower; Tanker Hit at Sharjah",
-    "UK Adds New Russia Designations Under the 2019 Sanctions Regulations",
-    "South Korea Threatens Legal Action Over Fuel Shipments to Russia",
-    "US Labels Chinese Actions Off Taiwan 'Deeply Destabilising'; Diplomat Warns Markets Under-Pricing Conflict"
+    "Iran Brokers Saudi-Houthi Ceasefire Talks; $1bn Deal Reported",
+    "Saudi Coalition Intercepts Three Houthi Missiles and Four Drones",
+    "Singapore Minister Warns Hormuz Crisis Is Structural, Not Episodic",
+    "UK Issues New Designation Under Sudan Sanctions Regulations 2020",
+    "Indonesia: Tanker Used Ship-to-Ship Transfer to Smuggle Ketamine"
    ],
-   "summary": "The week's dominant theme was Gulf and Red Sea energy-corridor stress: Houthi strikes on Saudi civilian and energy infrastructure, a product-tanker attack at Sharjah, and reporting that Hormuz oil exports have fallen sharply under sustained vessel attacks drove Brent crude up 10.1% in seven days to $125.44/bbl. Compliance calendars were also busy, with the UK adding Russia designations under the 2019 Regulations and South Korea threatening legal action against domestic firms that may have shipped fuel to Russia. Taiwan Strait tensions were verbally escalated by Washington but NERAI's model reads the corridor as scenario-monitored rather than actively disrupted.",
+   "summary": "The week was dominated by two converging threads at the Strait of Hormuz and the Red Sea: kinetic Houthi activity continued with further missile and drone intercepts, while Iran-brokered diplomacy — including a reported Saudi $1 bn ceasefire offer to the Houthis — signalled the first substantive de-escalation probe of the crisis. Singapore's Energy Minister publicly framed the Hormuz disruption as a structural, recurring risk rather than a passing episode, a posture that tracks NERAI's elevated 4-week Hormuz disruption probability of 50%. On the compliance front, the UK added a new designation under its Sudan sanctions regulations.",
    "corrections": 0,
-   "bytes": 14021
-  },
-  {
-   "kind": "Sanctions",
-   "title": "NERAI Sanctions Weekly",
-   "week": "2026-W42",
-   "engine": "claude",
-   "url": "/briefs/2026-W42/NERAI_Sanctions_Weekly_2026-W42.pdf",
-   "events": [
-    "Trump-Putin Diesel Deal: US Lifts Russia Energy Sanctions",
-    "US Imposes Sanctions on ICC After Nobel Prize Awarded to Ex-Judge Pillay",
-    "South Korea Threatens Legal Action Over Russian Fuel Shipments",
-    "UK Issues New Designation Under Russia Sanctions Regulations",
-    "US Lifts Sanctions on Daughter of Myanmar Military-Linked Businessman"
-   ],
-   "summary": "The week was dominated by a surprise Trump-Putin diesel deal that raises acute questions about the durability of Russia energy sanctions, compounded by South Korea's parallel enforcement signal and a dense wave of new EU and UK designations. US sanctions on the ICC added a second major geopolitical rupture, signalling continued unilateral pressure on multilateral institutions. Compliance officers face simultaneous register additions and a politically-driven erosion of enforcement consensus on Russia.",
-   "corrections": 0,
-   "bytes": 12999
+   "bytes": 13663
   }
  ],
- "week": "2026-W42"
+ "week": "2026-W45"
 }
