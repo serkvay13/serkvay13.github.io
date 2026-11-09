@@ -1,6 +1,22 @@
 [
   {
     "category": "Risk Alert",
+    "date": "November 9, 2026",
+    "excerpt": "Yemen military cluster (Clash, Escalation, Ethnic Violence) confirmed FDR-pass and regime-shifted at W32 baseline (2.15\u20132.31\u00d7 elevation). Portugal political dissent and opposition activeness are off-chart anomalies (z +39.0, +37.9) with q-values below 1.3e-07, the strongest statistical signals in 2433 series scanned. Neither represents new headline velocity; both indicate structural instability in two regions of trade-corridor relevance (Suez/Red Sea, EU-periphery).",
+    "published": "2026-11-09",
+    "slug": "2026-11-09-nerai-risk-alert-w45",
+    "title": "NERAI Risk Alert \u2014 W45: YEMEN MILITARY REGIME + PORTUGAL POLITICAL DISSENT SURGE"
+  },
+  {
+    "category": "Weekly Pulse",
+    "date": "November 9, 2026",
+    "excerpt": "Week 45 shows Yemen military indicators accelerating into a new regime (z +1.8, FDR-pass; regime shift W32), alongside an unprecedented surge in Portugal political dissent (z +39.0, highest across 2433 series scanned). Gaza intensity has softened (\u22123.3 WoW), but Red Sea and Gulf chokepoint exposure remains elevated. Hong Kong leadership instability (z +118.0) and Greece military crisis (z +17.0) signal structural shifts in two key Asian and European corridors. Suez/Bab el-Mandeb transit volumes remain depressed; Hormuz rail bypasses (Etihad Rail Fujairah, Hafeet Sohar) absorb increasing margin",
+    "published": "2026-11-09",
+    "slug": "2026-11-09-nerai-weekly-bulletin-w45",
+    "title": "NERAI Weekly Bulletin \u2014 Week 45 (Nov 2 \u2013 8, 2026)"
+  },
+  {
+    "category": "Risk Alert",
     "date": "November 2, 2026",
     "excerpt": "Portugal's Political Dissent registers z +53.6 (q=1.22e-09, FDR=yes) and Opposition Activeness z +52.2 \u2014 both multi-decade statistical extremes \u2014 while Italy's Regime Instability reaches z +43.7 (q=0.0109, FDR=yes). These joint anomalies indicate coordinated institutional strain across the southern Eurozone and mark the week's most robust multi-series signal cluster after correction for false discovery.",
     "published": "2026-11-02",
