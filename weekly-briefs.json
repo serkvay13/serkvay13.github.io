@@ -1,26 +1,26 @@
 {
- "updated": "2026-10-12 15:59 UTC",
- "week": "2026-W42",
+ "updated": "2026-11-16 16:19 UTC",
+ "week": "2026-W47",
  "maritime": {
   "title": "NERAI Maritime Weekly",
   "events": [
-   "Houthis Strike Saudi Airports and Aramco; Saudi-Backed Forces Counterattack",
-   "Vessel Attacks Drive Hormuz Oil Exports Sharply Lower; Tanker Hit at Sharjah",
-   "UK Adds New Russia Designations Under the 2019 Sanctions Regulations",
-   "South Korea Threatens Legal Action Over Fuel Shipments to Russia",
-   "US Labels Chinese Actions Off Taiwan 'Deeply Destabilising'; Diplomat Warns Markets Under-Pricing Conflict"
+   "FOLLOW-UP - Iran Declares Hormuz 'Never Returns to Pre-War Status'; Three Tankers Hit Mines",
+   "IRGC Claims Drone Attack on US Base in Bahrain; Sirens Sound in Manama",
+   "UK Sanctions Slavneft and Vessels Under Russia Regulations 2019",
+   "Ocean Network Express Returns to Suez as Container Lines Resume Red Sea Transits",
+   "EU Naval Patrol Active in Gulf of Aden as Somali Piracy Rebounds"
   ],
-  "summary": "The week's dominant theme was Gulf and Red Sea energy-corridor stress: Houthi strikes on Saudi civilian and energy infrastructure, a product-tanker attack at Sharjah, and reporting that Hormuz oil exports have fallen sharply under sustained vessel attacks drove Brent crude up 10.1% in seven days to $125.44/bbl. Compliance calendars were also busy, with the UK adding Russia designations under the 2019 Regulations and South Korea threatening legal action against domestic firms that may have shipped fuel to Russia. Taiwan Strait tensions were verbally escalated by Washington but NERAI's model reads the corridor as scenario-monitored rather than actively disrupted."
+  "summary": "The Strait of Hormuz dominated this week's maritime picture, with multiple tankers struck by mines, Iran publicly declaring the waterway will never return to pre-war status, and IRGC drones targeting a US base in Bahrain — all while US-Iran diplomacy generated just enough noise to suppress an oil-price spike. A UK Russia-sanctions package targeting Slavneft and associated vessels added a compliance dimension, and the gradual return of container lines to the Suez Canal signalled cautious optimism on Red Sea de-escalation that the NERAI data does not yet fully corroborate."
  },
  "sanctions": {
   "title": "NERAI Sanctions Weekly",
   "events": [
-   "Trump-Putin Diesel Deal: US Lifts Russia Energy Sanctions",
-   "US Imposes Sanctions on ICC After Nobel Prize Awarded to Ex-Judge Pillay",
-   "South Korea Threatens Legal Action Over Russian Fuel Shipments",
-   "UK Issues New Designation Under Russia Sanctions Regulations",
-   "US Lifts Sanctions on Daughter of Myanmar Military-Linked Businessman"
+   "UK Sanctions Slavneft and Multiple Vessels Under Russia Regulations",
+   "EU Prepares 16th Russia Sanctions Round: 145 Targets Including 50 Banks",
+   "Rubio Declares Economic Pressure Renders Iran Military Strikes Unnecessary",
+   "Canada Announces Reimposition of Iran Sanctions After Decade-Long Gap",
+   "OFAC Sanctions Two Guatemalan DTOs Supporting Sinaloa Cartel and CJNG"
   ],
-  "summary": "The week was dominated by a surprise Trump-Putin diesel deal that raises acute questions about the durability of Russia energy sanctions, compounded by South Korea's parallel enforcement signal and a dense wave of new EU and UK designations. US sanctions on the ICC added a second major geopolitical rupture, signalling continued unilateral pressure on multilateral institutions. Compliance officers face simultaneous register additions and a politically-driven erosion of enforcement consensus on Russia."
+  "summary": "The week of 10–16 November 2026 was dominated by three intersecting threads: an escalating US economic-pressure campaign against Iran that Secretary Rubio explicitly positioned as a substitute for military strikes, the EU's preparation of a new Russia sanctions round targeting roughly 145 entities including 50 banks, and a fresh UK designation package hitting Russian energy major Slavneft alongside several vessels. Canada's announcement of reimposed Iran sanctions added a secondary multilateral dimension, while EU customs-enforcement watchdog findings underscored the persistent gap between sanctions legislation and on-the-ground compliance."
  }
 }

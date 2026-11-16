@@ -1,23 +1,40 @@
 {
- "generated": "2026-11-02 16:29 UTC",
+ "generated": "2026-11-16 16:19 UTC",
  "items": [
   {
    "kind": "Maritime",
    "title": "NERAI Maritime Weekly",
-   "week": "2026-W45",
+   "week": "2026-W47",
    "engine": "claude",
-   "url": "/briefs/2026-W45/NERAI_Maritime_Weekly_2026-W45.pdf",
+   "url": "/briefs/2026-W47/NERAI_Maritime_Weekly_2026-W47.pdf",
    "events": [
-    "Iran Brokers Saudi-Houthi Ceasefire Talks; $1bn Deal Reported",
-    "Saudi Coalition Intercepts Three Houthi Missiles and Four Drones",
-    "Singapore Minister Warns Hormuz Crisis Is Structural, Not Episodic",
-    "UK Issues New Designation Under Sudan Sanctions Regulations 2020",
-    "Indonesia: Tanker Used Ship-to-Ship Transfer to Smuggle Ketamine"
+    "FOLLOW-UP - Iran Declares Hormuz 'Never Returns to Pre-War Status'; Three Tankers Hit Mines",
+    "IRGC Claims Drone Attack on US Base in Bahrain; Sirens Sound in Manama",
+    "UK Sanctions Slavneft and Vessels Under Russia Regulations 2019",
+    "Ocean Network Express Returns to Suez as Container Lines Resume Red Sea Transits",
+    "EU Naval Patrol Active in Gulf of Aden as Somali Piracy Rebounds"
    ],
-   "summary": "The week was dominated by two converging threads at the Strait of Hormuz and the Red Sea: kinetic Houthi activity continued with further missile and drone intercepts, while Iran-brokered diplomacy — including a reported Saudi $1 bn ceasefire offer to the Houthis — signalled the first substantive de-escalation probe of the crisis. Singapore's Energy Minister publicly framed the Hormuz disruption as a structural, recurring risk rather than a passing episode, a posture that tracks NERAI's elevated 4-week Hormuz disruption probability of 50%. On the compliance front, the UK added a new designation under its Sudan sanctions regulations.",
+   "summary": "The Strait of Hormuz dominated this week's maritime picture, with multiple tankers struck by mines, Iran publicly declaring the waterway will never return to pre-war status, and IRGC drones targeting a US base in Bahrain — all while US-Iran diplomacy generated just enough noise to suppress an oil-price spike. A UK Russia-sanctions package targeting Slavneft and associated vessels added a compliance dimension, and the gradual return of container lines to the Suez Canal signalled cautious optimism on Red Sea de-escalation that the NERAI data does not yet fully corroborate.",
    "corrections": 0,
-   "bytes": 13663
+   "bytes": 14930
+  },
+  {
+   "kind": "Sanctions",
+   "title": "NERAI Sanctions Weekly",
+   "week": "2026-W47",
+   "engine": "claude",
+   "url": "/briefs/2026-W47/NERAI_Sanctions_Weekly_2026-W47.pdf",
+   "events": [
+    "UK Sanctions Slavneft and Multiple Vessels Under Russia Regulations",
+    "EU Prepares 16th Russia Sanctions Round: 145 Targets Including 50 Banks",
+    "Rubio Declares Economic Pressure Renders Iran Military Strikes Unnecessary",
+    "Canada Announces Reimposition of Iran Sanctions After Decade-Long Gap",
+    "OFAC Sanctions Two Guatemalan DTOs Supporting Sinaloa Cartel and CJNG"
+   ],
+   "summary": "The week of 10–16 November 2026 was dominated by three intersecting threads: an escalating US economic-pressure campaign against Iran that Secretary Rubio explicitly positioned as a substitute for military strikes, the EU's preparation of a new Russia sanctions round targeting roughly 145 entities including 50 banks, and a fresh UK designation package hitting Russian energy major Slavneft alongside several vessels. Canada's announcement of reimposed Iran sanctions added a secondary multilateral dimension, while EU customs-enforcement watchdog findings underscored the persistent gap between sanctions legislation and on-the-ground compliance.",
+   "corrections": 0,
+   "bytes": 14971
   }
  ],
- "week": "2026-W45"
+ "week": "2026-W47"
 }
