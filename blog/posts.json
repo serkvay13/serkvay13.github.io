@@ -1,6 +1,22 @@
 [
   {
     "category": "Risk Alert",
+    "date": "November 16, 2026",
+    "excerpt": "Kenya Pressure To Political Parties reads z +10.8 against its own 48-week baseline (95th percentile since Mar 2025); it passes false-discovery control across all series scanned (q=0.0357).",
+    "published": "2026-11-16",
+    "slug": "2026-11-16-nerai-risk-alert-w46",
+    "title": "NERAI Risk Alert \u2014 W46: Kenya Pressure To Political Parties: unusual reading"
+  },
+  {
+    "category": "Weekly Pulse",
+    "date": "November 16, 2026",
+    "excerpt": "For Week 46 (Nov 9 \u2013 15, 2026), Yemen leads the NERAI dataset on Military Clash at 16.8/100 (-0.7 WoW). Of 2436 series scanned against their own history, 90 look unusual at the 5% threshold, about the 121.8 expected by chance; 2 pass false-discovery control (q<=0.1, about 0.2 expected false). Most unusual: Kenya Pressure To Political Parties (z +10.8 vs its own baseline, q=0.0357).",
+    "published": "2026-11-16",
+    "slug": "2026-11-16-nerai-weekly-bulletin-w46",
+    "title": "NERAI Weekly Bulletin \u2014 Week 46 (Nov 9 \u2013 15, 2026)"
+  },
+  {
+    "category": "Risk Alert",
     "date": "November 9, 2026",
     "excerpt": "Yemen military cluster (Clash, Escalation, Ethnic Violence) confirmed FDR-pass and regime-shifted at W32 baseline (2.15\u20132.31\u00d7 elevation). Portugal political dissent and opposition activeness are off-chart anomalies (z +39.0, +37.9) with q-values below 1.3e-07, the strongest statistical signals in 2433 series scanned. Neither represents new headline velocity; both indicate structural instability in two regions of trade-corridor relevance (Suez/Red Sea, EU-periphery).",
     "published": "2026-11-09",
