@@ -1,6 +1,22 @@
 [
   {
     "category": "Risk Alert",
+    "date": "November 23, 2026",
+    "excerpt": "Yemen military clash and escalation scores climbed sharply (23.4/100, +6.6; 15.2/100, +4.3 respectively) in tandem with Ukraine spike (+10.0 WoW). Simultaneously, Brazil and Ghana register statistically validated crisis anomalies (FDR-controlled). Corridor infrastructure\u2014Red Sea hubs, Bosphorus bypass lanes, Hormuz rail links\u2014already operating below baseline; compounding friction across multiple zones raises systemic transit and chokepoint risk.",
+    "published": "2026-11-23",
+    "slug": "2026-11-23-nerai-risk-alert-w47",
+    "title": "NERAI Risk Alert \u2014 W47: Yemen Surge + Dual Validations: Corridor & Emerging Risk"
+  },
+  {
+    "category": "Weekly Pulse",
+    "date": "November 23, 2026",
+    "excerpt": "Week 47 signals a marked intensification in Yemen military activity (23.4/100, +6.6 WoW) and simultaneous escalation across the Red Sea\u2013Gulf corridor. Ukraine military clash severity rose sharply (+10.0 WoW to 13.7/100), while Libya and Iraq registered elevated military clash scores. Two statistically validated anomalies\u2014Brazil dispute settlement (z +8.6, FDR-controlled) and Ghana international crisis (z +26.2, FDR-controlled)\u2014suggest emerging friction outside traditional conflict zones. Ethiopia sustains an elevated military baseline since W39 without crossing FDR thresholds. Corridor context",
+    "published": "2026-11-23",
+    "slug": "2026-11-23-nerai-weekly-bulletin-w47",
+    "title": "NERAI Weekly Bulletin \u2014 Week 47 (Nov 16 \u2013 22, 2026)"
+  },
+  {
+    "category": "Risk Alert",
     "date": "November 16, 2026",
     "excerpt": "Kenya Pressure To Political Parties reads z +10.8 against its own 48-week baseline (95th percentile since Mar 2025); it passes false-discovery control across all series scanned (q=0.0357).",
     "published": "2026-11-16",
